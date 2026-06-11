@@ -6027,7 +6027,44 @@ function calculatePHQ9() {
         <div class="section-title"><h1>Dyslipidémie</h1><div class="breadcrumb">Cardiologie <span class="breadcrumb-sep">·</span> Section 3</div></div>
       </div>
 
-      <div class="block def">
+      <!-- PILLS NAV -->
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
+        <button onclick="document.getElementById('dyslip-1').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📌 Définition & Physio</button>
+        <button onclick="document.getElementById('dyslip-2').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📊 Stratification</button>
+        <button onclick="document.getElementById('dyslip-3').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔍 Dépistage</button>
+        <button onclick="document.getElementById('dyslip-4').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🧬 Marqueurs & Lp(a)</button>
+        <button onclick="document.getElementById('dyslip-5').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🩺 Évaluation</button>
+        <button onclick="document.getElementById('dyslip-6').scrollIntoView({behavior:'smooth'})" style="background:#0a7a4e;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">💊 Pharmacothérapie</button>
+        <button onclick="document.getElementById('dyslip-7').scrollIntoView({behavior:'smooth'})" style="background:#0a7a4e;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🧰 Outil interactif</button>
+        <button onclick="document.getElementById('dyslip-8').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🎯 Cibles</button>
+        <button onclick="document.getElementById('dyslip-9').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🧪 Suivi</button>
+        <button onclick="document.getElementById('dyslip-10').scrollIntoView({behavior:'smooth'})" style="background:#7b3fa0;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🥗 Non-pharmaco</button>
+      </div>
+      <!-- STAT CARDS -->
+      <div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:20px;">
+        <div style="flex:1;min-width:130px;background:#EEF2FF;border-radius:10px;padding:14px;text-align:center;">
+          <div style="font-size:20px;font-weight:800;color:#1C3F8F;">FRS &lt; 10%</div>
+          <div style="font-size:11px;color:#555;margin-top:4px;">Risque faible</div>
+        </div>
+        <div style="flex:1;min-width:130px;background:#FEF9C3;border-radius:10px;padding:14px;text-align:center;">
+          <div style="font-size:20px;font-weight:800;color:#92400e;">FRS 10–19%</div>
+          <div style="font-size:11px;color:#555;margin-top:4px;">Risque intermédiaire</div>
+        </div>
+        <div style="flex:1;min-width:130px;background:#FEE2E2;border-radius:10px;padding:14px;text-align:center;">
+          <div style="font-size:20px;font-weight:800;color:#c0392b;">FRS ≥ 20%</div>
+          <div style="font-size:11px;color:#555;margin-top:4px;">Risque élevé</div>
+        </div>
+        <div style="flex:1;min-width:130px;background:#DCFCE7;border-radius:10px;padding:14px;text-align:center;">
+          <div style="font-size:20px;font-weight:800;color:#0a7a4e;">&lt; 1,8 mmol/L</div>
+          <div style="font-size:11px;color:#555;margin-top:4px;">Cible LDL 2° prévention</div>
+        </div>
+        <div style="flex:1;min-width:130px;background:#F3E8FF;border-radius:10px;padding:14px;text-align:center;">
+          <div style="font-size:20px;font-weight:800;color:#7b3fa0;">≥ 50 mg/dL</div>
+          <div style="font-size:11px;color:#555;margin-top:4px;">Lp(a) significatif</div>
+        </div>
+      </div>
+
+      <div class="block def" id="dyslip-1">
         <div class="block-title"><span class="tag">📌 Définition</span></div>
         <p class="content-text">Anomalie quantitative et/ou qualitative des lipoprotéines plasmatiques (↑ C-LDL, ↑ TG, ↓ C-HDL, ou combinaison) → <strong>facteur de risque modifiable majeur de MCVAS</strong> (MCAS, AVC, MAP). Le bilan lipidique seul ne suffit pas : la décision de traiter repose sur le <strong>risque cardiovasculaire global</strong>.</p>
       </div>
@@ -6045,7 +6082,7 @@ function calculatePHQ9() {
         <p class="content-text">Le <strong>C-HDL</strong> participe normalement au transport inverse du cholestérol (effet protecteur relatif). L'ApoB reflète le <strong>nombre total de particules athérogènes</strong> — souvent un meilleur marqueur de risque que le C-LDL isolé.</p>
       </div>
 
-      <div class="block def">
+      <div class="block def" id="dyslip-2">
         <div class="block-title"><span class="tag">🔖 Critères diagnostiques & Stratification du risque CV — SCC 2021</span></div>
         <div class="key-fact yellow">Score de Framingham (FRS) chez tout patient 40–75 ans. <strong>Doubler le FRS</strong> si ATCD familiaux MCAS précoce (H &lt; 55 ans / F &lt; 65 ans).</div>
         <table style="margin-top:12px;">
@@ -6073,7 +6110,7 @@ function calculatePHQ9() {
       </div>
 
       <!-- QUI DÉPISTER -->
-      <div class="block clin">
+      <div class="block clin" id="dyslip-3">
         <div class="block-title"><span class="tag">🔍 Qui dépister?</span></div>
         <table>
           <thead><tr><th>Population générale</th><th>Conditions à risque (sans égard à l'âge)</th></tr></thead>
@@ -6085,7 +6122,7 @@ function calculatePHQ9() {
       </div>
 
       <!-- HIÉRARCHIE DES MARQUEURS & Lp(a) -->
-      <div class="block def">
+      <div class="block def" id="dyslip-4">
         <div class="block-title"><span class="tag">📊 Hiérarchie des marqueurs lipidiques & Lipoprotéine (a)</span></div>
         <p class="content-text" style="margin-bottom:8px;"><strong>Hiérarchie des marqueurs athérogènes (SCC) : ApoB &gt; C-non-HDL &gt;&gt; C-LDL.</strong></p>
         <table>
@@ -6110,7 +6147,7 @@ function calculatePHQ9() {
       </div>
 
       <!-- ÉVALUATION INITIALE -->
-      <div class="block clin">
+      <div class="block clin" id="dyslip-5">
         <div class="block-title"><span class="tag">🩺 Évaluation initiale — Anamnèse & examen physique</span></div>
         <p class="content-text" style="margin-bottom:8px;"><strong>Anamnèse — surtout rechercher :</strong></p>
         <div class="flag-list">
@@ -6126,7 +6163,7 @@ function calculatePHQ9() {
         </div>
       </div>
 
-      <div class="block rx">
+      <div class="block rx" id="dyslip-6">
         <div class="block-title"><span class="tag">💊 Pharmacothérapie — Ordre de prescription</span></div>
         <div class="accordion">
           <div class="accordion-item open">
@@ -6199,7 +6236,7 @@ function calculatePHQ9() {
       </div>
 
       <!-- OUTIL INTERACTIF — CHOIX STATINE + ADJUVANT -->
-      <div class="block def">
+      <div class="block def" id="dyslip-7">
         <div class="block-title"><span class="tag">🧰 Outil interactif — Choix de la statine et de l'adjuvant (SCC)</span></div>
         <p class="content-text" style="margin-bottom:14px;">Cliquez sur les énoncés correspondant à la situation clinique pour obtenir la conduite à tenir, étape par étape. <em>Outil d'aide à la décision — ne remplace pas le jugement clinique ni les lignes directrices de la Société canadienne de cardiologie.</em></p>
 
@@ -6339,7 +6376,7 @@ function calculatePHQ9() {
         </script>
       </div>
 
-      <div class="block para">
+      <div class="block para" id="dyslip-8">
         <div class="block-title"><span class="tag">🎯 Cibles selon contexte</span></div>
         <table>
           <thead><tr><th>Contexte</th><th>C-LDL</th><th>ApoB</th><th>C-non-HDL</th></tr></thead>
@@ -6352,7 +6389,7 @@ function calculatePHQ9() {
         <div class="key-fact blue" style="margin-top:10px;">ApoB &gt; C-non-HDL &gt; C-LDL comme marqueurs de choix — surtout si TG &gt; 1,5 mmol/L</div>
       </div>
 
-      <div class="block clin">
+      <div class="block clin" id="dyslip-9">
         <div class="block-title"><span class="tag">🧪 Suivi clinique — Fréquence & paramètres</span></div>
         <p class="content-text" style="margin-bottom:8px;"><strong>Bilan de base (avant l'initiation d'une statine) :</strong> bilan lipidique complet (CT, C-LDL, C-HDL, TG, C-non-HDL ± ApoB), <strong>Lp(a) une fois dans la vie</strong>, ALT/AST, CK, créatinine/DFGe, et calcul du score de Framingham.</p>
         <table>
@@ -6367,7 +6404,7 @@ function calculatePHQ9() {
       </div>
 
       <!-- NON-PHARMACOLOGIQUE & GESTION DES TG -->
-      <div class="block clin">
+      <div class="block clin" id="dyslip-10">
         <div class="block-title"><span class="tag">🥗 Approche non pharmacologique & gestion des triglycérides</span></div>
         <table>
           <thead><tr><th>Intervention</th><th>Impact estimé</th></tr></thead>
@@ -6400,7 +6437,43 @@ function calculatePHQ9() {
         <div class="section-title"><h1>MCAS & Angine Stable</h1><div class="breadcrumb">Cardiologie <span class="breadcrumb-sep">·</span> Section 4</div></div>
       </div>
 
-      <div class="block def">
+      <!-- PILLS NAV -->
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
+        <button onclick="document.getElementById('mcas-1').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📌 Définitions</button>
+        <button onclick="document.getElementById('mcas-2').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🫀 Anatomie</button>
+        <button onclick="document.getElementById('mcas-3').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">⚡ Physiologie</button>
+        <button onclick="document.getElementById('mcas-4').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🧬 Physiopathologie</button>
+        <button onclick="document.getElementById('mcas-5').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔍 Diagnostic</button>
+        <button onclick="document.getElementById('mcas-6').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🩺 Évaluation</button>
+        <button onclick="document.getElementById('mcas-7').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🧪 Paraclinique</button>
+        <button onclick="document.getElementById('mcas-8').scrollIntoView({behavior:'smooth'})" style="background:#0a7a4e;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">💊 Traitement</button>
+        <button onclick="document.getElementById('mcas-9').scrollIntoView({behavior:'smooth'})" style="background:#c0392b;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🚨 Red Flags</button>
+      </div>
+      <!-- STAT CARDS -->
+      <div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:20px;">
+        <div style="flex:1;min-width:120px;background:#EEF2FF;border-radius:10px;padding:14px;text-align:center;">
+          <div style="font-size:20px;font-weight:800;color:#1C3F8F;">85 %</div>
+          <div style="font-size:11px;color:#555;margin-top:4px;">Dominance coronarienne droite</div>
+        </div>
+        <div style="flex:1;min-width:120px;background:#FEE2E2;border-radius:10px;padding:14px;text-align:center;">
+          <div style="font-size:20px;font-weight:800;color:#c0392b;">3 critères</div>
+          <div style="font-size:11px;color:#555;margin-top:4px;">Angine stable typique</div>
+        </div>
+        <div style="flex:1;min-width:120px;background:#DCFCE7;border-radius:10px;padding:14px;text-align:center;">
+          <div style="font-size:20px;font-weight:800;color:#0a7a4e;">≤ 10 min</div>
+          <div style="font-size:11px;color:#555;margin-top:4px;">Résolution au repos/NTG</div>
+        </div>
+        <div style="flex:1;min-width:120px;background:#FEF9C3;border-radius:10px;padding:14px;text-align:center;">
+          <div style="font-size:20px;font-weight:800;color:#92400e;">0,3–0,4 mg</div>
+          <div style="font-size:11px;color:#555;margin-top:4px;">NTG SL — crise aiguë</div>
+        </div>
+        <div style="flex:1;min-width:120px;background:#F3E8FF;border-radius:10px;padding:14px;text-align:center;">
+          <div style="font-size:20px;font-weight:800;color:#7b3fa0;">≥ 50 %</div>
+          <div style="font-size:11px;color:#555;margin-top:4px;">Sténose obstructive</div>
+        </div>
+      </div>
+
+      <div class="block def" id="mcas-1">
         <div class="block-title"><span class="tag">📌 Définitions — distinguer MCAS et angine stable</span></div>
         <p class="content-text"><strong>MCAS (maladie coronarienne athérosclérotique)</strong> : la <em>maladie sous-jacente</em> — présence de plaques d'athérome dans les artères coronaires épicardiques, avec ou sans sténose significative, et avec ou sans symptômes (peut être silencieuse).</p>
         <p class="content-text" style="margin-top:8px;"><strong>Angine stable</strong> : le <em>syndrome clinique</em> — ischémie myocardique <strong>reproductible à l'effort</strong> (ou stress émotionnel) résultant d'une sténose coronarienne fixe ou d'une <strong>INOCA</strong> (ischémie sans maladie coronarienne obstructive — dysfonction microvasculaire ou vasospasme), soulagée &lt; 10 min au repos ou par NTG. Autrement dit : la MCAS est la maladie, l'angine stable est sa manifestation symptomatique typique.</p>
@@ -6408,7 +6481,7 @@ function calculatePHQ9() {
       </div>
 
       <!-- ANATOMIE CORONARIENNE -->
-      <div class="block clin">
+      <div class="block clin" id="mcas-2">
         <div class="block-title"><span class="tag">🫀 Anatomie coronarienne</span></div>
         <div class="accordion">
           <div class="accordion-item open">
@@ -6453,7 +6526,7 @@ function calculatePHQ9() {
       </div>
 
       <!-- PHYSIOLOGIE CORONARIENNE -->
-      <div class="block def">
+      <div class="block def" id="mcas-3">
         <div class="block-title"><span class="tag">⚡ Physiologie coronarienne — Apport vs Demande en O₂</span></div>
         <p class="content-text" style="margin-bottom:8px;"><strong>Apport en O₂</strong> = contenu en O₂ du sang (Hb, saturation) × débit coronarien</p>
         <div class="flag-list">
@@ -6477,14 +6550,14 @@ function calculatePHQ9() {
         <div class="key-fact yellow" style="margin-top:8px;"><strong>Mécanismes anti-ischémiques des traitements :</strong> BB → ↓ FC + contractilité ; Nitrates → ↓ précharge (↓ T pariétale) + ↑ vasodilatation coronarienne ; Revascularisation → ↓ R (sténose)</div>
       </div>
 
-      <div class="block clin">
+      <div class="block clin" id="mcas-4">
         <div class="block-title"><span class="tag">🧬 Physiopathologie — MCAS vs angine stable</span></div>
         <p class="content-text" style="margin-bottom:8px;"><strong>MCAS (le substrat) :</strong> dépôt progressif de lipoprotéines contenant l'ApoB dans l'intima → inflammation, captation par les macrophages, formation de la plaque d'athérome → <strong>sténose fixe</strong> de l'artère coronaire épicardique, avec dysfonction endothéliale associée (↓ NO, ↓ propriétés antithrombotiques) favorisant une vasoconstriction inappropriée.</p>
         <p class="content-text"><strong>Angine stable (l'expression symptomatique) :</strong> à l'effort, la <strong>demande myocardique en O₂ ↑</strong> mais l'apport ne peut suivre en raison de l'obstruction fixe (ou de l'INOCA sous-jacente) → <strong>ischémie myocardique réversible</strong>, qui se résorbe au repos lorsque la demande redescend sous le seuil critique.</p>
         <div class="key-fact yellow" style="margin-top:10px;">Stable = <strong>même effort, même durée, même intensité</strong> → reproductible. L'extraction myocardique d'O₂ se fait à 75 % en diastole → importance de la <strong>pression diastolique</strong> (cible ≥ 60 mmHg)</div>
       </div>
 
-      <div class="block clin">
+      <div class="block clin" id="mcas-5">
         <div class="block-title"><span class="tag">🔍 Critères diagnostiques — Angine stable (les 3 requis)</span></div>
         <div class="criteria-list">
           <div class="criteria-item"><div class="criteria-num blue">1</div><span>Provoquée par <strong>effort ou stress émotionnel</strong></span></div>
@@ -6495,7 +6568,7 @@ function calculatePHQ9() {
         <div class="highlight red" style="margin-top:10px;font-size:13px;">⚠️ Éliminer cocaïne/amphétamines (&lt; 96h) et iPDE-5 avant tout</div>
       </div>
 
-      <div class="block clin">
+      <div class="block clin" id="mcas-6">
         <div class="block-title"><span class="tag">🩺 Évaluation initiale — Anamnèse & examen physique</span></div>
         <p class="content-text"><strong>Anamnèse — rechercher :</strong> douleur rétrosternale constrictive ± irradiation (cou, mâchoire, dos, épigastre, bras G) · facteurs déclenchants (effort, froid, repas lourd, émotions, stimulants) · soulagement par repos/NTG &lt; 5–10 min · caractère <strong>reproductible</strong> (même effort = même durée = même intensité) · symptômes associés (nausées, diaphorèse, peau froide et moite)<br>
         <strong>Équivalents angineux</strong> (penser ♀, personnes âgées, diabétiques) : dyspnée, fatigue, douleur épigastrique<br>
@@ -6505,7 +6578,7 @@ function calculatePHQ9() {
         <div class="highlight yellow" style="margin-top:8px;font-size:13px;"><strong>Syndrome métabolique</strong> (≥ 3/5 critères → ↑ risque MCV, AVC et diabète) : tour de taille (H &gt; 102 cm / F &gt; 88 cm) · triglycérides ≥ 1,7 mmol/L · HDL (H &lt; 1,0 / F &lt; 1,3 mmol/L) · TA ≥ 130/85 mmHg · glycémie &gt; 5,6 mmol/L ou traitée par Rx</div>
       </div>
 
-      <div class="block para">
+      <div class="block para" id="mcas-7">
         <div class="block-title"><span class="tag">🧪 Paraclinique — Algorithme selon probabilité pré-test (Score CADence)</span></div>
         <table>
           <thead><tr><th>Probabilité</th><th>Valeur</th><th>Investigation recommandée</th></tr></thead>
@@ -6621,7 +6694,7 @@ function calculatePHQ9() {
         </script>
       </div>
 
-      <div class="block rx">
+      <div class="block rx" id="mcas-8">
         <div class="block-title"><span class="tag">💊 Traitement</span></div>
         <div class="highlight cream" style="margin-bottom:12px;">🚨 Crise : <strong>NTG sublinguale</strong></div>
         <div class="accordion">
@@ -6671,7 +6744,7 @@ function calculatePHQ9() {
         <div class="key-fact black" style="margin-top:10px;">Suivi post-SCA : LDL à 1 mois · Adhérence DAPT/statine/IECA/BB · ETT si FEVG ↓ · Conduite : ≥ 14j perso · ≥ 30j commercial</div>
       </div>
 
-      <div class="block flag">
+      <div class="block flag" id="mcas-9">
         <div class="block-title"><span class="tag">🚨 RED FLAGS</span></div>
         <div class="flag-list">
           <div class="flag-item"><span class="fi-icon">⚡</span><span>Sus-décalage ST de novo → <strong>code STEMI immédiat</strong></span></div>
@@ -6688,7 +6761,43 @@ function calculatePHQ9() {
         <div class="section-title"><h1>Syndromes Coronariens Aigus</h1><div class="breadcrumb">Cardiologie <span class="breadcrumb-sep">·</span> Section 5</div></div>
       </div>
 
-      <div class="block clin">
+      <!-- PILLS NAV -->
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
+        <button onclick="document.getElementById('sca-1').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🧬 Physiopatho</button>
+        <button onclick="document.getElementById('sca-2').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">⏱️ Stades & Pronostic</button>
+        <button onclick="document.getElementById('sca-3').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🩺 Évaluation</button>
+        <button onclick="document.getElementById('sca-4').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📊 Scores TIMI/GRACE</button>
+        <button onclick="document.getElementById('sca-5').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔬 MINOCA</button>
+        <button onclick="document.getElementById('sca-6').scrollIntoView({behavior:'smooth'})" style="background:#c0392b;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">⚡ AI / NSTEMI</button>
+        <button onclick="document.getElementById('sca-7').scrollIntoView({behavior:'smooth'})" style="background:#c0392b;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🚨 STEMI</button>
+        <button onclick="document.getElementById('sca-8').scrollIntoView({behavior:'smooth'})" style="background:#0a7a4e;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">💊 Antiplaquettaires P2Y12</button>
+        <button onclick="document.getElementById('sca-9').scrollIntoView({behavior:'smooth'})" style="background:#0a7a4e;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🛡️ Prévention & Suivi</button>
+      </div>
+      <!-- STAT CARDS -->
+      <div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:20px;">
+        <div style="flex:1;min-width:120px;background:#FEE2E2;border-radius:10px;padding:14px;text-align:center;">
+          <div style="font-size:18px;font-weight:800;color:#c0392b;">3–12 h</div>
+          <div style="font-size:11px;color:#555;margin-top:4px;">Délai ↑ troponine</div>
+        </div>
+        <div style="flex:1;min-width:120px;background:#FEE2E2;border-radius:10px;padding:14px;text-align:center;">
+          <div style="font-size:18px;font-weight:800;color:#c0392b;">≤ 90 min</div>
+          <div style="font-size:11px;color:#555;margin-top:4px;">Délai porte-ballon STEMI</div>
+        </div>
+        <div style="flex:1;min-width:120px;background:#FEF9C3;border-radius:10px;padding:14px;text-align:center;">
+          <div style="font-size:18px;font-weight:800;color:#92400e;">≤ 120 min</div>
+          <div style="font-size:11px;color:#555;margin-top:4px;">Délai 1er contact-ballon</div>
+        </div>
+        <div style="flex:1;min-width:120px;background:#DCFCE7;border-radius:10px;padding:14px;text-align:center;">
+          <div style="font-size:18px;font-weight:800;color:#0a7a4e;">99 %</div>
+          <div style="font-size:11px;color:#555;margin-top:4px;">VPN troponine à 3 h</div>
+        </div>
+        <div style="flex:1;min-width:120px;background:#EEF2FF;border-radius:10px;padding:14px;text-align:center;">
+          <div style="font-size:18px;font-weight:800;color:#1C3F8F;">≥ 20 %</div>
+          <div style="font-size:11px;color:#555;margin-top:4px;">Δ troponine = critère Dx</div>
+        </div>
+      </div>
+
+      <div class="block clin" id="sca-1">
         <div class="block-title"><span class="tag">🧬 Physiopathologie brève</span></div>
         <p class="content-text">Rupture ou érosion d'une <strong>plaque athérosclérotique vulnérable</strong> → activation de l'agrégation plaquettaire + cascade de coagulation → <strong>formation d'un thrombus</strong> ± vasoconstriction → obstruction partielle ou complète de l'artère coronaire.</p>
         <table style="margin-top:8px;">
@@ -6715,7 +6824,7 @@ function calculatePHQ9() {
         </div>
       </div>
 
-      <div class="block clin" style="border-left-color:var(--ink);">
+      <div class="block clin" id="sca-2" style="border-left-color:var(--ink);">
         <div class="block-title"><span class="tag">⏱️ Stades de l'ischémie & Stratification pronostique post-IM</span></div>
         <table>
           <thead><tr><th>Stade</th><th>Délai</th><th>Description</th></tr></thead>
@@ -6730,7 +6839,7 @@ function calculatePHQ9() {
         <div class="highlight cream" style="margin-top:8px;font-size:13px;"><strong>Stratification tardive — FEVG (facteur pronostique le plus important) :</strong> &lt; 50 % → ↑ mortalité à 6 mois-1 an · ≤ 35 % → ↑ risque de mort subite, candidat DAI · absence d'amélioration entre J1-7 et sem. 2-12 → ↑ risque de complications. Autres facteurs défavorables : ↓ FEVD, régurgitation mitrale, sexe féminin</div>
       </div>
 
-      <div class="block para" style="border-left-color:var(--ink);">
+      <div class="block para" id="sca-4" style="border-left-color:var(--ink);">
         <div class="block-title"><span class="tag">🔬 MINOCA & complications de l'infarctus</span></div>
         <p class="content-text"><strong>MINOCA</strong> (5–7 % des IM, diagnostic d'exclusion) : critères d'IAM <strong>+</strong> absence de sténose ≥ 50 % à l'angiographie <strong>+</strong> absence de cause non ischémique → physiopathologies évoquées : vasospasme, embolie, dysfonction microvasculaire</p>
         <div class="flag-list" style="margin-top:8px;">
@@ -6740,7 +6849,7 @@ function calculatePHQ9() {
         </div>
       </div>
 
-      <div class="block clin">
+      <div class="block clin" id="sca-3">
         <div class="block-title"><span class="tag">🩺 Évaluation initiale — Anamnèse & examen physique</span></div>
         <p class="content-text"><strong>Anamnèse — rechercher :</strong> DRS au repos ou au moindre effort &gt; 20 min, peu/partiellement soulagée par NTG (vs angine stable &lt; 5 min) · angor <strong>de novo, crescendo ou de repos</strong> · irradiation bras G/mâchoire/dos/épigastre · diaphorèse, nausées/vomissements, dyspnée<br>
         <strong>Présentation atypique</strong> fréquente (♀, personnes âgées, diabétiques) : équivalents angineux (dyspnée, fatigue, douleur épigastrique)</p>
@@ -6749,7 +6858,7 @@ function calculatePHQ9() {
       </div>
 
       <!-- SCORES DE STRATIFICATION -->
-      <div class="block para">
+      <div class="block para" id="sca-5">
         <div class="block-title"><span class="tag">📊 Scores de stratification — TIMI & GRACE</span></div>
         <p class="content-text" style="margin-bottom:8px;"><strong>Score TIMI</strong> (NSTEMI/Angine instable) — risque de mortalité, IM ou revascularisation urgente à 14 jours :</p>
         <table style="margin-bottom:12px;">
@@ -6772,7 +6881,7 @@ function calculatePHQ9() {
       </div>
 
       <!-- SCINTIGRAPHIE SPECT -->
-      <div class="block para" style="border-left-color:var(--blue);">
+      <div class="block para" id="sca-5b" style="border-left-color:var(--blue);">
         <div class="block-title"><span class="tag">🔬 Épreuves diagnostiques — Scintigraphie SPECT & Épreuve d'effort</span></div>
         <div class="accordion">
           <div class="accordion-item open">
@@ -6816,18 +6925,18 @@ function calculatePHQ9() {
         </div>
       </div>
 
-      <div class="block def">
+      <div class="block def" id="sca-6">
         <div class="block-title"><span class="tag">AI — Angine Instable</span></div>
         <p class="content-text">SCA sans sus-décalage ST + troponines <strong>normales</strong>. Angine de novo (CF ≥ III), crescendo, ou de repos &gt; 20 min.</p>
         <div class="highlight cream" style="margin-top:8px;font-size:13px;">Bilan : Troponines hs STAT + 1–3h · ECG répété q5–10 min · Scores : TIMI (0–2 faible · 3–4 intermédiaire · ≥ 5 élevé) · GRACE · HEART</div>
       </div>
 
-      <div class="block def">
+      <div class="block def" id="sca-6b">
         <div class="block-title"><span class="tag">NSTEMI</span></div>
         <p class="content-text">SCA sans sus-décalage ST + troponines <strong>↑</strong> (variation &gt; 20 %). Lésion myocardique confirmée.</p>
       </div>
 
-      <div class="block para" style="border-left-color:var(--blue);">
+      <div class="block para" id="sca-8" style="border-left-color:var(--blue);">
         <div class="block-title"><span class="tag">💊 Antiplaquettaires P2Y12 — comparaison & durée du DAPT</span></div>
         <table>
           <thead><tr><th></th><th>Ticagrélor (Brilinta)</th><th>Clopidogrel (Plavix)</th><th>Prasugrel (Effient)</th></tr></thead>
@@ -6844,7 +6953,7 @@ function calculatePHQ9() {
         <div class="highlight cream" style="margin-top:8px;font-size:13px;"><strong>Durée du DAPT (lignes directrices canadiennes 2023)</strong> : SCA avec ICP → AAS + ticagrélor/prasugrel × <strong>1 an</strong> · SCA sans revascularisation ou avec pontage → (ticagrélor &gt; clopidogrel) + AAS × 1 an · ICP élective (angine stable) ou pontage sans SCA → AAS + clopidogrel 75 mg × 6 mois–1 an · Haut risque hémorragique → désescalade à 1–3 mois (clopidogrel &gt; AAS) · faible risque → DAPT prolongé jusqu'à 3 ans · ne plus débuter le DAPT pour AI/NSTEMI si coronarographie prévue ≤ 24 h</div>
       </div>
 
-      <div class="block rx">
+      <div class="block rx" id="sca-7">
         <div class="block-title"><span class="tag">💊 Traitement AI + NSTEMI selon risque</span></div>
         <div class="accordion">
           <div class="accordion-item open">
@@ -6868,7 +6977,7 @@ function calculatePHQ9() {
         </div>
       </div>
 
-      <div class="block def">
+      <div class="block def" id="sca-7b">
         <div class="block-title"><span class="tag">STEMI — Urgence absolue</span></div>
         <div class="stat-row">
           <div class="stat-card red"><div class="stat-num">&lt;90 min</div><div class="stat-label">délai cible ICP primaire</div></div>
@@ -6878,7 +6987,7 @@ function calculatePHQ9() {
         <p class="content-text" style="margin-top:10px;">Sus-décalage persistant ST + nécrose transmurale. Clinique : DRS intense, diaphorèse, dyspnée. Sévérité Killip I → IV (choc cardiogénique).</p>
       </div>
 
-      <div class="block rx">
+      <div class="block rx" id="sca-7c">
         <div class="block-title"><span class="tag">💊 Traitement STEMI</span></div>
         <div class="accordion">
           <div class="accordion-item open">
@@ -6930,7 +7039,7 @@ function calculatePHQ9() {
       </div>
 
       <!-- PRÉVENTION & SUIVI POST-SCA -->
-      <div class="block clin">
+      <div class="block clin" id="sca-9">
         <div class="block-title"><span class="tag">🛡️ Prévention primaire vs secondaire & Suivi post-SCA</span></div>
         <table style="margin-bottom:12px;">
           <thead><tr><th></th><th>Prévention Primaire</th><th>Prévention Secondaire</th></tr></thead>
@@ -6954,7 +7063,7 @@ function calculatePHQ9() {
         <div class="note" style="margin-top:8px;"><strong>Interactions & CI à mémoriser :</strong> iPDE5 + nitrates → hypotension sévère (CI absolue, délai 24h sildénafil / 48h tadalafil) · BB + BCC non-DHP (vérapamil/diltiazem) → bloc AV/bradycardie (CI absolue) · IECA + ARA → hyperkaliémie/IRA (CI absolue) · BCC non-DHP si FEVG ≤ 40 % → aggravation IC</div>
       </div>
 
-      <div class="block flag">
+      <div class="block flag" id="sca-rf">
         <div class="block-title"><span class="tag">🚨 RED FLAGS</span></div>
         <div class="flag-list">
           <div class="flag-item"><span class="fi-icon">💀</span><span>Choc cardiogénique (TAS &lt; 90 &gt; 30 min) → coronarographie STAT · mortalité <strong>50–60 %</strong></span></div>
@@ -6974,12 +7083,28 @@ function calculatePHQ9() {
         </div>
       </div>
 
+      <!-- PILLS NAV FA -->
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
+        <button onclick="document.getElementById('fa-1').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📌 Définition & Physio</button>
+        <button onclick="document.getElementById('fa-2').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🩺 Évaluation</button>
+        <button onclick="document.getElementById('fa-3').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🧪 Paraclinique</button>
+        <button onclick="document.getElementById('fa-4').scrollIntoView({behavior:'smooth'})" style="background:#0a7a4e;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">💊 Traitement FA</button>
+        <button onclick="document.getElementById('fa-5').scrollIntoView({behavior:'smooth'})" style="background:#0a7a4e;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🛡️ Anticoagulation CHADS-65</button>
+        <button onclick="document.getElementById('fa-6').scrollIntoView({behavior:'smooth'})" style="background:#0a7a4e;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">💊 AOD & Posologie</button>
+        <button onclick="document.getElementById('fa-7').scrollIntoView({behavior:'smooth'})" style="background:#7b3fa0;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔌 Ablation</button>
+        <button onclick="document.getElementById('fa-8').scrollIntoView({behavior:'smooth'})" style="background:#7b3fa0;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🧰 Outil interactif</button>
+        <button onclick="document.getElementById('fa-9').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📌 Flutter & TSVP</button>
+        <button onclick="document.getElementById('fa-10').scrollIntoView({behavior:'smooth'})" style="background:#7b3fa0;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">⚗️ Antiarythmiques</button>
+        <button onclick="document.getElementById('fa-11').scrollIntoView({behavior:'smooth'})" style="background:#c0392b;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🚨 Red Flags</button>
+      </div>
+
+
       <div class="sec-divider">
         <div class="sd-shape ci"></div>
         <div class="sd-label">Fibrillation Auriculaire</div>
         <div class="sd-line"></div>
       </div>
-      <div class="block def">
+      <div class="block def" id="fa-1">
         <div class="block-title"><span class="tag">📌 Définition & Classification</span></div>
         <div class="stat-row">
           <div class="stat-card blue"><div class="stat-num">&lt; 7j</div><div class="stat-label">Paroxystique</div></div>
@@ -6989,21 +7114,21 @@ function calculatePHQ9() {
         <div class="key-fact black" style="margin-top:10px;">Chercher : valvulopathie mitrale · IC · hyperthyroïdie · apnée du sommeil · alcool · Échelle EHRA : 1 = asymptomatique → 4 = invalidant</div>
       </div>
 
-      <div class="block clin">
+      <div class="block clin" id="fa-1b">
         <div class="block-title"><span class="tag">🧬 Physiopathologie brève</span></div>
         <p class="content-text"><strong>Mécanisme :</strong> anomalies électrophysiologiques des myocytes auriculaires (dilatation, fibrose) déclenchées par un <strong>foyer ectopique</strong> (souvent veines pulmonaires) ou des réentrées (favorisées par oreillette dilatée, ↑ pression, infiltration/inflammation) — via <strong>automaticité augmentée</strong> et <strong>post-dépolarisations</strong>. FA <strong>paroxystique</strong> = foyer ectopique · <strong>persistante</strong> = remodelage électrique + fibrose · <strong>chronique</strong> = fibrose étendue/remodelage sévère.</p>
         <div class="key-fact yellow" style="margin-top:8px;">FA <strong>primaire</strong> (processus pathologique établi) vs <strong>secondaire</strong> (précipitant aigu réversible/auto-limité — chirurgie, infection, alcool, hyperthyroïdie)</div>
         <div class="highlight cream" style="margin-top:8px;font-size:13px;"><strong>Mécanisme d'apparition des symptômes :</strong> FC &gt; 100 bpm → rythme ventriculaire rapide → ↓ débit cardiaque → hypotension + congestion pulmonaire (surtout si VG hypertrophié) · désorganisation auriculaire → stase sanguine → thrombus → <strong>embolie cérébrale ou systémique</strong> · perte du « kick » auriculaire → peut déclencher/aggraver une IC</div>
       </div>
 
-      <div class="block clin">
+      <div class="block clin" id="fa-2">
         <div class="block-title"><span class="tag">🩺 Évaluation initiale — Anamnèse & examen physique</span></div>
         <p class="content-text"><strong>Anamnèse — rechercher :</strong> palpitations, dyspnée, fatigue, intolérance à l'effort, syncope, symptômes d'IC, AVC/AIT (souvent <strong>asymptomatique</strong> — dépistage fortuit fréquent, pourtant morbidité/mortalité significatives)<br>
         <strong>Causes/précipitants à rechercher :</strong> valvulopathie mitrale, IC, hyperthyroïdie, apnée du sommeil, alcool (« holiday heart »), infection/sepsis, chirurgie récente, embolie pulmonaire</p>
         <p class="content-text" style="margin-top:8px;"><strong>Examen physique :</strong> pouls <strong>irrégulièrement irrégulier</strong> · signes d'IC (crépitants, œdème, TVJ) · souffle cardiaque (valvulopathie) · signes d'hyperthyroïdie (goitre, tremblements, exophtalmie) · TA</p>
       </div>
 
-      <div class="block para">
+      <div class="block para" id="fa-3">
         <div class="block-title"><span class="tag">🧪 Paraclinique</span></div>
         <div style="display:flex;flex-wrap:wrap;gap:6px;">
           <span class="drug-badge line1">ECG</span><span class="drug-badge line3">FSC + électrolytes (Ca²⁺, Mg²⁺)</span><span class="drug-badge line3">Créatinine · TSH · Glucose</span><span class="drug-badge line3">Écho transthoracique</span><span class="drug-badge warn">ETO avant cardioversion</span>
@@ -7011,7 +7136,7 @@ function calculatePHQ9() {
         <div class="highlight yellow" style="margin-top:8px;font-size:13px;">ECG : exclure pré-excitation/faisceau accessoire. ETO : exclure thrombus OG avant cardioversion planifiée.</div>
       </div>
 
-      <div class="block rx">
+      <div class="block rx" id="fa-4">
         <div class="block-title"><span class="tag">💊 Traitement</span></div>
         <div class="accordion">
           <div class="accordion-item open">
@@ -7045,7 +7170,7 @@ function calculatePHQ9() {
         </div>
       </div>
 
-      <div class="block para">
+      <div class="block para" id="fa-5">
         <div class="block-title"><span class="tag">💊 Anticoagulation — CHADS-65 (SCC 2020)</span></div>
         <table>
           <thead><tr><th>Situation</th><th>Recommandation</th></tr></thead>
@@ -7058,7 +7183,7 @@ function calculatePHQ9() {
         </table>
       </div>
 
-      <div class="block para">
+      <div class="block para" id="fa-6">
         <div class="block-title"><span class="tag">💊 AOD — Posologie selon la fonction rénale (FA non valvulaire)</span></div>
         <table style="font-size:12.5px;">
           <thead><tr><th>DFGe (ml/min)</th><th>Apixaban (Eliquis®)</th><th>Dabigatran (Pradaxa®)</th><th>Rivaroxaban (Xarelto®)</th><th>Edoxaban (Lixiana®)</th></tr></thead>
@@ -7076,7 +7201,7 @@ function calculatePHQ9() {
         <div class="key-fact black" style="margin-top:8px;">90 % des thrombus FA se forment dans l'<strong>appendice auriculaire gauche (AAG)</strong> — base de l'effet protecteur des ACO · 1/4 des AVC sont attribuables à la FA</div>
       </div>
 
-      <div class="block para">
+      <div class="block para" id="fa-7">
         <div class="block-title"><span class="tag">🔌 Ablation par cathéter — Indications & Résultats</span></div>
         <div class="criteria-list">
           <div class="criteria-item"><div class="criteria-num blue">Qui</div><span>&lt; 80 ans · FA symptomatique (paroxystique &gt; persistante) · OG &lt; 55 mm · IC incluse (bénéfice documenté ICFEr)</span></div>
@@ -7087,7 +7212,7 @@ function calculatePHQ9() {
       </div>
 
       <!-- ALGORITHME SCC — TRAITEMENT FA + ANTICOAGULATION -->
-      <div class="block def">
+      <div class="block def" id="fa-8">
         <div class="block-title"><span class="tag">🧰 Outil interactif — Aide à la décision : Prise en charge de la FA (SCC)</span></div>
         <p class="content-text" style="margin-bottom:14px;">Cliquez sur les énoncés correspondant à la situation clinique pour obtenir la conduite à tenir. <em>Outil d'aide à la décision — ne remplace pas le jugement clinique ni les lignes directrices de la Société canadienne de cardiologie.</em></p>
 
@@ -7183,7 +7308,7 @@ function calculatePHQ9() {
         </script>
       </div>
 
-      <div class="block flag">
+      <div class="block flag" id="fa-11">
         <div class="block-title"><span class="tag">🚨 RED FLAGS</span></div>
         <div class="flag-list">
           <div class="flag-item"><span class="fi-icon">⚡</span><span>Pré-excitation + FA → <strong>CI absolue aux bloquants NAV</strong> (risque FV)</span></div>
@@ -7197,7 +7322,7 @@ function calculatePHQ9() {
         <div class="sd-label">Flutter & Arythmies</div>
         <div class="sd-line"></div>
       </div>
-      <div class="block def">
+      <div class="block def" id="fa-9">
         <div class="block-title"><span class="tag">📌 Flutter Auriculaire</span></div>
         <ul style="padding-left:18px;line-height:1.8;font-size:13.5px;">
           <li>Macro-réentrée autour de l'isthme cavo-tricuspidien (typique) → <strong>ablation = 1re ligne</strong> (succès 97 %)</li>
@@ -7206,7 +7331,7 @@ function calculatePHQ9() {
         </ul>
       </div>
 
-      <div class="block clin">
+      <div class="block clin" id="fa-9b">
         <div class="block-title"><span class="tag">🧬 TSVP — Physiopathologie & Traitement</span></div>
         <p class="content-text"><strong>Mécanisme :</strong> dans la majorité des cas (ex. tachycardie par réentrée nodale AV — TRNAV), une <strong>boucle de réentrée</strong> se forme au niveau du nœud AV (double voie nodale — voie lente + voie rapide) ou via une <strong>voie accessoire</strong> (ex. Wolff-Parkinson-White) reliant oreillettes et ventricules. Un battement prématuré déclenche un circuit auto-entretenu → tachycardie à QRS étroit, régulière, à début et fin brusques (palpitations soudaines ± étourdissements/dyspnée).</p>
         <ul class="content-text" style="padding-left:18px;margin-top:8px;">
@@ -7217,7 +7342,7 @@ function calculatePHQ9() {
         </ul>
       </div>
 
-      <div class="block para">
+      <div class="block para" id="fa-10">
         <div class="block-title"><span class="tag">📌 Classification de Vaughan Williams</span></div>
         <table>
           <thead><tr><th>Classe</th><th>Médicaments</th><th>Cible</th><th>Effet</th></tr></thead>
@@ -7248,7 +7373,7 @@ function calculatePHQ9() {
         </table>
       </div>
 
-      <div class="block para">
+      <div class="block para" id="fa-10b">
         <div class="block-title"><span class="tag">📌 Amiodarone — Surveillance multi-organique</span></div>
         <table>
           <thead><tr><th>Système</th><th>Effet</th><th>Incidence</th><th>Surveillance</th></tr></thead>
@@ -7263,7 +7388,7 @@ function calculatePHQ9() {
         </table>
       </div>
 
-      <div class="block para">
+      <div class="block para" id="fa-10c">
         <div class="block-title"><span class="tag">📌 Score HAS-BLED (seuil alerte ≥ 3)</span></div>
         <table>
           <thead><tr><th>Lettre</th><th>Facteur</th><th>Points</th></tr></thead>
@@ -7296,7 +7421,20 @@ function calculatePHQ9() {
     <div class="section" id="sec-ic">
       <div class="section-header"><div class="section-accent">🫀</div><div class="section-title"><h1>Insuffisance Cardiaque</h1><div class="breadcrumb">Cardiologie <span class="breadcrumb-sep">·</span> Section 7</div></div></div>
 
-      <div class="block def">
+      <!-- PILLS NAV IC -->
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
+        <button onclick="document.getElementById('ic-1').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📌 Définition</button>
+        <button onclick="document.getElementById('ic-2').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔬 Physiologie</button>
+        <button onclick="document.getElementById('ic-3').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🧬 ICFEr vs ICFEp</button>
+        <button onclick="document.getElementById('ic-4').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🩺 Évaluation</button>
+        <button onclick="document.getElementById('ic-5').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🧪 Paraclinique</button>
+        <button onclick="document.getElementById('ic-6').scrollIntoView({behavior:'smooth'})" style="background:#0a7a4e;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">💊 Quadruple thérapie ICFEr</button>
+        <button onclick="document.getElementById('ic-7').scrollIntoView({behavior:'smooth'})" style="background:#0a7a4e;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">💊 Traitement ICFEp</button>
+        <button onclick="document.getElementById('ic-8').scrollIntoView({behavior:'smooth'})" style="background:#7b3fa0;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">⚡ Hyperkaliémie & iSRAA</button>
+        <button onclick="document.getElementById('ic-9').scrollIntoView({behavior:'smooth'})" style="background:#c0392b;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🚨 SADMANS & Red Flags</button>
+      </div>
+
+      <div class="block def" id="ic-1">
         <div class="block-title"><span class="tag">📌 Définition universelle & Épidémiologie</span></div>
         <div class="stat-row">
           <div class="stat-card blue"><div class="stat-num">750 000</div><div class="stat-label">Canadiens atteints d'IC</div></div>
@@ -7315,7 +7453,7 @@ function calculatePHQ9() {
         <div class="highlight cream" style="margin-top:8px;font-size:13px;"><strong>Classe NYHA :</strong> I = aucune limitation · II = effort intense · III = effort modéré (marche terrain plat) · IV = repos</div>
       </div>
 
-      <div class="block para" style="border-left-color:var(--ink);">
+      <div class="block para" id="ic-2" style="border-left-color:var(--ink);">
         <div class="block-title"><span class="tag">🔬 Bases physiologiques & Mécanismes compensateurs</span></div>
         <table>
           <thead><tr><th>Paramètre</th><th>Définition</th><th>Note</th></tr></thead>
@@ -7337,24 +7475,24 @@ function calculatePHQ9() {
         </div>
       </div>
 
-      <div class="block clin">
+      <div class="block clin" id="ic-3">
         <div class="block-title"><span class="tag">🧬 Physiopathologie brève — commune</span></div>
         <p class="content-text">Incapacité du cœur à assurer un <strong>débit cardiaque</strong> suffisant aux besoins métaboliques, ou seulement au prix de <strong>pressions de remplissage élevées</strong>. Activation compensatoire neuro-hormonale (SRAA, système sympathique, peptides natriurétiques) → maintien du débit à court terme, mais favorise le <strong>remodelage ventriculaire</strong> et la progression à long terme.</p>
         <div class="key-fact yellow" style="margin-top:8px;">IC <strong>aiguë</strong> = apparition/aggravation soudaine des Sx (svt facteur précipitant — SCA, arythmie, myocardite, valvulopathie aiguë, HTA sévère) · IC <strong>chronique</strong> = anomalie structurelle/fonctionnelle persistante (NT-proBNP ↑ et/ou congestion objective)</div>
         <div class="highlight cream" style="margin-top:8px;font-size:13px;"><strong>Étiologies clés :</strong> Ischémique (50–70 %) · Valvulopathie · Toxique (ROH, anthracyclines, clozapine) · Infiltratif (amyloïdose) · Myocardite · Rhythmique (tachycardiomyopathie) · Métabolique (dysthyroïdie, péri-partum)</div>
       </div>
 
-      <div class="block clin" style="border-left-color:#2563eb;">
+      <div class="block clin" id="ic-3b" style="border-left-color:#2563eb;">
         <div class="block-title"><span class="tag">🧬 ICFEr (systolique) — Mécanisme spécifique</span></div>
         <p class="content-text"><strong>Dysfonction systolique</strong> : perte de cardiomyocytes (infarctus, toxique, infiltratif) ou surcharge chronique → <strong>↓ contractilité</strong> et dilatation ventriculaire (remodelage excentrique). Le volume d'éjection chute → activation neuro-hormonale compensatoire (SRAA, sympathique) qui, à long terme, aggrave le remodelage et la fibrose — cercle vicieux que cible la quadruple thérapie (chaque pilier bloque un axe neuro-hormonal distinct).</p>
       </div>
 
-      <div class="block clin" style="border-left-color:var(--yellow);">
+      <div class="block clin" id="ic-3c" style="border-left-color:var(--yellow);">
         <div class="block-title"><span class="tag">🧬 ICFEp (diastolique) — Mécanisme spécifique</span></div>
         <p class="content-text"><strong>Dysfonction diastolique</strong> : ↓ relaxation et ↓ compliance du VG (souvent hypertrophie concentrique 2° HTA chronique, vieillissement, obésité, diabète) → <strong>↑ pressions de remplissage</strong> à volume normal ou réduit → congestion en amont malgré une FEVG préservée. Très souvent associée à un état pro-inflammatoire systémique multi-comorbidités (obésité, SAOS, FA, IRC) plutôt qu'à une atteinte myocardique primaire isolée — d'où l'importance de traiter les comorbidités.</p>
       </div>
 
-      <div class="block clin">
+      <div class="block clin" id="ic-4">
         <div class="block-title"><span class="tag">🩺 Évaluation initiale — Anamnèse & examen physique</span></div>
         <ul class="content-text" style="padding-left:18px;">
           <li><strong>Anamnèse — IC gauche (congestion pulmonaire) :</strong> dyspnée d'effort, orthopnée, dyspnée paroxystique nocturne, toux de décubitus, fatigue, intolérance à l'effort</li>
@@ -7364,7 +7502,7 @@ function calculatePHQ9() {
         <p class="content-text" style="margin-top:8px;"><strong>Examen physique :</strong> signes congestifs (distension jugulaire, reflux hépato-jugulaire, B3, crépitants pulmonaires, œdème, hépatomégalie, ascite) · signes de bas débit (extrémités froides, hypotension, pouls filiforme, altération de l'état mental) · apex déplacé (cardiomégalie)</p>
       </div>
 
-      <div class="block para">
+      <div class="block para" id="ic-5">
         <div class="block-title"><span class="tag">🧪 Paraclinique — NT-proBNP & Bilan</span></div>
         <table>
           <thead><tr><th>Contexte</th><th>Seuil IC probable</th><th>Note</th></tr></thead>
@@ -7388,7 +7526,7 @@ function calculatePHQ9() {
         <div class="highlight cream" style="margin-top:8px;font-size:13px;"><strong>Bilan initial :</strong> ECG + ÉTT (FEVG) + NT-proBNP + Créatinine + K⁺ + FSC + HbA1c + TSH + Ferritine/TSAT</div>
       </div>
 
-      <div class="block rx">
+      <div class="block rx" id="ic-6">
         <div class="block-title"><span class="tag">💊 Quadruple thérapie ICFEr — Nouveau standard</span></div>
         <div class="key-fact blue">La majorité des bénéfices est observable dès les <strong>faibles doses</strong> — initier les 4 agents avant d'optimiser les doses</div>
         <div class="accordion" style="margin-top:10px;">
@@ -7467,7 +7605,7 @@ function calculatePHQ9() {
         <div class="key-fact red" style="margin-top:10px;">OAP aigu : O₂ + Furosémide 40–80 mg IV + NTG IV (TAS &gt; 100) + VNI si FR &gt; 25 ± morphine IV</div>
       </div>
 
-      <div class="block def">
+      <div class="block def" id="ic-6b">
         <div class="block-title"><span class="tag">📌 ICFEp (FEVG ≥ 50 %) — Comorbidités à traiter</span></div>
         <p class="content-text" style="margin-bottom:8px;">Pas de traitement « anti-remodelage » unique comme en ICFEr — la prise en charge repose sur le <strong>traitement systématique des comorbidités</strong> (souvent le moteur principal de la maladie) en parallèle de la pharmacothérapie ciblée.</p>
         <div class="note" style="margin-bottom:10px;"><strong>Score H2FPEF</strong> — aide diagnostique ICFEp (calculé sur MDCalc) : Heavy (obésité IMC > 30) + Hypertensive (≥ 2 anti-HTA) + atrial Fibrillation + Pulmonary HTN (PAPs > 35 mmHg) + Elder (≥ 60 ans) + Filling pressure (E/e' > 9). Score ≥ 6 = ICFEp probable.</div>
@@ -7485,7 +7623,7 @@ function calculatePHQ9() {
         </table>
       </div>
 
-      <div class="block rx">
+      <div class="block rx" id="ic-7">
         <div class="block-title"><span class="tag">💊 Traitement ICFEp — Algorithme par ligne</span></div>
         <div class="accordion">
           <div class="accordion-item open">
@@ -7521,7 +7659,7 @@ function calculatePHQ9() {
       </div>
 
       <!-- GESTION HYPERKALIÉMIE -->
-      <div class="block para" style="border-left-color:var(--yellow);">
+      <div class="block para" id="ic-8" style="border-left-color:var(--yellow);">
         <div class="block-title"><span class="tag">⚡ Gestion de l'hyperkaliémie sous iSRAA (ICFEr & ICFEp)</span></div>
         <p class="content-text" style="margin-bottom:8px;"><strong>Principe</strong> : avant d'arrêter les agents néphroprotecteurs, ↓ diurétiques épargneurs de K⁺, ↓ apport alimentaire en K⁺ et optimiser la volémie. Si K⁺ persiste élevé → chélateur de K⁺.</p>
         <table>
@@ -7535,7 +7673,7 @@ function calculatePHQ9() {
         <div class="note" style="margin-top:8px;">⚠️ EI communs des chélateurs : constipation, diarrhée, douleur abdominale, N&V. Lokelma et Patiromer sont mieux tolérés que le Kayexalate (ancienne génération).</div>
       </div>
 
-      <div class="block flag">
+      <div class="block flag" id="ic-9">
         <div class="block-title"><span class="tag">🚨 SADMANS — Journée de maladie & Red Flags</span></div>
         <p class="content-text" style="margin-bottom:8px;">Le moyen mnémotechnique <strong>SADMANS</strong> rappelle quels médicaments <strong>suspendre temporairement</strong> en cas de maladie aiguë (déshydratation, fièvre, diarrhée, vomissements) — ces agents peuvent précipiter une insuffisance rénale aiguë ou une hypotension lorsque le volume circulant chute. Reprendre dès le retour à l'état habituel.</p>
         <div class="key-fact red"><strong>SADMANS :</strong> Suspendre <u>S</u>GLT-2 · <u>A</u>CEI (IECA) · <u>D</u>iurétique · <u>M</u>etformin · <u>A</u>RA · <u>N</u>SAID (AINS) · <u>S</u>ulfonylurée</div>
@@ -7560,17 +7698,33 @@ function calculatePHQ9() {
         <div class="section-title"><h1>Sténose Aortique (SA)</h1><div class="breadcrumb">Cardiologie <span class="breadcrumb-sep">·</span> Section 9</div></div>
       </div>
 
-      <div class="block def">
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
+        <button onclick="document.getElementById('sa-1').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📌 Définition</button>
+        <button onclick="document.getElementById('sa-2').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🧬 Physiopathologie</button>
+        <button onclick="document.getElementById('sa-3').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔖 Classification</button>
+        <button onclick="document.getElementById('sa-4').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🩺 Évaluation</button>
+        <button onclick="document.getElementById('sa-5').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🧪 Paraclinique</button>
+        <button onclick="document.getElementById('sa-6').scrollIntoView({behavior:'smooth'})" style="background:#0a7a4e;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">💊 Traitement/TAVI</button>
+        <button onclick="document.getElementById('sa-7').scrollIntoView({behavior:'smooth'})" style="background:#c0392b;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🚨 Red Flags</button>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:20px;">
+        <div style="flex:1;min-width:120px;background:#FEE2E2;border-radius:10px;padding:14px;text-align:center;"><div style="font-size:20px;font-weight:800;color:#c0392b;">SAD</div><div style="font-size:11px;color:#555;margin-top:4px;">Syncope · Angine · Dyspnée</div></div>
+        <div style="flex:1;min-width:120px;background:#FEE2E2;border-radius:10px;padding:14px;text-align:center;"><div style="font-size:18px;font-weight:800;color:#c0392b;">&lt; 1 cm²</div><div style="font-size:11px;color:#555;margin-top:4px;">SA sévère</div></div>
+        <div style="flex:1;min-width:120px;background:#FEF9C3;border-radius:10px;padding:14px;text-align:center;"><div style="font-size:18px;font-weight:800;color:#92400e;">≥ 40 mmHg</div><div style="font-size:11px;color:#555;margin-top:4px;">Gradient sévère</div></div>
+        <div style="flex:1;min-width:120px;background:#DCFCE7;border-radius:10px;padding:14px;text-align:center;"><div style="font-size:16px;font-weight:800;color:#0a7a4e;">TAVI/RVA</div><div style="font-size:11px;color:#555;margin-top:4px;">Remplacement valvulaire</div></div>
+      </div>
+
+      <div class="block def" id="sa-1">
         <div class="block-title"><span class="tag">📌 Définition</span></div>
         <p class="content-text">Rétrécissement de l'orifice valvulaire aortique limitant l'éjection ventriculaire gauche → ↑ post-charge, hypertrophie compensatoire et, à terme, défaillance du VG. <strong>Valvulopathie la plus fréquente</strong> en Occident chez la personne âgée.</p>
       </div>
 
-      <div class="block para">
+      <div class="block para" id="sa-2">
         <div class="block-title"><span class="tag">🧬 Physiopathologie brève</span></div>
         <p class="content-text">Obstruction progressive à l'éjection → <strong>surcharge de pression</strong> chronique du VG → <strong>hypertrophie concentrique</strong> compensatrice (maintien du débit, ↑ besoins en O₂ du myocarde). Avec la progression : ↓ compliance du VG (dysfonction diastolique), ↓ réserve coronarienne (angine même sans MCAS épicardique), puis <strong>décompensation systolique</strong> → dilatation, ↓ FEVG, IC. Le passage de l'asymptomatique au symptomatique marque un tournant pronostique majeur (chute brutale de la survie).</p>
       </div>
 
-      <div class="block def">
+      <div class="block def" id="sa-3">
         <div class="block-title"><span class="tag">🔖 Critères diagnostiques — Classification de sévérité</span></div>
         <table>
           <thead><tr><th>Paramètre</th><th>Légère</th><th>Modérée</th><th>Sévère</th><th>Très sévère</th></tr></thead>
@@ -7583,7 +7737,7 @@ function calculatePHQ9() {
         <div class="highlight cream" style="margin-top:8px;font-size:13px;"><strong>Étiologies :</strong> Calcification dégénérative (Monckeberg, +60 ans · #1) · Bicuspidie aortique (25–50 ans) · Rhumatismale (rare en pays développés)<br><strong>FDR communs avec athérosclérose :</strong> HTA · Dyslipidémie · Tabac · Dialyse</div>
       </div>
 
-      <div class="block clin">
+      <div class="block clin" id="sa-4">
         <div class="block-title"><span class="tag">🩺 Évaluation initiale — Anamnèse & examen physique</span></div>
         <p class="content-text" style="margin-bottom:8px;"><strong>Anamnèse — surtout rechercher la triade classique</strong> (signe un tournant pronostique majeur) :</p>
         <div class="stat-row">
@@ -7621,7 +7775,7 @@ function calculatePHQ9() {
         <p class="content-text">Si discordance clinico-échographique (SA à bas débit/bas gradient) : <strong>écho-dobutamine basse dose</strong> ou <strong>cathétérisme cardiaque</strong> (mesure invasive des gradients, coronarographie pré-opératoire avant RVA chirurgical/TAVI selon le risque).</p>
       </div>
 
-      <div class="block rx">
+      <div class="block rx" id="sa-6">
         <div class="block-title"><span class="tag">💊 Traitement — Chirurgie/TAVI</span></div>
         <p class="content-text"><strong>Aucun traitement médical ne ralentit la progression de la SA</strong> · Pas de statines · Pas de IECA spécifiquement<br>Traitement des symptômes IC associés (si SA + IC → diurétiques avec prudence)</p>
         <div class="accordion">
@@ -7652,7 +7806,7 @@ function calculatePHQ9() {
         </div>
       </div>
 
-      <div class="block flag">
+      <div class="block flag" id="sa-7">
         <div class="block-title"><span class="tag">🚨 RED FLAGS</span></div>
         <div class="flag-list">
           <div class="flag-item"><span class="fi-icon">💔</span><span>SA sévère symptomatique → Mort subite 1–3 %/an sans chirurgie · Mortalité annuelle 25 % avec symptômes → Référer valvulaire urgence</span></div>
@@ -7670,12 +7824,27 @@ function calculatePHQ9() {
         </div>
       </div>
 
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
+        <button onclick="document.getElementById('peri-1').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🫀 Péricardite</button>
+        <button onclick="document.getElementById('peri-2').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🩺 Éval. Péri.</button>
+        <button onclick="document.getElementById('peri-3').scrollIntoView({behavior:'smooth'})" style="background:#0a7a4e;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">💊 Ttt Péri.</button>
+        <button onclick="document.getElementById('myo-1').scrollIntoView({behavior:'smooth'})" style="background:#7b3fa0;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">💔 Myocardite</button>
+        <button onclick="document.getElementById('endo-1').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🦠 Endocardite</button>
+        <button onclick="document.getElementById('endo-2').scrollIntoView({behavior:'smooth'})" style="background:#0a7a4e;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">💊 ATB</button>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:20px;">
+        <div style="flex:1;min-width:120px;background:#EEF2FF;border-radius:10px;padding:12px;text-align:center;"><div style="font-size:13px;font-weight:800;color:#1C3F8F;">ASA+Colchicine</div><div style="font-size:11px;color:#555;margin-top:4px;">Péricardite 1re ligne</div></div>
+        <div style="flex:1;min-width:120px;background:#FEE2E2;border-radius:10px;padding:12px;text-align:center;"><div style="font-size:13px;font-weight:800;color:#c0392b;">AINS CI</div><div style="font-size:11px;color:#555;margin-top:4px;">Myocardite active</div></div>
+        <div style="flex:1;min-width:120px;background:#DCFCE7;border-radius:10px;padding:12px;text-align:center;"><div style="font-size:13px;font-weight:800;color:#0a7a4e;">4–6 sem IV</div><div style="font-size:11px;color:#555;margin-top:4px;">ATB EI</div></div>
+        <div style="flex:1;min-width:120px;background:#FEF9C3;border-radius:10px;padding:12px;text-align:center;"><div style="font-size:13px;font-weight:800;color:#92400e;">Duke mod.</div><div style="font-size:11px;color:#555;margin-top:4px;">Critères Dx EI</div></div>
+      </div>
+
       <div class="sec-divider">
         <div class="sd-shape ci"></div>
         <div class="sd-label">Péricardite & Myocardite</div>
         <div class="sd-line"></div>
       </div>
-      <div class="block def">
+      <div class="block def" id="peri-1">
         <div class="block-title"><span class="tag">🫀 Péricardite Aiguë — Définition</span></div>
         <p>Inflammation du péricarde. Étiologie virale/idiopathique dans <strong>70–80 %</strong> des cas. Cause fréquente de douleur thoracique récurrente en dehors de la MCAS.</p>
         <p style="margin-top:8px;font-size:13px;"><strong>Étiologies :</strong> Virale/idiopathique · Auto-immune (LED, PR, MICI) · Dressler (2–6 sem post-IM) · Urémique (DFGe &lt; 15) · Bactérienne (TB, Staph) · Néoplasique (poumon, sein, lymphome — souvent hémorragique) · Médicamenteuse (hydralazine, isoniazide, checkpoint inhibiteurs)</p>
@@ -7686,7 +7855,7 @@ function calculatePHQ9() {
         <p class="content-text">Inflammation des deux feuillets péricardiques (le plus souvent d'origine virale ou idiopathique) → irritation des fibres nerveuses péricardiques (innervation par le nerf phrénique, d'où l'irradiation au <strong>trapèze gauche</strong>) → douleur pleurétique typique, soulagée en antéflexion. L'inflammation peut générer un <strong>épanchement péricardique</strong> ; s'il s'accumule rapidement ou abondamment, il limite le remplissage diastolique des cavités cardiaques → <strong>tamponnade</strong> (↓ débit cardiaque, urgence).</p>
       </div>
 
-      <div class="block clin">
+      <div class="block clin" id="peri-2">
         <div class="block-title"><span class="tag">🩺 Évaluation initiale — Anamnèse & examen physique (Péricardite)</span></div>
         <p class="content-text" style="margin-bottom:6px;"><strong>Anamnèse — surtout rechercher :</strong></p>
         <ul style="padding-left:18px;line-height:1.8;font-size:13.5px;">
@@ -7710,7 +7879,7 @@ function calculatePHQ9() {
         </ul>
       </div>
 
-      <div class="block rx">
+      <div class="block rx" id="peri-3">
         <div class="block-title"><span class="tag">💊 Traitement — Péricardite</span></div>
         <ul style="padding-left:18px;line-height:1.8;font-size:13.5px;">
           <li><strong>Double thérapie (ESC 2015) :</strong></li>
@@ -7731,7 +7900,7 @@ function calculatePHQ9() {
         </div>
       </div>
 
-      <div class="block def" style="border-top:2px solid var(--ink);padding-top:20px;margin-top:4px;">
+      <div class="block def" id="myo-1" style="border-top:2px solid var(--ink);padding-top:20px;margin-top:4px;">
         <div class="block-title"><span class="tag">💔 Myocardite — Définition</span></div>
         <p>Inflammation du myocarde sans obstruction coronarienne. Spectre clinique : subclinique → IC fulminante → mort subite.</p>
         <p style="margin-top:8px;font-size:13px;"><strong>Causes :</strong> Virale (Coxsackie B, Parvovirus B19, adénovirus, COVID-19, VIH — contexte IVRS 2–4 sem) · Borrelia burgdorferi (bloc AV fréquent) · Auto-immune (cellules géantes, sarcoïdose) · Toxique (anthracyclines, clozapine, checkpoint inhibiteurs → myocardite fulminante)</p>
@@ -13743,12 +13912,22 @@ function calculatePHQ9() {
         <div class="section-accent">🫀</div>
         <div class="section-title"><h1>Flutter & Arythmies</h1><div class="breadcrumb">Cardiologie <span class="breadcrumb-sep">·</span> Section 6b</div></div>
       </div>
+
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
+        <button onclick="document.getElementById('ary-1').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📌 Flutter</button>
+        <button onclick="document.getElementById('ary-2').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📌 TSVP</button>
+        <button onclick="document.getElementById('ary-3').scrollIntoView({behavior:'smooth'})" style="background:#7b3fa0;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">⚗️ Vaughan Williams</button>
+        <button onclick="document.getElementById('ary-4').scrollIntoView({behavior:'smooth'})" style="background:#7b3fa0;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📌 Amiodarone</button>
+        <button onclick="document.getElementById('ary-5').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📌 HAS-BLED</button>
+        <button onclick="document.getElementById('ary-6').scrollIntoView({behavior:'smooth'})" style="background:#c0392b;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🚨 Alertes</button>
+      </div>
+
       <div class="sec-divider" style="margin-top:32px;">
         <div class="sd-shape sq"></div>
         <div class="sd-label">Flutter & Arythmies</div>
         <div class="sd-line"></div>
       </div>
-      <div class="block def">
+      <div class="block def" id="ary-1">
         <div class="block-title"><span class="tag">📌 Flutter Auriculaire</span></div>
         <ul style="padding-left:18px;line-height:1.8;font-size:13.5px;">
           <li>Macro-réentrée autour de l'isthme cavo-tricuspidien (typique) → <strong>ablation = 1re ligne</strong> (succès 97 %)</li>
@@ -13757,7 +13936,7 @@ function calculatePHQ9() {
         </ul>
       </div>
 
-      <div class="block rx">
+      <div class="block rx" id="ary-2">
         <div class="block-title"><span class="tag">📌 TSVP — Adénosine</span></div>
         <ul style="padding-left:18px;line-height:1.8;font-size:13.5px;">
           <li>Dose : 6 mg IV → échec → 12 mg IV → 12 mg IV | Demi-vie 10–15 sec</li>
@@ -13765,7 +13944,7 @@ function calculatePHQ9() {
         </ul>
       </div>
 
-      <div class="block para">
+      <div class="block para" id="ary-3">
         <div class="block-title"><span class="tag">📌 Classification de Vaughan Williams</span></div>
         <table>
           <thead><tr><th>Classe</th><th>Médicaments</th><th>Cible</th><th>Effet</th></tr></thead>
@@ -13780,7 +13959,7 @@ function calculatePHQ9() {
         </table>
       </div>
 
-      <div class="block para">
+      <div class="block para" id="ary-4">
         <div class="block-title"><span class="tag">📌 Amiodarone — Surveillance multi-organique</span></div>
         <table>
           <thead><tr><th>Système</th><th>Effet</th><th>Incidence</th><th>Surveillance</th></tr></thead>
@@ -13795,7 +13974,7 @@ function calculatePHQ9() {
         </table>
       </div>
 
-      <div class="block para">
+      <div class="block para" id="ary-5">
         <div class="block-title"><span class="tag">📌 Score HAS-BLED (seuil alerte ≥ 3)</span></div>
         <table>
           <thead><tr><th>Lettre</th><th>Facteur</th><th>Points</th></tr></thead>
@@ -13812,7 +13991,7 @@ function calculatePHQ9() {
         <div class="alert alert-yellow" style="margin-top:8px;font-size:13px;">HAS-BLED ≥ 3 → corriger les facteurs modifiables, <strong>NE PAS arrêter l'ACO</strong></div>
       </div>
 
-      <div class="block flag">
+      <div class="block flag" id="ary-6">
         <div class="block-title"><span class="tag">🚨 Alertes</span></div>
         <div class="flag-list">
           <div class="flag-item"><span class="fi-icon">🚨</span><span>Flutter → ablation 1re ligne</span></div>
@@ -13830,12 +14009,27 @@ function calculatePHQ9() {
         <div class="section-accent">🫀</div>
         <div class="section-title"><h1>Endocardite Infectieuse</h1><div class="breadcrumb">Cardiologie <span class="breadcrumb-sep">·</span> Section 9b</div></div>
       </div>
+
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
+        <button onclick="document.getElementById('ei-1').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📌 Définition & FdR</button>
+        <button onclick="document.getElementById('ei-2').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔍 FROM JANE</button>
+        <button onclick="document.getElementById('ei-3').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🧪 Critères Duke</button>
+        <button onclick="document.getElementById('ei-4').scrollIntoView({behavior:'smooth'})" style="background:#0a7a4e;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">💊 ATB</button>
+        <button onclick="document.getElementById('ei-5').scrollIntoView({behavior:'smooth'})" style="background:#c0392b;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🚨 Red Flags</button>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:20px;">
+        <div style="flex:1;min-width:120px;background:#FEF9C3;border-radius:10px;padding:12px;text-align:center;"><div style="font-size:14px;font-weight:800;color:#92400e;">FROM JANE</div><div style="font-size:11px;color:#555;margin-top:4px;">Signes cliniques</div></div>
+        <div style="flex:1;min-width:120px;background:#EEF2FF;border-radius:10px;padding:12px;text-align:center;"><div style="font-size:14px;font-weight:800;color:#1C3F8F;">2M ou 1M+3m</div><div style="font-size:11px;color:#555;margin-top:4px;">Critères Duke</div></div>
+        <div style="flex:1;min-width:120px;background:#DCFCE7;border-radius:10px;padding:12px;text-align:center;"><div style="font-size:14px;font-weight:800;color:#0a7a4e;">4–6 sem IV</div><div style="font-size:11px;color:#555;margin-top:4px;">ATB durée</div></div>
+        <div style="flex:1;min-width:120px;background:#FEE2E2;border-radius:10px;padding:12px;text-align:center;"><div style="font-size:14px;font-weight:800;color:#c0392b;">3 HC avant ATB</div><div style="font-size:11px;color:#555;margin-top:4px;">Hémocultures urgentes</div></div>
+      </div>
+
       <div class="sec-divider" style="margin-top:32px;">
         <div class="sd-shape sq"></div>
         <div class="sd-label">Endocardite Infectieuse</div>
         <div class="sd-line"></div>
       </div>
-      <div class="block def">
+      <div class="block def" id="ei-1">
         <div class="block-title"><span class="tag">📌 Définition & Facteurs de risque</span></div>
         <p>Infection bactérienne (ou fongique) de l'endocarde → végétations sur les valves. EI aiguë (virulente) vs subaiguë (indolente).</p>
         <ul style="padding-left:18px;line-height:1.8;font-size:13.5px;margin-top:8px;">
@@ -13846,7 +14040,7 @@ function calculatePHQ9() {
         </ul>
       </div>
 
-      <div class="block clin">
+      <div class="block clin" id="ei-2">
         <div class="block-title"><span class="tag">🔍 Clinique — Mnémo FROM JANE</span></div>
         <table>
           <thead><tr><th>Lettre</th><th>Signe</th><th>Détail</th></tr></thead>
@@ -13863,7 +14057,7 @@ function calculatePHQ9() {
         </table>
       </div>
 
-      <div class="block para">
+      <div class="block para" id="ei-3">
         <div class="block-title"><span class="tag">🧪 Critères de Duke modifiés (ESC 2023)</span></div>
         <div class="alert alert-blue" style="margin-bottom:8px;font-size:13px;"><strong>EI certaine</strong> = 2 majeurs OU 1 majeur + 3 mineurs OU 5 mineurs</div>
         <table>
@@ -13882,7 +14076,7 @@ function calculatePHQ9() {
         <p style="margin-top:8px;font-size:13px;"><strong>Hémocultures × 3 paires AVANT ATB</strong> (sites différents, espacées 1–2h) — priorité absolue<br>ÉTT → ÉTO si ÉTT négatif + forte suspicion, valve prothétique, complication suspectée<br>ECG : surveiller bloc AV (→ abcès périannulaire = urgence chirurgicale)</p>
       </div>
 
-      <div class="block rx">
+      <div class="block rx" id="ei-4">
         <div class="block-title"><span class="tag">💊 Traitement ATB (4–6 semaines IV)</span></div>
         <table>
           <thead><tr><th>Organisme</th><th>ATB</th></tr></thead>
@@ -13897,7 +14091,7 @@ function calculatePHQ9() {
         <p style="margin-top:8px;font-size:13px;"><strong>Prophylaxie EI (ESC 2023) :</strong> Amoxicilline 2 g PO 30–60 min avant procédures dentaires invasives (Clindamycine 600 mg si allergie PCN) — indiquée si valve prothétique, ATCD EI, cardiopathie congénitale cyanogène</p>
       </div>
 
-      <div class="block flag">
+      <div class="block flag" id="ei-5">
         <div class="block-title"><span class="tag">🚨 RED FLAGS</span></div>
         <div class="flag-list">
           <div class="flag-item"><span class="fi-icon">🚨</span><span>Nouveau bloc AV de haut degré → abcès périannulaire → chirurgie urgente</span></div>
