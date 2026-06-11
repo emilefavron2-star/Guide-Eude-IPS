@@ -9197,9 +9197,23 @@ function calculatePHQ9() {
         <div class="section-accent" style="background:var(--red)">🫘</div>
         <div class="section-title"><h1>Syndrome Néphritique</h1><div class="breadcrumb">Néphrologie <span class="breadcrumb-sep">·</span> Section 13</div></div>
       </div>
-
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
+        <button onclick="document.getElementById('nrit-1').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📌 Définition</button>
+        <button onclick="document.getElementById('nrit-2').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🧬 Physiopath.</button>
+        <button onclick="document.getElementById('nrit-3').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🩺 Évaluation</button>
+        <button onclick="document.getElementById('nrit-4').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔬 Mécanismes</button>
+        <button onclick="document.getElementById('nrit-5').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🧪 DDx</button>
+        <button onclick="document.getElementById('nrit-6').scrollIntoView({behavior:'smooth'})" style="background:#7b3fa0;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🧰 Outil biopsie</button>
+        <button onclick="document.getElementById('nrit-7').scrollIntoView({behavior:'smooth'})" style="background:#0a7a4e;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">💊 Traitement</button>
+        <button onclick="document.getElementById('nrit-8').scrollIntoView({behavior:'smooth'})" style="background:#c0392b;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🚨 Red Flags</button>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:20px;">
+        <div style="flex:1;min-width:110px;background:#FEE2E2;border-radius:10px;padding:12px;text-align:center;"><div style="font-size:16px;font-weight:800;color:#c0392b;">Hématurie</div><div style="font-size:11px;color:#555;margin-top:4px;">Signe cardinal néphritique</div></div>
+        <div style="flex:1;min-width:110px;background:#FEF9C3;border-radius:10px;padding:12px;text-align:center;"><div style="font-size:16px;font-weight:800;color:#92400e;">&lt; 3,5 g/j</div><div style="font-size:11px;color:#555;margin-top:4px;">Protéinurie (néphritique)</div></div>
+        <div style="flex:1;min-width:110px;background:#EEF2FF;border-radius:10px;padding:12px;text-align:center;"><div style="font-size:16px;font-weight:800;color:#1C3F8F;">C3/C4</div><div style="font-size:11px;color:#555;margin-top:4px;">Complément — orienter étiologie</div></div>
+      </div>
       <div class="block def">
-        <div class="block-title"><span class="tag">📌 Définition & Critères diagnostiques — Tétrade classique</span></div>
+        <div class="block-title" id="nrit-1"><span class="tag">📌 Définition & Critères diagnostiques — Tétrade classique</span></div>
         <p class="content-text">Tableau résultant d'une <strong>inflammation glomérulaire aiguë</strong> touchant l'endothélium et l'espace sous-endothélial/mésangial, défini par l'association de :</p>
         <div class="stat-row" style="margin-top:10px;">
           <div class="stat-card blue"><div class="stat-num">Hématurie</div><div class="stat-label">GR dysmorphes + cylindres (rupture des anses capillaires)</div></div>
@@ -9211,7 +9225,7 @@ function calculatePHQ9() {
 
       <!-- PHYSIOPATHOLOGIE -->
       <div class="block para" style="border-left-color:var(--blue);">
-        <div class="block-title"><span class="tag">🧬 Physiopathologie brève</span></div>
+        <div class="block-title" id="nrit-2"><span class="tag">🧬 Physiopathologie brève</span></div>
         <p class="content-text"><strong>Règle clé de localisation des dépôts</strong> : dépôts sous-épithéliaux → lésion des podocytes → <strong>syndrome néphrotique</strong> ; dépôts sous-endothéliaux ou mésangiaux → inflammation/activation du complément → <strong>syndrome néphritique</strong>.</p>
         <p class="content-text" style="margin:10px 0 6px;"><strong>4 mécanismes pathogéniques — un par ligne pour bien les distinguer :</strong></p>
         <div class="flag-list">
@@ -9226,7 +9240,7 @@ function calculatePHQ9() {
 
       <!-- ÉVALUATION INITIALE -->
       <div class="block clin">
-        <div class="block-title"><span class="tag">🩺 Évaluation initiale — Anamnèse & examen physique</span></div>
+        <div class="block-title" id="nrit-3"><span class="tag">🩺 Évaluation initiale — Anamnèse & examen physique</span></div>
         <p class="content-text" style="margin-bottom:8px;"><strong>Anamnèse — surtout rechercher :</strong></p>
         <div class="flag-list">
           <div class="flag-item"><span class="flag-dot ink"></span><span><strong>Délai infection → hématurie</strong> : 7–10 jours post-pharyngite = GN post-streptococcique ; <strong>simultané</strong> (« synpharyngitique ») = néphropathie à IgA</span></div>
@@ -9254,7 +9268,7 @@ function calculatePHQ9() {
       </div>
 
       <div class="block clin">
-        <div class="block-title"><span class="tag">🔬 4 Mécanismes & Orientation</span></div>
+        <div class="block-title" id="nrit-4"><span class="tag">🔬 4 Mécanismes & Orientation</span></div>
         <div class="accordion">
           <div class="accordion-item open">
             <div class="accordion-header">C3/C4 ↓ (complément consommé)
@@ -9272,7 +9286,7 @@ function calculatePHQ9() {
       </div>
 
       <div class="block para">
-        <div class="block-title"><span class="tag">🧪 DDx — Marqueurs spécifiques</span></div>
+        <div class="block-title" id="nrit-5"><span class="tag">🧪 DDx — Marqueurs spécifiques</span></div>
         <table>
           <thead><tr><th>Cause</th><th>Marqueur clé</th><th>Particularité</th></tr></thead>
           <tbody>
@@ -9286,7 +9300,7 @@ function calculatePHQ9() {
       </div>
 
       <div class="block rx">
-        <div class="block-title"><span class="tag">🧰 Outil interactif — Aide à la décision : Biopsie en syndrome néphritique</span></div>
+        <div class="block-title" id="nrit-6"><span class="tag">🧰 Outil interactif — Aide à la décision : Biopsie en syndrome néphritique</span></div>
         <p class="content-text" style="margin-bottom:14px;">Point de départ : <strong>tétrade clinique de syndrome néphritique</strong> confirmée → cliquez sur les réponses pour déterminer la conduite à tenir quant à la biopsie. <em>Outil d'aide à la décision — ne remplace pas le jugement clinique ni l'avis néphrologique.</em></p>
 
         <style>
@@ -9377,7 +9391,7 @@ function calculatePHQ9() {
       </div>
 
       <div class="block rx">
-        <div class="block-title"><span class="tag">💊 Traitement — Global & par cause</span></div>
+        <div class="block-title" id="nrit-7"><span class="tag">💊 Traitement — Global & par cause</span></div>
         <p class="content-text" style="margin-bottom:8px;"><strong>Mesures globales (toutes causes) :</strong></p>
         <ul class="content-text" style="padding-left:18px;">
           <li><strong>Supportif</strong> : restriction hydrosodée, contrôle strict de la TA (cible individualisée — IECA/ARA en 1<sup>re</sup> intention si protéinurie associée, car néphroprotecteurs), diurétiques de l'anse si surcharge volémique</li>
@@ -9429,7 +9443,7 @@ function calculatePHQ9() {
       </div>
 
       <div class="block flag">
-        <div class="block-title"><span class="tag">🚨 RED FLAGS</span></div>
+        <div class="block-title" id="nrit-8"><span class="tag">🚨 RED FLAGS</span></div>
         <div class="flag-list">
           <div class="flag-item"><span class="fi-icon">🔬</span><span>Croissants à biopsie → GNRP → immunosuppression intensive + plasmaphérèse</span></div>
           <div class="flag-item"><span class="fi-icon">🫁</span><span>Syndrome pneumo-rénal (hémoptysies + GN) → anti-GBM ou ANCA → urgence néphro</span></div>
@@ -9444,9 +9458,22 @@ function calculatePHQ9() {
         <div class="section-accent" style="background:var(--red)">🫘</div>
         <div class="section-title"><h1>Syndrome Néphrotique</h1><div class="breadcrumb">Néphrologie <span class="breadcrumb-sep">·</span> Section 14</div></div>
       </div>
-
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
+        <button onclick="document.getElementById('nrot-1').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📌 Définition</button>
+        <button onclick="document.getElementById('nrot-2').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🧬 Physiopath.</button>
+        <button onclick="document.getElementById('nrot-3').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🩺 Évaluation</button>
+        <button onclick="document.getElementById('nrot-4').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔬 DDx Causes</button>
+        <button onclick="document.getElementById('nrot-5').scrollIntoView({behavior:'smooth'})" style="background:#c0392b;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🧪 Complications</button>
+        <button onclick="document.getElementById('nrot-6').scrollIntoView({behavior:'smooth'})" style="background:#0a7a4e;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">💊 Traitement</button>
+        <button onclick="document.getElementById('nrot-7').scrollIntoView({behavior:'smooth'})" style="background:#c0392b;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🚨 Red Flags</button>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:20px;">
+        <div style="flex:1;min-width:110px;background:#FEE2E2;border-radius:10px;padding:12px;text-align:center;"><div style="font-size:16px;font-weight:800;color:#c0392b;">&gt; 3,5 g/j</div><div style="font-size:11px;color:#555;margin-top:4px;">Protéinurie néphrotique</div></div>
+        <div style="flex:1;min-width:110px;background:#FEF9C3;border-radius:10px;padding:12px;text-align:center;"><div style="font-size:16px;font-weight:800;color:#92400e;">&lt; 30 g/L</div><div style="font-size:11px;color:#555;margin-top:4px;">Albumine (hypoalbuminémie)</div></div>
+        <div style="flex:1;min-width:110px;background:#EEF2FF;border-radius:10px;padding:12px;text-align:center;"><div style="font-size:16px;font-weight:800;color:#1C3F8F;">TILO</div><div style="font-size:11px;color:#555;margin-top:4px;">Thrombose, Infect., Lipides, Œdème</div></div>
+      </div>
       <div class="block def">
-        <div class="block-title"><span class="tag">📌 Définition & Critères diagnostiques — Tétrade (TILO)</span></div>
+        <div class="block-title" id="nrot-1"><span class="tag">📌 Définition & Critères diagnostiques — Tétrade (TILO)</span></div>
         <p class="content-text">Protéinurie <strong>massive &gt; 3 g/24h</strong> (ou UPCR &gt; 3 mg/mg), résultant d'une augmentation importante de la perméabilité glomérulaire à l'albumine — souvent d'installation progressive. Le syndrome néphrotique <strong>complet</strong> associe :</p>
         <div class="stat-row" style="margin-top:10px;">
           <div class="stat-card red"><div class="stat-num">&gt; 3 g/j</div><div class="stat-label">Protéinurie</div></div>
@@ -9459,7 +9486,7 @@ function calculatePHQ9() {
 
       <!-- PHYSIOPATHOLOGIE -->
       <div class="block para" style="border-left-color:var(--blue);">
-        <div class="block-title"><span class="tag">🧬 Physiopathologie brève</span></div>
+        <div class="block-title" id="nrot-2"><span class="tag">🧬 Physiopathologie brève</span></div>
         <p class="content-text">Mécanisme central : <strong>effacement des pédicelles des podocytes</strong> → perte des diaphragmes en fente → ↑ perméabilité de la paroi glomérulaire → fuite massive d'albumine.</p>
         <p class="content-text" style="margin-top:8px;"><strong>Mécanisme de l'œdème — 2 théories :</strong> <em>underfill</em> (↓ pression oncotique → déséquilibre de Starling → transsudation — surtout chez l'<strong>enfant avec LGM</strong>, volume circulant abaissé) vs <em>overfill</em> (volume circulant normal/↑ — l'<strong>adulte</strong> — réabsorption anormalement avide de Na⁺ par le tubule collecteur, comme dans le syndrome néphritique).</p>
         <p class="content-text" style="margin-top:8px;">Sédiment <strong>pathognomonique</strong> : corps gras ovalaires, corps biréfringents en croix de Malte (cholestérol), cylindres graisseux.</p>
@@ -9467,7 +9494,7 @@ function calculatePHQ9() {
 
       <!-- ÉVALUATION INITIALE -->
       <div class="block clin">
-        <div class="block-title"><span class="tag">🩺 Évaluation initiale — Anamnèse & examen physique</span></div>
+        <div class="block-title" id="nrot-3"><span class="tag">🩺 Évaluation initiale — Anamnèse & examen physique</span></div>
         <p class="content-text" style="margin-bottom:8px;"><strong>Anamnèse — surtout rechercher :</strong></p>
         <div class="flag-list">
           <div class="flag-item"><span class="flag-dot ink"></span><span>Installation progressive : urines mousseuses, œdèmes déclives/périorbitaires, ascite, prise de poids rapide, dyspnée</span></div>
@@ -9483,7 +9510,7 @@ function calculatePHQ9() {
       </div>
 
       <div class="block clin">
-        <div class="block-title"><span class="tag">🔬 DDx — Causes primaires & secondaires</span></div>
+        <div class="block-title" id="nrot-4"><span class="tag">🔬 DDx — Causes primaires & secondaires</span></div>
         <div class="accordion">
           <div class="accordion-item open">
             <div class="accordion-header">LGM — Lésions Glomérulaires Minimes
@@ -9522,7 +9549,7 @@ function calculatePHQ9() {
       </div>
 
       <div class="block para">
-        <div class="block-title"><span class="tag">🧪 Complications — Mnémo TILO</span></div>
+        <div class="block-title" id="nrot-5"><span class="tag">🧪 Complications — Mnémo TILO</span></div>
         <table>
           <thead><tr><th>Lettre</th><th>Complication</th><th>Mécanisme</th></tr></thead>
           <tbody>
@@ -9535,7 +9562,7 @@ function calculatePHQ9() {
       </div>
 
       <div class="block rx">
-        <div class="block-title"><span class="tag">💊 Traitement</span></div>
+        <div class="block-title" id="nrot-6"><span class="tag">💊 Traitement</span></div>
         <ul class="content-text" style="padding-left:18px;">
           <li><strong>Étiologique :</strong> Corticostéroïdes (LGM, GSFS primaire) · Rituximab ± cyclosporine (NM) · Traitement maladie systémique</li>
           <li><strong>Non-pharma :</strong> Restriction sodée &lt; 2 g Na/j · Cessation tabagique · IMC optimal</li>
@@ -9546,7 +9573,7 @@ function calculatePHQ9() {
       </div>
 
       <div class="block flag">
-        <div class="block-title"><span class="tag">🚨 RED FLAGS</span></div>
+        <div class="block-title" id="nrot-7"><span class="tag">🚨 RED FLAGS</span></div>
         <div class="flag-list">
           <div class="flag-item"><span class="fi-icon">🩸</span><span>Albumine &lt; 20 g/L → <strong>anticoagulation préventive</strong> (surtout NM)</span></div>
           <div class="flag-item"><span class="fi-icon">🦵</span><span>TVR (douleur flanc + protéinurie NM &gt; 10 g/j) → anticoagulation obligatoire</span></div>
@@ -9904,9 +9931,23 @@ function calculatePHQ9() {
         <div class="section-accent" style="background:var(--yellow)">🦋</div>
         <div class="section-title"><h1>Hypothyroïdie</h1><div class="breadcrumb">Endocrinologie <span class="breadcrumb-sep">·</span> Section 18</div></div>
       </div>
-
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
+        <button onclick="document.getElementById('hypo-1').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📌 Définition/Cibles</button>
+        <button onclick="document.getElementById('hypo-2').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🧬 Physiopath.</button>
+        <button onclick="document.getElementById('hypo-3').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔍 Étiologies</button>
+        <button onclick="document.getElementById('hypo-4').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🩺 Évaluation</button>
+        <button onclick="document.getElementById('hypo-5').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🧪 Paraclinique</button>
+        <button onclick="document.getElementById('hypo-6').scrollIntoView({behavior:'smooth'})" style="background:#7b3fa0;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">❓ Subclinique</button>
+        <button onclick="document.getElementById('hypo-7').scrollIntoView({behavior:'smooth'})" style="background:#0a7a4e;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">💊 LT4 — Lévothyroxine</button>
+        <button onclick="document.getElementById('hypo-8').scrollIntoView({behavior:'smooth'})" style="background:#c0392b;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🚨 Red Flags</button>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:20px;">
+        <div style="flex:1;min-width:100px;background:#FEF9C3;border-radius:10px;padding:12px;text-align:center;"><div style="font-size:16px;font-weight:800;color:#92400e;">TSH &gt; 4,5</div><div style="font-size:11px;color:#555;margin-top:4px;">Seuil hypothyroïdie primaire</div></div>
+        <div style="flex:1;min-width:100px;background:#DCFCE7;border-radius:10px;padding:12px;text-align:center;"><div style="font-size:16px;font-weight:800;color:#0a7a4e;">1,5–2 µg/kg/j</div><div style="font-size:11px;color:#555;margin-top:4px;">Dose LT4 de remplacement</div></div>
+        <div style="flex:1;min-width:100px;background:#EEF2FF;border-radius:10px;padding:12px;text-align:center;"><div style="font-size:16px;font-weight:800;color:#1C3F8F;">6–8 sem</div><div style="font-size:11px;color:#555;margin-top:4px;">Délai avant TSH de contrôle</div></div>
+      </div>
       <div class="block def">
-        <div class="block-title"><span class="tag">📌 Définition & Cibles TSH</span></div>
+        <div class="block-title" id="hypo-1"><span class="tag">📌 Définition & Cibles TSH</span></div>
         <div class="stat-row">
           <div class="stat-card blue"><div class="stat-num">~2 %</div><div class="stat-label">de la population</div></div>
           <div class="stat-card ink"><div class="stat-num">10×</div><div class="stat-label">plus fréquent chez la femme</div></div>
@@ -9923,14 +9964,14 @@ function calculatePHQ9() {
       </div>
 
       <div class="block para" style="border-left-color:var(--blue);">
-        <div class="block-title"><span class="tag">🧬 Physiopathologie brève</span></div>
+        <div class="block-title" id="hypo-2"><span class="tag">🧬 Physiopathologie brève</span></div>
         <p class="content-text">L'<strong>axe hypothalamo-hypophyso-thyroïdien</strong> régule la sécrétion hormonale par rétrocontrôle négatif : l'hypothalamus libère la <strong>TRH</strong>, qui stimule l'hypophyse à sécréter la <strong>TSH</strong>, laquelle stimule la thyroïde à produire <strong>T4 et T3</strong>. Une T4/T3 basse lève l'inhibition sur l'axe → ↑ TRH/TSH ; une T4/T3 élevée la freine → ↓ TSH.</p>
         <p class="content-text" style="margin-top:8px;"><strong>Hypothyroïdie primaire (95 %)</strong> : la glande thyroïde elle-même est défaillante (le plus souvent destruction auto-immune progressive du parenchyme par les <strong>Ac anti-TPO</strong> dans Hashimoto) → ↓ T4/T3 → perte du rétrocontrôle → <strong>TSH compensatoire ↑↑</strong> (marqueur le plus sensible). <strong>Hypothyroïdie centrale</strong> : le défaut siège à l'hypophyse ou l'hypothalamus → la TSH ne reflète plus l'état thyroïdien réel et reste <strong>normale ou basse malgré une T4L abaissée</strong> — d'où l'inutilité de la TSH pour le diagnostic et le suivi de cette forme.</p>
         <p class="content-text" style="margin-top:8px;"><strong>Effet Wolff-Chaikoff</strong> (mécanisme de l'hypothyroïdie à l'amiodarone) : une surcharge iodée bloque transitoirement l'organification de l'iode (inhibition de la TPO) et régule à la baisse le symporteur NIS ; l'échappement normal survient en quelques jours, mais un <strong>défaut d'échappement</strong> — souvent sur Hashimoto sous-jacent — entraîne une hypothyroïdie persistante.</p>
       </div>
 
       <div class="block clin">
-        <div class="block-title"><span class="tag">🔍 Étiologies & Clinique</span></div>
+        <div class="block-title" id="hypo-3"><span class="tag">🔍 Étiologies & Clinique</span></div>
         <div class="accordion">
           <div class="accordion-item open">
             <div class="accordion-header">Primaire (TSH ↑) — 95 % des cas
@@ -9948,7 +9989,7 @@ function calculatePHQ9() {
       </div>
 
       <div class="block clin">
-        <div class="block-title"><span class="tag">🩺 Évaluation initiale — Anamnèse & examen physique</span></div>
+        <div class="block-title" id="hypo-4"><span class="tag">🩺 Évaluation initiale — Anamnèse & examen physique</span></div>
         <p class="content-text" style="margin-bottom:8px;"><strong>Anamnèse — surtout rechercher :</strong></p>
         <div class="flag-list">
           <div class="flag-item"><span class="flag-dot ink"></span><span>Symptômes généraux : fatigue (95 %), frilosité, peau sèche, constipation, gain pondéral, ↓ concentration, crampes musculaires, ralentissement psychomoteur</span></div>
@@ -9967,13 +10008,13 @@ function calculatePHQ9() {
       </div>
 
       <div class="block para">
-        <div class="block-title"><span class="tag">🧪 Paraclinique</span></div>
+        <div class="block-title" id="hypo-5"><span class="tag">🧪 Paraclinique</span></div>
         <div class="criteria-list">
           <div class="criteria-item"><div class="criteria-num blue">1</div><span><strong>TSH — 1re intention</strong> (bonne concordance avec T4L)</span></div>
           <div class="criteria-item"><div class="criteria-num blue">2</div><span>T4 libre — si TSH ↑ pour confirmer hypothyroïdie franche</span></div>
           <div class="criteria-item"><div class="criteria-num yellow">3</div><span>T3L — <strong>non recommandée</strong> (peu spécifique)</span></div>
         </div>
-        <div class="block-title" style="margin-top:12px;"><span class="tag">Hypothyroïdie Subclinique — Qui traiter ?</span></div>
+        <div class="block-title" style="margin-top:12px;" id="hypo-6"><span class="tag">Hypothyroïdie Subclinique — Qui traiter ?</span></div>
         <div class="highlight cream" style="margin-bottom:8px;font-size:13px;">Définition : TSH entre LSN et 10 mU/L + T4L <strong>normale</strong> · Confirmer à 2–3 mois · Prévalence 4–15 %</div>
         <table>
           <thead><tr><th>TSH</th><th>Âge</th><th>Décision</th></tr></thead>
@@ -9988,7 +10029,7 @@ function calculatePHQ9() {
       </div>
 
       <div class="block rx">
-        <div class="block-title"><span class="tag">💊 Lévothyroxine (LT4 / Synthroid)</span></div>
+        <div class="block-title" id="hypo-7"><span class="tag">💊 Lévothyroxine (LT4 / Synthroid)</span></div>
         <div class="accordion">
           <div class="accordion-item open">
             <div class="accordion-header">Posologie selon profil
@@ -10016,7 +10057,7 @@ function calculatePHQ9() {
       </div>
 
       <div class="block flag">
-        <div class="block-title"><span class="tag">🚨 RED FLAGS</span></div>
+        <div class="block-title" id="hypo-8"><span class="tag">🚨 RED FLAGS</span></div>
         <div class="flag-list">
           <div class="flag-item"><span class="fi-icon">💀</span><span><strong>Coma myxœdémateux</strong> → urgence : T4 IV + T3 IV + glucocorticoïdes + SI · Clinique : AÉM + hypothermie + bradycardie + hypotension + œdème généralisé</span></div>
           <div class="flag-item"><span class="fi-icon">💊</span><span>Amiodarone → hypothyroïdie par défaut d'échappement Wolff-Chaikoff (blocage TPO sur surcharge iodée — souvent sur Hashimoto sous-jacent)</span></div>
@@ -10030,9 +10071,21 @@ function calculatePHQ9() {
         <div class="section-accent" style="background:var(--yellow)">🦋</div>
         <div class="section-title"><h1>Hyperthyroïdie</h1><div class="breadcrumb">Endocrinologie <span class="breadcrumb-sep">·</span> Section 19</div></div>
       </div>
-
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
+        <button onclick="document.getElementById('hpert-1').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📌 Étiologies</button>
+        <button onclick="document.getElementById('hpert-2').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🧬 Physiopath.</button>
+        <button onclick="document.getElementById('hpert-3').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🩺 Évaluation</button>
+        <button onclick="document.getElementById('hpert-4').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🧪 Algorithme Dx</button>
+        <button onclick="document.getElementById('hpert-5').scrollIntoView({behavior:'smooth'})" style="background:#0a7a4e;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">💊 Traitement</button>
+        <button onclick="document.getElementById('hpert-6').scrollIntoView({behavior:'smooth'})" style="background:#c0392b;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🚨 Red Flags</button>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:20px;">
+        <div style="flex:1;min-width:100px;background:#FEE2E2;border-radius:10px;padding:12px;text-align:center;"><div style="font-size:16px;font-weight:800;color:#c0392b;">TSH &lt; 0,4</div><div style="font-size:11px;color:#555;margin-top:4px;">Seuil hyperthyroïdie</div></div>
+        <div style="flex:1;min-width:100px;background:#FEF9C3;border-radius:10px;padding:12px;text-align:center;"><div style="font-size:16px;font-weight:800;color:#92400e;">Graves</div><div style="font-size:11px;color:#555;margin-top:4px;">Cause #1 (autoimmune)</div></div>
+        <div style="flex:1;min-width:100px;background:#EEF2FF;border-radius:10px;padding:12px;text-align:center;"><div style="font-size:16px;font-weight:800;color:#1C3F8F;">MMI/PTU</div><div style="font-size:11px;color:#555;margin-top:4px;">Anti-thyroïdiens 1re ligne</div></div>
+      </div>
       <div class="block def">
-        <div class="block-title"><span class="tag">📌 Étiologies</span></div>
+        <div class="block-title" id="hpert-1"><span class="tag">📌 Étiologies</span></div>
         <table>
           <thead><tr><th>Étiologie</th><th>Caractéristiques</th></tr></thead>
           <tbody>
@@ -10046,13 +10099,13 @@ function calculatePHQ9() {
       </div>
 
       <div class="block para" style="border-left-color:var(--blue);">
-        <div class="block-title"><span class="tag">🧬 Physiopathologie brève</span></div>
+        <div class="block-title" id="hpert-2"><span class="tag">🧬 Physiopathologie brève</span></div>
         <p class="content-text">Toutes les causes d'hyperthyroïdie convergent vers un excès d'hormones thyroïdiennes circulantes, mais par des mécanismes distincts. <strong>Graves-Basedow</strong> : maladie auto-immune où des <strong>anticorps anti-récepteurs de la TSH (TRAb)</strong> stimulent en continu le récepteur thyroïdien, indépendamment de la régulation normale de l'axe → production excessive et soutenue de T4/T3 → suppression de la TSH par rétrocontrôle. <strong>GMN toxique / nodule toxique</strong> : autonomie thyroïdienne acquise (mutations du récepteur TSH ou de la protéine Gs) → des zones de la glande sécrètent indépendamment du contrôle hypophysaire.</p>
         <p class="content-text" style="margin-top:8px;"><strong>Thyroïdite</strong> : un processus inflammatoire détruit les follicules thyroïdiens et libère dans la circulation l'hormone <strong>déjà préformée et stockée</strong> (et non une synthèse accrue) → phase hyperthyroïdienne transitoire, souvent suivie d'une phase hypothyroïdienne lorsque les réserves s'épuisent. <strong>Phénomène Jod-Basedow</strong> (mécanisme inverse du Wolff-Chaikoff) : un apport iodé massif fournit le substrat à une thyroïde déjà autonome ou pathologique (Graves, GMN, Hashimoto latent) → flambée de synthèse hormonale, généralement 3–10 semaines après l'exposition.</p>
       </div>
 
       <div class="block clin">
-        <div class="block-title"><span class="tag">🩺 Évaluation initiale — Anamnèse & examen physique</span></div>
+        <div class="block-title" id="hpert-3"><span class="tag">🩺 Évaluation initiale — Anamnèse & examen physique</span></div>
         <p class="content-text" style="margin-bottom:8px;"><strong>Anamnèse — surtout rechercher :</strong></p>
         <div class="flag-list">
           <div class="flag-item"><span class="flag-dot ink"></span><span>Symptômes adrénergiques : palpitations, tremblements, nervosité, irritabilité/labilité affective, diaphorèse, intolérance à la chaleur</span></div>
@@ -10071,7 +10124,7 @@ function calculatePHQ9() {
       </div>
 
       <div class="block para">
-        <div class="block-title"><span class="tag">🧪 Algorithme diagnostique</span></div>
+        <div class="block-title" id="hpert-4"><span class="tag">🧪 Algorithme diagnostique</span></div>
         <div class="criteria-list">
           <div class="criteria-item"><div class="criteria-num blue">1</div><span>TSH : si basse → hyperthyroïdie confirmée → évaluer gravité + étiologie</span></div>
           <div class="criteria-item"><div class="criteria-num blue">2</div><span>T4L + T3L (gravité) + TRAb (si suspicion Graves)</span></div>
@@ -10089,7 +10142,7 @@ function calculatePHQ9() {
       </div>
 
       <div class="block rx">
-        <div class="block-title"><span class="tag">💊 Traitement</span></div>
+        <div class="block-title" id="hpert-5"><span class="tag">💊 Traitement</span></div>
         <div class="accordion">
           <div class="accordion-item open">
             <div class="accordion-header">Bêtabloqueurs — Contrôle symptomatique rapide
@@ -10132,7 +10185,7 @@ function calculatePHQ9() {
       </div>
 
       <div class="block flag">
-        <div class="block-title"><span class="tag">🚨 RED FLAGS</span></div>
+        <div class="block-title" id="hpert-6"><span class="tag">🚨 RED FLAGS</span></div>
         <div class="flag-list">
           <div class="flag-item"><span class="fi-icon">⚠️</span><span>Fièvre ou pharyngite sous ATD → <strong>ARRÊT IMMÉDIAT + FSC urgent</strong> (agranulocytose ~1 % · éruptions cutanées 25 %)</span></div>
           <div class="flag-item"><span class="fi-icon">🤰</span><span>Grossesse T1 : PTU préféré · T2–T3 : switch MTZ · Objectif : mère en légère hyperT4 (éviter hypothyroïdie fœtale) · TFT q4–6 sem</span></div>
@@ -10146,9 +10199,24 @@ function calculatePHQ9() {
         <div class="section-accent" style="background:var(--yellow)">🦋</div>
         <div class="section-title"><h1>Nodule Thyroïdien</h1><div class="breadcrumb">Endocrinologie <span class="breadcrumb-sep">·</span> Section 20</div></div>
       </div>
-
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
+        <button onclick="document.getElementById('nt-1').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📌 Définition</button>
+        <button onclick="document.getElementById('nt-2').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🧬 Physiopath.</button>
+        <button onclick="document.getElementById('nt-3').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🩺 Évaluation</button>
+        <button onclick="document.getElementById('nt-4').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🧪 Algorithme Dx</button>
+        <button onclick="document.getElementById('nt-5').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📊 ACR-TIRADS</button>
+        <button onclick="document.getElementById('nt-6').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔬 Bethesda</button>
+        <button onclick="document.getElementById('nt-7').scrollIntoView({behavior:'smooth'})" style="background:#c0392b;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔍 Cancers thyroïdiens</button>
+        <button onclick="document.getElementById('nt-8').scrollIntoView({behavior:'smooth'})" style="background:#0a7a4e;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">💊 Traitement</button>
+        <button onclick="document.getElementById('nt-9').scrollIntoView({behavior:'smooth'})" style="background:#c0392b;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🚨 Red Flags</button>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:20px;">
+        <div style="flex:1;min-width:100px;background:#FEF9C3;border-radius:10px;padding:12px;text-align:center;"><div style="font-size:18px;font-weight:800;color:#92400e;">50 %</div><div style="font-size:11px;color:#555;margin-top:4px;">Prévalence adultes &gt;50 ans</div></div>
+        <div style="flex:1;min-width:100px;background:#FEE2E2;border-radius:10px;padding:12px;text-align:center;"><div style="font-size:18px;font-weight:800;color:#c0392b;">5–15 %</div><div style="font-size:11px;color:#555;margin-top:4px;">Risque de malignité</div></div>
+        <div style="flex:1;min-width:100px;background:#DCFCE7;border-radius:10px;padding:12px;text-align:center;"><div style="font-size:18px;font-weight:800;color:#0a7a4e;">&gt; 1 cm</div><div style="font-size:11px;color:#555;margin-top:4px;">Seuil investigation échographie</div></div>
+      </div>
       <div class="block def">
-        <div class="block-title"><span class="tag">📌 Définition & Prévalence</span></div>
+        <div class="block-title" id="nt-1"><span class="tag">📌 Définition & Prévalence</span></div>
         <div class="stat-row">
           <div class="stat-card blue"><div class="stat-num">4–7 %</div><div class="stat-label">nodules palpables sont malins</div></div>
           <div class="stat-card ink"><div class="stat-num">50–67 %</div><div class="stat-label">découverts à l'imagerie (incidentalome)</div></div>
@@ -10158,13 +10226,13 @@ function calculatePHQ9() {
       </div>
 
       <div class="block para" style="border-left-color:var(--blue);">
-        <div class="block-title"><span class="tag">🧬 Physiopathologie brève</span></div>
+        <div class="block-title" id="nt-2"><span class="tag">🧬 Physiopathologie brève</span></div>
         <p class="content-text">Un nodule thyroïdien résulte d'une <strong>prolifération focale de cellules thyroïdiennes</strong> — le plus souvent clonale et bénigne (adénome folliculaire, kyste, hyperplasie nodulaire dans un goitre multinodulaire), parfois néoplasique. La grande majorité sont des <strong>incidentalomes</strong> découverts fortuitement à l'imagerie, sans conséquence fonctionnelle — d'où l'importance de stratifier le risque de malignité (TIRADS → FNAB) plutôt que d'investiguer systématiquement chaque nodule.</p>
         <p class="content-text" style="margin-top:8px;">La <strong>transformation maligne</strong> est portée par des mutations oncogéniques spécifiques selon le type histologique : <strong>BRAF V600E</strong> (papillaire, ~60 %), <strong>RAS</strong> (folliculaire), et <strong>RET</strong> (médullaire — prolifération des cellules C parafolliculaires → hypersécrétion de <strong>calcitonine</strong>, associée au syndrome NEM2).</p>
       </div>
 
       <div class="block clin">
-        <div class="block-title"><span class="tag">🩺 Évaluation initiale — Anamnèse & examen physique</span></div>
+        <div class="block-title" id="nt-3"><span class="tag">🩺 Évaluation initiale — Anamnèse & examen physique</span></div>
         <p class="content-text" style="margin-bottom:8px;"><strong>Anamnèse — surtout rechercher :</strong></p>
         <div class="flag-list">
           <div class="flag-item"><span class="flag-dot ink"></span><span>Circonstances de découverte : fortuite (imagerie) vs masse palpée par le patient · vitesse de croissance perçue</span></div>
@@ -10181,14 +10249,14 @@ function calculatePHQ9() {
       </div>
 
       <div class="block para">
-        <div class="block-title"><span class="tag">🧪 Algorithme diagnostique</span></div>
+        <div class="block-title" id="nt-4"><span class="tag">🧪 Algorithme diagnostique</span></div>
         <div class="criteria-list">
           <div class="criteria-item"><div class="criteria-num blue">1</div><span><strong>TSH</strong> — 1er test : si ↓ → scintigraphie (nodule chaud/froid) · Si N ou ↑ → Écho Doppler thyroïdienne</span></div>
           <div class="criteria-item"><div class="criteria-num blue">2</div><span><strong>Échographie + score TIRADS</strong> — stratification du risque</span></div>
           <div class="criteria-item"><div class="criteria-num blue">3</div><span><strong>Cytologie (FNAB)</strong> — si TIRADS 4–5 ou taille critique atteinte</span></div>
         </div>
 
-        <div class="block-title" style="margin-top:14px;"><span class="tag">ACR-TIRADS (2017) — Score de risque échographique</span></div>
+        <div class="block-title" style="margin-top:14px;" id="nt-5"><span class="tag">ACR-TIRADS (2017) — Score de risque échographique</span></div>
         <table>
           <thead><tr><th>TIRADS</th><th>Risque malignité</th><th>Seuil biopsie FNAB</th><th>Suivi si pas de biopsie</th></tr></thead>
           <tbody>
@@ -10201,7 +10269,7 @@ function calculatePHQ9() {
         </table>
         <div class="highlight yellow" style="margin-top:8px;font-size:13px;"><strong>Critères échographiques de suspicion :</strong> Hypo-échogène · Contours irréguliers · Microcalcifications · Plus haut que large · Extension extrathyroïdienne · Adénopathie cervicale</div>
 
-        <div class="block-title" style="margin-top:14px;"><span class="tag">Classification de Bethesda (cytologie FNAB)</span></div>
+        <div class="block-title" style="margin-top:14px;" id="nt-6"><span class="tag">Classification de Bethesda (cytologie FNAB)</span></div>
         <table>
           <thead><tr><th>Bethesda</th><th>Catégorie</th><th>Risque malignité</th><th>Action</th></tr></thead>
           <tbody>
@@ -10216,7 +10284,7 @@ function calculatePHQ9() {
       </div>
 
       <div class="block clin">
-        <div class="block-title"><span class="tag">🔍 Types de cancers thyroïdiens</span></div>
+        <div class="block-title" id="nt-7"><span class="tag">🔍 Types de cancers thyroïdiens</span></div>
         <table>
           <thead><tr><th>Type</th><th>% des K</th><th>Prognose</th><th>Particularité</th></tr></thead>
           <tbody>
@@ -10229,7 +10297,7 @@ function calculatePHQ9() {
       </div>
 
       <div class="block rx">
-        <div class="block-title"><span class="tag">💊 Traitement</span></div>
+        <div class="block-title" id="nt-8"><span class="tag">💊 Traitement</span></div>
         <div class="accordion">
           <div class="accordion-item open">
             <div class="accordion-header">Bénin (Bethesda II)
@@ -10253,7 +10321,7 @@ function calculatePHQ9() {
       </div>
 
       <div class="block flag">
-        <div class="block-title"><span class="tag">🚨 RED FLAGS</span></div>
+        <div class="block-title" id="nt-9"><span class="tag">🚨 RED FLAGS</span></div>
         <div class="flag-list">
           <div class="flag-item"><span class="fi-icon">🚨</span><span>Nodule + dysphonie/dysphagie + fixité → suspicion envahissement structures → chirurgie urgente</span></div>
           <div class="flag-item"><span class="fi-icon">📋</span><span>Cancer médullaire → calcitonine ↑ → éliminer NEM2 (phéochromocytome/hyperparathyroïdie) → dépistage familial RET</span></div>
@@ -10266,9 +10334,21 @@ function calculatePHQ9() {
         <div class="section-accent" style="background:var(--yellow)">🦋</div>
         <div class="section-title"><h1>Insuffisance Surrénalienne</h1><div class="breadcrumb">Endocrinologie <span class="breadcrumb-sep">·</span> Section 21</div></div>
       </div>
-
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
+        <button onclick="document.getElementById('surr-1').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📌 Classification</button>
+        <button onclick="document.getElementById('surr-2').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🧬 Physiopath.</button>
+        <button onclick="document.getElementById('surr-3').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🩺 Évaluation</button>
+        <button onclick="document.getElementById('surr-4').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🧪 Paraclinique</button>
+        <button onclick="document.getElementById('surr-5').scrollIntoView({behavior:'smooth'})" style="background:#0a7a4e;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">💊 Traitement</button>
+        <button onclick="document.getElementById('surr-6').scrollIntoView({behavior:'smooth'})" style="background:#c0392b;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🚨 Red Flags</button>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:20px;">
+        <div style="flex:1;min-width:100px;background:#FEE2E2;border-radius:10px;padding:12px;text-align:center;"><div style="font-size:16px;font-weight:800;color:#c0392b;">Cortisol &lt;138</div><div style="font-size:11px;color:#555;margin-top:4px;">Critère IS (nmol/L, 8h AM)</div></div>
+        <div style="flex:1;min-width:100px;background:#FEF9C3;border-radius:10px;padding:12px;text-align:center;"><div style="font-size:16px;font-weight:800;color:#92400e;">Addison</div><div style="font-size:11px;color:#555;margin-top:4px;">IS primaire — auto-immune #1</div></div>
+        <div style="flex:1;min-width:100px;background:#DCFCE7;border-radius:10px;padding:12px;text-align:center;"><div style="font-size:16px;font-weight:800;color:#0a7a4e;">Hydrocortisone</div><div style="font-size:11px;color:#555;margin-top:4px;">Remplacement 15–25 mg/j</div></div>
+      </div>
       <div class="block def">
-        <div class="block-title"><span class="tag">📌 Classification</span></div>
+        <div class="block-title" id="surr-1"><span class="tag">📌 Classification</span></div>
         <div class="accordion">
           <div class="accordion-item open">
             <div class="accordion-header">Primaire — Maladie d'Addison
@@ -10295,13 +10375,13 @@ function calculatePHQ9() {
       </div>
 
       <div class="block para" style="border-left-color:var(--blue);">
-        <div class="block-title"><span class="tag">🧬 Physiopathologie brève</span></div>
+        <div class="block-title" id="surr-2"><span class="tag">🧬 Physiopathologie brève</span></div>
         <p class="content-text">L'<strong>axe hypothalamo-hypophyso-surrénalien</strong> régule la production de cortisol : l'hypothalamus sécrète la CRH, qui stimule l'hypophyse à produire l'<strong>ACTH</strong>, laquelle stimule le cortex surrénalien à sécréter le <strong>cortisol</strong> (et indirectement soutient la production d'aldostérone). Un cortisol bas lève le rétrocontrôle négatif → ACTH compensatoire ↑↑.</p>
         <p class="content-text" style="margin-top:8px;"><strong>Insuffisance primaire (Addison)</strong> : destruction bilatérale du cortex surrénalien (le plus souvent auto-immune) → ↓ <strong>cortisol ET aldostérone</strong> → ACTH ↑↑ compensatoire ; comme l'ACTH provient du clivage de la POMC qui produit aussi la MSH, son excès cause l'<strong>hyperpigmentation cutanéomuqueuse</strong> caractéristique. <strong>Insuffisance secondaire</strong> : défaut hypophysaire (typiquement suppression de l'axe par une corticothérapie exogène prolongée) → ↓ ACTH → ↓ cortisol seulement, car la sécrétion d'<strong>aldostérone reste préservée</strong> (régulée principalement par le système rénine-angiotensine, indépendant de l'ACTH) — d'où l'absence d'hyperpigmentation et de désordres électrolytiques marqués.</p>
       </div>
 
       <div class="block clin">
-        <div class="block-title"><span class="tag">🩺 Évaluation initiale — Anamnèse & examen physique</span></div>
+        <div class="block-title" id="surr-3"><span class="tag">🩺 Évaluation initiale — Anamnèse & examen physique</span></div>
         <p class="content-text" style="margin-bottom:8px;"><strong>Anamnèse — surtout rechercher :</strong></p>
         <div class="flag-list">
           <div class="flag-item"><span class="flag-dot ink"></span><span>Symptômes chroniques peu spécifiques : fatigue profonde (100 %), faiblesse musculaire, anorexie/perte de poids, N&V, douleurs abdominales, appétence marquée pour le sel</span></div>
@@ -10318,7 +10398,7 @@ function calculatePHQ9() {
       </div>
 
       <div class="block para">
-        <div class="block-title"><span class="tag">🧪 Paraclinique</span></div>
+        <div class="block-title" id="surr-4"><span class="tag">🧪 Paraclinique</span></div>
         <table>
           <thead><tr><th>Test</th><th>Interprétation</th></tr></thead>
           <tbody>
@@ -10331,7 +10411,7 @@ function calculatePHQ9() {
       </div>
 
       <div class="block rx">
-        <div class="block-title"><span class="tag">💊 Traitement</span></div>
+        <div class="block-title" id="surr-5"><span class="tag">💊 Traitement</span></div>
         <div class="accordion">
           <div class="accordion-item open">
             <div class="accordion-header">Traitement chronique
@@ -10371,7 +10451,7 @@ function calculatePHQ9() {
       </div>
 
       <div class="block flag">
-        <div class="block-title"><span class="tag">🚨 RED FLAGS</span></div>
+        <div class="block-title" id="surr-6"><span class="tag">🚨 RED FLAGS</span></div>
         <div class="flag-list">
           <div class="flag-item"><span class="fi-icon">🚨</span><span>Crise addisonienne → <strong>Hydrocortisone IV STAT avant les résultats</strong></span></div>
           <div class="flag-item"><span class="fi-icon">💉</span><span>Sepsis + vasopresseurs inefficaces → insuffisance surrénalienne relative → Hydrocortisone 200 mg/24h IV</span></div>
@@ -10631,9 +10711,28 @@ function calculatePHQ9() {
         <div class="section-accent" style="background:var(--yellow)">🦋</div>
         <div class="section-title"><h1>Diabète & Hypoglycémiants</h1><div class="breadcrumb">Endocrinologie <span class="breadcrumb-sep">·</span> Section 24</div></div>
       </div>
-
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
+        <button onclick="document.getElementById('diab-1').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📌 Critères Dx</button>
+        <button onclick="document.getElementById('diab-2').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🧬 Physiopath.</button>
+        <button onclick="document.getElementById('diab-3').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🩺 Évaluation</button>
+        <button onclick="document.getElementById('diab-4').scrollIntoView({behavior:'smooth'})" style="background:#0a7a4e;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">💊 Algorithme DT2</button>
+        <button onclick="document.getElementById('diab-5').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📅 Surveillance</button>
+        <button onclick="document.getElementById('diab-6').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">💊 Classes hypoglycémiants</button>
+        <button onclick="document.getElementById('diab-7').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🧪 Insulines</button>
+        <button onclick="document.getElementById('diab-8').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">💉 Insulines basales</button>
+        <button onclick="document.getElementById('diab-9').scrollIntoView({behavior:'smooth'})" style="background:#7b3fa0;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">💊 iDPP4</button>
+        <button onclick="document.getElementById('diab-10').scrollIntoView({behavior:'smooth'})" style="background:#7b3fa0;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">💊 AR-GLP1</button>
+        <button onclick="document.getElementById('diab-11').scrollIntoView({behavior:'smooth'})" style="background:#c0392b;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔴 DT1 & LADA</button>
+        <button onclick="document.getElementById('diab-12').scrollIntoView({behavior:'smooth'})" style="background:#c0392b;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🚨 Urgences métabo.</button>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:20px;">
+        <div style="flex:1;min-width:100px;background:#FEE2E2;border-radius:10px;padding:12px;text-align:center;"><div style="font-size:16px;font-weight:800;color:#c0392b;">HbA1c ≥ 6,5 %</div><div style="font-size:11px;color:#555;margin-top:4px;">Critère diagnostique DT2</div></div>
+        <div style="flex:1;min-width:100px;background:#FEF9C3;border-radius:10px;padding:12px;text-align:center;"><div style="font-size:16px;font-weight:800;color:#92400e;">Glycémie ≥ 11,1</div><div style="font-size:11px;color:#555;margin-top:4px;">Au hasard (mmol/L) + sx</div></div>
+        <div style="flex:1;min-width:100px;background:#DCFCE7;border-radius:10px;padding:12px;text-align:center;"><div style="font-size:16px;font-weight:800;color:#0a7a4e;">Metformine</div><div style="font-size:11px;color:#555;margin-top:4px;">1re ligne DT2 (si tolérée)</div></div>
+        <div style="flex:1;min-width:100px;background:#EEF2FF;border-radius:10px;padding:12px;text-align:center;"><div style="font-size:16px;font-weight:800;color:#1C3F8F;">&lt; 7 %</div><div style="font-size:11px;color:#555;margin-top:4px;">Cible HbA1c standard</div></div>
+      </div>
       <div class="block def">
-        <div class="block-title"><span class="tag">📌 Critères diagnostiques — CDA 2018 (confirmer ×2 si asymptomatique)</span></div>
+        <div class="block-title" id="diab-1"><span class="tag">📌 Critères diagnostiques — CDA 2018 (confirmer ×2 si asymptomatique)</span></div>
         <table>
           <thead><tr><th>Test</th><th>Diabète</th><th>Prédiabète</th></tr></thead>
           <tbody>
@@ -10652,14 +10751,14 @@ function calculatePHQ9() {
       </div>
 
       <div class="block para" style="border-left-color:var(--blue);">
-        <div class="block-title"><span class="tag">🧬 Physiopathologie brève</span></div>
+        <div class="block-title" id="diab-2"><span class="tag">🧬 Physiopathologie brève</span></div>
         <p class="content-text"><strong>DT1 — destruction auto-immune :</strong> destruction progressive des cellules β pancréatiques (auto-anticorps anti-GAD65, anti-IA2, anti-insuline, anti-ZnT8) → déficit <strong>absolu</strong> en insuline → les tissus insulino-dépendants (muscle, tissu adipeux) ne captent plus le glucose → hyperglycémie chronique et insulinodépendance d'emblée. Pic bimodal (enfance + adolescence) · concordance chez les jumeaux ≈ 50 %.</p>
         <p class="content-text" style="margin-top:8px;"><strong>DT2 — continuum pathogénique :</strong> résistance insulinique (muscle, foie, tissu adipeux) → hyperinsulinémie compensatrice (cellules β en sursollicitation) → décompensation progressive des cellules β (glucotoxicité, lipotoxicité, stress du réticulum endoplasmique, inflammation locale) → hyperglycémie chronique → prédiabète → DT2 clinique, avec déficit <strong>relatif</strong> en insuline. Phase pré-diagnostique de <strong>4–7 ans</strong> en moyenne — environ <strong>⅓ des diabétiques</strong> sont non diagnostiqués et jusqu'à <strong>50 %</strong> présentent déjà des complications au moment du diagnostic.</p>
         <p class="content-text" style="margin-top:8px;"><strong>Mécanisme des symptômes cardinaux :</strong> polyurie (glycosurie au-delà du seuil rénal ≈ 10 mmol/L → diurèse osmotique), polydipsie (déshydratation + ↑ osmolalité plasmatique → activation du centre de la soif), polyphagie (cellules en « famine » malgré l'hyperglycémie — glucose non capté) et perte de poids (catabolisme des graisses et des protéines).</p>
       </div>
 
       <div class="block clin">
-        <div class="block-title"><span class="tag">🩺 Évaluation initiale — Anamnèse & examen physique</span></div>
+        <div class="block-title" id="diab-3"><span class="tag">🩺 Évaluation initiale — Anamnèse & examen physique</span></div>
         <p class="content-text" style="margin-bottom:8px;"><strong>Anamnèse — surtout rechercher :</strong></p>
         <div class="flag-list">
           <div class="flag-item"><span class="flag-dot ink"></span><span>Symptômes cardinaux : polyurie, polydipsie, polyphagie, perte de poids, fatigue, vision floue — <strong>DT1</strong> : début brutal (acidocétose inaugurale possible) · <strong>DT2</strong> : insidieux, souvent découvert par une complication</span></div>
@@ -10676,7 +10775,7 @@ function calculatePHQ9() {
       </div>
 
       <div class="block rx">
-        <div class="block-title"><span class="tag">💊 Algorithme DT2 — CDA 2020 (centré sur comorbidités)</span></div>
+        <div class="block-title" id="diab-4"><span class="tag">💊 Algorithme DT2 — CDA 2020 (centré sur comorbidités)</span></div>
         <div class="key-fact blue" style="margin-bottom:8px;">Traiter les comorbidités EN PRIORITÉ — pas juste l'HbA1c</div>
         <div class="accordion">
           <div class="accordion-item open">
@@ -10738,7 +10837,7 @@ function calculatePHQ9() {
       </div>
 
       <div class="block clin">
-        <div class="block-title"><span class="tag">📅 Dépistage & Surveillance des complications — Calendrier IPS</span></div>
+        <div class="block-title" id="diab-5"><span class="tag">📅 Dépistage & Surveillance des complications — Calendrier IPS</span></div>
         <table>
           <thead><tr><th>Examen / Test</th><th>Fréquence</th><th>Cible / Action si anormal</th></tr></thead>
           <tbody>
@@ -10759,7 +10858,7 @@ function calculatePHQ9() {
       </div>
 
       <div class="block para">
-        <div class="block-title"><span class="tag">💊 Classes d'hypoglycémiants — Mécanismes, EI & Surveillance</span></div>
+        <div class="block-title" id="diab-6"><span class="tag">💊 Classes d'hypoglycémiants — Mécanismes, EI & Surveillance</span></div>
         <table style="font-size:12.5px;">
           <thead><tr><th>Classe</th><th>Mécanisme</th><th>↓ HbA1c</th><th>EI clés</th><th>Surveillance / CI</th></tr></thead>
           <tbody>
@@ -10775,7 +10874,7 @@ function calculatePHQ9() {
       </div>
 
       <div class="block para">
-        <div class="block-title"><span class="tag">🧪 Insulines — Tableau des types</span></div>
+        <div class="block-title" id="diab-7"><span class="tag">🧪 Insulines — Tableau des types</span></div>
         <table>
           <thead><tr><th>Type</th><th>Début</th><th>Pic</th><th>Durée</th><th>Exemples</th></tr></thead>
           <tbody>
@@ -10789,7 +10888,7 @@ function calculatePHQ9() {
       </div>
 
       <div class="block para">
-        <div class="block-title"><span class="tag">💉 Insulines basales — Détail RAMQ & Propriétés</span></div>
+        <div class="block-title" id="diab-8"><span class="tag">💉 Insulines basales — Détail RAMQ & Propriétés</span></div>
         <table style="font-size:12.5px;">
           <thead><tr><th>Insuline (Marque)</th><th>Début</th><th>Pic</th><th>Durée</th><th>RAMQ</th></tr></thead>
           <tbody>
@@ -10826,7 +10925,7 @@ function calculatePHQ9() {
       </div>
 
       <div class="block para">
-        <div class="block-title"><span class="tag">💊 iDPP4 — Comparaison pharmacologique</span></div>
+        <div class="block-title" id="diab-9"><span class="tag">💊 iDPP4 — Comparaison pharmacologique</span></div>
         <table style="font-size:12px;">
           <thead><tr><th>Caractéristique</th><th>Alogliptine (Nesina®)</th><th>Linagliptine (Trajenta®)</th><th>Saxagliptine (Onglyza®)</th><th>Sitagliptine (Januvia®)</th></tr></thead>
           <tbody>
@@ -10841,7 +10940,7 @@ function calculatePHQ9() {
       </div>
 
       <div class="block para">
-        <div class="block-title"><span class="tag">💊 AR-GLP1 — Comparaison & Seuils rénaux RAMQ</span></div>
+        <div class="block-title" id="diab-10"><span class="tag">💊 AR-GLP1 — Comparaison & Seuils rénaux RAMQ</span></div>
         <table style="font-size:12px;">
           <thead><tr><th>Médicament</th><th>Dose / Fréquence</th><th>Perte poids</th><th>DFGe min.</th><th>RAMQ</th></tr></thead>
           <tbody>
@@ -10856,7 +10955,7 @@ function calculatePHQ9() {
       </div>
 
       <div class="block para" style="border-left-color:var(--red);">
-        <div class="block-title"><span class="tag">🔴 DT1 & LADA — Gestion spécifique</span></div>
+        <div class="block-title" id="diab-11"><span class="tag">🔴 DT1 & LADA — Gestion spécifique</span></div>
         <div class="accordion">
           <div class="accordion-item open">
             <div class="accordion-header">Diagnostic DT1 / LADA
@@ -10896,7 +10995,7 @@ function calculatePHQ9() {
       </div>
 
       <div class="block flag">
-        <div class="block-title"><span class="tag">🚨 Urgences métaboliques</span></div>
+        <div class="block-title" id="diab-12"><span class="tag">🚨 Urgences métaboliques</span></div>
         <div class="accordion">
           <div class="accordion-item open">
             <div class="accordion-header">DKA — Acidocétose Diabétique (surtout DT1)
