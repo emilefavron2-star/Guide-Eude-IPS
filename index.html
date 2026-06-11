@@ -952,8 +952,7 @@
         <svg class="chevron" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
       </div>
       <div class="specialty-items">
-        <div class="nav-item" onclick="showSection('hta-primaire')">1. HTA Primaire</div>
-        <div class="nav-item" onclick="showSection('hta-secondaire')">2. HTA Secondaire</div>
+        <div class="nav-item" onclick="showSection('hta')">1. HTA (Primaire &amp; Secondaire)</div>
         <div class="nav-item" onclick="showSection('dyslipidémie')">3. Dyslipidémie</div>
         <div class="nav-item" onclick="showSection('mcas')">4. MCAS & Angine Stable</div>
         <div class="nav-item" onclick="showSection('sca')">5. SCA</div>
@@ -1210,7 +1209,7 @@
       <div class="home-divider"></div>
 
       <div class="home-grid">
-        <div class="home-card" onclick="showSection('hta-primaire'); openGroup('grp-cardio')">
+        <div class="home-card" onclick="showSection('hta'); openGroup('grp-cardio')">
           <div class="home-card-icon">🫀</div>
           <div class="home-card-body">
             <div class="home-card-name">Cardiologie</div>
@@ -5386,659 +5385,634 @@ function calculatePHQ9() {
     </div>
 
     <!-- ═══ SECTIONS VIDES — CARDIOLOGIE ═══ -->
-    <div class="section" id="sec-hta-primaire">
+    <div class="section" id="sec-hta">
       <div class="section-header">
         <div class="section-accent">🫀</div>
         <div class="section-title">
-          <h1>HTA Primaire</h1>
-          <div class="breadcrumb">Cardiologie <span class="breadcrumb-sep">·</span> Section 1</div>
+          <h1>Hypertension Artérielle (HTA)</h1>
+          <div class="breadcrumb">Cardiologie <span class="breadcrumb-sep">·</span> Guide clinique IPS — Dr. Vallée 2026</div>
         </div>
       </div>
 
-      <!-- DÉFINITION + STATS -->
-      <div class="block def">
-        <div class="block-title"><span class="tag">📌 Définition</span></div>
-        <p class="content-text">TA ≥ 130/80 mmHg <strong>sans cause identifiable</strong>. Facteur de risque majeur de MCAS, IC, AVC, MAP, IRC, FA.</p>
-        <div class="stat-row" style="margin-top:14px;">
-          <div class="stat-card blue">
-            <div class="stat-num">90–95%</div>
-            <div class="stat-label">des HTA sont primaires</div>
-          </div>
-          <div class="stat-card ink">
-            <div class="stat-num">≥130/80</div>
-            <div class="stat-label">seuil diagnostic (mmHg)</div>
-          </div>
-          <div class="stat-card yellow">
-            <div class="stat-num">5–10%</div>
-            <div class="stat-label">causes secondaires identifiables</div>
-          </div>
-        </div>
-        <div class="key-fact black" style="margin-top:12px;">
-          ⚠️ "Tueur silencieux" — souvent <strong>asymptomatique</strong> jusqu'à l'atteinte d'un organe cible
-        </div>
+      <!-- NAV INTERNE -->
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;">
+        <button onclick="document.getElementById('hta-11').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">1.1 Méthodes</button>
+        <button onclick="document.getElementById('hta-12').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">1.2 Concepts</button>
+        <button onclick="document.getElementById('hta-13').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">1.3 Primaire vs Secondaire</button>
+        <button onclick="document.getElementById('hta-14').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">1.4 Réfractaire</button>
+        <button onclick="document.getElementById('hta-15').scrollIntoView({behavior:'smooth'})" style="background:#0a7a4e;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">1.5 Traitement</button>
+        <button onclick="document.getElementById('hta-16').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">1.6 Cibles TA</button>
+        <button onclick="document.getElementById('hta-17').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">1.7 Comorbidités</button>
+        <button onclick="document.getElementById('hta-18').scrollIntoView({behavior:'smooth'})" style="background:#7b3fa0;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">1.8 Cas particuliers</button>
+        <button onclick="document.getElementById('hta-19').scrollIntoView({behavior:'smooth'})" style="background:#c0392b;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">1.9 Rénovasculaire</button>
+        <button onclick="document.getElementById('hta-20').scrollIntoView({behavior:'smooth'})" style="background:#0a7a4e;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">2.0 Suivi IPS</button>
       </div>
 
-      <!-- CRITÈRES DIAGNOSTIQUES -->
-      <div class="block def">
-        <div class="block-title"><span class="tag">🔖 Critères diagnostiques</span></div>
-        <div class="criteria-list">
-          <div class="criteria-item"><span class="criteria-num">1</span><span><strong>Mesure au cabinet</strong> ≥ 140/90 mmHg (moyenne de plusieurs mesures, technique standardisée) — confirmer hors cabinet avant de traiter (sauf TA ≥ 180/110 ou atteinte d'organe cible)</span></div>
-          <div class="criteria-item"><span class="criteria-num">2</span><span><strong>MAPA</strong> (mesure ambulatoire) : moyenne diurne ≥ 135/85 ou moyenne 24 h ≥ 130/80 — méthode de référence</span></div>
-          <div class="criteria-item"><span class="criteria-num">3</span><span><strong>MPAD</strong> (mesure à domicile) : moyenne ≥ 130/80 mmHg sur 5–7 jours (2 mesures matin + 2 soir, en ignorant le 1<sup>er</sup> jour)</span></div>
-          <div class="criteria-item"><span class="criteria-num">4</span><span>Distinguer <strong>HTA blouse blanche</strong> (cabinet ↑, hors cabinet normal — pas de Rx, suivi rapproché) et <strong>HTA masquée</strong> (cabinet normal, hors cabinet ↑ — risque CV similaire à HTA soutenue, à traiter)</span></div>
-          <div class="criteria-item"><span class="criteria-num">5</span><span><strong>Pseudohypertension</strong> (phénomène d'Osler) chez la personne âgée avec artères calcifiées — TA artificiellement élevée au brassard</span></div>
-        </div>
+      <!-- STATS CLÉS -->
+      <div class="stat-row">
+        <div class="stat-card blue"><div class="stat-num">85–90%</div><div class="stat-label">HTA primaire (essentielle)</div></div>
+        <div class="stat-card ink"><div class="stat-num">10–15%</div><div class="stat-label">HTA secondaire (cause identifiable)</div></div>
+        <div class="stat-card yellow"><div class="stat-num">≥130/80</div><div class="stat-label">Seuil diagnostic (mmHg)</div></div>
+        <div class="stat-card red"><div class="stat-num">15–20%</div><div class="stat-label">HTA blouse blanche / masquée</div></div>
+      </div>
+      <div class="key-fact black" style="margin-top:10px;">
+        ⚠️ "Tueur silencieux" — souvent <strong>asymptomatique</strong> jusqu'à l'atteinte d'un organe cible. FDR majeur de MCAS, IC, AVC, MAP, IRC, FA.
       </div>
 
-      <!-- STADES HTA -->
-      <div class="block def">
-        <div class="block-title"><span class="tag">📊 Stades de l'HTA (mesure au cabinet)</span></div>
-        <table style="margin-top:6px;">
-          <thead><tr><th>Catégorie</th><th>TA systolique</th><th></th><th>TA diastolique</th></tr></thead>
-          <tbody>
-            <tr><td>Normale</td><td>&lt; 120</td><td>et</td><td>&lt; 80</td></tr>
-            <tr><td>Préhypertension / TA élevée</td><td>120–139</td><td>et/ou</td><td>80–89</td></tr>
-            <tr><td><strong>HTA stade 1</strong></td><td><strong>140–159</strong></td><td>et/ou</td><td><strong>90–99</strong></td></tr>
-            <tr><td><strong>HTA stade 2</strong></td><td><strong>160–179</strong></td><td>et/ou</td><td><strong>100–109</strong></td></tr>
-            <tr><td><strong>HTA stade 3 (sévère)</strong></td><td><strong>≥ 180</strong></td><td>et/ou</td><td><strong>≥ 110</strong></td></tr>
-            <tr><td>Crise hypertensive (urgency/emergency)</td><td>&gt; 180</td><td>et/ou</td><td>&gt; 120</td></tr>
-          </tbody>
-        </table>
-        <div class="note" style="margin-top:8px;">ℹ️ Valeurs au cabinet (mmHg). Seuil diagnostique global ≥ 140/90 au cabinet ou ≥ 130/80 hors cabinet (MAPA/MPAD) — voir critères diagnostiques ci-dessus. Le stade oriente l'urgence de la prise en charge et le choix initial (mono- vs bithérapie).</div>
-      </div>
+      <!-- 1.1 MÉTHODES VALIDÉES -->
+      <div id="hta-11" class="block def" style="border-left:4px solid #1C3F8F;">
+        <div class="block-title"><span class="tag">1.1 — Méthodes validées de mesure de la TA</span></div>
 
-      <!-- CIBLES TENSIONNELLES -->
-      <div class="block def">
-        <div class="block-title"><span class="tag">🎯 Cibles tensionnelles — Hypertension Canada</span></div>
-        <table style="margin-top:6px;">
-          <thead><tr><th>Population</th><th>Cible TAS</th></tr></thead>
-          <tbody>
-            <tr><td>HTA primaire (population générale)</td><td><strong>&lt; 130 mmHg</strong></td></tr>
-            <tr><td>Diabète</td><td><strong>&lt; 130 mmHg</strong> (envisager &lt; 120 si haut risque CV)</td></tr>
-            <tr><td>Haut risque CV (MCV établie · IRC DFGe &lt; 60 · risque CV 10 ans ≥ 15 % · âge ≥ 75 ans)</td><td><strong>&lt; 120 mmHg</strong></td></tr>
-            <tr><td>Plancher diastolique (tous)</td><td><strong>≥ 60 mmHg</strong> — ne pas surtraiter</td></tr>
-          </tbody>
-        </table>
-        <div class="note" style="margin-top:8px;">ℹ️ La cible &lt; 150 mmHg autrefois proposée chez les ≥ 80 ans n'existe plus. Critères <strong>SPRINT</strong> pour viser &lt; 120 mmHg (patients ≥ 50 ans; étude excluant diabète, AVC et IC sévère) : maladie CV établie · IRC (DFGe &lt; 60) · risque CV à 10 ans ≥ 15 % · âge ≥ 75 ans.</div>
-        <div class="highlight cream" style="margin-top:10px;">
-          <strong>Pourquoi un plancher à 60 mmHg de TA diastolique?</strong> La perfusion coronarienne survient en diastole et l'autorégulation coronarienne semble compromise si TAd &lt; 60 mmHg — particulièrement dangereux chez la personne âgée, le coronarien et en présence d'HVG. La rigidité vasculaire surestime la TAs mesurée mais n'affecte pas la TAd, qui demeure le meilleur reflet de la perfusion réelle.
-        </div>
-        <p class="content-text" style="margin-top:10px;"><strong>Évidence appuyant des cibles plus basses :</strong></p>
-        <div class="flag-list">
-          <div class="flag-item"><span class="flag-dot blue"></span><span><strong>SPRINT</strong> (NEJM 2015) : TAs intensive 121/68 vs standard 136/76 (3 vs 1,8 médicaments en moyenne) → NNT = 61 pour l'issue CV primaire, NNT = 90 pour la mortalité totale</span></div>
-          <div class="flag-item"><span class="flag-dot blue"></span><span><strong>ESPRIT</strong> (Lancet 2024) — 11 255 pts dont 38 % diabétiques : cible &lt; 120 vs &lt; 140 mmHg → <strong>-12 % MACE</strong></span></div>
-          <div class="flag-item"><span class="flag-dot blue"></span><span><strong>BPROAD</strong> (NEJM 2024) — 12 821 diabétiques de type 2 : cible &lt; 120 vs &lt; 140 mmHg → <strong>-21 % MACE</strong></span></div>
-        </div>
-        <div class="key-fact black" style="margin-top:10px;">📌 Bénéfices démontrés du traitement : &lt; 60 ans → -42 % AVC, -15 % événements coronariens · &gt; 60 ans → -25 % mortalité globale, -33 % mortalité CV, -40 % AVC, -15 % coronaropathie. Cohorte de Framingham : un adulte normotendu de 55-65 ans présente 90 % de risque de développer une HTA dans les 20 années suivantes.</div>
-      </div>
+        <p class="content-text"><strong>Technique standardisée au cabinet :</strong> patient assis au repos 5 min, bras au niveau du cœur, brassard adapté, 2 lectures à 1–2 min d'intervalle, moyenne des 2 valeurs.</p>
 
-      <!-- ARBRE DÉCISIONNEL DX -->
-      <div class="block def">
-        <div class="block-title"><span class="tag">🧰 Outil interactif — Aide à la décision : Démarche diagnostique HTA primaire</span></div>
-        <p class="content-text" style="margin-bottom:14px;">Cliquez sur les énoncés correspondant à la situation clinique pour obtenir la conduite à tenir, étape par étape. <em>Outil d'aide à la décision — ne remplace pas le jugement clinique ni les lignes directrices d'Hypertension Canada.</em></p>
-
-        <style>
-          .hta-tool { font-family: var(--font); color: var(--ink); font-size: 14px; }
-          .hta-tool .hta-step { background: var(--cream2); border: 1px solid var(--cream3); padding: 16px 18px; margin-bottom: 14px; border-radius: var(--radius); }
-          .hta-tool h4 { font-size: 13px; text-transform: uppercase; letter-spacing: .04em; margin-bottom: 10px; font-weight: 700; }
-          .hta-tool .hta-hint { font-size: 13px; font-weight: 400; margin-bottom: 10px; }
-          .hta-tool .hta-choice-grid { display: flex; flex-wrap: wrap; gap: 10px; }
-          .hta-tool .hta-choice-card { flex: 1 1 220px; cursor: pointer; background: #fff; border: 2px solid var(--cream3); border-radius: var(--radius); padding: 12px 14px; font-size: 13px; font-weight: 600; line-height: 1.4; transition: border-color .15s, background .15s, transform .1s, color .15s; }
-          .hta-tool .hta-choice-card:hover { border-color: var(--blue); background: var(--blue-lt); transform: translateY(-1px); }
-          .hta-tool .hta-choice-card.selected { border-color: var(--blue); background: var(--blue-lt); color: var(--blue); }
-          .hta-tool .hta-choice-card.selected.red { border-color: var(--red); background: var(--red-lt); color: var(--red); }
-          .hta-tool .hta-choice-card.selected.yellow { border-color: var(--yellow); background: rgba(240,180,41,.15); color: #92400e; }
-          .hta-tool .hta-hidden { display: none; }
-          .hta-tool .hta-result-box { background: var(--blue-lt); border-left: 6px solid var(--blue); padding: 18px; margin-top: 4px; border-radius: var(--radius); }
-          .hta-tool .hta-result-box.red { background: var(--red-lt); border-left-color: var(--red); }
-          .hta-tool .hta-result-box.yellow { background: rgba(240,180,41,.15); border-left-color: var(--yellow); }
-          .hta-tool .hta-result-title { font-weight: 700; text-transform: uppercase; font-size: 11px; letter-spacing: .04em; margin-bottom: 6px; }
-          .hta-tool .hta-result-title.blue { color: var(--blue); }
-          .hta-tool .hta-result-title.red { color: var(--red); }
-          .hta-tool .hta-result-title.yellow { color: #92400e; }
-          .hta-tool .hta-result-text { font-size: 13px; line-height: 1.6; }
-        </style>
-
-        <div class="hta-tool">
-          <div class="hta-step">
-            <h4>① Mesure de la tension artérielle au cabinet</h4>
-            <p class="hta-hint">Quelle est la valeur mesurée au cabinet (technique standardisée, moyenne de ≥ 2 mesures)?</p>
-            <div class="hta-choice-grid">
-              <div class="hta-choice-card" onclick="htaSelect(1,'normal',this)">🟢 &lt; 140/90 mmHg</div>
-              <div class="hta-choice-card" onclick="htaSelect(1,'eleve',this)">🟡 ≥ 140/90 mmHg</div>
-              <div class="hta-choice-card" onclick="htaSelect(1,'urgence',this)">🔴 ≥ 180/110 mmHg + atteinte d'organe cible</div>
-            </div>
-          </div>
-
-          <div id="hta-step2" class="hta-step hta-hidden">
-            <h4>② Confirmation hors cabinet</h4>
-            <p class="hta-hint">Quel est le résultat de la MAPA (référence) ou du MPAD sur 5–7 jours?</p>
-            <div class="hta-choice-grid">
-              <div class="hta-choice-card" onclick="htaSelect(2,'confirme',this)">✅ Hors cabinet ÉLEVÉ (MAPA/MPAD ≥ 130/80)</div>
-              <div class="hta-choice-card" onclick="htaSelect(2,'blouseblanche',this)">⏳ Hors cabinet NORMAL (cabinet élevé)</div>
-              <div class="hta-choice-card" onclick="htaSelect(2,'masquee',this)">🔍 Cabinet normal + suspicion clinique (atteinte d'organe cible inexpliquée)</div>
-            </div>
-          </div>
-
-          <div id="hta-result-box" class="hta-result-box hta-hidden"></div>
+        <div style="overflow-x:auto;margin-top:10px;">
+          <table>
+            <thead>
+              <tr><th>Méthode</th><th>Seuil HTA</th><th>Avantages</th><th>Limites</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Cabinet</strong><br><small>(MPAC)</small></td>
+                <td>≥ 140/90 mmHg<br><small>(confirmer hors cabinet avant traitement sauf ≥180/110 ou atteinte organe cible)</small></td>
+                <td>Accessible, reproductible</td>
+                <td>Effet blouse blanche; moins prédictif qu'hors cabinet</td>
+              </tr>
+              <tr style="background:rgba(10,122,78,0.08);">
+                <td><strong>Domicile</strong><br><small>(MPAD) ⭐ Préférée</small></td>
+                <td>≥ 130/80 mmHg<br><small>(moy. ≥ 5–7 jours)</small></td>
+                <td>Meilleure prédiction CV; élimine l'effet blouse blanche; suivi chronique optimal</td>
+                <td>Calibration de l'appareil requise; technique patiente</td>
+              </tr>
+              <tr>
+                <td><strong>MAPA</strong><br><small>(ambulatoire 24h)</small></td>
+                <td>Moy. diurne ≥ 135/85<br>Moy. 24h ≥ 130/80</td>
+                <td>Méthode de référence; détecte profil dipping; évalue variabilité</td>
+                <td>Coût; disponibilité; inconfort nocturne</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
 
-        <script>
-          var htaState = { 1: null, 2: null };
-          function htaMarkSelected(container, el, colorClass) {
-            var cards = container.querySelectorAll('.hta-choice-card');
-            cards.forEach(function(c){ c.classList.remove('selected','red','yellow'); });
-            el.classList.add('selected');
-            if (colorClass) el.classList.add(colorClass);
-          }
-          function htaShowResult(type, title, html) {
-            var box = document.getElementById('hta-result-box');
-            box.className = 'hta-result-box' + (type ? ' ' + type : '');
-            box.innerHTML = '<div class="hta-result-title' + (type ? ' ' + type : ' blue') + '">🎯 ' + title + '</div><div class="hta-result-text">' + html + '</div>';
-            box.classList.remove('hta-hidden');
-          }
-          function htaSelect(step, value, el) {
-            var step2 = document.getElementById('hta-step2');
-            var resultBox = document.getElementById('hta-result-box');
-
-            if (step === 1) {
-              htaState[1] = value; htaState[2] = null;
-              htaMarkSelected(el.parentElement, el, value === 'urgence' ? 'red' : null);
-              var s2cards = step2.querySelectorAll('.hta-choice-card');
-              s2cards.forEach(function(c){ c.classList.remove('selected','red','yellow'); });
-
-              if (value === 'normal') {
-                step2.classList.add('hta-hidden');
-                htaShowResult('blue', 'Conduite à tenir', 'Tension normale au cabinet → <strong>pas d\'HTA pour l\'instant</strong>. Poursuivre le dépistage selon l\'intervalle habituel (à chaque visite médicale appropriée, ou au moins q3–5 ans si le risque est faible) et renforcer les saines habitudes de vie.');
-              } else if (value === 'urgence') {
-                step2.classList.add('hta-hidden');
-                htaShowResult('red', 'Conduite à tenir — situation urgente', '<strong>Traiter d\'emblée, sans attendre la confirmation hors cabinet.</strong> Rechercher activement une atteinte aiguë d\'organe cible (encéphalopathie hypertensive, IC aiguë/OAP, SCA, dissection aortique, IRA, éclampsie) : si présente → <strong>urgence hypertensive</strong>, orienter vers les soins hospitaliers pour un abaissement contrôlé de la TA. Si absente → amorcer rapidement le traitement pharmacologique et organiser un suivi rapproché.');
-              } else if (value === 'eleve') {
-                resultBox.classList.add('hta-hidden');
-                step2.classList.remove('hta-hidden');
-              }
-              return;
-            }
-
-            if (step === 2) {
-              htaState[2] = value;
-              htaMarkSelected(el.parentElement, el, value === 'blouseblanche' ? 'yellow' : (value === 'masquee' ? 'red' : null));
-
-              if (value === 'confirme') {
-                htaShowResult('blue', 'Conduite à tenir — diagnostic confirmé', '<strong>Diagnostic d\'HTA confirmé.</strong> Déterminer le stade selon la valeur obtenue, amorcer le bilan de base (E+/créatinine/DFGe, glycémie à jeun ou HbA1c, bilan lipidique, analyse d\'urine, ECG) et rechercher des indices de cause secondaire. Discuter des habitudes de vie (Na⁺, alcool, activité physique, poids) et amorcer le traitement pharmacologique selon le stade et le risque cardiovasculaire global.');
-              } else if (value === 'blouseblanche') {
-                htaShowResult('yellow', 'Conduite à tenir — HTA blouse blanche', 'Pas de traitement pharmacologique d\'emblée. <strong>Suivi rapproché</strong> avec mesures hors cabinet répétées — le risque cardiovasculaire à long terme demeure plus élevé qu\'en l\'absence d\'élévation, d\'où l\'importance de continuer à optimiser les habitudes de vie et de réévaluer périodiquement.');
-              } else if (value === 'masquee') {
-                htaShowResult('red', 'Conduite à tenir — HTA masquée probable', 'Envisager une <strong>HTA masquée</strong> : <strong>procéder quand même à une MAPA/MPAD</strong> malgré une mesure normale au cabinet, surtout devant une atteinte d\'organe cible inexpliquée. Si l\'HTA est confirmée hors cabinet, traiter comme une HTA établie (bilan de base + traitement pharmacologique selon le stade et le risque CV).');
-              }
-            }
-          }
-        </script>
-
-        <div class="note" style="margin-top:8px;">ℹ️ Permet aussi de dépister la <strong>pseudohypertension</strong> (phénomène d'Osler) et l'<strong>hypotension orthostatique</strong> chez la personne âgée — toujours mesurer en position assise ET debout dans cette population.</div>
-      </div>
-
-      <!-- PHYSIOPATHOLOGIE -->
-      <div class="block para">
-        <div class="block-title"><span class="tag">🧬 Physiopathologie brève</span></div>
-        <p class="content-text">HTA <strong>primaire/essentielle (90–95 %)</strong> : multifactorielle, sans cause unique identifiable. Profil de rénine variable — environ <strong>1/3 rénine basse</strong> (volume-dépendante), <strong>1/3 normale</strong> et <strong>1/3 élevée</strong> (rénine-dépendante). Mécanismes principaux impliqués :</p>
-        <div class="flag-list" style="margin-top:8px;">
-          <div class="flag-item"><span class="flag-dot blue"></span><span><strong>Rein</strong> — rétention sodée et hydrique (défaut de natriurèse pression-dépendante)</span></div>
-          <div class="flag-item"><span class="flag-dot blue"></span><span><strong>SRAA</strong> (système rénine-angiotensine-aldostérone) — vasoconstriction + rétention Na⁺</span></div>
-          <div class="flag-item"><span class="flag-dot blue"></span><span><strong>Système nerveux sympathique</strong> — hyperactivité, ↑ FC et résistances périphériques</span></div>
-          <div class="flag-item"><span class="flag-dot blue"></span><span><strong>Autres</strong> — dysfonction endothéliale (↓ NO, ↑ endothéline), kinines, hyperuricémie, hypersensibilité à l'aldostérone (HTA réfractaire)</span></div>
+        <div class="key-fact blue" style="margin-top:10px;">
+          📏 <strong>Protocole MPAD :</strong> 2 mesures le matin + 2 mesures le soir, pendant 5–7 jours. Ignorer les mesures du 1er jour. La <em>moyenne des jours 2–7</em> est le chiffre utilisé.
         </div>
-      </div>
 
-      <!-- CLINIQUE -->
-      <div class="block clin">
-        <div class="block-title"><span class="tag">🔍 Manifestations cliniques</span></div>
-        <div class="accordion">
-          <div class="accordion-item open">
-            <div class="accordion-header">
-              HTA sévère <em style="font-weight:400;margin-left:4px;opacity:.7">(urgency)</em>
-              <span class="acc-badge" style="background:var(--yel-lt);color:#92400e;">TA ≥ 180/110</span>
-              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+        <div style="margin-top:12px;">
+          <strong>Stades HTA (Hypertension Canada 2020) :</strong>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px;">
+            <div style="background:#e8f4ff;border:1px solid #b3d4f5;border-radius:8px;padding:10px 14px;min-width:130px;text-align:center;">
+              <div style="font-weight:700;color:#1C3F8F;">Normale</div>
+              <div style="font-size:13px;">TAS &lt; 120<br>TAd &lt; 80</div>
             </div>
-            <div class="accordion-body">
-              Pas d'atteinte d'organe cible. Traitement en <strong>24–48h</strong> (par voie orale). Pas d'urgence hospitalière si asymptomatique.
+            <div style="background:#fff8e1;border:1px solid #ffe082;border-radius:8px;padding:10px 14px;min-width:130px;text-align:center;">
+              <div style="font-weight:700;color:#e67e22;">Élevée</div>
+              <div style="font-size:13px;">TAS 120–129<br>TAd &lt; 80</div>
             </div>
-          </div>
-          <div class="accordion-item">
-            <div class="accordion-header">
-              Urgence hypertensive
-              <span class="acc-badge" style="background:var(--red);color:#fff;">Atteinte organe cible</span>
-              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+            <div style="background:#fff3e0;border:1px solid #ffcc80;border-radius:8px;padding:10px 14px;min-width:130px;text-align:center;">
+              <div style="font-weight:700;color:#d35400;">Stade 1</div>
+              <div style="font-size:13px;">TAS 130–139<br>TAd 80–89</div>
             </div>
-            <div class="accordion-body">
-              Encéphalopathie · SCA · Dissection aortique · AVC hémorragique · Néphropathie · Éclampsie<br>
-              → <strong>Traitement IV immédiat</strong> · Hospitalisation obligatoire
+            <div style="background:#fce4ec;border:1px solid #f48fb1;border-radius:8px;padding:10px 14px;min-width:130px;text-align:center;">
+              <div style="font-weight:700;color:#c0392b;">Stade 2</div>
+              <div style="font-size:13px;">TAS ≥ 140<br>TAd ≥ 90</div>
             </div>
-          </div>
-          <div class="accordion-item">
-            <div class="accordion-header">
-              HTA maligne
-              <span class="acc-badge" style="background:var(--red);color:#fff;">Rétinopathie grade 4</span>
-              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-            </div>
-            <div class="accordion-body">
-              <strong>Papillœdème</strong> à l'examen du fond d'œil. Urgence médicale absolue → IV urgent.
+            <div style="background:#ffebee;border:1px solid #ef9a9a;border-radius:8px;padding:10px 14px;min-width:130px;text-align:center;">
+              <div style="font-weight:700;color:#922b21;">Urgence HTA</div>
+              <div style="font-size:13px;">TAS ≥ 180<br>TAd ≥ 120</div>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- ÉVALUATION INITIALE -->
-      <div class="block clin">
-        <div class="block-title"><span class="tag">🩺 Évaluation initiale — Anamnèse & examen physique</span></div>
-        <p class="content-text" style="margin-bottom:8px;"><strong>Anamnèse — surtout rechercher :</strong></p>
-        <div class="flag-list">
-          <div class="flag-item"><span class="flag-dot ink"></span><span>Souvent <strong>asymptomatique</strong> ("tueur silencieux") — dépistage opportuniste essentiel</span></div>
-          <div class="flag-item"><span class="flag-dot ink"></span><span>Facteurs de risque CV : tabac, sédentarité, obésité, alcool, ATCD familiaux, diabète, dyslipidémie, apnée du sommeil (ronflement, somnolence diurne)</span></div>
-          <div class="flag-item"><span class="flag-dot ink"></span><span>Médicaments/substances pouvant ↑ TA : AINS, corticostéroïdes, contraceptifs oraux, décongestionnants, stimulants, réglisse, sevrage OH</span></div>
-        </div>
-        <p class="content-text" style="margin:12px 0 8px;"><strong>Indices cliniques d'HTA secondaire</strong> (à rechercher activement) :</p>
-        <div class="flag-list">
-          <div class="flag-item"><span class="flag-dot red"></span><span><strong>Triade phéochromocytome</strong> — céphalées + palpitations + diaphorèse paroxystiques</span></div>
-          <div class="flag-item"><span class="flag-dot red"></span><span><strong>HTA + hypokaliémie</strong> (non provoquée par diurétique) → hyperaldostéronisme</span></div>
-          <div class="flag-item"><span class="flag-dot red"></span><span><strong>HTA réfractaire</strong> (≥ 3 antihypertenseurs incluant un diurétique) ou apparition < 30 ans sans ATCD familial → bilan de cause secondaire</span></div>
-          <div class="flag-item"><span class="flag-dot red"></span><span>Souffle abdominal → suspicion <strong>HTA rénovasculaire</strong></span></div>
-        </div>
-        <p class="content-text" style="margin:12px 0 8px;"><strong>Examen physique :</strong></p>
-        <div class="flag-list">
-          <div class="flag-item"><span class="flag-dot blue"></span><span>TA aux <strong>2 bras</strong> (et debout/couché si suspicion d'hypotension orthostatique, surtout aîné)</span></div>
-          <div class="flag-item"><span class="flag-dot blue"></span><span><strong>Fond d'œil</strong> si TA sévère/suspicion d'urgence hypertensive (rechercher papillœdème)</span></div>
-          <div class="flag-item"><span class="flag-dot blue"></span><span>Recherche de <strong>signes d'atteinte d'organe cible</strong> : choc apexien déplacé/B4 (HVG), souffles carotidiens/abdominaux, pouls périphériques, œdèmes, signes neurologiques</span></div>
-          <div class="flag-item"><span class="flag-dot blue"></span><span>IMC, tour de taille — syndrome métabolique</span></div>
-        </div>
-      </div>
+      <!-- 1.2 CONCEPTS IMPORTANTS -->
+      <div id="hta-12" class="block para" style="border-left:4px solid #2471a3;">
+        <div class="block-title"><span class="tag">1.2 — Concepts importants</span></div>
 
-      <!-- PARACLINIQUE -->
-      <div class="block para">
-        <div class="block-title"><span class="tag">🧪 Paraclinique</span></div>
-        <div class="highlight yellow" style="margin-bottom:12px;">
-          <strong>Diagnostic confirmé par :</strong><br>
-          MAPA : éveillé ≥ 135/85 ou 24h ≥ 130/80<br>
-          MPAD : ≥ 130/80 sur 5–7 jours
-        </div>
-        <p style="font-size:13px;font-weight:700;margin-bottom:8px;color:var(--ink);">Bilan de base :</p>
-        <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px;">
-          <span class="drug-badge line3">Na⁺ / K⁺</span>
-          <span class="drug-badge line3">Créatinine + DFGe</span>
-          <span class="drug-badge line3">Glycémie + HbA1c</span>
-          <span class="drug-badge line3">Lipides</span>
-          <span class="drug-badge line3">RAC urinaire</span>
-          <span class="drug-badge line3">ECG</span>
-        </div>
-        <p style="font-size:13px;font-weight:700;margin-bottom:6px;color:var(--ink);">Cibles atteinte organe à surveiller :</p>
-        <div style="display:flex;flex-wrap:wrap;gap:6px;">
-          <span class="drug-badge warn">HVG</span>
-          <span class="drug-badge warn">Protéinurie</span>
-          <span class="drug-badge warn">Rétinopathie</span>
-          <span class="drug-badge warn">DFGe ↓</span>
-        </div>
-      </div>
-
-      <!-- TRAITEMENT -->
-      <div class="block rx">
-        <div class="block-title"><span class="tag">💊 Traitement</span></div>
-        <div class="highlight cream" style="margin-bottom:10px;">
-          🥗 <strong>Non-pharmacologique :</strong> restriction sodée ≤ 2 000 mg/j · diète DASH · exercice 30–60 min × 4–7/sem · cessation tabagique · alcool ≤ 2 conso/j · perte de poids
-        </div>
-        <table style="margin-bottom:10px;">
-          <thead><tr><th>Intervention</th><th>Objectif</th><th>Réduction TAS/TAD (mmHg)</th></tr></thead>
-          <tbody>
-            <tr><td>Réduction de l'apport sodique</td><td>-100 mmol/j</td><td>-5,8 / -2,5</td></tr>
-            <tr><td>Perte de poids</td><td>-4,5 kg</td><td>-7,2 / -5,9</td></tr>
-            <tr><td>Réduction de l'alcool</td><td>-2,7 consommations/j</td><td>-4,6 / -2,3</td></tr>
-            <tr><td>Exercice</td><td>3×/semaine</td><td>-7,4 / -5,8</td></tr>
-            <tr><td><strong>Diète DASH</strong></td><td>—</td><td><strong>-11,4 / -5,5</strong></td></tr>
-          </tbody>
-        </table>
-        <div class="note" style="margin-bottom:14px;">💡 <strong>Principe de pharmacothérapie :</strong> nombreux médicaments à dose basse &gt; peu de médicaments à dose maximale — ajouter un agent d'une autre classe est ~5× plus efficace que doubler la dose d'un agent existant (Wald DS et al., <em>Am J Med</em> 2009;122:290-300).</div>
-
-        <div class="sec-divider">
-          <div class="sd-shape sq"></div>
-          <div class="sd-label">Algorithme pharmacologique</div>
-          <div class="sd-line"></div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:8px;">
+          <div style="background:#e8f4ff;border-radius:10px;padding:14px;">
+            <div style="font-weight:700;color:#1C3F8F;margin-bottom:6px;">🩺 HTA Blouse Blanche</div>
+            <ul style="margin:0;padding-left:18px;font-size:13px;line-height:1.7;">
+              <li>TA élevée au cabinet, <strong>normale hors cabinet</strong></li>
+              <li>Prévalence : <strong>15–20%</strong> des patients traités</li>
+              <li>Meilleur pronostic CV que HTA soutenue</li>
+              <li><strong>Pas de traitement Rx</strong> — suivi rapproché avec MPAD/MAPA</li>
+            </ul>
+          </div>
+          <div style="background:#fff3cd;border-radius:10px;padding:14px;">
+            <div style="font-weight:700;color:#d35400;margin-bottom:6px;">⚠️ HTA Masquée</div>
+            <ul style="margin:0;padding-left:18px;font-size:13px;line-height:1.7;">
+              <li>TA normale au cabinet, <strong>élevée hors cabinet</strong></li>
+              <li>Prévalence : <strong>15–20%</strong> des patients</li>
+              <li>Risque CV similaire à HTA soutenue</li>
+              <li><strong>À traiter</strong> — diagnostic par MPAD ou MAPA</li>
+            </ul>
+          </div>
+          <div style="background:#f5eef8;border-radius:10px;padding:14px;">
+            <div style="font-weight:700;color:#7b3fa0;margin-bottom:6px;">👴 Pseudohypertension (Osler)</div>
+            <ul style="margin:0;padding-left:18px;font-size:13px;line-height:1.7;">
+              <li>Artères calcifiées chez personne âgée → TA <strong>artificiellement élevée</strong> au brassard</li>
+              <li>Signe d'Osler : artère radiale palpable malgré occlusion par brassard</li>
+              <li>Confirmer par mesure intra-artérielle si doute clinique</li>
+            </ul>
+          </div>
+          <div style="background:#e8f8f5;border-radius:10px;padding:14px;">
+            <div style="font-weight:700;color:#0a7a4e;margin-bottom:6px;">📉 Plancher TAd 60 mmHg</div>
+            <ul style="margin:0;padding-left:18px;font-size:13px;line-height:1.7;">
+              <li>Ne pas descendre TAd sous <strong>60 mmHg</strong></li>
+              <li>Phénomène en J-curve : ↑ risque ischémique coronarien si TAd trop basse</li>
+              <li>Important chez patients avec MCAS établie ou âgés</li>
+            </ul>
+          </div>
         </div>
 
-        <div class="accordion">
-          <div class="accordion-item open">
-            <div class="accordion-header">
-              <span>1<sup>re</sup> ligne — Bithérapie d'emblée</span>
-              <span class="acc-badge line1">Choisir 2 parmi 3</span>
-              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-            </div>
-            <div class="accordion-body">
-              <ul class="content-text" style="padding-left:16px;margin-top:0;">
-                <li><span class="drug-badge line1">IECA</span> ex. <strong>périndopril 4–8 mg DIE</strong> ou <strong>ramipril 2,5–10 mg DIE</strong> · <span class="drug-badge line1">ARA</span> ex. <strong>candésartan 8–32 mg DIE</strong> ou <strong>losartan 50–100 mg DIE</strong></li>
-                <li><span class="drug-badge line1">Diurétique thiazidique/apparenté</span> ex. <strong>chlorthalidone 12,5–25 mg DIE</strong> ou <strong>indapamide 1,25–2,5 mg DIE</strong></li>
-                <li><span class="drug-badge line1">BCC dihydropyridine (AP)</span> ex. <strong>amlodipine 2,5–10 mg DIE</strong> ou <strong>félodipine 5–10 mg DIE</strong></li>
+        <div class="block def" style="margin-top:14px;">
+          <div class="block-title"><span class="tag">📋 Bilan initial recommandé (HTA nouvellement diagnostiquée)</span></div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px;font-size:13px;">
+            <div>
+              <strong>Laboratoires :</strong>
+              <ul style="margin:4px 0;padding-left:18px;line-height:1.8;">
+                <li>FSC, Na, K, Cl, HCO3, créatinine, DFGe</li>
+                <li>Glycémie à jeun, HbA1c</li>
+                <li>Bilan lipidique complet</li>
+                <li>TSH</li>
+                <li>Ratio albumine/créatinine urinaire (ACR)</li>
+                <li>Analyse d'urine</li>
               </ul>
-              → Choisir <strong>2 des 3 classes</strong> selon profil du patient (jamais IECA + ARA ensemble)
             </div>
-          </div>
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <span>Si insuffisante — Trithérapie</span>
-              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-            </div>
-            <div class="accordion-body">Combiner les <strong>3 classes</strong> simultanément, à doses optimisées (voir doses ci-dessus) avant de qualifier l'HTA de « résistante ».</div>
-          </div>
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <span>HTA résistante (≥ 3 Rx à doses optimales incl. diurétique)</span>
-              <span class="acc-badge warn">4e agent</span>
-              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-            </div>
-            <div class="accordion-body">
-              <p class="content-text" style="margin-bottom:8px;"><strong>Définition :</strong> hors cible malgré 3 médicaments à dose maximale incluant un diurétique (triplet standard IECA/ARA + thiazidique-like + BCC) — &lt; 5 % des HTA.</p>
-              <p class="content-text" style="margin-bottom:6px;"><strong>Démarche étape par étape :</strong></p>
-              <ol class="content-text" style="padding-left:18px;margin:0 0 8px;line-height:1.6;">
-                <li>Vérifier l'observance</li>
-                <li>Éliminer une HTA de la blouse blanche</li>
-                <li>Optimiser les mesures non pharmacologiques</li>
-                <li>Éliminer une diète très riche en sodium</li>
-                <li>Éliminer une cause secondaire (apnée du sommeil, hyperaldostéronisme primaire)</li>
-                <li>Recourir à la <strong>chronothérapie</strong> (≥ 1 médicament au coucher)</li>
-                <li>Cesser HCTZ, clonidine, alpha-bloqueurs</li>
-                <li><span class="drug-badge warn">4ᵉ agent : spironolactone 12,5–25 mg DIE</span> (max 50 mg) — doser aldostérone + rénine <em>avant</em> la 1<sup>re</sup> dose, surveiller le K⁺ à 1 mois</li>
-                <li><span class="drug-badge line2">5ᵉ agent : dérivé nitré</span> (renverse la dysfonction endothéliale) — timbre de nitro 0,2–0,8 mg/h ou Imdur 30–120 mg DIE</li>
-                <li>Considérer la dénervation rénale en cas d'échec</li>
-              </ol>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <span>Selon comorbidités</span>
-              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-            </div>
-            <div class="accordion-body">
-              <table style="margin-top:0;">
-                <thead><tr><th>Comorbidité</th><th>1ᵉʳ choix</th><th>2ᵉ choix</th></tr></thead>
-                <tbody>
-                  <tr><td>MCAS / MVAS / ASO</td><td>IECA ou ARA</td><td>BB vasodilatateur</td></tr>
-                  <tr><td>Insuffisance cardiaque</td><td>IECA ou ARA (sacubitril-valsartan)</td><td>BB, ARM</td></tr>
-                  <tr><td>Diabète</td><td>IECA ou ARA; ARM (finérénone si néphropathie diabétique)</td><td>iSGLT2, agonistes GLP-1</td></tr>
-                  <tr><td>IRC / Protéinurie</td><td>IECA ou ARA</td><td>ARM</td></tr>
-                  <tr><td>Grossesse</td><td>Nifédipine/amlodipine, labétalol, méthyldopa</td><td>—</td></tr>
-                  <tr><td>Patients afro-descendants</td><td>Diurétiques thiazidiques-like</td><td>BCC</td></tr>
-                </tbody>
-              </table>
-              <div class="note" style="margin-top:8px;">ℹ️ Population afro-descendante : prévalence et sévérité plus élevées de l'HTA (57 % vs 44 % chez les Blancs, USA 2018), profil à rénine basse → meilleure réponse aux diurétiques thiazidiques-like, réponse moindre aux IECA/ARA.</div>
+            <div>
+              <strong>Autres :</strong>
+              <ul style="margin:4px 0;padding-left:18px;line-height:1.8;">
+                <li>ECG 12 dérivations</li>
+                <li>Si ≥ 50 ans + diabète ou maladie rénale : fond d'œil</li>
+                <li>Score de risque CV (Framingham ou SCORE2)</li>
+                <li>Questionnaire BERLIN (dépistage SAS)</li>
+              </ul>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- CLASSES PHARMACOLOGIQUES - APPROFONDISSEMENT -->
-      <div class="block rx">
-        <div class="block-title"><span class="tag">📚 Classes pharmacologiques — approfondissement clinique</span></div>
-        <div class="accordion">
-          <div class="accordion-item">
-            <div class="accordion-header">Diurétiques thiazidiques-like — hiérarchie & guide de conversion
-              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-            </div>
-            <div class="accordion-body">
-              <strong>Hiérarchie (efficacité CV) :</strong> ① <span class="drug-badge line1">Indapamide</span> (demi-vie 14–25 h, biodisponibilité 95 %, <strong>effets métaboliques neutres</strong>) ② <span class="drug-badge line1">Chlorthalidone</span> (demi-vie 40–60 h, meilleure évidence CV) ③ <span class="drug-badge ci">HCTZ — à éviter</span> (NEJM 2022 ; demi-vie courte 6–14 h, effets défavorables sur la glycémie/dyslipidémie)<br>
-              Mécanisme : ~1/3 de l'effet par natriurèse, ~2/3 par vasodilatation périphérique — l'indapamide conserve donc son effet anti-HTA même chez le patient anurique en hémodialyse.<br><br>
-              <strong>Données cliniques :</strong> indapamide vs HCTZ 50 mg → écart de 8/5 mmHg (Plante 1988) · chlorthalidone 25 mg vs HCTZ 50 mg → écart de 5 mmHg/24h (Ernst 2006) · VA Study (NEJM 2022) → chlorthalidone associée à -27 % de mortalité CV chez les patients avec ATCD CV. Grandes études historiques : SHEP (chlorthalidone, -36 % AVC), HYVET et PATS (indapamide, -29 à -30 % AVC), vs HCTZ associée à un excès de mortalité CV dans OSLO HT, ANBP2 et ACCOMPLISH.<br><br>
-              <table style="margin-top:6px;">
-                <thead><tr><th>Conversion si TA <u>dans les cibles</u></th><th>→ Chlorthalidone</th><th>→ Indapamide</th></tr></thead>
-                <tbody>
-                  <tr><td>HCTZ 12,5 mg</td><td>Cesser, puis 12,5 mg si la TA remonte</td><td>Cesser, puis 0,625 mg si la TA remonte</td></tr>
-                  <tr><td>HCTZ 25 mg</td><td>12,5 mg</td><td>0,625 mg</td></tr>
-                </tbody>
-              </table>
-              <table style="margin-top:10px;">
-                <thead><tr><th>Conversion si TA <u>hors cible</u></th><th>→ Chlorthalidone</th><th>→ Indapamide</th></tr></thead>
-                <tbody>
-                  <tr><td>HCTZ 12,5 mg</td><td>12,5 mg</td><td>1,25 mg</td></tr>
-                  <tr><td>HCTZ 25 mg</td><td>25 mg (50 mg si K⁺ élevé)</td><td>2,5 mg (5 mg si K⁺ élevé)</td></tr>
-                </tbody>
-              </table>
-              <p class="content-text" style="margin-top:8px;">Pour le contrôle volémique (IC/IRC) : furosémide BID/TID en 1<sup>er</sup> choix ; la combinaison furosémide + spironolactone est efficace pour la TA, le volume <em>et</em> le K⁺. Éviter l'association thiazide + furosémide en externe, sauf IRC + IC.</p>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <div class="accordion-header">IECA / ARA — protection cardiorénale, toux & suivi
-              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-            </div>
-            <div class="accordion-body">
-              Premier choix pour la majorité des patients — protection cardiorénale <strong>directe</strong> (↓ TA) et <strong>indirecte</strong> (via ↓ angiotensine II / ↑ bradykinine) : effets anti-athérosclérotiques, amélioration de la fonction endothéliale, fibrinolyse, remodelage cardiaque favorable, ↓ protéinurie additionnelle (vasodilatation de l'artériole efférente).<br><br>
-              <strong>Toux :</strong> jusqu'à 20 % sous IECA (surtout femmes, patients d'origine asiatique) — accumulation de bradykinine → switcher pour un ARA. IECA ≈ ARA en efficacité ; <span class="drug-badge ci">ne jamais les combiner</span> (aucun bénéfice additionnel). Poursuivre même en IRC très avancée — pas de limite inférieure de DFGe.<br><br>
-              <strong>Suivi obligatoire :</strong> bilan K⁺ + créatinine 2–4 semaines après l'introduction ou tout changement de dose. Si la créatinine ↑ &gt; 30 % → investiguer une sténose des artères rénales. <span class="drug-badge warn">Ne jamais cesser définitivement les IECA/ARA pour traiter une hyperkaliémie</span> — l'arrêt double ou triple la mortalité ; prévoir un plan de reprise &lt; 1 mois en cas d'arrêt temporaire.<br><br>
-              <strong>Stratégies de gestion de l'hyperkaliémie sous iSRAA (KDIGO) :</strong> régime pauvre en K⁺ et traiter la constipation · corriger l'acidose métabolique · diurétiques (penser iSGLT2) · cesser les agents non essentiels favorisant l'hyperkaliémie (K⁺ PO, AINS) · liants du potassium (1<sup>re</sup> génération : SPS/SPC ; nouveaux : cyclosilicate de zirconium sodique, patiromer).
-            </div>
-          </div>
-          <div class="accordion-item">
-            <div class="accordion-header">Bêtabloqueurs vasodilatateurs & BCC — chronothérapie
-              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-            </div>
-            <div class="accordion-body">
-              <strong>BB vasodilatateurs</strong> (à privilégier si un BB est indiqué — plus efficaces pour ↓ la TA que les BB classiques) : <span class="drug-badge line2">Labétalol</span> (grossesse, urgences) · <span class="drug-badge line2">Carvédilol</span> (effets métaboliques favorables) · <span class="drug-badge line2">Nébivolol</span> (↑ NO, plus cardiosélectif). Indications privilégiées : MCAS/MVAS/ASO, insuffisance cardiaque. À éviter chez le jeune et/ou la personne active (fatigue, dysfonction érectile, bronchospasme, effets métaboliques défavorables sauf carvédilol).<br><br>
-              <strong>BCC :</strong> dihydropyridiniques — vasodilatateurs purs (amlodipine, félodipine, nifédipine) vs non dihydropyridiniques — vasodilatateurs + ↓ FC (vérapamil, diltiazem ; CI si bradycardie/IC).<br>
-              <span class="drug-badge line1">💡 Chronothérapie</span> : un BCC pris au coucher ↓ la TA moyenne au MAPA et ↓ les œdèmes ; voir aussi le bloc « Chronothérapie » plus bas.
-            </div>
+      <!-- 1.3 PRIMAIRE vs SECONDAIRE -->
+      <div id="hta-13" class="block def" style="border-left:4px solid #7b3fa0;">
+        <div class="block-title"><span class="tag">1.3 — HTA Primaire vs Secondaire</span></div>
+
+        <div style="overflow-x:auto;margin-top:8px;">
+          <table>
+            <thead>
+              <tr><th></th><th style="background:#1C3F8F;color:#fff;">HTA Primaire (essentielle)</th><th style="background:#c0392b;color:#fff;">HTA Secondaire</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>Fréquence</strong></td><td>85–90% des HTA</td><td>10–15% des HTA</td></tr>
+              <tr><td><strong>Causes</strong></td><td>Polygénique + style de vie (sel, poids, alcool, inactivité)</td><td>Cause identifiable et potentiellement réversible</td></tr>
+              <tr><td><strong>Âge typique</strong></td><td>Adulte 40–60 ans, antécédents familiaux</td><td>Jeune (&lt;30 ans), HTA réfractaire, début brutal</td></tr>
+              <tr><td><strong>Profil rénine</strong></td><td>1/3 rénine basse, 1/3 normale, 1/3 élevée</td><td>Variable selon cause</td></tr>
+              <tr><td><strong>Investigations</strong></td><td>Bilan de base (voir 1.2)</td><td>Bilan orienté selon cause suspectée</td></tr>
+              <tr><td><strong>Traitement</strong></td><td>Non-pharmaco + IECA/ARA en 1re ligne</td><td>Traitement de la cause → peut guérir l'HTA</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div style="margin-top:16px;">
+          <strong style="font-size:14px;">🔍 Causes secondaires — drapeaux rouges et bilan orienté :</strong>
+          <div style="overflow-x:auto;margin-top:8px;">
+            <table>
+              <thead>
+                <tr><th>Cause</th><th>Prévalence</th><th>Signes évocateurs</th><th>Bilan</th></tr>
+              </thead>
+              <tbody>
+                <tr style="background:#fff8e1;">
+                  <td><strong>Hyperaldostéronisme primaire</strong> (Conn)</td>
+                  <td>5–10% HTA secondaire<br><em>Cause la + fréquente</em></td>
+                  <td>HTA réfractaire, hypokaliémie spontanée, K+ &lt;3.5 sous diurétique</td>
+                  <td>Ratio aldostérone/rénine (ARR) — si élevé → scanner surrénales, cathé. veineux surrénalien</td>
+                </tr>
+                <tr>
+                  <td><strong>SAS</strong> (apnée du sommeil)</td>
+                  <td>Très fréquent — lié à HTA nocturne</td>
+                  <td>Ronflement, somnolence diurne, obésité, HTA nocturne non-dipping</td>
+                  <td>Questionnaire BERLIN, polygraphie respiratoire</td>
+                </tr>
+                <tr style="background:#fff8e1;">
+                  <td><strong>HTA rénovasculaire</strong></td>
+                  <td>1–5%</td>
+                  <td>HTA réfractaire, ↑Cr &gt;30% sous IECA, asymétrie rénale, souffle abdominal</td>
+                  <td>AngioTDM ou AngioRMN rénale</td>
+                </tr>
+                <tr>
+                  <td><strong>IRC</strong></td>
+                  <td>Fréquent</td>
+                  <td>DFGe &lt;60, protéinurie, œdèmes, anémie</td>
+                  <td>Créatinine, ACR, écho. rénale</td>
+                </tr>
+                <tr style="background:#fff8e1;">
+                  <td><strong>Phéochromocytome</strong></td>
+                  <td>0.1–0.6%</td>
+                  <td>Triade : céphalée + palpitations + sudation paroxystiques; HTA paroxystique</td>
+                  <td>Métanéphrines plasmatiques ou urinaires (24h); si positif → TDM/RMN surrénales</td>
+                </tr>
+                <tr>
+                  <td><strong>Cushing</strong></td>
+                  <td>Rare</td>
+                  <td>Obésité centrale, vergetures pourpres, bosse de bison, faiblesse proximale, diabète</td>
+                  <td>Cortisol libre urinaire 24h, test de suppression 1 mg dexaméthasone</td>
+                </tr>
+                <tr style="background:#fff8e1;">
+                  <td><strong>Hypothyroïdie</strong></td>
+                  <td>HTA diastolique</td>
+                  <td>Fatigue, constipation, peau sèche, bradycardie</td>
+                  <td>TSH</td>
+                </tr>
+                <tr>
+                  <td><strong>Hyperthyroïdie</strong></td>
+                  <td>HTA systolique</td>
+                  <td>Tachycardie, perte de poids, tremblements, exophtalmie</td>
+                  <td>TSH, T4 libre</td>
+                </tr>
+                <tr style="background:#fff8e1;">
+                  <td><strong>Coarctation aorte</strong></td>
+                  <td>Enfants/jeunes adultes</td>
+                  <td>TA MS &gt; MI, souffle systolique inter-scapulaire, pouls fémoraux diminués</td>
+                  <td>AngioTDM thoracique</td>
+                </tr>
+                <tr>
+                  <td><strong>Médicaments</strong></td>
+                  <td>Fréquent</td>
+                  <td>AINS, COX-2, décongestionnants, contraceptifs oraux, amphétamines, réglisse, IRSN</td>
+                  <td>Révision médicaments</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
 
-      <!-- MÉDICAMENTS À ÉVITER & PRN -->
-      <div class="block flag">
-        <div class="block-title"><span class="tag">⚠️ Médicaments à éviter & options PRN en urgence hypertensive</span></div>
-        <table style="margin-top:6px;">
-          <thead><tr><th>À éviter</th><th>Raison</th><th>Alternative</th></tr></thead>
-          <tbody>
-            <tr><td><span class="drug-badge ci">HCTZ</span></td><td>↑ événements vasculaires vs chlorthalidone (NEJM 2022)</td><td>Indapamide ou chlorthalidone</td></tr>
-            <tr><td><span class="drug-badge ci">Alpha-bloqueurs</span></td><td>↑ événements vasculaires — bras arrêté précocement dans ALLHAT (JAMA 2002) ; ↑ HFpEF, n'améliorent pas l'HVG</td><td>Spironolactone ou dérivé nitré</td></tr>
-            <tr><td><span class="drug-badge ci">Clonidine</span></td><td>↑ événements vasculaires + arrêts cardiaques — POISE-2 (NEJM 2014)</td><td>Spironolactone ou dérivé nitré</td></tr>
-          </tbody>
-        </table>
-        <p class="content-text" style="margin:12px 0 6px;"><strong>Médicaments PRN — crise hypertensive (seuil d'intervention ≥ 180 mmHg) :</strong></p>
-        <div class="flag-list">
-          <div class="flag-item"><span class="flag-dot red"></span><span><strong>Captopril</strong> 25–50 mg PO TID PRN — CI relative : insuffisance rénale aiguë</span></div>
-          <div class="flag-item"><span class="flag-dot red"></span><span><strong>Labétalol</strong> 100–400 mg PO TID PRN — CI relative : MPOC ; CI absolue : asthme</span></div>
-          <div class="flag-item"><span class="flag-dot red"></span><span><strong>Hydralazine</strong> 10–100 mg q8h PRN</span></div>
-          <div class="flag-item"><span class="flag-dot ink"></span><span>❌ Éviter la <strong>clonidine</strong> en PRN — risque d'IAM type 2, chutes, délirium, arrêt cardiaque</span></div>
+      <!-- 1.4 HTA RÉFRACTAIRE -->
+      <div id="hta-14" class="block para" style="border-left:4px solid #e67e22;">
+        <div class="block-title"><span class="tag">1.4 — HTA Réfractaire</span></div>
+
+        <div class="key-fact orange" style="margin-bottom:12px;">
+          📌 <strong>Définition :</strong> TA hors cible malgré ≥ 3 médicaments antihypertenseurs à <em>dose maximale tolérée</em> dont un <strong>diurétique</strong>
         </div>
-        <div class="note" style="margin-top:8px;">ℹ️ Alpha2-agonistes centraux (méthyldopa, clonidine) : aucun bénéfice CV démontré, sédation/délirium, hypotension orthostatique et chutes — la <strong>méthyldopa demeure acceptée en grossesse</strong> (avec BCC et labétalol) en l'absence d'alternative. Vasodilatateurs directs (hydralazine, minoxidil) : traitements exceptionnels, réservés en 3<sup>e</sup>/4<sup>e</sup> ligne, sans étude de mortalité.</div>
-      </div>
 
-      <!-- CHRONOTHÉRAPIE -->
-      <div class="block clin">
-        <div class="block-title"><span class="tag">⏰ Chronothérapie</span></div>
-        <p class="content-text">Prendre <strong>au moins un antihypertenseur au coucher</strong> — particulièrement utile en HTA réfractaire. Les BCC, ARA et diurétiques pris au coucher ↓ la TA moyenne au MAPA (et les œdèmes pour les BCC). Répartir les médicaments dans la journée diminue aussi les effets secondaires.</p>
-        <div class="flag-list" style="margin-top:8px;">
-          <div class="flag-item"><span class="flag-dot blue"></span><span>Hermida 2008 (<em>Hypertension</em> 51:69-76) : -10/6 mmHg ; RCT de 2 156 patients sur 8 ans → ≥ 1 médicament au coucher, HR 0,39 (p &lt; 0,001)</span></div>
-          <div class="flag-item"><span class="flag-dot ink"></span><span>Études récentes <strong>négatives</strong> : <strong>BedMed</strong> (JAMA 2025;333:2061) et <em>Lancet</em> 2022 — aucune différence significative entre prise tout-AM vs tout-HS</span></div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+          <div style="background:#fff8e1;border-radius:10px;padding:14px;">
+            <strong style="color:#d35400;">Avant de conclure à une résistance vraie :</strong>
+            <ul style="margin:8px 0;padding-left:18px;font-size:13px;line-height:1.8;">
+              <li>⚠️ <strong>1/3 = pseudorésistance</strong> (technique de mesure, observance, effet blouse blanche)</li>
+              <li>Vérifier observance (pilulier, refill pharmacy)</li>
+              <li>Éliminer causes secondaires (hyperaldostéronisme, SAS en tête)</li>
+              <li>Réviser médicaments potentialisateurs (AINS, contraceptifs)</li>
+            </ul>
+          </div>
+          <div style="background:#e8f8f5;border-radius:10px;padding:14px;">
+            <strong style="color:#0a7a4e;">Algorithme de traitement :</strong>
+            <ol style="margin:8px 0;padding-left:18px;font-size:13px;line-height:1.8;">
+              <li><strong>Triplet de base :</strong> IECA ou ARA + thiazide-like (chlorthalidone/indapamide) + BCC (amlodipine)</li>
+              <li><strong>4e agent :</strong> Spironolactone 25–50 mg (très efficace si hyperaldo sous-jacent)</li>
+              <li><strong>5e agent :</strong> Nitrates (isosorbide mononitrate) ou BB (selon profil)</li>
+              <li>Référence en cardiologie/médecine interne</li>
+            </ol>
+          </div>
         </div>
-        <div class="note" style="margin-top:8px;">ℹ️ Conclusion pratique : il n'est pas idéal de prendre tous ses antihypertenseurs au même moment — privilégier une répartition dans la journée incluant au moins un agent au coucher.</div>
+
+        <div class="key-fact blue" style="margin-top:12px;">
+          💊 La <strong>spironolactone</strong> est l'agent le plus efficace en 4e ligne — efficacité démontrée même sans hypokaliémie (PATHWAY-2). Surveiller K+ et créatinine.
+        </div>
       </div>
 
-      <div class="highlight cream" style="margin:14px 0;">
-        <strong>✅ Messages clés — Dr Vallée :</strong>
-        <ol style="margin:6px 0 0;padding-left:18px;line-height:1.7;">
-          <li>Viser <strong>TAs &lt; 120 mmHg</strong> chez les patients à haut risque CV (probablement aussi chez les diabétiques)</li>
-          <li><strong>Éviter l'HCTZ</strong> — préférer l'indapamide ou la chlorthalidone</li>
-          <li><strong>Éviter</strong> les alpha-bloqueurs et la clonidine</li>
-          <li>Respecter le <strong>plancher de TAd à 60 mmHg</strong> — ne pas surtraiter</li>
-          <li><strong>Ne jamais cesser définitivement</strong> les IECA/ARA pour traiter une hyperkaliémie</li>
-          <li>HTA réfractaire : <strong>4ᵉ agent = spironolactone</strong>, <strong>5ᵉ agent = dérivé nitré</strong></li>
-          <li>Penser à dépister les <strong>causes secondaires</strong> en présence d'une HTA vraiment réfractaire</li>
-        </ol>
+      <!-- 1.5 TRAITEMENT -->
+      <div id="hta-15" class="block def" style="border-left:4px solid #0a7a4e;">
+        <div class="block-title"><span class="tag">1.5 — Traitement de l'HTA</span></div>
+
+        <!-- SOUS-ONGLETS -->
+        <div style="display:flex;gap:8px;margin:10px 0 16px;">
+          <button id="btn-nonpharmaco" onclick="switchTx('nonpharmaco')" style="background:#0a7a4e;color:#fff;border:none;border-radius:8px;padding:8px 18px;cursor:pointer;font-weight:600;">Non-pharmacologique</button>
+          <button id="btn-pharmaco" onclick="switchTx('pharmaco')" style="background:#e0e0e0;color:#333;border:none;border-radius:8px;padding:8px 18px;cursor:pointer;font-weight:600;">Pharmacologique</button>
+          <button id="btn-algo" onclick="switchTx('algo')" style="background:#e0e0e0;color:#333;border:none;border-radius:8px;padding:8px 18px;cursor:pointer;font-weight:600;">⚡ Algorithme</button>
+        </div>
+
+        <div id="tx-nonpharmaco">
+          <p class="content-text" style="margin-bottom:12px;"><strong>À recommander chez tous les patients HTA, en association avec le traitement pharmacologique :</strong></p>
+          <div style="overflow-x:auto;">
+            <table>
+              <thead><tr><th>Mesure</th><th>Réduction TA estimée</th><th>Détails pratiques</th></tr></thead>
+              <tbody>
+                <tr style="background:#e8f8f5;"><td><strong>🧂 Réduction sel</strong></td><td style="color:#0a7a4e;font-weight:700;">−5.8 mmHg TAS</td><td>&lt; 2000 mg Na/jour (5g NaCl); éviter aliments ultra-transformés, charcuteries, conserves</td></tr>
+                <tr><td><strong>⚖️ Perte de poids</strong></td><td style="color:#0a7a4e;font-weight:700;">−7.2 mmHg TAS</td><td>~1 mmHg par kg perdu; cible IMC &lt;25 kg/m²</td></tr>
+                <tr style="background:#e8f8f5;"><td><strong>🍷 Réduction alcool</strong></td><td style="color:#0a7a4e;font-weight:700;">−4.6 mmHg TAS</td><td>≤ 2 consommations/jour (hommes), ≤ 1 (femmes)</td></tr>
+                <tr><td><strong>🏃 Exercice aérobique</strong></td><td style="color:#0a7a4e;font-weight:700;">−7.4 mmHg TAS</td><td>≥ 150 min/semaine d'intensité modérée; exercice de résistance aussi bénéfique</td></tr>
+                <tr style="background:#e8f8f5;"><td><strong>🥗 Alimentation DASH</strong></td><td style="color:#0a7a4e;font-weight:700;">−11.4 mmHg TAS</td><td>Fruits, légumes, grains entiers, produits laitiers faibles en gras, faible en sel</td></tr>
+                <tr><td><strong>🚭 Cessation tabagique</strong></td><td>Bénéfice CV global</td><td>Ne pas prescrire de bêta-bloquants si tabagisme actif (réduction MAPA moindre)</td></tr>
+                <tr style="background:#e8f8f5;"><td><strong>😴 Traitement SAS</strong></td><td>−2–3 mmHg TAS</td><td>CPAP si SAS confirmé; impact surtout sur TA nocturne</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="key-fact green" style="margin-top:10px;">
+            💡 Combinaison DASH + réduction sel + exercice peut réduire TAS de <strong>~20 mmHg</strong> — équivalent à 2 médicaments.
+          </div>
+        </div>
+
+        <div id="tx-pharmaco" style="display:none;">
+          <p class="content-text" style="margin-bottom:10px;"><strong>Principes pharmacologiques (Hypertension Canada + Dr. Vallée 2026) :</strong></p>
+
+          <div class="key-fact orange" style="margin-bottom:12px;">
+            ❌ <strong>À éviter en première ligne :</strong> HCTZ (hydrochlorothiazide — inférieur à chlorthalidone/indapamide), alpha-bloqueurs (doxazosine — mortalité ↑ ALLHAT), clonidine (effets rebond)
+          </div>
+
+          <div style="overflow-x:auto;">
+            <table>
+              <thead>
+                <tr><th>Classe</th><th>Exemples</th><th>Indications préférentielles</th><th>Contre-indications / Précautions</th></tr>
+              </thead>
+              <tbody>
+                <tr style="background:#e8f4ff;"><td><strong>IECA</strong> ⭐ 1re ligne</td><td>Ramipril, perindopril, lisinopril</td><td>DB, protéinurie, IRC, IC, post-IM, HTA protéinurique</td><td>Grossesse (CI absolue), SRB bilatérale, toux (→ ARA), hyperkaliémie</td></tr>
+                <tr style="background:#e8f4ff;"><td><strong>ARA</strong> ⭐ 1re ligne</td><td>Valsartan, telmisartan, olmésartan, losartan</td><td>Même qu'IECA + si toux sous IECA; IC avec FEr, néphropathie DB</td><td>Grossesse (CI absolue), SRB bilatérale; NE PAS combiner avec IECA (insuffisance rénale aiguë, hyperkaliémie)</td></tr>
+                <tr><td><strong>BCC (dihydropyridine)</strong></td><td>Amlodipine, félodipine, nifédipine XL</td><td>PA africaine d'origine, personnes âgées, angine</td><td>IC avec FEr (amlodipine OK); œdème des chevilles</td></tr>
+                <tr><td><strong>BCC (non-DHP)</strong></td><td>Vérapamil, diltiazem</td><td>Angine, TSV, FV non-IC</td><td>IC avec FEr (CI), bloc AV, association BB (CI)</td></tr>
+                <tr style="background:#fff8e1;"><td><strong>Diurétique thiazide-like</strong></td><td>Chlorthalidone 12.5–25 mg<br>Indapamide 1.25–2.5 mg</td><td>HTA isolée, personnes âgées, HTA réfractaire (composante)</td><td>Hyponatrémie, hypokaliémie, hyperuricémie, hyperglycémie</td></tr>
+                <tr><td><strong>Bêta-bloquants</strong></td><td>Métoprolol (succinate), bisoprolol, nébivolol, labétalol</td><td>IC avec FEr, post-IM, arythmies, grossesse (labétalol), migraine, hyperthyroïdie</td><td>Asthme/BPCO sévère, BAV 2e–3e, Raynaud, DFM (relatif)</td></tr>
+                <tr><td><strong>ARM</strong></td><td>Spironolactone 25–50 mg</td><td>HTA réfractaire 4e ligne, IC avec FEr, hyperaldo primaire</td><td>Insuffisance rénale (DFGe &lt;30), hyperkaliémie, hommes (gynécomastie)</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="key-fact blue" style="margin-top:12px;">
+            💊 <strong>Chronothérapie :</strong> Prendre au moins un antihypertenseur <em>le soir</em> améliore le profil dipping nocturne et réduit les événements CV. Particulièrement utile si non-dipping à la MAPA.
+          </div>
+        </div>
+
+        <div id="tx-algo" style="display:none;">
+          <p class="content-text" style="margin-bottom:14px;"><strong>Algorithme décisionnel — Initiation et intensification du traitement :</strong></p>
+
+          <div style="font-family:monospace;background:#f8f9fa;border-radius:10px;padding:16px;line-height:1.9;font-size:13px;">
+
+            <div style="text-align:center;background:#1C3F8F;color:#fff;border-radius:8px;padding:12px;margin-bottom:12px;">
+              <strong>DIAGNOSTIC HTA CONFIRMÉ</strong><br>
+              <small>TA ≥ 130/80 (MPAD/MAPA) ou ≥ 140/90 (cabinet x 2 visites)</small>
+            </div>
+
+            <div style="text-align:center;margin-bottom:12px;">↓</div>
+
+            <div style="background:#e8f8f5;border:2px solid #0a7a4e;border-radius:8px;padding:12px;margin-bottom:12px;">
+              <strong style="color:#0a7a4e;">ÉTAPE 1 — Mesures non-pharmacologiques pour TOUS</strong><br>
+              <span style="font-size:12px;">Sel ↓ + poids ↓ + alcool ↓ + exercice ↑ + alimentation DASH | Durée essai: 3–6 mois si risque bas</span>
+            </div>
+
+            <div style="display:flex;gap:8px;margin-bottom:12px;">
+              <div onclick="algoStep('step-low')" style="flex:1;background:#fff8e1;border:2px solid #e67e22;border-radius:8px;padding:10px;cursor:pointer;text-align:center;">
+                <strong style="color:#e67e22;">Risque CV bas + stade 1</strong><br>
+                <small>Essai non-pharmaco 3–6 mois</small><br>
+                <small style="color:#666;">▼ cliquer pour voir</small>
+              </div>
+              <div onclick="algoStep('step-high')" style="flex:1;background:#fce4ec;border:2px solid #c0392b;border-radius:8px;padding:10px;cursor:pointer;text-align:center;">
+                <strong style="color:#c0392b;">Risque CV élevé OU stade 2 OU urgence</strong><br>
+                <small>Initier traitement Rx d'emblée</small><br>
+                <small style="color:#666;">▼ cliquer pour voir</small>
+              </div>
+            </div>
+
+            <div id="step-low" style="display:none;background:#fff8e1;border-radius:8px;padding:12px;margin-bottom:12px;">
+              <strong>Si TA toujours ≥ cible après 3–6 mois :</strong>
+              <div style="text-align:center;margin:8px 0;">↓</div>
+              <div style="background:#e8f4ff;border-radius:6px;padding:10px;">
+                <strong>MONOTHÉRAPIE :</strong> IECA ou ARA (1er choix) ou BCC ou thiazide-like selon profil
+              </div>
+            </div>
+
+            <div id="step-high" style="display:none;background:#fce4ec;border-radius:8px;padding:12px;margin-bottom:12px;">
+              <strong>Initier immédiatement :</strong>
+              <div style="text-align:center;margin:8px 0;">↓</div>
+              <div style="background:#e8f4ff;border-radius:6px;padding:10px;">
+                <strong>MONO ou BITHÉRAPIE d'emblée :</strong> IECA/ARA + BCC ou IECA/ARA + thiazide-like
+              </div>
+            </div>
+
+            <div style="text-align:center;margin:8px 0;">↓ <em>réévaluation 4–6 semaines</em></div>
+
+            <div style="background:#e8f4ff;border:2px solid #1C3F8F;border-radius:8px;padding:12px;margin-bottom:12px;">
+              <strong style="color:#1C3F8F;">ÉTAPE 2 — BITHÉRAPIE (si non-contrôlée)</strong><br>
+              <span style="font-size:12px;">IECA/ARA <strong>+</strong> BCC (amlodipine) — combinaison préférée<br>
+              Alternative : IECA/ARA + thiazide-like (chlorthalidone ou indapamide)</span>
+            </div>
+
+            <div style="text-align:center;margin:8px 0;">↓ <em>réévaluation 4–6 semaines</em></div>
+
+            <div style="background:#f5eef8;border:2px solid #7b3fa0;border-radius:8px;padding:12px;margin-bottom:12px;">
+              <strong style="color:#7b3fa0;">ÉTAPE 3 — TRITHÉRAPIE (si non-contrôlée)</strong><br>
+              <span style="font-size:12px;">IECA/ARA <strong>+</strong> BCC <strong>+</strong> thiazide-like (chlorthalidone/indapamide)<br>
+              → <em>Triple combinaison standard pour HTA réfractaire</em></span>
+            </div>
+
+            <div style="text-align:center;margin:8px 0;">↓ <em>si toujours hors cible</em></div>
+
+            <div style="background:#ffebee;border:2px solid #c0392b;border-radius:8px;padding:12px;">
+              <strong style="color:#c0392b;">ÉTAPE 4 — HTA RÉFRACTAIRE</strong><br>
+              <span style="font-size:12px;">+ Spironolactone 25–50 mg (4e ligne) → + Nitrates/BB (5e ligne) → Référence spécialiste</span>
+            </div>
+          </div>
+
+          <script>
+          function switchTx(tab) {
+            ['nonpharmaco','pharmaco','algo'].forEach(function(t) {
+              document.getElementById('tx-' + t).style.display = t === tab ? '' : 'none';
+              document.getElementById('btn-' + t).style.background = t === tab ? '#0a7a4e' : '#e0e0e0';
+              document.getElementById('btn-' + t).style.color = t === tab ? '#fff' : '#333';
+            });
+          }
+          function algoStep(id) {
+            var el = document.getElementById(id);
+            el.style.display = el.style.display === 'none' ? '' : 'none';
+          }
+          </script>
+        </div>
       </div>
 
-      <!-- RED FLAGS -->
-      <div class="block flag">
-        <div class="block-title"><span class="tag">🚨 RED FLAGS</span></div>
-        <ul class="content-text" style="padding-left:18px; margin:0; display:flex; flex-direction:column; gap:6px;">
-          <li>👁️ <strong>Papillœdème</strong> → HTA maligne → traitement IV <em>urgent</em></li>
-          <li>🏥 <strong>Atteinte organe cible</strong> → urgence hypertensive → hospitalisation</li>
-          <li>🧪 ↑ Créatinine <strong>&gt; 30 %</strong> sous IECA/ARA → éliminer sténose artère rénale</li>
-          <li>⚡ HTA + <strong>hypokaliémie</strong> → hyperaldostéronisme primaire jusqu'à preuve du contraire</li>
-        </ul>
+      <!-- 1.6 CIBLES TA -->
+      <div id="hta-16" class="block def" style="border-left:4px solid #2471a3;">
+        <div class="block-title"><span class="tag">1.6 — Cibles de TA selon la population</span></div>
+        <div style="overflow-x:auto;margin-top:8px;">
+          <table>
+            <thead>
+              <tr><th>Population</th><th>Cible TAS</th><th>Cible TAd</th><th>Référence/Notes</th></tr>
+            </thead>
+            <tbody>
+              <tr style="background:#e8f4ff;"><td><strong>Population générale</strong></td><td>&lt; 130 mmHg</td><td>&lt; 80 mmHg</td><td>Hypertension Canada 2020, AHA/ACC 2017</td></tr>
+              <tr><td><strong>Diabète</strong></td><td>&lt; 130 mmHg</td><td>&lt; 80 mmHg</td><td>Même cible qu'en général; IECA/ARA en 1re ligne si protéinurie</td></tr>
+              <tr style="background:#e8f4ff;"><td><strong>Haut risque CV (SPRINT criteria)</strong></td><td>&lt; 120 mmHg</td><td>—</td><td>SPRINT 2015: ↓ mortalité CV de 27%, mais ↑ IRA et syncopes; cible intensive si bien tolérée</td></tr>
+              <tr><td><strong>IRC (DFGe &lt; 60)</strong></td><td>&lt; 130 mmHg</td><td>&lt; 80 mmHg</td><td>IECA/ARA pour néphroprotection; surveiller K+, créatinine</td></tr>
+              <tr style="background:#e8f4ff;"><td><strong>Personnes âgées ≥ 75 ans</strong></td><td>&lt; 130–140 mmHg</td><td>Plancher ≥ 60 mmHg</td><td>Attention chutes/hypotension orthostatique; débuter lentement</td></tr>
+              <tr><td><strong>Grossesse</strong></td><td>130–150 mmHg</td><td>80–100 mmHg</td><td>Ne pas descendre trop bas (hypoperfusion placentaire); IECA/ARA CI</td></tr>
+              <tr style="background:#e8f4ff;"><td><strong>AVC/AIT récent</strong></td><td>&lt; 130 mmHg</td><td>&lt; 80 mmHg</td><td>Débuter ou intensifier dès 24–48h si stable; IECA + thiazide (PROGRESS trial)</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="key-fact blue" style="margin-top:10px;">
+          📉 Critères SPRINT pour cible &lt;120 mmHg : ≥ 50 ans, risque CV élevé (MCAS, IRC, Score Framingham ≥15%, antécédent AVC) — <em>exclut</em> diabétiques, AVC récent.
+        </div>
       </div>
+
+      <!-- 1.7 INDICATIONS PAR COMORBIDITÉ -->
+      <div id="hta-17" class="block def" style="border-left:4px solid #0a7a4e;">
+        <div class="block-title"><span class="tag">1.7 — Indications spécifiques par comorbidité</span></div>
+        <div style="overflow-x:auto;margin-top:8px;">
+          <table>
+            <thead>
+              <tr><th>Comorbidité</th><th>Agent(s) de 1re ligne</th><th>À éviter / Précautions</th></tr>
+            </thead>
+            <tbody>
+              <tr style="background:#fce4ec;"><td><strong>🫀 MCAS / Post-IM</strong></td><td>BB + IECA/ARA</td><td>BCC non-DHP si BB CI; éviter BCC DHP en monothérapie si angine instable</td></tr>
+              <tr style="background:#e8f4ff;"><td><strong>💔 IC avec FEr</strong></td><td>IECA/ARA + BB + ARM (spironolactone) + INRA (sacubitril/valsartan)</td><td>BCC non-DHP (vérapamil/diltiazem) CI; amlodipine OK</td></tr>
+              <tr style="background:#fff8e1;"><td><strong>🩸 Diabète type 2</strong></td><td>iSGLT2 + aGLP-1 (bénéfice CV indépendant de HbA1c) + IECA/ARA si micro-albuminurie</td><td>BB peut masquer hypoglycémie (prudence chez insulinodépendants)</td></tr>
+              <tr style="background:#e8f8f5;"><td><strong>🫘 IRC</strong></td><td>IECA/ARA (1re ligne — néphroprotection) + BCC</td><td>Éviter AINS; surveiller K+, créatinine; ne pas combiner IECA + ARA</td></tr>
+              <tr style="background:#f5eef8;"><td><strong>🧠 AVC/AIT prévention 2ndaire</strong></td><td>IECA + thiazide-like (PROGRESS) ou ARA</td><td>Débuter progressivement; éviter hypotension</td></tr>
+              <tr style="background:#fce4ec;"><td><strong>👶 Grossesse</strong></td><td>Labétalol, méthyldopa, BCC (nifédipine XL)</td><td>IECA/ARA CI absolue (tératogènes); HCTZ (relatif); clonidine</td></tr>
+              <tr style="background:#fff8e1;"><td><strong>💛 FA</strong></td><td>BB ou BCC non-DHP (contrôle FC) + IECA/ARA</td><td>Éviter vérapamil + BB ensemble (bloc AV)</td></tr>
+              <tr style="background:#e8f4ff;"><td><strong>🧪 Hyperaldostéronisme primaire</strong></td><td>Spironolactone (antagoniste de l'aldostérone) — curatif</td><td>IECA/ARA et diurétiques moins efficaces</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- 1.8 CAS PARTICULIERS -->
+      <div id="hta-18" class="block para" style="border-left:4px solid #7b3fa0;">
+        <div class="block-title"><span class="tag">1.8 — Cas particuliers</span></div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:8px;">
+
+          <div style="background:#f5eef8;border-radius:10px;padding:14px;">
+            <div style="font-weight:700;color:#7b3fa0;margin-bottom:8px;">👩 Femmes</div>
+            <ul style="margin:0;padding-left:18px;font-size:13px;line-height:1.8;">
+              <li><strong>DFM (Dysplasie fibromusculaire)</strong> : plus fréquente chez les femmes jeunes; cause d'HTA rénovasculaire; angioplastie percutanée (sans stent)</li>
+              <li><strong>Contraceptifs oraux</strong> œstrogéniques → HTA chez 5% des utilisatrices; considérer contraception progestative seule</li>
+              <li><strong>Prééclampsie</strong> → facteur de risque CV à long terme; suivi rapproché post-partum</li>
+              <li><strong>Ménopause</strong> → ↑ TA systolique; BCC particulièrement utiles</li>
+            </ul>
+          </div>
+
+          <div style="background:#e8f4ff;border-radius:10px;padding:14px;">
+            <div style="font-weight:700;color:#1C3F8F;margin-bottom:8px;">🌍 Patients d'origine africaine</div>
+            <ul style="margin:0;padding-left:18px;font-size:13px;line-height:1.8;">
+              <li>Profil rénine basse → <strong>moins bonne réponse aux IECA/ARA seuls</strong></li>
+              <li>Meilleure réponse aux <strong>BCC + diurétiques thiazide-like</strong></li>
+              <li>Si indication (DB, IRC, protéinurie) → IECA/ARA restent indiqués mais combiner avec BCC d'emblée</li>
+              <li>Risque AVC particulièrement élevé → contrôle tensionnel strict</li>
+            </ul>
+          </div>
+
+          <div style="background:#e8f8f5;border-radius:10px;padding:14px;">
+            <div style="font-weight:700;color:#0a7a4e;margin-bottom:8px;">👴 Personnes âgées (&gt; 75–80 ans)</div>
+            <ul style="margin:0;padding-left:18px;font-size:13px;line-height:1.8;">
+              <li>HTA systolique isolée fréquente (rigidité artérielle)</li>
+              <li>BCC ou thiazide-like en 1re ligne</li>
+              <li>Attention hypotension orthostatique → mesurer TA debout</li>
+              <li>Plancher TAd 60 mmHg — ne pas descendre sous</li>
+              <li>Débuter à faible dose et titrer lentement</li>
+            </ul>
+          </div>
+
+          <div style="background:#fff8e1;border-radius:10px;padding:14px;">
+            <div style="font-weight:700;color:#d35400;margin-bottom:8px;">🆘 Urgence hypertensive</div>
+            <ul style="margin:0;padding-left:18px;font-size:13px;line-height:1.8;">
+              <li>TAS ≥ 180/120 + atteinte d'organe cible (encéphalopathie, IC, SCA, AVC, dissection)</li>
+              <li>Réduire TA de 10–20% en 1h, puis progressivement sur 24–48h</li>
+              <li>Agents IV : labétalol, nicardipine, clévidipine, nitroprusside (urgence)</li>
+              <li>Pseudo-urgence (sans atteinte organe) : traitement oral; éviter réduction trop rapide</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- 1.9 HTA RÉNOVASCULAIRE -->
+      <div id="hta-19" class="block def" style="border-left:4px solid #c0392b;">
+        <div class="block-title"><span class="tag">1.9 — HTA Rénovasculaire</span></div>
+
+        <div class="key-fact blue" style="margin-bottom:12px;">
+          📌 Causes principales : <strong>Athérosclérose</strong> (70–80%, hommes &gt;50 ans, FDR CV) et <strong>Dysplasie fibromusculaire</strong> (DFM, 20–30%, femmes jeunes)
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px;">
+          <div style="background:#fce4ec;border-radius:10px;padding:14px;">
+            <div style="font-weight:700;color:#c0392b;margin-bottom:8px;">🔴 Indications d'angioplastie (stenting SAR)</div>
+            <ol style="margin:0;padding-left:18px;font-size:13px;line-height:1.9;">
+              <li>HTA réfractaire malgré traitement médical optimal</li>
+              <li>↑ Créatinine &gt; 30% sous IECA/ARA (→ SAR bilatérale probable)</li>
+              <li>Sténose bilatérale significative (&gt;70%) ou sur rein unique</li>
+              <li>Œdème pulmonaire flash récidivant inexpliqué (Pickering syndrome)</li>
+            </ol>
+          </div>
+          <div style="background:#e8f8f5;border-radius:10px;padding:14px;">
+            <div style="font-weight:700;color:#0a7a4e;margin-bottom:8px;">✅ Traitement médical optimal (TMO)</div>
+            <ul style="margin:0;padding-left:18px;font-size:13px;line-height:1.9;">
+              <li><strong>Cible TAS &lt; 120 mmHg</strong> (si toléré)</li>
+              <li><strong>IECA ou ARA</strong> (sauf si SAR bilatérale/rein unique — CI relative: surveiller créatinine)</li>
+              <li><strong>Clopidogrel</strong> (prévention thrombose / anti-agrégant)</li>
+              <li><strong>Statine haute intensité + ézétimibe</strong> (cible LDL &lt; 1.4 mmol/L si ASCVD)</li>
+            </ul>
+          </div>
+        </div>
+
+        <div style="overflow-x:auto;">
+          <table>
+            <thead>
+              <tr><th>Caractéristique</th><th>Athérosclérose</th><th>DFM</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Âge</td><td>Homme &gt; 50 ans</td><td>Femme &lt; 50 ans</td></tr>
+              <tr><td>FDR CV</td><td>Présents (tabac, DB, dyslipidémie)</td><td>Absents ou minimes</td></tr>
+              <tr><td>Lésion caractéristique</td><td>Sténose ostiale (plaque fibreuse)</td><td>"Chapelet de perles" en angiographie</td></tr>
+              <tr><td>Traitement de choix</td><td>TMO ± angioplastie + stent</td><td>Angioplastie percutanée SANS stent</td></tr>
+              <tr><td>Guérison possible</td><td>Rare — contrôle tensionnel</td><td>Possible (guérison chez 20–50% après angioplastie)</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- 2.0 SUIVI IPS -->
+      <div id="hta-20" class="block def" style="border-left:4px solid #0a7a4e;background:#e8f8f5;">
+        <div class="block-title"><span class="tag">2.0 — Suivi IPS en HTA</span></div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:8px;">
+          <div>
+            <strong style="color:#0a7a4e;">📅 Fréquence des visites :</strong>
+            <ul style="margin:6px 0;padding-left:18px;font-size:13px;line-height:1.9;">
+              <li><strong>Visites mensuelles</strong> jusqu'à atteinte de la cible</li>
+              <li>Après atteinte de la cible : visites aux <strong>3–6 mois</strong></li>
+              <li>Si HTA bien contrôlée × 2 ans : tous les <strong>6–12 mois</strong></li>
+              <li>Toujours vérifier la mesure tensionnelle à chaque visite</li>
+            </ul>
+          </div>
+          <div>
+            <strong style="color:#0a7a4e;">🔬 Monitoring biologique :</strong>
+            <ul style="margin:6px 0;padding-left:18px;font-size:13px;line-height:1.9;">
+              <li>K+ et créatinine <strong>2–4 semaines post-initiation IECA/ARA</strong></li>
+              <li>Si créatinine ↑ &gt; 30% → investigation SAR (référence)</li>
+              <li>K+ si spironolactone ajoutée (objectif K+ ≤ 5.0 mmol/L)</li>
+              <li>Recheck lipides, HbA1c, ACR annuellement</li>
+            </ul>
+          </div>
+        </div>
+
+        <div style="margin-top:12px;">
+          <strong style="color:#0a7a4e;">📋 Checklist visite IPS — HTA :</strong>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;">
+            <div style="background:#fff;border:1px solid #0a7a4e;border-radius:6px;padding:6px 12px;font-size:12px;">📏 Mesure TA (bilatérale initiale)</div>
+            <div style="background:#fff;border:1px solid #0a7a4e;border-radius:6px;padding:6px 12px;font-size:12px;">⚖️ Poids et IMC</div>
+            <div style="background:#fff;border:1px solid #0a7a4e;border-radius:6px;padding:6px 12px;font-size:12px;">💊 Revue des médicaments + effets II</div>
+            <div style="background:#fff;border:1px solid #0a7a4e;border-radius:6px;padding:6px 12px;font-size:12px;">🧂 Observance régime hyposodé</div>
+            <div style="background:#fff;border:1px solid #0a7a4e;border-radius:6px;padding:6px 12px;font-size:12px;">📊 MPAD (journal TA domicile)</div>
+            <div style="background:#fff;border:1px solid #0a7a4e;border-radius:6px;padding:6px 12px;font-size:12px;">🔬 Labo si indication</div>
+            <div style="background:#fff;border:1px solid #0a7a4e;border-radius:6px;padding:6px 12px;font-size:12px;">❤️ Évaluation RCV globale</div>
+            <div style="background:#fff;border:1px solid #0a7a4e;border-radius:6px;padding:6px 12px;font-size:12px;">🏃 Counselling mode de vie</div>
+          </div>
+        </div>
+
+        <div class="key-fact black" style="margin-top:14px;">
+          👩‍⚕️ <strong>Rôle IPS :</strong> Initiation, ajustement et titration du traitement antihypertenseur de façon autonome dans le cadre de l'exercice étendu. Référence au médecin si : HTA secondaire suspectée, HTA réfractaire malgré ≥ 3 agents à dose max, complications d'organe cible, grossesse.
+        </div>
+      </div>
+
     </div>
-
-    <div class="section" id="sec-hta-secondaire">
-      <div class="section-header">
-        <div class="section-accent" style="background:#1C3F8F">🔬</div>
-        <div class="section-title"><h1>HTA Secondaire</h1><div class="breadcrumb">Cardiologie <span class="breadcrumb-sep">·</span> Section 2</div></div>
-      </div>
-
-      <!-- PHYSIOPATHOLOGIE -->
-      <div class="block para">
-        <div class="block-title"><span class="tag">🧬 Physiopathologie brève</span></div>
-        <p class="content-text">Mécanisme variable selon la cause sous-jacente — dans tous les cas, la TA s'élève par un mécanisme <strong>identifiable et potentiellement réversible</strong> :</p>
-        <div class="flag-list" style="margin-top:8px;">
-          <div class="flag-item"><span class="flag-dot blue"></span><span><strong>Excès d'aldostérone</strong> (Conn) → rétention Na⁺/H₂O + perte de K⁺ → ↑ volume circulant</span></div>
-          <div class="flag-item"><span class="flag-dot blue"></span><span><strong>Excès de catécholamines</strong> (phéochromocytome) → vasoconstriction + ↑ FC/contractilité, souvent paroxystique</span></div>
-          <div class="flag-item"><span class="flag-dot blue"></span><span><strong>Activation du SRAA</strong> (sténose de l'artère rénale) → hypoperfusion rénale → ↑ rénine → vasoconstriction systémique</span></div>
-          <div class="flag-item"><span class="flag-dot blue"></span><span><strong>Excès de cortisol</strong> (Cushing) → rétention sodée + potentialisation de l'effet vasoconstricteur des catécholamines</span></div>
-          <div class="flag-item"><span class="flag-dot blue"></span><span><strong>Dysthyroïdie</strong> → hyperthyroïdie (↑ débit cardiaque/FC → HTA systolique) ou hypothyroïdie (↑ résistances périphériques → HTA diastolique)</span></div>
-          <div class="flag-item"><span class="flag-dot blue"></span><span><strong>Apnée du sommeil</strong> → hypoxie intermittente + hyperactivation sympathique nocturne</span></div>
-        </div>
-      </div>
-
-      <!-- TABLEAU CLINICO-ÉTIOLOGIQUE -->
-      <div class="block def">
-        <div class="block-title"><span class="tag">🗺️ Tableau clinico-étiologique — quel signe oriente vers quelle cause?</span></div>
-        <table style="margin-top:6px;">
-          <thead><tr><th>Signe clinique</th><th>Penser à</th></tr></thead>
-          <tbody>
-            <tr><td>HTA réfractaire malgré ≥ 3 médicaments à dose maximale</td><td>Hyperaldostéronisme primaire, apnée du sommeil</td></tr>
-            <tr><td>HTA d'apparition subite</td><td>Causes endocriniennes</td></tr>
-            <tr><td>Âge &lt; 18-30 ans sans antécédent familial</td><td>Dysplasie fibromusculaire (DFM), toutes causes secondaires</td></tr>
-            <tr><td>↑ Créatinine &gt; 30 % sous IECA/ARA</td><td>HTA rénovasculaire</td></tr>
-            <tr><td>Asymétrie rénale</td><td>HTA rénovasculaire</td></tr>
-            <tr><td>Triade céphalée + palpitations + sudation paroxystiques</td><td>Phéochromocytome</td></tr>
-            <tr><td>HTA + hypokaliémie</td><td>Hyperaldostéronisme primaire</td></tr>
-            <tr><td>Somnolence diurne, ronflement, obésité abdominale</td><td>Apnée du sommeil / SHVO</td></tr>
-          </tbody>
-        </table>
-        <div class="note" style="margin-top:8px;">ℹ️ <strong>Fréquence des causes secondaires</strong> (du plus au moins fréquent) : ① hyperaldostéronisme primaire (ratio aldostérone/rénine — ratio normal &lt; 140) ② apnée du sommeil ③ rénovasculaire/IRC ④ phéochromocytome ⑤ hypo/hyperthyroïdie, Cushing, coarctation de l'aorte, pré-éclampsie, alcool/médicaments.</div>
-      </div>
-
-      <!-- ÉVALUATION INITIALE -->
-      <div class="block clin">
-        <div class="block-title"><span class="tag">🩺 Évaluation initiale — Anamnèse & examen physique</span></div>
-        <p class="content-text" style="margin-bottom:8px;"><strong>Anamnèse — surtout rechercher :</strong></p>
-        <div class="flag-list">
-          <div class="flag-item"><span class="flag-dot ink"></span><span>Âge d'apparition (&lt; 30 ans ou &gt; 55 ans sans FdR), caractère <strong>paroxystique vs soutenu</strong>, réponse au traitement (résistance malgré ≥ 3 agents)</span></div>
-          <div class="flag-item"><span class="flag-dot ink"></span><span>Symptômes associés ciblés : céphalées/palpitations/sueurs (phéo) · faiblesse musculaire/crampes/polyurie (hyperaldo) · prise de poids centrale/vergetures/fragilité cutanée (Cushing) · ronflements/somnolence diurne (apnée du sommeil) · intolérance au chaud ou au froid (dysthyroïdie)</span></div>
-          <div class="flag-item"><span class="flag-dot ink"></span><span>Médicaments/substances : AINS, corticostéroïdes, contraceptifs oraux, décongestionnants, réglisse, stimulants, sevrage OH, agents néphrotoxiques (IECA/ARA)</span></div>
-          <div class="flag-item"><span class="flag-dot ink"></span><span>Histoire familiale (NEM2, VHL, NF1 → phéo héréditaire), tabagisme/athérosclérose (sténose rénale)</span></div>
-        </div>
-        <p class="content-text" style="margin:12px 0 8px;"><strong>Examen physique :</strong></p>
-        <div class="flag-list">
-          <div class="flag-item"><span class="flag-dot blue"></span><span>TA <strong>aux 2 bras</strong> et aux <strong>4 membres</strong> si suspicion de coarctation (gradient bras-jambes)</span></div>
-          <div class="flag-item"><span class="flag-dot blue"></span><span><strong>Souffle abdominal</strong> (sténose artère rénale), masse abdominale/rénale palpable</span></div>
-          <div class="flag-item"><span class="flag-dot blue"></span><span>Signes de <strong>Cushing</strong> : obésité tronculaire, vergetures pourpres, faciès lunaire, bosse de bison, ecchymoses faciles</span></div>
-          <div class="flag-item"><span class="flag-dot blue"></span><span>Palpation thyroïdienne, signes de dysthyroïdie (FC, tremblements, peau)</span></div>
-          <div class="flag-item"><span class="flag-dot blue"></span><span>Pouls fémoraux diminués/retardés (coarctation), tour de cou ↑ et IMC élevé (apnée du sommeil)</span></div>
-        </div>
-      </div>
-
-      <div class="block def">
-        <div class="block-title"><span class="tag">📌 Quand investiguer — Indices cliniques</span></div>
-        <div class="flag-list">
-          <div class="flag-item"><span class="fi-icon">📈</span><span>HTA sévère (&gt; 180/110) · HTA résistante (≥ 3 médicaments dont 1 diurétique, doses maximales)</span></div>
-          <div class="flag-item"><span class="fi-icon">👶</span><span>Début &lt; 30 ans sans FDR · HTA chez enfant/adolescent</span></div>
-          <div class="flag-item"><span class="fi-icon">📉</span><span>Détérioration rénale avec IECA/ARA → Sténose artère rénale</span></div>
-          <div class="flag-item"><span class="fi-icon">💊</span><span>Hypokaliémie spontanée · Soufffle abdominal · Masse rénale · Sx épisodiques (sueurs, palpitations, céphalées) → phéo</span></div>
-        </div>
-      </div>
-
-      <div class="block clin">
-        <div class="block-title"><span class="tag">🔍 Causes — Tableau clinique</span></div>
-        <div class="accordion">
-          <div class="accordion-item open">
-            <div class="accordion-header">Hyperaldostéronisme primaire (Conn) — #1 cause HTA secondaire
-              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-            </div>
-            <div class="accordion-body">
-              Prévalence : 5–10 % des HTA (sous-diagnostiqué) · Adénome surrénalien (#1) · Hyperplasie bilatérale<br>
-              Clinique : HTA ± Hypokaliémie (K⁺ &lt; 3,5 spontanément) · Faiblesse musculaire · Polyurie<br>
-              <strong>Dépistage :</strong> Ratio Aldostérone/Rénine (ARR) &gt; 30 (pgmol/µU) = Suspect<br>
-              <strong>Confirmer :</strong> Test de charge en sel (↓ aldostérone si normale) · Test fludrocortisone<br>
-              <strong>Localisation :</strong> TDM surrénales ± Cathétérisme veines surrénaliennes<br>
-              <span class="drug-badge line1">Adénome → Surrénalectomie laparoscopique · Hyperplasie → Spironolactone ou Eplérénone</span>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <div class="accordion-header">Phéochromocytome / Paragangliome
-              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-            </div>
-            <div class="accordion-body">
-              Triade H: Headache (Céphalée) + Hyperhidrose + Hypertension paroxystique<br>
-              Également: Palpitations · Pâleur · Hyperglycémie · HTA persistante ou épisodique<br>
-              <strong>Bilan :</strong> Métanéphrines plasmatiques (ou urinaires 24h) → Sensibilité 97 %<br>
-              IRM/TDM surrénales + MIBG scintigraphie si extra-surrénalien<br>
-              <span class="drug-badge ci">NE PAS biopsier sans bloc α-adrénergique</span> (crise hypertensive)<br>
-              Tx : Phénoxybenzamine (α-bloquant) 10–14j préop → puis β-bloquant → Chirurgie<br>
-              Règle 10 % : 10 % malin · 10 % extra-surrénalien · 10 % bilatéral · 10 % héréditaire (VHL, NEM2, NF1, SDHB)
-            </div>
-          </div>
-          <div class="accordion-item">
-            <div class="accordion-header">Sténose artère rénale
-              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-            </div>
-            <div class="accordion-body">
-              Athérosclérotique (âgé · Tabac) · Dysplasie fibromusculaire (jeune femme)<br>
-              Indices : Souffle abdominal · ↑ Créatinine sous IECA/ARA · Asymétrie rénale · OAP flash (flash pulmonary edema)<br>
-              Bilan : Echo-Doppler rénal · Angio-IRM / Angio-TDM<br>
-              Tx : IECA/ARA (controlatéral sain) · Angioplastie ± stent si symptomatique / rein fonctionnel compromis
-            </div>
-          </div>
-          <div class="accordion-item">
-            <div class="accordion-header">Autres causes importantes
-              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-            </div>
-            <div class="accordion-body">
-              <strong>Hypothyroïdie :</strong> HTA diastolique · TSH (↓ FC + ↑ résistances périph.) · LT4<br>
-              <strong>Hyperthyroïdie :</strong> HTA systolique + Tachycardie<br>
-              <strong>Syndrome de Cushing :</strong> Obésité centrale · Vergetures violacées · Hirsutisme · Cortisol libre 24h OU Test suppression dexaméthasone<br>
-              <strong>Coarctation aorte :</strong> Jeune · Gradient TA bras-jambes &gt; 20 mmHg · Pulsations fémorales diminuées · Écho/IRM<br>
-              <strong>Apnée du sommeil :</strong> HTA nocturne · Résistante · Traiter avec CPAP → ↓ TA 2–4 mmHg
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- CAS PARTICULIERS -->
-      <div class="block clin">
-        <div class="block-title"><span class="tag">🩺 Cas particuliers — populations spécifiques</span></div>
-        <div class="flag-list">
-          <div class="flag-item"><span class="flag-dot blue"></span><span><strong>Dysplasie fibromusculaire (DFM)</strong> — cause rare (&lt; 0,5 %) mais 4× plus fréquente chez la femme; à suspecter chez une <strong>jeune femme de 20-30 ans, non obèse, sans antécédent familial</strong> avec HTA d'apparition précoce</span></div>
-          <div class="flag-item"><span class="flag-dot blue"></span><span><strong>Femmes</strong> — prévalence accrue après la ménopause; chez celles désirant une grossesse, éviter les IECA/ARA si possible (tératogènes — utiliser BCC, labétalol ou méthyldopa)</span></div>
-          <div class="flag-item"><span class="flag-dot blue"></span><span><strong>Patients afro-descendants</strong> — HTA plus fréquente (57 % vs 44 % chez les Blancs, USA 2018) et plus sévère; profil à rénine basse → meilleure réponse aux diurétiques thiazidiques-like, réponse moindre aux IECA/ARA</span></div>
-        </div>
-      </div>
-
-      <!-- HTA RÉNOVASCULAIRE -->
-      <div class="block rx">
-        <div class="block-title"><span class="tag">🏥 HTA rénovasculaire — place de l'angioplastie</span></div>
-        <p class="content-text">Le traitement médical optimal est <strong>supérieur à l'angioplastie</strong> dans la majorité des cas — toutes les grandes études (DRASTIC, STAR, ASTRAL, CORAL) sont négatives sur l'issue principale.</p>
-        <p class="content-text" style="margin:10px 0 6px;"><strong>4 indications reconnues d'angioplastie des artères rénales :</strong></p>
-        <div class="criteria-list">
-          <div class="criteria-item"><span class="criteria-num">1</span><span>IRC rapidement progressive attribuée à des sténoses des artères rénales bilatérales (ou rein unique) hémodynamiquement significatives</span></div>
-          <div class="criteria-item"><span class="criteria-num">2</span><span>Œdème aigu du poumon (« flash OAP ») répétitif + crise hypertensive + insuffisance cardiaque associés à des sténoses bilatérales significatives (ou rein unique)</span></div>
-          <div class="criteria-item"><span class="criteria-num">3</span><span>HTA impossible à contrôler malgré un traitement médical optimal</span></div>
-          <div class="criteria-item"><span class="criteria-num">4</span><span>Dysplasie fibromusculaire avec sténose hémodynamiquement significative</span></div>
-        </div>
-        <p class="content-text" style="margin:10px 0 6px;"><strong>Traitement médical optimal :</strong></p>
-        <div style="display:flex;flex-wrap:wrap;gap:6px;">
-          <span class="drug-badge line1">Cible TAs &lt; 120 mmHg</span>
-          <span class="drug-badge line1">IECA ou ARA (viser &lt; 30 % ↑ créatinine)</span>
-          <span class="drug-badge line2">Antiplaquettaire — clopidogrel &gt; AAS (CAPRIE, Lancet 1996)</span>
-          <span class="drug-badge line2">Statine + ézétimibe ± aPCSK9 (LDL &lt; 1,8 mmol/L)</span>
-          <span class="drug-badge line3">Diète faible en NaCl, exercice, perte de poids, arrêt tabagique, contrôle du diabète</span>
-        </div>
-      </div>
-    </div>
-    <div class="section" id="sec-dyslipidémie">
+<div class="section" id="sec-dyslipidémie">
       <div class="section-header">
         <div class="section-accent">🫀</div>
         <div class="section-title"><h1>Dyslipidémie</h1><div class="breadcrumb">Cardiologie <span class="breadcrumb-sep">·</span> Section 3</div></div>
@@ -19042,8 +19016,7 @@ function calculatePHQ9() {
 const SEARCH_INDEX = [
   { id:'home',                title:'Accueil',                        specialty:'',               keywords:['accueil'] },
   { id:'calculateurs',        title:'Calculateurs & Outils',          specialty:'',               keywords:['calculateur','score','framingham','cha2ds2','has-bled','wells','grace','timi','nihss','curb','meld'] },
-  { id:'hta-primaire',        title:'HTA Primaire',                   specialty:'Cardiologie',    keywords:['hta','hypertension','tension','bithérapie','ieca','ara','diurétique','bcc','mapa'] },
-  { id:'hta-secondaire',      title:'HTA Secondaire',                 specialty:'Cardiologie',    keywords:['hta secondaire','hyperaldostéronisme','phéochromocytome','cushing','coarctation'] },
+  { id:'hta',                 title:'HTA (Primaire & Secondaire)',     specialty:'Cardiologie',    keywords:['hta','hypertension','tension','bithérapie','ieca','ara','diurétique','bcc','mapa','secondaire','hyperaldostéronisme','phéochromocytome','cushing','coarctation','rénovasculaire','mpad','sprint','réfractaire'] },
   { id:'dyslipidémie',        title:'Dyslipidémie',                   specialty:'Cardiologie',    keywords:['dyslipidémie','dlp','ldl','statine','ézétimibe','pcsk9','framingham','cholestérol'] },
   { id:'mcas',                title:'MCAS & Angine Stable',           specialty:'Cardiologie',    keywords:['mcas','angine','coronarien','stent','nitrates'] },
   { id:'sca',                 title:'SCA — Syndromes Coronariens Aigus',specialty:'Cardiologie', keywords:['sca','stemi','nstemi','infarctus','troponine'] },
@@ -19299,7 +19272,7 @@ document.addEventListener('click', e => {
 const SECTION_ORDER = [
   'home','calculateurs',
   // Cardiologie
-  'hta-primaire','hta-secondaire','dyslipidémie','mcas','sca','fa','arythmies','ic','stenose-aortique','pericardite','endocardite','map',
+  'hta','dyslipidémie','mcas','sca','fa','arythmies','ic','stenose-aortique','pericardite','endocardite','map',
   // Néphrologie
   'ira','irc','proteinurie','nephritique','nephrotique','biopsie-renale','diuretiques','acidose',
   // Endocrinologie
@@ -19331,7 +19304,7 @@ const SECTION_ORDER = [
 // Section titles for display in nav buttons
 const SECTION_TITLES = {
   'home':'Accueil','calculateurs':'Calculateurs',
-  'hta-primaire':'HTA Primaire','hta-secondaire':'HTA Secondaire','dyslipidémie':'Dyslipidémie',
+  'hta':'HTA (Primaire & Secondaire)','dyslipidémie':'Dyslipidémie',
   'mcas':'MCAS & Angine','sca':'SCA','fa':'Fibrillation Auriculaire','arythmies':'Flutter & Arythmies',
   'ic':'Insuffisance Cardiaque','stenose-aortique':'Sténose Aortique','pericardite':'Péricardite & Myocardite',
   'endocardite':'Endocardite','map':'MAP',
