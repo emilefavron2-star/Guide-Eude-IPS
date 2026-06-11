@@ -1052,7 +1052,16 @@
         <svg class="chevron" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
       </div>
       <div class="specialty-items">
-        <div class="nav-item" onclick="showSection('tvp-ep')">29b. TVP & Embolie Pulmonaire</div>
+        <div class="nav-item" onclick="showSection('hemostase')">1. Bases de l'hémostase</div>
+        <div class="nav-item" onclick="showSection('thrombolyse')">2. Thrombolyse thérapeutique</div>
+        <div class="nav-item" onclick="showSection('antiplaquettaires')">3. Antiplaquettaires oraux</div>
+        <div class="nav-item" onclick="showSection('tests-coag')">4. Tests de coagulation</div>
+        <div class="nav-item" onclick="showSection('anticoag-parenteraux')">5. Anticoag. parentéraux</div>
+        <div class="nav-item" onclick="showSection('warfarine')">6. Warfarine (AVK)</div>
+        <div class="nav-item" onclick="showSection('aod')">7. AOD</div>
+        <div class="nav-item" onclick="showSection('tvp')">8. TVP</div>
+        <div class="nav-item" onclick="showSection('ep')">9. Embolie pulmonaire</div>
+        <div class="nav-item" onclick="showSection('periop-anticoag')">10. Gestion périopératoire</div>
         <div class="nav-item" onclick="showSection('fsc-anemie')">30. FSC & Anémie</div>
       </div>
     </div>
@@ -1251,7 +1260,7 @@
             <div class="home-card-count">8 sections</div>
           </div>
         </div>
-        <div class="home-card" onclick="showSection('tvp-ep'); openGroup('grp-hemato')">
+        <div class="home-card" onclick="showSection('hemostase'); openGroup('grp-hemato')">
           <div class="home-card-icon">🩸</div>
           <div class="home-card-body">
             <div class="home-card-name">Hématologie</div>
@@ -13579,108 +13588,1205 @@ function calculatePHQ9() {
       </div>
     </div>
 
-    <div class="section" id="sec-tvp-ep">
-      <div class="section-header">
-        <div class="section-accent" style="background:#7c2d12">🩸</div>
-        <div class="section-title"><h1>TVP & Embolie Pulmonaire</h1><div class="breadcrumb">Hématologie <span class="breadcrumb-sep">·</span> Section 28</div></div>
-      </div>
+    <!-- ═══════════════════════════════════════════════════════════════
+     1. HÉMOSTASE — Primaire / Secondaire / Fibrinolyse
+═══════════════════════════════════════════════════════════════ -->
+<div class="section" id="sec-hemostase">
+  <div class="section-header">
+    <div class="section-accent" style="background:#7c2d12">🩸</div>
+    <div class="section-title">
+      <h1>Bases de l'hémostase</h1>
+      <div class="breadcrumb">Hématologie <span class="breadcrumb-sep">·</span> Dr André Roussin — CHUM 2026</div>
+    </div>
+  </div>
 
-      <div class="block def">
-        <div class="block-title"><span class="tag">📌 Facteurs de risque (Triade de Virchow)</span></div>
-        <div class="stat-row">
-          <div class="stat-card blue"><div class="stat-num">Stase</div><div class="stat-label">Immobilisation · Chirurgie · IC · Voyage &gt; 4h</div></div>
-          <div class="stat-card red"><div class="stat-num">Hypercoag</div><div class="stat-label">Thrombophilie · Grossesse · CO · Cancer · CIVD</div></div>
-          <div class="stat-card yellow"><div class="stat-num">Lésion vaisseau</div><div class="stat-label">Trauma · Chirurgie · Inflammation</div></div>
-        </div>
-        <div class="highlight cream" style="margin-top:8px;font-size:13px;"><strong>Thrombophilies majeures :</strong> Déficit Prot C/S/ATIII · Mutation Facteur V Leiden · Mutation Prothrombine G20210A · SAPL (anti-phospholipides — triple positif → risque thrombotique très élevé)</div>
-      </div>
+  <!-- Nav interne -->
+  <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
+    <button onclick="document.getElementById('hemo-prim').scrollIntoView({behavior:'smooth'})" style="background:#b91c1c;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">1.1 Primaire</button>
+    <button onclick="document.getElementById('hemo-sec').scrollIntoView({behavior:'smooth'})" style="background:#1d4ed8;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">1.2 Secondaire</button>
+    <button onclick="document.getElementById('hemo-fibri').scrollIntoView({behavior:'smooth'})" style="background:#0a7a4e;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">1.3 Fibrinolyse</button>
+    <button onclick="document.getElementById('hemo-svg').scrollIntoView({behavior:'smooth'})" style="background:#7b3fa0;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🗺 Cascade interactive</button>
+  </div>
 
-      <div class="block clin">
-        <div class="block-title"><span class="tag">🔍 Approche diagnostique — Scores pré-test</span></div>
-        <div class="accordion">
-          <div class="accordion-item open">
-            <div class="accordion-header">Wells TVP
-              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-            </div>
-            <div class="accordion-body">
-              +1 Cancer actif · +1 Paralysie/plâtre MI · +1 Alité &gt; 3j ou chirurgie majeure &lt; 12 sem · +1 Douleur sur trajet veineux · +1 Œdème généralisé · +1 Gonflement veau &gt; 3 cm · +1 Veines superficielles collatérales · +1 TVP antérieure · -2 DDx aussi probable<br>
-              <strong>Score ≤ 1 = faible</strong> → D-dimères · <strong>≥ 2 = modéré-élevé</strong> → Écho-Doppler directement
-            </div>
-          </div>
-          <div class="accordion-item">
-            <div class="accordion-header">Wells EP (modifié 2 niveaux)
-              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-            </div>
-            <div class="accordion-body">
-              +3 TVP/EP antérieur · +3 FC &gt; 100 · +1,5 Chirurgie/immobilisation · +1,5 TVP ou EP clinique · +1 Hémoptysie · +1 Cancer actif · +3 DDx autre moins probable<br>
-              <strong>≤ 4 = Faible</strong> → D-dimères · <strong>&gt; 4 = Élevé</strong> → Angio-TDM<br>
-              YEARS rule : hémoptyse + DVT + EP le plus probable DDx → utiliser si enceinte/jeune
-            </div>
-          </div>
-          <div class="accordion-item">
-            <div class="accordion-header">EP massive (à haut risque) — Stratification
-              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-            </div>
-            <div class="accordion-body">
-              <span class="drug-badge ci">Massive :</span> Choc · TAS &lt; 90 · Arrêt cardiaque<br>
-              <span class="drug-badge warn">Sous-massive :</span> Stable + Dysfonction VD (écho ou TDM) + Troponine ↑ + BNP ↑<br>
-              Basse risque : PESI score I–II · Stables · Pas de dysfonction VD<br>
-              <strong>sPESI :</strong> ≥ 80 ans · Cancer · IC · BPCO · TAS &lt; 100 · FC ≥ 110 · O₂sat &lt; 90 → ≥ 1 = haut risque
-            </div>
-          </div>
-        </div>
+  <!-- 1.1 HÉMOSTASE PRIMAIRE -->
+  <div id="hemo-prim" class="block def" style="border-left:4px solid #b91c1c;">
+    <div class="block-title"><span class="tag">1.1 — Hémostase primaire (< quelques secondes)</span></div>
+    <p class="content-text">Réaction ultra-rapide déclenchée dès qu'un vaisseau est lésé. <strong>Trois temps successifs :</strong></p>
+    <div style="display:flex;flex-direction:column;gap:10px;margin-top:10px;">
+      <div style="display:flex;align-items:flex-start;gap:12px;">
+        <div style="min-width:36px;height:36px;background:#fecaca;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;color:#b91c1c;font-size:14px;">1</div>
+        <div><strong>Vasoconstriction</strong> — sécrétion réflexe d'adrénaline, réduit le flux sanguin local (secondes)</div>
       </div>
-
-      <div class="block rx">
-        <div class="block-title"><span class="tag">💊 Traitement anticoagulant</span></div>
-        <table>
-          <thead><tr><th>Molécule</th><th>Dose (TVP/EP)</th><th>Durée minimale</th><th>Note</th></tr></thead>
-          <tbody>
-            <tr><td><span class="drug-badge line1">Rivaroxaban (Xarelto)</span></td><td>15 mg BID × 21j → 20 mg DIE</td><td>3 mois</td><td>Pas de HBPM initiale nécessaire · Simple</td></tr>
-            <tr><td><span class="drug-badge line1">Apixaban (Eliquis)</span></td><td>10 mg BID × 7j → 5 mg BID</td><td>3 mois</td><td>Moins hémorragies GI vs Rivaroxaban · Dose réduite 2,5 mg BID après 6 mois</td></tr>
-            <tr><td><span class="drug-badge line2">Dabigatran</span></td><td>HBPM × 5–10j → 150 mg BID</td><td>3 mois</td><td>Antidote : Idarucizumab · Éviter DFGe &lt; 30</td></tr>
-            <tr><td><span class="drug-badge line2">Warfarine</span></td><td>HBPM pont → INR 2–3</td><td>3 mois</td><td>Choisir si valvulaire · Grossesse CI</td></tr>
-            <tr><td><span class="drug-badge line1">HBPM (Daltéparine)</span></td><td>200 U/kg/j SC</td><td>6 mois</td><td>Cancer-associé · 1re ligne ETEV + cancer (CLOT)</td></tr>
-          </tbody>
-        </table>
-        <div class="accordion" style="margin-top:8px;">
-          <div class="accordion-item open">
-            <div class="accordion-header">EP massive — Thrombolyse systémique
-              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-            </div>
-            <div class="accordion-body">
-              <span class="drug-badge ci">Indication : EP massive (choc/arrêt cardiaque)</span> — Bénéfice &gt; risque<br>
-              Altéplase 100 mg IV sur 2h (accélérée si arrêt : 50 mg bolus)<br>
-              <span class="drug-badge warn">EP sous-massive :</span> Controversé — thrombolyse catéter-directed (LocUS / PERFECT) réservée à certains centres<br>
-              Embolectomie chirurgicale si thrombolyse CI
-            </div>
-          </div>
-          <div class="accordion-item">
-            <div class="accordion-header">Durée anticoagulation — Décision
-              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-            </div>
-            <div class="accordion-body">
-              <strong>3 mois :</strong> 1ère ETEV provoquée (chirurgie, immobilisation temporaire)<br>
-              <strong>6–12 mois :</strong> ETEV non provoquée · Facteur transitoire mineur<br>
-              <strong>Indéfinie :</strong> SAPL · Thrombophilie majeure (Déficit Prot C/S) · Cancer actif · Récidive non provoquée<br>
-              <span class="drug-badge warn">Apixaban 2,5 mg BID après 6 mois</span> (AMPLIFY-EXT) → ↓ 80 % récidive avec profil hémorragique comparable placebo
-            </div>
-          </div>
-        </div>
+      <div style="display:flex;align-items:flex-start;gap:12px;">
+        <div style="min-width:36px;height:36px;background:#fecaca;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;color:#b91c1c;font-size:14px;">2</div>
+        <div><strong>Adhésion plaquettaire</strong> — les plaquettes se lient à l'endothélium lésé via le <strong>facteur de von Willebrand (vWF)</strong> ↔ récepteur GP1b</div>
       </div>
+      <div style="display:flex;align-items:flex-start;gap:12px;">
+        <div style="min-width:36px;height:36px;background:#fecaca;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;color:#b91c1c;font-size:14px;">3</div>
+        <div><strong>Agrégation plaquettaire</strong> — les plaquettes se lient entre elles via le récepteur <strong>GPIIb/IIIa ↔ fibrinogène</strong>. Formation du <em>clou plaquettaire</em> (thrombus blanc)</div>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px;">
+      <div style="background:#fff0f0;border-radius:8px;padding:12px;font-size:13px;">
+        <strong style="color:#b91c1c;">🔴 Maladie de von Willebrand</strong><br>
+        Trouble de l'hémostase <em>primaire</em> (vWF non fonctionnel) → adhésion plaquettaire déficiente → saignements muqueux faciles (gencives, épistaxis, ménorragies). Dépistés au questionnaire préopératoire.
+      </div>
+      <div style="background:#fff0f0;border-radius:8px;padding:12px;font-size:13px;">
+        <strong style="color:#b91c1c;">💊 Bloqueurs GPIIb/IIIa</strong><br>
+        Abciximab (ReoPro), eptifibatide (Integrilin), tirofiban (Aggrastat) — salle d'hémodynamie seulement, action courte (&lt; 48 h). <em>L'IPS ne les prescrit pas.</em>
+      </div>
+    </div>
+  </div>
 
-      <div class="block flag">
-        <div class="block-title"><span class="tag">🚨 RED FLAGS</span></div>
-        <div class="flag-list">
-          <div class="flag-item"><span class="fi-icon">💔</span><span>EP massive + choc → Altéplase bolus + ressuscitation · Anticoag APRÈS thrombolyse</span></div>
-          <div class="flag-item"><span class="fi-icon">🤰</span><span>ETEV grossesse → HBPM (Daltéparine) toute la grossesse + 6 sem post-partum · <span class="drug-badge ci">Warfarine CI T1/T3 · AOD CI</span></span></div>
-          <div class="flag-item"><span class="fi-icon">🔬</span><span>Cancer + TVP → Chercher cancer occulte si &gt; 40 ans + premier ETEV non provoqué · Dépistage âge-approprié</span></div>
-          <div class="flag-item"><span class="fi-icon">🏥</span><span>HESTIA criteria ou sPESI = 0 → Traitement ambulatoire TVP distale/EP bas risque acceptable</span></div>
+  <!-- 1.2 HÉMOSTASE SECONDAIRE -->
+  <div id="hemo-sec" class="block para" style="border-left:4px solid #1d4ed8;margin-top:16px;">
+    <div class="block-title"><span class="tag">1.2 — Hémostase secondaire = Coagulation (~10 premières minutes)</span></div>
+    <p class="content-text">Cascade de facteurs qui transforme le fibrinogène circulant en <strong>fibrine</strong> (caillot solide), consolidée par le <strong>facteur XIII</strong>.</p>
+    <div style="overflow-x:auto;margin-top:10px;">
+      <table>
+        <thead><tr><th>Voie</th><th>Déclencheur</th><th>Facteurs clés</th><th>Test</th></tr></thead>
+        <tbody>
+          <tr style="background:#e8f4ff;">
+            <td><strong>Intrinsèque</strong></td>
+            <td>Contact dans le vaisseau (ex. valve cardiaque artificielle, surface anormale)</td>
+            <td>XII → XI → <strong>IX</strong> + VIII</td>
+            <td><strong>PTT / TCA</strong></td>
+          </tr>
+          <tr style="background:#fff8e1;">
+            <td><strong>Extrinsèque</strong></td>
+            <td>Facteur tissulaire (tissus entrant dans le vaisseau lors d'une coupure)</td>
+            <td><strong>VII</strong></td>
+            <td><strong>PT / INR</strong></td>
+          </tr>
+          <tr style="background:#e8f8f5;">
+            <td><strong>Commune</strong></td>
+            <td>Aboutissement des deux voies</td>
+            <td>X → <strong>II</strong> (prothrombine → thrombine) + V → fibrine</td>
+            <td>PT + PTT</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px;">
+      <div class="key-fact blue">
+        🧠 <strong>Mnémo warfarine :</strong> inhibe facteurs <strong>II, VII, IX, X</strong> (+ prot. C/S) → « 2×7×9, et il manque le 10 »
+      </div>
+      <div class="key-fact red">
+        🔴 <strong>Hémophilie A</strong> = déficit facteur <strong>VIII</strong> (voie intrinsèque) → ↑ PTT, PT normal<br>
+        <strong>Hémophilie B</strong> = déficit facteur <strong>IX</strong>
+      </div>
+    </div>
+    <div class="key-fact black" style="margin-top:10px;">
+      💡 Plus on bloque bas dans la cascade (facteur Xa ou IIa), plus le blocage est <strong>complet et efficace</strong> → principe des AOD modernes.
+    </div>
+  </div>
+
+  <!-- 1.3 FIBRINOLYSE -->
+  <div id="hemo-fibri" class="block def" style="border-left:4px solid #0a7a4e;margin-top:16px;">
+    <div class="block-title"><span class="tag">1.3 — Fibrinolyse (2–3 jours après)</span></div>
+    <p class="content-text">Mécanisme <strong>physiologique</strong> de dissolution du caillot une fois la guérison amorcée.</p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:10px;">
+      <div style="flex:1;min-width:180px;background:#e8f8f5;border-radius:8px;padding:12px;font-size:13px;">
+        <strong>Mécanisme :</strong><br>
+        Plasminogène → <strong>Plasmine</strong> (activée par t-PA)<br>
+        Plasmine lyse la fibrine → <strong>Produits de dégradation</strong> → D-dimères
+      </div>
+      <div style="flex:1;min-width:180px;background:#e8f8f5;border-radius:8px;padding:12px;font-size:13px;">
+        <strong>Inhibiteurs naturels de la thrombine :</strong><br>
+        Protéine C, Protéine S, <strong>Antithrombine (AT)</strong><br>
+        Déficit → thrombophilie héréditaire
+      </div>
+      <div style="flex:1;min-width:180px;background:#fff8e1;border-radius:8px;padding:12px;font-size:13px;">
+        <strong>D-dimères clinique :</strong><br>
+        Marqueur de présence d'un caillot actif<br>
+        Utile <em>seulement</em> en <strong>basse probabilité</strong> pour exclure une TEV<br>
+        Si Wells ≥ 2 (TVP) ou ≥ 5 (EP) → inutile, aller directement à l'imagerie
+      </div>
+    </div>
+  </div>
+
+  <!-- CASCADE INTERACTIVE SVG -->
+  <div id="hemo-svg" class="block def" style="border-left:4px solid #7b3fa0;margin-top:16px;">
+    <div class="block-title"><span class="tag">🗺 Cascade de coagulation — Interactive</span></div>
+    <p style="font-size:12px;color:#666;margin-bottom:8px;">Cliquez sur un nœud pour voir les détails.</p>
+
+    <div style="position:relative;width:100%;overflow-x:auto;">
+      <svg id="cascadeSVG" viewBox="0 0 760 460" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:760px;font-family:sans-serif;">
+        <!-- Background regions -->
+        <rect x="10" y="10" width="240" height="440" rx="12" fill="#dbeafe" opacity="0.4"/>
+        <rect x="260" y="10" width="240" height="440" rx="12" fill="#fef9c3" opacity="0.4"/>
+        <rect x="510" y="10" width="240" height="440" rx="12" fill="#dcfce7" opacity="0.4"/>
+
+        <text x="130" y="32" text-anchor="middle" font-size="13" font-weight="700" fill="#1d4ed8">Voie intrinsèque</text>
+        <text x="380" y="32" text-anchor="middle" font-size="13" font-weight="700" fill="#92400e">Voie extrinsèque</text>
+        <text x="630" y="32" text-anchor="middle" font-size="13" font-weight="700" fill="#065f46">Voie commune</text>
+
+        <!-- Arrows -->
+        <defs>
+          <marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+            <path d="M0,0 L0,6 L8,3 z" fill="#555"/>
+          </marker>
+          <marker id="arrB" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+            <path d="M0,0 L0,6 L8,3 z" fill="#1d4ed8"/>
+          </marker>
+          <marker id="arrG" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+            <path d="M0,0 L0,6 L8,3 z" fill="#065f46"/>
+          </marker>
+        </defs>
+
+        <!-- Intrinsèque chain: XII→XI→IX+VIII -->
+        <line x1="130" y1="75" x2="130" y2="105" stroke="#1d4ed8" stroke-width="2" marker-end="url(#arrB)"/>
+        <line x1="130" y1="145" x2="130" y2="175" stroke="#1d4ed8" stroke-width="2" marker-end="url(#arrB)"/>
+        <line x1="130" y1="215" x2="130" y2="245" stroke="#1d4ed8" stroke-width="2" marker-end="url(#arrB)"/>
+
+        <!-- Extrinsèque: facteur tissulaire → VII -->
+        <line x1="380" y1="75" x2="380" y2="105" stroke="#92400e" stroke-width="2" marker-end="url(#arr)"/>
+
+        <!-- Both converge on Xa -->
+        <line x1="170" y1="275" x2="500" y2="330" stroke="#555" stroke-width="2" marker-end="url(#arr)"/>
+        <line x1="380" y1="145" x2="540" y2="330" stroke="#555" stroke-width="2" marker-end="url(#arr)"/>
+
+        <!-- Common pathway -->
+        <line x1="630" y1="365" x2="630" y2="390" stroke="#065f46" stroke-width="2" marker-end="url(#arrG)"/>
+        <line x1="630" y1="425" x2="630" y2="448" stroke="#065f46" stroke-width="2" marker-end="url(#arrG)"/>
+
+        <!-- Nodes intrinsèque -->
+        <g onclick="showCascadeInfo('xii')" style="cursor:pointer">
+          <rect x="60" y="42" width="140" height="32" rx="16" fill="#bfdbfe" stroke="#1d4ed8" stroke-width="1.5"/>
+          <text x="130" y="63" text-anchor="middle" font-size="12" font-weight="600" fill="#1e3a8a">Facteur XII (Hageman)</text>
+        </g>
+        <g onclick="showCascadeInfo('xi')" style="cursor:pointer">
+          <rect x="60" y="107" width="140" height="32" rx="16" fill="#bfdbfe" stroke="#1d4ed8" stroke-width="1.5"/>
+          <text x="130" y="128" text-anchor="middle" font-size="12" font-weight="600" fill="#1e3a8a">Facteur XI</text>
+        </g>
+        <g onclick="showCascadeInfo('ix')" style="cursor:pointer">
+          <rect x="60" y="177" width="140" height="32" rx="16" fill="#bfdbfe" stroke="#1d4ed8" stroke-width="1.5"/>
+          <text x="130" y="198" text-anchor="middle" font-size="12" font-weight="600" fill="#1e3a8a">Facteur IX + VIII</text>
+        </g>
+        <g onclick="showCascadeInfo('hemoa')" style="cursor:pointer">
+          <rect x="60" y="247" width="140" height="26" rx="13" fill="#fee2e2" stroke="#b91c1c" stroke-width="1.5"/>
+          <text x="130" y="265" text-anchor="middle" font-size="11" font-weight="600" fill="#b91c1c">Hémophilie A (↓VIII) / B (↓IX)</text>
+        </g>
+
+        <!-- Nœud extrinsèque -->
+        <g onclick="showCascadeInfo('tf')" style="cursor:pointer">
+          <rect x="310" y="42" width="140" height="32" rx="16" fill="#fef3c7" stroke="#92400e" stroke-width="1.5"/>
+          <text x="380" y="63" text-anchor="middle" font-size="12" font-weight="600" fill="#78350f">Facteur tissulaire</text>
+        </g>
+        <g onclick="showCascadeInfo('vii')" style="cursor:pointer">
+          <rect x="310" y="107" width="140" height="32" rx="16" fill="#fef3c7" stroke="#92400e" stroke-width="1.5"/>
+          <text x="380" y="128" text-anchor="middle" font-size="12" font-weight="600" fill="#78350f">Facteur VII (+ III)</text>
+        </g>
+        <g onclick="showCascadeInfo('warfarine')" style="cursor:pointer">
+          <rect x="310" y="152" width="140" height="26" rx="13" fill="#fce7f3" stroke="#be185d" stroke-width="1.5"/>
+          <text x="380" y="170" text-anchor="middle" font-size="11" font-weight="600" fill="#be185d">Warfarine (II,VII,IX,X)</text>
+        </g>
+
+        <!-- Common: Xa, IIa, Fibrine -->
+        <g onclick="showCascadeInfo('xa')" style="cursor:pointer">
+          <rect x="560" y="330" width="140" height="32" rx="16" fill="#bbf7d0" stroke="#065f46" stroke-width="2"/>
+          <text x="630" y="351" text-anchor="middle" font-size="12" font-weight="700" fill="#064e3b">Facteur Xa (+ Va)</text>
+        </g>
+        <g onclick="showCascadeInfo('iia')" style="cursor:pointer">
+          <rect x="560" y="390" width="140" height="32" rx="16" fill="#bbf7d0" stroke="#065f46" stroke-width="2"/>
+          <text x="630" y="411" text-anchor="middle" font-size="12" font-weight="700" fill="#064e3b">Facteur IIa (Thrombine)</text>
+        </g>
+        <g onclick="showCascadeInfo('fibrine')" style="cursor:pointer">
+          <rect x="555" y="447" width="150" height="32" rx="16" fill="#4ade80" stroke="#065f46" stroke-width="2"/>
+          <text x="630" y="468" text-anchor="middle" font-size="13" font-weight="700" fill="#064e3b">Fibrine (caillot solide)</text>
+        </g>
+
+        <!-- AOD labels -->
+        <g onclick="showCascadeInfo('aod-xa')" style="cursor:pointer">
+          <rect x="415" y="340" width="140" height="22" rx="11" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
+          <text x="485" y="356" text-anchor="middle" font-size="10.5" font-weight="600" fill="#5b21b6">AOD anti-Xa (rivarox, apix)</text>
+        </g>
+        <g onclick="showCascadeInfo('aod-iia')" style="cursor:pointer">
+          <rect x="415" y="400" width="140" height="22" rx="11" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
+          <text x="485" y="416" text-anchor="middle" font-size="10.5" font-weight="600" fill="#5b21b6">AOD anti-IIa (dabigatran)</text>
+        </g>
+
+        <!-- HBPM label -->
+        <g onclick="showCascadeInfo('hbpm')" style="cursor:pointer">
+          <rect x="200" y="290" width="105" height="22" rx="11" fill="#fff0f0" stroke="#dc2626" stroke-width="1.5"/>
+          <text x="252" y="306" text-anchor="middle" font-size="10" font-weight="600" fill="#dc2626">HBPM (anti-Xa &gt; IIa)</text>
+        </g>
+
+        <!-- Test labels -->
+        <text x="45" y="400" font-size="10" fill="#1d4ed8" font-style="italic">TEST : PTT/TCA</text>
+        <text x="280" y="400" font-size="10" fill="#92400e" font-style="italic">TEST : PT/INR</text>
+      </svg>
+    </div>
+
+    <!-- Info box -->
+    <div id="cascadeInfo" style="display:none;background:#f8f9fa;border:2px solid #7b3fa0;border-radius:10px;padding:14px;margin-top:12px;">
+      <strong id="cascadeInfoTitle" style="color:#7b3fa0;display:block;margin-bottom:6px;"></strong>
+      <div id="cascadeInfoBody" style="font-size:13px;line-height:1.7;"></div>
+    </div>
+
+    <script>
+    var cascadeData = {
+      'xii': { title: 'Facteur XII (Hageman)', body: 'Déclenché par contact avec une surface anormale (collagène, verre, valve cardiaque artificielle). Activation initiale de la voie intrinsèque. Déficit en facteur XII → PTT allongé mais <em>pas de saignement clinique</em> (paradoxe de Hageman).' },
+      'xi': { title: 'Facteur XI', body: 'Activé par XIIa. Déficit (hémophilie C) → saignements variables. Lien entre les deux voies de coagulation.' },
+      'ix': { title: 'Facteurs IX et VIII (complexe tenase)', body: '<strong>Hémophilie A = déficit facteur VIII</strong> (lié à X, 1/5000 naissances masculines) → PTT ↑, PT normal.<br><strong>Hémophilie B = déficit facteur IX</strong> (1/30 000) → même présentation.<br>Traitement : concentrés de facteurs ou desmopressine (hémophilie A légère).' },
+      'hemoa': { title: 'Hémophilies (A et B)', body: 'PTT ↑ (voie intrinsèque atteinte), PT/INR normal. Saignements articulaires (hémarthroses), musculaires. <strong>A = anti-VIII ; B = anti-IX.</strong> Ne pas confondre avec maladie de von Willebrand (hémostase primaire).' },
+      'tf': { title: 'Facteur tissulaire (Facteur III)', body: 'Exposé lors d\'une lésion vasculaire → se lie au facteur VII circulant → activation de la voie extrinsèque. Principal déclencheur in vivo de la coagulation (la voie intrinsèque amplifie).' },
+      'vii': { title: 'Facteur VII', body: 'Demi-vie la plus courte (~6h) → premier facteur à chuter lors d\'un déficit en vitamine K. C\'est pourquoi l\'INR monte rapidement sous warfarine, mais la protection réelle prend 4-5 jours (demi-vie du facteur II = 60-72h).' },
+      'warfarine': { title: 'Warfarine (AVK)', body: 'Bloque la régénération hépatique de la vitamine K → inhibe <strong>facteurs II, VII, IX, X</strong> + protéines C et S.<br>Mnémo : « 2×7×9, il manque le 10 ».<br>Couvre toutes les voies → seule option pour valves métalliques (besoin d\'inhiber le facteur IX/voie intrinsèque).' },
+      'xa': { title: 'Facteur Xa (voie commune)', body: 'Convergence des voies intrinsèque et extrinsèque. Complexe prothrombinase (Xa + Va) convertit la prothrombine (II) en thrombine (IIa).<br><strong>Bloqué par :</strong> rivaroxaban, apixaban, édoxaban (AOD), HBPM (partiellement), fondaparinux (sélectif).' },
+      'iia': { title: 'Facteur IIa = Thrombine', body: 'Enzyme centrale : convertit le fibrinogène en fibrine, active les plaquettes, active les facteurs V, VIII, XI, XIII.<br><strong>Bloqué par :</strong> dabigatran (AOD direct), HNF (via antithrombine), argatroban (TIH).' },
+      'fibrine': { title: 'Fibrine = caillot solide', body: 'Polymères de fibrine croisés par le facteur XIIIa → caillot stable. La fibrinolyse (plasmine) dégrade la fibrine → D-dimères (marqueur de caillot actif).' },
+      'aod-xa': { title: 'AOD inhibiteurs Xa', body: '<strong>Rivaroxaban (Xarelto)</strong> : 20 mg DIE (avec repas), TEV : 15mg BID × 21j → 20mg DIE<br><strong>Apixaban (Eliquis)</strong> : 5 mg BID, TEV : 10mg BID × 7j → 5mg BID<br><strong>Édoxaban (Lixiana)</strong> : 60 mg DIE (après HBPM × 5-10j)<br>Pas d\'antidote approuvé INESSS (Andexanet alfa non remboursé).' },
+      'aod-iia': { title: 'AOD inhibiteur IIa = Dabigatran', body: '<strong>Dabigatran (Pradaxa)</strong> : 150 mg BID (110 mg BID si ≥80 ans ou risque hémorragique élevé).<br>Nécessite HBPM 5-10j en traitement TEV (pas de dose de charge orale).<br><strong>Antidote :</strong> Idarucizumab (Praxbind) — approuvé RAMQ, ~2000$.<br>Clairance rénale 85% → éviter si DFGe &lt; 30.' },
+      'hbpm': { title: 'HBPM (héparines bas poids moléculaire)', body: 'Anti-Xa >> anti-IIa. Daltéparine 200 UI/kg DIE, Tinzaparine 175 UI/kg DIE, Énoxaparine 1mg/kg BID.<br>Monitoring inutile (sauf grossesse, obésité extrême, IR).<br><strong>IR : </strong> DFGe &lt;30 → 50% de la dose. Tinzaparine OK jusqu\'à 20 mL/min.' }
+    };
+    function showCascadeInfo(key) {
+      var d = cascadeData[key];
+      if (!d) return;
+      document.getElementById('cascadeInfoTitle').textContent = d.title;
+      document.getElementById('cascadeInfoBody').innerHTML = d.body;
+      document.getElementById('cascadeInfo').style.display = '';
+    }
+    </script>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     2. THROMBOLYSE THÉRAPEUTIQUE
+═══════════════════════════════════════════════════════════════ -->
+<div class="section" id="sec-thrombolyse">
+  <div class="section-header">
+    <div class="section-accent" style="background:#7c2d12">💉</div>
+    <div class="section-title">
+      <h1>Thrombolyse thérapeutique</h1>
+      <div class="breadcrumb">Hématologie <span class="breadcrumb-sep">·</span> Fibrinolytiques</div>
+    </div>
+  </div>
+
+  <div class="key-fact orange">
+    💡 <strong>Principe :</strong> On accélère volontairement la fibrinolyse en phase aiguë (AVC, IDM, EP massive). <em>L'IPS ne prescrit pas ces agents mais doit les connaître.</em>
+  </div>
+
+  <div class="block def" style="margin-top:14px;">
+    <div class="block-title"><span class="tag">Agents fibrinolytiques (urgence/salle réa)</span></div>
+    <div style="overflow-x:auto;margin-top:8px;">
+      <table>
+        <thead><tr><th>Agent</th><th>Nom commercial</th><th>Administration</th><th>Particularités</th></tr></thead>
+        <tbody>
+          <tr style="background:#fff8e1;"><td><strong>Altéplase (tPA)</strong></td><td>Activase rt-PA</td><td>Perfusion 100 mg / 2h</td><td>Gold standard, encore utilisé en régions éloignées (AVC, IDM, EP massive)</td></tr>
+          <tr><td><strong>Rétéplase</strong></td><td>Retavase</td><td>2 bolus IV séquentiels</td><td>Plus simple d'administration qu'altéplase</td></tr>
+          <tr style="background:#fff8e1;"><td><strong>Ténectéplase</strong></td><td>TNKase</td><td>1 seul bolus IV</td><td>Très pratique en urgence ; utilisé pour EP et phlébite proximale massive</td></tr>
+          <tr><td><strong>Streptokinase</strong></td><td>—</td><td>Perfusion</td><td>Plus ancien ; risque allergique ; moins utilisé</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="block clin" style="margin-top:14px;">
+    <div class="block-title"><span class="tag">⚠️ Contre-indications à la thrombolyse</span></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px;">
+      <div style="background:#fce4ec;border-radius:8px;padding:12px;font-size:13px;">
+        <strong style="color:#c0392b;">Absolues :</strong>
+        <ul style="margin:4px 0;padding-left:16px;line-height:1.8;">
+          <li>Hémorragie intracrânienne récente (ATCD)</li>
+          <li>AVC ischémique &lt; 3 mois</li>
+          <li>Néoplasie intracrânienne / malformation AV</li>
+          <li>Traumatisme crânien ou chirurgie majeure &lt; 3 semaines</li>
+          <li>Hémorragie interne active (sauf menstruations)</li>
+          <li>Dissection aortique suspectée</li>
+        </ul>
+      </div>
+      <div style="background:#fff8e1;border-radius:8px;padding:12px;font-size:13px;">
+        <strong style="color:#d35400;">Relatives :</strong>
+        <ul style="margin:4px 0;padding-left:16px;line-height:1.8;">
+          <li>HTA sévère non contrôlée (&gt; 180/110)</li>
+          <li>Grossesse</li>
+          <li>Ponction vasculaire non compressible récente</li>
+          <li>Anticoagulation en cours (INR &gt; 1.7, PTT élevé)</li>
+          <li>RCP prolongée (&gt; 10 min) avec traumatisme thoracique</li>
+        </ul>
+      </div>
+    </div>
+    <div class="key-fact blue" style="margin-top:10px;">
+      🎯 Indication principale en EP : <strong>EP massive</strong> (TAS &lt;90, arrêt cardiaque, choc) sans CI absolue. EP sous-massive (dysfonction VD) = décision multidisciplinaire.
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     3. ANTIPLAQUETTAIRES ORAUX
+═══════════════════════════════════════════════════════════════ -->
+<div class="section" id="sec-antiplaquettaires">
+  <div class="section-header">
+    <div class="section-accent" style="background:#b45309">💊</div>
+    <div class="section-title">
+      <h1>Antiplaquettaires oraux</h1>
+      <div class="breadcrumb">Hématologie <span class="breadcrumb-sep">·</span> AAS & Inhibiteurs P2Y12</div>
+    </div>
+  </div>
+
+  <!-- 3.1 AAS -->
+  <div class="block def" style="border-left:4px solid #b45309;">
+    <div class="block-title"><span class="tag">3.1 — AAS (Aspirine)</span></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:8px;">
+      <div>
+        <strong>Mécanisme :</strong>
+        <ul style="margin:4px 0;padding-left:16px;font-size:13px;line-height:1.8;">
+          <li>Bloque la <strong>thromboxane A2 (TxA2)</strong> via inhibition irréversible de la <strong>COX-1</strong></li>
+          <li>→ Empêche l'activation et l'agrégation plaquettaire</li>
+          <li>Effet irréversible sur toute la durée de vie des plaquettes (~<strong>7–10 jours</strong>)</li>
+        </ul>
+      </div>
+      <div>
+        <strong>Effets cliniques :</strong>
+        <ul style="margin:4px 0;padding-left:16px;font-size:13px;line-height:1.8;">
+          <li>↓ ~25% des événements CV en prévention secondaire</li>
+          <li>↓ ~50% mortalité de l'IDM aigu (avant fibrinolytiques)</li>
+          <li>Dose habituelle : <strong>80 mg/jour</strong> (« aspirine bébé »)</li>
+          <li>En MAP symptomatique : moins efficace que clopidogrel</li>
+        </ul>
+      </div>
+    </div>
+    <div class="key-fact orange" style="margin-top:10px;">
+      ⚠️ Arrêt préopératoire : <strong>7–10 jours</strong> avant chirurgie élective (irréversible). Continuer si risque thrombotique élevé (coronarien actif, stent récent) après discussion chirurgien.
+    </div>
+  </div>
+
+  <!-- 3.2 P2Y12 -->
+  <div class="block para" style="border-left:4px solid #1d4ed8;margin-top:14px;">
+    <div class="block-title"><span class="tag">3.2 — Inhibiteurs du récepteur P2Y12 (ADP)</span></div>
+    <p class="content-text">Empêchent l'activation plaquettaire par l'ADP. Utilisés seuls ou en combinaison avec l'AAS (double antiplaquettaire = DAPT).</p>
+    <div style="overflow-x:auto;margin-top:10px;">
+      <table>
+        <thead>
+          <tr><th></th><th>Clopidogrel (Plavix)</th><th>Prasugrel (Effient)</th><th>Ticagrelor (Brilinta)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Indications</strong></td><td>SCA, ICP, MAP (>AAS), ATCD MCV large</td><td>SCA + ICP (haute efficacité)</td><td>SCA, ICP (proche de prasugrel)</td></tr>
+          <tr style="background:#f8f9fa;"><td><strong>Dose de charge</strong></td><td>300–600 mg × 1</td><td>60 mg × 1</td><td>180 mg × 1</td></tr>
+          <tr><td><strong>Dose d'entretien</strong></td><td>75 mg DIE</td><td>10 mg DIE (5 mg si &lt;60 kg ou &gt;75 ans)</td><td>90 mg BID</td></tr>
+          <tr style="background:#f8f9fa;"><td><strong>Réversibilité</strong></td><td>❌ Irréversible</td><td>❌ Irréversible</td><td>✅ Réversible</td></tr>
+          <tr><td><strong>Efficacité</strong></td><td>++</td><td>+++ (supérieur TRITON)</td><td>+++ (supérieur PLATO)</td></tr>
+          <tr style="background:#f8f9fa;"><td><strong>Saignement</strong></td><td>+</td><td>+++ (↑ saignements mortels)</td><td>++</td></tr>
+          <tr><td><strong>CI/Précautions</strong></td><td>Métaboliseurs lents CYP2C19 (↓ efficacité)</td><td>CI absolu si ATCD AVC/ICT ; CI si &lt;60 kg ou &gt;75 ans (dose 5 mg)</td><td>Dyspnée, pauses ventriculaires, ↑ uricémie, légère ↑ créatinine</td></tr>
+          <tr style="background:#fff8e1;"><td><strong>Arrêt préop ⚠️</strong></td><td><strong>5–7 jours</strong> (irréversible)</td><td><strong>7 jours</strong> (irréversible)</td><td><strong>3–5 jours</strong> (réversible → &lt;4j)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="key-fact black" style="margin-top:12px;">
+      ⚖️ <strong>Principe de base :</strong> « Plus c'est efficace, plus ça saigne. » Le choix dépend de la balance risque thrombotique / risque hémorragique. Québec : prasugrel populaire (recherche IUCPQ). Personne âgée + risque de saignement → souvent AAS + clopidogrel.
+    </div>
+  </div>
+
+  <!-- DAPT -->
+  <div class="block def" style="margin-top:14px;">
+    <div class="block-title"><span class="tag">Double antiplaquettaire (DAPT) — Durées</span></div>
+    <div style="overflow-x:auto;">
+      <table>
+        <thead><tr><th>Indication</th><th>Durée DAPT</th><th>Agents</th></tr></thead>
+        <tbody>
+          <tr><td>SCA (STEMI ou NSTEMI)</td><td>12 mois minimum</td><td>AAS + ticagrelor ou prasugrel (préférés) ou clopidogrel</td></tr>
+          <tr style="background:#f8f9fa;"><td>Stent coronarien électif (BMS)</td><td>1 mois</td><td>AAS + clopidogrel</td></tr>
+          <tr><td>Stent coronarien électif (DES)</td><td>6 mois (≥3 mois si risque hémorragique)</td><td>AAS + clopidogrel</td></tr>
+          <tr style="background:#f8f9fa;"><td>MAP + stent périphérique (phase aiguë)</td><td>1–3 mois, puis AAS + rivaroxaban 2,5 mg</td><td>AAS + clopidogrel → switch</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     4. TESTS DE COAGULATION
+═══════════════════════════════════════════════════════════════ -->
+<div class="section" id="sec-tests-coag">
+  <div class="section-header">
+    <div class="section-accent" style="background:#1d4ed8">🔬</div>
+    <div class="section-title">
+      <h1>Tests de coagulation</h1>
+      <div class="breadcrumb">Hématologie <span class="breadcrumb-sep">·</span> Interprétation clinique</div>
+    </div>
+  </div>
+
+  <div class="block def">
+    <div class="block-title"><span class="tag">Tableau récapitulatif des tests</span></div>
+    <div style="overflow-x:auto;margin-top:8px;">
+      <table>
+        <thead><tr><th>Test</th><th>Voie évaluée</th><th>Valeur normale</th><th>Médicament monitoé</th><th>Cible thérapeutique</th></tr></thead>
+        <tbody>
+          <tr style="background:#fff8e1;">
+            <td><strong>PT → INR / RNI</strong><br><small>(Temps de prothrombine)</small></td>
+            <td>Extrinsèque + Commune<br>(VII, X, II)</td>
+            <td>INR = 1.0</td>
+            <td>Warfarine (AVK)</td>
+            <td>INR 2–3 (plupart) ; 2,5–3,5 (valve mitrale mécanique)</td>
+          </tr>
+          <tr>
+            <td><strong>PTT / TCA / TC</strong><br><small>(Temps de céphaline activé)</small></td>
+            <td>Intrinsèque + Commune</td>
+            <td>~30 s (variable selon labo)</td>
+            <td>HNF (héparine non fractionnée)</td>
+            <td>60–90 s (≈ 2–3× la normale)</td>
+          </tr>
+          <tr style="background:#fff8e1;">
+            <td><strong>D-dimères</strong></td>
+            <td>Fibrinolyse (dégradation fibrine)</td>
+            <td>&lt; 500 µg/L (ou &lt; 0,5 mg/L)</td>
+            <td>Aucun — test diagnostique</td>
+            <td>Utile seulement en BASSE probabilité pré-test pour EXCLURE une TEV</td>
+          </tr>
+          <tr>
+            <td><strong>Anti-Xa</strong></td>
+            <td>Activité anti-facteur Xa</td>
+            <td>—</td>
+            <td>HBPM, AOD (rivaroxaban, apixaban)</td>
+            <td>Moins fiable pour AOD — pas partout disponible ; utile HBPM en IR/grossesse</td>
+          </tr>
+          <tr style="background:#fff8e1;">
+            <td><strong>Numération plaquettaire</strong></td>
+            <td>Hémostase primaire</td>
+            <td>150–400 × 10⁹/L</td>
+            <td>Héparine (surveillance TIH)</td>
+            <td>Surveiller chute &gt;50% sous héparine → TIH</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px;">
+    <div class="key-fact blue">
+      🧠 <strong>Mnémo clé :</strong><br>
+      PT/INR → <strong>Warfarine</strong> (voie Extrinsèque = VII)<br>
+      PTT → <strong>Héparine</strong> (voie Intrinsèque)
+    </div>
+    <div class="key-fact orange">
+      ⚠️ <strong>AOD et tests :</strong> Un PT/PTT normal n'exclut PAS la présence d'un AOD en circulation.<br>
+      Pour rivaroxaban : PT légèrement utile (dépend du réactif).<br>
+      Pour apixaban : tests standards inutiles.
+    </div>
+  </div>
+
+  <div class="block para" style="margin-top:14px;">
+    <div class="block-title"><span class="tag">Interprétation algorithmique des anomalies</span></div>
+    <div style="overflow-x:auto;margin-top:8px;">
+      <table>
+        <thead><tr><th>PT/INR</th><th>PTT/TCA</th>><th>Penser à</th></tr></thead>
+        <tbody>
+          <tr><td>↑</td><td>Normal</td><td>Déficit facteur VII, début warfarine, déficit vitamine K léger, maladie hépatique débutante</td></tr>
+          <tr style="background:#f8f9fa;"><td>Normal</td><td>↑</td><td>Héparine, hémophilie A ou B, déficit facteur XII, XI, SAPL (anticoagulant lupique)</td></tr>
+          <tr><td>↑</td><td>↑</td><td>Warfarine (forte dose), CIVD, insuffisance hépatique sévère, déficit multiple en facteurs</td></tr>
+          <tr style="background:#f8f9fa;"><td>Normal</td><td>Normal</td><td>Thrombocytopénie, dysfonction plaquettaire, maladie de von Willebrand (légère), déficit facteur XIII</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     5. ANTICOAGULANTS PARENTÉRAUX
+═══════════════════════════════════════════════════════════════ -->
+<div class="section" id="sec-anticoag-parenteraux">
+  <div class="section-header">
+    <div class="section-accent" style="background:#7c2d12">💉</div>
+    <div class="section-title">
+      <h1>Anticoagulants parentéraux</h1>
+      <div class="breadcrumb">Hématologie <span class="breadcrumb-sep">·</span> HNF · HBPM · Fondaparinux</div>
+    </div>
+  </div>
+
+  <!-- HNF -->
+  <div class="block def" style="border-left:4px solid #b91c1c;">
+    <div class="block-title"><span class="tag">5.1 — Héparine non fractionnée (HNF)</span></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+      <div>
+        <p style="font-size:13px;line-height:1.7;"><strong>Origine :</strong> intestins de porc/bœuf.<br>
+        <strong>Mécanisme :</strong> Agit via l'<strong>antithrombine</strong> → inhibe facteurs IIa, Xa, IXa, XIa, XIIa (large spectre).<br>
+        <strong>Demi-vie :</strong> 1–2h → perfusion IV (bolus + perfusion continue).<br>
+        <strong>Monitoring :</strong> PTT cible <strong>60–90 s</strong> (≈ 2–3× normale).</p>
+      </div>
+      <div>
+        <p style="font-size:13px;line-height:1.7;"><strong>Avantages :</strong> Réversibilité rapide (arrêt suffit = effet nul en 2–4h) ; reversal avec <strong>sulfate de protamine</strong> (1 mg pour 100 UI HNF).<br>
+        <strong>Contexte :</strong> Surtout hospitalier. Préféré si IR sévère (DFGe &lt;30), car pas d'accumulation.</p>
+      </div>
+    </div>
+    <div class="key-fact red" style="margin-top:10px;">
+      ⚠️ <strong>TIH (Thrombocytopénie induite par l'héparine) :</strong> Chute plaquettes &gt;50% + thrombose paradoxale. Survient J5–J14 après exposition. Fréquence : ~1% (médical) à 4% (chirurgie cardiaque). Grave — nécessite arrêt immédiat héparine et substitution par <strong>argatroban ou fondaparinux</strong>. La TIH s'éteint d'elle-même après ~2 mois (pas une allergie permanente).
+    </div>
+  </div>
+
+  <!-- HBPM -->
+  <div class="block def" style="border-left:4px solid #1d4ed8;margin-top:14px;">
+    <div class="block-title"><span class="tag">5.2 — Héparines de bas poids moléculaire (HBPM)</span></div>
+    <p class="content-text">Fragments d'HNF → plus sélectives (anti-Xa &gt; anti-IIa). Réponse prévisible au poids → <strong>monitoring inutile en routine</strong>.</p>
+    <div style="overflow-x:auto;margin-top:8px;">
+      <table>
+        <thead><tr><th>HBPM</th><th>Dose thérapeutique (TEV)</th><th>Dose prophylactique</th><th>Particularités</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Daltéparine</strong> (Fragmin)</td><td>200 UI/kg DIE SC</td><td>5000 UI DIE SC</td><td>1re ligne ETEV + cancer actif (6 premiers mois)</td></tr>
+          <tr style="background:#f8f9fa;"><td><strong>Tinzaparine</strong> (Innohep)</td><td>175 UI/kg DIE SC</td><td>3500–4500 UI DIE</td><td>La mieux tolérée en IR — OK jusqu'à DFGe 20 mL/min</td></tr>
+          <tr><td><strong>Énoxaparine</strong> (Lovenox)</td><td>1 mg/kg BID SC ou 1,5 mg/kg DIE</td><td>40 mg DIE SC</td><td>La plus utilisée en pratique</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="key-fact orange" style="margin-top:10px;">
+      🔴 <strong>Insuffisance rénale :</strong> DFGe &lt;30 → utiliser 50% de la dose ou passer à HNF IV. Exception : tinzaparine OK jusqu'à 20 mL/min. Demi-vie : 6–12h.
+    </div>
+  </div>
+
+  <!-- Fondaparinux -->
+  <div class="block para" style="border-left:4px solid #0a7a4e;margin-top:14px;">
+    <div class="block-title"><span class="tag">5.3 — Fondaparinux (Arixtra)</span></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+      <div style="font-size:13px;line-height:1.7;">
+        <strong>Mécanisme :</strong> Pentasaccharide synthétique — anti-Xa <em>pur</em> (ne touche pas le facteur IIa).<br>
+        <strong>Avantages :</strong> Quasi aucun cas de TIH rapporté → option de choix si TIH incertaine.<br>
+        <strong>Dose :</strong> 7,5 mg SC DIE (ajustée au poids : 5 mg si &lt;50 kg, 10 mg si &gt;100 kg).
+      </div>
+      <div style="font-size:13px;line-height:1.7;">
+        <strong>Indications de niche :</strong>
+        <ul style="margin:4px 0;padding-left:16px;">
+          <li>Alternative chez patient TIH (si TIH incertaine)</li>
+          <li>Prophylaxie ortho, abdo</li>
+          <li>Ancien traitement phlébites superficielles (remplacé par rivaroxaban)</li>
+        </ul>
+        <strong>⚠️ CI :</strong> DFGe &lt;30 (accumulation), &lt;50 kg.
+      </div>
+    </div>
+    <div class="key-fact blue" style="margin-top:10px;">
+      🔑 <strong>Algorithme TIH :</strong> TIH incertaine → Fondaparinux. TIH certaine/aiguë → Argatroban IV (monitoré, coûteux) OU basculer vers AOD oral (rivaroxaban/apixaban).
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     6. WARFARINE
+═══════════════════════════════════════════════════════════════ -->
+<div class="section" id="sec-warfarine">
+  <div class="section-header">
+    <div class="section-accent" style="background:#7c2d12">⚗️</div>
+    <div class="section-title">
+      <h1>Warfarine (AVK)</h1>
+      <div class="breadcrumb">Hématologie <span class="breadcrumb-sep">·</span> Antivitamine K</div>
+    </div>
+  </div>
+
+  <div class="block def">
+    <div class="block-title"><span class="tag">Pharmacologie</span></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:8px;">
+      <div style="font-size:13px;line-height:1.8;">
+        <strong>Mécanisme :</strong> Bloque la régénération hépatique de la vitamine K → inhibe <strong>facteurs II, VII, IX, X</strong> + protéines C et S.<br>
+        <strong>Mnémo :</strong> « 2 × 7 × 9, il manque le 10 »<br>
+        <strong>Délai d'action :</strong> 4–5 jours (régénération hépatique des facteurs)<br>
+        <strong>Dose moyenne :</strong> 4 mg/j (1–5 mg chez âgés ; 4–15 mg jeunes/obèses)<br>
+        <strong>Demi-vie :</strong> 36–42h
+      </div>
+      <div style="font-size:13px;line-height:1.8;">
+        <strong>INR cible :</strong> 2–3 (plupart des indications)<br>
+        <strong>INR 2,5–3,5 :</strong> Valves mécaniques mitrales<br>
+        <strong>Fréquence contrôle :</strong> q4–12 semaines une fois stable (q8–12 sem démontré sécuritaire)<br>
+        <strong>Saignements :</strong> Majeurs ~1%/an ; intracrâniens 2× plus fréquents vs AOD<br>
+        <strong>Pas de bolus</strong> de warfarine (cause des saignements)
+      </div>
+    </div>
+    <div class="key-fact blue" style="margin-top:10px;">
+      🔑 <strong>Pourquoi warfarine reste indiquée pour les valves mécaniques ?</strong> Car elle couvre aussi la voie intrinsèque (facteur IX) que les AOD ne bloquent pas de façon suffisante. Seule option valable pour valves cardiaques métalliques.
+    </div>
+  </div>
+
+  <!-- Indications résiduelles -->
+  <div class="block para" style="margin-top:14px;">
+    <div class="block-title"><span class="tag">Indications résiduelles de la warfarine (2026)</span></div>
+    <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;">
+      <div style="background:#fce4ec;border-radius:8px;padding:10px 14px;font-size:13px;">🫀 Valves cardiaques <strong>mécaniques</strong></div>
+      <div style="background:#fce4ec;border-radius:8px;padding:10px 14px;font-size:13px;">🫘 DFGe très bas / dialyse (de moins en moins)</div>
+      <div style="background:#fce4ec;border-radius:8px;padding:10px 14px;font-size:13px;">⚖️ Obésité morbide post-chirurgie digestive (absorption AOD incertaine)</div>
+      <div style="background:#fce4ec;border-radius:8px;padding:10px 14px;font-size:13px;">💊 Patients très fragiles ou CI aux AOD</div>
+      <div style="background:#fce4ec;border-radius:8px;padding:10px 14px;font-size:13px;">💰 Coût (warfarine &lt; 10$/mois vs AOD 100–200$/mois)</div>
+    </div>
+  </div>
+
+  <!-- Renversement -->
+  <div class="block def" style="margin-top:14px;">
+    <div class="block-title"><span class="tag">6.1 — Renversement de la warfarine</span></div>
+    <div style="overflow-x:auto;margin-top:8px;">
+      <table>
+        <thead><tr><th>Produit</th><th>Délai d'action</th><th>Particularités</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Vitamine K PO ou IV</strong></td><td>Lente et imprévisible (2–4 jours)</td><td>Accessible, abordable. <em>Jamais SC/IM</em> (absorption erratique). À combiner avec concentré de facteurs si urgence.</td></tr>
+          <tr style="background:#fff8e1;"><td><strong>Bériplex / Octaplex</strong><br>(Concentré de facteurs II, VII, IX, X)</td><td>Rapide (INR ≤ 1.3 en 30 min), faible volume (20 mL)</td><td>Effet prévisible. Contient un peu d'HNF → ⚠️ TIH récente CI. <strong>Toujours combiner avec vitamine K</strong> (l'effet du concentré ne dure que 12–24h).</td></tr>
+          <tr><td><strong>Plasma frais congelé (PFC)</strong></td><td>Lent (décongélation, transfusion)</td><td>Démodé : surcharge volumique, risque allergie/virus. Utiliser seulement si Bériplex non disponible.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Gestion INR ambulatoire -->
+  <div class="block clin" style="margin-top:14px;">
+    <div class="block-title"><span class="tag">6.2 — Gestion de l'INR élevé (ambulatoire)</span></div>
+
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin:10px 0;">
+      <button onclick="showWarfTab('sans')" id="wbtab-sans" style="background:#b91c1c;color:#fff;border:none;border-radius:8px;padding:7px 16px;cursor:pointer;font-weight:600;">INR élevé SANS saignement</button>
+      <button onclick="showWarfTab('avec')" id="wbtab-avec" style="background:#e0e0e0;color:#333;border:none;border-radius:8px;padding:7px 16px;cursor:pointer;font-weight:600;">INR élevé AVEC saignement</button>
+    </div>
+
+    <div id="wb-sans">
+      <table style="margin-top:8px;">
+        <thead><tr><th>INR</th><th>Conduite</th></tr></thead>
+        <tbody>
+          <tr><td>3 – &lt;5</td><td>Sauter 1 dose et rééquilibrer la dose habituelle. Recontrôler INR dans 5–7 jours.</td></tr>
+          <tr style="background:#fff8e1;"><td>5 – &lt;9</td><td>Vitamine K <strong>1–2,5 mg PO</strong>, sauter 1–2 doses. INR q3j × 2 contrôles.</td></tr>
+          <tr><td>≥ 9</td><td>Vitamine K <strong>3–5 mg PO</strong>, sauter 2 doses. INR DIE × 3 jours. Hospitalisation si risque hémorragique élevé.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div id="wb-avec" style="display:none;">
+      <div style="background:#fce4ec;border-radius:8px;padding:12px;font-size:13px;margin-top:8px;line-height:1.8;">
+        <strong>1.</strong> Vitamine K <strong>5–10 mg PO ou IV</strong> (selon sévérité)<br>
+        <strong>2.</strong> + Bériplex/Octaplex (concentré de facteurs) — reversal immédiat<br>
+        <strong>3.</strong> + Culots globulaires si hémorragie majeure avec anémie<br>
+        <strong>4.</strong> Si patient avec valve mécanique : reprendre l'héparine dès l'arrêt du saignement et dès INR ≥ 2,5<br>
+        <div class="key-fact orange" style="margin-top:8px;">
+          🔴 Hématurie ou rectorragie sous AVK avec INR <em>dans la cible</em> → chercher un <strong>cancer sous-jacent</strong> (vessie, côlon) — ne pas attribuer au médicament d'emblée.
         </div>
       </div>
     </div>
 
-<div class="section" id="sec-fsc-anemie">
+    <script>
+    function showWarfTab(tab) {
+      document.getElementById('wb-sans').style.display = tab === 'sans' ? '' : 'none';
+      document.getElementById('wb-avec').style.display = tab === 'avec' ? '' : 'none';
+      document.getElementById('wbtab-sans').style.background = tab === 'sans' ? '#b91c1c' : '#e0e0e0';
+      document.getElementById('wbtab-sans').style.color = tab === 'sans' ? '#fff' : '#333';
+      document.getElementById('wbtab-avec').style.background = tab === 'avec' ? '#b91c1c' : '#e0e0e0';
+      document.getElementById('wbtab-avec').style.color = tab === 'avec' ? '#fff' : '#333';
+    }
+    </script>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     7. AOD
+═══════════════════════════════════════════════════════════════ -->
+<div class="section" id="sec-aod">
+  <div class="section-header">
+    <div class="section-accent" style="background:#1d4ed8">💊</div>
+    <div class="section-title">
+      <h1>Anticoagulants oraux directs (AOD)</h1>
+      <div class="breadcrumb">Hématologie <span class="breadcrumb-sep">·</span> Apixaban · Rivaroxaban · Édoxaban · Dabigatran</div>
+    </div>
+  </div>
+
+  <div class="stat-row">
+    <div class="stat-card blue"><div class="stat-num">≥ 2×</div><div class="stat-label">moins d'hémorragies intracrâniennes vs warfarine</div></div>
+    <div class="stat-card green"><div class="stat-num">~12h</div><div class="stat-label">demi-vie (→ 48h pour élimination quasi complète = base du préop)</div></div>
+    <div class="stat-card yellow"><div class="stat-num">2–4h</div><div class="stat-label">début d'action → pas besoin HBPM initiale (apixaban/rivaroxaban)</div></div>
+  </div>
+
+  <!-- Tableau comparatif -->
+  <div class="block def" style="margin-top:14px;">
+    <div class="block-title"><span class="tag">7.2 — Pharmacologie comparée (2026)</span></div>
+    <div style="overflow-x:auto;margin-top:8px;">
+      <table>
+        <thead>
+          <tr><th></th><th style="background:#4f46e5;color:#fff;">Apixaban<br>(Eliquis) ⭐</th><th style="background:#0369a1;color:#fff;">Rivaroxaban<br>(Xarelto)</th><th style="background:#0369a1;color:#fff;">Édoxaban<br>(Lixiana)</th><th style="background:#6b7280;color:#fff;">Dabigatran<br>(Pradaxa)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Cible</strong></td><td>Xa</td><td>Xa</td><td>Xa</td><td>IIa (thrombine)</td></tr>
+          <tr style="background:#f8f9fa;"><td><strong>Schéma TEV</strong></td><td>10 mg BID × 7j → 5 mg BID</td><td>15 mg BID × 21j → 20 mg DIE</td><td>HBPM 5–10j → 60 mg DIE</td><td>HBPM 5–10j → 150 mg BID</td></tr>
+          <tr><td><strong>Schéma FA</strong></td><td>5 mg BID (2,5 mg BID si ≥2 critères)</td><td>20 mg DIE (avec repas)</td><td>60 mg DIE</td><td>150 mg BID (110 mg si ≥80 ans)</td></tr>
+          <tr style="background:#f8f9fa;"><td><strong>Biodisponibilité</strong></td><td>~50%</td><td>80–100% (avec aliments)</td><td>62%</td><td>6,5%</td></tr>
+          <tr><td><strong>Clairance rénale</strong></td><td>27%</td><td>33%</td><td>50%</td><td>85% ⚠️</td></tr>
+          <tr style="background:#f8f9fa;"><td><strong>Effet aliments</strong></td><td>Non</td><td>Oui (dose thérapeutique ≥15mg — sinon -75% efficacité)</td><td>Non</td><td>Non (intolérance digestive)</td></tr>
+          <tr><td><strong>Demi-vie</strong></td><td>~12h</td><td>7–13h</td><td>10–14h</td><td>14–17h</td></tr>
+          <tr style="background:#f8f9fa;"><td><strong>Antidote</strong></td><td>Andexanet alfa (non remboursé INESSS)</td><td>Andexanet alfa (non remboursé INESSS)</td><td>Aucun approuvé</td><td>Idarucizumab (Praxbind) ✅ RAMQ</td></tr>
+          <tr><td><strong>HBPM initiale requise</strong></td><td>❌ Non</td><td>❌ Non</td><td>✅ Oui (5–10j)</td><td>✅ Oui (5–10j)</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px;">
+      <div class="key-fact blue">
+        ⭐ <strong>Apixaban</strong> = le plus utilisé (2026) :<br>
+        Moins de saignements GI et hémorragiques<br>
+        BID → pic/creux plus stable que DIE<br>
+        Moins sensible à la fonction rénale<br>
+        Efficacité équivalente ou supérieure
+      </div>
+      <div class="key-fact orange">
+        ⚠️ <strong>Rivaroxaban :</strong> Prendre avec un repas à dose thérapeutique (≥15 mg) — sans aliments = 75% d'absorption en moins → risque récidive TEV.
+      </div>
+    </div>
+  </div>
+
+  <!-- Posologie TEV détaillée -->
+  <div class="block def" style="margin-top:14px;">
+    <div class="block-title"><span class="tag">9.3 — Posologie AOD pour la TEV (phase + durée)</span></div>
+    <div style="overflow-x:auto;margin-top:8px;">
+      <table>
+        <thead><tr><th>Médicament</th><th>Traitement initial</th><th>Long terme (3 mois+)</th><th>Prolongation &gt;6 mois ⭐</th></tr></thead>
+        <tbody>
+          <tr style="background:#e8f4ff;"><td><strong>Apixaban ⭐</strong></td><td>10 mg BID × 7 jours</td><td>5 mg BID</td><td><strong>2,5 mg BID</strong></td></tr>
+          <tr><td><strong>Rivaroxaban</strong></td><td>15 mg BID × 21 jours</td><td>20 mg DIE</td><td><strong>10 mg DIE</strong></td></tr>
+          <tr style="background:#f8f9fa;"><td><strong>Dabigatran</strong></td><td>HBPM × 5–10j, puis</td><td>150 mg BID (110 mg BID si ≥80 ans)</td><td>Idem</td></tr>
+          <tr><td><strong>Édoxaban</strong></td><td>HBPM × 5–10j, puis</td><td>60 mg DIE (30 mg si DFGe 15–50 ou &lt;60 kg ou inh. P-gp)</td><td>Idem</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="key-fact green" style="margin-top:10px;">
+      🌟 <strong>Réduction de dose après 6 mois (apixaban 2,5 mg BID / rivaroxaban 10 mg DIE) :</strong> aussi efficace que le placebo ou l'AAS pour prévenir les récidives, avec MOINS de saignements. Unique aux anti-Xa — impossible avec warfarine. <em>Ne s'applique pas à la FA.</em>
+    </div>
+  </div>
+
+  <!-- Antidotes -->
+  <div class="block para" style="margin-top:14px;">
+    <div class="block-title"><span class="tag">7.3 — Antidotes / Renversement AOD</span></div>
+    <div style="overflow-x:auto;margin-top:8px;">
+      <table>
+        <thead><tr><th>Antidote</th><th>Pour</th><th>Statut Québec 2026</th></tr></thead>
+        <tbody>
+          <tr style="background:#e8f8f5;"><td><strong>Idarucizumab (Praxbind)</strong></td><td>Dabigatran (spécifique)</td><td>✅ Approuvé Santé Canada + RAMQ. Disponible partout au Québec. ~2 000$.</td></tr>
+          <tr style="background:#fff8e1;"><td><strong>Andexanet alfa (Ondexxya)</strong></td><td>Apixaban, rivaroxaban</td><td>⚠️ Approuvé Santé Canada mais <strong>NON approuvé INESSS</strong>. Non remboursé. Très dispendieux.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="key-fact black" style="margin-top:10px;">
+      💡 En l'absence d'antidote pour les anti-Xa : support (transfusions, Bériplex « pour noyer » l'effet). La demi-vie ~12h → médicament souvent baissé de moitié à 12h et patient s'arrête de saigner seul. Question de consentement éclairé important avec le patient.
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     8. TVP (section indépendante enrichie)
+═══════════════════════════════════════════════════════════════ -->
+<div class="section" id="sec-tvp">
+  <div class="section-header">
+    <div class="section-accent" style="background:#7c2d12">🦵</div>
+    <div class="section-title">
+      <h1>Thrombose veineuse profonde (TVP)</h1>
+      <div class="breadcrumb">Hématologie <span class="breadcrumb-sep">·</span> Diagnostic & Traitement</div>
+    </div>
+  </div>
+
+  <!-- Triade de Virchow -->
+  <div class="block def">
+    <div class="block-title"><span class="tag">Triade de Virchow — Facteurs de risque</span></div>
+    <div class="stat-row" style="margin-top:8px;">
+      <div class="stat-card blue"><div class="stat-num">Stase</div><div class="stat-label">Immobilisation · Chirurgie · IC · Voyage &gt;4h · Alitement prolongé</div></div>
+      <div class="stat-card red"><div class="stat-num">Hypercoag.</div><div class="stat-label">Thrombophilie · Grossesse · CO · Cancer · CIVD · SAPL</div></div>
+      <div class="stat-card yellow"><div class="stat-num">Lésion vaisseau</div><div class="stat-label">Trauma · Chirurgie · Cathéter central · Inflammation</div></div>
+    </div>
+    <div style="margin-top:12px;font-size:13px;">
+      <strong>Thrombophilies à connaître :</strong>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;">
+        <div style="background:#fce4ec;padding:8px 12px;border-radius:8px;">Mutation <strong>Facteur V Leiden</strong> (plus fréquente)</div>
+        <div style="background:#fce4ec;padding:8px 12px;border-radius:8px;">Mutation Prothrombine <strong>G20210A</strong></div>
+        <div style="background:#fce4ec;padding:8px 12px;border-radius:8px;">Déficit Protéine C ou S</div>
+        <div style="background:#fce4ec;padding:8px 12px;border-radius:8px;">Déficit Antithrombine III</div>
+        <div style="background:#fce4ec;padding:8px 12px;border-radius:8px;"><strong>SAPL</strong> (anticorps antiphospholipides — triple positif = risque très élevé)</div>
+      </div>
+    </div>
+    <div class="key-fact blue" style="margin-top:10px;">
+      ℹ️ <strong>Bilan de thrombophilie (controversé) :</strong> Ne change généralement pas la durée de traitement (risque annuel passe de ~5% à ~7%, jamais à 0%). Peut nuire à l'assurabilité. À discuter avec consentement éclairé — référer si situation complexe.
+    </div>
+  </div>
+
+  <!-- Wells TVP -->
+  <div class="block clin" style="margin-top:14px;">
+    <div class="block-title"><span class="tag">8.1 — Score de Wells TVP</span></div>
+    <div style="overflow-x:auto;margin-top:8px;">
+      <table>
+        <thead><tr><th>Critère</th><th>Points</th></tr></thead>
+        <tbody>
+          <tr><td>Cancer actif (ou traité dans les 6 derniers mois)</td><td>+1</td></tr>
+          <tr style="background:#f8f9fa;"><td>Paralysie, parésie ou immobilisation par plâtre récente d'un MI</td><td>+1</td></tr>
+          <tr><td>Alitement &gt; 3 jours récemment ou chirurgie majeure &lt; 12 semaines</td><td>+1</td></tr>
+          <tr style="background:#f8f9fa;"><td>Sensibilité localisée sur le trajet veineux profond</td><td>+1</td></tr>
+          <tr><td>Enflure de toute la jambe</td><td>+1</td></tr>
+          <tr style="background:#f8f9fa;"><td>Mollet &gt; 3 cm de plus que l'autre (mesuré 10 cm sous la tubérosité tibiale)</td><td>+1</td></tr>
+          <tr><td>Œdème à godet plus marqué du côté symptomatique</td><td>+1</td></tr>
+          <tr style="background:#f8f9fa;"><td>Veines collatérales superficielles non variqueuses</td><td>+1</td></tr>
+          <tr><td>ATCD de TVP documentée</td><td>+1</td></tr>
+          <tr style="background:#fce4ec;"><td><strong>Diagnostic alternatif au moins aussi probable</strong></td><td><strong>−2</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div style="display:flex;gap:10px;margin-top:10px;flex-wrap:wrap;">
+      <div style="background:#e8f8f5;border-radius:8px;padding:10px 16px;flex:1;min-width:140px;text-align:center;">
+        <div style="font-weight:700;color:#0a7a4e;font-size:15px;">&lt; 2</div>
+        <div style="font-size:12px;">Peu probable (6%) → D-dimères</div>
+      </div>
+      <div style="background:#fce4ec;border-radius:8px;padding:10px 16px;flex:1;min-width:140px;text-align:center;">
+        <div style="font-weight:700;color:#c0392b;font-size:15px;">≥ 2</div>
+        <div style="font-size:12px;">Probable (28%) → Échographie Doppler directement</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stratégie diag -->
+  <div class="block def" style="margin-top:14px;">
+    <div class="block-title"><span class="tag">8.2 — Stratégie diagnostique</span></div>
+    <div style="font-family:monospace;background:#f8f9fa;border-radius:10px;padding:14px;font-size:13px;line-height:2;">
+      <div style="display:flex;gap:10px;">
+        <div style="flex:1;background:#e8f8f5;border-radius:8px;padding:10px;">
+          <strong style="color:#0a7a4e;">Wells &lt; 2 (Peu probable)</strong><br>
+          ↓<br>
+          D-dimères<br>
+          ↓<br>
+          &lt;500 → <strong>TVP exclue</strong> (pas d'écho)<br>
+          ≥500 → Écho Doppler
+        </div>
+        <div style="flex:1;background:#fce4ec;border-radius:8px;padding:10px;">
+          <strong style="color:#c0392b;">Wells ≥ 2 (Probable)</strong><br>
+          ↓<br>
+          Écho Doppler d'emblée<br>
+          (D-dimères = inutile)<br>
+          ↓<br>
+          Anticoaguler en attendant si délai &gt;48h
+        </div>
+      </div>
+    </div>
+    <div class="key-fact orange" style="margin-top:10px;">
+      🔑 <strong>Écho proximale seule négative :</strong> Répéter dans 5–7 jours pour exclure l'extension d'une TVP distale non vue. Le D-dimère n'est utile <em>qu'en basse probabilité</em> pour EXCLURE.
+    </div>
+  </div>
+
+  <!-- Traitement TVP -->
+  <div class="block rx" style="margin-top:14px;">
+    <div class="block-title"><span class="tag">9.2 — Traitement de la TVP (2026)</span></div>
+
+    <div class="key-fact green" style="margin-bottom:12px;">
+      ✅ <strong>Moderne, 1er choix :</strong> Apixaban ou Rivaroxaban d'emblée (dose de charge intégrée, <em>pas d'héparine préalable nécessaire</em>)
+    </div>
+
+    <div style="overflow-x:auto;">
+      <table>
+        <thead><tr><th>Option</th><th>Schéma</th><th>Commentaires</th></tr></thead>
+        <tbody>
+          <tr style="background:#e8f4ff;"><td><strong>Apixaban ⭐ 1er choix</strong></td><td>10 mg BID × 7j → 5 mg BID → 2,5 mg BID après 6 mois</td><td>Pas de HBPM initiale. Moins hémorragies GI. Favorisé chez personnes âgées.</td></tr>
+          <tr style="background:#e8f4ff;"><td><strong>Rivaroxaban ⭐ 1er choix</strong></td><td>15 mg BID × 21j → 20 mg DIE (avec repas)</td><td>Pas de HBPM initiale. DIE = commodité. Prendre avec repas.</td></tr>
+          <tr><td><strong>HBPM → Warfarine</strong></td><td>HBPM × 5–10j + warfarine (chevaucher jusqu'à INR &gt;2 × 2 jours consécutifs)</td><td>Ancien standard. Encore valide si AOD contre-indiqué.</td></tr>
+          <tr style="background:#f8f9fa;"><td><strong>HBPM seule</strong></td><td>Daltéparine 200 UI/kg DIE × 6 mois</td><td>2e choix si cancer actif (premiers 6 mois) — AOD de plus en plus acceptés</td></tr>
+          <tr><td><strong>Dabigatran</strong></td><td>HBPM × 5–10j → 150 mg BID</td><td>Nécessite HBPM initiale (pas de dose de charge). Antidote disponible RAMQ.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Durée -->
+    <div style="margin-top:14px;overflow-x:auto;">
+      <strong>9.4 — Durée d'anticoagulation (ACCP 2022) :</strong>
+      <table style="margin-top:8px;">
+        <thead><tr><th>Situation</th><th>Durée</th><th>Rationnel</th></tr></thead>
+        <tbody>
+          <tr><td>TVP proximale / EP <strong>provoquée</strong> (facteur chirurgical ou transitoire)</td><td><strong>3 mois</strong></td><td>Récidive à 10 ans &lt;20% si facteur résolu</td></tr>
+          <tr style="background:#fff8e1;"><td>TVP proximale / EP <strong>non provoquée</strong></td><td><strong>Long terme</strong> (sauf risque hémorragique élevé → 3 mois)</td><td>Récidive ~4–5%/an = même logique que FA (AVC ~4%/an). Logique anticoagulation à vie.</td></tr>
+          <tr><td>TEV avec <strong>cancer actif</strong></td><td><strong>Long terme</strong> (tant que cancer actif)</td><td>Récidive très élevée sous cancer</td></tr>
+          <tr style="background:#f8f9fa;"><td>TVP distale isolée (sous le genou)</td><td>3 mois (ou surveillance si risque hémorragique élevé)</td><td>Risque EP plus faible — décision individualisée</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- IR -->
+    <div class="key-fact blue" style="margin-top:12px;">
+      🫘 <strong>Insuffisance rénale :</strong> DFGe &lt;30 → privilégier HNF (perfusion IV) plutôt qu'HBPM. Si HBPM utilisée → 50% de la dose. Tinzaparine OK jusqu'à 20 mL/min. AOD : apixaban le mieux toléré.
+    </div>
+
+    <div class="key-fact green" style="margin-top:10px;">
+      🏠 <strong>Traitement ambulatoire :</strong> Toutes les TVP non massives peuvent être traitées en ambulatoire. Hospitaliser seulement si TEV cliniquement importante, risque de saignement majeur, ou suspicion forte de cancer (accélérer biopsies).
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     9. EMBOLIE PULMONAIRE (section indépendante enrichie)
+═══════════════════════════════════════════════════════════════ -->
+<div class="section" id="sec-ep">
+  <div class="section-header">
+    <div class="section-accent" style="background:#7c2d12">🫁</div>
+    <div class="section-title">
+      <h1>Embolie pulmonaire (EP)</h1>
+      <div class="breadcrumb">Hématologie <span class="breadcrumb-sep">·</span> Diagnostic & Traitement</div>
+    </div>
+  </div>
+
+  <!-- Wells EP -->
+  <div class="block clin">
+    <div class="block-title"><span class="tag">8.3 — Score de Wells EP</span></div>
+    <div style="overflow-x:auto;margin-top:8px;">
+      <table>
+        <thead><tr><th>Critère</th><th>Points</th></tr></thead>
+        <tbody>
+          <tr style="background:#fce4ec;"><td><strong>Signes / symptômes cliniques de TVP</strong></td><td><strong>+3</strong></td></tr>
+          <tr style="background:#fce4ec;"><td><strong>Aucun diagnostic alternatif plus probable que l'EP</strong></td><td><strong>+3</strong></td></tr>
+          <tr><td>ATCD de TVP ou EP</td><td>+1,5</td></tr>
+          <tr style="background:#f8f9fa;"><td>Immobilisation &gt; 3 jours ou chirurgie &lt; 4 semaines</td><td>+1,5</td></tr>
+          <tr><td>Fréquence cardiaque &gt; 100/min</td><td>+1,5</td></tr>
+          <tr style="background:#f8f9fa;"><td>Hémoptysie</td><td>+1</td></tr>
+          <tr><td>Néoplasie active</td><td>+1</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;">
+      <div style="background:#e8f8f5;border-radius:8px;padding:10px 14px;flex:1;min-width:120px;text-align:center;"><strong style="color:#0a7a4e;">0–1,5 = Faible</strong><br><small>D-dimères</small></div>
+      <div style="background:#fff8e1;border-radius:8px;padding:10px 14px;flex:1;min-width:120px;text-align:center;"><strong style="color:#d35400;">2–5,5 = Intermédiaire</strong><br><small>D-dimères → si positifs → Angio-TDM</small></div>
+      <div style="background:#fce4ec;border-radius:8px;padding:10px 14px;flex:1;min-width:120px;text-align:center;"><strong style="color:#c0392b;">≥ 6 = Élevé</strong><br><small>Angio-TDM directement</small></div>
+    </div>
+  </div>
+
+  <!-- Stratification EP -->
+  <div class="block def" style="margin-top:14px;">
+    <div class="block-title"><span class="tag">Stratification du risque EP</span></div>
+    <div style="overflow-x:auto;margin-top:8px;">
+      <table>
+        <thead><tr><th>Classe</th><th>Critères</th><th>Traitement</th></tr></thead>
+        <tbody>
+          <tr style="background:#fce4ec;">
+            <td><strong style="color:#c0392b;">🔴 Massive (haut risque)</strong></td>
+            <td>Choc, TAS &lt;90 mmHg, arrêt cardiaque, hypoxémie réfractaire</td>
+            <td>Thrombolyse systémique (altéplase) en urgence + anticoagulation; embolectomie chirurgicale si CI thrombolyse</td>
+          </tr>
+          <tr style="background:#fff8e1;">
+            <td><strong style="color:#d35400;">🟡 Sous-massive (risque intermédiaire)</strong></td>
+            <td>Stable + Dysfonction VD (écho ou TDM) + Troponine ↑ ou BNP ↑</td>
+            <td>Anticoagulation + surveillance USI. Thrombolyse si détérioration hémodynamique. Discuter cathéter-directed thrombolysis.</td>
+          </tr>
+          <tr style="background:#e8f8f5;">
+            <td><strong style="color:#0a7a4e;">🟢 Faible risque</strong></td>
+            <td>sPESI = 0 : stable, pas de cancer, pas de cardiopathie, FC &lt;110, O₂ sat ≥90%, TAS ≥100</td>
+            <td>Anticoagulation ambulatoire (AOD). Pas d'hospitalisation requise.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div style="margin-top:10px;font-size:13px;">
+      <strong>Score sPESI (Simplified PESI) — 1 point chacun :</strong>
+      <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:6px;">
+        <span style="background:#f0f0f0;padding:4px 10px;border-radius:12px;">≥ 80 ans</span>
+        <span style="background:#f0f0f0;padding:4px 10px;border-radius:12px;">Cancer actif</span>
+        <span style="background:#f0f0f0;padding:4px 10px;border-radius:12px;">IC ou BPCO</span>
+        <span style="background:#f0f0f0;padding:4px 10px;border-radius:12px;">TAS &lt; 100 mmHg</span>
+        <span style="background:#f0f0f0;padding:4px 10px;border-radius:12px;">FC ≥ 110/min</span>
+        <span style="background:#f0f0f0;padding:4px 10px;border-radius:12px;">O₂ sat &lt; 90%</span>
+      </div>
+      <strong>sPESI = 0 → faible risque; ≥ 1 → haut risque</strong>
+    </div>
+  </div>
+
+  <!-- Protocole EP stable -->
+  <div class="block def" style="margin-top:14px;">
+    <div class="block-title"><span class="tag">8.4 — Protocole diagnostique EP stable (patient TAS ≥ 100)</span></div>
+    <div style="font-family:monospace;background:#f8f9fa;border-radius:10px;padding:14px;font-size:13px;line-height:1.9;">
+      <div style="text-align:center;background:#1C3F8F;color:#fff;border-radius:8px;padding:8px;margin-bottom:8px;">Suspicion EP</div>
+      ↓<br>
+      Score de Wells EP + D-dimères (méthode sensible ≥500 µg/L)<br>
+      ↓<br>
+      <div style="display:flex;gap:8px;margin-top:8px;">
+        <div style="flex:1;background:#e8f8f5;border-radius:8px;padding:10px;">
+          <strong>Wells faible + D-dim &lt;500</strong><br>
+          → EP exclue. Stopper l'anticoagulation si amorcée.
+        </div>
+        <div style="flex:1;background:#fce4ec;border-radius:8px;padding:10px;">
+          <strong>Wells élevé OU D-dim ≥500</strong><br>
+          → <strong>Angio-TDM pulmonaire</strong> (1er choix)<br>
+          ou Scintigraphie V/Q (si IR, grossesse, allergie contraste, jeune femme)
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:10px;font-size:13px;">
+      <strong>Bilan de base :</strong> FSC, créatinine, Na/K, AST/ALT, PT/INR, βhCG (femmes en âge de procréer), troponine, BNP/NT-proBNP, ECG, Rx thorax, écho cardiaque (si sous-massive).
+    </div>
+    <div class="key-fact orange" style="margin-top:8px;">
+      ⚠️ Amorcer le traitement <strong>dès la suspicion</strong>, sauf contre-indication (ex. cancer endomètre avec saignement actif → hépariniser et hospitaliser plutôt qu'AOD oral d'emblée).
+    </div>
+  </div>
+
+  <!-- Traitement EP -->
+  <div class="block rx" style="margin-top:14px;">
+    <div class="block-title"><span class="tag">Traitement anticoagulant EP — Identique à la TVP</span></div>
+    <div class="key-fact green">
+      ✅ <strong>1er choix :</strong> Apixaban (10 mg BID × 7j → 5 mg BID) ou Rivaroxaban (15 mg BID × 21j → 20 mg DIE) — sans HBPM initiale.<br>
+      Après 6 mois : réduire à 2,5 mg BID (apixaban) ou 10 mg DIE (rivaroxaban) pour prolongation.
+    </div>
+    <div class="key-fact blue" style="margin-top:8px;">
+      🕒 <strong>Durée :</strong> EP provoquée = 3 mois. EP non provoquée = long terme (récidive ~4–5%/an). EP + cancer = long terme.
+    </div>
+    <div class="key-fact black" style="margin-top:8px;">
+      🏠 <strong>Ambulatoire :</strong> EP faible risque (sPESI = 0) peut être traitée en ambulatoire. Hospitaliser si EP massive/sous-massive, détresse, comorbidités, isolement social ou cancer suspecté.
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     10. GESTION PÉRIOPÉRATOIRE DES ANTICOAGULANTS
+═══════════════════════════════════════════════════════════════ -->
+<div class="section" id="sec-periop-anticoag">
+  <div class="section-header">
+    <div class="section-accent" style="background:#0a7a4e">⚕️</div>
+    <div class="section-title">
+      <h1>Gestion périopératoire des anticoagulants</h1>
+      <div class="breadcrumb">Hématologie <span class="breadcrumb-sep">·</span> Thrombose Canada 2022</div>
+    </div>
+  </div>
+
+  <div class="key-fact blue" style="margin-bottom:14px;">
+    📞 Appels fréquents des cabinets dentaires, centres d'endoscopie, gastro/pneumo. On évalue <strong>2 axes :</strong> risque thrombotique (de la maladie) + risque de saignement (de la procédure).
+  </div>
+
+  <!-- 10.1 Risque thrombotique -->
+  <div class="block def" style="border-left:4px solid #c0392b;">
+    <div class="block-title"><span class="tag">10.1 — Risque thrombotique (Maladie)</span></div>
+    <div style="overflow-x:auto;margin-top:8px;">
+      <table>
+        <thead><tr><th>Risque</th><th>Valve mécanique</th><th>FA</th><th>TEV</th></tr></thead>
+        <tbody>
+          <tr style="background:#fce4ec;">
+            <td><strong style="color:#c0392b;">🔴 Élevé<br>(ne pas arrêter)</strong></td>
+            <td>Toute valve mitrale ; aortique ancienne ; ATCD AVC/ICT &lt;6 mois</td>
+            <td>CHADS₂ 5–6 ; AVC/ICT &lt;3 mois ; valvulopathie rhumatismale</td>
+            <td>TEV &lt;3 mois ; thrombophilie sévère (SAPL, déficit AT III)</td>
+          </tr>
+          <tr style="background:#fff8e1;">
+            <td><strong style="color:#d35400;">🟡 Modéré</strong></td>
+            <td>Valve aortique à double ailette + ≥1 FR</td>
+            <td>CHADS₂ 3–4</td>
+            <td>TEV 3–12 mois ; TEV récidivante ; cancer actif ; thrombophilie non sévère</td>
+          </tr>
+          <tr style="background:#e8f8f5;">
+            <td><strong style="color:#0a7a4e;">🟢 Faible<br>(arrêt OK)</strong></td>
+            <td>Valve aortique double ailette sans FA ni autre FR</td>
+            <td>CHADS₂ 0–2 sans ATCD AVC/ICT</td>
+            <td>TEV unique &gt;12 mois sans autre FR</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="key-fact black" style="margin-top:10px;">
+      ➡️ Risque élevé = on essaie de ne pas arrêter. Risque faible / TEV &gt;12 mois = arrêt facile.
+    </div>
+  </div>
+
+  <!-- 10.2 Risque de saignement procédure -->
+  <div class="block para" style="border-left:4px solid #1d4ed8;margin-top:14px;">
+    <div class="block-title"><span class="tag">10.2 — Risque hémorragique de la procédure</span></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:8px;font-size:13px;">
+      <div style="background:#e8f8f5;border-radius:8px;padding:12px;">
+        <strong style="color:#0a7a4e;">🟢 Faible / Très faible<br>(souvent pas d'arrêt)</strong>
+        <ul style="margin:6px 0;padding-left:16px;line-height:1.7;">
+          <li>Cataracte, biopsie cutanée</li>
+          <li>Gastroscopie / coloscopie <em>sans biopsie</em></li>
+          <li>Coronarographie radiale</li>
+          <li>Extraction 1–2 dents, plombage, détartrage, endodontie</li>
+        </ul>
+      </div>
+      <div style="background:#fff8e1;border-radius:8px;padding:12px;">
+        <strong style="color:#d35400;">🟡 Modéré</strong>
+        <ul style="margin:6px 0;padding-left:16px;line-height:1.7;">
+          <li>Chirurgie abdominale (cholécystectomie, hernie, colectomie)</li>
+          <li>Chirurgie mammaire</li>
+          <li>Gastro/colo avec biopsie</li>
+          <li>Biopsie médullaire / ganglionnaire</li>
+          <li>Extractions dentaires multiples</li>
+        </ul>
+      </div>
+      <div style="background:#fce4ec;border-radius:8px;padding:12px;">
+        <strong style="color:#c0392b;">🔴 Élevé</strong>
+        <ul style="margin:6px 0;padding-left:16px;line-height:1.7;">
+          <li>Anesthésie neuraxiale (rachi/épidurale)</li>
+          <li>Neurochirurgie</li>
+          <li>Chirurgie cardiaque, vasculaire majeure</li>
+          <li>Orthopédie majeure (hanche/genou)</li>
+          <li>Résection pulmonaire</li>
+          <li>Urologique (prostate/vessie)</li>
+          <li>Polypectomie colique</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Règle 1-2-4 AOD -->
+  <div class="block def" style="border-left:4px solid #7b3fa0;margin-top:14px;">
+    <div class="block-title"><span class="tag">10.3 — ⚡ Règle 1–2–4 (arrêt préopératoire des AOD)</span></div>
+    <p class="content-text">Combinaison fonction rénale + risque de saignement. Applicable à tous les AOD (dabigatran le plus sensible à l'IR — clairance rénale 85%).</p>
+    <div style="overflow-x:auto;margin-top:8px;">
+      <table>
+        <thead><tr><th>Situation</th><th>Jours d'arrêt avant la procédure</th></tr></thead>
+        <tbody>
+          <tr style="background:#e8f8f5;"><td>Fonction rénale normale + <strong>petit risque</strong> de saignement</td><td><strong>1 jour</strong></td></tr>
+          <tr style="background:#fff8e1;"><td>IR légère (DFGe 30–60) <strong>OU</strong> haut risque de saignement (fonction rénale normale)</td><td><strong>2 jours</strong></td></tr>
+          <tr style="background:#fce4ec;"><td>IR ET haut risque de saignement</td><td><strong>4 jours</strong> minimum</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="key-fact black" style="margin-top:10px;">
+      💡 <strong>En pratique :</strong> TEV &gt;1 an + petit geste → souvent aucun arrêt ou 1 jour. La règle 1–2–4 est plus logique que les monographies (souvent floues : « 1 à 2 jours »).
+    </div>
+  </div>
+
+  <!-- Antiplaquettaires préop -->
+  <div class="block para" style="margin-top:14px;">
+    <div class="block-title"><span class="tag">Arrêt préopératoire des antiplaquettaires</span></div>
+    <div style="overflow-x:auto;margin-top:8px;">
+      <table>
+        <thead><tr><th>Médicament</th><th>Arrêt avant chirurgie</th><th>Raison</th></tr></thead>
+        <tbody>
+          <tr><td><strong>AAS 80 mg</strong></td><td>7–10 jours (si arrêt indiqué)</td><td>Irréversible sur durée de vie plaquettaire</td></tr>
+          <tr style="background:#f8f9fa;"><td><strong>Clopidogrel (Plavix)</strong></td><td>5–7 jours</td><td>Irréversible</td></tr>
+          <tr><td><strong>Prasugrel (Effient)</strong></td><td>7 jours</td><td>Irréversible — plus potent</td></tr>
+          <tr style="background:#f8f9fa;"><td><strong>Ticagrelor (Brilinta)</strong></td><td>3–5 jours</td><td>✅ Réversible → effet résiduel quasi nul à 4j</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Reprise postopératoire -->
+  <div class="block def" style="margin-top:14px;background:#e8f8f5;">
+    <div class="block-title"><span class="tag">10.4 — Reprise postopératoire</span></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:8px;font-size:13px;">
+      <div>
+        <strong style="color:#0a7a4e;">⏱️ Délai de reprise AOD :</strong>
+        <ul style="margin:6px 0;padding-left:16px;line-height:1.8;">
+          <li><strong>24h</strong> après fin de la chirurgie (standard)</li>
+          <li><strong>48h</strong> si doute sur hémostase</li>
+          <li><strong>72h</strong> si gros doute (dose prophylactique possible dans l'intervalle)</li>
+          <li>Règle : « 24h après la fin de la chirurgie », pas « le lendemain matin » (si geste à 15h → reprendre le lendemain à 15h)</li>
+        </ul>
+      </div>
+      <div>
+        <strong style="color:#0a7a4e;">🎉 Avantages des AOD vs warfarine périop :</strong>
+        <ul style="margin:6px 0;padding-left:16px;line-height:1.8;">
+          <li>Action rapide (2–4h) → <strong>plus de bridging</strong> à l'héparine nécessaire</li>
+          <li><strong>Plus d'INR sériés</strong> à faire</li>
+          <li>Reprise simple et prévisible</li>
+          <li>« La fin du monde n'existe plus » (Dr Roussin)</li>
+        </ul>
+      </div>
+    </div>
+    <div style="margin-top:12px;font-size:13px;">
+      <strong>Bridging héparine (warfarine) — Quand utiliser encore :</strong>
+      <ul style="margin:4px 0;padding-left:16px;line-height:1.8;">
+        <li>Valve mécanique mitrale ou aortique ancienne (risque élevé) + chirurgie à haut risque hémorragique</li>
+        <li>CHADS₂ ≥ 5 avec interruption warfarine &gt; 5 jours</li>
+        <li>TEV &lt; 3 mois</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Messages clés -->
+  <div class="block def" style="margin-top:14px;border-left:4px solid #7b3fa0;">
+    <div class="block-title"><span class="tag">⭐ Messages clés — Anticoagulation (Dr Roussin 2026)</span></div>
+    <div style="display:flex;flex-direction:column;gap:8px;margin-top:8px;font-size:13px;">
+      <div style="background:#e8f4ff;border-radius:8px;padding:10px;"><strong>1.</strong> Les AOD sont la priorité : aussi efficaces que la warfarine et <strong>≥2× moins d'hémorragies intracrâniennes</strong></div>
+      <div style="background:#e8f4ff;border-radius:8px;padding:10px;"><strong>2.</strong> Apixaban et rivaroxaban se donnent d'emblée (TVP/EP) ; dabigatran et édoxaban nécessitent HBPM 5–10j</div>
+      <div style="background:#e8f8f5;border-radius:8px;padding:10px;"><strong>3.</strong> Réduction de dose à 6 mois (apixaban 2,5 BID / rivaroxaban 10 DIE) : avantage majeur, <em>impossible avec warfarine</em></div>
+      <div style="background:#e8f8f5;border-radius:8px;padding:10px;"><strong>4.</strong> Warfarine réservée surtout aux valves mécaniques (facteur IX/voie intrinsèque)</div>
+      <div style="background:#fff8e1;border-radius:8px;padding:10px;"><strong>5.</strong> Durée TEV : provoquée = 3 mois ; non provoquée / cancer = long terme (~4–5%/an récidive)</div>
+      <div style="background:#fff8e1;border-radius:8px;padding:10px;"><strong>6.</strong> Règle 1–2–4 pour arrêt préop, reprise à 24h post-op, plus de bridging systématique</div>
+      <div style="background:#fce4ec;border-radius:8px;padding:10px;"><strong>7.</strong> D-dimères = exclure une TEV en BASSE probabilité seulement. Si Wells ≥2 (TVP) → aller directement à l'écho Doppler</div>
+    </div>
+  </div>
+</div>
+
+    <div class="section" id="sec-fsc-anemie">
       <div class="section-header">
         <div class="section-accent" style="background:#7c2d12">🩸</div>
         <div class="section-title"><h1>FSC & Anémies</h1><div class="breadcrumb">Hématologie <span class="breadcrumb-sep">·</span> Section 27</div></div>
@@ -19054,7 +20160,16 @@ const SEARCH_INDEX = [
   { id:'pneumo-aco',            title:'ACO — Chevauchement Asthme-MPOC',  specialty:'Pneumologie',    keywords:['aco','chevauchement','asthme mpoc','overlap','csc/bala/amla'] },
   { id:'pneumo-pneumonie',      title:'Pneumonie',                          specialty:'Pneumologie',    keywords:['pneumonie','pac','streptocoque','legionella','pneumocoque','curb65','psi'] },
   { id:'pneumo-autres-patho',   title:'Autres Pathologies Pulmonaires',    specialty:'Pneumologie',    keywords:['bronchite aiguë','bronchiectasie','pneumonite','fibrose pulmonaire','oap','épanchement pleural','hypertension pulmonaire'] },
-  { id:'tvp-ep',              title:'TVP & Embolie Pulmonaire',       specialty:'Hématologie',    keywords:['tvp','embolie pulmonaire','ep','héparine','rivaroxaban','apixaban','wells'] },
+    { id:'hemostase',            title:'Bases de l\'hémostase',              specialty:'Hématologie',    keywords:['hémostase','plaquettes','coagulation','fibrinolyse','facteurs','cascade','von willebrand','hémophilie','fibrine','d-dimères'] },
+  { id:'thrombolyse',           title:'Thrombolyse thérapeutique',            specialty:'Hématologie',    keywords:['thrombolyse','fibrinolytiques','altéplase','tpa','tnkase','streptokinase','ep massive'] },
+  { id:'antiplaquettaires',     title:'Antiplaquettaires oraux',              specialty:'Hématologie',    keywords:['antiplaquettaires','aas','aspirine','clopidogrel','prasugrel','ticagrelor','p2y12','dapt'] },
+  { id:'tests-coag',            title:'Tests de coagulation',                 specialty:'Hématologie',    keywords:['pt','inr','tca','ptt','d-dimères','anti-xa','tests coagulation'] },
+  { id:'anticoag-parenteraux',  title:'Anticoagulants parentéraux',           specialty:'Hématologie',    keywords:['héparine','hbpm','hnf','fondaparinux','énoxaparine','daltéparine','tih','antithrombine'] },
+  { id:'warfarine',             title:'Warfarine (AVK)',                      specialty:'Hématologie',    keywords:['warfarine','avk','inr','vitamine k','bériplex','reversal','valve mécanique'] },
+  { id:'aod',                   title:'Anticoagulants oraux directs (AOD)',   specialty:'Hématologie',    keywords:['aod','apixaban','rivaroxaban','dabigatran','edoxaban','eliquis','xarelto','pradaxa','idarucizumab'] },
+  { id:'tvp',                   title:'Thrombose veineuse profonde (TVP)',     specialty:'Hématologie',    keywords:['tvp','thrombose','wells','doppler','d-dimères','tev','thrombophilie','facteur v leiden'] },
+  { id:'ep',                    title:'Embolie pulmonaire',                   specialty:'Hématologie',    keywords:['embolie pulmonaire','ep','wells ep','angio-tdm','spesi','pesi','tpa','ep massive','sPESI'] },
+  { id:'periop-anticoag',       title:'Gestion périopératoire anticoagulants',specialty:'Hématologie',    keywords:['périopératoire','bridging','arrêt anticoagulant','règle 1-2-4','chads2','risque thrombotique'] },
   { id:'fsc-anemie',          title:'FSC & Anémie',                   specialty:'Hématologie',    keywords:['fsc','anémie','hémoglobine','ferritine','b12','folate'] },
   { id:'avc',                 title:'AVC',                            specialty:'Neurologie',     keywords:['avc','ischémie cérébrale','tpa','alteplase','nihss'] },
   { id:'epilepsie',           title:'Épilepsie',                      specialty:'Neurologie',     keywords:['épilepsie','crise','anticonvulsivant','lévétiracétam','valproate','lamotrigine'] },
@@ -19284,7 +20399,7 @@ const SECTION_ORDER = [
   // Pneumologie
   'aso','apnee-centrale','pneumo-eval','asthme','mpoc','pneumo-aco','pneumo-pneumonie','pneumo-autres-patho','anatomie-tfr','neo-poumon','amiante','niveau-soins',
   // Hématologie
-  'tvp-ep','fsc-anemie',
+  'hemostase','thrombolyse','antiplaquettaires','tests-coag','anticoag-parenteraux','warfarine','aod','tvp','ep','periop-anticoag','fsc-anemie',
   // Neurologie
   'avc','epilepsie','cephalees','vertige',
   // Urologie
@@ -19315,7 +20430,7 @@ const SECTION_TITLES = {
   'dermato':'Dermatologie',
   'infections':'Infections Courantes','infections-vas':'Infections VAS','antibiotherapie':'Antibiothérapie',
   'aso':'ASO','apnee-centrale':'Apnée Centrale','asthme':'Asthme','mpoc':'MPOC',
-  'tvp-ep':'TVP & EP','fsc-anemie':'FSC & Anémie',
+  'hemostase':'Hémostase','thrombolyse':'Thrombolyse','antiplaquettaires':'Antiplaquettaires','tests-coag':'Tests coag.','anticoag-parenteraux':'Anticoag. parentéraux','warfarine':'Warfarine','aod':'AOD','tvp':'TVP','ep':'Embolie pulmonaire','periop-anticoag':'Périopératoire anticoag.','fsc-anemie':'FSC & Anémie',
   'avc':'AVC','epilepsie':'Épilepsie','cephalees':'Céphalées','vertige':'Vertige',
   'uro-physio':'Physiologie miction','uro-sbau':'SBAU','uro-hbp':'HBP','uro-vha':'Vessie hyperactive','uro-incontinence':'Incontinence urinaire','uro-pna':'Pyélonéphrite aiguë','uro-cancer-prostate':'Cancer prostate','uro-iu-recidivante':'IU récidivantes','uro-sgu':'SGU ménopause','uro-orchi':'Orchi-épididymite','uro-prostatite':'Prostatite aiguë','uro-de':'Dysfonction érectile',
   'douleur-abdo':'Douleur Abdominale','anatomie-foie':'Anatomie Foie','fonctions-foie':'Fonctions Foie',
