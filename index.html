@@ -7872,184 +7872,505 @@ function calculatePHQ9() {
     </div>
 
     <div class="section" id="sec-map">
-      <div class="section-header">
-        <div class="section-accent" style="background:#1C3F8F">🦵</div>
-        <div class="section-title"><h1>Maladie Artérielle Périphérique (MAP)</h1><div class="breadcrumb">Cardiologie <span class="breadcrumb-sep">·</span> Section 12</div></div>
-      </div>
+  <div class="section-header">
+    <div class="section-accent" style="background:#7c2d12">🦵</div>
+    <div class="section-title">
+      <h1>Maladie artérielle périphérique (MAP)</h1>
+      <div class="breadcrumb">Cardiologie <span class="breadcrumb-sep">·</span> Dr André Roussin — CHUM 2026 | CCS / AHA 2025 / ESC 2026</div>
+    </div>
+  </div>
 
-      <div class="block def">
-        <div class="block-title"><span class="tag">📌 Définition</span></div>
-        <p class="content-text">Atteinte athérosclérotique sténosante/occlusive des artères des membres (le plus souvent inférieurs) → ↓ perfusion à l'effort puis au repos. Marqueur de <strong>maladie athérosclérotique systémique</strong> — risque CV (IM, AVC) comparable à la MCAS établie.</p>
-      </div>
+  <!-- Pills de navigation interne -->
+  <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;">
+    <button onclick="document.getElementById('map-clinique').scrollIntoView({behavior:'smooth'})" style="background:#7c2d12;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">1. Approche clinique</button>
+    <button onclick="document.getElementById('map-fdr').scrollIntoView({behavior:'smooth'})" style="background:#7c2d12;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">2. FDR / Prévalence / Pronostic</button>
+    <button onclick="document.getElementById('map-depistage').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">3. Dépistage</button>
+    <button onclick="document.getElementById('map-diag').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">4. Diagnostic & Imagerie</button>
+    <button onclick="document.getElementById('map-pharmaco').scrollIntoView({behavior:'smooth'})" style="background:#0a7a4e;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">5. Traitement pharmaco.</button>
+    <button onclick="document.getElementById('map-antithrombo').scrollIntoView({behavior:'smooth'})" style="background:#0a7a4e;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">6. Thérapie antithrombotique</button>
+    <button onclick="document.getElementById('map-readapt').scrollIntoView({behavior:'smooth'})" style="background:#7b3fa0;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">7. Réadaptation & Marche</button>
+  </div>
 
-      <div class="block para" style="border-left-color:var(--blue);">
-        <div class="block-title"><span class="tag">🧬 Physiopathologie brève</span></div>
-        <p class="content-text">Plaques athérosclérotiques progressives → <strong>sténose artérielle</strong> → inadéquation entre l'apport en O₂ et la demande métabolique du muscle squelettique à l'effort → <strong>ischémie musculaire et douleur (claudication)</strong> soulagée au repos (la perfusion redevient suffisante au repos). À mesure que la sténose progresse vers l'occlusion : ischémie présente même au repos (douleur de repos, stade III) puis <strong>ischémie critique</strong> → nécrose tissulaire/gangrène (stade IV). L'<strong>ischémie aiguë du membre</strong> survient lors d'une occlusion brutale (thrombose sur plaque ou embolie) → urgence vasculaire (6 P).</p>
-      </div>
+  <!-- Stat cards clés -->
+  <div class="stat-row">
+    <div class="stat-card red"><div class="stat-num">75%</div><div class="stat-label">MAP asymptomatiques — maladie souvent silencieuse</div></div>
+    <div class="stat-card blue"><div class="stat-num">14%</div><div class="stat-label">prévalence chez les &gt;70 ans (jusqu'à 25–30%)</div></div>
+    <div class="stat-card yellow"><div class="stat-num">RR 3,1</div><div class="stat-label">risque de mortalité (surtout coronarienne) sans traitement</div></div>
+    <div class="stat-card ink"><div class="stat-num">50%</div><div class="stat-label">mortalité à 12 ans sans traitement (San Diego Artery Study)</div></div>
+  </div>
+  <div class="key-fact black" style="margin-top:10px;">
+    🎯 <strong>Levier de motivation patient :</strong> « Traiter les jambes, c'est traiter le cœur » — tous les traitements de la MAP bénéficient au cœur. Quand les jambes sont malades, le cœur l'est aussi.
+  </div>
 
-      <div class="block def">
-        <div class="block-title"><span class="tag">🔖 Critères diagnostiques — IPS (Index de Pression Systolique)</span></div>
-        <div class="stat-row">
-          <div class="stat-card blue"><div class="stat-num">IPS &gt; 1,3</div><div class="stat-label">Vaisseaux incompressibles (calcifiés) · DM · IRC</div></div>
-          <div class="stat-card yellow"><div class="stat-num">0,9–1,3</div><div class="stat-label">Normal</div></div>
-          <div class="stat-card red"><div class="stat-num">&lt; 0,9</div><div class="stat-num">MAP</div></div>
-        </div>
+  <!-- 1. APPROCHE CLINIQUE -->
+  <div id="map-clinique" class="block def" style="border-left:4px solid #7c2d12;margin-top:18px;">
+    <div class="block-title"><span class="tag">1 — Approche clinique & Cas type</span></div>
+
+    <div style="background:#fff8e1;border-radius:10px;padding:14px;margin-bottom:14px;">
+      <strong style="color:#d35400;">📋 Cas type :</strong> Homme 55 ans, douleur du mollet à la marche. Diabétique traité, hypertendu, dyslipidémie, tabagisme 1 paquet/jour → les 4 FDR athérosclérotiques réunis.
+    </div>
+
+    <p class="content-text"><strong>Anamnèse orientée — questions clés :</strong></p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:8px;">
+      <div style="background:#e8f4ff;border-radius:10px;padding:14px;font-size:13px;">
+        <strong style="color:#1C3F8F;">Questions essentielles :</strong>
+        <ul style="margin:6px 0;padding-left:16px;line-height:1.9;">
+          <li>Après quelle distance la douleur débute? (<em>compter en coins de rue</em>, plus fiable que les mètres)</li>
+          <li><strong>Que se passe-t-il à l'arrêt?</strong> → Douleur disparaît rapidement au repos = signe vasculaire clé (≡ angine des jambes)</li>
+          <li>Localisation: mollet (fémoro-poplité), cuisse/fesse (ilique), pied (infra-poplité)</li>
+          <li>Aggravée par montée de côte ou accélération?</li>
+        </ul>
+      </div>
+      <div style="background:#f5eef8;border-radius:10px;padding:14px;font-size:13px;">
+        <strong style="color:#7b3fa0;">⚠️ Ne pas se fier à :</strong>
+        <ul style="margin:6px 0;padding-left:16px;line-height:1.9;">
+          <li>Changements de coloration (peu fiables sauf ischémie critique)</li>
+          <li>Perte de poils / pied froid (classiques mais peu spécifiques)</li>
+          <li>Douleur qui persiste &gt;10 min à l'arrêt → penser arthrite, sciatique (≠ MAP)</li>
+        </ul>
+        <strong style="color:#c0392b;">Labos initiale (1re visite) :</strong>
+        <div style="font-size:12px;margin-top:4px;line-height:1.7;">Glycémie/HbA1c · Bilan lipidique (CT, TG, HDL, LDL, non-HDL) · apoB (optionnel, mieux corrélé risque) · Lp(a) une fois dans la vie · Créatinine/DFGe</div>
+      </div>
+    </div>
+
+    <div class="key-fact orange" style="margin-top:12px;">
+      💊 <strong>Médicament à considérer d'emblée si symptomatique :</strong> AAS 80 mg (↓25% événements CV, peu coûteux) — sous réserve CI gastrique. Le reste dépend du bilan.
+    </div>
+  </div>
+
+
+  <!-- PHYSIOPATHOLOGIE + IPS SÉVÉRITÉ -->
+  <div class="block para" style="border-left:4px solid #7c2d12;margin-top:16px;">
+    <div class="block-title"><span class="tag">🧬 Physiopathologie & Stades de sévérité</span></div>
+    <p class="content-text">Plaques athérosclérotiques progressives → sténose artérielle → inadéquation apport O₂/demande métabolique musculaire à l'effort → <strong>ischémie musculaire et claudication</strong> soulagée au repos. Avec progression : ischémie de repos (stade III) → nécrose/gangrène (stade IV).</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px;">
+      <div style="overflow-x:auto;">
+        <strong>Stades Leriche-Fontaine :</strong>
         <table style="margin-top:8px;">
-          <thead><tr><th>IPS</th><th>Sévérité</th><th>Clinique</th></tr></thead>
+          <thead><tr><th>Stade</th><th>Description</th><th>IPS correspondant</th></tr></thead>
           <tbody>
-            <tr><td>0,70–0,90</td><td>Légère</td><td>Claudication intermittente légère</td></tr>
-            <tr><td>0,40–0,70</td><td>Modérée</td><td>Claudication incapacitante</td></tr>
-            <tr><td>&lt; 0,40</td><td>Sévère</td><td>Ischémie critique du membre (ICM)</td></tr>
+            <tr><td><strong>I</strong></td><td>Asymptomatique (anomalie détectée)</td><td>0,7–0,9</td></tr>
+            <tr style="background:#f8f9fa;"><td><strong>IIa</strong></td><td>Claudication > 200 m</td><td>0,5–0,7</td></tr>
+            <tr><td><strong>IIb</strong></td><td>Claudication < 200 m</td><td>0,4–0,5</td></tr>
+            <tr style="background:#fff8e1;"><td><strong>III</strong></td><td>Douleur de repos (ischémie critique)</td><td>< 0,4</td></tr>
+            <tr style="background:#fce4ec;"><td><strong>IV</strong></td><td>Nécrose / Gangrène · Plaie qui ne guérit pas</td><td>< 0,3</td></tr>
           </tbody>
         </table>
-        <div class="highlight cream" style="margin-top:8px;font-size:13px;"><strong>Claudication intermittente :</strong> Douleur ischémique MI à l'effort → soulagement au repos (crampe, fatigue, pression) · Territoire fessier = iliaques · Cuisse = fémorale commune · Mollet = fémorale superficielle (#1)</div>
+      </div>
+      <div>
+        <strong>IPS / ABI — Valeurs de sévérité :</strong>
+        <div style="display:flex;flex-direction:column;gap:6px;margin-top:8px;font-size:13px;">
+          <div style="background:#e8f8f5;border-radius:6px;padding:8px;">IPS <strong>0,70–0,90</strong> : Légère — claudication intermittente légère</div>
+          <div style="background:#fff8e1;border-radius:6px;padding:8px;">IPS <strong>0,40–0,70</strong> : Modérée — claudication incapacitante</div>
+          <div style="background:#fce4ec;border-radius:6px;padding:8px;">IPS <strong>&lt; 0,40</strong> : Sévère — ischémie critique du membre (ICM)</div>
+          <div style="background:#f5eef8;border-radius:6px;padding:8px;">IPS <strong>&gt; 1,3</strong> : Vaisseaux incompressibles (calcifiés) — DM, IRC → index orteil-bras</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ISCHÉMIE AIGUË + SOINS PIED -->
+  <div class="block def" style="border-left:4px solid #c0392b;margin-top:14px;">
+    <div class="block-title"><span class="tag">🆘 Ischémie aiguë du membre & Soins du pied</span></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+      <div style="background:#fce4ec;border-radius:10px;padding:14px;font-size:13px;">
+        <strong style="color:#c0392b;display:block;margin-bottom:6px;">Ischémie aiguë du membre — Les 6 P</strong>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px;">
+          <span style="background:#c0392b;color:#fff;border-radius:20px;padding:4px 12px;font-weight:600;">Douleur</span>
+          <span style="background:#c0392b;color:#fff;border-radius:20px;padding:4px 12px;font-weight:600;">Pâleur</span>
+          <span style="background:#c0392b;color:#fff;border-radius:20px;padding:4px 12px;font-weight:600;">Paresthésies</span>
+          <span style="background:#c0392b;color:#fff;border-radius:20px;padding:4px 12px;font-weight:600;">Paralysie</span>
+          <span style="background:#c0392b;color:#fff;border-radius:20px;padding:4px 12px;font-weight:600;">Pouls absent</span>
+          <span style="background:#c0392b;color:#fff;border-radius:20px;padding:4px 12px;font-weight:600;">Poïkilothermie</span>
+        </div>
+        → Urgence vasculaire : revascularisation < 6h (thrombose sur plaque ou embolie)<br>
+        Cause : occlusion brutale (thrombose, embolie, dissection)
+      </div>
+      <div style="background:#e8f8f5;border-radius:10px;padding:14px;font-size:13px;">
+        <strong style="color:#0a7a4e;display:block;margin-bottom:6px;">🦶 Soins du pied (diabétique MAP)</strong>
+        <ul style="margin:0;padding-left:16px;line-height:1.8;">
+          <li>Inspection quotidienne des pieds</li>
+          <li>Chaussures adaptées (orthèses si nécessaire)</li>
+          <li>Suivi en podiatrie</li>
+          <li>Dépistage au monofilament (neuropathie)</li>
+          <li>IPS difficile si calcifications → pression des orteils / index orteil-bras</li>
+          <li>Revascularisation précoce si plaie ischémique — amputation = dernier recours</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+    <!-- 2. FDR / PRÉVALENCE / PRONOSTIC -->
+  <div id="map-fdr" class="block para" style="border-left:4px solid #b91c1c;margin-top:16px;">
+    <div class="block-title"><span class="tag">2 — Facteurs de risque, Prévalence & Pronostic</span></div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px;">
+      <div>
+        <strong style="color:#b91c1c;">🏆 Facteurs de risque — Ordre d'importance (MAP) :</strong>
+        <div style="margin-top:8px;display:flex;flex-direction:column;gap:6px;">
+          <div style="display:flex;align-items:center;gap:10px;">
+            <div style="background:#b91c1c;color:#fff;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;flex-shrink:0;">1</div>
+            <div style="font-size:13px;"><strong>Tabagisme</strong> — FR n°1 absolu pour la MAP. Arrêt = ↓10× risque d'amputation sur 7 ans</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;">
+            <div style="background:#d35400;color:#fff;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;flex-shrink:0;">2</div>
+            <div style="font-size:13px;"><strong>Diabète</strong> — accélère l'athérosclérose distale, ↑ risque d'ischémie critique et d'amputation</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;">
+            <div style="background:#e67e22;color:#fff;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;flex-shrink:0;">3</div>
+            <div style="font-size:13px;"><strong>HTA</strong> + <strong>Hypercholestérolémie</strong> (surtout HTA = déterminant pour maladie carotidienne/cérébrale)</div>
+          </div>
+        </div>
+        <div class="key-fact blue" style="margin-top:10px;font-size:12px;">
+          🧠 <strong>Mnémo :</strong> MAP = Tabac &gt; Diabète (≠ coronaropathie où tabac &gt; diabète/cholestérol &gt; HTA ; ≠ carotides où HTA domine)
+        </div>
       </div>
 
-      <div class="block def" style="border-left-color:var(--ink);">
-        <div class="block-title"><span class="tag">📋 Questionnaire d'Édimbourg — dépistage de la claudication</span></div>
-        <p class="content-text" style="margin-bottom:6px;">Hautement spécifique, applicable par tout intervenant — 6 questions, <strong>3 vraiment déterminantes</strong> :</p>
+      <div>
+        <strong style="color:#1C3F8F;">📊 Prévalence :</strong>
+        <div style="display:flex;flex-direction:column;gap:8px;margin-top:8px;font-size:13px;">
+          <div style="background:#e8f4ff;border-radius:8px;padding:10px;">
+            <div style="font-weight:700;">&gt; 40 ans : ~4%</div>
+            <div>&gt; 70 ans : ~14% (jusqu'à 25–30% selon les études)</div>
+          </div>
+          <div style="background:#fff8e1;border-radius:8px;padding:10px;">
+            <strong>75% asymptomatiques</strong> vs 25% avec claudication<br>
+            Maladie "sournoise" : sténose ≥50% nécessaire pour être symptomatique
+          </div>
+        </div>
+
+        <strong style="color:#c0392b;display:block;margin-top:12px;">☠️ Pronostic (sans traitement) :</strong>
+        <div style="background:#fce4ec;border-radius:8px;padding:10px;font-size:13px;margin-top:6px;">
+          <strong>San Diego Artery Study (Criqui) :</strong><br>
+          ~50% mortalité à 12 ans (surtout coronarienne), même asymptomatiques<br>
+          RR mortalité = <strong>3,1</strong> — « 3× plus de morts sans traitement »<br>
+          Association la plus forte : MAP ↔ <strong>maladie coronarienne</strong> (100% ont une coronaropathie au score calcique)
+        </div>
+      </div>
+    </div>
+
+    <!-- Associations vasculaires -->
+    <div style="margin-top:14px;overflow-x:auto;">
+      <strong>Associations vasculaires (atteinte multi-lit) :</strong>
+      <table style="margin-top:8px;">
+        <thead><tr><th>Association</th><th>FDR prédominant</th><th>Implication clinique</th></tr></thead>
+        <tbody>
+          <tr style="background:#fce4ec;"><td><strong>MAP + Coronaropathie</strong></td><td>Tabac, diabète, cholestérol</td><td>Association la plus forte. Toujours dépister la coronaropathie chez un MAP</td></tr>
+          <tr><td><strong>MAP + Maladie carotidienne</strong></td><td>HTA prédominant</td><td>Risque AVC — surveiller les carotides</td></tr>
+          <tr style="background:#f8f9fa;"><td><strong>MAP + AAA</strong></td><td>Tabac (90%), génétique</td><td>Dépistage écho. si MAP + tabagisme important</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- 3. DÉPISTAGE -->
+  <div id="map-depistage" class="block def" style="border-left:4px solid #1C3F8F;margin-top:16px;">
+    <div class="block-title"><span class="tag">3 — Dépistage</span></div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px;">
+      <div style="background:#e8f4ff;border-radius:10px;padding:14px;font-size:13px;">
+        <strong style="color:#1C3F8F;">Indications de dépistage par ITH :</strong>
+        <ul style="margin:6px 0;padding-left:16px;line-height:1.8;">
+          <li>≥ 65 ans (général)</li>
+          <li>≥ 50 ans + tabagisme ou diabète</li>
+          <li>Tout âge + symptômes vasculaires MI</li>
+          <li>Patient à haut risque CV (multiple FDR)</li>
+          <li>Plaie/ulcère MI qui ne guérit pas</li>
+        </ul>
+      </div>
+      <div style="background:#e8f8f5;border-radius:10px;padding:14px;font-size:13px;">
+        <strong style="color:#0a7a4e;">Anévrisme de l'aorte abdominale (AAA) :</strong>
+        <ul style="margin:6px 0;padding-left:16px;line-height:1.8;">
+          <li>Lié à l'athérosclérose — FR principal : <strong>tabagisme</strong> (90%)</li>
+          <li>Dépistage écho. 1× chez homme ≥65 ans + tabagisme</li>
+          <li>Seuil chirurgie : ≥5,5 cm (♂) / ≥5,0 cm (♀)</li>
+          <li>Sous seuil → suivi écho + arrêt tabac (bêtabloqueurs inefficaces sauf Marfan)</li>
+          <li>≥5,5 cm → chirurgie ou endoprothèse + perte du permis si non opéré</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="key-fact orange" style="margin-top:10px;">
+      📋 <strong>Questionnaire d'Édimbourg</strong> — outil de dépistage validé, applicable par tout intervenant (voir section Diagnostic ci-dessous).
+    </div>
+  </div>
+
+  <!-- 4. DIAGNOSTIC & IMAGERIE -->
+  <div id="map-diag" class="block def" style="border-left:4px solid #1C3F8F;margin-top:16px;">
+    <div class="block-title"><span class="tag">4 — Diagnostic & Imagerie</span></div>
+
+    <!-- Questionnaire Édimbourg -->
+    <div style="background:#e8f4ff;border-radius:10px;padding:14px;margin-bottom:14px;">
+      <strong style="color:#1C3F8F;display:block;margin-bottom:8px;">📋 Questionnaire d'Édimbourg (claudication) — Hautement spécifique</strong>
+      <div style="overflow-x:auto;">
         <table>
           <thead><tr><th>Question</th><th>Réponse attendue (MAP)</th></tr></thead>
           <tbody>
-            <tr><td>Douleur/inconfort à la jambe <strong>en marchant</strong> ?</td><td><strong>Oui</strong></td></tr>
-            <tr><td>Débute assis ou debout immobile ?</td><td><strong>Non</strong> (sinon autre chose)</td></tr>
-            <tr><td>Provoquée en accélérant ou en montant une côte ?</td><td><strong>Oui</strong></td></tr>
-            <tr><td>Présente en marchant normalement, en terrain plat ?</td><td>Variable</td></tr>
-            <tr><td>🔑 <strong>À l'arrêt, disparaît en ≤ 10 minutes ?</strong></td><td><strong>Oui</strong> (souvent &lt; 2 min)</td></tr>
-            <tr><td>Où ressentez-vous la douleur ?</td><td><strong>Groupe musculaire</strong> (pas cheville/genou → évoque l'arthrite)</td></tr>
-          </tbody>
-        </table>
-        <div class="key-fact yellow" style="margin-top:8px;">🔑 Le critère le plus discriminant = <strong>la douleur disparaît rapidement à l'arrêt</strong> (équivalent de l'angine au niveau coronarien). Repère pratique pour la distance : nombre de « coins de rue » plutôt que les mètres estimés.</div>
-        <p class="content-text" style="margin-top:8px;font-size:13px;"><strong>Examen ciblé :</strong> palper les pouls à la cheville (pédieux/tibial postérieur) <strong>simultanément des 2 côtés</strong> — une asymétrie est évocatrice (limites : obésité, bêtabloqueur). <strong>Souffle à l'auscultation fémorale</strong> = sténose ~50 % même avec pouls normaux.</p>
-        <div class="highlight cream" style="margin-top:8px;font-size:13px;"><strong>Épidémiologie :</strong> prévalence ~4 % &gt; 40 ans, ~14 % &gt; 70 ans · <strong>~75 % des MAP sont asymptomatiques</strong> (sténose ≥ 50 % nécessaire pour symptômes) · <strong>association la plus forte = maladie coronarienne</strong> (score calcique chez le MAP symptomatique → ~100 % ont une coronaropathie) → <em>« traiter les jambes, c'est traiter le cœur »</em>. <strong>Pronostic :</strong> San Diego Artery Study — sans traitement, ~50 % de mortalité à 12 ans (RR ~3,1, surtout cause coronarienne).</div>
-      </div>
-
-      <div class="block clin">
-        <div class="block-title"><span class="tag">🩺 Évaluation initiale (MAP) — Anamnèse & examen physique</span></div>
-        <p class="content-text" style="margin-bottom:6px;"><strong>Anamnèse — surtout rechercher :</strong></p>
-        <div class="flag-list">
-          <div class="flag-item"><span class="flag-dot ink"></span><span><strong>Claudication intermittente</strong> : douleur ischémique du membre à l'effort (crampe, fatigue, lourdeur), soulagée au repos en quelques minutes — territoire évocateur du site de la sténose (fessier = iliaques, cuisse = fémorale commune, mollet = fémorale superficielle [#1])</span></div>
-          <div class="flag-item"><span class="flag-dot ink"></span><span>Douleur de repos (typiquement nocturne, soulagée en laissant pendre la jambe) → stade avancé</span></div>
-          <div class="flag-item"><span class="flag-dot ink"></span><span>Plaie/ulcère qui ne guérit pas, changement de coloration/température du membre</span></div>
-          <div class="flag-item"><span class="flag-dot ink"></span><span>Facteurs de risque athérosclérotiques : tabac (le plus fortement associé), DM, HTA, dyslipidémie, ATCD MCAS/AVC</span></div>
-        </div>
-        <p class="content-text" style="margin:10px 0 6px;"><strong>Examen physique :</strong></p>
-        <div class="flag-list">
-          <div class="flag-item"><span class="flag-dot blue"></span><span>Palpation des <strong>pouls périphériques</strong> (fémoral, poplité, tibial postérieur, pédieux) — diminués/absents</span></div>
-          <div class="flag-item"><span class="flag-dot blue"></span><span>Inspection : pâleur à l'élévation, rougeur de déclivité (rubor), perte de pilosité, peau lisse/atrophique, ongles épaissis, ulcères/nécrose distale</span></div>
-          <div class="flag-item"><span class="flag-dot blue"></span><span>Température cutanée ↓, temps de remplissage capillaire prolongé, souffles artériels (fémoral, abdominal)</span></div>
-        </div>
-      </div>
-
-      <div class="block clin">
-        <div class="block-title"><span class="tag">🔍 Clinique — Stades Leriche-Fontaine</span></div>
-        <table>
-          <thead><tr><th>Stade</th><th>Description</th><th>ABI correspondant</th></tr></thead>
-          <tbody>
-            <tr><td>I</td><td>Asymptomatique (anomalie détectée)</td><td>0,7–0,9</td></tr>
-            <tr><td>IIa</td><td>Claudication &gt; 200 m</td><td>0,5–0,7</td></tr>
-            <tr><td>IIb</td><td>Claudication &lt; 200 m</td><td>0,4–0,5</td></tr>
-            <tr><td>III</td><td>Douleur de repos (ischémie critique)</td><td>&lt; 0,4</td></tr>
-            <tr><td>IV</td><td>Nécrose/Gangrène · Pied → plaie qui ne guérit pas</td><td>&lt; 0,3</td></tr>
-          </tbody>
-        </table>
-        <div class="key-fact red" style="margin-top:8px;">Ischémie aiguë du membre (6 P) : Douleur · Pâleur · Paresthésies · Paralysie · Pouls absent · Poïkilothermie (froid) → Urgence vasculaire (revascularisation &lt; 6h)</div>
-      </div>
-
-      <div class="block flag" style="border-left-color:var(--red);">
-        <div class="block-title"><span class="tag">🫧 Anévrisme de l'aorte abdominale (AAA)</span></div>
-        <p class="content-text">Lié à l'athérosclérose <strong>indirectement</strong> — c'est une <strong>faiblesse de la paroi</strong> dont le FR principal est le <strong>tabagisme</strong> (~90 % des cas) + génétique ; plus fréquent chez l'homme. <strong>Pas plus fréquent</strong> chez le diabétique (voire moins) ni l'hypertendu. Traitement médical = <strong>arrêt du tabac</strong> + traitement des FR. Bêtabloqueurs <strong>inefficaces si AAA &lt; 5 cm</strong> (exception : syndrome de Marfan, ↓ complications aortiques).</p>
-        <table style="margin-top:8px;">
-          <thead><tr><th>Seuil</th><th>Conduite</th></tr></thead>
-          <tbody>
-            <tr><td><strong>≥ 5,5 cm</strong> (homme)</td><td><strong>Chirurgie ou endoprothèse</strong> · perte du permis de conduire si non opéré</td></tr>
-            <tr><td><strong>≥ 5,0 cm</strong> (femme)</td><td><strong>Chirurgie</strong></td></tr>
-            <tr><td>&lt; seuil</td><td>Suivi échographique + FR · surtout cesser de fumer</td></tr>
+            <tr><td>Douleur/inconfort à la jambe en marchant?</td><td>✅ Oui</td></tr>
+            <tr style="background:#f8f9fa;"><td>Débute assis ou debout immobile?</td><td>❌ Non (sinon → autre étiologie)</td></tr>
+            <tr><td>Provoquée en accélérant ou en montant une côte?</td><td>✅ Oui</td></tr>
+            <tr style="background:#f8f9fa;"><td>Présente en marchant normalement, terrain plat?</td><td>Variable (MAP légère à sévère)</td></tr>
+            <tr style="background:#fff8e1;"><td><strong>À l'arrêt, disparaît en ≤ 10 minutes?</strong></td><td><strong>✅ Oui — souvent &lt;2 min (critère le + discriminant)</strong></td></tr>
+            <tr><td>Où est la douleur? (groupe musculaire)</td><td>Mollet, cuisse, fesse (pas la cheville/genou → arthrite)</td></tr>
           </tbody>
         </table>
       </div>
-
-      <!-- PARACLINIQUE -->
-      <div class="block para">
-        <div class="block-title"><span class="tag">🧪 Paraclinique — Imagerie</span></div>
-        <p class="content-text">IPS de 1<sup>re</sup> intention (voir critères diagnostiques) ; si calcifications (DM, IRC) → <strong>pression des orteils / index orteil-bras</strong>. Si confirmation ou planification de revascularisation requise :</p>
-        <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;">
-          <span class="drug-badge line3">Écho-Doppler artériel</span>
-          <span class="drug-badge line3">Angio-TDM / Angio-IRM</span>
-          <span class="drug-badge line3">Angiographie (avant revascularisation)</span>
-        </div>
-      </div>
-
-      <div class="block rx">
-        <div class="block-title"><span class="tag">💊 Traitement</span></div>
-
-        <div class="sec-divider">
-          <div class="sd-shape sq"></div>
-          <div class="sd-label">Réduction du risque CV — TOUS les patients MAP</div>
-          <div class="sd-line"></div>
-        </div>
-        <p class="content-text" style="margin:8px 0 10px;">Indiqué chez <strong>tout patient avec un diagnostic de MAP — symptomatique ou asymptomatique</strong> : la MAP est un marqueur de maladie athérosclérotique systémique, et le risque d'événements CV (IM, AVC, mortalité) justifie une prise en charge proactive d'emblée, peu importe la présence de symptômes.</p>
-        <div class="med-card">
-          <div class="med-row"><span class="med-label">💊 Antiplaquettaire</span><span class="med-value"><span class="drug-badge line1">AAS 81 mg</span> OU <span class="drug-badge line1">Clopidogrel 75 mg</span> (préféré en MAP) — ↓ événements CV</span></div>
-          <div class="med-row"><span class="med-label">💊 Statine</span><span class="med-value"><span class="drug-badge line1">Haute intensité</span> — atorvastatine 40–80 mg · ↓ 20–35 % des événements CV chez le patient MAP</span></div>
-          <div class="med-row"><span class="med-label">💊 Anticoag.</span><span class="med-value"><span class="drug-badge warn">Rivaroxaban 2,5 mg BID + AAS</span> (étude COMPASS) — ↓ 26 % du MACE, ↑ saignements mineurs · réservé au haut risque · CI si risque hémorragique</span></div>
-          <div class="med-row"><span class="med-label">💊 Tension art.</span><span class="med-value">Cible &lt; 130/80 mmHg · IECA/ARA privilégiés (↓ événements CV en contexte de MAP)</span></div>
-          <div class="med-row"><span class="med-label">🚭 Non-pharmaco</span><span class="med-value"><strong>Cessation tabagique</strong> — intervention à plus fort impact sur la progression de la maladie</span></div>
-        </div>
-
-        <div class="sec-divider" style="margin-top:24px;">
-          <div class="sd-shape ci"></div>
-          <div class="sd-label">En PLUS — si SYMPTOMATIQUE (claudication intermittente)</div>
-          <div class="sd-line"></div>
-        </div>
-        <p class="content-text" style="margin:8px 0 10px;">S'ajoute au traitement de réduction du risque CV ci-dessus chez le patient symptomatique — <strong>ne le remplace pas</strong>. Le patient asymptomatique ne reçoit que le traitement de réduction du risque CV ci-dessus.</p>
-        <div class="med-card">
-          <div class="med-row"><span class="med-label">🏃 Non-pharmaco</span><span class="med-value"><strong>Programme d'exercice supervisé</strong> — 1<sup>re</sup> ligne pour la claudication · ↑ distance de marche et qualité de vie, parfois autant que la revascularisation</span></div>
-          <div class="med-row"><span class="med-label">💊 Pharmaco</span><span class="med-value"><span class="drug-badge line2">Cilostazol 100 mg BID</span> — si symptômes persistants malgré l'exercice (CI si IC)</span></div>
-        </div>
-
-        <div class="sec-divider" style="margin-top:24px;">
-          <div class="sd-shape tr"></div>
-          <div class="sd-label">Si ischémie critique / membre menacé</div>
-          <div class="sd-line"></div>
-        </div>
-        <div class="med-card" style="margin-top:8px;">
-          <div class="med-row"><span class="med-label">🔧 Intervention</span><span class="med-value"><strong>Revascularisation</strong> : angioplastie percutanée ± stent (lésions iliaques/fémorales courtes) OU pontage chirurgical (lésions longues, échec d'angioplastie)</span></div>
-          <div class="med-row"><span class="med-label">🎯 Objectifs</span><span class="med-value">Sauvetage du membre, cicatrisation des plaies — l'amputation demeure un dernier recours, à prévenir par des soins de plaie intensifs et une revascularisation rapide</span></div>
-        </div>
-
-        <div class="highlight cream" style="margin-top:18px;font-size:13px;"><strong>🦶 Soins du pied diabétique (non-pharmaco, tous les patients) :</strong> inspection quotidienne · chaussures adaptées · suivi en podiatrie · dépistage au monofilament · IPS difficile à interpréter si calcifications → pression des orteils / index orteil-bras</div>
-      </div>
-
-      <div class="block para" style="border-left-color:var(--blue);">
-        <div class="block-title"><span class="tag">🔬 Pharmacologie approfondie & stratification du traitement antithrombotique</span></div>
-        <div class="flag-list">
-          <div class="flag-item"><span class="flag-dot ink"></span><span><strong>MAP asymptomatique isolée :</strong> AAS et anticoagulants <strong>déconseillés</strong> — le risque de saignement contrebalance la réduction d'infarctus (événement vasculaire ~2 %/an si asymptomatique vs ~4 %/an si symptomatique)</span></div>
-          <div class="flag-item"><span class="flag-dot blue"></span><span><strong>MAP chronique symptomatique — monothérapie :</strong> au Canada, <strong>clopidogrel 75 mg &gt; AAS</strong> (~20 % plus efficace dans la MAP — étude CAPRIE) ; en pratique l'AAS reste sur-prescrit par habitude</span></div>
-          <div class="flag-item"><span class="flag-dot red"></span><span><strong>Haut risque / 2 lits vasculaires (coronaires + périphérique) :</strong> AAS 80 mg DIE + rivaroxaban 2,5 mg BID (microdose, COMPASS) — ↓ complications, mortalité CV et totale · <strong>médicament d'exception RAMQ</strong> (exige documentation des 2 lits) — sous-utilisé par inertie administrative</span></div>
-          <div class="flag-item"><span class="flag-dot ink"></span><span><strong>Post-stent périphérique :</strong> stents plus gros (4–8 mm vs 3–4 mm coronarien) → resténose moins grave, plus de latitude · double antiplaquettaire bref (AAS + clopidogrel) en phase aiguë puis retour à AAS + rivaroxaban · si anticoagulation au long cours requise (FA, TEV non provoquée) → ne pas empiler, anticoagulant seul ou + antiplaquettaire le plus brièvement possible</span></div>
-        </div>
-        <p class="content-text" style="margin:10px 0 4px;"><strong>Cibles & options hypolipémiantes :</strong></p>
-        <p class="content-text" style="font-size:13px;">Statine à haute intensité, dose maximale tolérée, <strong>peu importe le LDL</strong> (CCS, prévention secondaire ; efficacité CV 50–70 %). <strong>Cible Canada : LDL &lt; 1,8</strong> (ou ↓ ≥ 50 % du LDL initial) · <strong>Cible Europe (ESC) : &lt; 1,4</strong> (voire &lt; 1,0 si haut risque). Si LDL persiste &gt; 1,7 → ajouter <strong>ézétimibe</strong>, <strong>iPCSK9</strong>, ou <strong>acide bempédoïque</strong> (agit en amont des statines, ↓ LDL ~20 %, approuvé Canada 2026, utile si intolérance aux statines). <strong>Icosapent éthyl (Vascepa) 4 g/j</strong> si TG &gt; 1,5 (↓ morbidité vasculaire ~20 %). Antihypertenseurs : <strong>IECA/BRA priorisés si TA ≥ 130</strong> (et même si normale) — cible 120/80. Diabète : <strong>iSGLT-2 ou agonistes GLP-1</strong> = bénéfice CV + rénal + périphérique (↓ amputations).</p>
-        <table style="margin-top:8px;">
-          <thead><tr><th>Aide à la cessation tabagique</th><th>Efficacité (~1 an)</th><th>Remarques</th></tr></thead>
-          <tbody>
-            <tr><td>Counseling seul</td><td>10–30 %</td><td>Base, à faire systématiquement</td></tr>
-            <tr><td>Timbres / gommes de nicotine</td><td>~10 %</td><td>Remboursés, s'additionnent au counseling</td></tr>
-            <tr><td>Bupropion (Zyban)</td><td>~20 %</td><td>Antidépresseur · ⚠️ idées suicidaires possibles</td></tr>
-            <tr><td><strong>Varénicline (Champix)</strong></td><td>~40 %</td><td>Bloque récepteurs nicotiniques · prendre avec un grand verre d'eau</td></tr>
-          </tbody>
-        </table>
-        <div class="key-fact black" style="margin-top:8px;">🚭 Le tabac = LE pire FR de la MAP : un patient non diabétique et sans IRC avancée qui cesse de fumer ne perdra pratiquement jamais son pied · tabagisme persistant = ~10× le risque d'amputation à 7 ans</div>
-      </div>
-
-      <div class="block clin">
-        <div class="block-title"><span class="tag">🚶 Programme de marche — traitement de base de la claudication</span></div>
-        <p class="content-text"><strong>Paramètres :</strong> ≥ 3×/semaine, ≥ 30 minutes, pendant ≥ 3 mois, à intensité provoquant une fatigue/douleur modérée du mollet → arrêt jusqu'à disparition → reprise. <strong>Double à triple la distance de marche</strong> (vs cilostazol qui la double seulement — non disponible au Canada). Idéal = supervisé (peu accessible au Québec) → viser 30 min/jour ou 2× 15–20 min. ⚠️ Le bénéfice <strong>disparaît rapidement à l'arrêt</strong> — doit être réaliste et durable. Mécanisme : amélioration mitochondriale, capillaire, endothéliale, musculaire, ↓ inflammation (pas seulement les collatérales).</p>
-        <div class="highlight cream" style="margin-top:8px;font-size:13px;"><strong>🚶 « Nouveau 10 000 pas » = 7 000 pas :</strong> le 10 000 pas était du marketing (vente de podomètres) ; Ding (<em>Lancet</em> 2023) montre que le bénéfice (mortalité totale/CV, incidence de maladie CV) plafonne vers ~7 000 pas, l'essentiel étant déjà acquis à ~5 000 pas — viser &gt; 5 000 pas comme incitatif réaliste.</div>
-        <p class="content-text" style="margin-top:8px;font-size:13px;"><strong>Sémaglutide :</strong> STRIDE (<em>Lancet</em> 2025) — ↑ distance/temps de marche chez le diabétique avec claudication (Δ ~+50 sec, modeste mais réel) · SOUL (<em>NEJM</em> 2025) — bénéfice rénal, CV et périphérique (↓ amputations, ↓ événements vasculaires majeurs) → classe intéressante chez le diabétique avec MAP. Un patient satisfait de sa marche n'aura souvent pas besoin d'angioplastie/stent.</p>
+      <div class="key-fact red" style="margin-top:8px;">
+        ⚠️ Douleur persistant &gt;10 min après l'arrêt → penser à autre chose (arthrite, sciatique, sténose lombaire)
       </div>
     </div>
+
+    <!-- Examen physique -->
+    <div style="margin-bottom:14px;">
+      <strong>Examen physique ciblé :</strong>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;font-size:13px;">
+        <div style="background:#e8f8f5;border-radius:8px;padding:10px 14px;flex:1;min-width:160px;">
+          <strong>Pouls cheville</strong><br>Palper pédieux + tibial postérieur bilatéraux simultanément → asymétrie = signe clé
+        </div>
+        <div style="background:#e8f8f5;border-radius:8px;padding:10px 14px;flex:1;min-width:160px;">
+          <strong>Souffle fémoral</strong><br>Sténose &gt;50% même avec pouls normaux. On peut « entendre » la sténose fémorale (≠ coronaires)
+        </div>
+        <div style="background:#fff8e1;border-radius:8px;padding:10px 14px;flex:1;min-width:160px;">
+          <strong>Limites</strong><br>Obésité, bêtabloqueurs → pouls amortis, moins fiables
+        </div>
+      </div>
+    </div>
+
+    <!-- ITH -->
+    <div style="margin-bottom:14px;">
+      <strong>Index tibio-huméral (ITH / ABI) — Examen de base (~80$ pour le système) :</strong>
+      <p style="font-size:13px;margin:6px 0;">ITH = Pression systolique cheville (la + haute) ÷ Pression systolique bras (la + haute). Normalement ≥1,2 à la cheville (pression ↑ en s'éloignant du cœur).</p>
+      <div style="overflow-x:auto;">
+        <table>
+          <thead><tr><th>ITH</th><th>Interprétation</th><th>Conduite</th></tr></thead>
+          <tbody>
+            <tr style="background:#e8f8f5;"><td><strong>0,9–1,4</strong></td><td>Normal — exclut une atteinte hémodynamique</td><td>Rassurant si asymptomatique</td></tr>
+            <tr style="background:#fce4ec;"><td><strong>≤ 0,9</strong></td><td>Anormal = sténose (plus c'est bas, plus c'est sévère)</td><td>MAP confirmée → traitement, Écho-Doppler</td></tr>
+            <tr style="background:#fff8e1;"><td><strong>&gt; 1,4</strong></td><td>Anormal — artères incompressibles (médiacalcose)</td><td>Diabète, IRC → passer à l'index orteil ou écho</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div style="font-size:12px;color:#555;margin-top:6px;">Ex. : cheville 80 / bras 130 → ITH = 0,62 (sténose fémorale superficielle)</div>
+    </div>
+
+    <!-- Algorithme imagerie -->
+    <div>
+      <strong>Algorithme d'imagerie 2026 :</strong>
+      <div style="overflow-x:auto;margin-top:8px;">
+        <table>
+          <thead><tr><th>Examen</th><th>Place</th><th>Remarques</th></tr></thead>
+          <tbody>
+            <tr><td><strong>ITH par Doppler</strong></td><td>Dépistage et diagnostic initial</td><td>Simple, accessible, peu coûteux</td></tr>
+            <tr style="background:#f8f9fa;"><td><strong>Écho-Doppler (Duplex / Triplex)</strong></td><td>Investigation d'une claudication : degré, localisation, nombre de lésions</td><td>"Écho-Doppler", "Doppler", "Duplex", "Triplex" MI = la même chose</td></tr>
+            <tr><td><strong>Angio-TDM (Angio-SCAN)</strong></td><td>Planifier une intervention si créatinine normale (~450$)</td><td>Réserver aux candidats à intervention</td></tr>
+            <tr style="background:#f8f9fa;"><td><strong>Angio-RMN (gadolinium)</strong></td><td>Diabète ou IR (évite produits iodés)</td><td>~2× plus cher que l'Angio-TDM</td></tr>
+            <tr><td><strong>Angiographie conventionnelle</strong></td><td>Salle d'intervention seulement</td><td>De moins en moins utilisée en diagnostic</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="key-fact blue" style="margin-top:10px;">
+        💡 <strong>Règle pratique :</strong> On réserve l'imagerie lourde aux patients chez qui une <em>intervention endovasculaire ou chirurgicale est envisagée</em> (incapacité fonctionnelle malgré traitement médical optimal + programme de marche).
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. TRAITEMENT PHARMACOLOGIQUE -->
+  <div id="map-pharmaco" class="block def" style="border-left:4px solid #0a7a4e;margin-top:16px;">
+    <div class="block-title"><span class="tag">5 — Traitement pharmacologique (CCS / AHA / ESC 2026)</span></div>
+
+    <!-- Onglets -->
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 16px;">
+      <button id="map-btn-statine" onclick="switchMapTx('statine')" style="background:#0a7a4e;color:#fff;border:none;border-radius:8px;padding:7px 16px;cursor:pointer;font-weight:600;">Statines</button>
+      <button id="map-btn-hta" onclick="switchMapTx('hta')" style="background:#e0e0e0;color:#333;border:none;border-radius:8px;padding:7px 16px;cursor:pointer;font-weight:600;">Anti-HTA</button>
+      <button id="map-btn-db" onclick="switchMapTx('db')" style="background:#e0e0e0;color:#333;border:none;border-radius:8px;padding:7x 16px;cursor:pointer;font-weight:600;">Antidiabétiques</button>
+      <button id="map-btn-tabac" onclick="switchMapTx('tabac')" style="background:#e0e0e0;color:#333;border:none;border-radius:8px;padding:7px 16px;cursor:pointer;font-weight:600;">Arrêt tabac</button>
+    </div>
+
+    <!-- Statines -->
+    <div id="map-statine">
+      <div class="key-fact green">
+        ⭐ <strong>Statines haute intensité — Pierre angulaire du traitement MAP</strong><br>
+        À la dose maximale tolérée, <em>peu importe le LDL de départ</em> (prévention secondaire — consensus CCS). Efficacité CV : 50–70%.
+      </div>
+      <div style="overflow-x:auto;margin-top:12px;">
+        <table>
+          <thead><tr><th>Cible LDL</th><th>Si LDL reste élevé</th><th>En pratique</th></tr></thead>
+          <tbody>
+            <tr><td>Canada : <strong>&lt; 1,8 mmol/L</strong> (ou ↓ ≥50% du LDL initial)</td><td>+ Ézétimibe → + inhibiteur PCSK9 ou acide bempédoïque</td><td>Débuter rosuvastatine 10 mg → viser 20 → 40 mg</td></tr>
+            <tr style="background:#f8f9fa;"><td>Europe : <strong>&lt; 1,4 mmol/L</strong> (voire &lt;1,0 si très haut risque)</td><td>Idem + acide bempédoïque approuvé Canada 2026</td><td>Si intolérance : pravastatine (hydrophile) ou doses intermittentes 3×/sem</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div style="background:#e8f8f5;border-radius:8px;padding:12px;margin-top:10px;font-size:13px;">
+        <strong>Acide bempédoïque (nouveau 2026) :</strong> agit en amont des statines, ↓ LDL ~20%, ↓ morbidité CV ≥20%. Utile si intolérance aux statines. <em>Ce n'est pas une statine.</em><br>
+        <strong>Icosapent éthyl (Vascepa) 4g/j :</strong> si TG ≥1,5 → ↓ morbidité vasculaire ~20%. (2 caps matin + 2 soir)
+      </div>
+    </div>
+
+    <!-- Anti-HTA -->
+    <div id="map-hta" style="display:none;">
+      <div class="key-fact blue">
+        💊 <strong>IECA ou ARA — priorité</strong> même si TA normale. Ramipril 10 mg → ↓20% événements CV (étude HOPE). Cible TA &lt;120/80 mmHg (consensus canadien 2026).<br>
+        ~6% de toux avec les IECA → en pratique, beaucoup prescrivent des ARA d'emblée.
+      </div>
+      <div style="overflow-x:auto;margin-top:12px;">
+        <table>
+          <thead><tr><th>Agent</th><th>Avantage MAP</th><th>Note</th></tr></thead>
+          <tbody>
+            <tr style="background:#e8f4ff;"><td><strong>IECA (ramipril, perindopril)</strong></td><td>↓ Résistances vasculaires périphériques, ↓ événements CV</td><td>1re ligne même sans HTA — HOPE trial</td></tr>
+            <tr><td><strong>ARA (valsartan, olmésartan)</strong></td><td>Équivalent à IECA</td><td>Si toux sous IECA</td></tr>
+            <tr style="background:#f8f9fa;"><td><strong>BCC (amlodipine)</strong></td><td>Utile si HTA + MAP</td><td>Peut masquer symptômes claudication (vasodilatateur)</td></tr>
+            <tr><td><strong>Bêtabloqueurs</strong></td><td>Neutres sur la MAP (ne pas hésiter si MCAS associée)</td><td>Mythe de la contre-indication dans la MAP — n'aggravent pas la claudication</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Antidiabétiques -->
+    <div id="map-db" style="display:none;">
+      <div class="key-fact green">
+        🌟 <strong>Révolution — iSGLT2 et aGLP-1 :</strong> Bénéfice CV + rénal + membres inférieurs (↓ amputations). À prioriser chez le diabétique avec MAP.
+      </div>
+      <div style="overflow-x:auto;margin-top:12px;">
+        <table>
+          <thead><tr><th>Classe</th><th>Bénéfice MAP</th><th>Molécules</th></tr></thead>
+          <tbody>
+            <tr style="background:#e8f8f5;"><td><strong>iSGLT2 (gliflozines) ⭐</strong></td><td>↓ Amputations MI, ↓ événements vasculaires majeurs, ↓ hospitalisations IC</td><td>Empagliflozine, dapagliflozine, canagliflozine</td></tr>
+            <tr style="background:#e8f8f5;"><td><strong>aGLP-1 ⭐</strong></td><td>↓ Événements CV, ↓ progression MAP, ↑ distance de marche (STRIDE/SOUL 2025)</td><td>Sémaglutide (Ozempic/Wegovy), liraglutide</td></tr>
+            <tr><td><strong>Inhibiteurs DPP-4 + Metformine</strong></td><td>Bénéfice CV moindre — démodés</td><td>Sitagliptine, etc.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div style="background:#e8f4ff;border-radius:8px;padding:12px;margin-top:10px;font-size:13px;">
+        <strong>STRIDE (Bonacca, Lancet 2025) :</strong> Sémaglutide ↑ distance/temps de marche chez diabétique avec claudication → Δ +50 secondes (303,7 s vs 253,7 s). Mécanisme non élucidé.<br>
+        <strong>SOUL (McGuire, NEJM 2025) :</strong> Sémaglutide → bénéfice rénal + CV + ↓ amputations + ↓ événements vasculaires majeurs.
+      </div>
+    </div>
+
+    <!-- Tabac -->
+    <div id="map-tabac" style="display:none;">
+      <div class="key-fact red">
+        🚭 <strong>Tabac = FR n°1 de la MAP.</strong> Patient non diabétique sans IRC avancée qui cesse de fumer → ne perdra pratiquement jamais son pied. Tabagisme persistant = ×10 risque d'amputation sur 7 ans.
+      </div>
+      <div style="overflow-x:auto;margin-top:12px;">
+        <table>
+          <thead><tr><th>Intervention</th><th>Efficacité (1 an)</th><th>Remarques</th></tr></thead>
+          <tbody>
+            <tr><td>Counseling seul</td><td>10–30%</td><td>À faire systématiquement (base)</td></tr>
+            <tr style="background:#f8f9fa;"><td>Timbres / Gommes nicotine</td><td>+10%</td><td>Remboursés RAMQ ; s'additionnent au counseling</td></tr>
+            <tr><td>Bupropion (Zyban)</td><td>~20%</td><td>Antidépresseur ; ⚠️ idées suicidaires possibles — surveiller</td></tr>
+            <tr style="background:#e8f8f5;"><td><strong>Varénicline (Champix) ⭐</strong></td><td><strong>~40%</strong></td><td>Bloque récepteurs nicotiniques. Prendre avec grand verre d'eau (↓ nausées). Médicament le plus efficace.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <script>
+    function switchMapTx(tab) {
+      ['statine','hta','db','tabac'].forEach(function(t) {
+        var el = document.getElementById('map-' + t);
+        if(el) el.style.display = t === tab ? '' : 'none';
+        var btn = document.getElementById('map-btn-' + t);
+        if(btn) { btn.style.background = t === tab ? '#0a7a4e' : '#e0e0e0'; btn.style.color = t === tab ? '#fff' : '#333'; }
+      });
+    }
+    </script>
+  </div>
+
+  <!-- 6. THÉRAPIES ANTITHROMBOTIQUES -->
+  <div id="map-antithrombo" class="block rx" style="border-left:4px solid #1C3F8F;margin-top:16px;">
+    <div class="block-title"><span class="tag">6 — Thérapies antithrombotiques de la MAP</span></div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:10px;">
+      <div style="background:#f5f5f5;border-radius:10px;padding:14px;font-size:13px;">
+        <div style="font-weight:700;color:#555;margin-bottom:6px;">🚫 MAP Asymptomatique isolée</div>
+        <p>AAS et anticoagulants <strong>déconseillés</strong></p>
+        <p>Risque hémorragique contrebalance les bénéfices : 2%/an d'événements vs &gt;4%/an si symptomatique</p>
+        <p><em>Exception ESC : parfois AAS si maladie carotidienne asymptomatique</em></p>
+      </div>
+      <div style="background:#e8f4ff;border-radius:10px;padding:14px;font-size:13px;">
+        <div style="font-weight:700;color:#1C3F8F;margin-bottom:6px;">🟡 MAP Symptomatique — Monothérapie</div>
+        <p><strong>Clopidogrel 75 mg</strong> DIE &gt; AAS (Canada — CAPRIE : ↓20% efficacité toutes atteintes vasculaires)</p>
+        <p>AAS 80 mg si CI au clopidogrel</p>
+        <p>AAS encore sur-prescrit par inertie — pas de code RAMQ requis pour clopidogrel</p>
+      </div>
+      <div style="background:#e8f8f5;border-radius:10px;padding:14px;font-size:13px;">
+        <div style="font-weight:700;color:#0a7a4e;margin-bottom:6px;">🔴 MAP Haut risque / 2 lits vasculaires</div>
+        <p><strong>AAS 80 mg + Rivaroxaban 2,5 mg BID</strong></p>
+        <p>↓ complications, mortalité CV et totale</p>
+        <p>⚠️ <strong>Médicament d'exception RAMQ :</strong> exige atteinte documentée de 2 lits vasculaires (coronaires + périphérique)</p>
+        <p>Sous-utilisé à cause de l'inertie thérapeutique</p>
+      </div>
+    </div>
+
+    <div style="margin-top:14px;">
+      <strong>Après intervention endovasculaire (stent périphérique) :</strong>
+      <div style="background:#fff8e1;border-radius:8px;padding:12px;font-size:13px;margin-top:6px;">
+        <strong>Phase aiguë (&lt;1–3 mois) :</strong> DAPT = AAS + clopidogrel (haut risque de thrombose de stent)<br>
+        <strong>Ensuite :</strong> Retour à AAS + rivaroxaban 2,5 mg BID (classe 2A — moins solide qu'en coronarien)<br>
+        <strong>Si anticoagulation long cours (FA, TEV) :</strong> anticoagulant seul (ne pas empiler) — chaque agent ajouté ≈ double le risque hémorragique<br>
+        <strong>Différence vs stent coronarien :</strong> stents périphériques plus gros (4–8 mm vs 3–4 mm coronariens) → conséquences de resténose moins graves, plus de latitude thérapeutique
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. RÉADAPTATION -->
+  <div id="map-readapt" class="block para" style="border-left:4px solid #7b3fa0;margin-top:16px;">
+    <div class="block-title"><span class="tag">7 — Réadaptation : Programme de marche & Exercice</span></div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px;">
+      <div style="background:#f5eef8;border-radius:10px;padding:14px;">
+        <div style="font-weight:700;color:#7b3fa0;margin-bottom:8px;">🏃 Programme de marche — Paramètres</div>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px;">
+          <div style="background:#ede9fe;border-radius:20px;padding:4px 12px;font-size:12px;font-weight:600;">≥ 3 ×/semaine</div>
+          <div style="background:#ede9fe;border-radius:20px;padding:4px 12px;font-size:12px;font-weight:600;">≥ 30 min/session</div>
+          <div style="background:#ede9fe;border-radius:20px;padding:4px 12px;font-size:12px;font-weight:600;">≥ 3 mois</div>
+        </div>
+        <ul style="margin:0;padding-left:16px;font-size:13px;line-height:1.8;">
+          <li>Intensité : douleur <strong>modérée du mollet</strong> → s'arrêter jusqu'à disparition → reprendre</li>
+          <li>Effet : <strong>double à triple</strong> la distance de marche</li>
+          <li>Idéal = supervisé (peu accessible Québec) → viser 30 min/jour ou 2×15–20 min</li>
+          <li>⚠️ Le bénéfice disparaît rapidement si arrêt → doit être réaliste et durable</li>
+        </ul>
+        <div class="key-fact blue" style="margin-top:10px;">
+          🔬 Mécanisme incertain (pas seulement les collatérales — trop rapide) : amélioration mitochondriale, capillaire, endothéliale, musculaire, ↓ inflammation
+        </div>
+      </div>
+
+      <div>
+        <div style="background:#e8f8f5;border-radius:10px;padding:14px;margin-bottom:10px;">
+          <div style="font-weight:700;color:#0a7a4e;margin-bottom:6px;">👟 « Nouveau 10 000 pas » = 7 000 pas</div>
+          <ul style="margin:0;padding-left:16px;font-size:13px;line-height:1.8;">
+            <li>10 000 pas = marketing japonais des années 1960 (vente de podomètres), sans base scientifique</li>
+            <li><strong>Ding, Lancet 2023 :</strong> bénéfice plafonne vers ~7 000 pas ; l'essentiel est acquis à ~5 000 pas</li>
+            <li>Dr Roussin → « viser &gt;5 000 pas » comme objectif réaliste</li>
+          </ul>
+        </div>
+        <div style="background:#e8f4ff;border-radius:10px;padding:14px;">
+          <div style="font-weight:700;color:#1C3F8F;margin-bottom:6px;">🏥 Quand référer en intervention endovasculaire?</div>
+          <ul style="margin:0;padding-left:16px;font-size:13px;line-height:1.8;">
+            <li>Claudication invalidante malgré TMO + programme de marche ≥3 mois</li>
+            <li>Ischémie critique (douleur de repos, ulcère ischémique, gangrène)</li>
+            <li>ITH ≤ 0,4 avec symptômes sévères</li>
+          </ul>
+          <div style="font-size:12px;color:#555;margin-top:6px;font-style:italic;">Un patient satisfait de sa marche n'aura souvent pas besoin d'angioplastie/stent — Dr Roussin</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Résumé traitement intégré -->
+    <div style="background:#f8f9fa;border-radius:10px;padding:14px;margin-top:14px;">
+      <strong style="display:block;margin-bottom:10px;">⭐ Traitement intégré — Messages clés MAP (Dr Roussin 2026)</strong>
+      <div style="display:flex;flex-direction:column;gap:8px;font-size:13px;">
+        <div style="background:#fce4ec;border-radius:8px;padding:10px;">🚭 <strong>Tabac = FR n°1.</strong> Arrêt = meilleur traitement → ↓10× amputations. Non diabétique sans IRC qui cesse = n'aura quasiment jamais d'amputation.</div>
+        <div style="background:#e8f4ff;border-radius:8px;padding:10px;">💊 <strong>Pilules de base :</strong> Statine haute intensité (LDL &lt;1,8) + IECA/ARA (même si TA normale) + iSGLT2 ou aGLP-1 si diabète</div>
+        <div style="background:#e8f8f5;border-radius:8px;padding:10px;">🩸 <strong>Antithrombotique :</strong> Asymptomatique → rien. Symptomatique → clopidogrel &gt; AAS. 2 lits vasculaires → AAS + rivaroxaban 2,5 mg BID (code RAMQ)</div>
+        <div style="background:#f5eef8;border-radius:8px;padding:10px;">🏃 <strong>Programme de marche :</strong> 3×/sem, 30 min, 3 mois, ≥5 000 pas/jour. Traitement de base non-pharmaco. Combiné à statine + IECA + antiplaquettaire = triplet optimal.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
     <div class="section" id="sec-ira">
       <div class="section-header">
         <div class="section-accent" style="background:var(--red)">🫘</div>
