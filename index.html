@@ -1483,6 +1483,10 @@
               <li class="calc-group-title" data-cat="hemato" data-color="blue">🩸 Hématologie & vasculaire</li>
               <li class="calc-item" data-cat="hemato" data-color="blue" onclick="showCalc('wells-dvt')"><span class="calc-icon">🩸</span>Score de Wells — TVP <small>Probabilité clinique pré-test de thrombose veineuse profonde</small></li>
               <li class="calc-item" data-cat="hemato" data-color="blue" onclick="showCalc('wells-pe')"><span class="calc-icon">🩸</span>Score de Wells — Embolie pulmonaire <small>Probabilité clinique pré-test d'embolie pulmonaire</small></li>
+
+              <li class="calc-group-title" data-color="red">🎗️ Oncologie</li>
+              <li class="calc-item" data-cat="onco" data-color="red" onclick="showCalc('mascc')"><span class="calc-icon">🌡️</span>Score MASCC <small>Neutropénie fébrile — risque faible de complications sérieuses</small></li>
+              <li class="calc-item" data-cat="onco" data-color="red" onclick="showCalc('cisne')"><span class="calc-icon">🧬</span>Score CISNE <small>Neutropénie fébrile stable — identifier patients faible risque</small></li>
             </ul>
           </nav>
 
@@ -3710,12 +3714,179 @@
                 </form>
 </div>
 
+<div id="mascc" class="calc-container">
+  <h2>Score MASCC — Neutropénie Fébrile</h2>
+  <p class="description">Identifie les patients à <strong>faible risque</strong> de complications sérieuses en neutropénie fébrile. Score ≥ 21 = faible risque. Ne pas utiliser en leucémie aiguë sous induction ou greffe allogénique.</p>
+  <form id="mascc-form" onchange="calculateMascc()">
+    <div class="form-group"><label>Sévérité des symptômes (à la présentation, selon le médecin)</label>
+      <div class="radio-group">
+        <label class="radio-option"><input type="radio" name="m_burden" value="5" checked> Aucun ou léger (+5)</label>
+        <label class="radio-option"><input type="radio" name="m_burden" value="3"> Modéré (+3)</label>
+        <label class="radio-option"><input type="radio" name="m_burden" value="0"> Sévère (0)</label>
+      </div>
+    </div>
+    <div class="form-group"><label>Hypotension (TAS &lt; 90 mmHg)</label>
+      <div class="radio-group">
+        <label class="radio-option"><input type="radio" name="m_hypo" value="5" checked> Non (+5)</label>
+        <label class="radio-option"><input type="radio" name="m_hypo" value="0"> Oui (0)</label>
+      </div>
+    </div>
+    <div class="form-group"><label>MPOC active (bronchite chronique, emphysème, besoin d'O₂/stéroïdes/bronchodilatateurs)</label>
+      <div class="radio-group">
+        <label class="radio-option"><input type="radio" name="m_copd" value="4" checked> Non (+4)</label>
+        <label class="radio-option"><input type="radio" name="m_copd" value="0"> Oui (0)</label>
+      </div>
+    </div>
+    <div class="form-group"><label>Type de cancer</label>
+      <div class="radio-group">
+        <label class="radio-option"><input type="radio" name="m_cancer" value="4" checked> Tumeur solide (+4)</label>
+        <label class="radio-option"><input type="radio" name="m_cancer" value="4"> Hématologique sans ATCD infection fongique (+4)</label>
+        <label class="radio-option"><input type="radio" name="m_cancer" value="0"> Hématologique avec ATCD infection fongique (0)</label>
+      </div>
+    </div>
+    <div class="form-group"><label>Déshydratation nécessitant des liquides IV</label>
+      <div class="radio-group">
+        <label class="radio-option"><input type="radio" name="m_dehy" value="3" checked> Non (+3)</label>
+        <label class="radio-option"><input type="radio" name="m_dehy" value="0"> Oui (0)</label>
+      </div>
+    </div>
+    <div class="form-group"><label>Statut au début de la fièvre</label>
+      <div class="radio-group">
+        <label class="radio-option"><input type="radio" name="m_status" value="3" checked> Ambulatoire (+3)</label>
+        <label class="radio-option"><input type="radio" name="m_status" value="0"> Hospitalisé (0)</label>
+      </div>
+    </div>
+    <div class="form-group"><label>Âge</label>
+      <div class="radio-group">
+        <label class="radio-option"><input type="radio" name="m_age" value="2" checked> &lt; 60 ans (+2)</label>
+        <label class="radio-option"><input type="radio" name="m_age" value="0"> ≥ 60 ans (0)</label>
+      </div>
+    </div>
+  </form>
+  <div class="result-section" id="mascc-result">
+    <div class="result-score" id="mascc-score"></div>
+    <div class="result-interpretation" id="mascc-interp"></div>
+    <div class="next-steps" id="mascc-next"></div>
+  </div>
+</div>
+
+<div id="cisne" class="calc-container">
+  <h2>Score CISNE — Neutropénie Fébrile Stable</h2>
+  <p class="description">Identifie les patients avec neutropénie fébrile <strong>stable</strong> à faible risque de complications sérieuses. Utiliser chez adultes ≥ 18 ans avec tumeur solide, fièvre ≥ 38°C, PNN ≤ 500/mm³. Ne pas utiliser si défaillance organique, infection sévère ou hypotension.</p>
+  <form id="cisne-form" onchange="calculateCisne()">
+    <div class="form-group"><label>Statut de performance ECOG ≥ 2 (capable de tous les soins personnels, mais aucune activité professionnelle, alité &gt; 50% de la journée)</label>
+      <div class="radio-group">
+        <label class="radio-option"><input type="radio" name="c_ecog" value="0" checked> Non (0)</label>
+        <label class="radio-option"><input type="radio" name="c_ecog" value="2"> Oui (+2)</label>
+      </div>
+    </div>
+    <div class="form-group"><label>Hyperglycémie de stress (glycémie initiale ≥ 6,7 mmol/L, ou ≥ 13,9 mmol/L si diabétique ou sous stéroïdes)</label>
+      <div class="radio-group">
+        <label class="radio-option"><input type="radio" name="c_gluc" value="0" checked> Non (0)</label>
+        <label class="radio-option"><input type="radio" name="c_gluc" value="2"> Oui (+2)</label>
+      </div>
+    </div>
+    <div class="form-group"><label>MPOC active (sous stéroïdes, O₂ supplémentaire ou bronchodilatateurs)</label>
+      <div class="radio-group">
+        <label class="radio-option"><input type="radio" name="c_copd" value="0" checked> Non (0)</label>
+        <label class="radio-option"><input type="radio" name="c_copd" value="1"> Oui (+1)</label>
+      </div>
+    </div>
+    <div class="form-group"><label>Maladie cardiovasculaire chronique (IC, cardiomyopathie, HTA cardiaque, arythmie, valvulopathie — exclure un épisode unique de FA non compliqué)</label>
+      <div class="radio-group">
+        <label class="radio-option"><input type="radio" name="c_cardio" value="0" checked> Non (0)</label>
+        <label class="radio-option"><input type="radio" name="c_cardio" value="1"> Oui (+1)</label>
+      </div>
+    </div>
+    <div class="form-group"><label>Mucite NCI grade ≥ 2 (érythème/œdème/ulcères douloureux — manger et avaler encore possibles)</label>
+      <div class="radio-group">
+        <label class="radio-option"><input type="radio" name="c_mucite" value="0" checked> Non (0)</label>
+        <label class="radio-option"><input type="radio" name="c_mucite" value="1"> Oui (+1)</label>
+      </div>
+    </div>
+    <div class="form-group"><label>Monocytes &lt; 200/µL</label>
+      <div class="radio-group">
+        <label class="radio-option"><input type="radio" name="c_mono" value="0" checked> Non — monocytes ≥ 200/µL (0)</label>
+        <label class="radio-option"><input type="radio" name="c_mono" value="1"> Oui — monocytes &lt; 200/µL (+1)</label>
+      </div>
+    </div>
+  </form>
+  <div class="result-section" id="cisne-result">
+    <div class="result-score" id="cisne-score"></div>
+    <div class="result-interpretation" id="cisne-interp"></div>
+    <div class="next-steps" id="cisne-next"></div>
+  </div>
+</div>
+
 
           </div>
         </div>
 
         <script>
-          function showCalc(id) {
+          
+          function calculateMascc() {
+            var form = document.getElementById('mascc-form');
+            var burden = parseInt(form.querySelector('[name="m_burden"]:checked').value);
+            var hypo   = parseInt(form.querySelector('[name="m_hypo"]:checked').value);
+            var copd   = parseInt(form.querySelector('[name="m_copd"]:checked').value);
+            var cancer = parseInt(form.querySelector('[name="m_cancer"]:checked').value);
+            var dehy   = parseInt(form.querySelector('[name="m_dehy"]:checked').value);
+            var status = parseInt(form.querySelector('[name="m_status"]:checked').value);
+            var age    = parseInt(form.querySelector('[name="m_age"]:checked').value);
+            var score  = burden + hypo + copd + cancer + dehy + status + age;
+            var res = document.getElementById('mascc-result');
+            var sc  = document.getElementById('mascc-score');
+            var interp = document.getElementById('mascc-interp');
+            var next   = document.getElementById('mascc-next');
+            res.className = 'result-section show';
+            sc.textContent = 'Score MASCC : ' + score + ' / 26';
+            if (score >= 21) {
+              res.style.borderLeftColor = 'var(--blue)';
+              res.style.background = 'var(--blue-lt)';
+              interp.innerHTML = '<strong style="color:var(--blue)">🟢 FAIBLE RISQUE (score ≥ 21)</strong><br>Risque &lt; 5% de complications sérieuses. Traitement ambulatoire possible si critères stricts respectés.';
+              next.innerHTML = '<strong>Conduite :</strong> Évaluation clinique complète → Hémocultures × 2 → Antibiotiques PO envisageables (cipro 750 mg BID + amox-clav 875 mg BID) si suivi rapproché assuré. Réévaluation à 24–48h obligatoire.';
+            } else {
+              res.style.borderLeftColor = 'var(--red)';
+              res.style.background = 'var(--red-lt)';
+              interp.innerHTML = '<strong style="color:var(--red)">🔴 HAUT RISQUE (score &lt; 21)</strong><br>Risque élevé de complications (sepsis, admission USI, décès). Hospitalisation et ATB IV requis.';
+              next.innerHTML = '<strong>Conduite :</strong> Hospitalisation immédiate → Hémocultures × 2 ± autres prélèvements → Pip-tazo 4,5g IV q8h OU Céfépime 2g IV q8h OU Méropénem · Vancomycine si cathéter/instabilité/GPC · Antifongique si fièvre persistante > 4–7j.';
+            }
+          }
+
+          function calculateCisne() {
+            var form  = document.getElementById('cisne-form');
+            var ecog  = parseInt(form.querySelector('[name="c_ecog"]:checked').value);
+            var gluc  = parseInt(form.querySelector('[name="c_gluc"]:checked').value);
+            var copd  = parseInt(form.querySelector('[name="c_copd"]:checked').value);
+            var cardio= parseInt(form.querySelector('[name="c_cardio"]:checked').value);
+            var mucite= parseInt(form.querySelector('[name="c_mucite"]:checked').value);
+            var mono  = parseInt(form.querySelector('[name="c_mono"]:checked').value);
+            var score = ecog + gluc + copd + cardio + mucite + mono;
+            var res   = document.getElementById('cisne-result');
+            var sc    = document.getElementById('cisne-score');
+            var interp= document.getElementById('cisne-interp');
+            var next  = document.getElementById('cisne-next');
+            res.className = 'result-section show';
+            sc.textContent = 'Score CISNE : ' + score + ' / 8';
+            if (score === 0) {
+              res.style.borderLeftColor = 'var(--blue)';
+              res.style.background = 'var(--blue-lt)';
+              interp.innerHTML = '<strong style="color:var(--blue)">🟢 Classe I — Très faible risque (score = 0)</strong><br>Taux de complications sérieuses ≈ 1,1 %. Candidat idéal à la prise en charge ambulatoire.';
+              next.innerHTML = '<strong>Conduite :</strong> Prise en charge ambulatoire envisageable si suivi clinique étroit garanti. ATB PO ± observation courte aux urgences selon contexte clinique.';
+            } else if (score <= 2) {
+              res.style.borderLeftColor = 'var(--yellow)';
+              res.style.background = 'var(--yel-lt)';
+              interp.innerHTML = '<strong style="color:#854d0e">🟡 Classe II — Faible risque (score 1–2)</strong><br>Taux de complications sérieuses ≈ 6,2 %. Décision individualisée.';
+              next.innerHTML = '<strong>Conduite :</strong> Observation aux urgences ou hospitalisation courte recommandée. ATB IV initialement, transition PO possible selon évolution. Réévaluation à 24–48h.';
+            } else {
+              res.style.borderLeftColor = 'var(--red)';
+              res.style.background = 'var(--red-lt)';
+              interp.innerHTML = '<strong style="color:var(--red)">🔴 Classe III — Risque élevé (score ≥ 3)</strong><br>Taux de complications sérieuses ≈ 36 %. Hospitalisation impérative.';
+              next.innerHTML = '<strong>Conduite :</strong> Hospitalisation et ATB IV systématique. Même protocole que MASCC haut risque. Consultation infectiologie/hémato-oncologie.';
+            }
+          }
+
+function showCalc(id) {
             var suite = document.querySelector('.calc-suite');
             if (!suite) return;
             suite.querySelectorAll('.calc-container').forEach(function(el){ el.classList.remove('calc-active'); });
