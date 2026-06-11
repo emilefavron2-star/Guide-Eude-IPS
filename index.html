@@ -12022,9 +12022,20 @@ function calculatePHQ9() {
         <div class="section-accent" style="background:#1e40af">🫁</div>
         <div class="section-title"><h1>Apnée Centrale & Hypoventilation</h1><div class="breadcrumb">Pneumologie <span class="breadcrumb-sep">·</span> Section 27b</div></div>
       </div>
-
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
+        <button onclick="document.getElementById('ac-1').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📌 Définitions</button>
+        <button onclick="document.getElementById('ac-2').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔍 Étiologies</button>
+        <button onclick="document.getElementById('ac-3').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🧪 Diagnostic</button>
+        <button onclick="document.getElementById('ac-4').scrollIntoView({behavior:'smooth'})" style="background:#0a7a4e;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">💊 Traitement</button>
+        <button onclick="document.getElementById('ac-5').scrollIntoView({behavior:'smooth'})" style="background:#c0392b;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🚨 Red Flags</button>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:20px;">
+        <div style="flex:1;min-width:110px;background:#EEF2FF;border-radius:10px;padding:12px;text-align:center;"><div style="font-size:18px;font-weight:800;color:#1C3F8F;">≥ 5/h</div><div style="font-size:11px;color:#555;margin-top:4px;">IAH apnées centrales (ACS)</div></div>
+        <div style="flex:1;min-width:110px;background:#FEF9C3;border-radius:10px;padding:12px;text-align:center;"><div style="font-size:18px;font-weight:800;color:#92400e;">≥ 15/h</div><div style="font-size:11px;color:#555;margin-top:4px;">Syndrome Cheynes-Stokes</div></div>
+        <div style="flex:1;min-width:110px;background:#DCFCE7;border-radius:10px;padding:12px;text-align:center;"><div style="font-size:18px;font-weight:800;color:#0a7a4e;">ASV/BiPAP</div><div style="font-size:11px;color:#555;margin-top:4px;">Tx ACS si non-cardiaque</div></div>
+      </div>
       <div class="block def">
-        <div class="block-title"><span class="tag">📌 Définitions</span></div>
+        <div class="block-title" id="ac-1"><span class="tag">📌 Définitions</span></div>
         <table>
           <thead><tr><th>Type</th><th>Mécanisme</th><th>Différence vs ASO</th></tr></thead>
           <tbody>
@@ -12036,7 +12047,7 @@ function calculatePHQ9() {
       </div>
 
       <div class="block clin">
-        <div class="block-title"><span class="tag">🔍 Étiologies & Présentations</span></div>
+        <div class="block-title" id="ac-2"><span class="tag">🔍 Étiologies & Présentations</span></div>
         <div class="accordion">
           <div class="accordion-item open">
             <div class="accordion-header">Respiration de Cheyne-Stokes — IC / AVC
@@ -12066,7 +12077,7 @@ function calculatePHQ9() {
       </div>
 
       <div class="block para">
-        <div class="block-title"><span class="tag">🧪 Diagnostic</span></div>
+        <div class="block-title" id="ac-3"><span class="tag">🧪 Diagnostic</span></div>
         <div style="display:flex;flex-wrap:wrap;gap:6px;">
           <span class="drug-badge line1">PSG — Gold standard</span>
           <span class="drug-badge line3">Gaz artériels (diurnes)</span>
@@ -12077,7 +12088,7 @@ function calculatePHQ9() {
       </div>
 
       <div class="block rx">
-        <div class="block-title"><span class="tag">💊 Traitement selon étiologie</span></div>
+        <div class="block-title" id="ac-4"><span class="tag">💊 Traitement selon étiologie</span></div>
         <table>
           <thead><tr><th>Cause</th><th>Traitement 1re ligne</th><th>Note</th></tr></thead>
           <tbody>
@@ -12090,7 +12101,7 @@ function calculatePHQ9() {
       </div>
 
       <div class="block flag">
-        <div class="block-title"><span class="tag">🚨 RED FLAGS</span></div>
+        <div class="block-title" id="ac-5"><span class="tag">🚨 RED FLAGS</span></div>
         <div class="flag-list">
           <div class="flag-item"><span class="fi-icon">🚫</span><span>IC + ACA + FEVG ≤ 45 % → <strong>ASV contre-indiquée</strong> (↑ mortalité SERVE-HF 2015)</span></div>
           <div class="flag-item"><span class="fi-icon">💊</span><span>Opioïdes + somnolence diurne sévère → PSG urgent + réévaluer dose</span></div>
@@ -12105,9 +12116,13 @@ function calculatePHQ9() {
         <div class="section-accent" style="background:#0369a1">🔬</div>
         <div class="section-title"><h1>Évaluation d'un symptôme pulmonaire</h1><div class="breadcrumb">Pneumologie <span class="breadcrumb-sep">·</span> Section 1</div></div>
       </div>
-
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
+        <button onclick="document.getElementById('pe-1').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📌 Classification</button>
+        <button onclick="document.getElementById('pe-2').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔍 Démarche éval.</button>
+        <button onclick="document.getElementById('pe-3').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔬 TFR</button>
+      </div>
       <div class="block def">
-        <div class="block-title"><span class="tag">📌 1.1 Classification anatomique des pathologies pulmonaires</span></div>
+        <div class="block-title" id="pe-1"><span class="tag">📌 1.1 Classification anatomique des pathologies pulmonaires</span></div>
         <table>
           <thead><tr><th>Site anatomique</th><th>Pathologies</th></tr></thead>
           <tbody>
@@ -12122,7 +12137,7 @@ function calculatePHQ9() {
       </div>
 
       <div class="block clin">
-        <div class="block-title"><span class="tag">🔍 1.2 Démarche d'évaluation</span></div>
+        <div class="block-title" id="pe-2"><span class="tag">🔍 1.2 Démarche d'évaluation</span></div>
         <div class="criteria-list">
           <div class="criteria-item"><div class="criteria-num blue">1</div><span><strong>Questionnaire (anamnèse) :</strong> Début et évolution des symptômes · Facteurs aggravants et soulageants · Expositions (tabac, allergènes, travail, environnement) · ATCD médicaux, familiaux · Médicaments · Voyage récent</span></div>
           <div class="criteria-item"><div class="criteria-num blue">2</div><span><strong>Examen physique :</strong> Inspection (fréquence respiratoire, cyanose, utilisation muscles accessoires, déformation thoracique) · Palpation (expansion thoracique, frémissement) · Percussion (matité, hyper-résonance) · Auscultation (murmures vésiculaires, crépitants, sibilances, frottement pleural)</span></div>
@@ -12133,7 +12148,7 @@ function calculatePHQ9() {
       </div>
 
       <div class="block para">
-        <div class="block-title"><span class="tag">🔬 1.3 Tests de Fonction Respiratoire (TFR) — rappel</span></div>
+        <div class="block-title" id="pe-3"><span class="tag">🔬 1.3 Tests de Fonction Respiratoire (TFR) — rappel</span></div>
         <table>
           <thead><tr><th>Mesure</th><th>Définition</th><th>Intérêt clinique</th></tr></thead>
           <tbody>
@@ -12155,9 +12170,24 @@ function calculatePHQ9() {
         <div class="section-accent" style="background:#1e40af">🫁</div>
         <div class="section-title"><h1>Asthme</h1><div class="breadcrumb">Pneumologie <span class="breadcrumb-sep">·</span> Section 2</div></div>
       </div>
-
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
+        <button onclick="document.getElementById('asthme-1').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📌 Définition/Dx</button>
+        <button onclick="document.getElementById('asthme-2').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔍 S&S</button>
+        <button onclick="document.getElementById('asthme-3').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔬 Dx différentiel</button>
+        <button onclick="document.getElementById('asthme-4').scrollIntoView({behavior:'smooth'})" style="background:#c0392b;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🚨 Facteurs aggravants</button>
+        <button onclick="document.getElementById('asthme-5').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📌 Contrôle</button>
+        <button onclick="document.getElementById('asthme-6').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔬 Sévérité</button>
+        <button onclick="document.getElementById('asthme-7').scrollIntoView({behavior:'smooth'})" style="background:#0a7a4e;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">💊 Traitement</button>
+        <button onclick="document.getElementById('asthme-8').scrollIntoView({behavior:'smooth'})" style="background:#7b3fa0;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🤰 Grossesse</button>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:20px;">
+        <div style="flex:1;min-width:110px;background:#EEF2FF;border-radius:10px;padding:12px;text-align:center;"><div style="font-size:18px;font-weight:800;color:#1C3F8F;">≥ 12 %</div><div style="font-size:11px;color:#555;margin-top:4px;">Réversibilité VEMS (≥200 mL)</div></div>
+        <div style="flex:1;min-width:110px;background:#FEF9C3;border-radius:10px;padding:12px;text-align:center;"><div style="font-size:18px;font-weight:800;color:#92400e;">≥ 8-10 %</div><div style="font-size:11px;color:#555;margin-top:4px;">Variabilité DEP</div></div>
+        <div style="flex:1;min-width:110px;background:#DCFCE7;border-radius:10px;padding:12px;text-align:center;"><div style="font-size:18px;font-weight:800;color:#0a7a4e;">SABA+ICS</div><div style="font-size:11px;color:#555;margin-top:4px;">Palier 1 GINA 2026</div></div>
+        <div style="flex:1;min-width:110px;background:#FEE2E2;border-radius:10px;padding:12px;text-align:center;"><div style="font-size:18px;font-weight:800;color:#c0392b;">SpO₂ &lt;90%</div><div style="font-size:11px;color:#555;margin-top:4px;">Critère urgence</div></div>
+      </div>
       <div class="block def">
-        <div class="block-title"><span class="tag">📌 2.1 Définition & Critères diagnostiques (GINA 2026)</span></div>
+        <div class="block-title" id="asthme-1"><span class="tag">📌 2.1 Définition & Critères diagnostiques (GINA 2026)</span></div>
         <p class="content-text">Maladie hétérogène caractérisée par une <strong>inflammation chronique des voies aériennes</strong> → bronchoconstriction · épaississement des VA · hypersécrétion de mucus. Symptômes fluctuant dans le temps et en intensité. Limitation du débit expiratoire <strong>variable</strong>.</p>
         <div class="highlight cream" style="margin-bottom:8px;font-size:12px;"><strong>Épidémiologie :</strong> ~8 % de la population canadienne · Asthme léger : 50–75 % (30–40 % auront au moins une exacerbation) · Asthme sévère : 5–10 % → responsable de ~50 % des coûts</div>
         <p class="content-text"><strong>Confirmation de la limitation variable du débit :</strong></p>
@@ -12176,7 +12206,7 @@ function calculatePHQ9() {
       </div>
 
       <div class="block clin">
-        <div class="block-title"><span class="tag">🔍 2.2 Signes & Symptômes</span></div>
+        <div class="block-title" id="asthme-2"><span class="tag">🔍 2.2 Signes & Symptômes</span></div>
         <div class="criteria-list">
           <div class="criteria-item"><div class="criteria-num blue">→</div><span><strong>Dyspnée</strong> — souvent à l'effort, variable dans la journée</span></div>
           <div class="criteria-item"><div class="criteria-num blue">→</div><span><strong>Sibilances (wheezing)</strong> — expiratoires (bilatéraux et diffus)</span></div>
@@ -12187,7 +12217,7 @@ function calculatePHQ9() {
       </div>
 
       <div class="block para">
-        <div class="block-title"><span class="tag">🔬 2.3 Diagnostic différentiel</span></div>
+        <div class="block-title" id="asthme-3"><span class="tag">🔬 2.3 Diagnostic différentiel</span></div>
         <table>
           <thead><tr><th>DDx</th><th>Indices</th></tr></thead>
           <tbody>
@@ -12202,7 +12232,7 @@ function calculatePHQ9() {
       </div>
 
       <div class="block clin">
-        <div class="block-title"><span class="tag">🚨 2.4 Facteurs aggravants</span></div>
+        <div class="block-title" id="asthme-4"><span class="tag">🚨 2.4 Facteurs aggravants</span></div>
         <div class="criteria-list">
           <div class="criteria-item"><div class="criteria-num red">!</div><span><strong>Infections virales</strong> (rhinovirus ++) · bactériennes (moins fréquent)</span></div>
           <div class="criteria-item"><div class="criteria-num red">!</div><span><strong>Allergènes</strong> : acariens · pollen · moisissures · animaux · expositions professionnelles</span></div>
@@ -12216,7 +12246,7 @@ function calculatePHQ9() {
       </div>
 
       <div class="block def">
-        <div class="block-title"><span class="tag">📌 2.5 Critères de contrôle (CTS 2021)</span></div>
+        <div class="block-title" id="asthme-5"><span class="tag">📌 2.5 Critères de contrôle (CTS 2021)</span></div>
         <table>
           <thead><tr><th>Critère</th><th>Bien contrôlé</th><th>Partiellement contrôlé</th><th>Non contrôlé</th></tr></thead>
           <tbody>
@@ -12230,7 +12260,7 @@ function calculatePHQ9() {
       </div>
 
       <div class="block para">
-        <div class="block-title"><span class="tag">🔬 2.6 Sévérité de l'asthme — distinctions</span></div>
+        <div class="block-title" id="asthme-6"><span class="tag">🔬 2.6 Sévérité de l'asthme — distinctions</span></div>
         <table>
           <thead><tr><th>Catégorie</th><th>Critères</th></tr></thead>
           <tbody>
@@ -12260,7 +12290,7 @@ function calculatePHQ9() {
       </div>
 
       <div class="block rx">
-        <div class="block-title"><span class="tag">💊 2.7 Traitement — selon la situation clinique</span></div>
+        <div class="block-title" id="asthme-7"><span class="tag">💊 2.7 Traitement — selon la situation clinique</span></div>
         <div class="accordion">
           <div class="accordion-item open">
             <div class="accordion-header">Principes généraux — changements GINA 2019/2026
@@ -12350,7 +12380,7 @@ function calculatePHQ9() {
       </div>
 
       <div class="block clin">
-        <div class="block-title"><span class="tag">🤰 2.8 Asthme & Grossesse</span></div>
+        <div class="block-title" id="asthme-8"><span class="tag">🤰 2.8 Asthme & Grossesse</span></div>
         <p class="content-text"><strong>Évolution pendant la grossesse :</strong> 1/3 Sx augmentent · 1/3 Sx diminuent · 1/3 Sx stables</p>
         <div class="criteria-list">
           <div class="criteria-item"><div class="criteria-num blue">→</div><span><strong>Poursuivre la médication (CSI)</strong> — les risques de l'asthme non traité sont supérieurs aux risques des médicaments</span></div>
@@ -12367,9 +12397,23 @@ function calculatePHQ9() {
         <div class="section-accent" style="background:#1e40af">🫁</div>
         <div class="section-title"><h1>MPOC</h1><div class="breadcrumb">Pneumologie <span class="breadcrumb-sep">·</span> Section 3</div></div>
       </div>
-
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
+        <button onclick="document.getElementById('mpoc-1').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📌 Définition GOLD</button>
+        <button onclick="document.getElementById('mpoc-2').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔬 Étiologies</button>
+        <button onclick="document.getElementById('mpoc-3').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔍 S&S</button>
+        <button onclick="document.getElementById('mpoc-4').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📌 Dépistage</button>
+        <button onclick="document.getElementById('mpoc-5').scrollIntoView({behavior:'smooth'})" style="background:#0a7a4e;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">💊 Prise en charge</button>
+        <button onclick="document.getElementById('mpoc-6').scrollIntoView({behavior:'smooth'})" style="background:#c0392b;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🚨 EAMPOC</button>
+        <button onclick="document.getElementById('mpoc-7').scrollIntoView({behavior:'smooth'})" style="background:#7b3fa0;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🥗 Réadaptation</button>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:20px;">
+        <div style="flex:1;min-width:110px;background:#FEF9C3;border-radius:10px;padding:12px;text-align:center;"><div style="font-size:18px;font-weight:800;color:#92400e;">VEMS/CVF &lt; 0,7</div><div style="font-size:11px;color:#555;margin-top:4px;">Critère spirométrique MPOC</div></div>
+        <div style="flex:1;min-width:110px;background:#FEE2E2;border-radius:10px;padding:12px;text-align:center;"><div style="font-size:18px;font-weight:800;color:#c0392b;">20 pk·an</div><div style="font-size:11px;color:#555;margin-top:4px;">Dépistage TDM (GOLD)</div></div>
+        <div style="flex:1;min-width:110px;background:#DCFCE7;border-radius:10px;padding:12px;text-align:center;"><div style="font-size:18px;font-weight:800;color:#0a7a4e;">LAMA</div><div style="font-size:11px;color:#555;margin-top:4px;">1re ligne stade B/E</div></div>
+        <div style="flex:1;min-width:110px;background:#EEF2FF;border-radius:10px;padding:12px;text-align:center;"><div style="font-size:18px;font-weight:800;color:#1C3F8F;">CAT ≥ 10</div><div style="font-size:11px;color:#555;margin-top:4px;">Symptômes élevés (groupe E)</div></div>
+      </div>
       <div class="block def">
-        <div class="block-title"><span class="tag">📌 3.1 Définition (GOLD 2026)</span></div>
+        <div class="block-title" id="mpoc-1"><span class="tag">📌 3.1 Définition (GOLD 2026)</span></div>
         <p class="content-text">Condition pulmonaire hétérogène caractérisée par des <strong>symptômes respiratoires chroniques</strong> (dyspnée, toux, expectorations, exacerbations) secondaire à des anomalies des voies aériennes (bronchite, bronchiolite) et/ou alvéolaires (emphysème) causant une obstruction <strong>persistante et souvent progressive</strong>.</p>
         <div class="stat-row">
           <div class="stat-card red"><div class="stat-num">3e cause</div><div class="stat-label">de décès au Canada</div></div>
@@ -12380,7 +12424,7 @@ function calculatePHQ9() {
       </div>
 
       <div class="block para">
-        <div class="block-title"><span class="tag">🔬 3.2 Étiologies</span></div>
+        <div class="block-title" id="mpoc-2"><span class="tag">🔬 3.2 Étiologies</span></div>
         <div class="criteria-list">
           <div class="criteria-item"><div class="criteria-num red">!</div><span><strong>Tabagisme ++++</strong> — FdR #1. Un fumeur peut être symptomatique (toux, expectorations, exacerbations) et avoir des stigmates au TDM (emphysème, épaississement bronchique) SANS obstruction spirométrique — MPOC pré-clinique</span></div>
           <div class="criteria-item"><div class="criteria-num orange">→</div><span><strong>Biomasse et combustion</strong> (bois, charbon) · Pollution atmosphérique et professionnelle (poussières, gaz, vapeurs)</span></div>
@@ -12390,7 +12434,7 @@ function calculatePHQ9() {
       </div>
 
       <div class="block clin">
-        <div class="block-title"><span class="tag">🔍 3.3 Signes & Symptômes</span></div>
+        <div class="block-title" id="mpoc-3"><span class="tag">🔍 3.3 Signes & Symptômes</span></div>
         <table>
           <thead><tr><th>Symptôme</th><th>Caractéristiques</th></tr></thead>
           <tbody>
@@ -12404,7 +12448,7 @@ function calculatePHQ9() {
       </div>
 
       <div class="block def">
-        <div class="block-title"><span class="tag">📌 3.4 Dépistage (CTS 2007)</span></div>
+        <div class="block-title" id="mpoc-4"><span class="tag">📌 3.4 Dépistage (CTS 2007)</span></div>
         <p class="content-text"><strong>Candidats :</strong> ≥ 40 ans + fumeur actif ou ancien fumeur + ≥ 1 réponse positive au questionnaire :</p>
         <div class="criteria-list">
           <div class="criteria-item"><div class="criteria-num blue">?</div><span>Toussez-vous régulièrement ?</span></div>
@@ -12417,7 +12461,7 @@ function calculatePHQ9() {
       </div>
 
       <div class="block rx">
-        <div class="block-title"><span class="tag">💊 3.5 Prise en charge</span></div>
+        <div class="block-title" id="mpoc-5"><span class="tag">💊 3.5 Prise en charge</span></div>
         <div class="accordion">
           <div class="accordion-item open">
             <div class="accordion-header">Traitements non pharmacologiques (obligatoires)
@@ -12457,7 +12501,7 @@ function calculatePHQ9() {
       </div>
 
       <div class="block def">
-        <div class="block-title"><span class="tag">📌 3.6 Exacerbation Aiguë de la MPOC (EAMPOC)</span></div>
+        <div class="block-title" id="mpoc-6"><span class="tag">📌 3.6 Exacerbation Aiguë de la MPOC (EAMPOC)</span></div>
         <p class="content-text"><strong>Définition (CTS) :</strong> Aggravation soutenue (≥ 48 h) de la dyspnée, de la toux ou des expectorations + augmentation des médicaments de secours et/ou prise de médicaments additionnels.</p>
         <table>
           <thead><tr><th>Sévérité</th><th>Critères</th><th>Risque</th></tr></thead>
@@ -12473,7 +12517,7 @@ function calculatePHQ9() {
       </div>
 
       <div class="block clin">
-        <div class="block-title"><span class="tag">🥗 3.7 Réadaptation pulmonaire (RP)</span></div>
+        <div class="block-title" id="mpoc-7"><span class="tag">🥗 3.7 Réadaptation pulmonaire (RP)</span></div>
         <p class="content-text">Intervention globale incluant <strong>réentraînement à l'exercice, éducation et changements comportementaux</strong> pour améliorer les conditions physiques et psychologiques du patient.</p>
         <div class="criteria-list">
           <div class="criteria-item"><div class="criteria-num blue">✓</div><span>↑ qualité de vie et tolérance à l'effort · ↓ dyspnée/symptômes · ↑ force et endurance musculaires</span></div>
@@ -12490,9 +12534,12 @@ function calculatePHQ9() {
         <div class="section-accent" style="background:#7c3aed">🔀</div>
         <div class="section-title"><h1>Chevauchement Asthme-MPOC (ACO)</h1><div class="breadcrumb">Pneumologie <span class="breadcrumb-sep">·</span> Section 4</div></div>
       </div>
-
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
+        <button onclick="document.getElementById('aco-1').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📌 Définition ACO</button>
+        <button onclick="document.getElementById('aco-2').scrollIntoView({behavior:'smooth'})" style="background:#0a7a4e;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">💊 Traitement</button>
+      </div>
       <div class="block def">
-        <div class="block-title"><span class="tag">📌 4.1 Définition (CTS 2017)</span></div>
+        <div class="block-title" id="aco-1"><span class="tag">📌 4.1 Définition (CTS 2017)</span></div>
         <p class="content-text">Déficit ventilatoire obstructif post-bronchodilatateur <strong>non complètement réversible</strong> chez des patients symptomatiques avec facteurs de risque pour MPOC ayant des caractéristiques cliniques <strong>à la fois d'asthme et de MPOC</strong>.</p>
         <table>
           <thead><tr><th>Caractéristique</th><th>Asthme</th><th>MPOC</th><th>ACO</th></tr></thead>
@@ -12509,7 +12556,7 @@ function calculatePHQ9() {
       </div>
 
       <div class="block rx">
-        <div class="block-title"><span class="tag">💊 4.2 Traitement (CTS 2017)</span></div>
+        <div class="block-title" id="aco-2"><span class="tag">💊 4.2 Traitement (CTS 2017)</span></div>
         <p class="content-text"><strong>Traitement pharmacologique :</strong> CSI + AMLA/BALA (combinaison requise)</p>
         <div class="key-fact yellow">⚠️ Le CSI seul est insuffisant (MPOC) et le BALA seul est insuffisant (asthme non traité) → La <strong>combinaison CSI/BALA ± AMLA</strong> est la pierre angulaire. Ne pas hésiter à référer en pneumologie pour confirmer le diagnostic et optimiser la thérapie.</div>
         <div class="highlight cream" style="font-size:13px;margin-top:8px;"><strong>Non pharmacologique :</strong> Mêmes mesures que MPOC + Cessation tabagique + Éviction allergénique (composante asthme) + Réadaptation pulmonaire + Vaccination</div>
@@ -12522,15 +12569,26 @@ function calculatePHQ9() {
         <div class="section-accent" style="background:#dc2626">🦠</div>
         <div class="section-title"><h1>Pneumonie</h1><div class="breadcrumb">Pneumologie <span class="breadcrumb-sep">·</span> Section 5</div></div>
       </div>
-
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
+        <button onclick="document.getElementById('pneu-1').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📌 Définition</button>
+        <button onclick="document.getElementById('pneu-2').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔬 Causes</button>
+        <button onclick="document.getElementById('pneu-3').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔍 Diagnostic</button>
+        <button onclick="document.getElementById('pneu-4').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔍 S&S</button>
+        <button onclick="document.getElementById('pneu-5').scrollIntoView({behavior:'smooth'})" style="background:#0a7a4e;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📌 Prévention</button>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:20px;">
+        <div style="flex:1;min-width:110px;background:#FEE2E2;border-radius:10px;padding:12px;text-align:center;"><div style="font-size:18px;font-weight:800;color:#c0392b;">PSI/PORT</div><div style="font-size:11px;color:#555;margin-top:4px;">Score de sévérité PAC</div></div>
+        <div style="flex:1;min-width:110px;background:#FEF9C3;border-radius:10px;padding:12px;text-align:center;"><div style="font-size:18px;font-weight:800;color:#92400e;">CURB-65</div><div style="font-size:11px;color:#555;margin-top:4px;">≥2 = hospitaliser</div></div>
+        <div style="flex:1;min-width:110px;background:#DCFCE7;border-radius:10px;padding:12px;text-align:center;"><div style="font-size:18px;font-weight:800;color:#0a7a4e;">5–7j</div><div style="font-size:11px;color:#555;margin-top:4px;">Durée ABT PAC typique</div></div>
+      </div>
       <div class="block def">
-        <div class="block-title"><span class="tag">📌 5.1 Définition</span></div>
+        <div class="block-title" id="pneu-1"><span class="tag">📌 5.1 Définition</span></div>
         <p class="content-text">Inflammation au niveau des <strong>alvéoles / bronchioles respiratoires / bronchioles distales</strong> causée par une infection. 1e des 10 premières causes de décès au Canada · 20–40 % des patients doivent être hospitalisés.</p>
         <div class="highlight cream" style="font-size:13px;"><strong>Classification :</strong> Pneumonie acquise en communauté (PAC) · Pneumonie acquise en milieu hospitalier (nosocomial) · Pneumonie chez l'immunosupprimé · Pneumonie d'aspiration</div>
       </div>
 
       <div class="block para">
-        <div class="block-title"><span class="tag">🔬 5.2 Causes</span></div>
+        <div class="block-title" id="pneu-2"><span class="tag">🔬 5.2 Causes</span></div>
         <table>
           <thead><tr><th>Germe</th><th>Caractéristiques</th></tr></thead>
           <tbody>
@@ -12545,7 +12603,7 @@ function calculatePHQ9() {
       </div>
 
       <div class="block clin">
-        <div class="block-title"><span class="tag">🔍 5.3 Diagnostic</span></div>
+        <div class="block-title" id="pneu-3"><span class="tag">🔍 5.3 Diagnostic</span></div>
         <p class="content-text"><strong>Basé sur les symptômes + radiographie thoracique obligatoire pour confirmation</strong></p>
         <div class="criteria-list">
           <div class="criteria-item"><div class="criteria-num blue">→</div><span><strong>RXP :</strong> Opacité parenchymateuse (consolidation) · Infiltrats · ± épanchement pleural · Pas de pneumonie sans infiltrat radio (sauf immunosuppression/très précoce)</span></div>
@@ -12556,7 +12614,7 @@ function calculatePHQ9() {
       </div>
 
       <div class="block clin">
-        <div class="block-title"><span class="tag">🔍 5.4 Signes & Symptômes</span></div>
+        <div class="block-title" id="pneu-4"><span class="tag">🔍 5.4 Signes & Symptômes</span></div>
         <table>
           <thead><tr><th>Type</th><th>Présentation typique</th></tr></thead>
           <tbody>
@@ -12573,7 +12631,7 @@ function calculatePHQ9() {
       </div>
 
       <div class="block def">
-        <div class="block-title"><span class="tag">📌 5.5 Mesures préventives</span></div>
+        <div class="block-title" id="pneu-5"><span class="tag">📌 5.5 Mesures préventives</span></div>
         <div class="criteria-list">
           <div class="criteria-item"><div class="criteria-num blue">✓</div><span><strong>Hygiène des mains</strong> (lavage fréquent, gel hydroalcoolique)</span></div>
           <div class="criteria-item"><div class="criteria-num blue">✓</div><span><strong>Cessation tabagique</strong> — le tabac altère la clairance mucociliaire et la réponse immunitaire</span></div>
@@ -12730,9 +12788,13 @@ function calculatePHQ9() {
         <div class="section-accent" style="background:#1e40af">🫁</div>
         <div class="section-title"><h1>Anatomie des Poumons & TFR</h1><div class="breadcrumb">Pneumologie <span class="breadcrumb-sep">·</span> Section 30b</div></div>
       </div>
-
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
+        <button onclick="document.getElementById('tfr-1').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📌 Anatomie</button>
+        <button onclick="document.getElementById('tfr-2').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📊 TFR — Interprétation</button>
+        <button onclick="document.getElementById('tfr-3').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔍 Mécanique ventilatoire</button>
+      </div>
       <div class="block def">
-        <div class="block-title"><span class="tag">📌 Anatomie — Lobes, Segments & Plèvres</span></div>
+        <div class="block-title" id="tfr-1"><span class="tag">📌 Anatomie — Lobes, Segments & Plèvres</span></div>
         <table style="font-size:12px;">
           <thead><tr><th>Structure</th><th>Détail</th></tr></thead>
           <tbody>
@@ -12748,7 +12810,7 @@ function calculatePHQ9() {
       </div>
 
       <div class="block para" style="border-left-color:var(--blue);">
-        <div class="block-title"><span class="tag">📊 TFR — Tests de Fonction Respiratoire (résumé interprétatif)</span></div>
+        <div class="block-title" id="tfr-2"><span class="tag">📊 TFR — Tests de Fonction Respiratoire (résumé interprétatif)</span></div>
         <table style="font-size:12px;">
           <thead><tr><th>Paramètre</th><th>Définition</th><th>Valeur normale</th><th>Signification si anormal</th></tr></thead>
           <tbody>
@@ -12765,7 +12827,7 @@ function calculatePHQ9() {
       </div>
 
       <div class="block clin">
-        <div class="block-title"><span class="tag">🔍 Mécanique Ventilatoire — Compliance & Résistance</span></div>
+        <div class="block-title" id="tfr-3"><span class="tag">🔍 Mécanique Ventilatoire — Compliance & Résistance</span></div>
         <table style="font-size:12px;">
           <thead><tr><th>Concept</th><th>Définition</th><th>↓ dans</th><th>↑ dans</th></tr></thead>
           <tbody>
@@ -12784,10 +12846,30 @@ function calculatePHQ9() {
         <div class="section-accent" style="background:#7f1d1d">🔴</div>
         <div class="section-title"><h1>Néoplasie Pulmonaire</h1><div class="breadcrumb">Pneumologie <span class="breadcrumb-sep">·</span> Section 31</div></div>
       </div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
+        <button onclick="document.getElementById('neo-1').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🧬 Carcinogenèse</button>
+        <button onclick="document.getElementById('neo-2').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📌 FdR</button>
+        <button onclick="document.getElementById('neo-3').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔍 Dépistage</button>
+        <button onclick="document.getElementById('neo-4').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📋 Lung-RADS</button>
+        <button onclick="document.getElementById('neo-5').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🧪 Nodule</button>
+        <button onclick="document.getElementById('neo-6').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔍 Investigation</button>
+        <button onclick="document.getElementById('neo-7').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🧬 Histologie</button>
+        <button onclick="document.getElementById('neo-8').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📊 TNM</button>
+        <button onclick="document.getElementById('neo-9').scrollIntoView({behavior:'smooth'})" style="background:#0a7a4e;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">💊 Traitement</button>
+        <button onclick="document.getElementById('neo-10').scrollIntoView({behavior:'smooth'})" style="background:#0a7a4e;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🏥 Tx détaillé</button>
+        <button onclick="document.getElementById('neo-11').scrollIntoView({behavior:'smooth'})" style="background:#c0392b;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">⚠️ Effets secondaires</button>
+        <button onclick="document.getElementById('neo-12').scrollIntoView({behavior:'smooth'})" style="background:#c0392b;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🚨 Complications</button>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:20px;">
+        <div style="flex:1;min-width:110px;background:#FEE2E2;border-radius:10px;padding:12px;text-align:center;"><div style="font-size:18px;font-weight:800;color:#c0392b;">#1</div><div style="font-size:11px;color:#555;margin-top:4px;">Cause de mortalité oncologique</div></div>
+        <div style="flex:1;min-width:110px;background:#FEF9C3;border-radius:10px;padding:12px;text-align:center;"><div style="font-size:18px;font-weight:800;color:#92400e;">80 %</div><div style="font-size:11px;color:#555;margin-top:4px;">CPNPC (non à petites cellules)</div></div>
+        <div style="flex:1;min-width:110px;background:#DCFCE7;border-radius:10px;padding:12px;text-align:center;"><div style="font-size:18px;font-weight:800;color:#0a7a4e;">50–55 ans</div><div style="font-size:11px;color:#555;margin-top:4px;">Début dépistage (PLCOm2012)</div></div>
+        <div style="flex:1;min-width:110px;background:#EEF2FF;border-radius:10px;padding:12px;text-align:center;"><div style="font-size:18px;font-weight:800;color:#1C3F8F;">20 %</div><div style="font-size:11px;color:#555;margin-top:4px;">Survie à 5 ans (tous stades)</div></div>
+      </div>
 
       <!-- Carcinogenèse -->
       <div class="block def">
-        <div class="block-title"><span class="tag">🧬 Carcinogenèse — Oncogènes & Gènes Suppresseurs de Tumeurs</span></div>
+        <div class="block-title" id="neo-1"><span class="tag">🧬 Carcinogenèse — Oncogènes & Gènes Suppresseurs de Tumeurs</span></div>
         <p class="content-text">Le cancer du poumon résulte d'une accumulation de mutations somatiques dans deux grandes classes de gènes régulateurs du cycle cellulaire, aboutissant à une prolifération incontrôlée et à l'immunoéchappement.</p>
         <table style="font-size:12px;margin-bottom:8px;">
           <thead><tr><th>Type</th><th>Gène / Voie</th><th>Mécanisme</th><th>Pertinence clinique (poumon)</th></tr></thead>
@@ -12809,7 +12891,7 @@ function calculatePHQ9() {
 
       <!-- 2.1 FDR -->
       <div class="block def">
-        <div class="block-title"><span class="tag">📌 2.1 Facteurs de Risque</span></div>
+        <div class="block-title" id="neo-2"><span class="tag">📌 2.1 Facteurs de Risque</span></div>
         <table style="font-size:12px;">
           <thead><tr><th>Facteur</th><th>Risque relatif / commentaire</th></tr></thead>
           <tbody>
@@ -12829,7 +12911,7 @@ function calculatePHQ9() {
 
       <!-- 2.2 Dépistage -->
       <div class="block para">
-        <div class="block-title"><span class="tag">🔍 2.2 Dépistage — TDM thoracique à faible dose (PLCOm2012 / Lung-RADS)</span></div>
+        <div class="block-title" id="neo-3"><span class="tag">🔍 2.2 Dépistage — TDM thoracique à faible dose (PLCOm2012 / Lung-RADS)</span></div>
         <table style="font-size:12px;">
           <thead><tr><th>Critère (RAMQ / INESSS QC)</th><th>Valeur</th></tr></thead>
           <tbody>
@@ -12845,7 +12927,7 @@ function calculatePHQ9() {
         </table>
         <div class="highlight cream" style="margin-top:6px;font-size:13px;"><strong>Exclusions :</strong> symptômes actuels suggestifs (→ investigation Dx, pas dépistage) · ATCD cancer pulmonaire · TDM &lt; 12 mois · espérance de vie &lt; 5 ans · refus d'un traitement curatif</div>
 
-        <div class="block-title" style="margin-top:14px;"><span class="tag">📋 Lung-RADS 2022 — Classification & conduite</span></div>
+        <div class="block-title" style="margin-top:14px;" id="neo-4"><span class="tag">📋 Lung-RADS 2022 — Classification & conduite</span></div>
         <table style="font-size:12px;margin-top:6px;">
           <thead><tr><th>Catégorie</th><th>Description</th><th>Nodule solide</th><th>Nodule part-solide</th><th>Verre dépoli</th><th>Risque malignité</th><th>Conduite</th></tr></thead>
           <tbody>
@@ -12864,7 +12946,7 @@ function calculatePHQ9() {
 
       <!-- 2.3 Nodule -->
       <div class="block para" style="border-left-color:var(--blue);">
-        <div class="block-title"><span class="tag">🧪 2.3 Nodule Pulmonaire — Types, Caractéristiques Radiologiques & Fleischner 2017</span></div>
+        <div class="block-title" id="neo-5"><span class="tag">🧪 2.3 Nodule Pulmonaire — Types, Caractéristiques Radiologiques & Fleischner 2017</span></div>
         <div class="accordion">
           <div class="accordion-item open">
             <div class="accordion-header">Types de nodules — Classification par densité
@@ -12944,7 +13026,7 @@ function calculatePHQ9() {
 
       <!-- 2.4 Investigation -->
       <div class="block clin">
-        <div class="block-title"><span class="tag">🔍 2.4 Investigation — Démarche diagnostique & Stadification</span></div>
+        <div class="block-title" id="neo-6"><span class="tag">🔍 2.4 Investigation — Démarche diagnostique & Stadification</span></div>
         <div class="accordion">
           <div class="accordion-item open">
             <div class="accordion-header">Présentation clinique — Symptômes locaux, extension & paranéoplasiques
@@ -13032,7 +13114,7 @@ function calculatePHQ9() {
 
       <!-- 2.5 Histologie -->
       <div class="block def">
-        <div class="block-title"><span class="tag">🧬 2.5 Histologie — Types Tumoraux</span></div>
+        <div class="block-title" id="neo-7"><span class="tag">🧬 2.5 Histologie — Types Tumoraux</span></div>
         <table style="font-size:12px;">
           <thead><tr><th></th><th>Adénocarcinome (~48 %)</th><th>Épidermoïde (~20 %)</th><th>CPPC (~12-15 %)</th><th>Grand cell (~3 %)</th></tr></thead>
           <tbody>
@@ -13048,7 +13130,7 @@ function calculatePHQ9() {
 
       <!-- 2.6 Stadification -->
       <div class="block flag">
-        <div class="block-title"><span class="tag">📊 2.6 Stadification TNM (9ᵉ éd. IASLC 2024) — CPNPC</span></div>
+        <div class="block-title" id="neo-8"><span class="tag">📊 2.6 Stadification TNM (9ᵉ éd. IASLC 2024) — CPNPC</span></div>
         <div class="accordion">
           <div class="accordion-item open">
             <div class="accordion-header">Descripteurs T — Tumeur primitive
@@ -13150,7 +13232,7 @@ function calculatePHQ9() {
 
       <!-- 2.7 Traitement + Algorithme -->
       <div class="block rx">
-        <div class="block-title"><span class="tag">💊 2.7 Traitement — Algorithme interactif CPNPC stade IV</span></div>
+        <div class="block-title" id="neo-9"><span class="tag">💊 2.7 Traitement — Algorithme interactif CPNPC stade IV</span></div>
         <p style="font-size:13px;color:var(--ink-lt);margin-bottom:10px;">Sélectionnez les caractéristiques du patient pour obtenir la recommandation de traitement.</p>
 
         <style>
@@ -13247,7 +13329,7 @@ function calculatePHQ9() {
 
       <!-- 2.7b Traitement détaillé -->
       <div class="block rx">
-        <div class="block-title"><span class="tag">🏥 2.7b Traitement — Approches Thérapeutiques Détaillées</span></div>
+        <div class="block-title" id="neo-10"><span class="tag">🏥 2.7b Traitement — Approches Thérapeutiques Détaillées</span></div>
         <div class="accordion">
           <div class="accordion-item open">
             <div class="accordion-header">Thérapies locales — Chirurgie
@@ -13341,7 +13423,7 @@ function calculatePHQ9() {
 
       <!-- 2.7c Effets secondaires des thérapies -->
       <div class="block para" style="border-left-color:var(--red);">
-        <div class="block-title"><span class="tag">⚠️ 2.7c Effets Secondaires des Thérapies</span></div>
+        <div class="block-title" id="neo-11"><span class="tag">⚠️ 2.7c Effets Secondaires des Thérapies</span></div>
         <div class="accordion">
           <div class="accordion-item open">
             <div class="accordion-header">Chimiothérapie — Toxicités par agent
@@ -13420,7 +13502,7 @@ function calculatePHQ9() {
 
       <!-- 2.8 Complications -->
       <div class="block flag">
-        <div class="block-title"><span class="tag">🚨 2.8 Complications — Syndromes Paranéoplasiques & Urgences</span></div>
+        <div class="block-title" id="neo-12"><span class="tag">🚨 2.8 Complications — Syndromes Paranéoplasiques & Urgences</span></div>
 
         <style>
           .para-neo-tool { margin-top:8px; }
@@ -13602,7 +13684,7 @@ function calculatePHQ9() {
 
       <!-- 3.1 Biologie -->
       <div class="block def">
-        <div class="block-title"><span class="tag">🧬 3.1 Biologie de l'Amiante — Types & Mécanisme</span></div>
+        <div class="block-title" id="am-1"><span class="tag">🧬 3.1 Biologie de l'Amiante — Types & Mécanisme</span></div>
         <table style="font-size:12px;">
           <thead><tr><th>Famille</th><th>Variété</th><th>Couleur</th><th>Caractéristiques</th></tr></thead>
           <tbody>
@@ -13614,7 +13696,7 @@ function calculatePHQ9() {
             <tr><td>Actinolite</td><td>Gris-vert</td><td>Rare · contaminant</td></tr>
           </tbody>
         </table>
-        <div class="block-title" style="margin-top:12px;"><span class="tag">⚗️ Mécanisme Physiopathologique</span></div>
+        <div class="block-title" style="margin-top:12px;" id="am-2"><span class="tag">⚗️ Mécanisme Physiopathologique</span></div>
         <div class="accordion">
           <div class="accordion-item open">
             <div class="accordion-header">Cascade inflammatoire & fibreuse
@@ -13631,7 +13713,7 @@ function calculatePHQ9() {
 
       <!-- 3.2 Signes & Symptômes -->
       <div class="block clin">
-        <div class="block-title"><span class="tag">🔍 3.2 Maladies Liées à l'Amiante</span></div>
+        <div class="block-title" id="am-3"><span class="tag">🔍 3.2 Maladies Liées à l'Amiante</span></div>
         <div class="accordion">
           <div class="accordion-item open">
             <div class="accordion-header">Asbestose — Fibrose pulmonaire diffuse
@@ -13682,7 +13764,7 @@ function calculatePHQ9() {
 
       <!-- Anamnèse professionnelle -->
       <div class="block clin">
-        <div class="block-title"><span class="tag">🩺 Anamnèse Professionnelle — Questions Clés (Exposition Amiante & Maladies Prof.)</span></div>
+        <div class="block-title" id="am-4"><span class="tag">🩺 Anamnèse Professionnelle — Questions Clés (Exposition Amiante & Maladies Prof.)</span></div>
         <p class="content-text">L'anamnèse professionnelle est souvent négligée en pratique courante. Pour toute maladie pulmonaire interstitielle, obstruction ou épanchement pleural, une exposition professionnelle doit être systématiquement recherchée.</p>
         <table style="font-size:12px;margin-bottom:8px;">
           <thead><tr><th>Domaine</th><th>Questions à poser</th><th>Importance clinique</th></tr></thead>
@@ -13698,9 +13780,16 @@ function calculatePHQ9() {
         </table>
         <div class="key-fact blue"><strong>Outil mnémotechnique « WHACS » (Work History And Chemical Survey) :</strong> W = Work history · H = Hazard · A = Agent spécifique · C = Controls (EPI) · S = Symptoms en relation avec le travail</div>
       </div>
-
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
+        <button onclick="document.getElementById('am-1').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🧬 Biologie</button>
+        <button onclick="document.getElementById('am-2').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">⚗️ Mécanisme</button>
+        <button onclick="document.getElementById('am-3').scrollIntoView({behavior:'smooth'})" style="background:#c0392b;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔍 Maladies</button>
+        <button onclick="document.getElementById('am-4').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🩺 Anamnèse prof.</button>
+        <button onclick="document.getElementById('am-5').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📊 Autres maladies prof.</button>
+        <button onclick="document.getElementById('am-6').scrollIntoView({behavior:'smooth'})" style="background:#7b3fa0;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📋 CNESST</button>
+      </div>
       <div class="block para">
-        <div class="block-title"><span class="tag">📊 Autres Maladies Professionnelles Pulmonaires</span></div>
+        <div class="block-title" id="am-5"><span class="tag">📊 Autres Maladies Professionnelles Pulmonaires</span></div>
         <table style="font-size:12px;">
           <thead><tr><th>Maladie</th><th>Agent causal</th><th>Mécanisme</th><th>TFR / Imagerie</th><th>Particulier</th></tr></thead>
           <tbody>
@@ -13716,7 +13805,7 @@ function calculatePHQ9() {
 
       <!-- Déclaration CNESST -->
       <div class="block flag">
-        <div class="block-title"><span class="tag">📋 Déclaration CNESST — Maladie Professionnelle au Québec</span></div>
+        <div class="block-title" id="am-6"><span class="tag">📋 Déclaration CNESST — Maladie Professionnelle au Québec</span></div>
         <p class="content-text">La <strong>Commission des normes, de l'équité, de la santé et de la sécurité du travail (CNESST)</strong> est l'organisme québécois responsable de l'indemnisation des lésions professionnelles, incluant les maladies pulmonaires causées par le travail.</p>
         <div class="accordion">
           <div class="accordion-item open">
@@ -19195,9 +19284,19 @@ function calculatePHQ9() {
         <div class="section-accent" style="background:#7f1d1d">🫁</div>
         <div class="section-title"><h1>Épanchement Pleural</h1><div class="breadcrumb">Oncologie · Pneumologie <span class="breadcrumb-sep">·</span> Section 49</div></div>
       </div>
-
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
+        <button onclick="document.getElementById('ep-1').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📌 Critères Light</button>
+        <button onclick="document.getElementById('ep-2').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔬 Analyse liquide</button>
+        <button onclick="document.getElementById('ep-3').scrollIntoView({behavior:'smooth'})" style="background:#0a7a4e;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">💊 Traitement</button>
+        <button onclick="document.getElementById('ep-4').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📊 Taille & Thoracocentèse</button>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:20px;">
+        <div style="flex:1;min-width:110px;background:#FEE2E2;border-radius:10px;padding:12px;text-align:center;"><div style="font-size:16px;font-weight:800;color:#c0392b;">Prot liq/sérum &gt; 0,5</div><div style="font-size:11px;color:#555;margin-top:4px;">Critère Light #1 — exsudat</div></div>
+        <div style="flex:1;min-width:110px;background:#FEF9C3;border-radius:10px;padding:12px;text-align:center;"><div style="font-size:16px;font-weight:800;color:#92400e;">LDH liq/sérum &gt; 0,6</div><div style="font-size:11px;color:#555;margin-top:4px;">Critère Light #2 — exsudat</div></div>
+        <div style="flex:1;min-width:110px;background:#DCFCE7;border-radius:10px;padding:12px;text-align:center;"><div style="font-size:16px;font-weight:800;color:#0a7a4e;">&gt; 10 mm</div><div style="font-size:11px;color:#555;margin-top:4px;">Seuil thoracocentèse (Rx couché)</div></div>
+      </div>
       <div class="block def">
-        <div class="block-title"><span class="tag">📌 Critères de Light — Exsudat vs Transsudat</span></div>
+        <div class="block-title" id="ep-1"><span class="tag">📌 Critères de Light — Exsudat vs Transsudat</span></div>
         <div class="key-fact blue">Critères de Light (≥ 1 = Exsudat) — Sensibilité 98 %, Spécificité 83 %</div>
         <table style="margin-top:8px;">
           <thead><tr><th>Critère</th><th>Exsudat (seuil)</th></tr></thead>
@@ -19211,7 +19310,7 @@ function calculatePHQ9() {
       </div>
 
       <div class="block clin">
-        <div class="block-title"><span class="tag">🔬 Analyse du liquide pleural</span></div>
+        <div class="block-title" id="ep-2"><span class="tag">🔬 Analyse du liquide pleural</span></div>
         <table>
           <thead><tr><th>Test</th><th>Résultat</th><th>Interprétation</th></tr></thead>
           <tbody>
@@ -19228,7 +19327,7 @@ function calculatePHQ9() {
       </div>
 
       <div class="block rx">
-        <div class="block-title"><span class="tag">💊 Traitement selon étiologie</span></div>
+        <div class="block-title" id="ep-3"><span class="tag">💊 Traitement selon étiologie</span></div>
         <div class="accordion">
           <div class="accordion-item open">
             <div class="accordion-header">Para-pneumonique / Empyème
@@ -19265,7 +19364,7 @@ function calculatePHQ9() {
       </div>
 
       <div class="block para">
-        <div class="block-title"><span class="tag">📊 Taille & Thoracocentèse</span></div>
+        <div class="block-title" id="ep-4"><span class="tag">📊 Taille & Thoracocentèse</span></div>
         <div class="stat-row">
           <div class="stat-card blue"><div class="stat-num">Petite</div><div class="stat-label">&lt; 1/3 hémi-thorax · Symptomatique? → Drainer</div></div>
           <div class="stat-card yellow"><div class="stat-num">&gt; 1500 mL</div><div class="stat-label">Limite drainage unique (œdème de ré-expansion)</div></div>
