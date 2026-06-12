@@ -1038,6 +1038,7 @@
         <div class="nav-item" onclick="showSection('pneumo-aco')">29b. ACO</div>
         <div class="nav-item" onclick="showSection('pneumo-pneumonie')">29c. Pneumonie</div>
         <div class="nav-item" onclick="showSection('pneumo-autres-patho')">29d. Autres Pathologies</div>
+        <div class="nav-item" onclick="showSection('epanchement-pleural')">29e. Épanchement Pleural</div>
         <div class="nav-item" onclick="showSection('anatomie-tfr')">30b. Anatomie & TFR</div>
         <div class="nav-item" onclick="showSection('neo-poumon')">31. Néo. Poumon</div>
         <div class="nav-item" onclick="showSection('amiante')">32. Amiante & Maladies Prof.</div>
@@ -19804,87 +19805,6 @@ function calculatePHQ9() {
           <div class="flag-item"><span class="fi-icon">🖤</span><span><strong>Acanthosis nigricans :</strong> Insulin-like · Cancer gastrique · Ovaire · Poumon → Axilles · Cou · Plis · Papillomatose</span></div>
           <div class="flag-item"><span class="fi-icon">👋</span><span><strong>Hippocratisme digital :</strong> Poumon · Carcinome broncho-alvéolaire · Mésothéliome (mais aussi non-malin : MPOC, cardiopathie cyanogène, cirrhose)</span></div>
           <div class="flag-item"><span class="fi-icon">🔴</span><span><strong>Érythème nécrolytique migrateur :</strong> Glucagonome (pancréas alpha-cellules) → rash migrateur + diabète + glossite</span></div>
-        </div>
-      </div>
-
-      <div class="block def">
-        <div class="block-title" id="ep-1"><span class="tag">📌 Critères de Light — Exsudat vs Transsudat</span></div>
-        <div class="key-fact blue">Critères de Light (≥ 1 = Exsudat) — Sensibilité 98 %, Spécificité 83 %</div>
-        <table style="margin-top:8px;">
-          <thead><tr><th>Critère</th><th>Exsudat (seuil)</th></tr></thead>
-          <tbody>
-            <tr><td>Protéines pleurales / Protéines sériques</td><td>&gt; 0,5</td></tr>
-            <tr><td>LDH pleurales / LDH sériques</td><td>&gt; 0,6</td></tr>
-            <tr><td>LDH pleurales</td><td>&gt; 2/3 de la limite supérieure normale sérique</td></tr>
-          </tbody>
-        </table>
-        <div class="highlight cream" style="margin-top:8px;font-size:13px;"><strong>Transsudat :</strong> IC · Cirrhose (hydrothorax hépatique) · Syndrome néphrotique · Atélectasie · Hypothyroïdie (myxœdème)<br><strong>Exsudat :</strong> Pneumonie/Para-pneumonique · Malin · EP (embolie) · Pleurésie tuberculeuse · Mésothéliome · Chylothorax</div>
-      </div>
-
-      <div class="block clin">
-        <div class="block-title" id="ep-2"><span class="tag">🔬 Analyse du liquide pleural</span></div>
-        <table>
-          <thead><tr><th>Test</th><th>Résultat</th><th>Interprétation</th></tr></thead>
-          <tbody>
-            <tr><td>pH</td><td>&lt; 7,2</td><td>Exsudat compliqué · Pleurésie purulente → Drain</td></tr>
-            <tr><td>Glucose</td><td>&lt; 3,3 mmol/L (&lt; 60 mg/dL)</td><td>PR · TBC · Malin · Empyème</td></tr>
-            <tr><td>LDH</td><td>Très élevé</td><td>Empyème · Malin · Haemothorax</td></tr>
-            <tr><td>GB + cytologie</td><td>PNN dominants</td><td>Para-pneumonique · Parapneumonique</td></tr>
-            <tr><td>GB + cytologie</td><td>Lymphocytes dominants</td><td>TBC · Malin · Sarcoïdose · Viral</td></tr>
-            <tr><td>Cytologie</td><td>Cellules malignes</td><td>Épanchement malin · Mesotheliome</td></tr>
-            <tr><td>Triglycérides</td><td>&gt; 1,25 mmol/L</td><td>Chylothorax (canal thoracique lésé)</td></tr>
-            <tr><td>ADA (adénosine désaminase)</td><td>&gt; 40 U/L</td><td>Tuberculose pleurale</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="block rx">
-        <div class="block-title" id="ep-3"><span class="tag">💊 Traitement selon étiologie</span></div>
-        <div class="accordion">
-          <div class="accordion-item open">
-            <div class="accordion-header">Para-pneumonique / Empyème
-              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-            </div>
-            <div class="accordion-body">
-              Simple (pH &gt; 7,2 · Glucose N · Non-cloisonné) → ATB seul (traiter la pneumonie)<br>
-              Compliqué (pH &lt; 7,2 · Glucose &lt; 3,3 · Bactériurie) → <span class="drug-badge line1">Drain thoracique + ATB</span><br>
-              <strong>Empyème (pus franc) :</strong> Drain + ATB IV + fibrinolytiques intrapleuraux (DNase + tPA) si loculations
-            </div>
-          </div>
-          <div class="accordion-item">
-            <div class="accordion-header">Malin (MPE — Malignant Pleural Effusion)
-              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-            </div>
-            <div class="accordion-body">
-              Causes : Poumon (35 %) · Sein (25 %) · Lymphome (10 %) · Mésothéliome · Ovaire<br>
-              Diagnostic : Cytologie + biopsie pleurale (si cytologie négative mais forte suspicion)<br>
-              <strong>Palliateur :</strong> <span class="drug-badge line1">Pleurodèse (talc)</span> si poumon ré-expansible · Cathéter pleural tunnelisé (PleurX) si poumon piégé ou patient ambulatoire<br>
-              Survie médiane MPE = 3–12 mois selon cancer primaire
-            </div>
-          </div>
-          <div class="accordion-item">
-            <div class="accordion-header">Transsudat — Traitement cause
-              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-            </div>
-            <div class="accordion-body">
-              IC → Diurétiques · Optimiser IC<br>
-              Cirrhose → TIPS si hydrothorax réfractaire · Thoracocentèse répétée<br>
-              Chylothorax post-chirurgie → Diète triglycérides chaîne moyenne · Octréotide · Ligaturer canal thoracique si réfractaire
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="block para">
-        <div class="block-title" id="ep-4"><span class="tag">📊 Taille & Thoracocentèse</span></div>
-        <div class="stat-row">
-          <div class="stat-card blue"><div class="stat-num">Petite</div><div class="stat-label">&lt; 1/3 hémi-thorax · Symptomatique? → Drainer</div></div>
-          <div class="stat-card yellow"><div class="stat-num">&gt; 1500 mL</div><div class="stat-label">Limite drainage unique (œdème de ré-expansion)</div></div>
-          <div class="stat-card red"><div class="stat-num">Hémothorax</div><div class="stat-label">Hématocrite &gt; 50 % sérum → Drain thoracique</div></div>
-        </div>
-        <div class="flag-list" style="margin-top:8px;">
-          <div class="flag-item"><span class="fi-icon">💉</span><span>Thoracocentèse : Position assise penché avant · Écho-guidée recommandée · Supra-bord supérieur côte (nerf sous côte en-dessous)</span></div>
-          <div class="flag-item"><span class="fi-icon">⚠️</span><span>Complications : Pneumothorax (1–6 %) · Hémothorax · Œdème ré-expansion si &gt; 1,5L ou poumon piégé</span></div>
         </div>
       </div>
     </div>
