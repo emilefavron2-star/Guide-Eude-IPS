@@ -1171,8 +1171,6 @@
         <div class="nav-item" onclick="showSection('urgences-onco')">53. Urgences oncologiques</div>
         <div class="nav-item" onclick="showSection('epanchement-pleural')">54. Épanchement pleural</div>
         <div class="nav-item" onclick="showSection('toxicites-onco')">55. Effets secondaires thérapies</div>
-        <div class="nav-item" onclick="showSection('onco-thoracique')">60. Onco. Thoracique — Cancer du Poumon</div>
-        <div class="nav-item" onclick="showSection('onco-gyneco')">61. Onco. Gynécologique</div>
         <div class="nav-item" onclick="showSection('amm')">62. AMM — Aide Médicale à Mourir</div>
       </div>
     </div>
@@ -20118,68 +20116,6 @@ function calculatePHQ9() {
       </div>
     </div>
 
-    <div class="section" id="sec-onco-thoracique">
-      <div class="section-header">
-        <div class="section-accent" style="background:#dc2626">🎗️</div>
-        <div class="section-title"><h1>Onco. Thoracique — Cancer du Poumon</h1><div class="breadcrumb">Oncologie <span class="breadcrumb-sep">·</span> Section 60</div></div>
-      </div>
-      <div class="block def">
-        <div class="key-fact blue">💡 Le contenu complet sur le cancer du poumon se trouve dans la section <strong>Pneumologie → 31. Néo. Poumon</strong> qui couvre : types histologiques · nodule pulmonaire · investigation · stadification TNM · traitements · complications · effets secondaires des thérapies.</div>
-        <p class="content-text" style="margin-top:12px;">Accès rapide :</p>
-        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;">
-          <button onclick="showSection('neo-poumon')" style="background:var(--blue);color:#fff;border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-weight:600;font-size:13px;">→ Néo. Poumon (Pneumologie)</button>
-          <button onclick="showSection('oncogenes')" style="background:var(--ink2);color:#fff;border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-weight:600;font-size:13px;">→ Oncogènes & Carcinogenèse</button>
-          <button onclick="showSection('toxicites-onco')" style="background:var(--ink2);color:#fff;border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-weight:600;font-size:13px;">→ Toxicités des thérapies</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="section" id="sec-onco-gyneco">
-      <div class="section-header">
-        <div class="section-accent" style="background:#9d174d">🎗️</div>
-        <div class="section-title"><h1>Onco. Gynécologique</h1><div class="breadcrumb">Oncologie <span class="breadcrumb-sep">·</span> Section 61</div></div>
-      </div>
-      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
-        <button onclick="document.getElementById('og-1').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📋 Cancer Ovaire</button>
-        <button onclick="document.getElementById('og-2').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📋 Cancer Sein</button>
-      </div>
-      <div class="block def">
-        <div class="key-fact blue">💡 Les sections de gynécologie oncologique sont détaillées dans la spécialité <strong>Gynécologie</strong> :</div>
-        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;">
-          <button onclick="showSection('cancer-col')" style="background:#9d174d;color:#fff;border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-weight:600;font-size:13px;">Cancer du Col (VPH)</button>
-          <button onclick="showSection('cancer-endo')" style="background:#9d174d;color:#fff;border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-weight:600;font-size:13px;">Cancer de l'Endomètre</button>
-          <button onclick="showSection('survivance')" style="background:#9d174d;color:#fff;border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-weight:600;font-size:13px;">Survivance au Cancer</button>
-        </div>
-      </div>
-      <div class="block para">
-        <div class="block-title" id="og-1"><span class="tag">📋 Cancer de l'Ovaire — Rappel</span></div>
-        <table>
-          <thead><tr><th>Aspect</th><th>Détails</th></tr></thead>
-          <tbody>
-            <tr><td><strong>Épidémio</strong></td><td>3e cancer gynéco · Diagnostic souvent tardif (Stade III–IV : 70 % des cas) · Médiane survie stade III : 3–5 ans</td></tr>
-            <tr><td><strong>Histologie</strong></td><td>Carcinome épithélial (90 %) : séreux de haut grade ++ · Germinaux · Stromaux (granuloseux)</td></tr>
-            <tr><td><strong>Facteurs de risque</strong></td><td>BRCA1/2 · HNPCC · Nulliparité · THS post-ménopause · Endométriose</td></tr>
-            <tr><td><strong>Facteurs protecteurs</strong></td><td>COC · Grossesse · Allaitement · Ligature de trompes · Salpingectomie</td></tr>
-            <tr><td><strong>Marqueurs</strong></td><td>CA-125 (suivi, pas dépistage) · HE4 · ROMA index · AFP/βhCG (germinaux)</td></tr>
-            <tr><td><strong>Traitement</strong></td><td>Chirurgie de cytoréduction + carboplatine/paclitaxel · Olaparib maintenance (BRCA+)</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="block para">
-        <div class="block-title" id="og-2"><span class="tag">📋 Cancer du Sein — Rappel IPS</span></div>
-        <table>
-          <thead><tr><th>Aspect</th><th>Détails</th></tr></thead>
-          <tbody>
-            <tr><td><strong>Dépistage</strong></td><td>Mammographie : 50–74 ans q2 ans (Programme québécois) · 40–49 ans : décision partagée · BRCA : IRM annuel dès 25–30 ans</td></tr>
-            <tr><td><strong>Types</strong></td><td>RE+/RP+ (70 %) · HER2+ (15–20 %) · Triple négatif (15 %)</td></tr>
-            <tr><td><strong>Traitement RE+</strong></td><td>Tamoxifène (pré-ménopause) · Inhibiteurs aromatase (post-ménopause) ± CDK4/6i</td></tr>
-            <tr><td><strong>Traitement HER2+</strong></td><td>Trastuzumab ± pertuzumab + chimiothérapie</td></tr>
-            <tr><td><strong>Effets sur IPS</strong></td><td>Atrophie vaginale (inhibiteurs aromatase) · Bouffées de chaleur · Ostéoporose · Arthralgies</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-
     <div class="section" id="sec-amm">
       <div class="section-header">
         <div class="section-accent" style="background:#374151">🎗️</div>
@@ -21541,8 +21477,6 @@ const SEARCH_INDEX = [
   { id:'urgences-onco',       title:'Urgences Oncologiques',          specialty:'Oncologie',       keywords:['veine cave supérieure','compression médullaire','hypercalcémie maligne','tamponnade','pthрp','rankl'] },
   { id:'epanchement-pleural', title:'Épanchement Pleural',            specialty:'Oncologie',       keywords:['épanchement pleural','transsudat','exsudat','critères de light','thoracentèse','pleurodèse'] },
   { id:'toxicites-onco',      title:'Effets Secondaires Thérapies',   specialty:'Oncologie',       keywords:['neutropénie fébrile','immunothérapie','irae','ctcae','pd-1','pd-l1','chimio','cipn'] },
-  { id:'onco-thoracique',     title:'Onco. Thoracique — Cancer du Poumon', specialty:'Oncologie',  keywords:['cancer du poumon','cpnpc','cppc','adénocarcinome','épidermoïde','pancoast','horner','svcs','tnm','fleischner','lung-rads','plcom2012','dépistage pulmonaire','nodule pulmonaire','egfr','alk'] },
-  { id:'onco-gyneco',         title:'Onco. Gynécologique',            specialty:'Oncologie',       keywords:['cancer endomètre','cancer ovaire','cancer col utérin','hpv','ca-125','frottis','pap test','onco gynéco'] },
   { id:'amm',                 title:'AMM — Aide Médicale à Mourir',  specialty:'Soins de fin de vie', keywords:['amm','aide médicale à mourir','mnrp','non-mnrp','fin de vie','soins palliatifs','critères admissibilité','trajectoires amm','loi c-7','ips amm','demande anticipée','objection conscience'] },
   { id:'sua',                 title:'SUA — Saignements Utérins Anormaux', specialty:'Gynécologie',   keywords:['sua','saignement utérin anormal','ménorragie','métrorragie','palm-coein','polype','adénomyose','léiomyome','fibrome','biopsie endomètre','diu mirena','acide tranexamique','analogues gnrh','leuprolide','anovulation'] },
   { id:'menopause',           title:'Ménopause, SGUM & Ostéoporose', specialty:'Gynécologie',        keywords:['ménopause','périménopause','postménopause','bouffées de chaleur','symptômes vasomoteurs','sgum','sécheresse vaginale','dyspareunie','hrt','htr','hormonothérapie','œstrogène','progestatif','fenêtre opportunité','ostéoporose','t-score','frax','caroc','bisphosphonate','dénosumab','clonidine','venlafaxine','paroxétine','gabapentine','inhibine b','fsh','amh'] },
