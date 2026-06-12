@@ -1319,6 +1319,11 @@
           <div class="home-card-body">
             <div class="home-card-name">Calculateurs & Outils</div>
             <div class="home-card-count">Scores cliniques</div>
+        <div class="home-card" onclick="showSection('quiz');openGroup('grp-quiz')">
+          <div class="home-card-icon">🧠</div>
+          <div class="home-card-name">Quiz Interactif</div>
+          <div class="home-card-count">105 questions</div>
+        </div>
           </div>
         </div>
       </div>
@@ -1501,7 +1506,18 @@
               <li class="calc-item" data-cat="onco" data-color="red" onclick="showCalc('mascc')"><span class="calc-icon">🌡️</span>Score MASCC <small>Neutropénie fébrile — risque faible de complications sérieuses</small></li>
               <li class="calc-item" data-cat="onco" data-color="red" onclick="showCalc('cisne')"><span class="calc-icon">🧬</span>Score CISNE <small>Neutropénie fébrile stable — identifier patients faible risque</small></li>
             </ul>
-          </nav>
+          
+    <div class="specialty-group" id="grp-quiz" style="border-top:2px solid #7c3aed;margin-top:8px;">
+      <div class="specialty-header" onclick="toggleGroup('grp-quiz')" style="background:linear-gradient(135deg,#7c3aed22,#5b21b622);">
+        <span>🧠</span>
+        <span>Quiz Interactif</span>
+        <span class="toggle-icon">▼</span>
+      </div>
+      <div class="specialty-items">
+        <div class="nav-item" onclick="showSection('quiz')">Quiz — 105 questions</div>
+      </div>
+    </div>
+</nav>
 
           <div class="calc-modal-overlay" id="calc-modal-overlay" onclick="if(event.target===this)closeCalcModal()">
           <div class="calc-display">
@@ -20861,6 +20877,7 @@ function calculatePHQ9() {
               <table style="font-size:12px;">
                 <thead><tr><th>Caractéristique</th><th>Type 1 (~80-85 %)</th><th>Type 2 (~15-20 %)</th></tr></thead>
                 <tbody>
+                  <tr><td><strong>Dépendance hormonale</strong></td><td>⭐ <strong>Œstrogène-dépendant</strong></td><td>Œstrogène-indépendant</td></tr>
                   <tr><td><strong>Mécanisme</strong></td><td>Œstrogènes → hyperplasie → cancer</td><td>De novo, endomètre atrophique, p53 muté</td></tr>
                   <tr><td><strong>Histologie</strong></td><td>Adénocarcinome endométrioïde (grade 1-2)</td><td>Séreux · cellules claires · carcinosarcome</td></tr>
                   <tr><td><strong>Population</strong></td><td>Périménopausique, obèse</td><td>Postménopausique, mince</td></tr>
@@ -20890,9 +20907,9 @@ function calculatePHQ9() {
               <table style="font-size:12px;">
                 <tbody>
                   <tr><td><strong>Stade I</strong></td><td>Confiné au corps utérin · IA : endomètre seul ou &lt; ½ myomètre · IB : ≥ ½ myomètre · IC : type agressif limité au polype/endomètre</td></tr>
-                  <tr><td><strong>Stade II</strong></td><td>IIA : stroma cervical · IIB : LVSI substantielle · IIC : type agressif avec invasion myométriale</td></tr>
-                  <tr><td><strong>Stade III</strong></td><td>IIIA : séreuse/annexes · IIIB : vagin/paramètres · IIIC : ganglions pelviens (1) ou para-aortiques (2)</td></tr>
-                  <tr><td><span class="drug-badge ci">Stade IV</span></td><td>IVA : muqueuse vésicale/intestinale · IVB : péritoine · IVC : métastases à distance</td></tr>
+                  <tr><td><strong>Stade II</strong></td><td><em>Invasion du stroma cervical (majorité col utérus) OU LVSI substantielle OU type agressif avec invasion myométriale</em><br><small>IIA : stroma cervical · IIB : LVSI substantielle · IIC : type agressif avec invasion myométriale</small></td></tr>
+                  <tr><td><strong>Stade III</strong></td><td><em>Extension locale et/ou régionale</em><br><small>IIIA : séreuse/annexes · IIIB : vagin/paramètres · IIIC : ganglions pelviens (1) ou para-aortiques (2)</small></td></tr>
+                  <tr><td><span class="drug-badge ci">Stade IV</span></td><td><em>Atteinte non gynécologique à distance de l'utérus</em><br><small>IVA : muqueuse vésicale/intestinale · IVB : péritoine · IVC : métastases à distance</small></td></tr>
                 </tbody>
               </table>
             </div>
@@ -22013,5 +22030,320 @@ mainScrollEl.addEventListener('scroll', () => {
 }, { passive: true });
 backTopBtn.addEventListener('click', () => mainScrollEl.scrollTo({ top: 0, behavior: 'smooth' }));
 </script>
+
+    <div class="section" id="sec-quiz">
+      <div class="section-header" style="background:linear-gradient(135deg,#7c3aed,#5b21b6);">
+        <div class="section-title">🧠 Quiz Interactif</div>
+        <div class="section-subtitle">QCM par objectif — Gynécologie/Oncologie, Oncologie thoracique, Hépato-biliaire</div>
+      </div>
+
+      <div style="padding:20px 24px 0;">
+        <!-- Tab bar specialty -->
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px;" id="quiz-tabs">
+          <button onclick="setQuizSp('gyneco')" id="qtab-gyneco" class="quiz-tab-btn quiz-tab-active">🌸 Gynéco/Oncologie <span id="qbadge-gyneco" class="quiz-badge"></span></button>
+          <button onclick="setQuizSp('onco')" id="qtab-onco" class="quiz-tab-btn">🫁 Oncologie Thoracique <span id="qbadge-onco" class="quiz-badge"></span></button>
+          <button onclick="setQuizSp('hepato')" id="qtab-hepato" class="quiz-tab-btn">⚗️ Hépato-biliaire <span id="qbadge-hepato" class="quiz-badge"></span></button>
+        </div>
+
+        <!-- Progress bar -->
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+          <div style="flex:1;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden;">
+            <div id="quiz-progress-bar" style="height:100%;background:linear-gradient(90deg,#7c3aed,#a855f7);border-radius:4px;transition:width .3s;width:0%"></div>
+          </div>
+          <span id="quiz-progress-text" style="font-size:13px;color:#6b7280;white-space:nowrap;font-weight:600;">Q 1 / 1</span>
+          <span id="quiz-score-inline" style="font-size:13px;color:#059669;white-space:nowrap;font-weight:600;"></span>
+        </div>
+
+        <!-- Objective label -->
+        <div id="quiz-obj-label" style="font-size:12px;font-weight:700;color:#7c3aed;text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px;padding:4px 10px;background:#f3f0ff;display:inline-block;border-radius:4px;"></div>
+
+        <!-- Question card -->
+        <div id="quiz-question-card" style="background:#fff;border:2px solid #e5e7eb;border-radius:12px;padding:22px 24px;margin-bottom:16px;box-shadow:0 2px 8px rgba(0,0,0,.06);">
+          <p id="quiz-q-text" style="font-size:16px;font-weight:600;color:#111827;margin:0 0 20px;line-height:1.5;"></p>
+          <div id="quiz-choices" style="display:flex;flex-direction:column;gap:10px;"></div>
+        </div>
+
+        <!-- Feedback -->
+        <div id="quiz-feedback" style="display:none;border-radius:10px;padding:16px 18px;margin-bottom:16px;font-size:14px;line-height:1.6;"></div>
+
+        <!-- Navigation -->
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px;">
+          <button onclick="quizPrev()" id="quiz-btn-prev" style="padding:10px 20px;border-radius:8px;border:2px solid #7c3aed;background:#fff;color:#7c3aed;font-weight:700;cursor:pointer;font-size:14px;">◀ Précédent</button>
+          <button onclick="quizNext()" id="quiz-btn-next" style="padding:10px 20px;border-radius:8px;border:none;background:#7c3aed;color:#fff;font-weight:700;cursor:pointer;font-size:14px;">Suivant ▶</button>
+          <button onclick="quizReset()" style="padding:10px 20px;border-radius:8px;border:2px solid #dc2626;background:#fff;color:#dc2626;font-weight:700;cursor:pointer;font-size:14px;margin-left:auto;">↺ Réinitialiser</button>
+        </div>
+
+        <!-- Score summary (end of quiz) -->
+        <div id="quiz-summary" style="display:none;text-align:center;padding:30px;background:linear-gradient(135deg,#f3f0ff,#ede9fe);border-radius:16px;margin-bottom:28px;">
+          <div style="font-size:48px;margin-bottom:10px;">🎓</div>
+          <div id="quiz-summary-text" style="font-size:22px;font-weight:700;color:#5b21b6;margin-bottom:6px;"></div>
+          <div id="quiz-summary-sub" style="font-size:15px;color:#6b7280;"></div>
+          <button onclick="quizReset()" style="margin-top:18px;padding:12px 28px;border-radius:8px;border:none;background:#7c3aed;color:#fff;font-weight:700;cursor:pointer;font-size:15px;">Recommencer</button>
+        </div>
+      </div>
+
+      <!-- Inline style for quiz -->
+      <style>
+        .quiz-tab-btn{padding:9px 16px;border-radius:20px;border:2px solid #d1d5db;background:#fff;color:#6b7280;font-weight:600;cursor:pointer;font-size:13px;transition:all .2s;}
+        .quiz-tab-active{border-color:#7c3aed!important;background:#7c3aed!important;color:#fff!important;}
+        .quiz-choice-btn{padding:11px 16px;border-radius:8px;border:2px solid #e5e7eb;background:#f9fafb;color:#374151;font-size:14px;text-align:left;cursor:pointer;transition:all .15s;line-height:1.4;}
+        .quiz-choice-btn:hover{border-color:#7c3aed;background:#f3f0ff;}
+        .quiz-choice-correct{border-color:#059669!important;background:#d1fae5!important;color:#065f46!important;font-weight:700!important;}
+        .quiz-choice-wrong{border-color:#dc2626!important;background:#fee2e2!important;color:#991b1b!important;}
+        .quiz-choice-reveal{border-color:#059669!important;background:#d1fae5!important;color:#065f46!important;font-weight:700!important;}
+        .quiz-choice-disabled{cursor:default!important;}
+        .quiz-badge{display:inline-block;background:rgba(255,255,255,.25);border-radius:10px;padding:1px 7px;font-size:11px;margin-left:4px;}
+        .quiz-tab-active .quiz-badge{background:rgba(255,255,255,.3);}
+      </style>
+
+      <!-- Quiz JavaScript -->
+      <script>
+      (function(){
+        const GYNECO_Q = [
+  {obj:"1 — Anatomie appareil reproducteur", q:"Quelle structure anatomique contient les trompes de Fallope, les vaisseaux utérins et les ligaments ronds ?", c:["A. Ligament round", "B. Ligament large", "C. Ligament utéro-sacré", "D. Ligament infundibulo-pelvien"], a:1, e:"Le ligament large est un repli péritonéal bilateral qui contient la trompe de Fallope, les vaisseaux utérins, les ligaments ronds et ovariens."},
+  {obj:"1 — Anatomie appareil reproducteur", q:"La zone de transformation du col utérin (jonction squamo-cylindrique) est cliniquement importante car :", c:["A. Elle produit les ovules", "B. C&#39;est le site d&#39;implantation embryonnaire", "C. C&#39;est la zone la plus vulnérable à l&#39;infection HPV et à la carcinogenèse", "D. Elle sécrète la progestérone"], a:2, e:"La zone de transformation est à la jonction de l&#39;épithélium cylindrique (endocol) et pavimenteux (exocol). C&#39;est le site privilégié de l&#39;infection HPV persistante et du développement des dysplasies/cancers."},
+  {obj:"1 — Anatomie appareil reproducteur", q:"Quel ligament maintient l&#39;utérus en position antéversée ?", c:["A. Ligament large", "B. Ligament rond", "C. Ligament utéro-sacré", "D. Ligament suspenseur de l&#39;ovaire"], a:1, e:"Le ligament rond part du fond utérin vers le canal inguinal. Il maintient l&#39;antéversion de l&#39;utérus. Le ligament utéro-sacré maintient l&#39;antéflexion."},
+  {obj:"2 — Terminologie menstruelle", q:"Une patiente de 32 ans présente des saignements vaginaux survenant entre ses règles régulières. Quel terme décrit cette situation ?", c:["A. Ménorragie", "B. Métrorragie", "C. Oligoménorrhée", "D. Polyménorrhée"], a:1, e:"La métrorragie est un saignement INTERMENSTRUEL (entre les règles). Causes : saignement ovulatoire physiologique, polypes, malignité, érosions cervicales, œstrogénothérapie."},
+  {obj:"2 — Terminologie menstruelle", q:"Une femme change de protection toutes les 2 heures pendant 8 jours consécutifs à chaque cycle. Quel terme décrit cette situation ?", c:["A. Polyménorrhée", "B. Métrorragie", "C. Ménorragie", "D. Aménorrhée secondaire"], a:2, e:"La ménorragie = augmentation de la quantité ou durée du saignement menstruel. Seuil : &gt;80 mL/cycle ou &gt;7 jours. Causes : léiomyomes, polypes, adénomyose."},
+  {obj:"2 — Terminologie menstruelle", q:"L&#39;aménorrhée secondaire se définit par :", c:["A. Absence de ménarche à 15 ans", "B. Arrêt des règles ≥6 mois chez une femme qui menstruait", "C. Cycles &gt;45 jours", "D. Durée des règles &lt;2 jours"], a:1, e:"Primaire = pas de ménarche à 15 ans. Secondaire = arrêt ≥6 mois chez une femme qui avait des règles. Causes : stress, SOPK, hyperprolactinémie, insuffisance ovarienne."},
+  {obj:"2 — Terminologie menstruelle", q:"L&#39;oligoménorrhée correspond à des cycles menstruels :", c:["A. &lt; 21 jours", "B. &lt; 24 jours", "C. &gt; 38 jours", "D. &gt; 45 jours"], a:2, e:"Oligoménorrhée = peu fréquent, cycles &gt; 38 jours. Reflète habituellement un défaut d&#39;ovulation (SOPK, hypothyroïdie, hyperprolactinémie)."},
+  {obj:"3 — Physiologie du cycle ovarien", q:"Quelle hormone atteint son pic juste avant l&#39;ovulation (J13-14) ?", c:["A. FSH", "B. Progestérone", "C. LH", "D. Estradiol"], a:2, e:"Le pic de LH (LH surge) survient ~36h avant l&#39;ovulation. Il est déclenché par la rétroaction positive de l&#39;estradiol. C&#39;est ce pic que détectent les tests d&#39;ovulation urinaires."},
+  {obj:"3 — Physiologie du cycle ovarien", q:"Quelle hormone est principalement produite par le corps jaune après l&#39;ovulation ?", c:["A. FSH", "B. Estradiol seul", "C. Progestérone", "D. LH"], a:2, e:"Le corps jaune produit de la progestérone, qui prépare l&#39;endomètre à la nidation. Si pas de fécondation → régression du corps jaune → chute de P4 → menstruations."},
+  {obj:"3 — Physiologie du cycle ovarien", q:"La rétroaction POSITIVE des œstrogènes sur l&#39;axe hypothalamo-hypophysaire déclenche :", c:["A. Suppression de la FSH en début de cycle", "B. Le pic de LH → ovulation", "C. Le maintien du corps jaune", "D. L&#39;inhibition de la GnRH"], a:1, e:"En phase préovulatoire, l&#39;estradiol élevé exerce une rétroaction POSITIVE → pic de GnRH → pic de LH → ovulation. En phase folliculaire précoce : rétroaction NÉGATIVE."},
+  {obj:"4 — Classification PALM-COEIN", q:"Dans la classification PALM-COEIN des SUA, que signifie &#39;P&#39; ?", c:["A. Pathologie", "B. Polypes", "C. Périménopause", "D. Progestérone"], a:1, e:"PALM = causes structurelles : Polypes, Adénomyose, Léiomyomes, Malignité. COEIN = causes non structurelles : Coagulopathie, Ovulatoire, Endométriale, Iatrogénique, Non classifié."},
+  {obj:"4 — Classification PALM-COEIN", q:"Une patiente sous tamoxifène présente des métrorragies. Selon PALM-COEIN, dans quelle catégorie classer cette cause ?", c:["A. M (Malignité)", "B. I (Iatrogénique)", "C. O (Ovulatoire)", "D. E (Endométriale)"], a:1, e:"I = Iatrogénique : SUA causés par des médicaments (tamoxifène, anticoagulants, DIU cuivre). Le tamoxifène a un effet estrogénique sur l&#39;endomètre → hyperplasie/polype."},
+  {obj:"4 — Classification PALM-COEIN", q:"Des ménorragies dès la ménarche chez une jeune femme de 18 ans évoquent en priorité :", c:["A. Adénomyose", "B. Polypes endométriaux", "C. Coagulopathie (ex: maladie de von Willebrand)", "D. Léiomyomes sous-muqueux"], a:2, e:"Les ménorragies dès la ménarche évoquent une coagulopathie congénitale. La maladie de von Willebrand est la plus fréquente chez les femmes avec SUA. Investigation : FS, TP, TCK, facteur VIII, vWF."},
+  {obj:"5 — Investigations des SUA", q:"Quelle investigation est ABSOLUMENT première devant tout SUA chez une femme en âge de procréer ?", c:["A. Échographie pelvienne", "B. Test de grossesse (β-hCG)", "C. Biopsie endométriale", "D. FSH/LH/estradiol"], a:1, e:"Exclure une grossesse (ectopique, fausse-couche) est toujours la première étape. Un β-hCG positif change complètement la prise en charge."},
+  {obj:"5 — Investigations des SUA", q:"À partir de quel âge recommande-t-on systématiquement une biopsie endométriale lors de SUA ?", c:["A. 25 ans", "B. 35 ans", "C. 45 ans", "D. À la ménopause seulement"], a:1, e:"≥35 ans (ou plus jeune si facteurs de risque : obésité, SOPK, anovulation chronique, syndrome de Lynch). La biopsie exclut l&#39;hyperplasie et le cancer de l&#39;endomètre."},
+  {obj:"6 — Physiopathologie des SUA", q:"Le mécanisme principal des SUA dans l&#39;adénomyose est :", c:["A. Déficit en facteur von Willebrand", "B. Envahissement du myomètre par l&#39;endomètre → contraction anormale + saignement", "C. Anovulation chronique → endomètre hyperplasique", "D. Effet estrogénique des léiomyomes"], a:1, e:"L&#39;adénomyose = présence d&#39;endomètre dans le myomètre. Cela perturbe les contractions utérines, augmente la vascularisation et provoque des ménorragies douloureuses."},
+  {obj:"7 — Traitements pharmacologiques des SUA", q:"Premier choix pharmacologique pour les ménorragies chez une femme souhaitant une contraception ?", c:["A. AINS (naproxène)", "B. Acide tranexamique", "C. DIU au lévonorgestrel (Mirena)", "D. Danazol"], a:2, e:"Le DIU au lévonorgestrel réduit les saignements de ~90% et offre une contraception efficace. C&#39;est le traitement le plus efficace pour les ménorragies fonctionnelles."},
+  {obj:"7 — Traitements pharmacologiques des SUA", q:"L&#39;acide tranexamique réduit les saignements menstruels en :", c:["A. Inhibant les prostaglandines", "B. Inhibant la fibrinolyse (bloque le plasminogène)", "C. Inhibant l&#39;ovulation", "D. Réduisant les estrogènes circulants"], a:1, e:"L&#39;acide tranexamique est un antifibrinolytique. Il bloque la dégradation des caillots dans l&#39;endomètre → réduit les pertes de ~30-60%. Utilisation : 3-5 premiers jours des règles."},
+  {obj:"8-9 — Cancer du col / HPV", q:"Quel est le principal facteur de risque du cancer du col de l&#39;utérus ?", c:["A. Obésité", "B. Infection persistante à HPV oncogène (surtout HPV 16 et 18)", "C. Nulliparité", "D. Ménopause précoce"], a:1, e:"L&#39;infection persistante à HPV oncogène est NÉCESSAIRE au développement du cancer du col. HPV 16 et 18 causent ~70% des cancers."},
+  {obj:"8-9 — Cancer du col / HPV", q:"Le vaccin Gardasil 9 protège contre combien de sérotypes de HPV ?", c:["A. 2 sérotypes", "B. 4 sérotypes", "C. 9 sérotypes", "D. 14 sérotypes"], a:2, e:"Gardasil 9 couvre HPV 6, 11 (verrues génitales) + 16, 18 + HPV 31, 33, 45, 52, 58 (cancers). Efficacité &gt;90% si administré avant l&#39;exposition sexuelle."},
+  {obj:"10 — Cancer de l&#39;endomètre", q:"Le principal mécanisme menant au cancer de l&#39;endomètre de TYPE 1 est :", c:["A. Infection HPV", "B. Exposition prolongée aux œstrogènes sans opposition progestative", "C. Nulliparité exclusive", "D. Tabagisme"], a:1, e:"Type 1 (80%) : estrogènes non opposés (œstrogène-dépendant) → hyperplasie atypique → cancer endométrioïde de bas grade. Facteurs : obésité, SOPK, anovulation, THS estrogènes seuls."},
+  {obj:"10 — Cancer de l&#39;endomètre", q:"Lequel est un FACTEUR PROTECTEUR contre le cancer de l&#39;endomètre ?", c:["A. Obésité", "B. SOPK", "C. Contraceptifs oraux combinés", "D. Tamoxifène"], a:2, e:"Les COC = facteur protecteur (réduction ~50% du risque). La progestérone s&#39;oppose aux effets prolifératifs des estrogènes sur l&#39;endomètre."},
+  {obj:"11-12 — Stadification cancer endomètre", q:"Le cancer de l&#39;endomètre stade FIGO I est limité à :", c:["A. L&#39;utérus uniquement (corpus)", "B. L&#39;utérus et le col", "C. Les ganglions pelviens", "D. Les métastases à distance"], a:0, e:"Stade I = limité au corps utérin. Ia = invasion myométriale &lt;50%, Ib = ≥50%. Stade II = col. Stade III = extension pelvienne/ganglionnaire. Stade IV = à distance."},
+  {obj:"13 — Ménopause", q:"La ménopause est définie par :", c:["A. FSH &gt; 25 UI/L à deux reprises", "B. Arrêt des menstruations depuis 12 mois consécutifs sans cause autre", "C. Arrêt des règles depuis 6 mois", "D. Dernier cycle avant 45 ans"], a:1, e:"La ménopause est un diagnostic RÉTROSPECTIF : 12 mois d&#39;aménorrhée consécutive sans autre cause. L&#39;âge moyen au Canada est ~51 ans."},
+  {obj:"14 — Symptômes ménopause", q:"Quel symptôme est le plus CARACTÉRISTIQUE de la ménopause ?", c:["A. Dépression", "B. Ostéoporose", "C. Bouffées vasomotrices (BVM)", "D. Dyspareunie"], a:2, e:"Les BVM touchent 75-85% des femmes. Sensation soudaine de chaleur (visage, cou, thorax), sudation, palpitations, durent 2-4 min. Persistent en moyenne 4-7 ans."},
+  {obj:"15 — Ostéoporose post-ménopausique", q:"Le T-score définissant l&#39;OSTÉOPOROSE à la densitométrie osseuse est :", c:["A. T-score &gt; 0", "B. T-score entre -1,0 et -2,5 (ostéopénie)", "C. T-score ≤ -2,5", "D. T-score &lt; -3,5 uniquement"], a:2, e:"Classification OMS : Normal = T ≥ -1,0. Ostéopénie = T entre -1,0 et -2,5. Ostéoporose = T ≤ -2,5. Ostéoporose sévère = T ≤ -2,5 + fracture de fragilité."},
+  {obj:"15 — Ostéoporose post-ménopausique", q:"Quel est le traitement pharmacologique de PREMIÈRE LIGNE de l&#39;ostéoporose post-ménopausique ?", c:["A. Calcium + vitamine D seuls", "B. Bisphosphonates (alendronate, risédronate)", "C. Dénosumab", "D. Calcitonine nasale"], a:1, e:"Les bisphosphonates (alendronate 70mg/sem, risédronate 35mg/sem) inhibent la résorption ostéoclastique. Calcium + vit D = adjuvants, pas suffisants seuls."},
+  {obj:"16 — Hormonothérapie ménopausique", q:"L&#39;hormonothérapie ménopausique est CONTRE-INDIQUÉE en cas de :", c:["A. Diabète de type 2", "B. Antécédent de cancer du sein hormono-dépendant (RE+)", "C. Migraines sans aura", "D. HTA bien contrôlée"], a:1, e:"CI absolues : cancer du sein RE+, thromboembolisme actif, maladie hépatique sévère, saignement utérin inexpliqué."},
+  {obj:"17 — Alternatives non hormonales BVM", q:"Quel médicament NON HORMONAL est efficace pour les BVM chez une femme avec CI à l&#39;HTM ?", c:["A. Tamoxifène", "B. Venlafaxine (IRSN) ou paroxétine (ISRS)", "C. Métformine", "D. Clonazépam"], a:1, e:"Les ISRS/IRSN (venlafaxine, paroxétine) réduisent les BVM de 40-60%. Particulièrement utiles chez les femmes avec cancer du sein (CI à l&#39;HTM). Gabapentine et clonidine sont des alternatives."},
+  {obj:"18 — Survivance au cancer", q:"Dans la survivance au cancer gynécologique, le rôle de l&#39;IPS inclut :", c:["A. Administration de chimiothérapie de maintenance", "B. Suivi des effets tardifs, dépistage de récidive, soutien psychologique, prévention", "C. Chirurgie de reconstruction", "D. Administration de la radiothérapie adjuvante"], a:1, e:"L&#39;IPS en survivance coordonne : surveillance des récidives, gestion des effets tardifs (sexualité, ostéoporose, fatigue), soutien psychosocial, promotion de la santé et prévention du cancer secondaire."},
+];
+        const ONCO_Q = [
+  {obj:"1 — Anatomie pulmonaire", q:"Le poumon droit est divisé en combien de lobes ?", c:["A. 2 lobes", "B. 3 lobes", "C. 4 lobes", "D. 5 lobes"], a:1, e:"Poumon DROIT : 3 lobes (supérieur, moyen, inférieur). Poumon GAUCHE : 2 lobes (supérieur + lingula, inférieur). La scissure oblique est présente des deux côtés, la horizontale uniquement à droite."},
+  {obj:"2 — Tests de fonction respiratoire", q:"Un pattern OBSTRUCTIF au TFR se caractérise par :", c:["A. VEMS↓, CVF↓, VEMS/CVF normal", "B. VEMS↓, CVF normale ou↓, VEMS/CVF &lt; 0,70", "C. VEMS normal, CVF↓, VEMS/CVF↑", "D. Tous paramètres normaux avec DLCO↓"], a:1, e:"Obstructif (asthme, MPOC) : VEMS↓ &gt; CVF↓ → rapport VEMS/CVF &lt; 0,70. Restrictif (fibrose) : VEMS↓ et CVF↓ proportionnellement → VEMS/CVF normal. La CPT &lt; 80% confirme la restriction."},
+  {obj:"2 — Tests de fonction respiratoire", q:"Quel test évalue la DIFFUSION alvéolo-capillaire ?", c:["A. Spirométrie (VEMS/CVF)", "B. DLCO (capacité de diffusion du CO)", "C. Pléthysmographie (volumes)", "D. Oxymétrie de pouls"], a:1, e:"La DLCO mesure le transfert gazeux à la membrane alvéolo-capillaire. Réduite dans : emphysème, fibrose pulmonaire, hypertension pulmonaire, anémie. Augmentée dans : polyglobulie, hémorragie alvéolaire."},
+  {obj:"3 — Carcinogènes et facteurs de risque", q:"Quel est le PRINCIPAL facteur de risque de cancer du poumon ?", c:["A. Exposition à l&#39;amiante", "B. Tabagisme", "C. Gaz radon", "D. Prédisposition génétique BRCA"], a:1, e:"Le tabagisme cause ~85% des cancers du poumon. Risque relatif x15 chez les fumeurs vs non-fumeurs. L&#39;amiante et le radon sont importants, surtout en synergie avec le tabac."},
+  {obj:"3 — Carcinogènes et facteurs de risque", q:"L&#39;exposition à l&#39;amiante augmente spécifiquement le risque de :", c:["A. Adénocarcinome périphérique uniquement", "B. MPOC seulement", "C. Mésothéliome pleural ET carcinome bronchique (surtout épidermoïde)", "D. Cancer à petites cellules uniquement"], a:2, e:"L&#39;amiante cause le mésothéliome pleural (quasi-pathognomonique) et le cancer bronchique. La synergie tabac+amiante multiplie le risque par ~50."},
+  {obj:"4 — Dépistage par TDM à faible dose", q:"Qui est éligible au dépistage du cancer du poumon par TDM à faible dose ?", c:["A. Tout fumeur actuel &gt; 50 ans", "B. 50-80 ans, ≥20 paquets-années, fumeur actuel ou sevré &lt; 15 ans", "C. Toute personne avec toux chronique", "D. Anciens fumeurs sevrés &gt; 15 ans"], a:1, e:"Critères USPSTF : âge 50-80 ans + ≥20 paquets-années + fumeur actuel OU sevré dans les 15 dernières années. TDM basse dose annuelle. Réduction mortalité ~20% (essai NLST)."},
+  {obj:"4 — Dépistage par TDM à faible dose", q:"Le principal RISQUE du dépistage par TDM thoracique est :", c:["A. Exposition aux rayonnements très élevée", "B. Faux positifs → investigations invasives inutiles", "C. Manque de sensibilité", "D. Coût prohibitif"], a:1, e:"Le taux de faux positifs est ~25-40%. Beaucoup de nodules détectés sont bénins mais nécessitent un suivi rapproché et parfois des biopsies. La décision partagée est essentielle."},
+  {obj:"5 — Nodule pulmonaire", q:"Quel critère radiologique SUGGÈRE LA MALIGNITÉ d&#39;un nodule pulmonaire ?", c:["A. Contours lisses et réguliers", "B. Calcification centrale dense", "C. Spicules / lobulation irrégulière", "D. Taille &lt; 6 mm"], a:2, e:"Critères de malignité : spicules, lobulation, taille &gt; 8 mm, croissance documentée, densité verre dépoli. Critères bénignité : calcification centrale, contours lisses, stabilité &gt; 2 ans."},
+  {obj:"6 — Maladies professionnelles / amiante", q:"La maladie pulmonaire SPÉCIFIQUE à l&#39;exposition à l&#39;amiante est :", c:["A. Sarcoïdose", "B. Asbestose (fibrose pulmonaire diffuse bibasale)", "C. Mésothéliome seul", "D. Silicose"], a:1, e:"L&#39;asbestose = fibrose pulmonaire interstitielle diffuse bibasale. Se développe 20-40 ans après exposition. TFR : pattern restrictif, DLCO↓. Radiologie : opacités réticulo-nodulaires bibasales."},
+  {obj:"7 — Développement cellule cancéreuse", q:"Un oncogène diffère d&#39;un gène suppresseur de tumeur car :", c:["A. Nécessite 2 mutations pour agir", "B. Activé par GAIN de fonction (une seule mutation suffit)", "C. Hérité de façon autosomique récessive", "D. Code uniquement des protéines structurelles"], a:1, e:"Oncogène : gain de fonction, 1 mutation suffit (dominant). Suppresseur de tumeur (TP53, RB1) : perte de fonction, les 2 allèles doivent être mutés (two-hit = récessif)."},
+  {obj:"7 — Développement cellule cancéreuse", q:"Quelle mutation est la plus fréquente dans l&#39;adénocarcinome pulmonaire chez les NON-FUMEURS ?", c:["A. KRAS", "B. EGFR", "C. ALK", "D. BRAF"], a:1, e:"EGFR est muté dans ~50% des adénocarcinomes chez les non-fumeurs asiatiques (10-15% en population occidentale). KRAS = mutation la plus fréquente chez les FUMEURS."},
+  {obj:"8 — Signes cliniques", q:"Quel syndrome est PATHOGNOMONIQUE d&#39;une tumeur de Pancoast (apex pulmonaire) ?", c:["A. Syndrome de Cushing paranéoplasique", "B. Syndrome de Claude Bernard-Horner + névralgie cervicobrachiale", "C. SIADH", "D. Hypercalcémie"], a:1, e:"La tumeur de Pancoast envahit : plexus brachial (douleur épaule/bras C8-T1) + ganglion stellaire (Horner : ptosis, myosis, enophtalmie, anhidrose ipsilatérale)."},
+  {obj:"9 — Syndromes paranéoplasiques", q:"Le SIADH paranéoplasique est le plus souvent associé à quel type histologique ?", c:["A. Adénocarcinome", "B. Cancer épidermoïde", "C. Cancer à petites cellules (CPPC)", "D. Carcinoïde atypique"], a:2, e:"Le CPPC sécrète de l&#39;ADH de manière ectopique. SIADH = Na &lt; 135, urines concentrées, osmolalité plasma &lt; 275. Traitement : restriction hydrique, déméclocycline, vaptans."},
+  {obj:"9 — Syndromes paranéoplasiques", q:"L&#39;hypercalcémie paranéoplasique sans métastase osseuse est causée par :", c:["A. Production ectopique de PTHrP par la tumeur", "B. Lyse osseuse directe", "C. Sécrétion ectopique d&#39;ACTH", "D. Production d&#39;aldostérone tumorale"], a:0, e:"Cancer épidermoïde produit le plus souvent la PTHrP qui mime la PTH. Hypercalcémie : confusion, polyurie, constipation, nausées. Traitement : hydratation IV, bisphosphonates."},
+  {obj:"9 — Syndromes paranéoplasiques", q:"Le syndrome de Lambert-Eaton se manifeste par :", c:["A. Convulsions et épilepsie", "B. Faiblesse musculaire proximale s&#39;AMÉLIORANT à l&#39;effort répété", "C. Neuropathie sensitive distale", "D. Démence rapide progressive"], a:1, e:"Lambert-Eaton : anticorps anti-VGCC → déficit de libération présynaptique d&#39;ACh. Clinique : faiblesse proximale s&#39;améliorant à l&#39;effort (contraire myasthénie). Réflexes abolis."},
+  {obj:"10-11 — Investigation et histologie", q:"La bronchoscopie est l&#39;examen de choix pour les tumeurs :", c:["A. Périphériques &lt; 1 cm", "B. Centrales (endobronchiques, visibles)", "C. Sous-pleurales de l&#39;apex", "D. Métastatiques hépatiques"], a:1, e:"Bronchoscopie = tumeurs centrales accessibles. Pour les périphériques : TDM-guidée ou EBUS-TBNA. Thoracoscopie ou chirurgie pour nodules périphériques résécables."},
+  {obj:"10-11 — Investigation et histologie", q:"Le CPPC se distingue du CPNPC principalement par :", c:["A. Sa localisation périphérique", "B. Sa résistance à la chimiothérapie", "C. Sa croissance rapide, dissémination précoce et chimiosensibilité initiale élevée", "D. L&#39;absence de syndromes paranéoplasiques"], a:2, e:"CPPC : neuroendocrine, central, croissance rapide, métastases précoces. Très chimiosensible initialement (réponse ~80%) mais récidive presque toujours. Survie médiane ~12-18 mois."},
+  {obj:"10-11 — Investigation et histologie", q:"L&#39;adénocarcinome pulmonaire est le type le plus fréquent chez :", c:["A. Fumeurs masculins &gt; 60 ans", "B. Non-fumeurs, femmes, population asiatique", "C. Travailleurs de l&#39;amiante", "D. Patients VIH avec CD4 &lt; 200"], a:1, e:"L&#39;adénocarcinome (~40%) est surreprésenté chez les non-fumeurs, les femmes et la population asiatique. Il est périphérique, souvent mutant EGFR/ALK."},
+  {obj:"12 — Stadification TNM", q:"Dans la classification TNM du cancer pulmonaire, &#39;N2&#39; signifie :", c:["A. Absence de métastase ganglionnaire", "B. Ganglions péribronchiques homolatéraux", "C. Ganglions médiastinaux homolatéraux", "D. Ganglions médiastinaux controlatéraux"], a:2, e:"N0 = pas de ganglion. N1 = hilaires/péribronchiques homolatéraux. N2 = médiastinaux homolatéraux (subcarinaires). N3 = controlatéraux → stade IIIB, non résécable."},
+  {obj:"13 — Thérapies ciblées", q:"La thérapie ciblée anti-EGFR (osimertinib) est indiquée si :", c:["A. Fumeur actuel avec forte charge tabagique", "B. Mutation activatrice d&#39;EGFR confirmée (ex19del, L858R)", "C. Stade I résécable sans mutation", "D. Cancer à petites cellules en rechute"], a:1, e:"L&#39;osimertinib (TAGRISSO) est le standard en 1ère ligne pour CPNPC avec mutation EGFR. Survie médiane ~38 mois. Le test NGS est obligatoire avant de traiter un stade IV."},
+  {obj:"13 — Immunothérapie", q:"L&#39;immunothérapie anti-PD-L1 en monothérapie est plus efficace si :", c:["A. Expression de PD-L1 &lt; 1%", "B. Cancer à petites cellules en 1ère ligne", "C. Expression PD-L1 ≥ 50% et absence de mutation driver (EGFR/ALK)", "D. Après deux lignes de chimiothérapie"], a:2, e:"PD-L1 ≥ 50% + pas de mutation EGFR/ALK = pembrolizumab en 1ère ligne (KEYNOTE-024). Si mutation driver → thérapie ciblée d&#39;abord. Si PD-L1 &lt; 50% → chimio + immuno."},
+  {obj:"14-15 — AMM et niveaux de soins", q:"L&#39;aide médicale à mourir (AMM) au Canada requiert que la personne ait :", c:["A. Un cancer en phase terminale uniquement", "B. Une maladie grave et incurable causant des souffrances persistantes et intolérables", "C. Un pronostic &lt; 6 mois", "D. &gt; 65 ans avec multimorbidité"], a:1, e:"Critères AMM (Loi C-7) : 1) Maladie grave et incurable. 2) État de déclin avancé et irréversible. 3) Souffrances persistantes et intolérables. Pas de critère de pronostic &lt; 6 mois depuis 2021."},
+  {obj:"16 — Syndrome de veine cave supérieure", q:"Le SVCS se manifeste cliniquement par :", c:["A. Douleur pleurétique + fièvre", "B. Œdème en pèlerine (visage, cou, bras), circulation collatérale, dyspnée", "C. Hémoptysie massive", "D. Tamponnade cardiaque aiguë"], a:1, e:"SVCS = obstruction de la VCS (50% par cancer pulmonaire, 15% lymphome). Œdème facial/cervical, érythème, turgescence jugulaire, céphalées. Urgence si signes neurologiques."},
+  {obj:"17 — Effets secondaires des thérapies", q:"La pneumonite médicamenteuse est un effet secondaire fréquent de :", c:["A. Cisplatine", "B. Bevacizumab (anti-VEGF)", "C. Inhibiteurs de checkpoint (anti-PD-1/PD-L1/CTLA-4)", "D. Vinorelbine"], a:2, e:"Pneumonite immuno-liée (irAE) : 3-5% grade sévère. Dyspnée, toux, fièvre, opacités en verre dépoli au TDM. Traitement : arrêt ICI + corticostéroïdes ± immunosuppresseurs."},
+  {obj:"18 — Approche palliative", q:"L&#39;échelle ECOG 2 signifie :", c:["A. Patient complètement actif", "B. Ambulatoire, soins personnels possibles, alité &lt; 50% de la journée", "C. Alité &gt; 50% de la journée", "D. Totalement alité"], a:1, e:"ECOG : 0=pleinement actif. 1=léger handicap, ambulatoire. 2=ambulatoire + autosoins, alité &lt;50%. 3=alité &gt;50%. 4=totalement alité. ECOG 0-2 = éligible chimiothérapie."},
+  {obj:"19 — Épanchement pleural", q:"Selon les critères de Light, lequel confirme un EXSUDAT ?", c:["A. Protéines pleurales/sériques &lt; 0,5", "B. LDH pleurales/sériques &gt; 0,6", "C. Glucose pleural &gt; 3,3 mmol/L", "D. pH pleural &gt; 7,35"], a:1, e:"Critères de Light (≥1 = exsudat) : 1) Protéines pleurales/sériques &gt; 0,5. 2) LDH pleurales/sériques &gt; 0,6. 3) LDH pleurales &gt; 2/3 LSN sérique. Transsudat : IC, cirrhose, néphrotique."},
+  {obj:"20 — Compression médullaire", q:"Le syndrome de compression médullaire par métastase est une urgence car :", c:["A. Il cause une fistule entérique", "B. Il provoque une paraplégie/tétraplégie permanente irréversible si non traité", "C. Il cause une insuffisance rénale aiguë", "D. Il provoque une hydrocéphalie"], a:1, e:"Compression médullaire = urgence onco. Délai &lt; 24-48h pour corticostéroïdes + radiothérapie ou chirurgie. Récupération neurologique directement liée à la gravité du déficit PRÉ-traitement."},
+];
+        const HEPATO_Q = [
+  {obj:"1 — Classification douleur abdominale", q:"Une douleur en hypochondre droit avec irradiation à l&#39;épaule droite évoque en premier lieu :", c:["A. Appendicite aiguë", "B. Pancréatite aiguë", "C. Cholécystite aiguë ou colique biliaire", "D. Maladie de Crohn"], a:2, e:"L&#39;hypochondre droit + irradiation à l&#39;épaule droite (diaphragme) = vésicule biliaire/foie. L&#39;appendicite = FID. La pancréatite = épigastre + irradiation dorsale en ceinture."},
+  {obj:"2 — Anatomie foie et voies biliaires", q:"Le canal cholédoque résulte de la réunion de :", c:["A. Canal hépatique droit + gauche", "B. Canal cystique + canal hépatique commun", "C. Canal pancréatique + canal cystique", "D. Canal hépatique commun + canal de Wirsung"], a:1, e:"Canal hépatique commun (foie) + canal cystique (vésicule) = cholédoque. Le cholédoque rejoint le canal de Wirsung dans l&#39;ampoule de Vater, contrôlée par le sphincter d&#39;Oddi."},
+  {obj:"3 — Fonctions du foie", q:"La bilirubine NON CONJUGUÉE est transportée dans le sang liée à :", c:["A. La transférrine", "B. L&#39;albumine", "C. Les immunoglobulines", "D. L&#39;haptoglobine"], a:1, e:"La bilirubine non conjuguée est liposoluble, non filtrable par le rein. Elle est transportée liée à l&#39;albumine jusqu&#39;au foie. La bilirubine conjuguée (hydrosoluble) est filtrée → bilirubinurie en cas d&#39;obstruction."},
+  {obj:"4 — Complications des calculs biliaires", q:"Parmi les complications des calculs biliaires, laquelle est la plus grave ?", c:["A. Colique biliaire simple", "B. Cholédocholithiase asymptomatique", "C. Cholangite aiguë (Triade de Charcot + Pentade de Reynolds)", "D. Vésicule de porcelaine"], a:2, e:"Cholangite aiguë = urgence : obstruction cholédoque + infection. Triade de Charcot : douleur + fièvre + ictère. Pentade de Reynolds (sévère) : + choc + confusion. Traitement : ATB IV + CPRE urgente."},
+  {obj:"5 — Investigation des calculs biliaires", q:"Examen de PREMIÈRE LIGNE pour diagnostiquer des calculs vésiculaires :", c:["A. TDM abdominal", "B. Échographie abdominale", "C. Scintigraphie HIDA", "D. CPRE diagnostique"], a:1, e:"L&#39;échographie = gold standard : sensibilité 95%, spécificité 99% pour calculs &gt; 2 mm. Elle montre la dilatation des voies biliaires, l&#39;épaisseur vésiculaire, le liquide péri-vésiculaire."},
+  {obj:"5 — Investigation des calculs biliaires", q:"La CPRE est utilisée principalement pour :", c:["A. Dépistage des calculs vésiculaires asymptomatiques", "B. Ablation des calculs dans le canal cholédoque (sphinctérotomie + extraction)", "C. Biopsie hépatique", "D. Réduction de l&#39;inflammation vésiculaire"], a:1, e:"CPRE = thérapeutique : sphinctérotomie + extraction de calculs cholédo. Ne traite pas les calculs vésiculaires (nécessitent cholécystectomie). Complications : pancréatite (3-5%), saignement, perforation."},
+  {obj:"6 — Colique biliaire", q:"La physiopathologie de la colique biliaire implique :", c:["A. Bactériémie → contraction vésiculaire", "B. Obstruction TRANSITOIRE du canal cystique → contraction douloureuse → résolution spontanée", "C. Perforation vésiculaire avec fuite biliaire", "D. Inflammation chronique de la muqueuse vésiculaire"], a:1, e:"Colique biliaire : obstruction temporaire du canal cystique par un calcul mobile. Douleur 15-30 min post-repas gras, dure 1-5h, disparaît spontanément. Pas de fièvre, pas de leucocytose."},
+  {obj:"7 — Cholécystite aiguë", q:"La cholécystite aiguë se distingue de la colique biliaire par :", c:["A. La localisation de la douleur en FID", "B. Fièvre, leucocytose, signe de Murphy +, douleur persistante &gt; 6h", "C. L&#39;absence de calculs vésiculaires", "D. La résolution spontanée en &lt; 6 heures"], a:1, e:"Cholécystite : obstruction PERSISTANTE → distension → inflammation → possible infection. Signe de Murphy +, fièvre, leucocytose, CRP élevée."},
+  {obj:"7 — Cholécystite aiguë", q:"Le signe de Murphy est :", c:["A. Douleur à la percussion des côtes droites", "B. Arrêt inspiratoire lors de la palpation profonde en hypochondre droit", "C. Douleur au relâchement en FID", "D. Masse palpable pulsatile en épigastre"], a:1, e:"Signe de Murphy = douleur + arrêt inspiratoire lors de la palpation profonde de l&#39;HCD. Spécificité ~80-95%. L&#39;inspiration abaisse la vésicule vers les doigts. Murphy écho = même principe."},
+  {obj:"9 — Facteurs de risque cholécystite", q:"La règle des &#39;5F&#39; des facteurs de risque de calculs biliaires désigne :", c:["A. Female, Fat, Forty, Fertile, Fair", "B. Fever, Fatigue, Flatus, Flatulence, Fasting", "C. Food, Fat, Fiber, Fasting, Female", "D. Fibrate, Fat, Forty, Flatulence, Fair"], a:0, e:"Female, Fat (obésité), Forty (&gt;40 ans), Fertile (grossesse → progestérone → stase biliaire), Fair. Aussi : DM, perte de poids rapide, maladie de Crohn."},
+  {obj:"10 — Traitement cholécystite aiguë", q:"Le traitement DÉFINITIF de la cholécystite aiguë est :", c:["A. ATB IV seuls pendant 6 semaines", "B. Cholécystectomie laparoscopique (idéalement &lt; 72h)", "C. Cholécystostomie percutanée permanente", "D. Dissolution à l&#39;acide ursodésoxycholique"], a:1, e:"Cholécystectomie laparoscopique précoce (&lt; 72h) = meilleure option. Réduit : durée d&#39;hospitalisation, complications, récidives. Cholécystostomie percutanée = bridge chez patient à haut risque chirurgical."},
+  {obj:"11 — Physiopathologie C. difficile", q:"La physiopathologie de C. difficile repose sur :", c:["A. Invasion directe de la muqueuse", "B. Destruction du microbiome (ATB) → germination des spores → toxines A et B → lésion muqueuse", "C. Réponse auto-immune contre l&#39;intestin", "D. Production de bétalactamases"], a:1, e:"C. difficile produit Toxine A (entérotoxine) et Toxine B (cytotoxine) → inflammation, rupture des jonctions épithéliales → pseudomembranes. Spores très résistants : gel HA INEFFICACE."},
+  {obj:"12 — C. difficile — signes cliniques", q:"La C. difficile sévère (fulminante) se manifeste par :", c:["A. Diarrhée légère &gt; 3 selles/jour sans fièvre", "B. Iléus, mégacôlon toxique, leucocytose &gt; 15 000, créatinine × 1,5, choc", "C. Diarrhée chronique intermittente", "D. Colite granulomateuse"], a:1, e:"Critères de sévérité : leucocytes &gt; 15 000, créatinine ≥ 1,5 × baseline. Fulminante : hypotension, choc, iléus ou mégacôlon. Nécessite : vancomycine PO + métronidazole IV ± colectomie."},
+  {obj:"13 — Facteurs de risque C. difficile", q:"Quel est le PRINCIPAL facteur de risque de l&#39;infection à C. difficile ?", c:["A. Alimentation riche en fibres", "B. Exposition aux antibiotiques (surtout clindamycine, fluoroquinolones, céphalosporines 3e gén.)", "C. Consommation de probiotiques", "D. Déficit immunitaire en IgA sécrétoire"], a:1, e:"Les ATB détruisent la flore protectrice → C. difficile prolifère. Risque le plus élevé : clindamycine, fluoroquinolones, céphalosporines. Facteurs additionnels : âge &gt; 65 ans, hospitalisation, IPP."},
+  {obj:"14 — Diagnostic C. difficile", q:"Le test diagnostique de CHOIX pour C. difficile est :", c:["A. Coproculture standard", "B. Détection de la toxine A/B + GDH par PCR ou immunoessai sur selles", "C. Coloscopie avec biopsies", "D. Sérologie sanguine anti-toxine"], a:1, e:"Algorithme : GDH (antigène) + toxine immunoessai en parallèle. Si discordant → PCR. PCR seule = très sensible mais peut être positive sans maladie active (portage). Selles liquides UNIQUEMENT."},
+  {obj:"15 — Traitement C. difficile", q:"Le traitement de PREMIÈRE ligne de la C. difficile légère à modérée est :", c:["A. Métronidazole IV", "B. Vancomycine PO 125 mg QID × 10 jours ou fidaxomicine", "C. Ciprofloxacine PO", "D. Azithromycine PO"], a:1, e:"Fidaxomicine = préférable (moins de rechutes). Vancomycine PO acceptable si fidaxomicine non disponible. Le métronidazole n&#39;est plus recommandé en 1re ligne."},
+  {obj:"16 — Précautions C. difficile", q:"Les précautions additionnelles pour C. difficile incluent :", c:["A. Précautions aériennes (chambre à pression négative)", "B. Contact (gants + blouse) + lavage des mains au SAVON (pas gel HA)", "C. Précautions gouttelettes uniquement", "D. Chambre stérile avec HEPA"], a:1, e:"Le gel hydro-alcoolique est INEFFICACE sur les spores de C. difficile. Obligatoirement eau + savon. Chambre individuelle, gants et blouse dès l&#39;entrée. Nettoyage avec hypochlorite de sodium."},
+  {obj:"17 — Examen clinique du patient cirrhotique", q:"Lequel de ces signes est spécifique de l&#39;hypertension portale ?", c:["A. Ictère scléral", "B. Érythème palmaire", "C. Circulation veineuse collatérale abdominale (tête de méduse)", "D. Leuconychie"], a:2, e:"Tête de méduse = veines périombilicales dilatées secondaires à l&#39;HTP (shunts porto-systémiques). Autres signes HTP : splénomégalie, varices œsophagiennes. Cirrhose : ictère, angiomes stellaires, astérixis."},
+  {obj:"18 — Investigations maladie hépatique", q:"Le FIB-4 est calculé à partir de :", c:["A. Albumine, bilirubine, TP, ascite", "B. Âge, AST, ALT, plaquettes", "C. MELD, Child-Pugh, ARFI", "D. GGT, phosphatase alcaline, bilirubine, albumine"], a:1, e:"FIB-4 = (Âge × AST) / (Plaquettes × √ALT). Score &lt; 1,30 = fibrose F0-F1. Score &gt; 2,67 = fibrose F3-F4 (cirrhose probable). Très utile en MASLD pour trier avant élastographie."},
+  {obj:"19-20 — MASLD et fibrose", q:"La MASLD évolue selon la séquence :", c:["A. Stéatose → fibrose → cirrhose → CHC", "B. Stéatose → stéato-hépatite (MASH) → fibrose → cirrhose → CHC", "C. Inflammation → stéatose → fibrose → cirrhose", "D. Cirrhose → stéatose → stéato-hépatite → CHC"], a:1, e:"MASLD : Stéatose simple → MASH (inflammation + ballonisation) → fibrose → cirrhose → CHC. Seule une minorité progresse vers la cirrhose. La fibrose est le facteur pronostique clé."},
+  {obj:"21 — Physiopathologie HTP", q:"L&#39;hypertension portale cliniquement significative est définie par un HVPG :", c:["A. &gt; 5 mmHg", "B. &gt; 10 mmHg", "C. &gt; 15 mmHg", "D. &gt; 20 mmHg"], a:1, e:"Normal = HVPG 1-5 mmHg. HTP = &gt; 5 mmHg. HTP cliniquement significative = &gt; 10 mmHg (risque varices, ascite). HTP sévère = &gt; 12 mmHg (risque hémorragie variqueuse)."},
+  {obj:"22 — Complications de la cirrhose", q:"Quelle complication de la cirrhose nécessite une prise en charge URGENTE prioritaire ?", c:["A. Encéphalopathie hépatique minime (grade 1)", "B. Ascite de grade 1 (détectable seulement à l&#39;écho)", "C. Hémorragie variqueuse active", "D. Sarcopénie et dénutrition"], a:2, e:"Hémorragie variqueuse = urgence : mortalité 15-25% par épisode. Traitement : octrèotide IV + ATB prophylaxie + ligature varices endoscopique. Score Child-Pugh/MELD = facteurs pronostiques."},
+  {obj:"23-24 — Facteurs de risque cirrhose", q:"Lequel est un facteur de risque de cirrhose MÉTABOLIQUE (MASLD) ?", c:["A. Génotype 3 VHC", "B. Syndrome métabolique (obésité abdominale, DT2, HTA, dyslipidémie)", "C. Statut HBsAg positif", "D. Consommation &gt; 14 verres/semaine"], a:1, e:"Syndrome métabolique = principal facteur de risque MASLD. Dépistage : FIB-4 chez tous les DT2 et obèses. Consommation &gt; 14v/sem (F) ou &gt; 21v/sem (H) = cause alcoolique."},
+  {obj:"25 — Child-Pugh et MELD", q:"Chez un patient cirrhotique, quel score prédit le mieux la mortalité post-chirurgicale ?", c:["A. RCRI seul", "B. Score de Child-Pugh — Child C = contre-indication à la chirurgie élective", "C. Score FRAX", "D. Score de Wells"], a:1, e:"Chez les cirrhotiques, Child C = mortalité post-op &gt; 80%. Child B = risque élevé. Associer MELD-Na (MELD &gt; 15 = risque significatif)."},
+  {obj:"26 — Évaluation préopératoire", q:"Pour l&#39;évaluation du risque cardiovasculaire préopératoire, quel score est le plus utilisé ?", c:["A. Score de Child-Pugh", "B. Score de Lee (RCRI — Revised Cardiac Risk Index)", "C. Score MELD", "D. Score FRAX"], a:1, e:"RCRI (Lee) = 6 variables : chirurgie supra-inguinale, IC, cardiopathie ischémique, AVC/AIT, DM insulino-requérant, créatinine &gt; 177. Score ≥ 3 = risque élevé d&#39;événement cardiaque majeur post-op."},
+];
+
+        const SETS = {gyneco: GYNECO_Q, onco: ONCO_Q, hepato: HEPATO_Q};
+        let curSp = 'gyneco';
+        let cur = 0;
+        let answered = {};  // idx -> chosen
+        let correct = {};   // idx -> bool
+
+        function setQuizSp(sp) {
+          curSp = sp;
+          cur = 0;
+          ['gyneco','onco','hepato'].forEach(s => {
+            document.getElementById('qtab-'+s).classList.remove('quiz-tab-active');
+          });
+          document.getElementById('qtab-'+sp).classList.add('quiz-tab-active');
+          renderQuestion();
+          updateBadges();
+        }
+
+        function updateBadges() {
+          ['gyneco','onco','hepato'].forEach(sp => {
+            const qs = SETS[sp];
+            const total = qs.length;
+            const done = qs.filter((_,i) => answered[sp+'-'+i] !== undefined).length;
+            const ok = qs.filter((_,i) => correct[sp+'-'+i]).length;
+            const badge = document.getElementById('qbadge-'+sp);
+            if (done > 0) badge.textContent = ok+'/'+done;
+            else badge.textContent = '';
+          });
+        }
+
+        function renderQuestion() {
+          const qs = SETS[curSp];
+          if (!qs) return;
+          document.getElementById('quiz-summary').style.display = 'none';
+          document.getElementById('quiz-question-card').style.display = 'block';
+          const q = qs[cur];
+          const key = curSp+'-'+cur;
+          const pct = ((cur+1)/qs.length*100).toFixed(0);
+          document.getElementById('quiz-progress-bar').style.width = pct+'%';
+          document.getElementById('quiz-progress-text').textContent = 'Q '+(cur+1)+' / '+qs.length;
+          document.getElementById('quiz-obj-label').textContent = q.obj;
+          document.getElementById('quiz-q-text').textContent = q.q;
+
+          // Score
+          const nDone = Object.keys(correct).filter(k=>k.startsWith(curSp+'-')).length;
+          const nOk = Object.values(correct).filter((v,i,a)=>v && Object.keys(correct)[i].startsWith(curSp+'-')).length;
+          // simpler
+          let spDone=0, spOk=0;
+          qs.forEach((_,i)=>{if(correct[curSp+'-'+i]!==undefined){spDone++;if(correct[curSp+'-'+i])spOk++;} else if(answered[curSp+'-'+i]!==undefined){spDone++;} });
+          qs.forEach((_,i)=>{if(correct[curSp+'-'+i])spOk++;});
+          // recalc clean
+          spDone=0;spOk=0;
+          for(let i=0;i<qs.length;i++){
+            if(answered[curSp+'-'+i]!==undefined){spDone++;if(correct[curSp+'-'+i])spOk++;}
+          }
+          document.getElementById('quiz-score-inline').textContent = spDone>0 ? '✓ '+spOk+'/'+spDone : '';
+
+          // Choices
+          const container = document.getElementById('quiz-choices');
+          container.innerHTML = '';
+          const wasAnswered = answered[key] !== undefined;
+          q.c.forEach((choice, idx) => {
+            const btn = document.createElement('button');
+            btn.className = 'quiz-choice-btn';
+            btn.textContent = choice;
+            if (wasAnswered) {
+              btn.classList.add('quiz-choice-disabled');
+              if (idx === q.a) btn.classList.add('quiz-choice-reveal');
+              if (idx === answered[key] && answered[key] !== q.a) btn.classList.add('quiz-choice-wrong');
+            } else {
+              btn.onclick = () => selectAnswer(idx);
+            }
+            container.appendChild(btn);
+          });
+
+          // Feedback
+          const fb = document.getElementById('quiz-feedback');
+          if (wasAnswered) {
+            fb.style.display = 'block';
+            const isOk = correct[key];
+            fb.style.background = isOk ? '#d1fae5' : '#fee2e2';
+            fb.style.border = '2px solid '+(isOk ? '#059669' : '#dc2626');
+            fb.style.color = isOk ? '#065f46' : '#991b1b';
+            fb.innerHTML = '<strong>'+(isOk ? '✅ Correct !' : '❌ Incorrect')+'</strong><br>'+q.e;
+          } else {
+            fb.style.display = 'none';
+          }
+
+          // Nav
+          document.getElementById('quiz-btn-prev').disabled = cur===0;
+          document.getElementById('quiz-btn-next').textContent = cur===qs.length-1 ? 'Voir résultats ▶' : 'Suivant ▶';
+          updateBadges();
+        }
+
+        function selectAnswer(idx) {
+          const qs = SETS[curSp];
+          const q = qs[cur];
+          const key = curSp+'-'+cur;
+          if (answered[key] !== undefined) return;
+          answered[key] = idx;
+          correct[key] = (idx === q.a);
+          renderQuestion();
+        }
+
+        function quizNext() {
+          const qs = SETS[curSp];
+          if (cur < qs.length-1) { cur++; renderQuestion(); }
+          else { showSummary(); }
+        }
+
+        function quizPrev() {
+          if (cur > 0) { cur--; renderQuestion(); }
+        }
+
+        function showSummary() {
+          const qs = SETS[curSp];
+          let ok=0, done=0;
+          for(let i=0;i<qs.length;i++){
+            if(answered[curSp+'-'+i]!==undefined){done++;if(correct[curSp+'-'+i])ok++;}
+          }
+          document.getElementById('quiz-question-card').style.display='none';
+          document.getElementById('quiz-feedback').style.display='none';
+          const summary = document.getElementById('quiz-summary');
+          summary.style.display='block';
+          const pct = done>0 ? Math.round(ok/done*100) : 0;
+          let emoji = pct>=80?'🏆':pct>=60?'👍':'📚';
+          document.getElementById('quiz-summary-text').textContent = emoji+' '+ok+' / '+done+' correctes ('+pct+'%)';
+          document.getElementById('quiz-summary-sub').textContent = pct>=80?'Excellent travail !':pct>=60?'Bonne performance, continuez !':'Révisez les sections concernées et réessayez.';
+          updateBadges();
+        }
+
+        function quizReset() {
+          // Reset only current specialty
+          const qs = SETS[curSp];
+          qs.forEach((_,i)=>{
+            delete answered[curSp+'-'+i];
+            delete correct[curSp+'-'+i];
+          });
+          cur=0;
+          renderQuestion();
+          updateBadges();
+        }
+
+        // Expose globally
+        window.setQuizSp = setQuizSp;
+        window.quizNext = quizNext;
+        window.quizPrev = quizPrev;
+        window.quizReset = quizReset;
+        window.selectAnswer = selectAnswer;
+
+        // Init
+        setQuizSp('gyneco');
+      })();
+      </script>
+
+    </div>
+
+
 </body>
 </html>
