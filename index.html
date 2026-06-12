@@ -13261,6 +13261,268 @@ function dkRenal(view) {
         </div>
       </div>
 
+      <!-- ═══ DERM-PLAIE-ALGO: ALGORITHME DESCRIPTION PLAIE ═══ -->
+      <div class="block clin" id="derm-plaie-algo">
+        <div class="block-title"><span class="tag">📝 Algorithme — Description clinique d&apos;une plaie</span></div>
+        <div class="key-fact blue" style="margin-bottom:12px;"><strong>Outil interactif :</strong> Sélectionne les caractéristiques de la plaie → un résumé clinique est généré automatiquement.</div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px;">
+
+          <!-- Col 1 -->
+          <div style="display:flex;flex-direction:column;gap:10px;">
+
+            <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:10px;">
+              <label style="font-size:12px;font-weight:600;color:#475569;display:block;margin-bottom:4px;">🗺️ Type de plaie</label>
+              <select id="pw-type" onchange="updatePlaieDesc()" style="width:100%;border:1px solid #cbd5e1;border-radius:6px;padding:6px;font-size:13px;">
+                <option value="">— Sélectionner —</option>
+                <option value="Ulcère veineux">Ulcère veineux</option>
+                <option value="Plaie ischémique (artérielle)">Plaie ischémique (artérielle)</option>
+                <option value="Ulcère pied diabétique">Ulcère pied diabétique (mal perforant)</option>
+                <option value="Ulcère de pression">Ulcère de pression</option>
+                <option value="Plaie chirurgicale">Plaie chirurgicale</option>
+                <option value="Plaie traumatique">Plaie traumatique</option>
+                <option value="Plaie cancéreuse / fongique">Plaie cancéreuse / fongique</option>
+                <option value="Brûlure">Brûlure</option>
+                <option value="Autre">Autre</option>
+              </select>
+            </div>
+
+            <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:10px;">
+              <label style="font-size:12px;font-weight:600;color:#475569;display:block;margin-bottom:4px;">📍 Localisation</label>
+              <select id="pw-loc" onchange="updatePlaieDesc()" style="width:100%;border:1px solid #cbd5e1;border-radius:6px;padding:6px;font-size:13px;">
+                <option value="">— Sélectionner —</option>
+                <option value="Malléole interne">Malléole interne</option>
+                <option value="Malléole externe">Malléole externe</option>
+                <option value="Tiers inférieur de la jambe">Tiers inférieur de la jambe</option>
+                <option value="Orteils / avant-pied">Orteils / avant-pied</option>
+                <option value="Plante du pied (sous pression)">Plante du pied (sous pression)</option>
+                <option value="Talon">Talon</option>
+                <option value="Sacrum / fessier">Sacrum / fessier</option>
+                <option value="Trochanter">Trochanter</option>
+                <option value="Autre">Autre</option>
+              </select>
+            </div>
+
+            <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:10px;">
+              <label style="font-size:12px;font-weight:600;color:#475569;display:block;margin-bottom:4px;">📐 Dimensions</label>
+              <div style="display:flex;gap:6px;">
+                <div style="flex:1;"><label style="font-size:11px;color:#64748b;">Long. (cm)</label><input type="number" id="pw-long" placeholder="—" min="0" step="0.1" onchange="updatePlaieDesc()" style="width:100%;border:1px solid #cbd5e1;border-radius:6px;padding:5px;font-size:13px;margin-top:2px;"></div>
+                <div style="flex:1;"><label style="font-size:11px;color:#64748b;">Larg. (cm)</label><input type="number" id="pw-larg" placeholder="—" min="0" step="0.1" onchange="updatePlaieDesc()" style="width:100%;border:1px solid #cbd5e1;border-radius:6px;padding:5px;font-size:13px;margin-top:2px;"></div>
+                <div style="flex:1;"><label style="font-size:11px;color:#64748b;">Prof. (cm)</label><input type="number" id="pw-prof" placeholder="—" min="0" step="0.1" onchange="updatePlaieDesc()" style="width:100%;border:1px solid #cbd5e1;border-radius:6px;padding:5px;font-size:13px;margin-top:2px;"></div>
+              </div>
+            </div>
+
+            <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:10px;">
+              <label style="font-size:12px;font-weight:600;color:#475569;display:block;margin-bottom:4px;">🏔️ Base de la plaie (% estimé)</label>
+              <div style="display:flex;flex-direction:column;gap:4px;">
+                <div style="display:flex;align-items:center;gap:6px;"><span style="width:12px;height:12px;background:#dc2626;border-radius:2px;display:inline-block;"></span><label style="font-size:12px;flex:1;">Nécrose noire/sèche</label><input type="number" id="pw-necrose" placeholder="%" min="0" max="100" onchange="updatePlaieDesc()" style="width:55px;border:1px solid #cbd5e1;border-radius:4px;padding:3px;font-size:12px;text-align:center;"></div>
+                <div style="display:flex;align-items:center;gap:6px;"><span style="width:12px;height:12px;background:#fbbf24;border-radius:2px;display:inline-block;"></span><label style="font-size:12px;flex:1;">Fibrine / slough (jaune)</label><input type="number" id="pw-fibrine" placeholder="%" min="0" max="100" onchange="updatePlaieDesc()" style="width:55px;border:1px solid #cbd5e1;border-radius:4px;padding:3px;font-size:12px;text-align:center;"></div>
+                <div style="display:flex;align-items:center;gap:6px;"><span style="width:12px;height:12px;background:#16a34a;border-radius:2px;display:inline-block;"></span><label style="font-size:12px;flex:1;">Tissu de granulation (rouge)</label><input type="number" id="pw-granul" placeholder="%" min="0" max="100" onchange="updatePlaieDesc()" style="width:55px;border:1px solid #cbd5e1;border-radius:4px;padding:3px;font-size:12px;text-align:center;"></div>
+                <div style="display:flex;align-items:center;gap:6px;"><span style="width:12px;height:12px;background:#e0f2fe;border:1px solid #93c5fd;border-radius:2px;display:inline-block;"></span><label style="font-size:12px;flex:1;">Épithélialisation (rosé)</label><input type="number" id="pw-epithe" placeholder="%" min="0" max="100" onchange="updatePlaieDesc()" style="width:55px;border:1px solid #cbd5e1;border-radius:4px;padding:3px;font-size:12px;text-align:center;"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Col 2 -->
+          <div style="display:flex;flex-direction:column;gap:10px;">
+
+            <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:10px;">
+              <label style="font-size:12px;font-weight:600;color:#475569;display:block;margin-bottom:4px;">🔲 Bords de la plaie</label>
+              <select id="pw-bords" onchange="updatePlaieDesc()" style="width:100%;border:1px solid #cbd5e1;border-radius:6px;padding:6px;font-size:13px;">
+                <option value="">— Sélectionner —</option>
+                <option value="réguliers et bien définis">Réguliers et bien définis</option>
+                <option value="irréguliers et mal définis">Irréguliers et mal définis</option>
+                <option value="surélevés et kératosiques (callus)">Surélevés / kératosiques (callus)</option>
+                <option value="macérés (blancs, ramollis)">Macérés (blancs, ramollis)</option>
+                <option value="fibreux et adhérents">Fibreux et adhérents</option>
+                <option value="décollés / décollés avec sape ou tunnel">Décollés / Sape ou tunnel</option>
+                <option value="nécrotiques">Nécrotiques</option>
+              </select>
+            </div>
+
+            <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:10px;">
+              <label style="font-size:12px;font-weight:600;color:#475569;display:block;margin-bottom:4px;">💧 Exsudat — Quantité</label>
+              <select id="pw-exsudat-qt" onchange="updatePlaieDesc()" style="width:100%;border:1px solid #cbd5e1;border-radius:6px;padding:6px;font-size:13px;">
+                <option value="">— Sélectionner —</option>
+                <option value="Aucun exsudat">Aucun</option>
+                <option value="Exsudat faible">Faible</option>
+                <option value="Exsudat modéré">Modéré</option>
+                <option value="Exsudat abondant">Abondant</option>
+              </select>
+              <label style="font-size:12px;font-weight:600;color:#475569;display:block;margin-bottom:4px;margin-top:8px;">💧 Exsudat — Type</label>
+              <select id="pw-exsudat-type" onchange="updatePlaieDesc()" style="width:100%;border:1px solid #cbd5e1;border-radius:6px;padding:6px;font-size:13px;">
+                <option value="">— Sélectionner —</option>
+                <option value="séreux (clair, liquide)">Séreux (clair, liquide)</option>
+                <option value="sérosanglant (rosé)">Sérosanglant (rosé)</option>
+                <option value="sanguinolant">Sanguinolant</option>
+                <option value="purulent (trouble, épais, odeur)">Purulent (trouble, épais)</option>
+                <option value="hématique (sang franc)">Hématique</option>
+              </select>
+            </div>
+
+            <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:10px;">
+              <label style="font-size:12px;font-weight:600;color:#475569;display:block;margin-bottom:4px;">🌿 Peau périlésionnelle</label>
+              <select id="pw-peri" onchange="updatePlaieDesc()" style="width:100%;border:1px solid #cbd5e1;border-radius:6px;padding:6px;font-size:13px;">
+                <option value="">— Sélectionner —</option>
+                <option value="saine et intacte">Saine et intacte</option>
+                <option value="érythémateuse (rougeur &lt;2 cm)">Érythémateuse (&lt;2 cm)</option>
+                <option value="indurée (fibrose, lipodermatosclérose)">Indurée / lipodermatosclérose</option>
+                <option value="macérée (blanche, humide)">Macérée (blanche, humide)</option>
+                <option value="hyperpigmentée (hémosidérose)">Hyperpigmentée (hémosidérose)</option>
+                <option value="eczémateuse (dermatite de stase)">Eczémateuse (dermatite de stase)</option>
+                <option value="nécrotique ou fragile">Nécrotique / fragile</option>
+              </select>
+            </div>
+
+            <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:10px;">
+              <label style="font-size:12px;font-weight:600;color:#475569;display:block;margin-bottom:4px;">🦠 Signes locaux d&apos;infection (NERDS / STONEES)</label>
+              <div style="display:flex;flex-direction:column;gap:4px;">
+                <label style="font-size:12px;"><input type="checkbox" id="pw-inf-chaleur" onchange="updatePlaieDesc()" style="margin-right:5px;">Chaleur locale ↑</label>
+                <label style="font-size:12px;"><input type="checkbox" id="pw-inf-ery" onchange="updatePlaieDesc()" style="margin-right:5px;">Érythème &gt; 2 cm</label>
+                <label style="font-size:12px;"><input type="checkbox" id="pw-inf-oedeme" onchange="updatePlaieDesc()" style="margin-right:5px;">Œdème</label>
+                <label style="font-size:12px;"><input type="checkbox" id="pw-inf-douleur" onchange="updatePlaieDesc()" style="margin-right:5px;">Douleur augmentée</label>
+                <label style="font-size:12px;"><input type="checkbox" id="pw-inf-pus" onchange="updatePlaieDesc()" style="margin-right:5px;">Écoulement purulent</label>
+                <label style="font-size:12px;"><input type="checkbox" id="pw-inf-odeur" onchange="updatePlaieDesc()" style="margin-right:5px;">Odeur nauséabonde</label>
+                <label style="font-size:12px;"><input type="checkbox" id="pw-inf-friable" onchange="updatePlaieDesc()" style="margin-right:5px;">Tissu de granulation friable</label>
+              </div>
+            </div>
+
+            <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:10px;">
+              <label style="font-size:12px;font-weight:600;color:#475569;display:block;margin-bottom:4px;">🩺 Douleur (EVA 0–10)</label>
+              <div style="display:flex;align-items:center;gap:8px;">
+                <input type="range" id="pw-douleur" min="0" max="10" value="0" onchange="updatePlaieDesc();document.getElementById('pw-doul-val').textContent=this.value" style="flex:1;">
+                <span id="pw-doul-val" style="font-weight:700;font-size:14px;color:#1C3F8F;width:20px;text-align:center;">0</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Generated clinical description -->
+        <div style="background:#1e293b;border-radius:10px;padding:16px;margin-top:4px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+            <span style="color:#94a3b8;font-size:12px;font-weight:600;letter-spacing:0.05em;">📋 RÉSUMÉ CLINIQUE GÉNÉRÉ</span>
+            <button onclick="copyPlaieDesc()" style="background:#334155;color:#e2e8f0;border:none;border-radius:6px;padding:4px 12px;cursor:pointer;font-size:11px;">📋 Copier</button>
+          </div>
+          <div id="pw-output" style="color:#e2e8f0;font-size:13px;line-height:1.7;font-family:Georgia,serif;min-height:60px;">
+            <em style="color:#64748b;">Sélectionner les caractéristiques ci-dessus pour générer la description...</em>
+          </div>
+        </div>
+
+        <!-- NERDS/STONEES reminder -->
+        <div class="note" style="margin-top:10px;font-size:12px;"><strong>NERDS (infection superficielle) :</strong> Non-healing · Exudate ↑ · Red/friable granulation · Debris (slough) · Smell<br><strong>STONEES (infection profonde) :</strong> Size ↑ · Temperature ↑ · Os/probe positif · New areas · Erythème &gt;2 cm · Exsudat purulent · Smell + systémique</div>
+      </div>
+
+      <script>
+      function updatePlaieDesc() {
+        var type = document.getElementById('pw-type').value;
+        var loc  = document.getElementById('pw-loc').value;
+        var lon  = document.getElementById('pw-long').value;
+        var lar  = document.getElementById('pw-larg').value;
+        var pro  = document.getElementById('pw-prof').value;
+        var necrose = document.getElementById('pw-necrose').value;
+        var fibrine = document.getElementById('pw-fibrine').value;
+        var granul  = document.getElementById('pw-granul').value;
+        var epithe  = document.getElementById('pw-epithe').value;
+        var bords   = document.getElementById('pw-bords').value;
+        var exqt    = document.getElementById('pw-exsudat-qt').value;
+        var extype  = document.getElementById('pw-exsudat-type').value;
+        var peri    = document.getElementById('pw-peri').value;
+        var douleur = document.getElementById('pw-douleur').value;
+        var infSigns = [];
+        if (document.getElementById('pw-inf-chaleur').checked) infSigns.push('chaleur locale augmentée');
+        if (document.getElementById('pw-inf-ery').checked)     infSigns.push('érythème périulcéreux > 2 cm');
+        if (document.getElementById('pw-inf-oedeme').checked)  infSigns.push('œdème');
+        if (document.getElementById('pw-inf-douleur').checked) infSigns.push('douleur augmentée');
+        if (document.getElementById('pw-inf-pus').checked)     infSigns.push('écoulement purulent');
+        if (document.getElementById('pw-inf-odeur').checked)   infSigns.push('odeur nauséabonde');
+        if (document.getElementById('pw-inf-friable').checked) infSigns.push('tissu de granulation friable');
+
+        if (!type && !loc) {
+          document.getElementById('pw-output').innerHTML = '<em style="color:#64748b;">Sélectionner les caractéristiques ci-dessus pour générer la description...</em>';
+          return;
+        }
+
+        var parts = [];
+
+        // Type + localisation
+        var intro = '';
+        if (type) intro += type;
+        if (loc)  intro += (type ? ' situé au niveau ' : 'Plaie au niveau ') + loc;
+        if (intro) parts.push(intro);
+
+        // Dimensions
+        if (lon || lar || pro) {
+          var dim = 'mesurant ';
+          if (lon && lar) dim += lon + ' x ' + lar + ' cm';
+          else if (lon)   dim += lon + ' cm de longueur';
+          else if (lar)   dim += lar + ' cm de largeur';
+          if (pro)        dim += ' x ' + pro + ' cm de profondeur';
+          parts.push(dim);
+        }
+
+        // Base
+        var base = [];
+        if (necrose) base.push(necrose + '% de nécrose');
+        if (fibrine) base.push(fibrine + '% de fibrine/slough');
+        if (granul)  base.push(granul + '% de tissu de granulation');
+        if (epithe)  base.push(epithe + '% d'épithélialisation');
+        if (base.length > 0) parts.push('base composée de ' + base.join(', '));
+
+        // Bords
+        if (bords) parts.push('bords ' + bords);
+
+        // Exsudat
+        if (exqt || extype) {
+          var exStr = exqt ? exqt.toLowerCase() : '';
+          if (extype) exStr += (exStr ? ', de type ' : 'exsudat de type ') + extype;
+          parts.push(exStr);
+        }
+
+        // Peau périlésionnelle
+        if (peri) parts.push('peau périlésionnelle ' + peri);
+
+        // Infection
+        if (infSigns.length > 0) {
+          parts.push('signes locaux d'infection présents : ' + infSigns.join(', '));
+        } else {
+          parts.push('aucun signe local d'infection noté');
+        }
+
+        // Douleur
+        parts.push('douleur à EVA ' + douleur + '/10');
+
+        // Build sentence
+        var desc = parts[0].charAt(0).toUpperCase() + parts[0].slice(1);
+        for (var i = 1; i < parts.length; i++) {
+          desc += ', ' + parts[i];
+        }
+        desc += '.';
+
+        // Color coding for infection
+        var style = '';
+        if (infSigns.length >= 3) {
+          style = 'color:#fca5a5;';
+        } else if (infSigns.length > 0) {
+          style = 'color:#fde68a;';
+        } else {
+          style = 'color:#bbf7d0;';
+        }
+
+        document.getElementById('pw-output').innerHTML = '<span style="' + style + '">' + desc + '</span>';
+      }
+
+      function copyPlaieDesc() {
+        var txt = document.getElementById('pw-output').innerText;
+        if (navigator.clipboard) {
+          navigator.clipboard.writeText(txt).then(function() {
+            var btn = document.querySelector('[onclick="copyPlaieDesc()"]');
+            if (btn) { btn.textContent = '✅ Copié!'; setTimeout(function(){ btn.textContent = '📋 Copier'; }, 2000); }
+          });
+        }
+      }
+      </script>
+
       <!-- ═══ DERM-RED: DRAPEAUX ROUGES ═══ -->
       <div class="block flag" id="derm-red">
         <div class="block-title"><span class="tag">🚨 Drapeaux rouges &amp; Résumé diagnostique</span></div>
