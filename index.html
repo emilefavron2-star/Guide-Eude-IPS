@@ -10349,249 +10349,512 @@ function iraTab(tab) {
 }
 </script>
 <div class="section" id="sec-irc">
-      <div class="section-header">
-        <div class="section-accent" style="background:var(--red)">🫘</div>
-        <div class="section-title"><h1>IRC / MRC</h1><div class="breadcrumb">Néphrologie <span class="breadcrumb-sep">·</span> Section 11</div></div>
-      </div>
+      <div class="section-header"><div class="section-accent">🫘</div><div class="section-title"><h1>IRC / MRC — Maladie Rénale Chronique</h1><div class="breadcrumb">Néphrologie <span class="breadcrumb-sep">·</span> Section</div></div></div>
+
+      <!-- PILLS NAV -->
       <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
-        <button onclick="document.getElementById('irc-1').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📌 Définition KDIGO</button>
-        <button onclick="document.getElementById('irc-2').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🧬 Physiopath.</button>
-        <button onclick="document.getElementById('irc-3').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🩺 Évaluation</button>
-        <button onclick="document.getElementById('irc-4').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔍 Clinique</button>
-        <button onclick="document.getElementById('irc-5').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🧪 Paraclinique</button>
-        <button onclick="document.getElementById('irc-6').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🧮 DFG & Diète</button>
-        <button onclick="document.getElementById('irc-7').scrollIntoView({behavior:'smooth'})" style="background:#0a7a4e;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">💊 Quadruple protection</button>
-        <button onclick="document.getElementById('irc-8').scrollIntoView({behavior:'smooth'})" style="background:#c0392b;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🚨 Red Flags</button>
-      </div>
-      <div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:20px;">
-        <div style="flex:1;min-width:100px;background:#FEF9C3;border-radius:10px;padding:12px;text-align:center;"><div style="font-size:14px;font-weight:800;color:#92400e;">DFG &lt; 60</div><div style="font-size:11px;color:#555;margin-top:4px;">IRC (KDIGO 2024)</div></div>
-        <div style="flex:1;min-width:100px;background:#DCFCE7;border-radius:10px;padding:12px;text-align:center;"><div style="font-size:14px;font-weight:800;color:#0a7a4e;">SRAA</div><div style="font-size:11px;color:#555;margin-top:4px;">Pilier cardio-rénal</div></div>
-        <div style="flex:1;min-width:100px;background:#FEE2E2;border-radius:10px;padding:12px;text-align:center;"><div style="font-size:14px;font-weight:800;color:#c0392b;">DFG &lt; 15</div><div style="font-size:11px;color:#555;margin-top:4px;">IRC stade 5</div></div>
-      </div>
-      <div class="block def">
-        <div class="block-title" id="irc-1"><span class="tag">📌 Définition & Critères diagnostiques — KDIGO 2024</span></div>
-        <p class="content-text">Présence pendant <strong>≥ 3 mois</strong> d'au moins une anomalie de la <strong>fonction</strong> (DFGe &lt; 60 mL/min/1,73 m²) ou de la <strong>structure</strong> rénale (RAC ≥ 30 mg/g, anomalie du sédiment, hématurie persistante, désordre tubulaire, anomalie structurelle/histologique à l'imagerie, ATCD de greffe rénale).</p>
-        <div class="key-fact red" style="margin-top:10px;">Mortalité CV survient <strong>avant</strong> le stade terminal — risque exponentiel si DFGe &lt; 45 (et de façon additive si DFGe &lt; 60 ET RAC &gt; 3 mg/mmol). <em>Valeurs précises de DFGe/RAC et stadification → voir 🧪 Paraclinique.</em></div>
+        <button onclick="document.getElementById('irc-def').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📌 Définition &amp; Classification</button>
+        <button onclick="document.getElementById('irc-albuminurie').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔬 Albuminurie</button>
+        <button onclick="document.getElementById('irc-dfg').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🧮 DFG &amp; DFG désajusté</button>
+        <button onclick="document.getElementById('irc-causes').scrollIntoView({behavior:'smooth'})" style="background:#0a7a4e;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔍 Causes</button>
+        <button onclick="document.getElementById('irc-cv').scrollIntoView({behavior:'smooth'})" style="background:#dc2626;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">❤️ Risque CV</button>
+        <button onclick="document.getElementById('irc-traitement').scrollIntoView({behavior:'smooth'})" style="background:#7b3fa0;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">💊 Traitement pharmaco</button>
+        <button onclick="document.getElementById('irc-nonpharmaco').scrollIntoView({behavior:'smooth'})" style="background:#d97706;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🥗 Non-pharmaco</button>
+        <button onclick="document.getElementById('irc-complic').scrollIntoView({behavior:'smooth'})" style="background:#be185d;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🚨 Complications</button>
+        <button onclick="document.getElementById('irc-progression').scrollIntoView({behavior:'smooth'})" style="background:#475569;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📉 Progression &amp; Référence</button>
+        <button onclick="document.getElementById('irc-kfre').scrollIntoView({behavior:'smooth'})" style="background:#0891b2;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📊 KFRE</button>
+        <button onclick="document.getElementById('irc-global').scrollIntoView({behavior:'smooth'})" style="background:#475569;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🌐 PEC Globale</button>
       </div>
 
-      <!-- PHYSIOPATHOLOGIE -->
-      <div class="block para" style="border-left-color:var(--blue);">
-        <div class="block-title" id="irc-2"><span class="tag">🧬 Physiopathologie brève</span></div>
-        <p class="content-text">Perte progressive et irréversible de néphrons (diabète #1, HTA #2, glomérulonéphrites, maladies héréditaires, obstruction, toxiques) → les néphrons restants compensent par <strong>hyperfiltration</strong> : vasodilatation de l'artériole afférente → ↑ pression intraglomérulaire → ↑ protéinurie/albuminurie → <strong>sclérose glomérulaire</strong> → perte additionnelle de néphrons. Cercle vicieux auto-entretenu qui mène progressivement vers l'<strong>IRT</strong>.</p>
-        <p class="content-text" style="margin-top:8px;">La <strong>MRC est aussi une maladie cardiovasculaire</strong> : athérosclérose accélérée, dysfonction endothéliale, inflammation chronique, stress oxydatif et calcification vasculaire → la mortalité CV précède souvent l'IRT.</p>
+      <!-- ═══ DÉFINITION & CLASSIFICATION ═══ -->
+      <div class="block def" id="irc-def">
+        <div class="block-title"><span class="tag">📌 1. Définition &amp; Classification KDIGO 2024</span></div>
+        <div class="key-fact blue" style="margin-bottom:10px;">IRC = Présence pendant <strong>≥ 3 mois</strong> d&apos;au moins <strong>UNE anomalie</strong> ayant des implications pour la santé :</div>
+        <table style="margin-bottom:12px;">
+          <thead><tr><th>Critère</th><th>Seuil / Description</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Fonction rénale ↓</strong></td><td>DFGe &lt; <strong>60 mL/min/1,73 m²</strong></td></tr>
+            <tr><td><strong>Albuminurie ↑</strong></td><td>RAC ≥ <strong>30 mg/g</strong> (micro ou macroalbuminurie)</td></tr>
+            <tr><td><strong>Sédiment urinaire anormal</strong></td><td>Hématurie persistante · cylindres ·éosinophilurie</td></tr>
+            <tr><td><strong>Désordre tubulaire</strong></td><td>Troubles électrolytiques secondaires</td></tr>
+            <tr><td><strong>Anomalie structurelle</strong></td><td>Polykystose · hydronéphrose · petits reins · hyperéchogénicité · sténose artères rénales</td></tr>
+            <tr><td><strong>Transplantation rénale</strong></td><td>Quel que soit le DFG</td></tr>
+          </tbody>
+        </table>
+        <div class="key-fact yellow" style="margin-bottom:12px;">💡 <strong>Mnémo :</strong> Le DFG dit combien il reste de fonction · l&apos;albuminurie dit combien la maladie est active · la combinaison des deux dit le risque.</div>
+
+        <p class="content-text" style="font-weight:600;margin-bottom:6px;">📊 Classification KDIGO — Stades G (DFG) × A (Albuminurie)</p>
+        <table style="margin-bottom:8px;">
+          <thead><tr><th>Stade G</th><th>DFGe (mL/min/1,73 m²)</th><th>Description</th></tr></thead>
+          <tbody>
+            <tr><td><span class="drug-badge">G1</span></td><td>≥ 90</td><td>Normal ou élevé</td></tr>
+            <tr><td><span class="drug-badge">G2</span></td><td>60–89</td><td>Légèrement diminué</td></tr>
+            <tr><td><span class="drug-badge warn">G3a</span></td><td>45–59</td><td>Légèrement à modérément diminué</td></tr>
+            <tr><td><span class="drug-badge warn">G3b</span></td><td>30–44</td><td>Modérément à sévèrement diminué</td></tr>
+            <tr><td><span class="drug-badge ci">G4</span></td><td>15–29</td><td>Sévèrement diminué</td></tr>
+            <tr><td><span class="drug-badge ci">G5</span></td><td>&lt; 15</td><td>Insuffisance rénale terminale (IRT)</td></tr>
+          </tbody>
+        </table>
+        <table>
+          <thead><tr><th>Stade A</th><th>RAC (mg/mmol)</th><th>RAC (mg/g)</th><th>Description</th></tr></thead>
+          <tbody>
+            <tr><td><span class="drug-badge">A1</span></td><td>&lt; 3</td><td>&lt; 30</td><td>Normal à légèrement augmenté</td></tr>
+            <tr><td><span class="drug-badge warn">A2</span></td><td>3–30</td><td>30–300</td><td>Modérément augmenté (microalbuminurie)</td></tr>
+            <tr><td><span class="drug-badge ci">A3</span></td><td>&gt; 30</td><td>&gt; 300</td><td>Sévèrement augmenté (macroalbuminurie)</td></tr>
+          </tbody>
+        </table>
+        <div class="key-fact red" style="margin-top:8px;">🔴 Le risque est très élevé dès <strong>G3b/A3</strong>, et <strong>additif</strong> quand DFG &lt; 60 ET albuminurie &gt; 3 mg/mmol.</div>
       </div>
 
-      <!-- ÉVALUATION INITIALE -->
-      <div class="block clin">
-        <div class="block-title" id="irc-3"><span class="tag">🩺 Évaluation initiale — Anamnèse & examen physique</span></div>
-        <p class="content-text" style="margin-bottom:8px;"><strong>Anamnèse — surtout rechercher :</strong></p>
+      <!-- ═══ ALBUMINURIE ═══ -->
+      <div class="block clin" id="irc-albuminurie">
+        <div class="block-title"><span class="tag">🔬 2. Albuminurie — Marqueur clé de la MRC</span></div>
+        <div class="key-fact ink" style="margin-bottom:10px;">L&apos;albuminurie est souvent <strong>le premier marqueur détectable</strong> de lésion rénale — précède fréquemment la baisse du DFG. C&apos;est aussi un marqueur de <strong>dysfonction endothéliale systémique</strong>.</div>
+        <table style="margin-bottom:10px;">
+          <thead><tr><th>Cause d&apos;albuminurie</th><th>Mécanisme</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Maladies glomérulaires primaires</strong></td><td>Glomérulonéphrite → altération de la barrière de filtration glomérulaire</td></tr>
+            <tr><td><strong>Hyperpression intraglomérulaire</strong></td><td>Obésité · Diabète · faible nombre de néphrons → hyperfiltration → ↑ pression → albuminurie</td></tr>
+            <tr><td><strong>HTA</strong></td><td>Sclérose des artérioles → ischémie rénale chronique</td></tr>
+          </tbody>
+        </table>
+        <div class="key-fact blue" style="margin-bottom:8px;"><strong>Dépistage recommandé (IPS — rôle clé) chez :</strong> &gt; 60 ans · Obésité · Diabète · HTA · Maladie cardiovasculaire · Anomalies structurelles rénales · ATCD de MRC · Hématurie microscopique inexpliquée</div>
+        <div class="note"><strong>Méthode :</strong> RAC urinaire (Ratio Albumine/Créatinine) sur échantillon aléatoire matinal · Confirmer sur 2–3 prélèvements si positif · Faux positifs : infection urinaire, exercice intense récent, fièvre, décompensation aiguë</div>
+      </div>
+
+      <!-- ═══ DFG & DFG DÉSAJUSTÉ ═══ -->
+      <div class="block para" id="irc-dfg">
+        <div class="block-title"><span class="tag">🧮 3. DFG &amp; DFG Désajusté</span></div>
+        <div class="key-fact blue" style="margin-bottom:8px;"><strong>DFGe standard :</strong> Estimé par CKD-EPI (créatinine sérique) · Indexé à <strong>1,73 m²</strong> de surface corporelle · Valeur de référence pour classification KDIGO et suivi.</div>
+        <div class="sec-divider"><div class="sd-shape sq"></div><div class="sd-label">DFG Désajusté — Quand et Comment</div><div class="sd-line"></div></div>
+        <div class="key-fact ink" style="margin-bottom:8px;">Le DFGe standard peut <strong>surestimer</strong> (patient maigre) ou <strong>sous-estimer</strong> (patient obèse) la fonction rénale réelle chez les patients atypiques.</div>
+        <div style="background:#f1f5f9;border-radius:8px;padding:12px;margin-bottom:10px;font-family:monospace;font-size:13px;">
+          DFG désajusté (mL/min) = DFGe × SC / 1,73<br>
+          SC (m²) = √(Taille<sub>cm</sub> × Poids<sub>kg</sub> / 3600) &nbsp;&nbsp;<em>[Formule Mosteller]</em>
+        </div>
+        <table style="margin-bottom:10px;">
+          <thead><tr><th>Cas clinique</th><th>DFGe</th><th>DFG désajusté</th><th>Risque</th></tr></thead>
+          <tbody>
+            <tr><td>Homme 52 ans, 135 kg, 175 cm, obèse · IRC G3a</td><td>48 mL/min/1,73 m²</td><td>~71 mL/min</td><td><span class="drug-badge warn">Sous-estimation → risque sous-dosage</span></td></tr>
+            <tr><td>Femme 79 ans, 42 kg, 150 cm · IRC G3b</td><td>42 mL/min/1,73 m²</td><td>~32 mL/min</td><td><span class="drug-badge ci">Surestimation → risque surdosage</span></td></tr>
+          </tbody>
+        </table>
         <div class="flag-list">
-          <div class="flag-item"><span class="flag-dot ink"></span><span>Maladie <strong>silencieuse</strong> — souvent asymptomatique jusqu'aux stades avancés (DFGe &lt; 30) → <strong>dépister activement</strong> chez : &gt; 60 ans, obésité, diabète, HTA, maladie CV, ATCD de MRC, anomalies structurelles rénales, hématurie microscopique</span></div>
-          <div class="flag-item"><span class="flag-dot ink"></span><span>Symptômes tardifs : fatigue, nausées/anorexie, prurit, dyspnée, œdèmes, troubles du sommeil/crampes</span></div>
-          <div class="flag-item"><span class="flag-dot ink"></span><span>Facteurs de progression à documenter : contrôle glycémique/tensionnel, protéinurie, tabagisme, exposition aux AINS/contraste/néphrotoxiques, épisodes répétés d'IRA</span></div>
-        </div>
-        <p class="content-text" style="margin:12px 0 8px;"><strong>Examen physique :</strong></p>
-        <div class="flag-list">
-          <div class="flag-item"><span class="flag-dot blue"></span><span>TA (cible &lt; 130/80), signes de surcharge volémique : œdèmes, distension jugulaire, crépitants</span></div>
-          <div class="flag-item"><span class="flag-dot blue"></span><span>Signes d'urémie avancée : astérixis, frottement péricardique, excoriations (prurit), pâleur (anémie)</span></div>
-          <div class="flag-item"><span class="flag-dot blue"></span><span>Indices de la cause sous-jacente : masses rénales palpables (polykystique), souffles vasculaires, signes de maladie systémique</span></div>
+          <div class="flag-item"><span class="flag-dot ink"></span><span><strong>✅ Désajuster POUR :</strong> Ajustement posologique (surtout marge thérapeutique étroite)</span></div>
+          <div class="flag-item"><span class="flag-dot red"></span><span><strong>❌ Ne PAS désajuster pour :</strong> Classification KDIGO · Stratification G1–G5 · Suivi standard de la MRC</span></div>
         </div>
       </div>
 
-      <div class="block clin">
-        <div class="block-title" id="irc-4"><span class="tag">🔍 Clinique</span></div>
-        <p class="content-text">Souvent asymptomatique jusqu'aux stades avancés (DFGe &lt; 30). HTA · Anémie · Fatigue · Œdème · Nausées · Prurit · Dyspnée</p>
-        <div class="highlight yellow" style="margin-top:8px;font-size:13px;"><strong>Complications tardives :</strong> Hyperkaliémie · Acidose métabolique · CKD-MBD (hyperphosphatémie, PTH ↑, calcitriol ↓)</div>
+      <!-- ═══ CAUSES ═══ -->
+      <div class="block def" id="irc-causes">
+        <div class="block-title"><span class="tag">🔍 4. Causes de l&apos;IRC</span></div>
+        <div class="key-fact ink" style="margin-bottom:8px;">L&apos;IRC peut toucher les <strong>glomérules, les tubules, l&apos;interstitium ou les vaisseaux rénaux</strong>.</div>
+        <table>
+          <thead><tr><th>Cause</th><th>Détails / Exemples</th></tr></thead>
+          <tbody>
+            <tr><td><strong>🏆 Diabète sucré</strong></td><td>Cause #1 · Néphropathie diabétique · HBT1/T2 → hyperfiltration glomérulaire → sclérose glomérulaire</td></tr>
+            <tr><td><strong>Hypertension artérielle</strong></td><td>2e cause · Néphro-angiosclérose hypertensive · sclérose des artérioles → ischémie rénale chronique</td></tr>
+            <tr><td><strong>Glomérulonéphrites</strong></td><td>Primaires (GNMP, NIgA) ou secondaires (lupus, vasculites) → atteinte directe des glomérules</td></tr>
+            <tr><td><strong>Maladies héréditaires</strong></td><td>Maladie rénale polykystique (MRPK) · Syndrome d&apos;Alport · Autres tubulopathies héréditaires</td></tr>
+            <tr><td><strong>Néphropathies tubulo-interstitielles</strong></td><td>NIA chronique · Reflux vésico-urétéral · Lithiase répétée · Analgésiques chroniques</td></tr>
+            <tr><td><strong>Obstructives chroniques</strong></td><td>HBP · Sténose urétérale · Fibrose rétropéritonéale</td></tr>
+            <tr><td><strong>Néphrotoxiques</strong></td><td>AINS chroniques · Lithium · Produits de contraste répétés · Plantes médicinales (aristolochiques)</td></tr>
+          </tbody>
+        </table>
       </div>
 
-      <div class="block para">
-        <div class="block-title" id="irc-5"><span class="tag">🧪 Paraclinique</span></div>
-        <div style="display:flex;flex-wrap:wrap;gap:6px;">
-          <span class="drug-badge line1">DFGe (CKD-EPI) + RAC</span>
-          <span class="drug-badge line3">FSC · électrolytes · Ca²⁺ · PO₄ · PTH</span>
-          <span class="drug-badge line3">25-OH Vit D (si DFGe &lt; 30)</span>
-          <span class="drug-badge line3">HbA1c · Analyse urine · Écho rénale</span>
-          <span class="drug-badge warn">KFRE (risque dialyse à 2 et 5 ans)</span>
+      <!-- ═══ RISQUE CV ═══ -->
+      <div class="block flag" id="irc-cv">
+        <div class="block-title"><span class="tag">❤️ 5. IRC &amp; Risque Cardiovasculaire</span></div>
+        <div class="key-fact red" style="margin-bottom:10px;">🚨 La <strong>majorité des patients MRC décèdent de causes cardiovasculaires</strong> avant d&apos;atteindre l&apos;insuffisance rénale terminale.</div>
+        <div class="stat-row" style="margin-bottom:12px;">
+          <div class="stat-card red"><div class="stat-num">DFG &lt; 60</div><div class="stat-label">↑ risque CV progressif dès ce seuil</div></div>
+          <div class="stat-card ink"><div class="stat-num">DFG &lt; 45</div><div class="stat-label">Risque CV exponentiel</div></div>
+          <div class="stat-card warn"><div class="stat-num">RAC &gt; 30</div><div class="stat-label">↑ risque CV additif (même si DFG normal)</div></div>
         </div>
-        <p class="content-text" style="margin-top:10px;"><strong>Stadification KDIGO 2024 (DFGe × RAC)</strong> — combine les deux axes pour estimer le pronostic et la fréquence de suivi :</p>
-        <table style="margin-top:6px;font-size:12.5px;">
-          <thead><tr><th>Stade DFGe</th><th>mL/min/1,73 m²</th><th>A1 (RAC &lt; 3 mg/mmol)</th><th>A2 (3–30 mg/mmol)</th><th>A3 (&gt; 30 mg/mmol)</th></tr></thead>
-          <tbody>
-            <tr><td>G1</td><td>≥ 90</td><td style="background:rgba(34,197,94,.12)">Faible</td><td style="background:rgba(250,204,21,.18)">Modéré</td><td style="background:rgba(239,68,68,.16)">Élevé</td></tr>
-            <tr><td>G2</td><td>60–89</td><td style="background:rgba(34,197,94,.12)">Faible</td><td style="background:rgba(250,204,21,.18)">Modéré</td><td style="background:rgba(239,68,68,.16)">Élevé</td></tr>
-            <tr><td>G3a</td><td>45–59</td><td style="background:rgba(250,204,21,.18)">Modéré</td><td style="background:rgba(239,68,68,.16)">Élevé</td><td style="background:rgba(127,29,29,.22)">Très élevé</td></tr>
-            <tr><td>G3b</td><td>30–44</td><td style="background:rgba(239,68,68,.16)">Élevé</td><td style="background:rgba(239,68,68,.16)">Élevé</td><td style="background:rgba(127,29,29,.22)">Très élevé</td></tr>
-            <tr><td>G4</td><td>15–29</td><td style="background:rgba(127,29,29,.22)">Très élevé</td><td style="background:rgba(127,29,29,.22)">Très élevé</td><td style="background:rgba(127,29,29,.22)">Très élevé</td></tr>
-            <tr><td>G5</td><td>&lt; 15 (ou dialyse)</td><td style="background:rgba(127,29,29,.22)">Très élevé</td><td style="background:rgba(127,29,29,.22)">Très élevé</td><td style="background:rgba(127,29,29,.22)">Très élevé</td></tr>
-          </tbody>
-        </table>
-        <div class="note" style="margin-top:8px;">Suivi suggéré : risque <strong>faible</strong> = q1an · <strong>modéré</strong> = q1an (ou plus si nouveau dx) · <strong>élevé</strong> = q6mois · <strong>très élevé</strong> = q3–4mois (référence néphrologie si G4–G5, déclin rapide, ou A3 persistante)</div>
+        <div class="flag-list" style="margin-bottom:10px;">
+          <div class="flag-item"><span class="flag-dot red"></span><span><strong>Athérosclérose accélérée :</strong> ↑ LDL oxydés · inflammation chronique · dysfonction endothéliale</span></div>
+          <div class="flag-item"><span class="flag-dot red"></span><span><strong>Dysfonction endothéliale :</strong> Rétention de toxines urémiques · ↓ NO · oxyde nitrique</span></div>
+          <div class="flag-item"><span class="flag-dot ink"></span><span><strong>Calcifications vasculaires :</strong> Hyperphosphatémie → dépôts Ca-PO₄ dans les parois vasculaires</span></div>
+          <div class="flag-item"><span class="flag-dot ink"></span><span><strong>Stress oxydatif chronique :</strong> ↑ ROS → inflammation vasculaire → rigidité artérielle</span></div>
+          <div class="flag-item"><span class="flag-dot ink"></span><span><strong>HVG :</strong> HTA + surcharge volumique + anémie → hypertrophie ventriculaire gauche → IC</span></div>
+        </div>
+        <div class="key-fact blue">💡 L&apos;albuminurie est un marqueur de lésion rénale ET de <strong>dysfonction endothéliale systémique</strong>. Le risque CV et le risque rénal augmentent de façon <strong>additive</strong> quand DFG &lt; 60 ET/ou RAC &gt; 3 mg/mmol.</div>
       </div>
 
-      <div class="block para" style="border-left-color:var(--ink);">
-        <div class="block-title" id="irc-6"><span class="tag">🧮 DFG désajusté & Diète — Outils pratiques</span></div>
-        <p class="content-text"><strong>DFG désajusté</strong> — le DFGe standard est indexé à 1,73 m² et peut sur/sous-estimer la fonction réelle chez les patients atypiques (poids extrêmes). <strong>On désajuste UNIQUEMENT pour l'ajustement posologique</strong> (Rx à marge thérapeutique étroite) — <strong>jamais</strong> pour la classification KDIGO/stadification.</p>
-        <div class="key-fact black" style="margin-top:6px;">Formule : <strong>DFG désajusté (mL/min) = DFGe × SC / 1,73</strong> où SC (m²) = √[(Taille cm × Poids kg) / 3600] (Mosteller)</div>
-        <table style="margin-top:8px;font-size:12.5px;">
-          <thead><tr><th>Profil</th><th>DFGe (1,73 m²)</th><th>DFG réel désajusté</th><th>Risque</th></tr></thead>
-          <tbody>
-            <tr><td>Homme 52a, 135 kg, 175 cm (SC≈2,56)</td><td>48</td><td>~71 mL/min</td><td>Sous-estimation → <strong>sous-dosage</strong></td></tr>
-            <tr><td>Femme 79a, 42 kg, 150 cm (SC≈1,32)</td><td>42</td><td>~32 mL/min</td><td>Surestimation → <strong>surdosage</strong></td></tr>
-          </tbody>
-        </table>
-        <p class="content-text" style="margin-top:10px;"><strong>Diète en IRC :</strong></p>
-        <table style="margin-top:4px;font-size:12.5px;">
-          <thead><tr><th>Paramètre</th><th>Recommandation</th></tr></thead>
-          <tbody>
-            <tr><td>Protéines</td><td>0,8 g/kg/j (G3–G5) · éviter &gt; 1,3 g/kg/j — adapter si fragilité/sarcopénie</td></tr>
-            <tr><td>Sodium</td><td>&lt; 2 g Na/j — sinon ↓ efficacité IECA/ARA et diurétiques</td></tr>
-            <tr><td>Potassium</td><td>Restriction si hyperkaliémie</td></tr>
-            <tr><td>Phosphore</td><td>Restriction — prioriser sources végétales (phytates) vs additifs (très absorbés)</td></tr>
-            <tr><td>Magnésium</td><td>Restriction si nécessaire</td></tr>
-          </tbody>
-        </table>
-        <div class="highlight cream" style="margin-top:8px;font-size:13px;">📞 <strong>Référer en néphrologie :</strong> IRA surajoutée · DFGe &lt; 30 · Albuminurie &gt; 30 mg/mmol · progression &gt; 5 mL/min/1,73 m²/an · HTA réfractaire (3 Rx max) · hématurie/cylindres érythrocytaires · maladie rénale héréditaire</div>
-      </div>
+      <!-- ═══ TRAITEMENT ═══ -->
+      <div class="block para" id="irc-traitement">
+        <div class="block-title"><span class="tag">💊 6. Traitement Pharmacologique — Ralentir la Progression</span></div>
 
-      <div class="block rx">
-        <div class="block-title" id="irc-7"><span class="tag">💊 Quadruple protection cardio-rénale</span></div>
+        <!-- Algorithm -->
+        <div class="key-fact blue" style="margin-bottom:12px;"><strong>🎯 Objectifs tensionnels (KDIGO 2021/2024) :</strong> TA &lt; 130/80 mmHg · TAS &lt; 120 mmHg si toléré (SPRINT) · Individualiser si : fragilité, hypotension orthostatique, espérance de vie limitée</div>
+
+        <!-- Algorithme décisionnel -->
+        <div style="background:#f8fafc;border:2px solid #1C3F8F;border-radius:10px;padding:16px;margin-bottom:16px;">
+          <p style="font-weight:700;color:#1C3F8F;margin-bottom:10px;font-size:14px;">🗺️ Algorithme de traitement — Quadrithérapie KDIGO 2024</p>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px;">
+            <button onclick="ircAlgo('hta')" id="ircbtn-hta" style="background:#1C3F8F;color:#fff;border:none;border-radius:16px;padding:6px 14px;cursor:pointer;font-size:12px;">🩺 HTA (sans albuminurie)</button>
+            <button onclick="ircAlgo('db')" id="ircbtn-db" style="background:#e2e8f0;color:#1e293b;border:none;border-radius:16px;padding:6px 14px;cursor:pointer;font-size:12px;">🔬 Néphropathie Diabétique</button>
+            <button onclick="ircAlgo('non-db')" id="ircbtn-non-db" style="background:#e2e8f0;color:#1e293b;border:none;border-radius:16px;padding:6px 14px;cursor:pointer;font-size:12px;">🫘 MRC non-DT2 + albuminurie</button>
+          </div>
+
+          <div id="irc-algo-hta">
+            <div class="flag-list">
+              <div class="flag-item"><span class="flag-dot ink"></span><span><strong>1re ligne :</strong> IECA ou ARA (si protéinurie/albuminurie associée) · Thiazidique ou indapamide · IECA + diurétique (combinaison recommandée)</span></div>
+              <div class="flag-item"><span class="flag-dot ink"></span><span><strong>Si non contrôlé :</strong> BCC (amlodipine) · Ajout bêta-bloquant si IC/MCAS associée</span></div>
+              <div class="flag-item"><span class="flag-dot red"></span><span><strong>Cible :</strong> TA &lt; 130/80 mmHg</span></div>
+            </div>
+          </div>
+
+          <div id="irc-algo-db" style="display:none;">
+            <div class="key-fact blue" style="margin-bottom:8px;"><strong>Quadrithérapie KDIGO 2024 — Néphropathie Diabétique</strong></div>
+            <table style="margin-bottom:8px;">
+              <thead><tr><th>Ligne</th><th>Agent</th><th>Condition</th></tr></thead>
+              <tbody>
+                <tr><td><strong>1re ligne</strong></td><td>IECA ou ARA (dose max tolérée)</td><td>MRC + albuminurie, tout DFG</td></tr>
+                <tr><td><strong>1re ligne</strong></td><td>iSGLT2 (Dapagliflozine 10 mg ou Empagliflozine 10 mg)</td><td>DFGe ≥ 20 mL/min</td></tr>
+                <tr><td><strong>2e ligne</strong></td><td>Finerenone (Kerendia) 10–20 mg/j</td><td>DFGe 25–75 + RAC ≥ 3 mg/mmol persistante</td></tr>
+                <tr><td><strong>3e ligne</strong></td><td>AGLP-1 (Sémaglutide/Ozempic)</td><td>Si cible DT2 non atteinte avec SGLT2 + metformine</td></tr>
+              </tbody>
+            </table>
+            <div class="key-fact yellow">On ne traite plus seulement la glycémie → on vise <strong>protection rénale + protection cardiovasculaire simultanément</strong>.</div>
+          </div>
+
+          <div id="irc-algo-non-db" style="display:none;">
+            <div class="key-fact blue" style="margin-bottom:8px;"><strong>MRC non-DT2 avec albuminurie (ex: FIND-CKD)</strong></div>
+            <div class="flag-list">
+              <div class="flag-item"><span class="flag-dot ink"></span><span><strong>1re ligne :</strong> IECA ou ARA (dose max si tolérée)</span></div>
+              <div class="flag-item"><span class="flag-dot ink"></span><span><strong>+ iSGLT2</strong> si DFGe ≥ 20 mL/min (protection indépendante du DT2)</span></div>
+              <div class="flag-item"><span class="flag-dot ink"></span><span><strong>+ Finerenone</strong> si albuminurie persistante sous IECA/ARA + iSGLT2 (indication FIND-CKD élargie)</span></div>
+            </div>
+          </div>
+        </div>
+
         <div class="accordion">
           <div class="accordion-item open">
-            <div class="accordion-header"><span style="font-family:var(--mono);font-weight:700;color:var(--blue);margin-right:8px;">①</span> IECA / ARA — Pierre angulaire si albuminurie
-              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-            </div>
-            <div class="accordion-body">↓ Pression intraglomérulaire · Surveiller Cr + K⁺ à 1–2 sem · ↑ Cr ≤ 30 % acceptable</div>
-          </div>
-          <div class="accordion-item">
-            <div class="accordion-header"><span style="font-family:var(--mono);font-weight:700;color:var(--blue);margin-right:8px;">②</span> iSGLT-2
-              <span class="acc-badge" style="background:var(--blue-lt);color:var(--blue);">↓ 35–40 % progression</span>
-              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-            </div>
-            <div class="accordion-body">Efficace avec ou sans diabète · ↓ 23 % IC hospitalisations · Sick day rules (SADMAN)
-              <table style="margin-top:8px;font-size:12px;">
-                <thead><tr><th>Agent</th><th>DFGe d'entrée (nephro)</th><th>RAC minimale</th></tr></thead>
-                <tbody>
-                  <tr><td><strong>Dapagliflozin 10 mg/j</strong></td><td>20–75 mL/min</td><td>≥ 22 mg/mmol</td></tr>
-                  <tr><td><strong>Empagliflozin 10 mg/j</strong></td><td>20–45 ou 45–90 avec albuminurie</td><td>≥ 22 mg/mmol</td></tr>
-                </tbody>
-              </table>
-              <span class="drug-badge ci" style="margin-top:6px;display:inline-block;">CI absolue : DFGe &lt; 20</span>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <div class="accordion-header"><span style="font-family:var(--mono);font-weight:700;color:var(--blue);margin-right:8px;">③</span> Finérénone (ARM-NS)
-              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-            </div>
-            <div class="accordion-body">Néphropathie diabétique + albuminurie persistante (DFGe 25–75 + RAC ≥ 3 mg/mmol) · ↓ 23 % composite rénal (FIDELITY) · Mécanisme : bloque la suractivation aldostérone-récepteur minéralocorticoïde (fibrose rénale/cardiaque) — plus sélectif, sans effet anti-androgénique
-              <table style="margin-top:8px;font-size:12px;">
-                <thead><tr><th>ARM</th><th>Sélectivité</th><th>Effet anti-androgénique</th><th>Demi-vie</th></tr></thead>
-                <tbody>
-                  <tr><td>Spironolactone</td><td>+</td><td>++</td><td>&gt; 20h</td></tr>
-                  <tr><td>Éplérénone</td><td>++</td><td>(+)</td><td>4–6h</td></tr>
-                  <tr><td><strong>Finérénone</strong></td><td><strong>+++</strong></td><td>—</td><td><strong>2–3h</strong></td></tr>
-                </tbody>
-              </table>
-              <table style="margin-top:6px;font-size:12px;">
-                <thead><tr><th>K⁺</th><th>Conduite (KDIGO 2024)</th></tr></thead>
-                <tbody>
-                  <tr><td style="color:var(--ink);">≤ 4,8 mmol/L</td><td>Initier 10 mg/j (DFGe 25–59) ou 20 mg/j (DFGe ≥ 60) · contrôle K⁺ à 1 mois puis q4mois</td></tr>
-                  <tr><td>4,9–5,5 mmol/L</td><td>Maintenir la dose · contrôle K⁺ q4mois</td></tr>
-                  <tr><td><strong>&gt; 5,5 mmol/L</strong></td><td><span class="drug-badge ci">Suspendre</span> · ajuster diète/co-médication · reprendre si K⁺ ≤ 5,0</td></tr>
-                </tbody>
-              </table>
-              <span class="drug-badge ci" style="margin-top:6px;display:inline-block;">CI : K⁺ &gt; 5,0 · DFGe &lt; 25</span></div>
-          </div>
-          <div class="accordion-item">
-            <div class="accordion-header"><span style="font-family:var(--mono);font-weight:700;color:var(--blue);margin-right:8px;">④</span> Sémaglutide SC (AR-GLP-1)
-              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-            </div>
-            <div class="accordion-body">↓ 24 % événements rénaux majeurs (FLOW, NEJM 2024) · Indications en néphropathie diabétique :<br>
-              <table style="margin-top:8px;font-size:12px;">
-                <thead><tr><th>DFGe</th><th>RAC nécessaire</th></tr></thead>
-                <tbody>
-                  <tr><td>50–75 mL/min</td><td>30–500 mg/mmol</td></tr>
-                  <tr><td>25–50 mL/min</td><td>10–500 mg/mmol</td></tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <div class="accordion-header">Complications — Prise en charge spécifique
+            <div class="accordion-header">💊 1re Révolution — IECA / ARA (dose maximale tolérée)
               <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
             </div>
             <div class="accordion-body">
-              <strong>HTA :</strong> cible &lt; 130/80 mmHg · IECA/ARA 1re ligne si albuminurie<br><br>
-              <strong>Anémie :</strong> Corriger le fer AVANT d'introduire l'ASE (EPO) — <strong>Fer IV</strong> préféré si TSAT &lt; 20 % ou Ferritine &lt; 100 ng/mL · ASE si Hb &lt; 100 g/L après correction martiale · Cible Hb 100–115 g/L
-              <table style="margin-top:6px;font-size:11.5px;">
-                <thead><tr><th>Ferritine</th><th>TSAT</th><th>Interprétation</th><th>Conduite</th></tr></thead>
+              <div class="key-fact blue" style="margin-bottom:8px;"><strong>Mécanisme néphroprotecteur :</strong> ↓ angiotensine II → vasodilatation efférente → ↓ pression intraglomérulaire → ↓ hyperfiltration → ↓ protéinurie → ralentissement de la sclérose glomérulaire</div>
+              <table style="margin-bottom:8px;">
+                <thead><tr><th>Paramètre</th><th>Détails</th></tr></thead>
                 <tbody>
-                  <tr><td>&lt; 100 µg/L</td><td>&lt; 20 %</td><td>Carence absolue</td><td>Fer IV</td></tr>
-                  <tr><td>100–500 µg/L</td><td>20–30 %</td><td>Carence fonctionnelle</td><td>Envisager fer IV</td></tr>
-                  <tr><td>&gt; 500 µg/L</td><td>&gt; 30 %</td><td>Surcharge ou inflammation</td><td>Ne pas supplémenter</td></tr>
-                  <tr><td>&gt; 700 µg/L</td><td>&gt; 40 %</td><td>Surcharge en fer</td><td>Suspendre le fer</td></tr>
-                </tbody>
-              </table><br>
-              <strong>CKD-MBD — Ordre d'apparition :</strong> ↑ FGF-23 (G2–G3a) → ↑ phosphatémie → ↓ calcitriol → ↑ PTH → calcifications vasculaires · Ostéodystrophie<br>
-              <em>Chélateurs des phosphates (avec les repas) :</em>
-              <table style="margin-top:4px;font-size:11.5px;">
-                <thead><tr><th>Agent</th><th>Mécanisme</th><th>Avantages / Limites</th></tr></thead>
-                <tbody>
-                  <tr><td><strong>Carbonate/acétate de calcium (CaCO₃)</strong></td><td>Lie PO₄⁻ dans le TD</td><td>Peu coûteux; <strong>risque hypercalcémie ↑</strong></td></tr>
-                  <tr><td><strong>Sévélamer (Renvela®)</strong></td><td>Résine non absorbable</td><td>Sans calcium; ↓ LDL; <span class="drug-badge line1">Préféré</span>; coût ↑</td></tr>
-                  <tr><td><strong>Carbonate de lanthane</strong></td><td>Lie les phosphates</td><td>Sans hypercalcémie; coût ↑</td></tr>
+                  <tr><td><strong>Exemples</strong></td><td>IECA : Ramipril 10 mg/j · Perindopril 8 mg/j · ARA : Telmisartan 80 mg/j · Losartan 100 mg/j</td></tr>
+                  <tr><td><strong>Posologie</strong></td><td>Titrer à la dose maximale tolérée. IECA : réduire si IRC avancée (accumulation)</td></tr>
+                  <tr><td><strong>Effets pharmacologiques</strong></td><td>↓ TA systémique + ↓ pression glomérulaire + ↓ protéinurie + protection cardiaque</td></tr>
+                  <tr><td><strong>EI principaux</strong></td><td>Toux (IECA, 10–15 %) → switch ARA · HyperK+ · Hypotension · ↑ créatinine transitoire (30 % acceptable)</td></tr>
+                  <tr><td><strong>CI</strong></td><td>Grossesse · Sténose bilatérale artères rénales · Hyperk+ &gt; 5,5 mmol/L</td></tr>
                 </tbody>
               </table>
-              Vitamine D active (calcitriol 0,25–0,5 µg/j) · Cinacalcet si PTH persistante<br><br>
-              <strong>Acidose :</strong> bicarbonate Na PO si HCO₃⁻ &lt; 18 mmol/L · Cible ≥ 22 mmol/L<br><br>
-              <strong>Hyperkaliémie :</strong> <span class="drug-badge warn">Lokelma (patiromer Na)</span> <span class="drug-badge warn">Veltassa (patiromer K)</span> — maintien IECA/ARA/ARM possible · restricion alimentaire K⁺ + Fludrocortisone si hypokali relative
+              <div class="key-fact red" style="margin-bottom:8px;">⚠️ <strong>Surveillance KDIGO :</strong> Créatinine + K+ à <strong>1–2 semaines</strong> après initiation ou ajustement · ↑ créatinine ≤ 30 % = acceptable · Si &gt; 30 % → suspecter sténose artères rénales · IECA + ARA ensemble : <span class="drug-badge ci">❌ Non recommandé</span> (EI sans bénéfice)</div>
+              <div class="key-fact yellow"><strong>Sick days :</strong> Cesser IECA/ARA/iSGLT2 lors des journées de maladie aiguë (déshydratation, gastro-entérite, fièvre)</div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <div class="accordion-header">💊 2e Révolution — Finerenone (Kerendia) ARM non-stéroïdien
+              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+            </div>
+            <div class="accordion-body">
+              <div class="key-fact blue" style="margin-bottom:8px;"><strong>Mécanisme :</strong> Bloque la suractivation aldostérone-récepteur minéralocorticoïde responsable de fibrose rénale et cardiaque · Plus sélectif que spironolactone · Pas d&apos;effet anti-androgénique</div>
+              <table style="margin-bottom:8px;">
+                <thead><tr><th>ARM</th><th>Sélectivité</th><th>Anti-androgénique</th><th>Demi-vie</th></tr></thead>
+                <tbody>
+                  <tr><td>Spironolactone</td><td>+</td><td>++ (gynécomastie, dysménorrhée)</td><td>&gt; 20 h</td></tr>
+                  <tr><td>Éplérénone</td><td>++</td><td>(+)</td><td>4–6 h</td></tr>
+                  <tr><td><strong>Finerenone ★</strong></td><td>+++</td><td>❌ Aucun</td><td>~2 h (tissu ciblé)</td></tr>
+                </tbody>
+              </table>
+              <p class="content-text" style="font-weight:600;margin-bottom:4px;">Indications (KDIGO 2024) :</p>
+              <div class="flag-list" style="margin-bottom:8px;">
+                <div class="flag-item"><span class="flag-dot ink"></span><span>DFGe 25–60 + RAC 3–30 mg/mmol</span></div>
+                <div class="flag-item"><span class="flag-dot ink"></span><span>DFGe 25–75 + RAC 30–500 mg/mmol</span></div>
+              </div>
+              <p class="content-text" style="font-weight:600;margin-bottom:4px;">Posologie selon K+ (KDIGO 2024) :</p>
+              <table>
+                <thead><tr><th>K+ initial</th><th>Action</th></tr></thead>
+                <tbody>
+                  <tr><td>≤ 4,8 mmol/L</td><td>Initier 10 mg/j (DFG 25–59) ou 20 mg/j (DFG ≥ 60) · Contrôle K+ à 1 mois puis q4 mois</td></tr>
+                  <tr><td>4,9–5,5 mmol/L</td><td>Maintenir dose · Contrôle K+ q4 mois</td></tr>
+                  <tr><td>&gt; 5,5 mmol/L</td><td>Suspendre · Ajuster diète/co-médicaments · Reprendre si K+ ≤ 5,0 mmol/L</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <div class="accordion-header">💊 3e Révolution — Inhibiteurs SGLT2 (iSGLT2)
+              <svg class="accordion-chevron" width="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+            </div>
+            <div class="accordion-body">
+              <div class="key-fact blue" style="margin-bottom:8px;"><strong>Mécanismes néphroprotecteurs :</strong> ↓ pression intraglomérulaire via feedback tubuloglomérulaire (constriction afférente) → ↓ hyperfiltration · ↓ réabsorption proximale Na/glucose → natriurèse/glucosurie → ↓ volume intravasculaire · ↓ inflammation et fibrose rénale · ↓ rigidité artérielle · ↓ acide urique</div>
+              <div class="key-fact yellow" style="margin-bottom:8px;">⭐ <strong>Les iSGLT2 ne sont PAS des médicaments néphrotoxiques. Ce sont des médicaments cardio-rénaux.</strong></div>
+              <table style="margin-bottom:8px;">
+                <thead><tr><th>Agent</th><th>Dose</th><th>DFGe d&apos;entrée</th><th>RAC minimale</th></tr></thead>
+                <tbody>
+                  <tr><td><strong>Dapagliflozine (Farxiga)</strong></td><td>10 mg/j</td><td>≥ 20 mL/min</td><td>≥ 22 mg/mmol</td></tr>
+                  <tr><td><strong>Empagliflozine (Jardiance)</strong></td><td>10 mg/j</td><td>≥ 20 mL/min</td><td>≥ 22 mg/mmol</td></tr>
+                </tbody>
+              </table>
+              <p class="content-text" style="font-weight:600;margin-bottom:4px;">Effets indésirables :</p>
+              <div class="flag-list">
+                <div class="flag-item"><span class="flag-dot yellow"></span><span><strong>Infections génitales mycosiques</strong> (bénin) → antifongique topique (Canesten)</span></div>
+                <div class="flag-item"><span class="flag-dot yellow"></span><span><strong>Hypotension/déshydratation</strong> (personnes âgées sous diurétiques) → ajuster</span></div>
+                <div class="flag-item"><span class="flag-dot red"></span><span><strong>Acidocétose euglycémique</strong> (très rare, surtout sous insuline) → cesser avant chirurgie</span></div>
+                <div class="flag-item"><span class="flag-dot ink"></span><span><strong>Sick days :</strong> Cesser temporairement si déshydratation/gastro/fièvre</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <div class="accordion-header">💊 Agonistes GLP-1 (AGLP-1) — Sémaglutide
+              <svg class="accordion-chevron" width="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+            </div>
+            <div class="accordion-body">
+              <div class="key-fact blue" style="margin-bottom:8px;"><strong>Mécanismes néphroprotecteurs :</strong> Effets métaboliques (↓ glycémie, ↓ insulinorésistance, ↓ glucotoxicité) · Perte pondérale (↓ hyperfiltration, ↓ SRAA, ↓ inflammation adipocytaire) · Effets CV (↓ dysfonction endothéliale, ↓ inflammation vasculaire) · Effets rénaux directs probables (↓ fibrose tubulo-interstitielle)</div>
+              <table>
+                <thead><tr><th>Indication DFGe</th><th>RAC</th></tr></thead>
+                <tbody>
+                  <tr><td>DFGe 50–75 mL/min</td><td>RAC 30–500 mg/mmol</td></tr>
+                  <tr><td>DFGe 25–50 mL/min</td><td>RAC 10–500 mg/mmol</td></tr>
+                </tbody>
+              </table>
+              <div class="note" style="margin-top:8px;">EI : Nausées · vomissements · pancréatite rare · Ne pas initier si ATCD pancréatite ou néoplasie thyroïdienne</div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <div class="accordion-header">💊 Dyslipidémie en MRC — Prévention Cardiovasculaire
+              <svg class="accordion-chevron" width="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+            </div>
+            <div class="accordion-body">
+              <div class="note" style="margin-bottom:8px;"><strong>⚠️ Pas de protection rénale démontrée par les statines.</strong> But : prévention <strong>cardiovasculaire uniquement</strong>. Viser LDL &lt; 1,8 mmol/L (haut risque CV).</div>
+              <table>
+                <thead><tr><th>Population</th><th>Recommandation</th></tr></thead>
+                <tbody>
+                  <tr><td>≥ 50 ans · DFG &lt; 60, non dialysé</td><td>Statine seule ou statine + ézétimibe</td></tr>
+                  <tr><td>&lt; 50 ans avec IRC + coronaropathie ou DT2 ou AVC ischémique ou risque 10 ans &gt; 10 %</td><td>Statine</td></tr>
+                  <tr><td>Déjà sous statine au début dialyse</td><td>Poursuivre</td></tr>
+                  <tr><td>IRC dialysée (nouveau patient)</td><td><span class="drug-badge ci">❌ Ne pas initier statine/ézétimibe</span></td></tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
-        <div class="highlight yellow" style="margin-top:10px;font-size:13px;"><strong>Sick day rules — SADMAN :</strong> Suspendre <strong>S</strong>GLT2 · <strong>A</strong>AINS · <strong>D</strong>iurétique · <strong>M</strong>etformine · <strong>A</strong>RA · <strong>N</strong>sulfonylurées si déshydratation/fièvre/vomissements</div>
       </div>
 
-      <div class="block flag">
-        <div class="block-title" id="irc-8"><span class="tag">🚨 RED FLAGS</span></div>
+      <!-- ═══ NON-PHARMACO ═══ -->
+      <div class="block clin" id="irc-nonpharmaco">
+        <div class="block-title"><span class="tag">🥗 7. Traitement Non-Pharmacologique</span></div>
+        <table style="margin-bottom:12px;">
+          <thead><tr><th>Paramètre</th><th>Recommandation KDIGO 2024</th><th>Justification</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Protéines</strong></td><td>0,8 g/kg/jour (MRC G3+) · Éviter &gt; 1,3 g/kg/jour</td><td>↓ hyperfiltration · ↓ charge azotée · Adapter si fragilité/sarcopénie</td></tr>
+            <tr><td><strong>Sodium</strong></td><td>&lt; 2 g Na/jour (&lt; 5 g NaCl)</td><td>↑ efficacité IECA/ARA · ↓ TA · ↓ protéinurie</td></tr>
+            <tr><td><strong>Potassium</strong></td><td>Faible en K si hyperkaliémie</td><td>↓ risque arythmies · Permet maintien IECA/ARA/ARM</td></tr>
+            <tr><td><strong>Phosphore</strong></td><td>Faible en phosphore · Privilégier sources végétales (phytates : noix, avoine, légumineuses) vs additifs alimentaires (très absorbés)</td><td>↓ hyperphosphatémie · ↓ CKD-MBD · ↓ calcifications vasculaires</td></tr>
+            <tr><td><strong>Magnésium</strong></td><td>Restriction si nécessaire</td><td>Accumulation en IRC avancée</td></tr>
+          </tbody>
+        </table>
+        <div class="sec-divider"><div class="sd-shape sq"></div><div class="sd-label">Habitudes de vie</div><div class="sd-line"></div></div>
         <div class="flag-list">
-          <div class="flag-item"><span class="fi-icon">📉</span><span><strong>Déclin rapide du DFGe</strong> (&gt; 5 mL/min/1,73 m²/an, ou chute soutenue de catégorie de stade) → référence néphrologie non urgente mais à planifier — rechercher une cause surajoutée réversible</span></div>
-          <div class="flag-item"><span class="fi-icon">❤️</span><span><strong>DFGe &lt; 45 ou A3 persistante</strong> → risque CV dépasse le risque rénal à ce stade → intensifier statine/IECA-ARA/iSGLT-2 et viser cible tensionnelle &lt; 130/80</span></div>
-          <div class="flag-item"><span class="fi-icon">🩸</span><span><strong>Hyperkaliémie (K⁺ &gt; 6,0) ou acidose sévère (HCO₃⁻ &lt; 15)</strong> → corriger en urgence (Lokelma/Veltassa, bicarbonate, ECG) — ne pas attendre la consultation programmée</span></div>
-          <div class="flag-item"><span class="fi-icon">🧠</span><span><strong>Signes d'urémie</strong> (astérixis, péricardite, encéphalopathie, nausées réfractaires) → indication de dialyse urgente — référence néphrologie/urgence sans délai</span></div>
-          <div class="flag-item"><span class="fi-icon">💊</span><span><strong>Triple Whammy (IECA/ARA + diurétique + AINS)</strong> ou tout agent néphrotoxique (contraste, aminosides, IPP au long cours) → cesser systématiquement, particulièrement en contexte de maladie aiguë intercurrente (sick day rules)</span></div>
-          <div class="flag-item"><span class="fi-icon">🆘</span><span><strong>DFGe &lt; 20 sans plan établi</strong> → référence néphrologie urgente pour planification de la suppléance rénale (accès vasculaire, modalité, transplantation) — éviter une initiation non planifiée en contexte d'urgence</span></div>
+          <div class="flag-item"><span class="flag-dot ink"></span><span><strong>Obésité :</strong> Counseling perte de poids · IMC cible 18,5–25 · ↓ hyperfiltration</span></div>
+          <div class="flag-item"><span class="flag-dot ink"></span><span><strong>Sédentarité :</strong> Activité physique modérée ≥ 150 min/semaine (selon tolérance CV, âge, comorbidités)</span></div>
+          <div class="flag-item"><span class="flag-dot red"></span><span><strong>Tabac :</strong> Cessation tabagique + changement de comportement — le tabagisme accélère directement la progression de la MRC</span></div>
+        </div>
+        <div class="key-fact yellow" style="margin-top:10px;"><strong>Sécurité médicamenteuse en IRC :</strong> AINS · Contraste iodé · Aminoglycosides · Lithium · MVL · Plantes médicinales → risques de néphrotoxicité · Désindexer le DFG pour les médicaments à marge thérapeutique étroite · Privilégier agents de contraste non ioniques, faible osmolarité ou iso-osmolaires · Cesser IECA/ARA/iSGLT2 lors des sick days</div>
+      </div>
+
+      <!-- ═══ COMPLICATIONS ═══ -->
+      <div class="block flag" id="irc-complic">
+        <div class="block-title"><span class="tag">🚨 8. Gestion des Complications de l&apos;IRC</span></div>
+
+        <!-- Tab buttons -->
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px;">
+          <button onclick="ircComplic('anemie')" id="irccomp-anemie" style="background:#1C3F8F;color:#fff;border:none;border-radius:16px;padding:6px 14px;cursor:pointer;font-size:12px;">🩸 Anémie</button>
+          <button onclick="ircComplic('ckdmbd')" id="irccomp-ckdmbd" style="background:#e2e8f0;color:#1e293b;border:none;border-radius:16px;padding:6px 14px;cursor:pointer;font-size:12px;">🦴 CKD-MBD</button>
+          <button onclick="ircComplic('hyperk')" id="irccomp-hyperk" style="background:#e2e8f0;color:#1e293b;border:none;border-radius:16px;padding:6px 14px;cursor:pointer;font-size:12px;">⚡ HyperK+</button>
+          <button onclick="ircComplic('acidose')" id="irccomp-acidose" style="background:#e2e8f0;color:#1e293b;border:none;border-radius:16px;padding:6px 14px;cursor:pointer;font-size:12px;">🔬 Acidose Métabolique</button>
+        </div>
+
+        <!-- ANÉMIE -->
+        <div id="irccomp-content-anemie">
+          <div class="key-fact blue" style="margin-bottom:8px;"><strong>Physiopatho (multifactorielle) :</strong> ↓ production EPO (fibroblastes interstitiels rénaux) · ↓ durée de vie des GR (toxines urémiques) · Carence martiale (↓ absorption intestinale + perte sanguine) · Inflammation chronique (hepcidine ↑ → séquestration fer) · ↓ réponse médullaire · Hémodilution</div>
+          <div class="key-fact ink" style="margin-bottom:8px;"><strong>Cible Hb :</strong> 100–115 g/L · Hb &gt; 130 g/L → ↑ risque AVC, HTA, thrombose d&apos;accès vasculaire (sous EPO)</div>
+          <p class="content-text" style="font-weight:600;margin-bottom:4px;">Traitement — Fer</p>
+          <table style="margin-bottom:8px;">
+            <thead><tr><th>Formulation</th><th>Voie</th><th>Particularités</th></tr></thead>
+            <tbody>
+              <tr><td>Sulfate ferreux (FeSO₄)</td><td>PO</td><td>1re ligne si non dialysé</td></tr>
+              <tr><td>Fer saccharose (Venofer)</td><td>IV</td><td>200 mg/dose × 5 doses sur 5 semaines</td></tr>
+              <tr><td>Gluconate ferrique (Ferrlecit)</td><td>IV</td><td>125 mg/dose</td></tr>
+              <tr><td>Fer isomaltosique (Monoferric)</td><td>IV</td><td>Dose unique possible (1000 mg)</td></tr>
+              <tr><td>Fer carboxymaltose (Ferinject)</td><td>IV</td><td>750–1000 mg en 1–2 perfusions</td></tr>
+            </tbody>
+          </table>
+          <div class="note" style="margin-bottom:8px;"><strong>Initier le fer si : TSAT &lt; 30 % ET Ferritine &lt; 500 ng/mL</strong> · Si IRC non dialysé : PO préféré (ou IV) · Si dialysé : IV préféré · <strong>Suspendre si ferritine &gt; 700 ou TSAT &gt; 40 %</strong></div>
+          <p class="content-text" style="font-weight:600;margin-bottom:4px;">Traitement — Agents stimulant l&apos;érythropoïèse (ASE)</p>
+          <div class="flag-list" style="margin-bottom:8px;">
+            <div class="flag-item"><span class="flag-dot ink"></span><span><strong>Indication :</strong> Dialyse G5 (KDIGO 2026) · Initier si ferritine &gt; 500 + TSAT &gt; 30 %</span></div>
+            <div class="flag-item"><span class="flag-dot ink"></span><span><strong>Formulations :</strong> Eprex (époétine alfa) · Aranesp (darbépoétine) → SC ou IV</span></div>
+            <div class="flag-item"><span class="flag-dot red"></span><span><strong>Précaution :</strong> ATCD AVC ou néoplasie active sous traitement curatif</span></div>
+            <div class="flag-item"><span class="flag-dot yellow"></span><span><strong>EI :</strong> HTA · Céphalée · Thrombose d&apos;accès vasculaire</span></div>
+          </div>
+          <div class="note"><strong>Surveillance :</strong> Hb/mois au début → puis q3 mois · Titrer aux 2–4 semaines · Suspendre si Hb &gt; 115 g/L</div>
+        </div>
+
+        <!-- CKD-MBD -->
+        <div id="irccomp-content-ckdmbd" style="display:none;">
+          <div class="key-fact blue" style="margin-bottom:8px;"><strong>Physiopatho CKD-MBD (KDIGO 2017) :</strong><br>↓ DFG → ↓ excrétion phosphore → ↑ FGF-23 → ↓ calcitriol (1,25-OH-D) → hypocalcémie relative → ↑ PTH (hyperparathyroïdie secondaire) → ↑ résorption osseuse + calcification vasculaire</div>
+          <div class="flag-list" style="margin-bottom:8px;">
+            <div class="flag-item"><span class="flag-dot red"></span><span><strong>Conséquences osseuses :</strong> Turnover élevé · Ostéoporose · Ostéomalacie · Os adynamique</span></div>
+            <div class="flag-item"><span class="flag-dot red"></span><span><strong>Conséquences CV :</strong> HVG · Calcifications vasculaires → rigidité artérielle → ↑ mortalité CV</span></div>
+          </div>
+          <div class="note" style="margin-bottom:8px;"><strong>Surveillance (à partir DFG &lt; 60) :</strong> Ca · Phosphore · PTH · Phosphatase alcaline · Vitamine D 25-OH</div>
+          <p class="content-text" style="font-weight:600;margin-bottom:4px;">Traitements</p>
+          <table>
+            <thead><tr><th>Traitement</th><th>Agent / Dose</th><th>Particularités</th></tr></thead>
+            <tbody>
+              <tr><td><strong>1. Diète faible en phosphore</strong></td><td>Éviter additifs · Prioriser sources végétales (phytates moins absorbés)</td><td>1re mesure</td></tr>
+              <tr><td><strong>2. Chélateurs du phosphore</strong></td><td>Carbonate/Acétate de Ca (Oscal) · Sevelamer (Renagel, Renvela) · Carbonate de lanthane (Fosrenol) · Sucro-ferrique (Velphoro)</td><td>Prendre avec les repas · Aluminium = <span class="drug-badge ci">❌ ÉVITER</span> (toxicité osseuse/neuro)</td></tr>
+              <tr><td><strong>3. Analogues vitamine D</strong></td><td>Calcitriol (Rocaltrol) 0,25 mcg PO 2×/sem · Alfacalcidiol (One-Alpha) 0,25 mcg PO 3×/sem</td><td>Intervenir si PTH progressivement croissante · Corriger PO₄, Ca, vit D D3 avant</td></tr>
+              <tr><td><strong>4. Cinacalcet (Sensipar)</strong></td><td>30–180 mg/j · ajuster selon PTH</td><td>Liaison au CaSR → ↑ sensibilité Ca → ↓ PTH → calcémie · EI : nausées, hypocalcémie, hyperphosphatémie · Si échec → parathyroïdectomie</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- HyperK+ -->
+        <div id="irccomp-content-hyperk" style="display:none;">
+          <div class="key-fact blue" style="margin-bottom:8px;"><strong>Mécanismes en IRC :</strong><br>↓ excrétion rénale K+ · Hypoaldostéronisme relatif · Acidose métabolique (H+↑ → K+ sort des cellules) · Médicaments inhibant le SRAA (IECA/ARA/ARM)</div>
+          <div class="key-fact yellow" style="margin-bottom:8px;"><strong>Contextes à risque :</strong> DFG &lt; 30 · Sous IECA/ARA/ARM · Diabète + acidose métabolique · Apports K+ alimentaires élevés</div>
+          <p class="content-text" style="font-weight:600;margin-bottom:4px;">Gestion</p>
+          <div class="flag-list" style="margin-bottom:8px;">
+            <div class="flag-item"><span class="flag-dot ink"></span><span><strong>Diète faible en K+ :</strong> ↓ fruits/légumes riches en K (banane, orange, tomate, pomme de terre) · Éviction des suppléments de K+</span></div>
+            <div class="flag-item"><span class="flag-dot ink"></span><span><strong>Correction de l&apos;acidose :</strong> Alcalinisation → shift intracellulaire de K+</span></div>
+            <div class="flag-item"><span class="flag-dot ink"></span><span><strong>Ajuster médicaments :</strong> Réduire doses IECA/ARA/ARM si possible</span></div>
+          </div>
+          <p class="content-text" style="font-weight:600;margin-bottom:4px;">Chélateurs du potassium</p>
+          <table>
+            <thead><tr><th>Agent</th><th>Marque</th><th>Mécanisme / Particularités</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Patiromer</strong></td><td>Veltassa</td><td>Résine échangeuse de K+ · Prendre avec les repas · Onset : quelques heures</td></tr>
+              <tr><td><strong>Zirconium cyclosilicate</strong></td><td>Lokelma</td><td>Onset plus rapide (1–2 h) · Compatible avec les repas</td></tr>
+            </tbody>
+          </table>
+          <div class="key-fact blue" style="margin-top:8px;">⭐ Les nouveaux chélateurs permettent de <strong>maintenir les traitements néphroprotecteurs</strong> (IECA/ARA/ARM) tout en contrôlant le K+.</div>
+        </div>
+
+        <!-- ACIDOSE -->
+        <div id="irccomp-content-acidose" style="display:none;">
+          <div class="key-fact blue" style="margin-bottom:8px;"><strong>Physiopatho (KDIGO 2024) :</strong><br>↓ DFG → ↓ excrétion H+ (sous forme NH₄+ et acide phosphorique H₃PO₄) + ↓ réabsorption HCO₃⁻ → acidose métabolique à trou anionique normal (hyperchlorémique) · En stades avancés : TA élevé (rétention acides non volatils)</div>
+          <div class="flag-list" style="margin-bottom:8px;">
+            <div class="flag-item"><span class="flag-dot red"></span><span><strong>Déminéralisation osseuse :</strong> Tamponnage de H+ par carbonates osseux → ostéopénie</span></div>
+            <div class="flag-item"><span class="flag-dot red"></span><span><strong>Progression MRC :</strong> L&apos;acidose elle-même accélère la fibrose rénale (activation du compléments + systèmes endothéline)</span></div>
+            <div class="flag-item"><span class="flag-dot red"></span><span><strong>Catabolisme musculaire :</strong> ↑ Dégradation protéique · Sarcopénie · ↑ Mortalité</span></div>
+          </div>
+          <p class="content-text" style="font-weight:600;margin-bottom:4px;">Traitement</p>
+          <div class="flag-list" style="margin-bottom:8px;">
+            <div class="flag-item"><span class="flag-dot ink"></span><span><strong>Initier si HCO₃⁻ &lt; 18 mmol/L</strong> (ou &lt; 22 si progression rapide)</span></div>
+            <div class="flag-item"><span class="flag-dot ink"></span><span><strong>Bicarbonate de sodium (PO) :</strong> Débuter 500 mg bid · Augmenter progressivement jusqu&apos;à 1 g tid selon réponse · Cible : HCO₃⁻ 22–26 mmol/L</span></div>
+          </div>
+          <div class="key-fact yellow"><strong>Non-pharmacologique :</strong> Protéines végétales · Eau minérale gazeuse (ex. Gerolsteiner — riche en HCO₃⁻) · Diète alcaline (fruits et légumes)</div>
         </div>
       </div>
 
-      <!-- DIALYSE -->
-      <div class="block def" style="border-left-color:var(--red);">
-        <div class="block-title"><span class="tag">🩺 Suppléance rénale (dialyse) en IRC — Planification & repères</span></div>
-        <p class="content-text">Contrairement à l'IRA où la dialyse est souvent décidée en urgence, l'IRC permet une <strong>planification anticipée</strong> : référence néphrologique précoce (idéalement DFGe ≈ 15–20 ou trajectoire de déclin rapide) pour discuter des modalités, créer un accès vasculaire électif et préparer le patient/la famille.</p>
-        <p class="content-text" style="margin:10px 0 6px;"><strong>Quand référer en néphrologie pour planifier :</strong></p>
+      <!-- ═══ PROGRESSION & RÉFÉRENCE ═══ -->
+      <div class="block para" id="irc-progression">
+        <div class="block-title"><span class="tag">📉 9. Facteurs de Progression &amp; Quand Référer en Néphrologie</span></div>
+        <div class="key-fact blue" style="margin-bottom:10px;">💡 La réduction de la protéinurie et le contrôle de la TA sont les <strong>interventions les plus efficaces</strong> pour ralentir la progression.</div>
+        <table style="margin-bottom:12px;">
+          <thead><tr><th>Catégorie</th><th>Facteurs</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Modifiables — Hémodynamiques</strong></td><td>HTA · Protéinurie/albuminurie · ↑ pression intraglomérulaire</td></tr>
+            <tr><td><strong>Modifiables — Métaboliques</strong></td><td>Diabète mal contrôlé · Obésité · Dyslipidémie · Acidose métabolique</td></tr>
+            <tr><td><strong>Modifiables — Mode de vie</strong></td><td>Tabagisme · Sédentarité · Excès de sodium</td></tr>
+            <tr><td><strong>Non modifiables</strong></td><td>Âge · Cause sous-jacente · Génétique · Nombre de néphrons initial</td></tr>
+            <tr><td><strong>Iatrogènes</strong></td><td>AINS · Contraste · Épisodes répétés IRA · Médicaments néphrotoxiques</td></tr>
+          </tbody>
+        </table>
+        <div class="sec-divider"><div class="sd-shape sq"></div><div class="sd-label">Quand référer en Néphrologie</div><div class="sd-line"></div></div>
         <div class="flag-list">
-          <div class="flag-item"><span class="flag-dot red"></span><span>DFGe &lt; 30 (G4) — référence systématique pour suivi conjoint et discussion des options (dialyse, transplantation, traitement conservateur)</span></div>
-          <div class="flag-item"><span class="flag-dot red"></span><span>DFGe &lt; 20 ou progression rapide — amorcer la <strong>planification de l'accès vasculaire</strong> (fistule artério-veineuse pour HD nécessite plusieurs mois de maturation) ou du cathéter de dialyse péritonéale</span></div>
-          <div class="flag-item"><span class="flag-dot ink"></span><span>Discuter tôt des objectifs de soins : dialyse vs transplantation (préemptive idéalement) vs traitement conservateur/soins de confort selon l'âge, les comorbidités et les volontés du patient</span></div>
+          <div class="flag-item"><span class="flag-dot red"></span><span><strong>IRA</strong> — diminution abrupte de la fonction rénale</span></div>
+          <div class="flag-item"><span class="flag-dot red"></span><span><strong>DFG &lt; 30 mL/min/1,73 m²</strong></span></div>
+          <div class="flag-item"><span class="flag-dot red"></span><span><strong>Albuminurie &gt; 30 mg/mmol</strong> (macroalbuminurie importante)</span></div>
+          <div class="flag-item"><span class="flag-dot red"></span><span><strong>Progression &gt; 5 mL/min/1,73 m²/an</strong></span></div>
+          <div class="flag-item"><span class="flag-dot red"></span><span><strong>HTA réfractaire</strong> (≥ 3 agents à dose max)</span></div>
+          <div class="flag-item"><span class="flag-dot ink"></span><span><strong>Hématurie inexpliquée</strong> ou cylindres érythrocytaires</span></div>
+          <div class="flag-item"><span class="flag-dot ink"></span><span><strong>Maladie rénale héréditaire</strong></span></div>
         </div>
-        <p class="content-text" style="margin:10px 0 6px;"><strong>Indications de débuter la dialyse — mêmes principes qu'en IRA aiguë (AEIOU), mais en contexte électif :</strong></p>
-        <div style="display:flex;flex-wrap:wrap;gap:6px;">
-          <span class="drug-badge line3">A — Acidose métabolique réfractaire</span>
-          <span class="drug-badge line3">E — Électrolytes (hyperkaliémie réfractaire)</span>
-          <span class="drug-badge line3">I — Intoxication (rare en IRC)</span>
-          <span class="drug-badge line3">O — Overload volémique réfractaire aux diurétiques</span>
-          <span class="drug-badge warn">U — Urémie symptomatique (péricardite, encéphalopathie, nausées/anorexie sévères, prurit réfractaire)</span>
+      </div>
+
+      <!-- ═══ KFRE ═══ -->
+      <div class="block def" id="irc-kfre">
+        <div class="block-title"><span class="tag">📊 10. Estimation du Risque de Dialyse — KFRE</span></div>
+        <div class="key-fact blue" style="margin-bottom:10px;"><strong>Kidney Failure Risk Equation (KFRE)</strong> — Tangri et al., 2011 · Formule de prédiction clinique de l&apos;insuffisance rénale terminale (IRT) à <strong>2 ou 5 ans</strong></div>
+        <table style="margin-bottom:10px;">
+          <thead><tr><th>Variable intégrée</th><th>Détail</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Âge</strong></td><td>Facteur démographique</td></tr>
+            <tr><td><strong>Sexe</strong></td><td>Différences biologiques de progression</td></tr>
+            <tr><td><strong>DFGe</strong></td><td>Niveau de fonction rénale actuel</td></tr>
+            <tr><td><strong>RAC (albuminurie)</strong></td><td>Marqueur d&apos;activité de la maladie</td></tr>
+          </tbody>
+        </table>
+        <div class="flag-list" style="margin-bottom:10px;">
+          <div class="flag-item"><span class="flag-dot ink"></span><span>Meilleure planification des soins (préparation à la suppléance rénale)</span></div>
+          <div class="flag-item"><span class="flag-dot ink"></span><span>Orientation précoce vers la néphrologie</span></div>
+          <div class="flag-item"><span class="flag-dot ink"></span><span>Communication pronostique avec le patient</span></div>
         </div>
-        <p class="content-text" style="margin:10px 0 6px;"><strong>Modalités à discuter avec le patient :</strong></p>
-        <div class="flag-list">
-          <div class="flag-item"><span class="flag-dot blue"></span><span><strong>Hémodialyse (HD)</strong> — en centre ou à domicile · nécessite un accès vasculaire (fistule AV idéalement, sinon cathéter) · 3×/semaine typiquement</span></div>
-          <div class="flag-item"><span class="flag-dot blue"></span><span><strong>Dialyse péritonéale (DP)</strong> — à domicile, quotidienne · préserve mieux la fonction rénale résiduelle · nécessite autonomie/soutien et cathéter péritonéal</span></div>
-          <div class="flag-item"><span class="flag-dot yellow"></span><span><strong>Transplantation rénale (préemptive si possible)</strong> — meilleure survie et qualité de vie · évaluation précoce (DFGe ≈ 20–25) pour bilan pré-greffe et recherche de donneur vivant</span></div>
-          <div class="flag-item"><span class="flag-dot ink"></span><span><strong>Traitement conservateur (sans dialyse)</strong> — option valable chez patients âgés/fragiles ou selon volontés — gestion des symptômes et soins de confort</span></div>
+        <div class="key-fact yellow">🔗 Calculateur : <strong>www.risquededialyse.nc</strong> · Intégrer dans suivi systématique dès DFG &lt; 45 mL/min/1,73 m²</div>
+      </div>
+
+      <!-- ═══ PEC GLOBALE ═══ -->
+      <div class="block clin" id="irc-global">
+        <div class="block-title"><span class="tag">🌐 11. Prise en Charge Globale (KDIGO 2024)</span></div>
+        <div class="flag-list" style="margin-bottom:10px;">
+          <div class="flag-item"><span class="flag-dot red"></span><span><strong>Évaluer + traiter le risque CV :</strong> Statines · Antiplaquettaires si ASCVD · Contrôle TA · iSGLT2</span></div>
+          <div class="flag-item"><span class="flag-dot ink"></span><span><strong>Éducation patient :</strong> Sick days (IECA/ARA/iSGLT2) · MVL et plantes naturelles néphrotoxiques · Automédication</span></div>
+          <div class="flag-item"><span class="flag-dot ink"></span><span><strong>Contraste radiologique :</strong> Éviter si possible · Si nécessaire → agents non ioniques iso-osmolaires · Hydratation IV avant/après</span></div>
+          <div class="flag-item"><span class="flag-dot ink"></span><span><strong>Vaccination :</strong> Hépatites A et B · Influenza annuel · Pneumocoque</span></div>
+          <div class="flag-item"><span class="flag-dot ink"></span><span><strong>Mode de vie :</strong> Poids · Activité physique · Cessation tabagique (programme structuré)</span></div>
+          <div class="flag-item"><span class="flag-dot ink"></span><span><strong>Équipe multidisciplinaire :</strong> Néphrologue · Diététiste spécialisée en rénale · Pharmacien · Physiothérapeute · Ergothérapeute · Psychologue</span></div>
         </div>
-        <div class="note" style="margin-top:8px;">Préserver le réseau veineux du membre non dominant dès le DFGe &lt; 30 (éviter prises de sang/cathéters IV répétés au site prévu pour une future fistule)</div>
+        <div class="sec-divider"><div class="sd-shape sq"></div><div class="sd-label">Résumé — Traitement moderne MRC 2024</div><div class="sd-line"></div></div>
+        <table>
+          <thead><tr><th>Classe</th><th>Médicament</th><th>Indication principale</th></tr></thead>
+          <tbody>
+            <tr><td><strong>IECA/ARA</strong></td><td>Ramipril · Telmisartan</td><td>MRC + albuminurie, tout DFG</td></tr>
+            <tr><td><strong>iSGLT2</strong></td><td>Dapagliflozine · Empagliflozine</td><td>MRC G2–G5, avec ou sans DT2</td></tr>
+            <tr><td><strong>ARM non-stéroïdien</strong></td><td>Finerenone (Kerendia)</td><td>MRC + albuminurie persistante (DT2 établi, FIND-CKD pour non-DT2)</td></tr>
+            <tr><td><strong>AGLP-1</strong></td><td>Sémaglutide (Ozempic)</td><td>MRC + DT2 (étude FLOW)</td></tr>
+          </tbody>
+        </table>
+        <div class="key-fact blue" style="margin-top:10px;">⭐ Messages clés : La MRC est fréquente, silencieuse et constitue un problème de santé publique mondial · L&apos;IRC est une maladie cardiovasculaire autant que rénale · Le risque rénal dépend du DFG ET de l&apos;albuminurie — les deux ensemble · Le ralentissement de la progression est possible et démontré.</div>
       </div>
     </div>
-
-    <div class="section" id="sec-proteinurie">
+    
+<script>
+function ircAlgo(tab) {
+  var tabs = ['hta','db','non-db'];
+  tabs.forEach(function(t) {
+    var el = document.getElementById('irc-algo-' + t);
+    if (el) el.style.display = (t === tab) ? 'block' : 'none';
+    var b  = document.getElementById('ircbtn-' + t);
+    if (b)  { b.style.background = (t === tab) ? '#1C3F8F' : '#e2e8f0'; b.style.color = (t === tab) ? '#fff' : '#1e293b'; }
+  });
+}
+function ircComplic(tab) {
+  var tabs = ['anemie','ckdmbd','hyperk','acidose'];
+  tabs.forEach(function(t) {
+    var el = document.getElementById('irccomp-content-' + t);
+    if (el) el.style.display = (t === tab) ? 'block' : 'none';
+    var b  = document.getElementById('irccomp-' + t);
+    if (b)  { b.style.background = (t === tab) ? '#1C3F8F' : '#e2e8f0'; b.style.color = (t === tab) ? '#fff' : '#1e293b'; }
+  });
+}
+</script>
+<div class="section" id="sec-proteinurie">
       <div class="section-header">
         <div class="section-accent" style="background:var(--red)">🫘</div>
         <div class="section-title"><h1>Protéinurie & Hématurie</h1><div class="breadcrumb">Néphrologie <span class="breadcrumb-sep">·</span> Section 12</div></div>
