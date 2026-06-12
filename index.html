@@ -21293,24 +21293,79 @@ function calculatePHQ9() {
 
           <div class="accordion-item open">
             <div class="accordion-header" onclick="this.closest('.accordion-item').classList.toggle('open')">
-              <span>Diagnostic — DXA, T-score, FRAX & CAROC</span>
+              <span>Initiation de la DMO — Algorithme INESSS 2024 (PMN N° 888045)</span>
               <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="pointer-events:none"><path d="m9 18 6-6-6-6"/></svg>
             </div>
             <div class="accordion-body">
-              <table style="font-size:12px">
-                <thead><tr><th>Outil</th><th>Seuils / Définitions</th></tr></thead>
-                <tbody>
-                  <tr><td><strong>DXA (DEXA)</strong></td><td>Absorptiométrie bi-photonique X · Sites : colonne L1-L4, col fémoral, hanche totale · T-score = référence adulte jeune femme · Z-score = référence âge</td></tr>
-                  <tr><td><strong>T-score ≥ -1,0</strong></td><td>Densité osseuse normale</td></tr>
-                  <tr><td><strong>T-score -1,0 à -2,5</strong></td><td>Ostéopénie (faible densité osseuse)</td></tr>
-                  <tr><td><strong>T-score ≤ -2,5</strong></td><td>Ostéoporose (OMS)</td></tr>
-                  <tr><td><strong>T-score ≤ -2,5 + fracture fragilité</strong></td><td>Ostéoporose sévère (établie)</td></tr>
-                  <tr><td><strong>FRAX (OMS)</strong></td><td>Probabilité fracture ostéoporotique majeure à 10 ans · Intègre T-score col fémoral + FdR · Seuil intervention : ≥ 20 % ou ≥ 3 % hanche</td></tr>
-                  <tr><td><strong>CAROC (Canada)</strong></td><td>Risque fracture 10 ans : Faible (&lt; 10 %) · Modéré (10-20 %) · Élevé (&gt; 20 %) · Intègre T-score + FdR + fracture préalable</td></tr>
-                </tbody>
-              </table>
-              <div class="highlight cream" style="margin-top:6px"><strong>Indications DXA (Ostéoporosis Canada) :</strong> femmes ≥ 65 ans · femmes postménopausées &lt; 65 ans avec FdR · fracture fragilité à tout âge · corticostéroïdes ≥ 7,5 mg/j × 3 mois · hyperparathyroïdie · malabsorption · MPOC · VIH</div>
-              <div class="key-fact black" style="margin-top:6px">Seuils JAMC : ≥ 20 %/10 ans OU (T ≤ −2,5 + ≥ 70 ans) → <strong>recommander</strong> pharmacothérapie · 15–19,9 % OU (T ≤ −2,5 + &lt; 70 ans) → <strong>suggérer</strong></div>
+
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px;">
+                <div style="background:#e0f2fe;border-radius:8px;padding:10px;font-size:12px;">
+                  <div style="font-weight:800;color:#0369a1;margin-bottom:4px;font-size:11px;text-transform:uppercase;letter-spacing:.5px;">👤 Clientèle cible</div>
+                  • Femme <strong>≥ 65 ans</strong><br>• Homme <strong>≥ 70 ans</strong>
+                </div>
+                <div style="background:#fee2e2;border-radius:8px;padding:10px;font-size:12px;">
+                  <div style="font-weight:800;color:#b91c1c;margin-bottom:4px;font-size:11px;text-transform:uppercase;letter-spacing:.5px;">⛔ CI au protocole</div>
+                  • Dx antérieur d'ostéoporose ou pharmacothérapie préventive<br>• DMO réalisée dans les <strong>3 dernières années</strong>
+                </div>
+              </div>
+
+              <div style="background:#f8f9fa;border-radius:8px;padding:10px;margin-bottom:12px;font-size:12px;">
+                <div style="font-weight:800;color:var(--ink);margin-bottom:6px;">📋 Facteurs de risque à rechercher pour le FRAX</div>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;">
+                  <div><strong>Fracture de fragilisation</strong> survenue à l'âge adulte<br><span style="color:#666;font-size:11px;">Exclure : doigt, métatarse, craniofacial, côte, cheville</span></div>
+                  <div><strong>ATCD médicaux :</strong> polyarthrite rhumatoïde · DT1 · ostéogenèse imparfaite · hyperthyroïdie non traitée · hypogonadisme · ménopause prématurée &lt; 45 ans · malabsorption · hépatopathie chronique</div>
+                  <div><strong>ATCD familiaux :</strong> fracture de hanche chez un parent biologique</div>
+                  <div><strong>Médications :</strong> glucocorticoïdes oraux ≥ 5 mg pred/j × ≥ 3 mois<br><strong>Mode de vie :</strong> tabagisme actif · alcool ≥ 3 consommations/j</div>
+                </div>
+              </div>
+
+              <div style="font-weight:800;font-size:12px;text-transform:uppercase;letter-spacing:.5px;color:var(--ink2);margin-bottom:8px;">🔀 Algorithme décisionnel — Initiation de la DMO</div>
+
+              <div id="dmo-s1" style="background:#e0f2fe;border-radius:8px;padding:10px;margin-bottom:8px;">
+                <div style="font-size:12px;font-weight:700;color:#0369a1;margin-bottom:8px;">① Antécédent de fracture de fragilisation à ≥ 40 ans ?</div>
+                <div style="display:flex;gap:8px;">
+                  <button onclick="dmoStep(1,'oui')" style="flex:1;padding:8px;border:2px solid #dc2626;border-radius:6px;background:#fff;cursor:pointer;font-size:12px;font-weight:700;color:#dc2626;">OUI</button>
+                  <button onclick="dmoStep(1,'non')" style="flex:1;padding:8px;border:2px solid #059669;border-radius:6px;background:#fff;cursor:pointer;font-size:12px;font-weight:700;color:#059669;">NON</button>
+                </div>
+              </div>
+
+              <div id="dmo-s2" style="display:none;background:#ede9fe;border-radius:8px;padding:10px;margin-bottom:8px;">
+                <div style="font-size:12px;font-weight:700;color:#5b21b6;margin-bottom:8px;">② FRAX <u>sans</u> score T — « major osteoporotic » ?<br><span style="font-size:11px;font-weight:400;">Utiliser le <a href="https://frax.shef.ac.uk/FRAX/tool.aspx?country=19" target="_blank" style="color:#5b21b6;">FRAX canadien</a> sans entrer de DMO (Q.12 vide)</span></div>
+                <div style="display:flex;gap:8px;">
+                  <button onclick="dmoStep(2,'lt10')" style="flex:1;padding:8px;border:2px solid #059669;border-radius:6px;background:#fff;cursor:pointer;font-size:12px;font-weight:700;color:#059669;">&lt; 10 %</button>
+                  <button onclick="dmoStep(2,'mid')" style="flex:1;padding:8px;border:2px solid #d97706;border-radius:6px;background:#fff;cursor:pointer;font-size:12px;font-weight:700;color:#d97706;">10 – 20 %</button>
+                  <button onclick="dmoStep(2,'gt20')" style="flex:1;padding:8px;border:2px solid #dc2626;border-radius:6px;background:#fff;cursor:pointer;font-size:12px;font-weight:700;color:#dc2626;">≥ 20 %</button>
+                </div>
+              </div>
+
+              <div id="dmo-s3" style="display:none;background:#fef9c3;border-radius:8px;padding:10px;margin-bottom:8px;">
+                <div style="font-size:12px;font-weight:700;color:#854d0e;margin-bottom:8px;">③ DMO réalisée → Recalculer FRAX <u>avec</u> score T du col fémoral<br><span style="font-size:11px;font-weight:400;">Résultat « major osteoporotic » avec la valeur de DMO ?</span></div>
+                <div style="display:flex;gap:8px;">
+                  <button onclick="dmoStep(3,'lt15')" style="flex:1;padding:8px;border:2px solid #059669;border-radius:6px;background:#fff;cursor:pointer;font-size:12px;font-weight:700;color:#059669;">&lt; 15 %</button>
+                  <button onclick="dmoStep(3,'gt15')" style="flex:1;padding:8px;border:2px solid #dc2626;border-radius:6px;background:#fff;cursor:pointer;font-size:12px;font-weight:700;color:#dc2626;">≥ 15 %</button>
+                </div>
+              </div>
+
+              <div id="dmo-result" style="display:none;margin-bottom:8px;"></div>
+
+              <div style="text-align:right;">
+                <button onclick="dmoReset()" style="font-size:11px;color:#666;background:none;border:1px solid #ccc;border-radius:4px;padding:3px 10px;cursor:pointer;">↺ Recommencer</button>
+              </div>
+
+              <div style="margin-top:12px;border-top:1px solid var(--cream3);padding-top:10px;">
+                <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:var(--ink2);margin-bottom:6px;">📊 Interprétation du T-score (OMS)</div>
+                <table style="font-size:12px">
+                  <thead><tr><th>T-score</th><th>Interprétation</th></tr></thead>
+                  <tbody>
+                    <tr><td>≥ −1,0</td><td>Densité osseuse <strong>normale</strong></td></tr>
+                    <tr><td>−1,0 à −2,5</td><td><strong>Ostéopénie</strong></td></tr>
+                    <tr><td>≤ −2,5</td><td><strong>Ostéoporose</strong></td></tr>
+                    <tr><td>≤ −2,5 + fracture fragilité</td><td><strong>Ostéoporose sévère</strong> (établie)</td></tr>
+                  </tbody>
+                </table>
+                <div style="font-size:11px;color:#666;margin-top:4px;">Sites : colonne L1–L4, col fémoral, hanche totale · T-score = référence adulte jeune · Z-score = référence âge</div>
+              </div>
+
             </div>
           </div>
 
@@ -22089,6 +22144,76 @@ mainScrollEl.addEventListener('scroll', () => {
   else backTopBtn.classList.remove('show');
 }, { passive: true });
 backTopBtn.addEventListener('click', () => mainScrollEl.scrollTo({ top: 0, behavior: 'smooth' }));
+
+// ── DMO INESSS : algorithme initiation ostéodensitométrie ──
+function dmoStep(step, val) {
+  const res = document.getElementById('dmo-result');
+  const s2  = document.getElementById('dmo-s2');
+  const s3  = document.getElementById('dmo-s3');
+
+  const box = (title, body, bg, border) =>
+    `<div style="border-left:4px solid ${border};background:${bg};border-radius:0 10px 10px 0;padding:12px 14px;line-height:1.8;font-size:12.5px;">
+      <div style="font-weight:800;font-size:13px;margin-bottom:6px;">${title}</div>${body}</div>`;
+
+  if (step === 1) {
+    if (val === 'oui') {
+      s2.style.display = 'none'; s3.style.display = 'none';
+      res.innerHTML = box('⚠️ Attention particulière requise',
+        'Fracture de fragilisation ≥ 40 ans → <strong>cesser le protocole</strong>.<br>Orienter vers un professionnel approprié pour évaluation et traitement.',
+        '#fce4ec', '#dc2626');
+      res.style.display = 'block';
+    } else {
+      res.style.display = 'none'; s3.style.display = 'none';
+      s2.style.display = 'block';
+    }
+  } else if (step === 2) {
+    s3.style.display = 'none';
+    if (val === 'lt10') {
+      res.innerHTML = box('✅ Ostéodensitométrie NON recommandée',
+        'FRAX sans score T &lt; 10 % → DMO non indiquée.<br><br>' +
+        '• Conseils sur saines habitudes de vie (activité physique, alimentation, alcool, tabac)<br>' +
+        '• <strong>Suivi dans ≥ 5 ans</strong> pour réévaluation du risque fracturaire',
+        '#f0fdf4', '#059669');
+      res.style.display = 'block';
+    } else if (val === 'mid') {
+      res.innerHTML = box('📋 Ostéodensitométrie RECOMMANDÉE',
+        'FRAX sans score T 10–20 % → Rédiger une requête de DMO (col fémoral g/cm²).<br>' +
+        '<em style="font-size:11px;">Vérifier qu'aucune autre requête n'a été faite dans les 3 dernières années.</em><br><br>' +
+        '• Conseils sur saines habitudes de vie<br>' +
+        '• Après réception des résultats → recalculer <strong>FRAX avec score T</strong> (étape ③ ci-dessous)',
+        '#fefce8', '#ca8a04');
+      res.style.display = 'block';
+      s3.style.display = 'block';
+    } else {
+      res.innerHTML = box('⚠️ Attention particulière requise',
+        'FRAX sans score T ≥ 20 % → <strong>cesser le protocole</strong>.<br>' +
+        '• Conseils sur saines habitudes de vie<br>' +
+        '• Orienter vers un professionnel approprié pour évaluation et traitement.',
+        '#fce4ec', '#dc2626');
+      res.style.display = 'block';
+    }
+  } else if (step === 3) {
+    if (val === 'lt15') {
+      res.innerHTML = box('✅ Orientation non requise',
+        'FRAX avec score T &lt; 15 % → Pas de référence nécessaire.<br><br>' +
+        '• Conseils sur saines habitudes de vie<br>' +
+        '• <strong>Suivi dans ≥ 3 ans</strong> pour réévaluation du risque fracturaire',
+        '#f0fdf4', '#059669');
+    } else {
+      res.innerHTML = box('⚠️ Orienter vers professionnel approprié',
+        'FRAX avec score T ≥ 15 % → Référence à un professionnel approprié pour évaluation et prise en charge.',
+        '#fce4ec', '#dc2626');
+    }
+    res.style.display = 'block';
+  }
+}
+
+function dmoReset() {
+  ['dmo-s2','dmo-s3','dmo-result'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.style.display = 'none';
+  });
+}
 
 // ── Ostéoporose : aide à la décision thérapeutique ──
 function runOsteoAlgo() {
