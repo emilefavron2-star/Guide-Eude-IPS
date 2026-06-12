@@ -6400,16 +6400,96 @@ function calculatePHQ9() {
       </div>
 
       <div class="block para" id="dyslip-8">
-        <div class="block-title"><span class="tag">🎯 Cibles selon contexte</span></div>
-        <table>
-          <thead><tr><th>Contexte</th><th>C-LDL</th><th>ApoB</th><th>C-non-HDL</th></tr></thead>
+        <div class="block-title"><span class="tag">🔄 Prévention primaire vs secondaire — Cibles &amp; Algorithme d'intensification</span></div>
+
+        <!-- COMPARAISON PRIMAIRE VS SECONDAIRE -->
+        <div class="sec-divider"><div class="sd-shape sq"></div><div class="sd-label">Prévention primaire vs Prévention secondaire</div><div class="sd-line"></div></div>
+        <table style="margin-bottom:12px;">
+          <thead><tr><th></th><th>🟢 Prévention primaire</th><th>🔴 Prévention secondaire</th></tr></thead>
           <tbody>
-            <tr><td>Prévention primaire — risque modéré</td><td>&lt; 3,5 mmol/L</td><td>&lt; 1,05 g/L</td><td>&lt; 4,2 mmol/L</td></tr>
-            <tr><td>Prévention primaire — risque élevé</td><td>&lt; 2,0 mmol/L</td><td>&lt; 0,80 g/L</td><td>&lt; 2,6 mmol/L</td></tr>
-            <tr><td><strong>Prévention secondaire (MCVAS)</strong></td><td><strong>&lt; 1,8 mmol/L</strong></td><td>&lt; 0,70 g/L</td><td>&lt; 2,4 mmol/L</td></tr>
+            <tr><td><strong>Définition</strong></td><td>Aucun &eacute;v&eacute;nement MCVAS ant&eacute;rieur</td><td>MCVAS &eacute;tablie (STEMI, NSTEMI, angine, AVC/AIT isch., MAP, AAA)</td></tr>
+            <tr><td><strong>Objectif</strong></td><td>R&eacute;duire le risque d&apos;un 1er &eacute;v&eacute;nement</td><td>Pr&eacute;venir un 2e &eacute;v&eacute;nement (risque basal tr&egrave;s &eacute;lev&eacute;)</td></tr>
+            <tr><td><strong>Outil de d&eacute;cision</strong></td><td>Score de Framingham (FRS) &mdash; valide 40&ndash;75 ans</td><td>Statine maximale tol&eacute;r&eacute;e d&egrave;s le diagnostic &mdash; pas de score n&eacute;cessaire</td></tr>
+            <tr><td><strong>Cible C-LDL</strong></td><td>Selon le risque : &lt; 5,0 / &lt; 3,5 / &lt; 2,0 / &lt; 1,8 mmol/L</td><td><strong>&lt; 1,8 mmol/L (obligatoire)</strong> + r&eacute;duction &ge; 50 %</td></tr>
+            <tr><td><strong>Cible ApoB</strong></td><td>&lt; 1,05 / 0,80 g/L selon risque</td><td><strong>&lt; 0,70 g/L</strong></td></tr>
+            <tr><td><strong>Cible C-non-HDL</strong></td><td>&lt; 4,2 / 2,6 mmol/L selon risque</td><td><strong>&lt; 2,4 mmol/L</strong></td></tr>
+            <tr><td><strong>Traitement syst&eacute;matique</strong></td><td>Si FRS &ge; seuil d&apos;initiation selon cat&eacute;gorie</td><td><strong>Oui &mdash; toujours</strong>. Ne jamais arr&ecirc;ter chez &ge; 75 ans si tol&eacute;r&eacute;e</td></tr>
           </tbody>
         </table>
-        <div class="key-fact blue" style="margin-top:10px;">ApoB &gt; C-non-HDL &gt; C-LDL comme marqueurs de choix — surtout si TG &gt; 1,5 mmol/L</div>
+
+        <!-- CIBLES TABLEAU COMPACT -->
+        <div class="sec-divider"><div class="sd-shape sq"></div><div class="sd-label">Cibles lipidiques selon le contexte (SCC 2021)</div><div class="sd-line"></div></div>
+        <table style="margin-bottom:12px;">
+          <thead><tr><th>Contexte</th><th>C-LDL</th><th>ApoB</th><th>C-non-HDL</th></tr></thead>
+          <tbody>
+            <tr><td>Risque faible (FRS &lt; 10 %)</td><td>&lt; 5,0 mmol/L</td><td>&lt; 1,45 g/L</td><td>&lt; 5,8 mmol/L</td></tr>
+            <tr><td>Risque interm&eacute;diaire (FRS 10&ndash;19 %)</td><td>&lt; 3,5 mmol/L</td><td>&lt; 1,05 g/L</td><td>&lt; 4,2 mmol/L</td></tr>
+            <tr><td>Risque &eacute;lev&eacute; (FRS &ge; 20 %)</td><td>&lt; 2,0 mmol/L</td><td>&lt; 0,80 g/L</td><td>&lt; 2,6 mmol/L</td></tr>
+            <tr style="background:var(--red-lt);"><td><strong>Pr&eacute;vention secondaire (MCVAS)</strong></td><td><strong>&lt; 1,8 mmol/L</strong></td><td><strong>&lt; 0,70 g/L</strong></td><td><strong>&lt; 2,4 mmol/L</strong></td></tr>
+          </tbody>
+        </table>
+        <div class="key-fact blue" style="margin-bottom:14px;">ApoB &gt; C-non-HDL &gt;&gt; C-LDL comme marqueurs de choix &mdash; surtout si TG &gt; 1,5&nbsp;mmol/L (C-LDL peu fiable)</div>
+
+        <!-- ALGORITHME D'INTENSIFICATION -->
+        <div class="sec-divider"><div class="sd-shape sq"></div><div class="sd-label">Algorithme d&#x27;intensification &mdash; Pr&eacute;vention secondaire</div><div class="sd-line"></div></div>
+        <div style="background:var(--bg-card);border:1.5px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;">
+
+          <!-- STEP 1 -->
+          <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:10px;">
+            <div style="min-width:32px;height:32px;border-radius:50%;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;flex-shrink:0;">1</div>
+            <div style="flex:1;">
+              <div style="font-weight:600;color:var(--text);margin-bottom:4px;">Statine haute intensit&eacute; &agrave; dose maximale tol&eacute;r&eacute;e</div>
+              <div style="font-size:12px;color:var(--text-muted);">Atorvastatine 40&ndash;80 mg ou Rosuvastatine 20&ndash;40 mg &mdash; r&eacute;&eacute;valuer le bilan lipidique apr&egrave;s 4&ndash;12 semaines</div>
+            </div>
+          </div>
+
+          <!-- ARROW -->
+          <div style="text-align:center;font-size:20px;margin-bottom:10px;color:var(--text-muted);">&#8595; Bilan lipidique : mesurer C-LDL, ApoB, C-non-HDL, TG</div>
+
+          <!-- 3 BRANCHES -->
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:10px;">
+            <!-- TARGET REACHED -->
+            <div style="border:2px solid #22c55e;border-radius:8px;padding:10px;background:rgba(34,197,94,0.08);">
+              <div style="font-weight:700;color:#16a34a;font-size:12px;margin-bottom:6px;">&#10003; CIBLES ATTEINTES</div>
+              <div style="font-size:12px;margin-bottom:4px;">C-LDL <strong>&lt; 1,8</strong> mmol/L</div>
+              <div style="font-size:12px;margin-bottom:4px;">ApoB <strong>&lt; 0,70</strong> g/L</div>
+              <div style="font-size:12px;margin-bottom:8px;">C-non-HDL <strong>&lt; 2,4</strong> mmol/L</div>
+              <div style="font-size:11px;color:#16a34a;font-weight:600;">Continuer &mdash; suivi q6&ndash;12 mois</div>
+            </div>
+
+            <!-- INTERMEDIATE -->
+            <div style="border:2px solid #f59e0b;border-radius:8px;padding:10px;background:rgba(245,158,11,0.08);">
+              <div style="font-weight:700;color:#d97706;font-size:12px;margin-bottom:6px;">&#9888; SEUIL INTERM&Eacute;DIAIRE</div>
+              <div style="font-size:12px;margin-bottom:4px;">C-LDL <strong>1,8&ndash;2,2</strong> mmol/L</div>
+              <div style="font-size:12px;margin-bottom:4px;">ApoB <strong>0,70&ndash;0,80</strong> g/L</div>
+              <div style="font-size:12px;margin-bottom:8px;">C-non-HDL <strong>2,4&ndash;2,9</strong> mmol/L</div>
+              <div style="background:#d97706;color:#fff;border-radius:4px;padding:4px 6px;font-size:11px;font-weight:600;text-align:center;">Ajouter &Eacute;z&eacute;timibe 10 mg DIE</div>
+              <div style="font-size:11px;color:var(--text-muted);margin-top:4px;">&rarr; R&eacute;&eacute;valuer apr&egrave;s 3 mois</div>
+            </div>
+
+            <!-- ABOVE TARGET -->
+            <div style="border:2px solid #ef4444;border-radius:8px;padding:10px;background:rgba(239,68,68,0.08);">
+              <div style="font-weight:700;color:#dc2626;font-size:12px;margin-bottom:6px;">&#128680; NON-ATTEINTE</div>
+              <div style="font-size:12px;margin-bottom:4px;">C-LDL <strong>&ge; 2,2</strong> mmol/L</div>
+              <div style="font-size:12px;margin-bottom:4px;">ApoB <strong>&ge; 0,80</strong> g/L</div>
+              <div style="font-size:12px;margin-bottom:8px;">C-non-HDL <strong>&ge; 2,9</strong> mmol/L</div>
+              <div style="background:#dc2626;color:#fff;border-radius:4px;padding:4px 6px;font-size:11px;font-weight:600;text-align:center;">iPCSK9 (&plusmn; &eacute;z&eacute;timibe)</div>
+              <div style="font-size:11px;color:var(--text-muted);margin-top:4px;">RAMQ : SCA &le; 24 mois + statine + &eacute;z&eacute;timibe &times; 3 mois</div>
+            </div>
+          </div>
+
+          <!-- TG CHECK -->
+          <div style="border:1.5px solid var(--blue);border-radius:8px;padding:10px;background:var(--blue-lt);">
+            <div style="font-weight:700;color:var(--blue);font-size:12px;margin-bottom:6px;">&#128202; V&eacute;rifier les triglyc&eacute;rides en parall&egrave;le</div>
+            <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;">
+              <div style="font-size:12px;"><span style="font-weight:600;">&lt; 1,5 mmol/L</span><br>Optimal &mdash; aucune intervention</div>
+              <div style="font-size:12px;"><span style="font-weight:600;">1,5&ndash;5,6 mmol/L</span><br>Ajouter <strong>Icosapent &eacute;thyl 2 g BID</strong> (pr&eacute;vention 2&deg;, RAMQ CV165)</div>
+              <div style="font-size:12px;"><span style="font-weight:600;">&gt; 10 mmol/L</span><br><strong>Fibrate</strong> (pancr&eacute;atite seulement) &mdash; aucun b&eacute;n&eacute;fice CV</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="note" style="margin-top:6px;">&#x1F4CB; Apr&egrave;s ajout d&apos;&eacute;z&eacute;timibe : r&eacute;&eacute;valuer le bilan lipidique apr&egrave;s 3 mois. Si toujours au-dessus de la cible optimale &rarr; escalade vers iPCSK9 si crit&egrave;res RAMQ remplis.</div>
       </div>
 
       <div class="block clin" id="dyslip-9">
