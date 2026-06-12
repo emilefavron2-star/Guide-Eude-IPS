@@ -11923,140 +11923,485 @@ function icTabSwitch(type) {
     </div>
 
     <div class="section" id="sec-dyskaliemie">
-      <div class="section-header">
-        <div class="section-accent" style="background:var(--yellow)">🦋</div>
-        <div class="section-title"><h1>Dyskaliémie</h1><div class="breadcrumb">Endocrinologie <span class="breadcrumb-sep">·</span> Section 22</div></div>
-      </div>
+      <div class="section-header"><div class="section-accent">⚡</div><div class="section-title"><h1>Dyskaliémie</h1><div class="breadcrumb">Néphrologie &amp; Métabolisme <span class="breadcrumb-sep">·</span> Section</div></div></div>
+
+      <!-- PILLS NAV -->
       <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
-        <button onclick="document.getElementById('kali-1').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📌 Valeurs normales</button>
-        <button onclick="document.getElementById('kali-2').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🧬 Physiopath.</button>
-        <button onclick="document.getElementById('kali-3').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🩺 Évaluation</button>
-        <button onclick="document.getElementById('kali-4').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔍 Sévérité & ECG</button>
-        <button onclick="document.getElementById('kali-5').scrollIntoView({behavior:'smooth'})" style="background:#c0392b;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">💊 Tx Hyperkaliémie</button>
-        <button onclick="document.getElementById('kali-6').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔍 Déficit estimé</button>
-        <button onclick="document.getElementById('kali-7').scrollIntoView({behavior:'smooth'})" style="background:#0a7a4e;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">💊 Tx Hypokaliémie</button>
-        <button onclick="document.getElementById('kali-8').scrollIntoView({behavior:'smooth'})" style="background:#c0392b;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🚨 Red Flags</button>
+        <button onclick="document.getElementById('dk-physio').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">⚗️ Physiologie K+</button>
+        <button onclick="document.getElementById('dk-renal').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🏥 Régulation rénale</button>
+        <button onclick="document.getElementById('dk-hyper').scrollIntoView({behavior:'smooth'})" style="background:#c0392b;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔺 Hyperkaliémie</button>
+        <button onclick="document.getElementById('dk-hypo').scrollIntoView({behavior:'smooth'})" style="background:#0a7a4e;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔻 Hypokaliémie</button>
+        <button onclick="document.getElementById('dk-bilan').scrollIntoView({behavior:'smooth'})" style="background:#7b3fa0;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🧪 Bilan &amp; Investigation</button>
+        <button onclick="document.getElementById('dk-red').scrollIntoView({behavior:'smooth'})" style="background:#dc2626;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🚨 Red Flags</button>
       </div>
-      <div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:20px;">
-        <div style="flex:1;min-width:100px;background:#DCFCE7;border-radius:10px;padding:12px;text-align:center;"><div style="font-size:14px;font-weight:800;color:#0a7a4e;">K⁺ 3,5–5,0</div><div style="font-size:11px;color:#555;margin-top:4px;">Normale (mmol/L)</div></div>
-        <div style="flex:1;min-width:100px;background:#FEE2E2;border-radius:10px;padding:12px;text-align:center;"><div style="font-size:14px;font-weight:800;color:#c0392b;">K⁺ &gt; 6,5</div><div style="font-size:11px;color:#555;margin-top:4px;">Urgence ECG</div></div>
-        <div style="flex:1;min-width:100px;background:#FEF9C3;border-radius:10px;padding:12px;text-align:center;"><div style="font-size:14px;font-weight:800;color:#92400e;">K⁺ &lt; 2,5</div><div style="font-size:11px;color:#555;margin-top:4px;">Hypok. sévère</div></div>
-      </div>
-      <div class="block def">
-        <div class="block-title" id="kali-1"><span class="tag">📌 Valeurs normales</span></div>
-        <div class="stat-row">
-          <div class="stat-card blue"><div class="stat-num">3,5–5,0</div><div class="stat-label">mmol/L K⁺ normal</div></div>
-          <div class="stat-card red"><div class="stat-num">&gt; 5,0</div><div class="stat-label">Hyperkaliémie</div></div>
-          <div class="stat-card ink"><div class="stat-num">&lt; 3,5</div><div class="stat-label">Hypokaliémie</div></div>
+
+      <!-- Définition -->
+      <div class="block def" id="dk-def">
+        <div class="block-title"><span class="tag">📌 Définition</span></div>
+        <div class="key-fact blue"><strong>Kaliémie normale : 3,5 – 5,0 mEq/L</strong></div>
+        <div class="stat-row" style="margin-top:10px;">
+          <div class="stat-card red"><div class="stat-num">&gt; 5,0</div><div class="stat-label">Hyperkaliémie (mmol/L)</div></div>
+          <div class="stat-card blue"><div class="stat-num">&lt; 3,5</div><div class="stat-label">Hypokaliémie (mmol/L)</div></div>
         </div>
       </div>
 
-      <div class="block para" style="border-left-color:var(--blue);">
-        <div class="block-title" id="kali-2"><span class="tag">🧬 Physiopathologie brève</span></div>
-        <p class="content-text"><strong>98 % du K⁺</strong> est intracellulaire (muscles) et seulement 2 % extracellulaire — la kaliémie ne reflète donc qu'une fraction du pool total, mais elle est cruciale pour le potentiel transmembranaire de repos (conduction nerveuse, contraction musculaire). Sa <strong>distribution</strong> dépend de la pompe <strong>Na⁺/K⁺-ATPase</strong> (stimulée par l'insuline, les catécholamines β₂ et l'aldostérone — sortie de 3 Na⁺/entrée de 2 K⁺) et de l'équilibre acido-basique (l'acidose minérale fait sortir le K⁺ des cellules, l'alcalose l'y fait entrer). La régulation de la <strong>kaliémie totale</strong> se fait surtout au <strong>néphron distal</strong> : l'aldostérone y stimule les canaux ENaC et la Na-K-ATPase de la cellule principale → réabsorption de Na⁺ couplée à la sécrétion de K⁺.</p>
-        <p class="content-text" style="margin-top:8px;"><strong>Hyperkaliémie</strong> : l'excès de K⁺ extracellulaire ↓ le gradient transmembranaire → dépolarisation partielle persistante → ↓ excitabilité neuromusculaire et surtout <strong>cardiaque</strong> (fibres et système de conduction très vulnérables) → arythmies potentiellement fatales. <strong>Hypokaliémie</strong> : le déficit extracellulaire → <strong>hyperpolarisation</strong> de la membrane musculaire (faiblesse, paralysie ascendante) et, au cœur, ↓ de l'activité Na-K-ATPase → ↑ Na⁺/Ca²⁺ intracellulaire → retard de repolarisation → post-dépolarisations précoces → arythmies (aggravées par une hypomagnésémie concomitante, présente dans 42 % des cas).</p>
-      </div>
+      <!-- ═══ PHYSIOLOGIE ═══ -->
+      <div class="block para" id="dk-physio">
+        <div class="block-title"><span class="tag">⚗️ 1. Physiologie du potassium &amp; Facteurs influençant la distribution du K+</span></div>
 
-      <div class="block clin">
-        <div class="block-title" id="kali-3"><span class="tag">🩺 Évaluation initiale — Anamnèse & examen physique</span></div>
-        <p class="content-text" style="margin-bottom:8px;"><strong>Anamnèse — surtout rechercher :</strong></p>
-        <div class="flag-list">
-          <div class="flag-item"><span class="flag-dot ink"></span><span>Symptômes neuromusculaires : faiblesse (souvent ascendante en hypoK), paresthésies, crampes, palpitations</span></div>
-          <div class="flag-item"><span class="flag-dot ink"></span><span>Pertes ou apports : vomissements, diarrhées, drainage digestif, sudation profuse (hypoK) · apport K⁺ oral/IV élevé, transfusions massives, syndrome de lyse tumorale (hyperK)</span></div>
-          <div class="flag-item"><span class="flag-dot blue"></span><span><strong>Médicaments :</strong> IECA/ARA/ARM, AINS, diurétiques épargneurs de K⁺, triméthoprime → hyperK · diurétiques de l'anse/thiazidiques, laxatifs, insuline, β₂-agonistes → hypoK</span></div>
-          <div class="flag-item"><span class="flag-dot blue"></span><span>Comorbidités/ATCD : diabète + IRC (haut risque hyperK), insuffisance surrénalienne, syndrome de Conn/Cushing, transplantation rénale</span></div>
-          <div class="flag-item"><span class="flag-dot ink"></span><span>Habitudes alimentaires : substituts de sel (riches en KCl), suppléments K⁺, jeûne prolongé/constipation</span></div>
-        </div>
-        <p class="content-text" style="margin:12px 0 8px;"><strong>Examen physique :</strong></p>
-        <div class="flag-list">
-          <div class="flag-item"><span class="flag-dot ink"></span><span>Signes vitaux : TA, FC/rythme — rechercher arythmie · faiblesse/paralysie flasque, hyporéflexie ou aréflexie</span></div>
-          <div class="flag-item"><span class="flag-dot ink"></span><span>Examen abdominal : distension, bruits intestinaux ↓ (iléus paralytique en hypoK)</span></div>
-          <div class="flag-item"><span class="flag-dot red"></span><span><strong>ECG systématique</strong> — le diagnostic de gravité repose sur la valeur biologique ET l'ECG, pas sur la clinique seule (symptômes souvent absents même à valeurs élevées)</span></div>
-        </div>
-      </div>
+        <div class="key-fact blue" style="margin-bottom:10px;"><strong>Distribution :</strong> 98 % du K+ → liquide intracellulaire (muscles striés, lisses, cardiaques) · 2 % → liquide extracellulaire · Rôle crucial dans la conduction nerveuse &amp; contraction musculaire via le potentiel transmembranaire de repos</div>
 
-      <div class="sec-divider">
-        <div class="sd-shape ci" style="background:var(--red)"></div>
-        <div class="sd-label">Hyperkaliémie (K⁺ &gt; 5,0)</div>
-        <div class="sd-line"></div>
-      </div>
-
-      <div class="block clin">
-        <div class="block-title" id="kali-4"><span class="tag">🔍 Sévérité, Clinique & ECG</span></div>
-        <div class="stat-row">
-          <div class="stat-card yellow"><div class="stat-num">5,1–5,9</div><div class="stat-label">Légère</div></div>
-          <div class="stat-card cream"><div class="stat-num">6,0–6,4</div><div class="stat-label">Modérée</div></div>
-          <div class="stat-card red"><div class="stat-num">≥ 6,5</div><div class="stat-label">Sévère — urgence potentielle</div></div>
+        <p class="content-text" style="font-weight:600;margin-bottom:6px;">Pompe Na+/K+ATPase</p>
+        <div class="flag-list" style="margin-bottom:10px;">
+          <div class="flag-item"><span class="flag-dot blue"></span><span>Enzyme membranaire présente sur toutes les cellules · <strong>stimulée par : aldostérone, catécholamines, insuline</strong></span></div>
+          <div class="flag-item"><span class="flag-dot blue"></span><span>Mécanisme : sortie de 3 Na+ / entrée de 2 K+ → électrogénique (crée potentiel de repos négatif)</span></div>
+          <div class="flag-item"><span class="flag-dot ink"></span><span>Maintient concentration intracellulaire de K+ élevée et Na+ basse</span></div>
         </div>
-        <p class="content-text" style="margin-top:8px;">Le diagnostic de gravité repose sur la <strong>valeur biologique</strong>, pas la clinique — souvent asymptomatique même à valeurs élevées · si symptomatique (svt K⁺ &gt; 7) : faiblesse, paresthésies, aréflexie, paralysie flasque</p>
-        <table style="margin-top:8px;">
-          <thead><tr><th>K⁺ (mmol/L)</th><th>Changements ECG</th></tr></thead>
+
+        <p class="content-text" style="font-weight:600;margin-bottom:6px;">Facteurs influençant la distribution du K+</p>
+        <table>
+          <thead><tr><th>Facteur</th><th>Effet sur K+ plasmatique</th><th>Mécanisme</th></tr></thead>
           <tbody>
-            <tr><td>5,5–6,5</td><td>Ondes T pointues et symétriques (1<sup>er</sup> signe)</td></tr>
-            <tr><td>6,5–7,5</td><td>Disparition onde P · PR allongé · BAV</td></tr>
-            <tr><td>7,0–8,0</td><td>Élargissement QRS</td></tr>
-            <tr><td><strong>8,0–10,0</strong></td><td><span class="drug-badge ci">Onde sinusoïdale · FV · Asystolie</span></td></tr>
+            <tr><td><strong>Insuline</strong></td><td>↓ (translocation intra-cell.)</td><td>Stimule Na-K-ATPase via cotransporteur Na-H — effet indirect et temporaire · Ex : DB décompensé avec hyperK</td></tr>
+            <tr><td><strong>Aldostérone</strong></td><td>↓ (effet rénal)</td><td>Augmente excrétion rénale de K+</td></tr>
+            <tr><td><strong>Catécholamines</strong></td><td>Hyperkalémie brève → hypokaliémie prolongée</td><td>Stimulation β₂ → redistribution intracellulaire · β-bloqueurs non sélectifs bloquent cet effet</td></tr>
+            <tr><td><strong>Acidose métabolique non organique</strong></td><td>↑ (sortie intra→extra-cell.)</td><td>Entrée de H+ dans la cellule → sortie de K+ pour maintien électroneutralité · Pas en acidose lactique ni cétosique</td></tr>
+            <tr><td><strong>Alcalose</strong></td><td>↓</td><td>Inverse de l&apos;acidose</td></tr>
+            <tr><td><strong>Hypomagnésémie</strong></td><td>↓</td><td>↓ activité Na-K-ATPase + kaliurèse · Coexiste avec hypoK dans 42 % des cas → hypoK réfractaire si Mg non corrigé</td></tr>
+            <tr><td><strong>Catabolisme / Rhabdomyolyse</strong></td><td>↑ (libération intracellulaire)</td><td>Lyse cellulaire → relargage massif de K+ (aussi : syndrome de lyse tumorale)</td></tr>
+            <tr><td><strong>Anabolisme</strong></td><td>↓</td><td>Entrée de K+ dans les cellules en formation</td></tr>
+            <tr><td><strong>Paralysie périodique</strong></td><td>Variable (hypo ou hyper)</td><td>Maladie familiale des canaux ioniques</td></tr>
           </tbody>
         </table>
-        <div class="key-fact black" style="margin-top:6px;">⚠️ Corrélation K⁺/ECG imprécise — anomalies possibles à valeurs moindres si IRC, acidose, hypocalcémie</div>
-        <div class="highlight cream" style="margin-top:8px;font-size:13px;"><strong>Étiologies — approche structurée :</strong> ① <em>Pseudo-hyperK</em> (hémolyse au prélèvement, thrombocytose &gt; 1000, leucocytose, mononucléose) · ② <em>Redistribution</em> (acidose minérale aiguë, ACD, paralysie périodique, intox. digitalique, BB non sélectifs) · ③ <em>Excès</em> (apport élevé, rhabdomyolyse, lyse tumorale, transfusions massives) · ④ <em>↓ Excrétion rénale</em> — cause la plus fréquente (DFG &lt; 20 · déficit en aldostérone : IECA/ARA/AINS/ARM/héparine, hypoaldostéronisme hyporéninémique — néphropathie diabétique · obstruction urinaire, transplantation, syndrome de Gordon)</div>
       </div>
 
-      <div class="block rx">
-        <div class="block-title" id="kali-5"><span class="tag">💊 Traitement — Urgence si K⁺ &gt; 6,5 OU anomalies ECG (4 étapes)</span></div>
-        <div class="criteria-list">
-          <div class="criteria-item"><div class="criteria-num red">1</div><span><strong>Stabilisation membranaire</strong> (ne change pas la kaliémie) : <span class="drug-badge line1">Gluconate Ca 10 % — 10 mL IV en 1–3 min</span>, répéter q5–10 min PRN · <span class="drug-badge ci">Éviter/ralentir si intoxication digitalique</span></span></div>
-          <div class="criteria-item"><div class="criteria-num red">2</div><span><strong>Redistribution K⁺</strong> (temporaire) : <span class="drug-badge line1">Insuline R 10 U IV + D50W 50 mL</span> (début 15 min, ↓ 0,5–1,5 — ⚠️ pas de dextrose si glycémie &gt; 13,9) · <span class="drug-badge line2">Salbutamol 10–20 mg nébul.</span> (synergique) · Bicarbonate Na⁺ si acidose minérale (↓ ~0,5, effet ~30 min)</span></div>
-          <div class="criteria-item"><div class="criteria-num red">3</div><span><strong>Élimination K⁺</strong> (but ultime) : Furosémide si diurèse conservée · <span class="drug-badge line1">Lokelma 5–10 g TID</span> (action 1–2h, ↓ 0,7–1,2/24h) · <span class="drug-badge line2">Veltassa 8,4–25,2 g/j</span> (7–8h, ↓ 0,3–0,7 — ⚠️ hypoMg) · Kayexalate (4–6h, peu efficace en aigu, CI post-op/iléus)</span></div>
-          <div class="criteria-item"><div class="criteria-num red">4</div><span><strong>Hémodialyse</strong> — la plus rapide une fois en cours (25–50 mEq/h) · indiquée si IRC sévère/IRT, K⁺ réfractaire, urgence vitale avec oligo-anurie · débuter la redistribution en attendant l'installation</span></div>
-          <div class="criteria-item"><div class="criteria-num red">5</div><span>Corriger la cause · Cesser Rx hyperkaliémiants (IECA/ARA, AINS, ARM, triméthoprime) · Restriction diététique K⁺ (attention aliments transformés — substituts KCl)</span></div>
+      <!-- ═══ RÉGULATION RÉNALE ═══ -->
+      <div class="block clin" id="dk-renal">
+        <div class="block-title"><span class="tag">🏥 2. Régulation rénale du K+ — Diagramme interactif</span></div>
+
+        <!-- Interactive nephron diagram -->
+        <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:16px;margin-bottom:14px;">
+          <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px;">
+            <button onclick="dkRenal('overview')" id="dk-btn-ov" style="background:#1C3F8F;color:#fff;border:none;border-radius:16px;padding:5px 14px;cursor:pointer;font-size:12px;">Vue d&apos;ensemble</button>
+            <button onclick="dkRenal('cellule')" id="dk-btn-cell" style="background:#e2e8f0;color:#1e293b;border:none;border-radius:16px;padding:5px 14px;cursor:pointer;font-size:12px;">Cellule principale</button>
+            <button onclick="dkRenal('regulateurs')" id="dk-btn-reg" style="background:#e2e8f0;color:#1e293b;border:none;border-radius:16px;padding:5px 14px;cursor:pointer;font-size:12px;">Régulateurs</button>
+            <button onclick="dkRenal('medicaments')" id="dk-btn-med" style="background:#e2e8f0;color:#1e293b;border:none;border-radius:16px;padding:5px 14px;cursor:pointer;font-size:12px;">Médicaments</button>
+          </div>
+
+          <!-- Overview -->
+          <div id="dk-renal-overview">
+            <div style="background:#fff;border-radius:10px;padding:14px;border:1px solid #e2e8f0;">
+              <svg viewBox="0 0 680 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:680px;display:block;margin:0 auto 10px;">
+                <!-- Nephron segments -->
+                <rect x="10" y="80" width="120" height="40" rx="8" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5"/>
+                <text x="70" y="96" text-anchor="middle" font-size="10" font-weight="600" fill="#1C3F8F">Proximal</text>
+                <text x="70" y="110" text-anchor="middle" font-size="9" fill="#1e293b">PROX 60 %</text>
+                <rect x="150" y="80" width="120" height="40" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+                <text x="210" y="96" text-anchor="middle" font-size="10" font-weight="600" fill="#15803d">Anse de Henle</text>
+                <text x="210" y="110" text-anchor="middle" font-size="9" fill="#1e293b">TAL 25 % | DCT 5-7 %</text>
+                <rect x="290" y="60" width="180" height="80" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+                <text x="380" y="82" text-anchor="middle" font-size="11" font-weight="700" fill="#b45309">Néphron DISTAL</text>
+                <text x="380" y="97" text-anchor="middle" font-size="9" fill="#1e293b">TCD terminal + tube collecteur cortical</text>
+                <text x="380" y="111" text-anchor="middle" font-size="10" fill="#c0392b" font-weight="600">⭐ Régulation FINE du K+</text>
+                <text x="380" y="125" text-anchor="middle" font-size="9" fill="#1e293b">CD 3-5 % (restant)</text>
+                <rect x="490" y="80" width="110" height="40" rx="8" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1.5"/>
+                <text x="545" y="96" text-anchor="middle" font-size="10" font-weight="600" fill="#475569">Urine finale</text>
+                <text x="545" y="110" text-anchor="middle" font-size="9" fill="#64748b">Excrétion K+</text>
+                <!-- arrows -->
+                <line x1="130" y1="100" x2="148" y2="100" stroke="#94a3b8" stroke-width="2" marker-end="url(#arr)"/>
+                <line x1="270" y1="100" x2="288" y2="100" stroke="#94a3b8" stroke-width="2" marker-end="url(#arr)"/>
+                <line x1="470" y1="100" x2="488" y2="100" stroke="#94a3b8" stroke-width="2" marker-end="url(#arr)"/>
+                <defs><marker id="arr" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#94a3b8"/></marker></defs>
+                <!-- Label 90% reabsorbed before distal -->
+                <text x="200" y="155" text-anchor="middle" font-size="10" fill="#64748b" font-style="italic">90 % du K+ filtré réabsorbé AVANT le néphron distal</text>
+                <text x="200" y="168" text-anchor="middle" font-size="10" fill="#64748b" font-style="italic">→ aucun rôle dans la régulation de l&apos;équilibre</text>
+              </svg>
+              <div class="key-fact blue"><strong>Architecture :</strong> 90 % du K+ filtré est réabsorbé avant la portion terminale du tube contourné distal → la régulation fine se fait uniquement au <strong>néphron distal</strong> (TCD terminal + tube collecteur cortical) · Capacité d&apos;augmenter la sécrétion (surcharge) ou de réabsorber (déficit)</div>
+            </div>
+          </div>
+
+          <!-- Cellule principale -->
+          <div id="dk-renal-cellule" style="display:none;">
+            <div style="background:#fff;border-radius:10px;padding:14px;border:1px solid #e2e8f0;">
+              <svg viewBox="0 0 600 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:600px;display:block;margin:0 auto 10px;">
+                <!-- Tubular lumen -->
+                <rect x="10" y="20" width="140" height="180" rx="6" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5"/>
+                <text x="80" y="45" text-anchor="middle" font-size="11" font-weight="700" fill="#1C3F8F">Lumière</text>
+                <text x="80" y="60" text-anchor="middle" font-size="10" fill="#1C3F8F">tubulaire</text>
+                <!-- Cell -->
+                <rect x="160" y="20" width="260" height="180" rx="6" fill="#fef9c3" stroke="#d97706" stroke-width="2"/>
+                <text x="290" y="45" text-anchor="middle" font-size="12" font-weight="700" fill="#b45309">Cellule principale</text>
+                <!-- Peritubular capillary -->
+                <rect x="430" y="20" width="150" height="180" rx="6" fill="#fce7f3" stroke="#db2777" stroke-width="1.5"/>
+                <text x="505" y="45" text-anchor="middle" font-size="11" font-weight="700" fill="#be185d">Capillaire</text>
+                <text x="505" y="60" text-anchor="middle" font-size="10" fill="#be185d">péritubulaire</text>
+                <!-- ENaC channel luminal -->
+                <rect x="148" y="85" width="28" height="50" rx="4" fill="#3b82f6" stroke="#1d4ed8" stroke-width="1"/>
+                <text x="162" y="106" text-anchor="middle" font-size="8" fill="white" font-weight="600">ENaC</text>
+                <text x="162" y="118" text-anchor="middle" font-size="7" fill="white">Na+</text>
+                <!-- Na+ arrow lumen→cell -->
+                <line x1="180" y1="105" x2="218" y2="105" stroke="#1C3F8F" stroke-width="2" marker-end="url(#arr2)"/>
+                <text x="199" y="99" text-anchor="middle" font-size="9" fill="#1C3F8F" font-weight="600">Na+</text>
+                <!-- K+ channel luminal -->
+                <rect x="148" y="140" width="28" height="50" rx="4" fill="#16a34a" stroke="#15803d" stroke-width="1"/>
+                <text x="162" y="162" text-anchor="middle" font-size="8" fill="white" font-weight="600">ROMK</text>
+                <text x="162" y="174" text-anchor="middle" font-size="7" fill="white">K+</text>
+                <!-- K+ arrow cell→lumen -->
+                <line x1="220" y1="160" x2="180" y2="160" stroke="#16a34a" stroke-width="2" marker-end="url(#arr3)"/>
+                <text x="200" y="174" text-anchor="middle" font-size="9" fill="#15803d" font-weight="600">K+ sécrété</text>
+                <!-- Na-K-ATPase basolateral -->
+                <rect x="418" y="90" width="28" height="60" rx="4" fill="#dc2626" stroke="#991b1b" stroke-width="1"/>
+                <text x="432" y="112" text-anchor="middle" font-size="7" fill="white" font-weight="600">NaK</text>
+                <text x="432" y="123" text-anchor="middle" font-size="7" fill="white">ATPase</text>
+                <!-- 3Na out, 2K in -->
+                <line x1="420" y1="108" x2="450" y2="108" stroke="#1C3F8F" stroke-width="1.5" marker-end="url(#arr2)"/>
+                <text x="462" y="105" font-size="8" fill="#1C3F8F">3Na+</text>
+                <line x1="450" y1="130" x2="420" y2="130" stroke="#16a34a" stroke-width="1.5" marker-end="url(#arr3)"/>
+                <text x="452" y="128" font-size="8" fill="#15803d">2K+</text>
+                <!-- gradient text inside cell -->
+                <text x="290" y="90" text-anchor="middle" font-size="9" fill="#78350f">Na+ intracell. BAS ← Na-K-ATPase</text>
+                <text x="290" y="105" text-anchor="middle" font-size="9" fill="#78350f">K+ intracell. ÉLEVÉ</text>
+                <text x="290" y="125" text-anchor="middle" font-size="9" fill="#78350f">→ gradient favorable K+ vers lumière</text>
+                <defs>
+                  <marker id="arr2" markerWidth="5" markerHeight="5" refX="2.5" refY="2.5" orient="auto"><path d="M0,0 L5,2.5 L0,5 Z" fill="#1C3F8F"/></marker>
+                  <marker id="arr3" markerWidth="5" markerHeight="5" refX="2.5" refY="2.5" orient="auto"><path d="M0,0 L5,2.5 L0,5 Z" fill="#15803d"/></marker>
+                </defs>
+              </svg>
+              <div class="key-fact yellow"><strong>Clé :</strong> Na-K-ATPase est le moteur initial → Membrane basolatérale (pompe Na-K-ATPase) maintient Na+ intracell. bas et K+ intracell. élevé → Membrane luminale (ENaC) réabsorbe Na+ → crée gradient favorable à la sortie de K+ dans la lumière · Perméabilité tubulaire au K+ &gt; perméabilité basolatérale → <strong>sécrétion nette de K+</strong></div>
+            </div>
+          </div>
+
+          <!-- Régulateurs -->
+          <div id="dk-renal-regulateurs" style="display:none;">
+            <div style="background:#fff;border-radius:10px;padding:14px;border:1px solid #e2e8f0;">
+              <table>
+                <thead><tr><th>Régulateur</th><th>Mécanisme</th><th>Effet sur K+ urinaire</th></tr></thead>
+                <tbody>
+                  <tr><td><strong>Aldostérone</strong></td><td>Stimule ENaC et Na-K-ATPase → augmente la réabsorption de Na+ et l&apos;excrétion de K+</td><td>↑ excrétion K+</td></tr>
+                  <tr><td><strong>Concentration plasmatique de K+</strong></td><td>Hyperkaliémie stimule directement la sécrétion de K+ (indépendamment de l&apos;aldostérone)</td><td>↑ excrétion K+ si hyperK</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Médicaments -->
+          <div id="dk-renal-medicaments" style="display:none;">
+            <div style="background:#fff;border-radius:10px;padding:14px;border:1px solid #e2e8f0;">
+              <table>
+                <thead><tr><th>Médicament</th><th>Cible</th><th>Effet sur K+</th><th>Risque clinique</th></tr></thead>
+                <tbody>
+                  <tr><td><strong>Amiloride, Triamtérène</strong></td><td>Bloquent ENaC</td><td>↓ excrétion K+ (épargneurs)</td><td><span class="drug-badge warn">⚠️ HyperK+</span></td></tr>
+                  <tr><td><strong>Spironolactone, Éplérénone</strong></td><td>Antagonistes aldostérone</td><td>↓ excrétion K+ (épargneurs)</td><td><span class="drug-badge warn">⚠️ HyperK+</span></td></tr>
+                  <tr><td><strong>Vaptans</strong></td><td>Antagonistes récepteur V2</td><td>Aquarèse sans perte K+</td><td>Neutre pour K+</td></tr>
+                  <tr><td><strong>IECA / ARA</strong></td><td>↓ Ang II → ↓ aldostérone</td><td>↓ excrétion K+</td><td><span class="drug-badge warn">⚠️ HyperK+</span></td></tr>
+                  <tr><td><strong>Diurétiques anse (furosémide)</strong></td><td>Inhibent NKCC2 (Anse de Henle)</td><td>↑ débit distal → ↑ excrétion K+</td><td><span class="drug-badge ci">⚠️ HypoK+</span></td></tr>
+                  <tr><td><strong>Diurétiques thiazidiques</strong></td><td>Inhibent NCC (TCD)</td><td>↑ débit distal → ↑ excrétion K+</td><td><span class="drug-badge ci">⚠️ HypoK+</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="sec-divider" style="margin-top:24px;">
-        <div class="sd-shape ci" style="background:var(--blue)"></div>
-        <div class="sd-label">Hypokaliémie (K⁺ &lt; 3,5)</div>
-        <div class="sd-line"></div>
+      <!-- ═══ HYPERKALIÉMIE ═══ -->
+      <div class="block flag" id="dk-hyper">
+        <div class="block-title"><span class="tag">🔺 3. HYPERKALIÉMIE</span></div>
+
+        <div class="stat-row" style="margin-bottom:12px;">
+          <div class="stat-card yellow"><div class="stat-num">5,1–5,9</div><div class="stat-label">Légère (mmol/L)</div></div>
+          <div class="stat-card ink"><div class="stat-num">6,0–6,4</div><div class="stat-label">Modérée (mmol/L)</div></div>
+          <div class="stat-card red"><div class="stat-num">≥ 6,5</div><div class="stat-label">Sévère — urgence</div></div>
+        </div>
+        <div class="key-fact red">⚠️ <strong>Le diagnostic repose sur la valeur biologique, NON sur la clinique</strong> — les symptômes sont souvent absents même pour des valeurs élevées.</div>
+
+        <div class="accordion" style="margin-top:10px;">
+          <!-- Physiopath hyperK -->
+          <div class="accordion-item open">
+            <div class="accordion-header">⚙️ Mécanisme physiopathologique — HyperK+
+              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+            </div>
+            <div class="accordion-body">
+              <div class="flag-list">
+                <div class="flag-item"><span class="flag-dot red"></span><span>↑ K+ extracellulaire → potentiel de repos ↑ (moins négatif) → <strong>dépolarisation partielle de la membrane</strong></span></div>
+                <div class="flag-item"><span class="flag-dot red"></span><span><strong>Musculaire :</strong> inactivation canaux Na+ voltage-dépendants → hyperexcitabilité initiale → puis paralysie flasque ascendante</span></div>
+                <div class="flag-item"><span class="flag-dot red"></span><span><strong>Cardiaque :</strong> ↑ conductance K+ (IK1, IKr) → repolarisation accélérée → PA ventriculaire raccourci → onde T peaked, QT court → puis conduction nodale ralentie (PR long, QRS élargi) → dispersion de la repolarisation → FV/asystolie</span></div>
+                <div class="flag-item"><span class="flag-dot yellow"></span><span><strong>Effet rénal paradoxal :</strong> hyperK+ stimule aldostérone → ↑ excrétion K+ (mécanisme compensatoire)</span></div>
+              </div>
+              <div class="key-fact yellow" style="margin-top:8px;"><strong>Progression ECG selon sévérité :</strong> 5,5–6,5 (onde T en tente) → 6,5–7,5 (PR long, QRS large) → 7,5–8,5 (aspect sinusoïdal) → &gt; 8,5 (FV / asystolie)</div>
+            </div>
+          </div>
+
+          <!-- Manifestations cliniques hyperK -->
+          <div class="accordion-item">
+            <div class="accordion-header">🔍 Manifestations cliniques — HyperK+
+              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+            </div>
+            <div class="accordion-body">
+              <div class="flag-list" style="margin-bottom:10px;">
+                <div class="flag-item"><span class="flag-dot ink"></span><span><strong>Neuromusculaires</strong> (rares, généralement K+ &gt; 7 mmol/L) : faiblesse musculaire, paresthésies, aréflexie, paralysie flasque</span></div>
+              </div>
+              <table>
+                <thead><tr><th>Kaliémie (mmol/L)</th><th>Changement ECG</th></tr></thead>
+                <tbody>
+                  <tr><td>5,5 – 6,5</td><td><strong>Ondes T pointues, proéminentes et symétriques</strong> (dérivations précordiales) — 1er signe</td></tr>
+                  <tr><td>6,5 – 7,5</td><td><strong>Disparition de l&apos;onde P</strong>, allongement PR, BAV</td></tr>
+                  <tr><td>7,0 – 8,0</td><td><strong>Élargissement du QRS</strong></td></tr>
+                  <tr><td>8,0 – 10,0</td><td>Onde sinusoïdale, <strong>FV, asystolie</strong></td></tr>
+                </tbody>
+              </table>
+              <div class="note" style="margin-top:8px;">⚠️ La corrélation entre la valeur de K+ et les changements ECG est imprécise — des anomalies peuvent survenir à des valeurs moins élevées si <strong>IRC, acidose, hypocalcémie ou digitaliques</strong> associés.</div>
+            </div>
+          </div>
+
+          <!-- Étiologies hyperK -->
+          <div class="accordion-item">
+            <div class="accordion-header">📋 Étiologies — HyperK+ (approche diagnostique)
+              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+            </div>
+            <div class="accordion-body">
+              <table>
+                <thead><tr><th>Catégorie</th><th>Exemples / Causes</th></tr></thead>
+                <tbody>
+                  <tr><td><strong>1. Pseudo-hyperK+ (artéfact)</strong></td><td>Hémolyse (garrot prolongé) · Thrombocytose (&gt;1000×10⁹/L) · Leucocytose importante · Mononucléose infectieuse</td></tr>
+                  <tr><td><strong>2. Redistribution (intra→extra-cell.)</strong></td><td>Acidose métabolique non organique aiguë · Acidocétose diabétique · Paralysie périodique hyperkaliémique · Intoxication digitalique (inhibe Na-K-ATPase) · β-bloqueurs non sélectifs · Agonistes α-adrénergiques</td></tr>
+                  <tr><td><strong>3. Excès K+</strong></td><td>Apport oral ou IV élevé (rare seul) · Rhabdomyolyse · Syndrome de lyse tumorale · Transfusions massives (lyse GR conservés)</td></tr>
+                  <tr><td><strong>4. ↓ Excrétion rénale</strong> (cause la plus fréquente)</td><td><strong>DFG &lt; 20 mL/min</strong> (IRA, IRC) · Déficience en aldostérone : insuffisance surrénalienne, hypoaldostéronisme hyporéninémique (néphropathie diabétique, VIH, uropathie obstructive) · <strong>Médicaments :</strong> IECA, ARA, AINS, ARM (spironolactone/éplérénone), héparine, cyclosporine, tacrolimus · Obstruction urinaire · Transplantation rénale, LED, amyloïdose, anémie falciforme · Médicaments : amiloride, triamtérène, triméthoprime (Septra®), pentamidine · Syndrome de Gordon</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Traitement hyperK -->
+          <div class="accordion-item">
+            <div class="accordion-header">💊 Traitement — HyperK+ (4 étapes)
+              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+            </div>
+            <div class="accordion-body">
+              <div class="key-fact blue" style="margin-bottom:10px;"><strong>Principes généraux :</strong> 1. Stabiliser la membrane cardiaque (urgence — ne change pas la kaliémie) · 2. Redistribuer K+ en intracellulaire (temporaire) · 3. Éliminer le K+ de l&apos;organisme (but ultime) · 4. Corriger la cause · <em>Les étapes 1-2 sont des mesures temporaires en attente du traitement définitif.</em></div>
+
+              <div class="sec-divider"><div class="sd-shape sq"></div><div class="sd-label">Étape 1 — Stabilisation membranaire</div><div class="sd-line"></div></div>
+              <table style="margin-bottom:10px;">
+                <thead><tr><th>Médicament</th><th>Mécanisme</th><th>Dose</th><th>Délai / Durée</th><th>EI / Surveillance</th></tr></thead>
+                <tbody>
+                  <tr><td><strong>Gluconate de calcium 10 %</strong></td><td>↑ Ca plasmatique → réduit seuil excitabilité → ramène différence entre seuil de repos et excitabilité plus proche de la normale · <em>Ne modifie PAS la kaliémie</em></td><td>10 mL IV en 1-3 min sous monitoring cardiaque · Répéter q5-10 min PRN si ECG persistant</td><td>Rapide (minutes) · Courte durée</td><td>⚠️ Intoxication digitalique → administrer plus lentement (risque arythmie) · ECG continu</td></tr>
+                </tbody>
+              </table>
+
+              <div class="sec-divider"><div class="sd-shape sq"></div><div class="sd-label">Étape 2 — Redistribution intracellulaire</div><div class="sd-line"></div></div>
+              <table style="margin-bottom:10px;">
+                <thead><tr><th>Médicament</th><th>Mécanisme</th><th>Dose</th><th>Délai / Effet</th><th>EI / Notes</th></tr></thead>
+                <tbody>
+                  <tr><td><strong>Insuline + Dextrose</strong> (traitement clé)</td><td>Stimule Na-K-ATPase → translocation K+ vers l&apos;intracellulaire</td><td>Humulin R 10 U IV + D50W 50 mL bolus → perfusion D10% ensuite</td><td>Début 15 min · Pic 60 min · Durée 4-6 h · ↓ K+ 0,5–1,5 mmol/L</td><td>⚠️ <strong>Hypoglycémie :</strong> ne pas donner dextrose si glycémie &gt; 13,9 mmol/L · Surveiller glycémie q1h</td></tr>
+                  <tr><td><strong>Salbutamol (Ventolin®)</strong></td><td>Stimulation β₂ → redistribution K+ intracellulaire</td><td>10-20 mg nébulisation sur 10-20 min OU 1200 µg aérochambre en 2 min</td><td>↓ K+ 0,5–1,5 mmol/L · Synergique avec insuline</td><td>⚠️ Prudence si MCAS, arythmies connues · Effets mitigés dans certaines études</td></tr>
+                  <tr><td><strong>Bicarbonate de sodium</strong></td><td>Redistribution par correction de l&apos;acidose</td><td>3 ampoules dans D5% 1L à 50-80 mL/h OU 1-2 ampoules IV (50-100 mmol) en 5 min (q5min)</td><td>~30 min · Durée qqs heures · ↓ K+ ~0,5 mmol/L</td><td><span class="drug-badge ci">CI relatives :</span> IRT (pas efficace) · Hypernatrémie · Pas en monothérapie · Indiqué si acidose minérale sévère</td></tr>
+                </tbody>
+              </table>
+
+              <div class="sec-divider"><div class="sd-shape sq"></div><div class="sd-label">Étape 3 — Élimination du K+</div><div class="sd-line"></div></div>
+              <table style="margin-bottom:10px;">
+                <thead><tr><th>Agent</th><th>Mécanisme</th><th>Délai</th><th>Effet</th><th>Dose</th><th>Particularités / EI</th></tr></thead>
+                <tbody>
+                  <tr><td><strong>Furosémide (Lasix®)</strong></td><td>Diurèse → ↑ excrétion K+</td><td>30-60 min</td><td>Variable</td><td>40-80 mg IV</td><td>Efficace si DFG conservé et diurèse présente · Peu efficace dans néphropathie avancée</td></tr>
+                  <tr><td><strong>Kayexalate® (PSS)</strong></td><td>Échange Na+ contre K+ dans l&apos;intestin</td><td>4-6 h (lent)</td><td>↓ 0,4–1,0 mmol/L</td><td>PO : 15-30 g qid OU lavement 50 g dans 100-200 cc H₂O (rétention 30-60 min)</td><td>Peu efficace en aigu · EI : nécrose colique (rare, surtout avec sorbitol), constipation, charge Na+ · CI : post-chir., iléus, obstruction, opiacés</td></tr>
+                  <tr><td><strong>Lokelma® (SZC)</strong></td><td>Échange Na+/H+ contre K+ au niveau intestinal</td><td>1-2 h (action rapide)</td><td>↓ 0,7–1,2 mmol/L en 24h</td><td>Charge : 5-10 g TID</td><td>Inorganique non absorbé · EI : charge Na+ (œdèmes), nausées, espacer 2h des autres Rx</td></tr>
+                  <tr><td><strong>Veltassa® (Patiromer)</strong></td><td>Échange Ca2+ contre K+ dans le côlon</td><td>7-8 h</td><td>↓ 0,3–0,7 mmol/L en 24-48h</td><td>8,4 à 25,2 g/j</td><td>Mieux toléré · EI : hypomagnésémie (surveiller Mg2+), constipation, interactions Rx (espacer 3h)</td></tr>
+                  <tr><td><strong>Hémodialyse</strong></td><td>Élimination directe</td><td>Délai mise en place &gt;1h</td><td><strong>25-50 mEq/h</strong> (~200 mEq en 4h) — méthode la plus efficace</td><td>—</td><td>Indiquée : IRC sévère/IRT · K+ réfractaire · Urgence vitale avec oligo-anurie · Toujours débuter redistribution en parallèle</td></tr>
+                </tbody>
+              </table>
+
+              <div class="sec-divider"><div class="sd-shape sq"></div><div class="sd-label">Étape 4 — Correction de la cause &amp; Prévention</div><div class="sd-line"></div></div>
+              <div class="flag-list">
+                <div class="flag-item"><span class="flag-dot red"></span><span>Cesser tout apport de K+ (diète, soluté)</span></div>
+                <div class="flag-item"><span class="flag-dot red"></span><span>Cesser médicaments hyperkaliémiants (IECA/ARA, AINS, ARM, triméthoprime)</span></div>
+                <div class="flag-item"><span class="flag-dot yellow"></span><span><strong>Prévention chronique :</strong> Identifier patients à risque (DM + IRC) · Diète pauvre en K+ (attention aliments transformés riches en KCl comme substitut NaCl) · Éviter jeûne prolongé et constipation · Surveillance Rx et kaliémie régulière</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div class="block clin">
-        <div class="block-title" id="kali-6"><span class="tag">🔍 Sévérité, Clinique & Déficit estimé</span></div>
-        <table style="margin-top:4px;">
-          <thead><tr><th>K⁺ (mmol/L)</th><th>Sévérité</th><th>Déficit corporel total estimé</th></tr></thead>
+      <!-- ═══ HYPOKALIÉMIE ═══ -->
+      <div class="block def" id="dk-hypo">
+        <div class="block-title"><span class="tag">🔻 4. HYPOKALIÉMIE</span></div>
+
+        <div class="stat-row" style="margin-bottom:12px;">
+          <div class="stat-card yellow"><div class="stat-num">3,0–3,5</div><div class="stat-label">Légère (mmol/L)</div></div>
+          <div class="stat-card ink"><div class="stat-num">2,5–3,0</div><div class="stat-label">Modérée · déficit ~300-500 mmol</div></div>
+          <div class="stat-card red"><div class="stat-num">&lt; 2,5</div><div class="stat-label">Sévère · déficit &gt;500 mmol · risque rhabdomyolyse</div></div>
+        </div>
+        <div class="key-fact ink" style="margin-bottom:12px;">Symptômes généralement si K+ &lt; 3,0 mEq/L. La sévérité dépend du niveau, de la rapidité d&apos;installation et des facteurs favorisants.</div>
+
+        <div class="accordion">
+          <!-- Physiopath hypoK -->
+          <div class="accordion-item open">
+            <div class="accordion-header">⚙️ Mécanismes physiopathologiques — HypoK+
+              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+            </div>
+            <div class="accordion-body">
+              <div class="flag-list">
+                <div class="flag-item"><span class="flag-dot blue"></span><span><strong>Musculaire :</strong> ↓ K+ extracellulaire → hyperpolarisation de la membrane → difficulté de dépolarisation → faiblesse musculaire</span></div>
+                <div class="flag-item"><span class="flag-dot red"></span><span><strong>Cardiaque :</strong> ↓ K+ extracell. → ↓ activité Na-K-ATPase → ↑ Na+ intracell. → ↑ Ca2+ intracell. → retard de repolarisation ventriculaire → <strong>post-dépolarisation précoce → arythmies</strong></span></div>
+                <div class="flag-item"><span class="flag-dot ink"></span><span><strong>Rénal :</strong> Résistance ADH → polyurie · Échange K+/H+ tubulaire ↑ → alcalose métabolique · Ammoniogenèse ↑ → risque encéphalopathie</span></div>
+              </div>
+              <div class="key-fact yellow" style="margin-top:8px;"><strong>Progression ECG selon sévérité :</strong> 3,0–3,5 (onde T aplatie) → 2,5–3,0 (onde U proéminente) → 2,0–2,5 (fusion T-U, QTU long) → &lt; 2,0 (torsades / FV)</div>
+              <div class="note" style="margin-top:6px;">HypoMg2+ souvent associée → bloque correction du K+ · Aldostérone ↓ → ↓ excrétion K+ (compensation)</div>
+            </div>
+          </div>
+
+          <!-- Manifestations cliniques hypoK -->
+          <div class="accordion-item">
+            <div class="accordion-header">🔍 Manifestations cliniques — HypoK+
+              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+            </div>
+            <div class="accordion-body">
+              <table>
+                <thead><tr><th>Système</th><th>Manifestations</th></tr></thead>
+                <tbody>
+                  <tr><td><strong>Muscle squelettique</strong></td><td>Faiblesse musculaire ascendante (MI → tronc → MS → paralysie flasque) · Hyporéflexie, aréflexie (rare si K+ &gt; 2,5 mmol/L) · Hypoventilation jusqu&apos;à arrêt respiratoire (sévère)</td></tr>
+                  <tr><td><strong>Rhabdomyolyse</strong> (K+ &lt; 2,5)</td><td>Crampes, myalgies, myoglobinurie · Baisse du flux sanguin musculaire → ischémie tissulaire · Effort intense + hypoK → rhabdomyolyse aiguë</td></tr>
+                  <tr><td><strong>Muscles lisses — TGI</strong></td><td>↓ motilité → dilatation gastrique (anorexie, N/V) · <strong>Iléus paralytique</strong> · Rétention urinaire</td></tr>
+                  <tr><td><strong>Muscle cardiaque</strong></td><td>↓ contractilité · Arythmies : ESA, ESV, bradycardie sinusale, tachycardie atriale, FA, BAV, TV, FV · Facteurs aggravants : ischémie coronarienne, digitaliques, hyperactivité β-adrénergique, hypomagnésémie (torsades)</td></tr>
+                  <tr><td><strong>ECG</strong></td><td>Sous-décalage ST · Aplatissement/inversion onde T · <strong>Onde U proéminente</strong> (signe caractéristique — visible après onde T) · Allongement QT</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Étiologies hypoK -->
+          <div class="accordion-item">
+            <div class="accordion-header">📋 Étiologies — HypoK+ (approche diagnostique structurée)
+              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+            </div>
+            <div class="accordion-body">
+              <table>
+                <thead><tr><th>Catégorie</th><th>Étiologies</th></tr></thead>
+                <tbody>
+                  <tr><td><strong>1. Redistribution (intracellulaire)</strong></td><td>Alcalose (effet faible) · Insuline (surdose) · Vitamine B12 (anémie pernicieuse) · Hypothermie · Excès catécholamines · Intoxication baryum, théophylline</td></tr>
+                  <tr><td><strong>2. Pertes extra-rénales</strong> (K+ urinaire &lt; 20 mmol/L → rein en conservation)</td><td>Diarrhées, drainage digestif, fistule entérique · Vomissements, drainage gastrique · Pertes cutanées (sueur profuse) · Plasmaphérèse</td></tr>
+                  <tr><td><strong>3a. Pertes rénales — TA élevée + rénine ↑</strong></td><td>HTA maligne · Maladie rénovasculaire · Tumeur sécrétante de rénine</td></tr>
+                  <tr><td><strong>3b. TA élevée + rénine ↓ + aldostérone ↑</strong></td><td><strong>Syndrome de Conn</strong> (hyperaldostéronisme primaire) · Hyperplasie congénitale des surrénales</td></tr>
+                  <tr><td><strong>3c. TA élevée + rénine ↓ + aldostérone ↓</strong></td><td>Ingestion de minéralocorticoïdes · <strong>Syndrome de Cushing</strong> · Syndrome de Liddle</td></tr>
+                  <tr><td><strong>3d. TA normale + HCO₃⁻ ↓</strong></td><td>Acidose tubulaire rénale types 1 et 2 · Acidocétose diabétique</td></tr>
+                  <tr><td><strong>3e. TA normale + HCO₃⁻ ↑ + Cl⁻ urinaire &gt; 10 mmol/L</strong></td><td>Vomissements, drainage gastrique</td></tr>
+                  <tr><td><strong>3f. TA normale + HCO₃⁻ ↑ + Cl⁻ urinaire &lt; 10 mmol/L</strong></td><td><strong>Syndrome de Bartter</strong> (perte rénale de sel + K+, défaut NKCC2) · <strong>Syndrome de Gitelman</strong> (mutation NCC, plus doux) · Diurétiques thiazidiques ou de l&apos;anse · Hypomagnésémie</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Traitement hypoK -->
+          <div class="accordion-item">
+            <div class="accordion-header">💊 Traitement — HypoK+
+              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+            </div>
+            <div class="accordion-body">
+              <div class="key-fact red" style="margin-bottom:10px;">⚠️ <strong>Correction urgente si :</strong> K+ &lt; 2,5 mmol/L · Faiblesse sévère · Modifications ECG marquées · Arythmie</div>
+              <table style="margin-bottom:10px;">
+                <thead><tr><th>Kaliémie (mmol/L)</th><th>Déficit estimé</th></tr></thead>
+                <tbody>
+                  <tr><td>3,0 – 3,5</td><td>~150-300 mmol</td></tr>
+                  <tr><td>2,5 – 3,0</td><td>~300-500 mmol</td></tr>
+                  <tr><td>2,0 – 2,5</td><td>&gt; 500 mmol</td></tr>
+                </tbody>
+              </table>
+              <div class="note" style="margin-bottom:10px;">⚠️ Pas de corrélation parfaite entre kaliémie et déficit total. Si composante par translocation intracellulaire → déficit réel moindre. <strong>Ne jamais remplacer tout le déficit rapidement</strong> → risque d&apos;hyperkalémie de rebond.</div>
+
+              <table style="margin-bottom:10px;">
+                <thead><tr><th>Médicament</th><th>Mécanisme</th><th>Dose</th><th>EI / Notes</th><th>Surveillance</th></tr></thead>
+                <tbody>
+                  <tr><td><strong>KCl PO</strong> (voie privilégiée)</td><td>Apport direct K+</td><td>100 mEq PO ↑ kaliémie d&apos;environ 1 mEq/L</td><td>Irritation digestive (prendre avec repas) · Prudence si IRC</td><td>Kaliémie régulière · Prudence si insuffisance rénale</td></tr>
+                  <tr><td><strong>KCl IV</strong> (si K+ &lt; 2,5 ou PO impossible ou arythmies)</td><td>Apport direct K+ IV</td><td>Débit max <strong>10 mEq/h</strong> sous monitoring cardiaque · Concentration max voie périphérique : 40 mEq/L</td><td>Arythmies si débit trop rapide · Douleur veineuse à forte concentration</td><td>Kaliémie q2h pendant correction · Monitoring cardiaque continu</td></tr>
+                  <tr><td><strong>MgSO₄</strong> (essentiel si résistance au KCl)</td><td>Mg2+ est cofacteur Na+/K+-ATPase → en cas d&apos;hypoMg2+, la pompe fonctionne mal → fuite rénale de K+ irréfragable → <strong>hypoK réfractaire au KCl tant que Mg2+ non corrigé</strong></td><td>2 g IV sur 20 min → répéter selon magnésémie · Coexistence hypoK + hypoMg : <strong>42 % des cas</strong></td><td>Hypotension/flushing si IV trop rapide · CI insuffisance respiratoire sévère</td><td>Surveiller réflexe rotulien (1er signe toxicité Mg2+) · Magnésémie</td></tr>
+                  <tr><td><strong>Spironolactone / Éplérénone</strong> (prévention chronique)</td><td>Antagonisme récepteurs minéralocorticoïdes → ↓ sécrétion distale de K+ → épargne le K+</td><td>Spironolactone 25–50 mg/j · Éplérénone 25–50 mg/j</td><td>HyperK+ · Gynécomastie/mastodynie (spiro) · <span class="drug-badge ci">CI si K+ &gt; 5,0 ou DFGe &lt; 30</span></td><td>K+ à 1-2 sem · Fonction rénale · TA</td></tr>
+                </tbody>
+              </table>
+              <div class="key-fact yellow">⭐ <strong>Mesures associées essentielles :</strong> Toujours rechercher et corriger une hypomagnésémie (sinon hypoK réfractaire) · Identifier et traiter la cause sous-jacente · Cesser médicaments aggravants (diurétiques non épargneurs, laxatifs)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ BILAN D'INVESTIGATION ═══ -->
+      <div class="block clin" id="dk-bilan">
+        <div class="block-title"><span class="tag">🧪 5. Bilan d&apos;investigation (Hyper &amp; HypoK+)</span></div>
+        <table style="margin-bottom:10px;">
+          <thead><tr><th>Examen</th><th>Pertinence HyperK+</th><th>Pertinence HypoK+</th></tr></thead>
           <tbody>
-            <tr><td>3,0–3,5</td><td>Légère</td><td>~150–300 mmol</td></tr>
-            <tr><td>2,5–3,0</td><td>Modérée</td><td>~300–500 mmol</td></tr>
-            <tr><td><strong>&lt; 2,5</strong></td><td><span class="drug-badge ci">Sévère</span></td><td>&gt; 500 mmol — risque rhabdomyolyse/arythmie</td></tr>
+            <tr><td><strong>Électrolytes, urée, créatinine</strong></td><td>DFG, cause rénale, IRC</td><td>HypoNa, HypoCl, Mg2+</td></tr>
+            <tr><td><strong>CK (créatine kinase)</strong></td><td>Rhabdomyolyse</td><td>Rhabdomyolyse si K+ &lt; 2,5</td></tr>
+            <tr><td><strong>Gaz veineux (pH, HCO₃⁻)</strong></td><td>Acidose → hyperK+ par redistribution</td><td>Alcalose → hypoK+ · Oriente l&apos;étiologie rénale</td></tr>
+            <tr><td><strong>K+ urinaire</strong> (spot ou 24h)</td><td>Différencie cause rénale vs extra-rénale</td><td>&lt; 20 mmol/L = perte extra-rénale · &gt; 20 mmol/L = perte rénale</td></tr>
+            <tr><td><strong>Rénine et aldostérone plasmatiques</strong></td><td>Si suspicion hypoaldostéronisme</td><td>Si hypoK+ + HTA → Conn, Cushing, maladie rénovasculaire</td></tr>
+            <tr><td><strong>Cl⁻ urinaire</strong></td><td>—</td><td>&gt; 10 → vomissements/drainage · &lt; 10 → Bartter/Gitelman/diurétiques</td></tr>
+            <tr><td><strong>ECG</strong></td><td>Urgence si anomalies</td><td>Urgence si onde U ou QTU long</td></tr>
+            <tr><td><strong>TA et FC</strong></td><td>Expansion volémique</td><td>Oriente étiologie (TA élevée = Conn/Cushing)</td></tr>
+            <tr><td><strong>Magnésémie</strong></td><td>—</td><td>Coexiste dans 42 % des hypoK+ → corriger systématiquement</td></tr>
           </tbody>
         </table>
-        <p class="content-text" style="margin-top:8px;">Symptômes typiquement si K⁺ &lt; 3,0 : Faiblesse musculaire ascendante · Hyporéflexie · Iléus paralytique · Rhabdomyolyse si K⁺ &lt; 2,5<br>
-        <strong>ECG :</strong> Sous-décalage ST · Aplatissement onde T · <strong>Onde U (pathognomonique)</strong> · Allongement QT · Arythmies</p>
-        <div class="highlight cream" style="margin-top:8px;font-size:13px;"><strong>Étiologies — approche structurée :</strong> ① <em>Redistribution</em> (alcalose, surdosage insuline, vit. B12, hypothermie, catécholamines, intox. baryum/théophylline) · ② <em>Pertes extra-rénales</em> (K⁺ urinaire &lt; 20 : pertes digestives, vomissements, sueurs, plasmaphérèse) · ③ <em>Pertes rénales</em> (K⁺ urinaire &gt; 20 — orienter par TA/rénine/aldostérone/HCO₃⁻/Cl⁻ urinaire : HTA + ↑aldostérone → Conn/HTA rénovasculaire ; HTA + ↓rénine/↓aldostérone → Cushing, Liddle ; TA normale + acidose → ATR types 1 et 2, ACD ; TA normale + alcalose → vomissements (Cl⁻ urinaire bas), Bartter/Gitelman/diurétiques (Cl⁻ urinaire élevé) ; toujours exclure hypomagnésémie associée)</div>
-        <div class="highlight cream" style="margin-top:8px;font-size:13px;"><strong>Bilan :</strong> K⁺ urinaire spot &lt; 20 = pertes extra-rénales · &gt; 20 = pertes rénales · Rénine + aldostérone · Gaz veineux</div>
+        <div class="key-fact blue">🔑 <strong>Approche structurée HypoK+ :</strong> K+ urinaire → si &gt; 20 mmol/L → pertes rénales → mesurer TA : TA ↑ + rénine/aldo → orienter vers Conn, Cushing, maladie rénovasculaire · TA normale + pH → acidose → ATR / acéto-DB · TA normale + alcalose → Cl- urinaire → Bartter/Gitelman vs vomissements</div>
       </div>
 
-      <div class="block rx">
-        <div class="block-title" id="kali-7"><span class="tag">💊 Traitement & Prévention Hypokaliémie</span></div>
-        <ul class="content-text" style="padding-left:18px;">
-          <li>PO (privilégié, si léger-modéré et asx) : KCl PO — 100 mEq ↑ kaliémie de ~1 mEq/L</li>
-          <li>IV si K⁺ &lt; 2,5, symptomatique ou arythmies : KCl IV max <strong>10 mEq/h sous monitoring continu</strong> (voie centrale si concentration élevée)</li>
-          <li>⚠️ Corriger l'<strong>hypomagnésémie concomitante</strong> systématiquement — <span class="drug-badge line2">MgSO₄ 2 g IV en 20 min</span> (cofacteur de la pompe Na⁺/K⁺-ATPase ; sans correction, hypoK réfractaire) — surveiller hypotension et réflexe rotulien</li>
-          <li><strong>Prévention (hypoK chronique/récidivante)</strong> : <span class="drug-badge line1">Spironolactone ou Éplérénone 25–50 mg/j</span> — épargneur de K⁺, utile si pertes rénales/hyperaldostéronisme · surveiller hyperK et fonction rénale, CI si IRC sévère</li>
-        </ul>
-      </div>
-
-      <div class="block flag">
-        <div class="block-title" id="kali-8"><span class="tag">🚨 RED FLAGS</span></div>
-        <div class="flag-list">
-          <div class="flag-item"><span class="fi-icon">⚡</span><span>ECG anormal (QRS élargi, ondes T pointues) → <strong>Gluconate Ca IV STAT</strong></span></div>
-          <div class="flag-item"><span class="fi-icon">🚨</span><span>K⁺ ≥ 6,5 → traitement urgent + dialyse si oligo-anurie</span></div>
-          <div class="flag-item"><span class="fi-icon">💊</span><span>Digitaliques + hyperK⁺ → <strong>éviter Ca IV</strong> → DigiFab® en priorité</span></div>
-          <div class="flag-item"><span class="fi-icon">🧪</span><span>Hypomagnésémie → corriger systématiquement avant K⁺</span></div>
+      <!-- ═══ TRAITEMENT NON-PHARMA & SUIVI ═══ -->
+      <div class="block para" id="dk-nonpharma">
+        <div class="block-title"><span class="tag">🥗 6. Traitement non-pharmacologique &amp; Suivi</span></div>
+        <table style="margin-bottom:10px;">
+          <thead><tr><th>Domaine</th><th>HyperK+</th><th>HypoK+</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Diète</strong></td><td>↓ aliments riches en K+ (banane, tomate, chocolat, légumineuses) · Attention aliments transformés riches en KCl (substitut NaCl)</td><td>↑ aliments riches en K+ (banane, avocat, légumineuses, orange, épinards)</td></tr>
+            <tr><td><strong>Médicaments à surveiller/cesser</strong></td><td>IECA, ARA, AINS, ARM (spiro, éplérénone), héparine, triméthoprime, cyclosporine, tacrolimus · Éviter les substituts de sel (KCl)</td><td>Diurétiques non épargneurs (thiazide, anse) · Laxatifs · Amphotéricine B</td></tr>
+            <tr><td><strong>Prévention</strong></td><td>Identifier patients à risque (DM + IRC + IECA/ARM) · Éviter jeûne prolongé · Éviter constipation (↑ réabsorption intestinale K+)</td><td>Supplément K+ si diurétiques non épargneurs · Corriger systématiquement Mg2+ si hypoK+</td></tr>
+            <tr><td><strong>Surveillance kaliémie</strong></td><td>Selon sévérité : aiguë → q1-4h · Après stabilisation → hebdomadaire ou mensuel selon comorbidités</td><td>Selon sévérité : IV → q2h · PO stable → q1-2 sem en début de traitement</td></tr>
+            <tr><td><strong>Éducation patient</strong></td><td>Aliments à éviter · Signes d&apos;alarme (palpitations, faiblesse) · Ne jamais arrêter Rx sans avis</td><td>Aliments recommandés · Importance de l&apos;adhésion au supplément · Signes d&apos;alarme (crampes, palpitations)</td></tr>
+            <tr><td><strong>Consultation spécialisée</strong></td><td>Nutrition si dyskalémie chronique · Néphrologie si K+ réfractaire ou IRC avancée</td><td>Nutrition si dyskalémie chronique · Endocrinologie si Conn/Cushing/ATR</td></tr>
+          </tbody>
+        </table>
+        <div class="key-fact blue" style="margin-bottom:8px;">⭐ <strong>Messages clés :</strong><br>
+          · Le K+ est principalement intracellulaire — la kaliémie ne reflète que 2 % du pool total<br>
+          · Rein (néphron distal) = organe principal de régulation via aldostérone et concentration plasmatique de K+<br>
+          · HyperK+ avec anomalies ECG = urgence cardiaque → 4 étapes (Ca IV → insuline/glucose → élimination → cause)<br>
+          · Les 2 premières étapes (Ca2+ IV, insuline/glucose) sont temporaires — l&apos;élimination est le but ultime<br>
+          · Toujours rechercher une hypomagnésémie devant toute hypokaliémie (hypoK réfractaire sinon)<br>
+          · HypoK+ nécessite toujours investigation étiologique structurée (K+ urinaire + bilan acido-basique + TA)
         </div>
+      </div>
+
+      <!-- ═══ RED FLAGS ═══ -->
+      <div class="block flag" id="dk-red">
+        <div class="block-title"><span class="tag">🚨 Red Flags &amp; Corrélations ECG</span></div>
+        <div class="flag-list" style="margin-bottom:14px;">
+          <div class="flag-item"><span class="fi-icon">🔴</span><span><strong>ECG anormal (ondes T pointues, QRS élargi, disparition onde P)</strong> → urgence vitale → Gluconate Ca2+ IV STAT</span></div>
+          <div class="flag-item"><span class="fi-icon">🔴</span><span><strong>K+ ≥ 6,5 mmol/L</strong> → traitement urgent (insuline/glucose + Ca2+ IV) · Dialyse si oligo-anurie ou IRC sévère</span></div>
+          <div class="flag-item"><span class="fi-icon">🔴</span><span><strong>Onde sinusoïdale à l&apos;ECG</strong> → risque FV imminente → dialyse d&apos;urgence + gluconate Ca IV répété</span></div>
+          <div class="flag-item"><span class="fi-icon">🔴</span><span><strong>HypoK+ sévère (K+ &lt; 2,5) + rhabdomyolyse ou arythmie</strong> → KCl IV sous monitoring continu</span></div>
+          <div class="flag-item"><span class="fi-icon">🟡</span><span><strong>Hypomagnésémie</strong> → corriger systématiquement pour éviter dyskalémie réfractaire (coexistence hypoK + hypoMg : 42 %)</span></div>
+          <div class="flag-item"><span class="fi-icon">🟡</span><span><strong>Intoxication digitalique + hyperK+</strong> → éviter Ca IV → DigiFab® (anticorps anti-digoxine) en priorité</span></div>
+          <div class="flag-item"><span class="fi-icon">🟡</span><span><strong>IRC + diabète sous IECA/ARM</strong> → surveiller kaliémie régulièrement · Diète pauvre en K+ · Lokelma® ou Veltassa® si hyperK chronique</span></div>
+        </div>
+        <table>
+          <thead><tr><th>K+ (mmol/L)</th><th>HyperK+ — Signes ECG</th><th>HypoK+ — Signes ECG</th></tr></thead>
+          <tbody>
+            <tr><td>5,5 – 6,5 / 3,0 – 3,5</td><td>Ondes T pointues et symétriques</td><td>Onde T aplatie</td></tr>
+            <tr><td>6,5 – 7,5 / 2,5 – 3,0</td><td>Disparition onde P · ↑ PR · BAV</td><td><strong>Onde U proéminente</strong> (signe caractéristique)</td></tr>
+            <tr><td>&gt; 8,0 / &lt; 2,0</td><td>Onde sinusoïdale → FV / asystolie</td><td>Torsades de pointes (si hypoMg2+ associée)</td></tr>
+          </tbody>
+        </table>
+        <div class="note" style="margin-top:8px;">⚠️ La corrélation entre kaliémie et ECG est imprécise — des anomalies peuvent survenir à des valeurs moindres si IRC, acidose, hypocalcémie ou digitaliques associés.</div>
       </div>
     </div>
-
-    <div class="section" id="sec-dysnatremie">
+    
+<script>
+function dkRenal(view) {
+  var views = ['overview','cellule','regulateurs','medicaments'];
+  var btns  = {overview:'dk-btn-ov',cellule:'dk-btn-cell',regulateurs:'dk-btn-reg',medicaments:'dk-btn-med'};
+  views.forEach(function(v) {
+    var el = document.getElementById('dk-renal-' + v);
+    if (el) el.style.display = (v === view) ? 'block' : 'none';
+    var b = document.getElementById(btns[v]);
+    if (b) { b.style.background = (v === view) ? '#1C3F8F' : '#e2e8f0'; b.style.color = (v === view) ? '#fff' : '#1e293b'; }
+  });
+}
+</script>
+<div class="section" id="sec-dysnatremie">
       <div class="section-header">
         <div class="section-accent" style="background:var(--yellow)">🦋</div>
         <div class="section-title"><h1>Dysnatrémie</h1><div class="breadcrumb">Endocrinologie <span class="breadcrumb-sep">·</span> Section 23</div></div>
