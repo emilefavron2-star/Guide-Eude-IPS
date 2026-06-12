@@ -21364,6 +21364,54 @@ function calculatePHQ9() {
         </div>
       </div>
 
+      <!-- OSTEO ALGO -->
+      <div class="block rx">
+        <div class="block-title"><span class="tag">🎯 Ostéoporose — Aide à la décision thérapeutique</span></div>
+        <p style="font-size:13px;color:var(--ink-lt);margin-bottom:12px;">Sélectionnez le profil du patient pour obtenir une recommandation de traitement personnalisée.</p>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:14px;">
+
+          <div>
+            <label style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:var(--ink2);display:block;margin-bottom:5px;">① Risque fracturaire (CAROC / FRAX)</label>
+            <select id="osteo-risk" onchange="runOsteoAlgo()" style="width:100%;padding:9px 10px;border:1.5px solid var(--cream3);border-radius:8px;font-size:13px;background:#fff;cursor:pointer;">
+              <option value="">— Sélectionner —</option>
+              <option value="faible">🟢 Faible (&lt; 10%)</option>
+              <option value="modere">🟡 Modéré (10–20%)</option>
+              <option value="eleve">🔴 Élevé (&gt; 20%) ou fracture fragilité</option>
+            </select>
+          </div>
+
+          <div>
+            <label style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:var(--ink2);display:block;margin-bottom:5px;">② Contexte particulier</label>
+            <select id="osteo-context" onchange="runOsteoAlgo()" style="width:100%;padding:9px 10px;border:1.5px solid var(--cream3);border-radius:8px;font-size:13px;background:#fff;cursor:pointer;">
+              <option value="aucun">Aucun contexte particulier</option>
+              <option value="cortico">💊 Corticostéroïdes ≥ 7,5 mg/j ≥ 3 mois</option>
+              <option value="ia">🎗️ Inhibiteurs d'aromatase (cancer sein)</option>
+              <option value="denosumab-arret">⛔ Arrêt du dénosumab (Prolia)</option>
+              <option value="menopause-jeune">🌸 Ménopause &lt; 60 ans + symptômes vasomoteurs</option>
+            </select>
+          </div>
+
+          <div>
+            <label style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:var(--ink2);display:block;margin-bottom:5px;">③ Comorbidités / CI</label>
+            <select id="osteo-ci" onchange="runOsteoAlgo()" style="width:100%;padding:9px 10px;border:1.5px solid var(--cream3);border-radius:8px;font-size:13px;background:#fff;cursor:pointer;">
+              <option value="aucune">Aucune contre-indication</option>
+              <option value="irc">🔵 IRC sévère — DFG &lt; 35 mL/min</option>
+              <option value="gi">🟠 CI voie orale — problèmes GI / dysphagie</option>
+              <option value="tscore-severe">🦴 T-score ≤ −3,5 + fractures multiples</option>
+              <option value="tev">⚠️ Risque TEV élevé (ATCD TVP/EP)</option>
+            </select>
+          </div>
+
+        </div>
+
+        <div id="osteo-result" style="display:none;"></div>
+
+        <div style="background:#f8f9fa;border-radius:8px;padding:10px 14px;margin-top:10px;font-size:12px;color:var(--ink-lt);">
+          <strong>Toujours prescrire en complément :</strong> Calcium alimentaire ± supplément (total 1 000–1 200 mg/j) · Vitamine D 800–2 000 UI/j · Exercice port de poids + équilibre · Arrêt tabac · ↓ ROH · Prévention des chutes
+        </div>
+      </div>
+
       <!-- HRT -->
       <div class="block rx">
         <div class="block-title" id="men-4"><span class="tag">💊 Hormonothérapie (HT) — Guide INESSS 2024</span></div>
@@ -22041,6 +22089,150 @@ mainScrollEl.addEventListener('scroll', () => {
   else backTopBtn.classList.remove('show');
 }, { passive: true });
 backTopBtn.addEventListener('click', () => mainScrollEl.scrollTo({ top: 0, behavior: 'smooth' }));
+
+// ── Ostéoporose : aide à la décision thérapeutique ──
+function runOsteoAlgo() {
+  const risk    = document.getElementById('osteo-risk').value;
+  const context = document.getElementById('osteo-context').value;
+  const ci      = document.getElementById('osteo-ci').value;
+  const result  = document.getElementById('osteo-result');
+  if (!risk) { result.style.display = 'none'; return; }
+
+  const DB = { line1:'background:#d1fae5;color:#065f46;border-radius:4px;padding:2px 7px;font-size:12px;font-weight:700;', line2:'background:#dbeafe;color:#1e40af;border-radius:4px;padding:2px 7px;font-size:12px;font-weight:700;', line3:'background:#ede9fe;color:#5b21b6;border-radius:4px;padding:2px 7px;font-size:12px;font-weight:700;', warn:'background:#fee2e2;color:#991b1b;border-radius:4px;padding:2px 7px;font-size:12px;font-weight:700;' };
+  const badge = (label, type) => `<span style="${DB[type]}">${label}</span>`;
+
+  let title = '', body = '', bg = '#f0fdf4', border = '#059669';
+
+  // ── Contextes particuliers (prioritaires) ──
+  if (context === 'denosumab-arret') {
+    title = '⛔ Arrêt du dénosumab — Relai obligatoire';
+    body = `Risque de <strong>rebond de fractures vertébrales</strong> à l'arrêt du Prolia.<br><br>
+    <strong>Relai systématique :</strong><br>
+    • ${badge('Acide zolédronique 5 mg IV', 'line1')} — administrer <strong>6 mois après</strong> la dernière injection de Dénosumab<br>
+    • ${badge('Alendronate 70 mg PO/sem × 24 mois', 'line1')} — si CI à la voie IV<br><br>
+    <em>Ne jamais arrêter le Dénosumab sans planifier le relai bisphosphonate.</em>`;
+    bg = '#fff3cd'; border = '#d97706';
+  } else if (context === 'cortico') {
+    title = '⚠️ Ostéoporose cortico-induite — Traitement d\'emblée (tous niveaux de risque)';
+    if (ci === 'irc') {
+      body = `IRC sévère DFG &lt; 35 → bisphosphonates CI (accumulation rénale)<br><br>
+      • ${badge('Dénosumab (Prolia) 60 mg SC q6 mois', 'line2')} — 1re ligne, pas d'élimination rénale ✅<br>
+      <span style="color:#991b1b;font-size:12px;">⚠️ Arrêt → rebond → prévoir relai bisphosphonate dès rétablissement fonction rénale</span>`;
+    } else if (ci === 'gi') {
+      body = `CI aux bisphosphonates oraux (dysphagie / maladie GI active)<br><br>
+      • ${badge('Acide zolédronique 5 mg IV 1×/an', 'line1')} — efficacité équivalente, voie IV<br>
+      • ${badge('Dénosumab 60 mg SC q6 mois', 'line2')} — alternative si CI IV ou compliance`;
+    } else if (ci === 'tscore-severe') {
+      body = `T-score ≤ −3,5 + fractures multiples → Agent anabolique préféré<br><br>
+      • ${badge('Tériparatide (Forteo) 20 µg SC/j × max 24 mois', 'line3')} — ↓ fx vertébrale 65 %<br>
+      • ${badge('Romosozumab 210 mg SC/mois × 12 mois', 'line3')} — si fx sévère récente<br>
+      <em>Suivre d'un antirésortif (bisphosphonate ou dénosumab) à la fin du traitement anabolique</em>`;
+    } else {
+      body = `• ${badge('Alendronate 70 mg PO/sem', 'line1')} — 1er choix (prise à jeun, position debout 30 min)<br>
+      • ${badge('Risédronate 35 mg PO/sem', 'line1')} — si EI GI avec alendronate<br>
+      • ${badge('Acide zolédronique 5 mg IV 1×/an', 'line1')} — si compliance PO difficile<br><br>
+      <em>Risque très élevé (T ≤ −3,5 + fx multiples) → Tériparatide ou Romosozumab</em>`;
+    }
+    bg = '#fce4ec'; border = '#be185d';
+  } else if (context === 'ia') {
+    title = '🎗️ Inhibiteurs d\'aromatase — Perte osseuse iatrogène (~2–3 %/an)';
+    body = `Surveiller DMO annuellement. Traiter si T-score ≤ −2,0 ou ostéopénie + FdR.<br><br>`;
+    if (ci === 'irc') {
+      body += `• ${badge('Dénosumab 60 mg SC q6 mois', 'line2')} — 1re ligne en oncologie + IRC (pas d'élimination rénale)`;
+    } else {
+      body += `• ${badge('Acide zolédronique 5 mg IV 1×/an', 'line1')} — souvent privilégié en oncologie (observance + efficacité)<br>
+      • ${badge('Alendronate 70 mg PO/sem', 'line1')} — si tolérance PO correcte et préférence patient<br>
+      • ${badge('Dénosumab 60 mg SC q6 mois', 'line2')} — si CI bisphosphonates`;
+    }
+    bg = '#eff6ff'; border = '#3b82f6';
+  } else if (context === 'menopause-jeune') {
+    title = '🌸 Ménopause < 60 ans + symptômes vasomoteurs + ostéoporose';
+    body = `Double bénéfice : soulagement SVM <strong>ET</strong> protection osseuse.<br><br>
+    • ${badge('Hormonothérapie (HT) — œstrogènes ± progestatifs', 'line1')} — 1re intention si &lt; 60 ans et &lt; 10 ans post-ménopause<br><br>
+    <strong>Importantes :</strong><br>
+    • Réévaluer annuellement le rapport bénéfice/risque<br>
+    • À l'arrêt de l'HT → perte osseuse reprend → prévoir relai ${badge('bisphosphonate', 'line1')}<br>
+    • Si HT contre-indiquée (ATCD cancer sein, TEV) → ${badge('Alendronate 70 mg PO/sem', 'line1')} d'emblée`;
+    if (ci === 'tev') {
+      body += `<br><span style="color:#991b1b;font-size:12px;">⚠️ ATCD TEV : HT transdermique préférable (pas de premier passage hépatique) — éviter HT orale</span>`;
+    }
+    bg = '#fdf4ff'; border = '#a855f7';
+  } else {
+    // Standard pathway
+    if (risk === 'faible') {
+      title = '✅ Risque faible (< 10%) — Mesures non-pharmacologiques';
+      body = `Pas de traitement pharmacologique habituellement.<br><br>
+      <strong>Mesures non-pharma :</strong><br>
+      • Calcium total 1 000–1 200 mg/j (alimentation en priorité ± supplément)<br>
+      • Vitamine D 800–2 000 UI/j<br>
+      • Exercice : port de poids + résistance + équilibre (≥ 3×/sem)<br>
+      • Arrêt tabac · Alcool ≤ 2 consommations/j · IMC &gt; 20<br><br>
+      <em>Réévaluation DXA dans 3–5 ans. Si passage en risque modéré/élevé → réévaluer traitement.</em>`;
+      bg = '#f0fdf4'; border = '#059669';
+    } else if (risk === 'modere') {
+      title = '⚖️ Risque modéré (10–20%) — Discuter bisphosphonate';
+      body = `Ca/VitD + mesures non-pharma (voir risque faible).<br>Traitement pharmacologique si facteurs aggravants (fracture antérieure, corticostéroïdes, chutes répétées).<br><br>`;
+      if (ci === 'irc') {
+        body += `IRC DFG &lt; 35 → bisphosphonates CI<br>
+        • ${badge('Dénosumab 60 mg SC q6 mois', 'line2')} — safe en IRC<br>
+        <span style="color:#991b1b;font-size:12px;">⚠️ Arrêt → rebond → prévoir relai bisphosphonate si DFG s'améliore</span>`;
+      } else if (ci === 'gi') {
+        body += `CI voie orale → bisphosphonate IV<br>
+        • ${badge('Acide zolédronique 5 mg IV 1×/an', 'line1')} — perfusion 15 min · DFG requis ≥ 35`;
+      } else if (ci === 'tscore-severe') {
+        body += `T-score ≤ −3,5 même à risque modéré → traiter comme risque élevé<br>
+        • ${badge('Alendronate 70 mg PO/sem', 'line1')} (1er choix)<br>
+        • Référer ostéoporose sévère si doutes`;
+      } else if (ci === 'tev') {
+        body += `ATCD TEV : éviter le Raloxifène (↑ risque TEV)<br>
+        • ${badge('Alendronate 70 mg PO/sem', 'line1')} — 1er choix<br>
+        • ${badge('Risédronate 35 mg PO/sem', 'line1')} — alternative`;
+      } else {
+        body += `• ${badge('Alendronate 70 mg PO/sem', 'line1')} — 1er choix · ↓ fx vertébrale/hanche ~50 %<br>
+        • ${badge('Risédronate 35 mg PO/sem', 'line1')} — si EI GI avec alendronate<br>
+        <em style="font-size:12px;">Réévaluation 3–5 ans · Drug holiday possible si risque modéré après 5 ans oraux</em>`;
+      }
+      bg = '#fefce8'; border = '#ca8a04';
+    } else if (risk === 'eleve') {
+      title = '🚨 Risque élevé (> 20% ou fracture fragilité) — Traitement obligatoire';
+      if (ci === 'tscore-severe') {
+        body = `T-score ≤ −3,5 + fractures multiples → Agent anabolique en 1re ligne<br><br>
+        • ${badge('Tériparatide (Forteo) 20 µg SC/j × max 24 mois', 'line3')} — ↓ fx vertébrale 65 %, ↑ DMO<br>
+        • ${badge('Romosozumab (Evenity) 210 mg SC/mois × 12 mois', 'line3')} — si fx sévère récente · inhibiteur sclérostine<br><br>
+        <em>Suivre obligatoirement d'un antirésortif : ${badge('Alendronate', 'line1')} ou ${badge('Dénosumab', 'line2')}</em>`;
+      } else if (ci === 'irc') {
+        body = `IRC DFG &lt; 35 → acide zolédronique CI (accumulation rénale)<br><br>
+        • ${badge('Dénosumab (Prolia) 60 mg SC q6 mois', 'line2')} — 1re ligne · pas d'élimination rénale ✅<br>
+        <span style="color:#991b1b;font-size:12px;">⚠️ Ne jamais arrêter sans relai bisphosphonate → risque de rebond sévère</span>`;
+      } else if (ci === 'gi') {
+        body = `CI aux bisphosphonates oraux → alternatives :<br><br>
+        • ${badge('Acide zolédronique 5 mg IV 1×/an', 'line1')} — 1er choix IV · efficacité équivalente PO<br>
+        • ${badge('Dénosumab 60 mg SC q6 mois', 'line2')} — si CI IV ou préférence patient<br>
+        • ${badge('Raloxifène 60 mg die PO', 'line2')} — si fracture vertébrale seulement (éviter si risque TEV)`;
+      } else if (ci === 'tev') {
+        body = `ATCD TEV → éviter Raloxifène (↑ risque)<br><br>
+        • ${badge('Alendronate 70 mg PO/sem', 'line1')} — 1er choix<br>
+        • ${badge('Acide zolédronique 5 mg IV 1×/an', 'line1')} — si compliance difficile<br>
+        • ${badge('Dénosumab 60 mg SC q6 mois', 'line2')} — si CI bisphosphonates`;
+      } else {
+        body = `<strong>1re ligne — Bisphosphonates :</strong><br>
+        • ${badge('Alendronate (Fosamax) 70 mg PO/sem', 'line1')} — ↓ fx vertébrale/hanche ~50 % · Prise à jeun 30 min avant aliments<br>
+        • ${badge('Risédronate 35 mg PO/sem', 'line1')} — moins d'EI GI<br>
+        • ${badge('Acide zolédronique 5 mg IV 1×/an', 'line1')} — si compliance difficile ou préférence<br><br>
+        <strong>2e ligne :</strong> ${badge('Dénosumab 60 mg SC q6 mois', 'line2')} · ${badge('Raloxifène 60 mg/j', 'line2')} (fx vertébrale seulement)<br><br>
+        <em style="font-size:12px;">Durée : réévaluation 3–5 ans · Drug holiday si risque modéré (après 5 ans PO / 3 ans IV)</em>`;
+      }
+      bg = '#fef2f2'; border = '#dc2626';
+    }
+  }
+
+  result.innerHTML = `
+    <div style="border-left:4px solid ${border};background:${bg};border-radius:0 10px 10px 0;padding:14px 16px;line-height:1.85;font-size:13px;">
+      <div style="font-weight:800;font-size:13.5px;margin-bottom:8px;">${title}</div>
+      ${body}
+    </div>`;
+  result.style.display = 'block';
+}
 </script>
 
     <div class="section" id="sec-quiz">
