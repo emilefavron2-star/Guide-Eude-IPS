@@ -21629,109 +21629,200 @@ function dkRenal(view) {
         <div class="block-title"><span class="tag">🗺️ Algorithme — Choix de l&apos;Antidépresseur</span></div>
         <div style="background:#f8fafc;border:2px solid #7b3fa0;border-radius:10px;padding:16px;margin-bottom:12px;">
           <p style="font-weight:700;color:#7b3fa0;margin-bottom:12px;">Sélectionnez les paramètres cliniques :</p>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;">
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:12px;">
             <div>
-              <label style="font-size:12px;font-weight:600;color:#475569;display:block;margin-bottom:4px;">Symptôme / contexte dominant</label>
-              <select id="ad-symptome" onchange="choixAD()" style="width:100%;padding:8px;border:1px solid #cbd5e1;border-radius:6px;font-size:13px;">
-                <option value="">-- Choisir --</option>
-                <option value="anxiete">Anxiété prédominante</option>
-                <option value="fatigue">Fatigue / manque d&apos;énergie</option>
-                <option value="insomnie">Insomnie</option>
-                <option value="faible-poids">Faible poids / appétit ↓</option>
-                <option value="surpoids">Surpoids / appétit ↑</option>
-                <option value="mcas">MCAS / cardiopathie</option>
+              <label style="font-size:12px;font-weight:600;color:#475569;display:block;margin-bottom:4px;">1. Diagnostic principal</label>
+              <select id="ad-diagnostic" onchange="choixAD()" style="width:100%;padding:8px;border:1px solid #cbd5e1;border-radius:6px;font-size:13px;">
+                <option value="">-- Diagnostic --</option>
+                <option value="tdc">Dépression (TDC)</option>
+                <option value="tag">Anxiété généralisée (TAG)</option>
+                <option value="panique">Trouble panique</option>
+                <option value="sociale">Phobie sociale</option>
+                <option value="toc">TOC</option>
+                <option value="sspt">SSPT</option>
+                <option value="bipolaire">MAB — dépression bipolaire</option>
                 <option value="douleur">Douleur chronique / neuropathie</option>
-                <option value="tabagisme">Tabagisme concomitant</option>
-                <option value="dysfonction-sex">Dysfonction sexuelle à éviter</option>
-                <option value="cognitive">Dysfonction cognitive</option>
-                <option value="saignement">Risque de saignement ↑</option>
-                <option value="inobservance">Inobservance prévisible</option>
               </select>
             </div>
             <div>
-              <label style="font-size:12px;font-weight:600;color:#475569;display:block;margin-bottom:4px;">Comorbidité / CI à considérer</label>
+              <label style="font-size:12px;font-weight:600;color:#475569;display:block;margin-bottom:4px;">2. Symptômes / EI à éviter</label>
+              <select id="ad-eviter" onchange="choixAD()" style="width:100%;padding:8px;border:1px solid #cbd5e1;border-radius:6px;font-size:13px;">
+                <option value="">-- Aucun en particulier --</option>
+                <option value="poids">Prise de poids</option>
+                <option value="insomnie">Insomnie</option>
+                <option value="sedation">Sédation diurne</option>
+                <option value="sexuel">Dysfonction sexuelle</option>
+                <option value="gi">Nausées / EI gastro-intestinaux</option>
+                <option value="ht">Hypertension (HTA)</option>
+              </select>
+            </div>
+            <div>
+              <label style="font-size:12px;font-weight:600;color:#475569;display:block;margin-bottom:4px;">3. Comorbidité / CI</label>
               <select id="ad-comorbidite" onchange="choixAD()" style="width:100%;padding:8px;border:1px solid #cbd5e1;border-radius:6px;font-size:13px;">
-                <option value="">-- Aucune particulière --</option>
+                <option value="">-- Aucune --</option>
                 <option value="epilepsie">Épilepsie</option>
                 <option value="grossesse">Grossesse / allaitement</option>
                 <option value="hepatique">Insuffisance hépatique</option>
                 <option value="renale">Insuffisance rénale</option>
+                <option value="mcas">MCAS / cardiopathie</option>
+                <option value="tabagisme">Tabagisme actif</option>
               </select>
             </div>
           </div>
-          <div id="ad-output" style="background:#fff;border-left:4px solid #7b3fa0;border-radius:0 8px 8px 0;padding:12px;min-height:40px;display:none;">
-          </div>
+          <div id="ad-output" style="background:#fff;border-left:4px solid #7b3fa0;border-radius:0 8px 8px 0;padding:12px;min-height:40px;display:none;"></div>
         </div>
       </div>
     </div>
     <div class="section" id="sec-stabilisateurs">
-      <div class="section-header"><div class="section-accent">💊</div><div class="section-title"><h1>Lithium — Néphrotoxicité &amp; Surveillance</h1><div class="breadcrumb">Santé mentale <span class="breadcrumb-sep">·</span> Stabilisateurs de l&apos;humeur</div></div></div>
+      <div class="section-header"><div class="section-accent">⚡</div><div class="section-title"><h1>Stabilisateurs de l&apos;Humeur</h1><div class="breadcrumb">Santé mentale <span class="breadcrumb-sep">·</span> Lithium · Valproate · Carbamazépine · Lamotrigine</div></div></div>
 
       <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px;">
-        <button onclick="document.getElementById('lith-din').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">💧 Diabète insipide néphrogénique</button>
-        <button onclick="document.getElementById('lith-nic').scrollIntoView({behavior:'smooth'})" style="background:#c0392b;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🫘 Néphrite interstitielle chronique</button>
-        <button onclick="document.getElementById('lith-prev').scrollIntoView({behavior:'smooth'})" style="background:#0a7a4e;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🛡️ Prévention &amp; Suivi</button>
+        <button onclick="document.getElementById('lith-din').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">⚡ Lithium</button>
+        <button onclick="document.getElementById('val-din').scrollIntoView({behavior:'smooth'})" style="background:#7b3fa0;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔴 Valproate</button>
+        <button onclick="document.getElementById('carba-din').scrollIntoView({behavior:'smooth'})" style="background:#d97706;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🟡 Carbamazépine</button>
+        <button onclick="document.getElementById('lamo-din').scrollIntoView({behavior:'smooth'})" style="background:#0a7a4e;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🟢 Lamotrigine</button>
+        <button onclick="document.getElementById('stab-suivi').scrollIntoView({behavior:'smooth'})" style="background:#be185d;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📊 Suivi &amp; Toxicité</button>
       </div>
 
-      <!-- DIN -->
+      <!-- LITHIUM -->
       <div class="block def" id="lith-din">
-        <div class="block-title"><span class="tag">💧 Diabète Insipide Néphrogénique (DIN)</span></div>
-        <div class="key-fact blue" style="margin-bottom:8px;"><strong>Mécanisme :</strong> Le lithium entre dans les cellules principales du tubule collecteur via les canaux ENaC et bloque la signalisation AMPc → résistance à l&apos;ADH (vasopressine) → incapacité d&apos;insérer les aquaporines-2 → polyurie/polydipsie</div>
-        <div class="key-fact ink" style="margin-bottom:10px;"><strong>Incidence :</strong> 20–40 % des patients · Généralement partiellement réversible à l&apos;arrêt</div>
-        <table style="margin-bottom:10px;">
-          <thead><tr><th></th><th>DIN au Lithium</th><th>Polydipsie primaire (ex: xérostomie)</th></tr></thead>
-          <tbody>
-            <tr><td><strong>Osmolalité urinaire</strong></td><td>Basse (&lt; 300 mOsm/kg) même après restriction hydrique</td><td>Variable, peut s&apos;améliorer avec restriction</td></tr>
-            <tr><td><strong>Osmolalité plasmatique</strong></td><td>Normale ou ↑</td><td>Normale ou ↓</td></tr>
-            <tr><td><strong>Test restriction hydrique</strong></td><td>Pas de concentration urinaire</td><td>Concentration urinaire partielle possible</td></tr>
-            <tr><td><strong>Test DDAVP</strong></td><td>Pas de réponse (résistance périphérique)</td><td>Réponse présente</td></tr>
-            <tr><td><strong>Indice clinique important</strong></td><td>Nycturie fréquente</td><td>—</td></tr>
-          </tbody>
-        </table>
-        <p class="content-text" style="font-weight:600;margin-bottom:4px;">Traitement :</p>
-        <div class="flag-list">
-          <div class="flag-item"><span class="flag-dot red"></span><span><strong>Cesser le lithium si possible</strong> — généralement partiellement réversible</span></div>
-          <div class="flag-item"><span class="flag-dot ink"></span><span><strong>Si maintien du lithium obligatoire :</strong> Amiloride (diurétique épargnant K+) — bloque ENaC → ↓ entrée lithium dans les cellules → ↓ résistance ADH</span></div>
-          <div class="flag-item"><span class="flag-dot yellow"></span><span><strong>Attention :</strong> Risque d&apos;intoxication via déshydratation — la polyurie + restriction hydrique ↑ concentration lithium plasmatique</span></div>
-        </div>
-      </div>
-
-      <!-- NIC -->
-      <div class="block flag" id="lith-nic">
-        <div class="block-title"><span class="tag">🫘 Néphrite Interstitielle Chronique (NIC)</span></div>
-        <div class="key-fact red" style="margin-bottom:8px;"><strong>Physiopath :</strong> Utilisation prolongée → fibrose tubulo-interstitielle progressive → IRC pouvant évoluer vers la maladie rénale terminale</div>
-        <div class="flag-list" style="margin-bottom:10px;">
-          <div class="flag-item"><span class="flag-dot red"></span><span><strong>Présentation :</strong> Atteinte rénale insidieuse · Protéinurie normale ou légèrement augmentée · Souvent dans le contexte d&apos;une résistance à l&apos;ADH (DIN)</span></div>
-          <div class="flag-item"><span class="flag-dot red"></span><span><strong>DDX avec IRC d&apos;autres causes :</strong> Contexte de lithium chronique · Absence d&apos;autres causes (DM, HTA) · Biopsie si doute</span></div>
-          <div class="flag-item"><span class="flag-dot ink"></span><span><strong>Après arrêt du lithium :</strong> Évolution imprévisible — peut se stabiliser ou progresser</span></div>
-        </div>
-        <div class="key-fact yellow"><strong>Médicaments à éviter en lithiothérapie :</strong> AINS · IECA/ARA · Diurétiques thiazidiques (↑ réabsorption lithium → ↑ lithémie → ↑ toxicité)</div>
-      </div>
-
-      <!-- PRÉVENTION -->
-      <div class="block para" id="lith-prev">
-        <div class="block-title"><span class="tag">🛡️ Prévention, FDR &amp; Surveillance</span></div>
-        <table style="margin-bottom:10px;">
-          <thead><tr><th>Facteurs de risque</th><th>Prévention</th></tr></thead>
-          <tbody>
-            <tr><td>Durée d&apos;exposition et dose cumulée</td><td>Administration die (dose unique au coucher) · Viser concentration minimale efficace</td></tr>
-            <tr><td>Épisodes d&apos;intoxication aiguë</td><td>Éviter associations à risque (AINS, IECA/ARA, diurétiques)</td></tr>
-            <tr><td>Âge avancé</td><td>Enseignement patient (hydratation, sick days, médicaments à éviter)</td></tr>
-            <tr><td>Comorbidités : HTA, diabète</td><td>Contrôle optimal des comorbidités</td></tr>
-          </tbody>
-        </table>
-        <div class="sec-divider"><div class="sd-shape sq"></div><div class="sd-label">Surveillance clinique recommandée</div><div class="sd-line"></div></div>
+        <div class="block-title"><span class="tag">⚡ Lithium (Li⁺) — Pharmacologie</span></div>
+        <div class="key-fact blue" style="margin-bottom:8px;"><strong>Nature :</strong> Ion monovalent (similaire au Na⁺) · <strong>Éliminé presque totalement par le rein</strong> · Non métabolisé par le foie · Cinétique linéaire · Distribution dans l&apos;eau corporelle</div>
         <table>
-          <thead><tr><th>Paramètre</th><th>Fréquence</th><th>Cible</th></tr></thead>
+          <thead><tr><th>Paramètre</th><th>Valeur</th><th>Note clinique</th></tr></thead>
           <tbody>
-            <tr><td><strong>Lithémie</strong></td><td>5–7 jours après initiation ou changement de dose · puis q3–6 mois</td><td>Maintien : 0,6–1,0 mmol/L · Phase aiguë : 0,8–1,2 mmol/L</td></tr>
-            <tr><td><strong>DFGe + créatinine + électrolytes</strong></td><td>q3–6 mois si stable</td><td>Surveiller déclin progressif</td></tr>
-            <tr><td><strong>TSH + T4</strong></td><td>Annuellement</td><td>Hypothyroïdie (EI fréquent)</td></tr>
-            <tr><td><strong>Calcémie</strong></td><td>Annuellement</td><td>Hyperparathyroïdie</td></tr>
-            <tr><td><strong>Osmolalité urinaire</strong></td><td>Si polyurie/polydipsie</td><td>DIN si &lt; 300 mOsm/kg</td></tr>
+            <tr><td><strong>Indications</strong></td><td>MAB type 1 et 2 · Trouble schizo-affectif · TDC (adjuvant) · Neutropénie à la clozapine (↑ leucocytes)</td><td>Meilleure preuve dans la prévention des rechutes maniaques</td></tr>
+            <tr><td><strong>IT — Traitement aigu</strong></td><td>0,8–1,2 mmol/L</td><td>Prélèvement 12h post-dose (creux) ‼️</td></tr>
+            <tr><td><strong>IT — Maintien</strong></td><td>0,6–1,0 mmol/L</td><td>Personnes âgées : viser limite inférieure</td></tr>
+            <tr><td><strong>Prélèvement</strong></td><td>12h post-dose (creux)</td><td>Toujours standardiser l&apos;heure de prélèvement</td></tr>
           </tbody>
         </table>
-        <div class="key-fact red" style="margin-top:8px;">🔴 Référer en néphrologie si DFGe progressivement ↓ ou créatinine ↑ inexpliqué</div>
+        <div class="sec-divider" style="margin:10px 0;"><div class="sd-shape sq"></div><div class="sd-label">Toxicité</div><div class="sd-line"></div></div>
+        <table style="margin-bottom:8px;">
+          <thead><tr><th>Lithémie</th><th>Signes / Symptômes</th></tr></thead>
+          <tbody>
+            <tr><td>&gt; 1,5 mmol/L</td><td><strong>Tremblements**, ataxie**, nausées, diarrhée**, vision floue, vertige, confusion</strong></td></tr>
+            <tr><td>&gt; 2,5 mmol/L</td><td>Convulsions · Coma · Dysrythmies cardiaques · Détérioration neurologique</td></tr>
+            <tr><td>&gt; 3,5 mmol/L</td><td><span style="color:#dc2626;font-weight:700;">Risque létal — urgence</span></td></tr>
+          </tbody>
+        </table>
+        <div class="key-fact red" style="margin-bottom:8px;">⚠️ <strong>Principaux facteurs ↑ lithémie :</strong> AINS · Diurétiques · IECA/ARA · Déshydratation (chaleur, exercice, vomissements) · Alcool/Caféine excessifs<br><strong>Facteurs ↓ lithémie :</strong> Théophylline · Apport élevé en sel (NaCl)</div>
+        <table>
+          <thead><tr><th>EI courants</th><th>Conduite</th></tr></thead>
+          <tbody>
+            <tr><td>Tremblements fins des mains</td><td>Normal à dose thérapeutique · Propranolol si gênant</td></tr>
+            <tr><td>Polyurie / polydipsie (diabète insipide néphrogénique)</td><td>Dose unique HS · Amiloride si sévère · Surveiller créatinine</td></tr>
+            <tr><td>Hypothyroïdie (5–35 %)</td><td>Surveiller TSH q6–12 mois · Levothyroxine si symptomatique</td></tr>
+            <tr><td>Prise de poids · Leucocytose · Acné/Psoriasis</td><td>Mesures hygièno-diéttiques · Pas d&apos;arrêt pour leucocytose</td></tr>
+            <tr><td>Modifications ECG (ondes T aplaties)</td><td>ECG si &gt; 40 ans en bilan pré-Tx</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="block clin" id="lith-nic">
+        <div class="block-title"><span class="tag">📋 Protocole de Suivi Lithium (INPLPP)</span></div>
+        <table>
+          <thead><tr><th>Moment</th><th>Examens</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Pré-Lithium</strong></td><td>FSC · Créatinine · Électrolytes (Na, K, Cl) · Calcium · TSH · ECG (si &gt; 40 ans) · β-HCG (femme en âge de procréer) · Analyse d&apos;urine · EEG si ATCD convulsions · Poids/taille</td></tr>
+            <tr><td><strong>Initial</strong></td><td>Lithémie aux 5–7 jours jusqu&apos;à stabilisation (2 valeurs dans l&apos;IT)</td></tr>
+            <tr><td><strong>3 mois</strong></td><td>Lithémie · Créatinine · Électrolytes · TSH</td></tr>
+            <tr><td><strong>6 mois</strong></td><td>+ Calcium</td></tr>
+            <tr><td><strong>12 mois puis q6–12 mois</strong></td><td>Lithémie · Créatinine · Électrolytes · Calcium · TSH · Analyse urine · Poids</td></tr>
+          </tbody>
+        </table>
+        <div class="note" style="margin-top:8px;"><strong>Éducation patient :</strong> Maintenir hydratation constante · Éviter déshydratation · Signaler vomissements/diarrhée importants · Ne pas modifier apport en sel · Avertir avant tout nouveau médicament (AINS, diurétique)</div>
+      </div>
+
+      <!-- VALPROATE -->
+      <div class="block def" id="val-din">
+        <div class="block-title"><span class="tag">🔴 Valproate — Divalproex &amp; Acide Valproïque</span></div>
+        <div class="key-fact blue" style="margin-bottom:8px;"><strong>Formulations :</strong> Divalproex (Épival) · Acide valproïque (Dépakène) — équivalence mg/mg · <strong>Élimination hépatique</strong> · Liaison protéines plasmatiques 90–95 % (concentration-dépendante!)</div>
+        <table>
+          <thead><tr><th>Paramètre</th><th>Valeur</th><th>Note clinique</th></tr></thead>
+          <tbody>
+            <tr><td><strong>IT total</strong></td><td>350–700 µmol/L</td><td>Prélèvement creux (12h post-dose)</td></tr>
+            <tr><td><strong>IT libre</strong></td><td>35–70 µmol/L</td><td>Pertinent si hypoalbuminémie &lt; 30 g/L, hépatopathie, interactions</td></tr>
+            <tr><td><strong>Tératogénicité</strong></td><td>⚠️ <strong>IMPORTANTE — CI relative femmes en âge de procréer</strong></td><td>Spina bifida · Malformations cardiaques · Neurodéveloppement ↓</td></tr>
+          </tbody>
+        </table>
+        <div class="sec-divider" style="margin:10px 0;"><div class="sd-shape sq"></div><div class="sd-label">Toxicité</div><div class="sd-line"></div></div>
+        <table style="margin-bottom:8px;">
+          <thead><tr><th>Concentration</th><th>Signes</th></tr></thead>
+          <tbody>
+            <tr><td>&gt; 525 µmol/L</td><td>Ataxie · Fatigue · Sédation · Léthargie</td></tr>
+            <tr><td>&gt; 700 µmol/L</td><td>Tremblements</td></tr>
+            <tr><td>&gt; 1200 µmol/L</td><td>Stupeur ou coma</td></tr>
+          </tbody>
+        </table>
+        <table>
+          <thead><tr><th>EI clé</th><th>Seuil d&apos;action</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Hépatotoxicité (ALT)</strong></td><td>≥ 2× LSN → ↓ dose · ≥ 3× LSN → arrêt</td></tr>
+            <tr><td><strong>Thrombocytopénie (plaquettes)</strong></td><td>&lt; 100 × 10⁹/L → ↓ dose · &lt; 50 × 10⁹/L ou symptômes → arrêt</td></tr>
+            <tr><td><strong>Hyperammonémie</strong></td><td>Confusion → tube lavande URGENT (&lt; 2h) · L-carnitine si sévère</td></tr>
+            <tr><td>Nausées · Vomissements · Gain de poids · Alopécie</td><td>Mesures symptomatiques</td></tr>
+          </tbody>
+        </table>
+        <div class="key-fact yellow" style="margin-top:8px;"><strong>Interaction critique :</strong> Valproate ↑ Cp lamotrigine (↑ risque Stevens-Johnson) → si concomitant, titration lamotrigine 50 % + lente<br><strong>Lamotrigine / ASA haute dose :</strong> ↑ fraction libre valproate (déplacement liaison protéines)</td></div>
+        <div class="note"><strong>Suivi pré-valproate :</strong> FSC · Bilan hépatique (ALT, GGT, PAL, bilirubine) · Coagulogramme · Créatinine · Électrolytes · TSH · β-HCG · Poids<br><strong>Suivi :</strong> FSC + bilan hépatique à 14j, 1 mois, 2 mois, 4 mois, 6 mois; dosage valproate à 6 mois puis q6–12 mois</div>
+      </div>
+
+      <!-- CARBAMAZÉPINE -->
+      <div class="block para" id="carba-din">
+        <div class="block-title"><span class="tag">🟡 Carbamazépine (Tégrétol) — Auto-induction</span></div>
+        <div class="key-fact red" style="margin-bottom:8px;"><strong>⚡ Auto-induction de son propre métabolisme :</strong> ↑ dose → induction enzymatique → ↑ clairance → Cp ↓ à l&apos;état d&apos;équilibre (2–3 semaines)<br>→ Augmentation lente requise · Induction maximale atteinte en <strong>6–12 semaines</strong></div>
+        <table>
+          <thead><tr><th>Paramètre</th><th>Valeur</th></tr></thead>
+          <tbody>
+            <tr><td><strong>IT étroit</strong></td><td>17–54 µmol/L</td></tr>
+            <tr><td><strong>Prélèvement</strong></td><td>Creux (matin, immédiatement avant la dose)</td></tr>
+          </tbody>
+        </table>
+        <table style="margin-top:8px;margin-bottom:8px;">
+          <thead><tr><th>Cp</th><th>Signes de toxicité</th></tr></thead>
+          <tbody>
+            <tr><td>&gt; 63 µmol/L</td><td>Ataxie · Nystagmus</td></tr>
+            <tr><td>&gt; 106 µmol/L</td><td>Effet pro-convulsivant possible · Coma · Toxicité cardiaque</td></tr>
+          </tbody>
+        </table>
+        <table>
+          <thead><tr><th>EI clé</th><th>CI</th></tr></thead>
+          <tbody>
+            <tr><td>Hyponatrémie / SIADH (jusqu&apos;à 40 %) · Nausées · Ataxie</td><td>Aplasie médullaire · Bloc AV</td></tr>
+            <tr><td>Éruptions cutanées → <strong>Stevens-Johnson</strong> (rare)</td><td>Génotypage HLA-B*1502 si origine asiatique avant initiation</td></tr>
+            <tr><td>Agranulocytose (rare) · Aplasie médullaire</td><td>—</td></tr>
+          </tbody>
+        </table>
+        <div class="key-fact red" style="margin-top:8px;"><strong>Inducteur enzymatique puissant :</strong> ↓ efficacité contraceptifs oraux · Nombreuses interactions · Surveiller Cp des autres médicaments</div>
+        <div class="note"><strong>Suivi pré-carbamazépine :</strong> FSC · Créatinine · Électrolytes · Bilan hépatique · TSH · ECG (si &gt; 40 ans) · β-HCG · Optométrie (fond d&apos;œil + tonométrie)<br><strong>Suivi :</strong> Dosage + électrolytes + FSC + bilan hépatique aux 14j, 1 mois, 2 mois, 3 mois, 6 mois; puis q6–12 mois</div>
+      </div>
+
+      <!-- LAMOTRIGINE -->
+      <div class="block clin" id="lamo-din">
+        <div class="block-title"><span class="tag">🟢 Lamotrigine — Points Clés</span></div>
+        <div class="flag-list">
+          <div class="flag-item"><span class="flag-dot red"></span><span><strong>Titration lente OBLIGATOIRE</strong> → ↓ risque Stevens-Johnson / nécrose épidermique toxique</span></div>
+          <div class="flag-item"><span class="flag-dot red"></span><span><strong>Si valproate concomitant :</strong> réduire vitesse de titration de 50 % (valproate ↑ Cp lamotrigine)</span></div>
+          <div class="flag-item"><span class="flag-dot yellow"></span><span><strong>Contraceptifs oraux :</strong> ↓ Cp lamotrigine de ~50 % → ↑ dose lors prise CO · ↓ dose lors arrêt CO</span></div>
+          <div class="flag-item"><span class="flag-dot ink"></span><span>Indications : MAB (dépression bipolaire), épilepsie · Moins efficace pour les phases maniaques</span></div>
+          <div class="flag-item"><span class="flag-dot ink"></span><span>Prélèvement : variable selon formulation · Surveiller Cp si interactions ou changement de dose</span></div>
+        </div>
+      </div>
+
+      <!-- TABLEAU COMPARATIF SUIVI -->
+      <div class="block flag" id="stab-suivi">
+        <div class="block-title"><span class="tag">📊 Comparatif — Suivi &amp; Toxicité des Stabilisateurs</span></div>
+        <table>
+          <thead><tr><th>Agent</th><th>IT cible</th><th>Prélèvement</th><th>EI à surveiller</th><th>CI absolues</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Lithium</strong></td><td>Aigu: 0,8–1,2 · Maintien: 0,6–1,0 mmol/L</td><td>12h post-dose ‼️</td><td>Tremblements · Polyurie · Hypothyroïdie · Déshydratation</td><td>IR sévère · Dommages cérébraux · IC</td></tr>
+            <tr><td><strong>Valproate</strong></td><td>Total: 350–700 µmol/L · Libre: 35–70 µmol/L</td><td>Creux (12h post-dose)</td><td>Hépatotoxicité · Thrombocytopénie · Tératogénicité ⚠️</td><td>Mutation POLG · Porphyrie · Grossesse (relative)</td></tr>
+            <tr><td><strong>Carbamazépine</strong></td><td>17–54 µmol/L</td><td>Creux (avant dose)</td><td>Hyponatrémie (SIADH) · Stevens-Johnson · Aplasie</td><td>Aplasie médullaire · Bloc AV</td></tr>
+            <tr><td><strong>Lamotrigine</strong></td><td>Variable</td><td>Variable</td><td>Stevens-Johnson (titration rapide)</td><td>Allergie connue</td></tr>
+          </tbody>
+        </table>
+        <div class="key-fact blue" style="margin-top:8px;"><strong>Principe général :</strong> Prélèvement au creux (12h post-dose ou avant la dose) · Atteinte état d&apos;équilibre ≈ 5 demi-vies après changement de dose · Toujours vérifier si lab fait au bon moment si résultats anormaux</div>
       </div>
     </div>
     <div class="section" id="sec-antipsychotiques">
@@ -21890,279 +21981,267 @@ function dkRenal(view) {
       </div>
     </div>
     <div class="section" id="sec-hypnotiques">
-      <div class="section-header"><div class="section-accent">🌙</div><div class="section-title"><h1>Insomnie Chronique</h1><div class="breadcrumb">Santé mentale <span class="breadcrumb-sep">·</span> Troubles du sommeil</div></div></div>
+      <div class="section-header"><div class="section-accent">🌙</div><div class="section-title"><h1>Insomnie Chronique &amp; Hypnotiques</h1><div class="breadcrumb">Santé mentale <span class="breadcrumb-sep">·</span> Troubles du sommeil</div></div></div>
 
       <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px;">
-        <button onclick="document.getElementById('ins-def').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📌 Définition</button>
-        <button onclick="document.getElementById('ins-causes').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔍 Causes (3P)</button>
-        <button onclick="document.getElementById('ins-eval').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📋 Évaluation</button>
-        <button onclick="document.getElementById('ins-tcci').scrollIntoView({behavior:'smooth'})" style="background:#0a7a4e;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🧠 TCC-I (1re intention)</button>
-        <button onclick="document.getElementById('ins-pharmaco').scrollIntoView({behavior:'smooth'})" style="background:#7b3fa0;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">💊 Pharmacothérapie</button>
+        <button onclick="document.getElementById('ins-def').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📌 Définition &amp; NT</button>
+        <button onclick="document.getElementById('ins-tcci').scrollIntoView({behavior:'smooth'})" style="background:#0a7a4e;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🌿 TCC-I</button>
+        <button onclick="document.getElementById('ins-pharmaco').scrollIntoView({behavior:'smooth'})" style="background:#7b3fa0;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🗺️ Algorithme Rx</button>
+        <button onclick="document.getElementById('ins-classes').scrollIntoView({behavior:'smooth'})" style="background:#d97706;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">💊 Classes hypnotiques</button>
       </div>
 
-      <!-- DEF -->
       <div class="block def" id="ins-def">
-        <div class="block-title"><span class="tag">📌 Définition &amp; Critères Diagnostiques</span></div>
-        <div class="key-fact ink" style="margin-bottom:8px;"><strong>Insomnie épisodique :</strong> 1–3 mois · <strong>Insomnie chronique :</strong> &gt; 3 mois</div>
-        <div class="key-fact blue" style="margin-bottom:8px;"><strong>Critères DSM-5 / ICSD-3 :</strong> Besoin d&apos;au moins UN des problèmes suivants :</div>
-        <div class="flag-list" style="margin-bottom:8px;">
-          <div class="flag-item"><span class="flag-dot ink"></span><span>Difficulté d&apos;initiation du sommeil</span></div>
-          <div class="flag-item"><span class="flag-dot ink"></span><span>Difficulté du maintien du sommeil (éveils nocturnes)</span></div>
-          <div class="flag-item"><span class="flag-dot ink"></span><span>Éveil matinal précoce avec incapacité à se rendormir</span></div>
+        <div class="block-title"><span class="tag">📌 Définition &amp; Neurotransmetteurs du Sommeil</span></div>
+        <div class="key-fact blue" style="margin-bottom:8px;"><strong>Insomnie chronique (DSM-5 / ICSD-3) :</strong> Difficultés d&apos;initiation ou de maintien du sommeil → ↓ qualité/durée · ≥ 3 nuits/sem · ≥ 3 mois · Avec retentissement diurne<br><strong>Prévalence :</strong> ~10 % de la population · 2× plus fréquente chez la femme · ↑ avec l&apos;âge · Forte comorbidité psychiatrique</div>
+        <table style="margin-bottom:8px;">
+          <thead><tr><th>Favorisent le SOMMEIL</th><th>Favorisent l&apos;ÉVEIL</th></tr></thead>
+          <tbody>
+            <tr><td>GABA · Adénosine · Mélatonine · Galanine</td><td>Noradrénaline · Acétylcholine · Histamine · Sérotonine · Dopamine · <strong>Orexine (OX)</strong></td></tr>
+          </tbody>
+        </table>
+        <div class="flag-list">
+          <div class="flag-item"><span class="flag-dot ink"></span><span><strong>Modèle des 3 P :</strong> Prédisposant (génétique, sexe, âge) + Précipitant (stress, deuil, maladie) + Perpétuant (comportements inadaptés)</span></div>
+          <div class="flag-item"><span class="flag-dot ink"></span><span><strong>Évaluation :</strong> Journal de sommeil · ISI (Insomnia Severity Index: 0–7 pas d&apos;insomnie, 8–14 sous-clinique, 15–21 modérée, 22–28 sévère) · Exclure: SAOS, SJSR, dépression</span></div>
+          <div class="flag-item"><span class="flag-dot red"></span><span><strong>Éliminer :</strong> Substances (café, alcool, nicotine) · Médicaments (corticoïdes, bêtabloquants, ISRS) · Douleur chronique · SAOS non traité</span></div>
         </div>
-        <div class="key-fact yellow"><strong>ET :</strong> Sommeil non réparateur ≥ 3 nuits/semaine depuis ≥ 3 mois · Avec détresse cliniquement significative · Malgré conditions favorables · Non expliqué par une autre pathologie</div>
       </div>
 
-      <!-- CAUSES -->
-      <div class="block para" id="ins-causes">
-        <div class="block-title"><span class="tag">🔍 Causes — Modèle des 3P</span></div>
+      <div class="block clin" id="ins-tcci">
+        <div class="block-title"><span class="tag">🌿 TCC-I — Thérapie Cognitivo-Comportementale pour l&apos;Insomnie (1re ligne)</span></div>
+        <div class="key-fact blue" style="margin-bottom:8px;"><strong>TCC-I = traitement de 1re ligne, quelle que soit la sévérité</strong> · Supérieure aux médicaments à long terme · Efficacité maintenue après arrêt</div>
         <table>
-          <thead><tr><th>Facteur</th><th>Exemples</th><th>Rôle</th></tr></thead>
+          <thead><tr><th>Composante</th><th>Principe</th></tr></thead>
           <tbody>
-            <tr><td><strong>Prédisposants</strong></td><td>Tendance à l&apos;hypervigilance · Terrain anxio-dépressif · Surestimation de l&apos;importance du sommeil · Génétique</td><td>Vulnérabilité de base</td></tr>
-            <tr><td><strong>Précipitants</strong></td><td>Événements stressants · Conditions médicales · Médicaments et substances · Changements de routine</td><td>Déclencheurs</td></tr>
-            <tr><td><strong>Perpétuants</strong></td><td>Croyances erronées sur le sommeil · Comportements inadaptés (temps excessif au lit, siestes, écrans) · Anxiété de performance</td><td><strong>Moteur principal de la chronicité</strong></td></tr>
+            <tr><td><strong>Restriction du sommeil</strong></td><td>↓ temps au lit = temps de sommeil réel + 30 min → ↑ pression homéostatique</td></tr>
+            <tr><td><strong>Contrôle du stimulus</strong></td><td>Le lit = pour le sommeil et la sexualité seulement · Si &gt; 20 min sans dormir → quitter le lit</td></tr>
+            <tr><td><strong>Hygiène du sommeil</strong></td><td>Horaire régulier · Éviter siestes &gt; 20 min · Température fraîche · Obscurité · Pas d&apos;écrans 1h avant</td></tr>
+            <tr><td><strong>Relaxation</strong></td><td>Relaxation musculaire progressive · Respiration diaphragmatique · Pleine conscience</td></tr>
+            <tr><td><strong>Restructuration cognitive</strong></td><td>Modifier les croyances dysfonctionnelles sur le sommeil</td></tr>
           </tbody>
         </table>
-        <div class="key-fact red" style="margin-top:8px;">💡 Les facteurs perpétuants sont la cible principale de la TCC-I.</div>
       </div>
 
-      <!-- ÉVALUATION -->
-      <div class="block clin" id="ins-eval">
-        <div class="block-title"><span class="tag">📋 Évaluation</span></div>
-        <table style="margin-bottom:10px;">
-          <thead><tr><th>Outil</th><th>Description</th><th>Seuils</th></tr></thead>
-          <tbody>
-            <tr><td><strong>ISI</strong> (Insomnia Severity Index)</td><td>7 items · Auto-évaluation perception du patient</td><td>&lt; 7 = non significatif · 7–14 = subclinique · 15–21 = modéré · 22–28 = sévère</td></tr>
-            <tr><td><strong>Journal du sommeil</strong></td><td>Suivi quotidien (heures endormissement, éveils, réveil)</td><td>Meilleure compréhension du trouble · Suivi des interventions</td></tr>
-            <tr><td><strong>PSQI / ESS</strong></td><td>Qualité du sommeil / Somnolence diurne</td><td>Échelles cliniques complémentaires</td></tr>
-          </tbody>
-        </table>
-        <div class="note"><strong>Hygiène du sommeil :</strong> À enseigner à tous les patients — mais seule, elle est <strong>insuffisante</strong> comme traitement de l&apos;insomnie chronique. Inclure dans une approche plus large.</div>
-      </div>
-
-      <!-- TCC-I -->
-      <div class="block flag" id="ins-tcci">
-        <div class="block-title"><span class="tag">🧠 TCC-I — 1re Intention de Traitement</span></div>
-        <div class="key-fact blue" style="margin-bottom:10px;">Recommandée en <strong>1re intention</strong> par la majorité des lignes directrices (Morin et coll. 2024) · Court terme : efficacité comparable à la pharmacothérapie · <strong>Long terme : supérieure à la pharmacothérapie</strong> · 70 % des patients répondent</div>
-        <table style="margin-bottom:10px;">
-          <thead><tr><th>Composante</th><th>Description</th></tr></thead>
-          <tbody>
-            <tr><td><strong>Restriction du temps au lit</strong></td><td>Consolider le sommeil en réduisant le temps passé au lit selon le ratio d&apos;efficacité du sommeil</td></tr>
-            <tr><td><strong>Contrôle des stimuli</strong></td><td>Associer le lit uniquement au sommeil · Ne pas y rester éveillé · Lever si insomnie &gt; 20 min</td></tr>
-            <tr><td><strong>Thérapie cognitive</strong></td><td>Modifier les croyances erronées sur le sommeil (ex: "Je dois dormir 8h exactement")</td></tr>
-            <tr><td><strong>Relaxation</strong></td><td>Gestion du stress et de l&apos;anxiété · Respiration diaphragmatique · Relaxation musculaire progressive</td></tr>
-          </tbody>
-        </table>
-        <div class="key-fact ink"><strong>Ressources disponibles :</strong> TCC Montréal · PsychoPAP · Thérapies en ligne · De plus en plus de ressources gratuites/peu coûteuses disponibles</div>
-      </div>
-
-      <!-- PHARMACO -->
+      <!-- DROPDOWN CHOIX HYPNOTIQUE -->
       <div class="block para" id="ins-pharmaco">
-        <div class="block-title"><span class="tag">💊 Pharmacothérapie — 2e Intention</span></div>
-        <div class="key-fact red" style="margin-bottom:10px;">⚠️ <strong>TCC-I est le traitement de 1re ligne!</strong> · La pharmacothérapie est un complément — pas une 1re intention · Mesures non-pharmaco en priorité avec pharmaco · Débuter à la plus petite dose · Prescrire sur courte période (≤ 14 jours) · Limiter à 4 semaines · Suivi régulier nécessaire</div>
+        <div class="block-title"><span class="tag">🗺️ Algorithme — Choix de l&apos;Agent Pharmacologique</span></div>
+        <div class="key-fact yellow" style="margin-bottom:10px;">💡 La pharmacothérapie est <strong>adjuvante à la TCC-I</strong>, pas un remplacement · Durée idéale: courte terme · Traiter le trouble sous-jacent en priorité</div>
+        <div style="background:#f8fafc;border:2px solid #7b3fa0;border-radius:10px;padding:16px;margin-bottom:12px;">
+          <p style="font-weight:700;color:#7b3fa0;margin-bottom:12px;">Sélectionnez le profil clinique :</p>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;">
+            <div>
+              <label style="font-size:12px;font-weight:600;color:#475569;display:block;margin-bottom:4px;">Type d&apos;insomnie dominant</label>
+              <select id="hyp-type" onchange="choixHypno()" style="width:100%;padding:8px;border:1px solid #cbd5e1;border-radius:6px;font-size:13px;">
+                <option value="">-- Choisir --</option>
+                <option value="initiation">Difficulté d&apos;initiation (s&apos;endormir)</option>
+                <option value="maintien">Difficulté de maintien (réveils nocturnes)</option>
+                <option value="circadien">Perturbation du rythme circadien (décalage horaire, travail de nuit)</option>
+                <option value="comorbid-dep">Avec comorbidité dépressive / anxieuse</option>
+                <option value="senior">Personne âgée ≥ 65 ans</option>
+              </select>
+            </div>
+            <div>
+              <label style="font-size:12px;font-weight:600;color:#475569;display:block;margin-bottom:4px;">Contexte / CI</label>
+              <select id="hyp-contexte" onchange="choixHypno()" style="width:100%;padding:8px;border:1px solid #cbd5e1;border-radius:6px;font-size:13px;">
+                <option value="">-- Aucune particulière --</option>
+                <option value="saos">Apnée du sommeil (SAOS)</option>
+                <option value="dependance">Risque de dépendance / abus</option>
+                <option value="pregnancy">Grossesse / allaitement</option>
+              </select>
+            </div>
+          </div>
+          <div id="hyp-output" style="background:#fff;border-left:4px solid #7b3fa0;border-radius:0 8px 8px 0;padding:12px;min-height:40px;display:none;"></div>
+        </div>
+      </div>
 
-        <table style="margin-bottom:12px;">
-          <thead><tr><th>Classe</th><th>Molécule / Dose</th><th>Type insomnie</th><th>Notes</th></tr></thead>
+      <div class="block flag" id="ins-classes">
+        <div class="block-title"><span class="tag">💊 Classes d&apos;Hypnotiques — Tableau Comparatif</span></div>
+        <table>
+          <thead><tr><th>Classe</th><th>Molécules (doses HS)</th><th>Mécanisme</th><th>Avantages</th><th>EI clés</th><th>CI</th></tr></thead>
           <tbody>
-            <tr><td><strong>ARDO — 1re intention LT</strong> ⭐</td><td>Lemborexant 5–10 mg HS · Daridorexant 50 mg HS</td><td>Initiation · Maintien · Mixte</td><td>Bénéfices &gt; risques long terme · Moins d&apos;EI que benzo/Z · <span class="drug-badge ci">❌ Pas remboursé RAMQ</span></td></tr>
-            <tr><td><strong>Mélatonine</strong></td><td>Circadin 2 mg HS (libération prolongée) · Dose marché : 0,3–10 mg</td><td>Initiation · Rythme circadien</td><td>Peu d&apos;EI · Peu d&apos;interactions · Utile si décalage circadien</td></tr>
-            <tr><td><strong>Hypnotiques en Z</strong></td><td>Zopiclone 3,75–7,5 mg · Eszopiclone 2–3 mg · Zolpidem 5–10 mg</td><td>Initiation et/ou maintien</td><td>Risque EI limite l&apos;utilisation · <span class="drug-badge ci">❌ Non remboursé RAMQ</span> (zopiclone oui)</td></tr>
-            <tr><td><strong>Benzodiazépines</strong></td><td>Témazépam 15 mg · Flurazépam · Nitrazépam · Triazolam</td><td>Court terme seulement</td><td>Risque EI · Tolérance · Dépendance · Remboursé RAMQ</td></tr>
-            <tr><td><strong>Doxépine faible dose</strong></td><td>Silenor 3–6 mg HS</td><td>Maintien du sommeil</td><td>Effet antihistaminique à faible dose · <span class="drug-badge ci">❌ Pas remboursé RAMQ</span></td></tr>
-            <tr><td><strong>Mirtazapine (hors indication)</strong></td><td>15 mg HS</td><td>Adjuvant si dépression comorbide</td><td>Sédation · Gain de poids · HTO · Hypercholestérolémie</td></tr>
-            <tr><td><strong>Trazodone (hors indication)</strong></td><td>50 mg HS</td><td>Sédation</td><td>Priapisme · Prolongation QT · Données limitées</td></tr>
-            <tr><td><strong>Quétiapine</strong></td><td>—</td><td>—</td><td><span class="drug-badge ci">❌ Non recommandé</span> · Risques CV · Mortalité/chute/démence chez 65+</td></tr>
-            <tr><td><strong>Antihistaminiques</strong></td><td>Diphenhydramine 50 mg HS</td><td>—</td><td>Tolérance en quelques jours · Pas remboursé RAMQ · Déconseillé chez 65+</td></tr>
+            <tr>
+              <td><strong>BZD</strong></td>
+              <td>Témazépam 15–30 mg · Nitrazépam 5–10 mg · Oxazépam 15–30 mg · Lorazépam 0,5–2 mg · Clonazépam 0,5–2 mg</td>
+              <td>Agoniste GABA-A (α1, α2, α5) — potentialise GABA</td>
+              <td>Effet anxiolytique · Rapidité d&apos;action · Prix bas</td>
+              <td>Somnolence diurne · Amnésie antérograde · Tolérance · Dépendance · Chutes (gériatrie)</td>
+              <td>SAOS sévère · Myasthénie · IR sévère</td>
+            </tr>
+            <tr>
+              <td><strong>Hypnotiques Z</strong></td>
+              <td>Zopiclone 3,75–7,5 mg · Eszopiclone 2–3 mg · Zolpidem 5–10 mg</td>
+              <td>Agoniste GABA-A α1 sélectif → sédation seulement</td>
+              <td>Moins de dépendance vs BZD · Pas d&apos;effet anxiolytique ni antiépileptique</td>
+              <td>Altération du goût (zopiclone) · Amnésie · Somnambulisme / comportements complexes</td>
+              <td>SAOS sévère · Myasthénie · IH sévère · ATCD somnambulisme sous hypnotique</td>
+            </tr>
+            <tr>
+              <td><strong>Anti-orexines (DORA)</strong></td>
+              <td>Suvorexant (Belsomra) · Lemborexant (Dayvigo) · Daridorexant</td>
+              <td>Antagoniste récepteurs OX1R/OX2R → suppresseur d&apos;éveil</td>
+              <td>✅ Aucune tolérance · ✅ Pas de sevrage · ✅ Sécuritaire si SAOS · ✅ Efficacité à 1 an · Non remboursés RAMQ</td>
+              <td>Somnolence diurne · Fatigue · Bouche sèche · Cauchemars · Paralysie du sommeil (rare)</td>
+              <td>Narcolepsie · Aucune autre CI absolue</td>
+            </tr>
+            <tr>
+              <td><strong>Mélatonine</strong></td>
+              <td>0,3–10 mg · Dose efficace: 3–5 mg · Timing: 2–3h avant coucher</td>
+              <td>Régulateur du rythme circadien · ↓ température corporelle</td>
+              <td>✅ EI minimes · ✅ Peu d&apos;interactions · ✅ Sécuritaire</td>
+              <td>Céphalées légères · Sédation résiduelle</td>
+              <td>Aucune absolue</td>
+            </tr>
+            <tr>
+              <td><strong>Mirtazapine</strong><br><small>Hors indication</small></td>
+              <td>7,5–15 mg HS (sédatif à faible dose)</td>
+              <td>Antagoniste H1 + 5-HT2A → sédation</td>
+              <td>Utile si dépression comorbide · Appétit ↑</td>
+              <td>Prise de poids · Sédation diurne · Coût faible</td>
+              <td>IMAO concomitant</td>
+            </tr>
+            <tr>
+              <td><strong>Quétiapine</strong><br><small>Hors indication</small></td>
+              <td>25–50 mg HS</td>
+              <td>Antagoniste H1 + 5-HT2A</td>
+              <td>Utile si trouble bipolaire ou schizophrénie</td>
+              <td>Effets métaboliques · SEP · Prolongation QTc</td>
+              <td>Non recommandée pour insomnie seule</td>
+            </tr>
           </tbody>
         </table>
-        <div class="key-fact blue"><strong>Algorithme décisionnel :</strong><br>
-        1. TCC-I (1re ligne) ± Hygiène du sommeil<br>
-        2. Si pharmaco nécessaire : Mélatonine (faible risque) ou ARDO si long terme<br>
-        3. Hypnotiques en Z ou BZD : court terme seulement (≤ 4 semaines)<br>
-        4. Mirtazapine 15 mg si comorbidité dépressive<br>
-        5. Réévaluer fréquemment · Éviter quétiapine pour insomnie</div>
+        <div class="key-fact red" style="margin-top:8px;"><strong>⚠️ Sevrage BZD / Z-drugs :</strong> Toujours sevrer graduellement · ↓ 25 %/sem × 4 sem (phase 1) → ↓ 12,5 %/sem × 1–4 mois (phase 2) · Substitution au diazépam si usage prolongé · Risque convulsions si arrêt abrupt</div>
+        <div class="key-fact blue" style="margin-top:8px;"><strong>Critères de BEER (personnes âgées) :</strong> Éviter BZD et Z-drugs chez ≥ 65 ans (risque chutes, fractures, confusion) · Préférer anti-orexines ou mélatonine · TCC-I reste 1re ligne</div>
       </div>
     </div>
     <div class="section" id="sec-tdah">
-      <div class="section-header">
-        <div class="section-accent" style="background:#1a1a1a">💊</div>
-        <div class="section-title"><h1>TDAH</h1><div class="breadcrumb">Santé Mentale <span class="breadcrumb-sep">·</span> Section 49</div></div>
-      </div>
-      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
-        <button onclick="document.getElementById('tdah-1').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📌 Critères DSM-5</button>
-        <button onclick="document.getElementById('tdah-2').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔍 Comorbidités</button>
-        <button onclick="document.getElementById('tdah-3').scrollIntoView({behavior:'smooth'})" style="background:#0a7a4e;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">💊 Pharmacothérapie</button>
-        <button onclick="document.getElementById('tdah-4').scrollIntoView({behavior:'smooth'})" style="background:#c0392b;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🚨 Red Flags</button>
-      </div>
-      <div class="block def">
-        <div class="block-title" id="tdah-1"><span class="tag">📌 Critères DSM-5</span></div>
-        <div class="stat-row">
-          <div class="stat-card blue"><div class="stat-num">5–9 %</div><div class="stat-label">enfants · 4–5 % adultes</div></div>
-          <div class="stat-card ink"><div class="stat-num">H 2:1</div><div class="stat-label">vs femme (diagnostic)</div></div>
-          <div class="stat-card yellow"><div class="stat-num">≥ 5</div><div class="stat-label">Sx dans ≥ 2 contextes · &gt; 6 mois</div></div>
-        </div>
-        <table style="margin-top:10px;">
-          <thead><tr><th>Domaine</th><th>Exemples de Sx</th><th>Adulte (seuil ≥ 5)</th></tr></thead>
-          <tbody>
-            <tr><td><strong>Inattention</strong></td><td>Faute d'étourderie · Difficultés soutien attention · Désorganisation · Perd objets · Oublie tâches quotidiennes</td><td>≥ 5/9 symboles</td></tr>
-            <tr><td><strong>Hyperactivité-Impulsivité</strong></td><td>Gigote · Quitte siège · Court/grimpe · Parle excessivement · Interrompt · Difficultés attendre tour</td><td>≥ 5/9 symboles</td></tr>
-          </tbody>
-        </table>
-        <div class="highlight yellow" style="margin-top:6px;font-size:13px;"><strong>Sous-types :</strong> TDAH-I (inattentif prédominant) · TDAH-H (H-I prédominant) · TDAH-C (combiné) · Début Sx avant 12 ans obligatoire</div>
+      <div class="section-header"><div class="section-accent">⚡</div><div class="section-title"><h1>TDAH — Pharmacothérapie</h1><div class="breadcrumb">Santé mentale <span class="breadcrumb-sep">·</span> Trouble déficit de l&apos;attention</div></div></div>
+
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px;">
+        <button onclick="document.getElementById('tdah-def').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📌 Diagnostics &amp; Évaluation</button>
+        <button onclick="document.getElementById('tdah-stimulants').scrollIntoView({behavior:'smooth'})" style="background:#d97706;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">⚡ Psychostimulants</button>
+        <button onclick="document.getElementById('tdah-nonstim').scrollIntoView({behavior:'smooth'})" style="background:#7b3fa0;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔵 Non-stimulants</button>
+        <button onclick="document.getElementById('tdah-algo').scrollIntoView({behavior:'smooth'})" style="background:#0a7a4e;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🗺️ Algorithme choix</button>
+        <button onclick="document.getElementById('tdah-ei').scrollIntoView({behavior:'smooth'})" style="background:#be185d;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📊 EI comparatif</button>
       </div>
 
-      <div class="block clin">
-        <div class="block-title" id="tdah-2"><span class="tag">🔍 Comorbidités (très fréquentes)</span></div>
-        <div style="display:flex;flex-wrap:wrap;gap:6px;">
-          <span class="drug-badge warn">TAG (50 %)</span>
-          <span class="drug-badge warn">TDM (30 %)</span>
-          <span class="drug-badge warn">Trouble des apprentissages</span>
-          <span class="drug-badge warn">TOC</span>
-          <span class="drug-badge ci">TUS (alcool, cannabis)</span>
-          <span class="drug-badge line2">Trouble sommeil</span>
-          <span class="drug-badge line3">Tics (Tourette — méthylphénidate peut ↑ tics)</span>
-        </div>
-        <div class="highlight cream" style="margin-top:8px;font-size:13px;"><strong>Évaluation :</strong> Scales Conners, ADHD-RS · Évaluation neuropsychologique si learning disability · Bilan cardiovasculaire (ECG si ATCD cardiaque, mort subite familiale) · TSH (éliminer hyperthyroïdie)</div>
-      </div>
-
-      <div class="block rx">
-        <div class="block-title" id="tdah-3"><span class="tag">💊 Pharmacothérapie — Titration & Profils</span></div>
-        <div class="accordion">
-          <div class="accordion-item open">
-            <div class="accordion-header">Stimulants (1re ligne) — Méthylphénidate & Amphétamines
-              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-            </div>
-            <div class="accordion-body">
-              <strong>MTP (Biphentin/Concerta/Ritalin) :</strong> 5–10 mg → 60 mg/j max · Début d'action 30–60 min · Durée : IR 3–5h · XR 8–12h<br>
-              <strong>AMPH (Adderall XR/Vyvanse) :</strong> 5–10 mg → 60–70 mg/j max · Vyvanse = lisdexamfétamine → + long, moins de pics<br>
-              <span class="drug-badge line1">Préférer XR</span> — ↓ abus · ↓ fluctuations · ↑ adhérence<br>
-              <span class="drug-badge ci">CI absolues : Phéochromocytome · Glaucome · IMAO &lt; 14j · Arythmies non contrôlées · Hyperthyroïdie</span><br>
-              <span class="drug-badge ci">CI relatives : Psychose active · Tics sévères · TUS actif</span>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <div class="accordion-header">Atomoxétine (Strattera) — Non-stimulant
-              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-            </div>
-            <div class="accordion-body">
-              IRSN sélectif NA · 40 → 100 mg/j (1,2 mg/kg/j) · Délai efficacité 4–6 sem<br>
-              <span class="drug-badge line2">Avantages :</span> Pas de dépendance · Tics OK · Sommeil meilleur · Anxiété concomitante · TUS<br>
-              <span class="drug-badge warn">EI :</span> Nausées · ↑ TA/FC · ↓ appétit · Idées suicidaires (6 premières sem &lt; 18 ans) · Hépatotoxicité rare<br>
-              Métabolisé CYP2D6 → si métaboliseur lent : ↑ exposition
-            </div>
-          </div>
-          <div class="accordion-item">
-            <div class="accordion-header">Guanfacine XR (Intuniv) & Clonidine
-              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-            </div>
-            <div class="accordion-body">
-              Agoniste α2A présynaptique · 1 mg → 4 mg/j · Titrer sur 4 sem<br>
-              <span class="drug-badge line2">Avantages :</span> Tics · Agressivité · Pas d'abus · Insomnie · HTA<br>
-              <span class="drug-badge ci">SEVRAGE GRADUEL OBLIGATOIRE</span> (rebond HTA si arrêt brusque)<br>
-              EI : Somnolence (+++), hypotension orthostatique, bradycardie
-            </div>
-          </div>
-          <div class="accordion-item">
-            <div class="accordion-header">TDAH + Trouble anxieux concomitant
-              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-            </div>
-            <div class="accordion-body">Traiter TDAH en premier (souvent améliore l'anxiété) · Si anxiété persiste → ISRS + stimulant · Atomoxétine si anxiété prédominante</div>
-          </div>
-        </div>
-        <div class="key-fact black" style="margin-top:10px;">Suivi : Poids + taille q3 mois (enfant) · TA + FC à chaque ajustement · Évaluation Sx à J14 après changement · Réévaluer annuellement si adulte stabilisé</div>
-      </div>
-
-      <div class="block flag">
-        <div class="block-title" id="tdah-4"><span class="tag">🚨 RED FLAGS</span></div>
+      <div class="block def" id="tdah-def">
+        <div class="block-title"><span class="tag">📌 TDAH — Critères &amp; Évaluation</span></div>
+        <div class="key-fact blue" style="margin-bottom:8px;"><strong>Critères DSM-5 :</strong> ≥ 6 symptômes d&apos;inattention et/ou hyperactivité-impulsivité · Présents &gt; 6 mois · Dans ≥ 2 contextes · Début avant 12 ans · Avec retentissement fonctionnel<br><strong>Présentations :</strong> Inattentif · Hyperactif-Impulsif · Mixte</div>
         <div class="flag-list">
-          <div class="flag-item"><span class="fi-icon">💓</span><span>Stimulant + ATCD syncope/mort subite familiale → ECG préalable obligatoire · TA &gt; 95e percentile → réévaluer</span></div>
-          <div class="flag-item"><span class="fi-icon">🌱</span><span>Croissance : ↓ 1–2 cm/an possible → drug holiday estival si retard staturo-pondéral · Récupération finale atteinte</span></div>
-          <div class="flag-item"><span class="fi-icon">🔥</span><span>Manie maniaque déclenchée par stimulant → éliminer trouble bipolaire sous-jacent → référence psychiatrie</span></div>
-          <div class="flag-item"><span class="fi-icon">💊</span><span>TUS actif + TDAH → privilégier Vyvanse (prodrug, moins d'abus) ou Atomoxétine · Éviter formulations IR</span></div>
+          <div class="flag-item"><span class="flag-dot ink"></span><span><strong>Outils d&apos;évaluation :</strong> ASRS-v1.1 (adulte) · Conners (enfant) · ADHD-RS · DIVA 2.0 (adulte · entrevue diagnostique)</span></div>
+          <div class="flag-item"><span class="flag-dot ink"></span><span><strong>Bilan de base :</strong> Poids · Taille · TA · FC · ECG si ATCD cardiaque ou famille · Exclure troubles thyroïdiens, troubles du sommeil, anxiété</span></div>
+          <div class="flag-item"><span class="flag-dot yellow"></span><span><strong>Traitement non pharmaco :</strong> Psychoéducation · TCC · Aménagement scolaire/professionnel · Interventions parentales · Activité physique</span></div>
         </div>
       </div>
-    </div>
 
-<div class="section" id="sec-urgences-psy">
-      <div class="section-header">
-        <div class="section-accent" style="background:var(--red)">🚨</div>
-        <div class="section-title"><h1>Urgences Psychiatriques</h1><div class="breadcrumb">Santé Mentale <span class="breadcrumb-sep">·</span> Section 50</div></div>
-      </div>
-      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
-        <button onclick="document.getElementById('upsy-1').scrollIntoView({behavior:'smooth'})" style="background:#c0392b;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🚨 Urgences pharma</button>
-        <button onclick="document.getElementById('upsy-2').scrollIntoView({behavior:'smooth'})" style="background:#c0392b;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">💊 Agitation aiguë</button>
-        <button onclick="document.getElementById('upsy-3').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🧪 Sérotonine vs SMN</button>
-        <button onclick="document.getElementById('upsy-4').scrollIntoView({behavior:'smooth'})" style="background:#c0392b;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🚨 Risque suicidaire</button>
-      </div>
-      <div class="block flag">
-        <div class="block-title" id="upsy-1"><span class="tag">🚨 Urgences pharmacologiques — Tableau synthèse</span></div>
-        <table>
-          <thead><tr><th>Urgence</th><th>Déclencheur</th><th>Clinique clé</th><th>Réponse</th></tr></thead>
+      <div class="block clin" id="tdah-stimulants">
+        <div class="block-title"><span class="tag">⚡ Psychostimulants — Mécanisme &amp; Doses</span></div>
+        <div class="key-fact blue" style="margin-bottom:8px;"><strong>Mécanisme :</strong> Inhibition recapture DA + NA · ↑ libération DA et NA dans l&apos;espace extraneuronal · DA &gt; NA · Efficacité: 70–80 %</div>
+        <div class="sec-divider" style="margin:10px 0;"><div class="sd-shape sq"></div><div class="sd-label">Amphétamines</div><div class="sd-line"></div></div>
+        <table style="margin-bottom:10px;">
+          <thead><tr><th>Médicament</th><th>Libération</th><th>Durée</th><th>Dose départ</th><th>Dose max</th><th>Particularités</th></tr></thead>
           <tbody>
-            <tr><td><span class="drug-badge ci">Syndrome sérotoninergique</span></td><td>ISRS + IMAO · ISRS + Tramadol · ISRS + Triptans · ISRS + Linézolide</td><td>Triade : Agitation + Hyperréflexie + Hyperthermie ± Diarrhée · Clonus spontané/induit</td><td><strong>Arrêt immédiat</strong> + cyproheptadine 12–32 mg · Benzo · Soins supports</td></tr>
-            <tr><td><span class="drug-badge ci">SMN — Syndrome malin des neuroleptiques</span></td><td>Antipsychotiques (toute dose) · Retrait dopaminergique</td><td>Rigidité "tuyau de plomb" + Fièvre &gt; 38 + Instabilité autonome + AEM ↓ · CK ↑↑↑</td><td>Arrêt AP + Dantrolène IV + Bromocriptine · ICU</td></tr>
-            <tr><td><span class="drug-badge ci">Crise hypertensive IMAO</span></td><td>Tyramine + IMAO irréversible · Phénylépédrine</td><td>TA diastolique &gt; 120 · Céphalée sévère · Diaphorèse</td><td>Nifédipine 10 mg PO (croquée) · Phentolamine IV</td></tr>
-            <tr><td><span class="drug-badge ci">Toxicité Lithium</span></td><td>Li⁺ &gt; 1,5 · IRA · Déshydratation · AINS/IECA</td><td>Légère (1,5–2) : N/V · Modérée (2–2,5) : Ataxie · Sévère (&gt;2,5) : Convulsions · Dialyse urgente</td><td>Arrêt Li⁺ + Hydratation NS IV · &gt; 2,5 → dialyse</td></tr>
-            <tr><td><span class="drug-badge ci">Agranulocytose Clozapine</span></td><td>Neutrophiles &lt; 0,5 (code rouge) → code jaune si 0,5–1,5</td><td>Fièvre · Pharyngite · Fatigue profonde</td><td>Arrêt immédiat + FSC dans 24h + Hématologie · Ne jamais réintroduire</td></tr>
-            <tr><td><span class="drug-badge warn">Agitation aiguë</span></td><td>Tout trouble psy · Delirium · Intox</td><td>Agression · Automutilation · Danger pour autrui</td><td>Voir protocole ci-dessous</td></tr>
+            <tr><td><strong>Vyvanse</strong> (lisdexamphétamine)</td><td>Promédicament (granules)</td><td>~13–14 h</td><td>20–30 mg AM</td><td>70 mg/j</td><td>Faible potentiel d&apos;abus (promédicament) · Non écraskable</td></tr>
+            <tr><td><strong>Adderall XR</strong></td><td>Granules saupoudrables</td><td>~12 h</td><td>5–10 mg AM</td><td>30 mg/j</td><td>Mélange d&apos;amphétamines (75 % Dextro / 25 % Levo)</td></tr>
+            <tr><td><strong>Dexedrine</strong></td><td>Comprimé sécable / granules</td><td>4–8 h</td><td>2,5–5 mg BID</td><td>40 mg/j</td><td>Courte action · Utile pour dose de fin de journée</td></tr>
+          </tbody>
+        </table>
+        <div class="sec-divider" style="margin:10px 0;"><div class="sd-shape sq"></div><div class="sd-label">Méthylphénidate</div><div class="sd-line"></div></div>
+        <table>
+          <thead><tr><th>Médicament</th><th>Libération</th><th>Durée</th><th>Dose départ</th><th>Dose max</th><th>Particularités</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Biphentin</strong></td><td>Granules saupoudrables</td><td>~10–12 h</td><td>10–20 mg AM</td><td>80 mg/j</td><td>Pellicule dissoute → libère 40 % immédiatement</td></tr>
+            <tr><td><strong>Concerta</strong></td><td>OROS (osmotique)</td><td>~12 h</td><td>18 mg AM</td><td>54–72 mg/j</td><td>18 mg Concerta ≠ 18 mg Ritalin (bioéquivalence diff.)</td></tr>
+            <tr><td><strong>Foquest</strong></td><td>Granules multicouches</td><td>~13–16 h</td><td>25 mg AM</td><td>100 mg/j</td><td>Couverture en soirée</td></tr>
+            <tr><td><strong>Quillivant XR</strong></td><td>Suspension orale</td><td>~12 h</td><td>20 mg AM</td><td>60 mg/j</td><td>Utile si difficulté à avaler · Agiter avant usage</td></tr>
+            <tr><td><strong>Ritalin SR</strong></td><td>Matrice cire</td><td>~8 h</td><td>20 mg AM</td><td>60 mg/j</td><td>Absorption variable selon formulation</td></tr>
+            <tr><td><strong>MTP courte action</strong></td><td>Comprimé sécable</td><td>3–4 h</td><td>5 mg BID-TID</td><td>60 mg/j</td><td>Utile pour titration initiale ou dose de pointe</td></tr>
+          </tbody>
+        </table>
+        <div class="note"><strong>Suivi stimulants :</strong> Poids + taille (enfants) · TA + FC à chaque visite · Effet rebond en fin de journée → ajuster formulation · Vacances thérapeutiques si croissance préoccupante</div>
+      </div>
+
+      <div class="block para" id="tdah-nonstim">
+        <div class="block-title"><span class="tag">🔵 Non-Psychostimulants</span></div>
+        <table>
+          <thead><tr><th>Agent</th><th>Mécanisme</th><th>Doses</th><th>Avantages</th><th>EI clés</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><strong>Atomoxétine</strong> (Strattera)</td>
+              <td>Inhibiteur sélectif recapture NA (NRI) · CYP2D6</td>
+              <td>Départ: 0,5 mg/kg/j (enfant) ou 40 mg/j (adulte) · Titration sur 7–14j · Max: 1,4 mg/kg/j ou <strong>100 mg/j</strong> · Couverture: jusqu&apos;à 24h</td>
+              <td>✅ Faible risque abus · ✅ N&apos;aggrave pas les tics · ✅ Sommeil peu affecté · ✅ Anxiété comorbide</td>
+              <td>Céphalées · Nausées/vomissements · ↑ TA · ↑ FC · Délai d&apos;action: 2–4 semaines</td>
+            </tr>
+            <tr>
+              <td><strong>Guanfacine XR</strong> (Intuniv)</td>
+              <td>Agoniste sélectif α2A-adrénergique</td>
+              <td>Départ: 1 mg/j · Max monothérapie: 6–12 ans = 4 mg · 13–17 ans = 7 mg · Max adjuvant: 6–17 ans = 4 mg</td>
+              <td>✅ Indiqué chez l&apos;enfant (monothérapie ou adjuvant) · ✅ Tics OK · ✅ Pas de risque abus</td>
+              <td>Somnolence · Hypotension · Céphalées · Bouche sèche · Bradycardie · ⚠️ Sevrage graduel obligatoire (rebond hypertensif)</td>
+            </tr>
+            <tr>
+              <td><strong>Clonidine</strong></td>
+              <td>Agoniste α2 non sélectif</td>
+              <td>Usage off-label · 0,1 mg HS → 0,1–0,3 mg TID-QID</td>
+              <td>Tics · Insomnie · Agressivité</td>
+              <td>Hypotension · Sédation · Bradycardie · Sevrage = ↑ rebond TA</td>
+            </tr>
           </tbody>
         </table>
       </div>
 
-      <div class="block rx">
-        <div class="block-title" id="upsy-2"><span class="tag">💊 Protocole agitation aiguë — Désescalade d'abord</span></div>
-        <div class="accordion">
-          <div class="accordion-item open">
-            <div class="accordion-header">Mesures non-pharmacologiques (1er)
-              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+      <!-- DROPDOWN ALGO TDAH -->
+      <div class="block clin" id="tdah-algo">
+        <div class="block-title"><span class="tag">🗺️ Algorithme — Choix de l&apos;Agent TDAH</span></div>
+        <div style="background:#f8fafc;border:2px solid #0a7a4e;border-radius:10px;padding:16px;margin-bottom:12px;">
+          <p style="font-weight:700;color:#0a7a4e;margin-bottom:12px;">Sélectionnez le profil du patient :</p>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;">
+            <div>
+              <label style="font-size:12px;font-weight:600;color:#475569;display:block;margin-bottom:4px;">Présentation dominante / Contexte</label>
+              <select id="tdah-drop-type" onchange="algoTDAH()" style="width:100%;padding:8px;border:1px solid #cbd5e1;border-radius:6px;font-size:13px;">
+                <option value="">-- Choisir --</option>
+                <option value="standard">TDAH sans comorbidité</option>
+                <option value="anxiete">TDAH + Anxiété comorbide</option>
+                <option value="tics">TDAH + Tics / Syndrome de Gilles de la Tourette</option>
+                <option value="dependance">TDAH + Risque de dépendance / Abus</option>
+                <option value="sommeil">TDAH + Troubles du sommeil importants</option>
+                <option value="depression">TDAH + Dépression comorbide</option>
+                <option value="cardio">TDAH + Comorbidité cardiovasculaire</option>
+              </select>
             </div>
-            <div class="accordion-body">Voix calme + espace · Identifier besoin (douleur, peur) · Retirer stimuli · Offrir choix simples · Éviter confrontation directe</div>
+            <div>
+              <label style="font-size:12px;font-weight:600;color:#475569;display:block;margin-bottom:4px;">Âge / Population</label>
+              <select id="tdah-drop-age" onchange="algoTDAH()" style="width:100%;padding:8px;border:1px solid #cbd5e1;border-radius:6px;font-size:13px;">
+                <option value="">-- Choisir --</option>
+                <option value="enfant">Enfant (6–12 ans)</option>
+                <option value="ado">Adolescent (13–17 ans)</option>
+                <option value="adulte">Adulte (≥ 18 ans)</option>
+              </select>
+            </div>
           </div>
-          <div class="accordion-item">
-            <div class="accordion-header">Pharmacologique — Voie PO préférée si possible
-              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-            </div>
-            <div class="accordion-body">
-              <strong>Agitation légère-modérée :</strong><br>
-              <span class="drug-badge line1">Lorazépam 1–2 mg PO/IM/IV</span> — 1re ligne si cause organique (delirium, sevrage OH)<br>
-              <span class="drug-badge line1">Olanzapine 5–10 mg PO/IM</span> — préféré si cause psychiatrique<br>
-              <span class="drug-badge warn">⚠️ Éviter olanzapine IM + BZD IM = dépression respiratoire</span><br><br>
-              <strong>Agitation sévère :</strong><br>
-              <span class="drug-badge line1">Halopéridol 5 mg IM + Lorazépam 2 mg IM (séparés)</span> = protocole classique<br>
-              <span class="drug-badge line2">Dropéridol 2,5–5 mg IM</span> — efficace mais ↑ QT (ECG avant)<br>
-              <span class="drug-badge line3">Kétamine 4–5 mg/kg IM</span> si très agité · résistant aux AP (EM, ICU)
-            </div>
-          </div>
+          <div id="tdah-output" style="background:#fff;border-left:4px solid #0a7a4e;border-radius:0 8px 8px 0;padding:12px;min-height:40px;display:none;"></div>
         </div>
       </div>
 
-      <div class="block para">
-        <div class="block-title" id="upsy-3"><span class="tag">🧪 Syndrome sérotoninergique vs SMN — DDx clé</span></div>
+      <div class="block flag" id="tdah-ei">
+        <div class="block-title"><span class="tag">📊 Comparatif des Effets Indésirables — Agents TDAH</span></div>
         <table>
-          <thead><tr><th>Critère</th><th>Syndrome sérotoninergique</th><th>SMN</th></tr></thead>
+          <thead><tr><th>Effet indésirable</th><th>Psychostimulants</th><th>Atomoxétine</th><th>Guanfacine XR</th></tr></thead>
           <tbody>
-            <tr><td>Début</td><td>Rapide (&lt; 24h)</td><td>Lent (jours–sem)</td></tr>
-            <tr><td>Rigidité</td><td>↑ tonus (plomb de pêche · spasticité)</td><td>Rigidité "tuyau de plomb" sévère</td></tr>
-            <tr><td>Clonus</td><td>✅ (signe pathognomonique)</td><td>Absent ou minimal</td></tr>
-            <tr><td>Hyperthermie</td><td>Variable</td><td>Sévère (&gt; 40 °C)</td></tr>
-            <tr><td>CK</td><td>Variable (souvent N)</td><td>↑↑↑ (+ rhabdomyolyse)</td></tr>
-            <tr><td>Traitement</td><td>Cyproheptadine</td><td>Dantrolène + Bromocriptine</td></tr>
+            <tr><td>↑ TA / ↑ FC</td><td>✓ ↑</td><td>✓ ↑</td><td>↓ TA/FC (effet inverse)</td></tr>
+            <tr><td>Suppression de l&apos;appétit</td><td>✓✓ Important</td><td>✓ Modéré</td><td>Faible</td></tr>
+            <tr><td>Troubles gastro-intestinaux</td><td>✓</td><td>✓✓</td><td>✓</td></tr>
+            <tr><td>Insomnie (début de nuit)</td><td>✓✓ (dose-dépendant)</td><td>✓ (cas)</td><td>Faible</td></tr>
+            <tr><td>Somnolence diurne</td><td>—</td><td>✓</td><td>✓✓</td></tr>
+            <tr><td>Exacerbation des tics</td><td>✓</td><td>Rares</td><td>— (améliorent les tics)</td></tr>
+            <tr><td>Risque d&apos;abus</td><td>✓ (amphétamines &gt; MTP)</td><td>Faible</td><td>Faible</td></tr>
+            <tr><td>Dysfonction sexuelle</td><td>Rare</td><td>✓</td><td>—</td></tr>
+            <tr><td>Retard de croissance (enfants)</td><td>✓ Long terme</td><td>✓ (possible)</td><td>—</td></tr>
           </tbody>
         </table>
-      </div>
-
-      <div class="block flag">
-        <div class="block-title" id="upsy-4"><span class="tag">🚨 Risque suicidaire — Évaluation rapide</span></div>
-        <div class="key-fact red"><strong>Antidépresseurs : </strong>Suicidalité ↑ semaines 1–4 (adolescents et jeunes adultes &lt; 25 ans) → suivi rapproché j3, j7, j14, j28 · Informer patient/famille</div>
-        <div class="flag-list" style="margin-top:8px;">
-          <div class="flag-item"><span class="fi-icon">🚨</span><span><strong>Haut risque :</strong> Plan précis + Moyen disponible + Intention + ATCD tentative + Isolement → hospitalisation urgente · Garder</span></div>
-          <div class="flag-item"><span class="fi-icon">⚠️</span><span><strong>Réduction des moyens :</strong> Questioner sur armes à feu, médicaments · Conseiller retrait ou sécurisation par un proche</span></div>
-          <div class="flag-item"><span class="fi-icon">📞</span><span>Ressources : Ligne provinciale prévention suicide 1-866-APPELLE (277-3553) · 988 (Canada/USA)</span></div>
-        </div>
+        <div class="key-fact yellow" style="margin-top:8px;"><strong>Interactions clés :</strong> Éviter psychostimulants + caféine/boissons énergisantes · ATC → surveiller avec tous les agents TDAH · ISRS/IRSN → surveiller avec stimulants et atomoxétine · Agonistes α et bêtabloqueurs CI avec guanfacine (↑ effets CV) · Inhibiteurs CYP3A4 → surveiller stimulants et guanfacine</div>
       </div>
     </div>
-
     <div class="section" id="sec-tdc">
       <div class="section-header"><div class="section-accent">🧠</div><div class="section-title"><h1>TDC — Trouble Dépressif Caractérisé</h1><div class="breadcrumb">Santé mentale <span class="breadcrumb-sep">·</span> Dépression</div></div></div>
 
@@ -25559,39 +25638,137 @@ function tdcTab(tab) {
 </script>
 
 <script>
-// ─── Choix Antidépresseur ──────────────────────────────────────────────────
+// ─── Choix Antidépresseur (3 dropdowns) ───────────────────────────────────
 function choixAD() {
-  var sx = document.getElementById("ad-symptome").value;
-  var co = document.getElementById("ad-comorbidite").value;
-  var out = document.getElementById("ad-output");
-  if (!sx) { out.style.display = "none"; return; }
-  var rec = {
-    "anxiete":       { mol: "Escitalopram ou Sertraline (ISRS — EI anxiété transitoire en début Tx)", dose: "Escitalopram: débuter 5 mg/j → ↑ à 10–20 mg/j | Sertraline: débuter 25 mg/j → ↑ à 50–200 mg/j", note: "Prévenir le patient d'une possible anxiété initiale dans les 1–2 premières semaines." },
-    "fatigue":       { mol: "Bupropion XL (mécanisme DA+NA) ou Vortioxétine", dose: "Bupropion XL: 150 mg/j → ↑ à 300 mg/j | Vortioxétine: 10 mg/j → ↑ à 20 mg/j", note: "Éviter le soir — effet activateur. Bupropion CI si épilepsie ou TCA." },
-    "insomnie":      { mol: "Mirtazapine (surtout si poids insuffisant) ou antidépresseur HS", dose: "Mirtazapine: 15 mg HS (sédatif à dose faible) → ↑ à 15–45 mg/j", note: "À dose ≤ 15 mg, l'effet sédatif est maximal (antagonisme H1). À dose plus élevée, effet noradrénergique ↑ sédation." },
-    "faible-poids":  { mol: "Mirtazapine (↑ appétit, ↑ poids)", dose: "Mirtazapine: 15 mg HS → 15–45 mg/j", note: "↑ appétit via antagonisme 5-HT2C et H1. Moins de dysfonction sexuelle." },
-    "surpoids":      { mol: "Bupropion XL (neutre sur poids) ou Vortioxétine", dose: "Bupropion XL: 150 mg/j → 300 mg/j | Vortioxétine: 10–20 mg/j", note: "Éviter mirtazapine, paroxétine (prise de poids ↑↑). Vortioxétine neutre." },
-    "mcas":          { mol: "Sertraline (données de sécurité cardiovasculaire documentées)", dose: "Sertraline: 25–50 mg/j → 100–200 mg/j", note: "POST-IDM: Sertraline = agent de choix (étude SADHART). Éviter ATC (cardiotoxique)." },
-    "douleur":       { mol: "Duloxétine (1re ligne douleur) ou Venlafaxine XR", dose: "Duloxétine: 30 mg/j → 60 mg/j (max 120 mg) | Venlafaxine XR: 75–225 mg/j", note: "Duloxétine approuvée pour neuropathie diabétique, fibromyalgie, lombalgie chronique. Prudence si IR ou IH." },
-    "tabagisme":     { mol: "Bupropion XL (double indication dépression + sevrage tabagique)", dose: "Bupropion XL: 150 mg/j × 3j → 300 mg/j. Débuter 1–2 semaines avant arrêt tabac.", note: "Durée recommandée sevrage: 7–12 semaines. Surveiller TA, sautes d'humeur." },
-    "dysfonction-sex": { mol: "Bupropion XL ou Mirtazapine ou Vortioxétine (moins de dysfonction sexuelle)", dose: "Bupropion XL: 150–300 mg/j | Mirtazapine: 15–45 mg HS | Vortioxétine: 10–20 mg/j", note: "Éviter paroxétine (dysfonction sexuelle ↑↑). Alternatives: can also add bupropion 150 mg/j en adjuvant à l'ISRS." },
-    "cognitive":     { mol: "Vortioxétine (données sur cognition)", dose: "Vortioxétine: 10 mg/j → 20 mg/j", note: "Données issues d'essais cliniques (CONNECT, FOCUS): ↑ vitesse de traitement et mémoire de travail." },
-    "saignement":    { mol: "Éviter ISRS/IRSN seuls. Ajouter IPP si AINS concomitants. Préférer Mirtazapine.", dose: "Mirtazapine: 15–45 mg HS | Si ISRS nécessaire → ajouter oméprazole 20 mg/j", note: "Mécanisme: ISRS ↓ agrégation plaquettaire → ↑ risque GI si AINS/ASA concomitants." },
-    "inobservance":  { mol: "Fluoxétine (longue demi-vie — 1–4 jours, métabolite actif jusqu'à 1–2 semaines)", dose: "Fluoxétine: 10–20 mg/j → 20–60 mg/j. Peut être prise en mode hebdomadaire (Prozac Weekly: 90 mg/semaine).", note: "Seul ISRS avec demi-vie suffisamment longue pour tolérer l'inobservance occasionnelle." }
+  var dx   = document.getElementById("ad-diagnostic").value;
+  var ev   = document.getElementById("ad-eviter").value;
+  var co   = document.getElementById("ad-comorbidite").value;
+  var out  = document.getElementById("ad-output");
+  if (!dx) { out.style.display = "none"; return; }
+
+  // Base recommendations per diagnosis
+  var base = {
+    "tdc":      { mol: "Escitalopram <strong>ou</strong> Sertraline (1re intention CANMAT)", dose: "Escitalopram: 5–10 mg/j → 10–20 mg/j | Sertraline: 25–50 mg/j → 100–200 mg/j", note: "1re intention TDC. Évaluation 4 sem (réponse précoce?), 8 sem (réponse), 12–16 sem (rémission)." },
+    "tag":      { mol: "Escitalopram <strong>ou</strong> Venlafaxine XR", dose: "Escitalopram: 5 mg/j → 10–20 mg/j | Venlafaxine XR: 37,5 mg/j → 75–225 mg/j", note: "Débuter à dose faible — exacerbation anxiété transitoire possible. Délai d'action: 4–16 sem." },
+    "panique":  { mol: "Escitalopram <strong>ou</strong> Paroxétine CR", dose: "Escitalopram: 5 mg/j → 10–20 mg/j | Paroxétine CR: 12,5 mg/j → 25–62,5 mg/j", note: "Prévenir le patient d'une possible ↑ anxiété initiale. BZD court terme si sévère." },
+    "sociale":  { mol: "Escitalopram <strong>ou</strong> Sertraline <strong>ou</strong> Venlafaxine XR", dose: "Escitalopram: 10–20 mg/j | Sertraline: 50–200 mg/j | Venlafaxine XR: 75–225 mg/j", note: "TCC (exposition) à associer pour meilleure réponse à long terme." },
+    "toc":      { mol: "Sertraline <strong>ou</strong> Escitalopram (doses élevées)", dose: "Sertraline: 50 mg/j → 100–200 mg/j | Escitalopram: 10 mg/j → 20–40 mg/j", note: "Doses plus élevées que pour TDC. Délai de réponse: 8–12 semaines minimum." },
+    "sspt":     { mol: "Sertraline <strong>ou</strong> Paroxétine CR", dose: "Sertraline: 25–50 mg/j → 50–200 mg/j | Paroxétine CR: 12,5 mg/j → 25–62,5 mg/j", note: "TCC centrée sur le trauma (EMDR) = traitement de choix. BZD non recommandées dans le SSPT." },
+    "bipolaire":{ mol: "Lamotrigine <strong>ou</strong> Lurasidone (+ stabilisateur humeur)", dose: "Lamotrigine: titration lente (risque Stevens-Johnson) | Lurasidone: 20–120 mg/j avec nourriture", note: "⚠️ TOUJOURS associer à un stabilisateur de l'humeur (lithium/valproate). Risque virage maniaque avec ISRS seul." },
+    "douleur":  { mol: "Duloxétine (1re ligne) <strong>ou</strong> Venlafaxine XR <strong>ou</strong> Amitriptyline", dose: "Duloxétine: 30 mg/j → 60 mg/j (max 120 mg) | Venlafaxine XR: 75–225 mg/j | Amitriptyline: 25–75 mg HS", note: "Duloxétine approuvée: neuropathie diabétique, fibromyalgie, lombalgie chronique. Amitriptyline: surveiller ECG." }
   };
-  var ci = {
-    "epilepsie":    "⚠️ CI: Bupropion (↓ seuil épileptique) · Préférer ISRS ou IRSN",
-    "grossesse":    "⚠️ Éviter paroxétine (malformations cardiaques) · Privilégier sertraline ou escitalopram. Suivi neonatal si fin grossesse.",
-    "hepatique":    "⚠️ Prudence: duloxétine (hépatotoxique), ATC. Préférer sertraline ou citalopram (dose réduite).",
-    "renale":       "⚠️ Prudence: desvenlafaxine, venlafaxine (élimination rénale). Sertraline ou escitalopram préférés."
+
+  // EI modifiers — adjust recommendation based on what to avoid
+  var modif = {
+    "poids":   { eviter: "Mirtazapine · Paroxétine · ATC", preferer: "Bupropion XL (neutre) <strong>ou</strong> Vortioxétine", dosemod: "Bupropion XL: 150 mg/j → 300 mg/j | Vortioxétine: 10–20 mg/j" },
+    "insomnie":{ eviter: "Bupropion · Fluoxétine (AM activateurs)", preferer: "Mirtazapine <strong>ou</strong> Prendre l'AD le matin", dosemod: "Mirtazapine: 15 mg HS (sédatif à cette dose)" },
+    "sedation":{ eviter: "Mirtazapine · Paroxétine", preferer: "Escitalopram · Sertraline · Vortioxétine", dosemod: "Vortioxétine: 10–20 mg/j (cognition + moins sédatif)" },
+    "sexuel":  { eviter: "ISRS en général (surtout paroxétine) · IRSN", preferer: "Bupropion XL <strong>ou</strong> Mirtazapine <strong>ou</strong> Vortioxétine", dosemod: "Bupropion XL: 150–300 mg/j | Mirtazapine: 15–45 mg HS" },
+    "gi":      { eviter: "ISRS (nausées fréquentes) · Vortioxétine en début", preferer: "Mirtazapine (↓ nausées) — prendre les AD avec nourriture", dosemod: "Mirtazapine: 15 mg HS (antagoniste 5-HT3 → antinauséeux)" },
+    "ht":      { eviter: "Venlafaxine · Duloxétine (IRSN → ↑ TA)", preferer: "ISRS (escitalopram, sertraline)", dosemod: "Escitalopram: 5–10 mg/j → 10–20 mg/j" }
   };
-  var r = rec[sx];
-  var ciTxt = co ? ci[co] : "";
+
+  // CI modifiers
+  var cimod = {
+    "epilepsie": "⚠️ <strong>CI: Bupropion</strong> (↓ seuil épileptique) · Préférer ISRS ou IRSN",
+    "grossesse": "⚠️ Éviter paroxétine (malformations cardiaques). Privilégier sertraline ou escitalopram. Risque syndrome de sevrage néonatal si prise fin grossesse.",
+    "hepatique": "⚠️ Prudence: duloxétine (hépatotoxique) · Éviter ATC · Préférer sertraline ou citalopram à dose réduite",
+    "renale":    "⚠️ Prudence: desvenlafaxine · venlafaxine (élimination rénale) · Sertraline ou escitalopram préférés en IR",
+    "mcas":      "✅ Sertraline = agent de 1re intention post-IDM (étude SADHART) · Éviter ATC (cardiotoxique) · Citalopram/escitalopram: max 20 mg si QTc allongé",
+    "tabagisme": "💡 Bupropion XL = double indication dépression + sevrage tabagique · Débuter 1–2 semaines avant arrêt tabac · Durée sevrage: 7–12 semaines"
+  };
+
+  var b = base[dx];
+  var html = "<strong style='color:#7b3fa0'>📋 Diagnostic: " + document.getElementById("ad-diagnostic").options[document.getElementById("ad-diagnostic").selectedIndex].text + "</strong>";
+  html += "<br><strong>💊 Recommandation: </strong>" + b.mol;
+  html += "<br><span style='font-size:12px;color:#475569;margin-top:4px;display:block'><strong>Doses: </strong>" + b.dose + "</span>";
+
+  if (ev && modif[ev]) {
+    var m = modif[ev];
+    html += "<div style='margin-top:8px;padding:8px;background:#fef3c7;border-radius:6px;font-size:12px'>";
+    html += "⚠️ <strong>EI à éviter — " + document.getElementById("ad-eviter").options[document.getElementById("ad-eviter").selectedIndex].text + ":</strong><br>";
+    html += "Éviter: " + m.eviter + "<br>Préférer: " + m.preferer;
+    if (m.dosemod) html += "<br><em>Doses: " + m.dosemod + "</em>";
+    html += "</div>";
+  }
+
+  if (co && cimod[co]) {
+    html += "<div style='margin-top:8px;padding:8px;background:#fef2f2;border-radius:6px;font-size:12px;color:#b91c1c'>";
+    html += "🔴 <strong>Comorbidité / CI:</strong> " + cimod[co] + "</div>";
+  }
+
+  html += "<div style='margin-top:8px;padding:6px;background:#f1f5f9;border-radius:4px;font-size:12px;color:#475569'>💡 " + b.note + "</div>";
+
   out.style.display = "block";
-  out.innerHTML = "<strong style='color:#7b3fa0'>💊 Recommandation :</strong> " + r.mol +
-    "<br><span style='font-size:12px;color:#475569;margin-top:4px;display:block'><strong>Doses :</strong> " + r.dose + "</span>" +
-    "<span style='font-size:12px;color:#475569;display:block;margin-top:4px;padding:6px;background:#f1f5f9;border-radius:4px'>💡 " + r.note + "</span>" +
-    (ciTxt ? "<span style='font-size:12px;color:#b91c1c;display:block;margin-top:6px;padding:6px;background:#fef2f2;border-radius:4px'>" + ciTxt + "</span>" : "");
+  out.innerHTML = html;
+}
+
+// ─── Choix Hypnotique ──────────────────────────────────────────────────────
+function choixHypno() {
+  var type = document.getElementById("hyp-type").value;
+  var ctx  = document.getElementById("hyp-contexte").value;
+  var out  = document.getElementById("hyp-output");
+  if (!type) { out.style.display = "none"; return; }
+
+  var recs = {
+    "initiation":    { mol: "Hypnotique Z (Zopiclone 7,5 mg HS) <strong>ou</strong> Anti-orexine (Suvorexant/Lemborexant)", note: "Zopiclone: effet rapide, absorption bonne. Anti-orexines: pas de tolérance, sécuritaire SAOS, non remboursé RAMQ." },
+    "maintien":      { mol: "Anti-orexine <strong>ou</strong> BZD à longue demi-vie (Témazépam 15–30 mg)", note: "Anti-orexines = meilleure option: efficacité maintien sommeil + pas de tolérance. Témazépam si non disponible." },
+    "circadien":     { mol: "Mélatonine 3–5 mg, 2–3h avant coucher", note: "1re ligne pour trouble du rythme circadien · Décalage horaire · Travail de nuit. Efficacité maximale à 3–5 mg (méta-analyse 2024)." },
+    "comorbid-dep":  { mol: "Mirtazapine 7,5–15 mg HS (traite dépression ET insomnie)", note: "Antagoniste H1 + 5-HT2A → sédatif à faible dose. Traitement double si dépression comorbide. Attention: prise de poids." },
+    "senior":        { mol: "Mélatonine 3–5 mg HS <strong>ou</strong> Anti-orexine (faible dose)", note: "⚠️ ÉVITER BZD et Z-drugs chez ≥ 65 ans (critères de Beer: chutes, fractures, confusion). TCC-I = 1re ligne absolue." }
+  };
+
+  var ci_saos    = "✅ Anti-orexines = SÉCURITAIRES si SAOS · ⚠️ BZD et Z-drugs CI si SAOS sévère · Mélatonine acceptable";
+  var ci_depend  = "✅ Anti-orexines ou Mélatonine · ⚠️ Éviter BZD et Z-drugs (potentiel d'abus/dépendance) · Atomoxétine si TDAH associé";
+  var ci_preg    = "⚠️ Données limitées pour tous les hypnotiques · Mélatonine = option la plus sécuritaire · Consulter obstétricien";
+
+  var r = recs[type];
+  if (!r) { out.style.display = "none"; return; }
+
+  var html = "<strong style='color:#7b3fa0'>💊 " + r.mol + "</strong>";
+  html += "<div style='margin-top:6px;font-size:12px;color:#475569'>" + r.note + "</div>";
+  if (ctx === "saos") html += "<div style='margin-top:8px;padding:6px;background:#f0fdf4;border-radius:4px;font-size:12px;color:#065f46'>" + ci_saos + "</div>";
+  if (ctx === "dependance") html += "<div style='margin-top:8px;padding:6px;background:#fef3c7;border-radius:4px;font-size:12px;color:#92400e'>" + ci_depend + "</div>";
+  if (ctx === "pregnancy") html += "<div style='margin-top:8px;padding:6px;background:#fef2f2;border-radius:4px;font-size:12px;color:#991b1b'>" + ci_preg + "</div>";
+  html += "<div style='margin-top:8px;font-size:11px;color:#64748b;background:#f8fafc;padding:6px;border-radius:4px'>⚠️ Rappel: Durée idéale court terme · TCC-I = 1re ligne · Traiter cause sous-jacente en priorité · Éviter BZD/Z-drugs chez ≥ 65 ans</div>";
+
+  out.style.display = "block";
+  out.innerHTML = html;
+}
+
+// ─── Algo TDAH ─────────────────────────────────────────────────────────────
+function algoTDAH() {
+  var type = document.getElementById("tdah-drop-type").value;
+  var age  = document.getElementById("tdah-drop-age").value;
+  var out  = document.getElementById("tdah-output");
+  if (!type) { out.style.display = "none"; return; }
+
+  var base = {
+    "standard":   { mol: "Psychostimulant (1re ligne)", detail: "Amphétamines > Méthylphénidate en efficacité, mais profil individuel variable.<br><em>Enfant/Ado:</em> Vyvanse 20–30 mg AM → max 70 mg/j <strong>ou</strong> Concerta 18 mg AM → max 54–72 mg/j<br><em>Adulte:</em> Vyvanse 20–30 mg AM → max 70 mg/j <strong>ou</strong> Biphentin 10–20 mg AM → max 80 mg/j" },
+    "anxiete":    { mol: "Atomoxétine (Strattera) en 1re intention", detail: "Traite TDAH + anxiété. Pas d'exacerbation de l'anxiété contrairement aux stimulants.<br>Dose: 0,5 mg/kg/j → 1,4 mg/kg/j (enfant) ou 40 mg/j → 100 mg/j (adulte). Délai: 2–4 sem.<br>Alternative: stimulant à faible dose + ISRS si anxiété sévère." },
+    "tics":       { mol: "Guanfacine XR (Intuniv) <strong>ou</strong> Atomoxétine", detail: "Les deux améliorent les tics (contrairement aux stimulants qui peuvent les exacerber).<br>Guanfacine XR: 1 mg/j → max 4–7 mg/j selon âge. Atomoxétine: titration sur 7–14j." },
+    "dependance": { mol: "Atomoxétine <strong>ou</strong> Guanfacine XR (aucun risque abus)", detail: "Éviter stimulants si risque de détournement élevé.<br>Si stimulant requis: Vyvanse (promédicament, faible abus) > formes courte action." },
+    "sommeil":    { mol: "Guanfacine XR <strong>ou</strong> Atomoxétine + Mélatonine 3–5 mg HS", detail: "Stimulants: insomnie fréquente si prise trop tard. Ajuster l'heure et la formulation.<br>Mélatonine 3–5 mg, 2–3h avant coucher = adjuvant efficace." },
+    "depression": { mol: "Bupropion XL (traite TDAH + dépression)", detail: "Double indication. Dose: 150 mg/j → 300 mg/j.<br>Alternative: stimulant + ISRS/IRSN si dépression modérée-sévère (surveiller TA + FC)." },
+    "cardio":     { mol: "Atomoxétine (prudence) <strong>ou</strong> Guanfacine XR", detail: "⚠️ Stimulants: ↑ TA + ↑ FC → prudence si cardiopathie. Évaluation cardiologique avant initiation.<br>Guanfacine XR: ↓ TA et FC (avantage dans HTA légère)." }
+  };
+
+  var ageNote = {
+    "enfant":  "👦 Enfant (6–12 ans): Stimulants = 1re ligne · Surveiller poids/taille · Vacances thérapeutiques possibles · Associer interventions parentales",
+    "ado":     "👤 Adolescent (13–17 ans): Stimulants = 1re ligne · Risque abus à surveiller · Préférer formulations longue action · Évaluer inobservance",
+    "adulte":  "👨 Adulte: Stimulants = 1re ligne · Aménagement professionnel important · Comorbidités fréquentes (anxiété, dépression, abus de substances)"
+  };
+
+  var b = base[type];
+  if (!b) { out.style.display = "none"; return; }
+
+  var html = "<strong style='color:#0a7a4e'>💊 " + b.mol + "</strong>";
+  html += "<div style='margin-top:6px;font-size:13px'>" + b.detail + "</div>";
+  if (age && ageNote[age]) html += "<div style='margin-top:8px;padding:6px;background:#f0fdf4;border-radius:4px;font-size:12px;color:#065f46'>" + ageNote[age] + "</div>";
+  html += "<div style='margin-top:8px;font-size:11px;color:#64748b;background:#f8fafc;padding:6px;border-radius:4px'>⚠️ Toujours vérifier TA + FC avant initiation · Surveiller poids/taille chez l'enfant · Évaluer efficacité à 4–8 sem</div>";
+
+  out.style.display = "block";
+  out.innerHTML = html;
 }
 
 // ─── Algo SEP ──────────────────────────────────────────────────────────────
@@ -25634,11 +25811,7 @@ function algoSEP() {
   };
   var r = recs[type];
   if (!r) { out.style.display = "none"; return; }
-  var ctxRecs = {
-    "premier": r.premier,
-    "chronique": r.chronique,
-    "urgent": r.urgent
-  };
+  var ctxRecs = { "premier": r.premier, "chronique": r.chronique, "urgent": r.urgent };
   var body = ctx ? ctxRecs[ctx] : (r.premier + "<br><em style='color:#64748b;font-size:11px'>Sélectionnez le contexte pour une recommandation spécifique.</em>");
   out.style.display = "block";
   out.innerHTML = "<strong style='color:#d97706'>" + r.titre + "</strong>" +
@@ -25653,42 +25826,12 @@ function algoAnxiete() {
   var out  = document.getElementById("anx-output");
   if (!type) { out.style.display = "none"; return; }
   var recs = {
-    "tag": {
-      titre: "😟 TAG — Trouble Anxieux Généralisé",
-      "leg-mod": "ISRS 1re ligne: Escitalopram 5 mg/j → 10–20 mg/j · ou Sertraline 25 mg/j → 50–200 mg/j.<br>Alternative: Buspirone 5 mg BID → 10–20 mg BID (délai 2–4 sem, pas d'effet immédiat).<br>TCC en parallèle (équivalence pharmaco).",
-      "severe": "Venlafaxine XR 37,5 mg/j → 75–225 mg/j · ou Duloxétine 30 mg/j → 60 mg/j.<br>Prégabaline 75 mg BID → 150–300 mg BID si ISRS/IRSN insuffisants.<br>BZD court terme seulement (max 4 sem).",
-      "comorbid-dep": "ISRS ou IRSN (traite les deux) · Escitalopram ou Venlafaxine XR · Éviter buspirone seul si dépression."
-    },
-    "panique": {
-      titre: "😰 Trouble Panique (± agoraphobie)",
-      "leg-mod": "ISRS: Escitalopram 5 mg/j → 10–20 mg/j · Sertraline 25 mg/j → 50–200 mg/j.<br>Débuter à faible dose (exacerbation initiale possible!).<br>TCC (exposition) = traitement de choix à long terme.",
-      "severe": "Paroxétine CR 12,5 mg/j → 25–62,5 mg/j · ou Venlafaxine XR 37,5 mg/j → 75–225 mg/j.<br>BZD court terme si sévère (lorazépam 0,5–1 mg PRN), puis sevrage graduel.",
-      "comorbid-dep": "Venlafaxine XR ou Escitalopram (données solides dans les deux indications)."
-    },
-    "sociale": {
-      titre: "🫂 Phobie Sociale (Anxiété Sociale)",
-      "leg-mod": "ISRS: Escitalopram 5–10 mg/j → 20 mg/j · ou Sertraline 25 mg/j → 50–200 mg/j.<br>TCC (exposition graduée) = recommandée en parallèle.",
-      "severe": "Paroxétine CR 12,5–62,5 mg/j · ou Venlafaxine XR 75–225 mg/j.<br>Propranolol 10–40 mg PRN pour phobie situationnelle (ex: performance musicale).",
-      "comorbid-dep": "Venlafaxine XR ou ISRS — traite les deux conditions."
-    },
-    "toc": {
-      titre: "🔄 TOC — Trouble Obsessionnel Compulsif",
-      "leg-mod": "ISRS à doses plus élevées que TDC:<br>Sertraline 50 mg/j → 100–200 mg/j · Escitalopram 10 mg/j → 20–40 mg/j.<br>Délai de réponse: 8–12 semaines minimum.",
-      "severe": "Clomipramine (ATC) 25 mg HS → 75–250 mg/j · ou ISRS à dose maximale · Adjuvant: rispéridone 0,5–2 mg/j ou aripiprazole 10–30 mg/j.<br>⚠️ BZD non recommandées dans le TOC.",
-      "comorbid-dep": "ISRS à dose élevée traite les deux · Sertraline ou escitalopram préférés."
-    },
-    "sspt": {
-      titre: "💔 SSPT — Stress Post-Traumatique",
-      "leg-mod": "Sertraline 25 mg/j → 50–200 mg/j (1re intention Santé Canada).<br>ou Paroxétine CR 12,5–62,5 mg/j.<br>TCC centrée sur le trauma (EMDR) = traitement de choix.",
-      "severe": "Venlafaxine XR 37,5–225 mg/j · Prazosin (cauchemars: 1–15 mg HS).<br>⚠️ BZD non recommandées dans le SSPT (favorisent évitement et dépendance).",
-      "comorbid-dep": "Sertraline ou venlafaxine XR."
-    },
-    "aiguë": {
-      titre: "⚡ Anxiété / Agitation Aiguë",
-      "leg-mod": "Lorazépam 0,5–1 mg PO/SL · Diazépam 2–5 mg PO · Durée: ≤ 2–4 semaines · Initier ISRS/IRSN en parallèle.",
-      "severe": "Lorazépam 0,5–2 mg IM · ou Diazépam 5–10 mg IV lent si nécessaire · Monitoring respiratoire.",
-      "comorbid-dep": "BZD court terme + initier ISRS/IRSN le plus tôt possible pour traitement de fond."
-    }
+    "tag":     { titre: "😟 TAG — Trouble Anxieux Généralisé", "leg-mod": "ISRS 1re ligne: Escitalopram 5 mg/j → 10–20 mg/j · ou Sertraline 25 mg/j → 50–200 mg/j.<br>Alternative: Buspirone 5 mg BID → 10–20 mg BID (délai 2–4 sem, pas d'effet immédiat).<br>TCC en parallèle (équivalence pharmaco).", "severe": "Venlafaxine XR 37,5 mg/j → 75–225 mg/j · ou Duloxétine 30 mg/j → 60 mg/j.<br>Prégabaline 75 mg BID → 150–300 mg BID si ISRS/IRSN insuffisants.<br>BZD court terme seulement (max 4 sem).", "comorbid-dep": "ISRS ou IRSN (traite les deux) · Escitalopram ou Venlafaxine XR · Éviter buspirone seul si dépression." },
+    "panique": { titre: "😰 Trouble Panique (± agoraphobie)", "leg-mod": "ISRS: Escitalopram 5 mg/j → 10–20 mg/j · Sertraline 25 mg/j → 50–200 mg/j.<br>Débuter à faible dose (exacerbation initiale possible!).<br>TCC (exposition) = traitement de choix à long terme.", "severe": "Paroxétine CR 12,5 mg/j → 25–62,5 mg/j · ou Venlafaxine XR 37,5 mg/j → 75–225 mg/j.<br>BZD court terme si sévère (lorazépam 0,5–1 mg PRN), puis sevrage graduel.", "comorbid-dep": "Venlafaxine XR ou Escitalopram (données solides dans les deux indications)." },
+    "sociale": { titre: "🫂 Phobie Sociale (Anxiété Sociale)", "leg-mod": "ISRS: Escitalopram 5–10 mg/j → 20 mg/j · ou Sertraline 25 mg/j → 50–200 mg/j.<br>TCC (exposition graduée) = recommandée en parallèle.", "severe": "Paroxétine CR 12,5–62,5 mg/j · ou Venlafaxine XR 75–225 mg/j.<br>Propranolol 10–40 mg PRN pour phobie situationnelle (ex: performance musicale).", "comorbid-dep": "Venlafaxine XR ou ISRS — traite les deux conditions." },
+    "toc":     { titre: "🔄 TOC — Trouble Obsessionnel Compulsif", "leg-mod": "ISRS à doses plus élevées que TDC:<br>Sertraline 50 mg/j → 100–200 mg/j · Escitalopram 10 mg/j → 20–40 mg/j.<br>Délai de réponse: 8–12 semaines minimum.", "severe": "Clomipramine (ATC) 25 mg HS → 75–250 mg/j · ou ISRS à dose maximale · Adjuvant: rispéridone 0,5–2 mg/j ou aripiprazole 10–30 mg/j.<br>⚠️ BZD non recommandées dans le TOC.", "comorbid-dep": "ISRS à dose élevée traite les deux · Sertraline ou escitalopram préférés." },
+    "sspt":    { titre: "💔 SSPT — Stress Post-Traumatique", "leg-mod": "Sertraline 25 mg/j → 50–200 mg/j (1re intention Santé Canada).<br>ou Paroxétine CR 12,5–62,5 mg/j.<br>TCC centrée sur le trauma (EMDR) = traitement de choix.", "severe": "Venlafaxine XR 37,5–225 mg/j · Prazosin (cauchemars: 1–15 mg HS).<br>⚠️ BZD non recommandées dans le SSPT (favorisent évitement et dépendance).", "comorbid-dep": "Sertraline ou venlafaxine XR." },
+    "aiguë":   { titre: "⚡ Anxiété / Agitation Aiguë", "leg-mod": "Lorazépam 0,5–1 mg PO/SL · Diazépam 2–5 mg PO · Durée: ≤ 2–4 semaines · Initier ISRS/IRSN en parallèle.", "severe": "Lorazépam 0,5–2 mg IM · ou Diazépam 5–10 mg IV lent si nécessaire · Monitoring respiratoire.", "comorbid-dep": "BZD court terme + initier ISRS/IRSN le plus tôt possible pour traitement de fond." }
   };
   var r = recs[type];
   if (!r) { out.style.display = "none"; return; }
@@ -25731,6 +25874,27 @@ function gestionReponse() {
   out.innerHTML = "<strong style='color:" + r.color + "'>➤ " + r.action + "</strong>" +
     "<div style='margin-top:6px;font-size:13px;color:#374151'>" + r.detail + "</div>";
 }
+
+// ─── tdcTab / sepTab ────────────────────────────────────────────────────────
+function sepTab(tab) {
+  var tabs = ["dystonie","akathisie","parkinsonisme","dyskinese"];
+  tabs.forEach(function(t) {
+    var el = document.getElementById("sep-content-" + t);
+    if (el) el.style.display = (t === tab) ? "block" : "none";
+    var b  = document.getElementById("septab-" + t);
+    if (b)  { b.style.background = (t === tab) ? "#1C3F8F" : "#e2e8f0"; b.style.color = (t === tab) ? "#fff" : "#1e293b"; }
+  });
+}
+function tdcTab(tab) {
+  var tabs = ["efficacite","sooptimale","adjuvant","arret"];
+  tabs.forEach(function(t) {
+    var el = document.getElementById("tdc-content-" + t);
+    if (el) el.style.display = (t === tab) ? "block" : "none";
+    var b  = document.getElementById("tdctab-" + t);
+    if (b)  { b.style.background = (t === tab) ? "#1C3F8F" : "#e2e8f0"; b.style.color = (t === tab) ? "#fff" : "#1e293b"; }
+  });
+}
 </script>
+
 </body>
 </html>
