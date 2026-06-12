@@ -12523,320 +12523,427 @@ function icTabSwitch(type) {
       </div>
     </div>
     <div class="section" id="sec-dermato">
-      <div class="section-header">
-        <div class="section-accent" style="background:#92400e">🩹</div>
-        <div class="section-title"><h1>Dermatologie</h1><div class="breadcrumb">Dermatologie <span class="breadcrumb-sep">·</span> Section 24b</div></div>
-      </div>
+      <div class="section-header"><div class="section-accent">🔬</div><div class="section-title"><h1>Dermatologie</h1><div class="breadcrumb">Spécialités <span class="breadcrumb-sep">·</span> Section</div></div></div>
+
+      <!-- PILLS NAV DERM -->
       <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
-        <button onclick="document.getElementById('derm-1').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📌 Terminologie</button>
-        <button onclick="document.getElementById('derm-2').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔥 Inflammatoire</button>
-        <button onclick="document.getElementById('derm-3').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🦠 Infectieux</button>
-        <button onclick="document.getElementById('derm-4').scrollIntoView({behavior:'smooth'})" style="background:#c0392b;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔬 Néoplasique</button>
-        <button onclick="document.getElementById('derm-5').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">⚗️ Métabolique</button>
-        <button onclick="document.getElementById('derm-6').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🩹 Plaies chroniques</button>
-        <button onclick="document.getElementById('derm-7').scrollIntoView({behavior:'smooth'})" style="background:#7b3fa0;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🧰 Outil plaie</button>
-        <button onclick="document.getElementById('derm-8').scrollIntoView({behavior:'smooth'})" style="background:#c0392b;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🚨 Urgences</button>
+        <button onclick="document.getElementById('derm-1').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🏗️ Structure &amp; Fonctions</button>
+        <button onclick="document.getElementById('derm-2').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔍 Description lésions</button>
+        <button onclick="document.getElementById('derm-phototype').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">☀️ Phototypes</button>
+        <button onclick="document.getElementById('derm-inflam').scrollIntoView({behavior:'smooth'})" style="background:#c0392b;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔥 Inflammatoire</button>
+        <button onclick="document.getElementById('derm-infect').scrollIntoView({behavior:'smooth'})" style="background:#0a7a4e;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🦠 Infectieux</button>
+        <button onclick="document.getElementById('derm-neo').scrollIntoView({behavior:'smooth'})" style="background:#7b3fa0;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔬 Néoplasique</button>
+        <button onclick="document.getElementById('derm-autre').scrollIntoView({behavior:'smooth'})" style="background:#d97706;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">⚗️ Métabolique &amp; Plaies</button>
+        <button onclick="document.getElementById('derm-red').scrollIntoView({behavior:'smooth'})" style="background:#dc2626;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🚨 Drapeaux rouges</button>
       </div>
-      <div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:20px;">
-        <div style="flex:1;min-width:95px;background:#FEE2E2;border-radius:10px;padding:12px;text-align:center;"><div style="font-size:13px;font-weight:800;color:#c0392b;">ABCDE</div><div style="font-size:11px;color:#555;margin-top:4px;">Mélanome — règle</div></div>
-        <div style="flex:1;min-width:95px;background:#DCFCE7;border-radius:10px;padding:12px;text-align:center;"><div style="font-size:13px;font-weight:800;color:#0a7a4e;">SPF ≥ 30</div><div style="font-size:11px;color:#555;margin-top:4px;">Prévention</div></div>
-        <div style="flex:1;min-width:95px;background:#EEF2FF;border-radius:10px;padding:12px;text-align:center;"><div style="font-size:13px;font-weight:800;color:#1C3F8F;">Biopsie</div><div style="font-size:11px;color:#555;margin-top:4px;">Gold standard Dx</div></div>
-      </div>
-      <div class="block def">
-        <div class="block-title" id="derm-1"><span class="tag">📌 Terminologie de base</span></div>
-        <table>
-          <thead><tr><th>Lésion primaire</th><th>Définition</th><th>Exemples</th></tr></thead>
+
+      <!-- ═══ DERM-1: STRUCTURE & FONCTIONS ═══ -->
+      <div class="block def" id="derm-1">
+        <div class="block-title"><span class="tag">🏗️ 1. Structure &amp; Fonctions de la peau</span></div>
+        <div class="key-fact blue" style="margin-bottom:10px;"><strong>Plus grand organe du corps</strong> · ≈ 4 kg · 7 % de la masse corporelle · épaisseur 1,5 à 4 mm</div>
+        <table style="margin-bottom:10px;">
+          <thead><tr><th>Couche</th><th>Composition</th><th>Fonction principale</th></tr></thead>
           <tbody>
-            <tr><td>Macule</td><td>Lésion plane, colorée, &lt; 1 cm</td><td>Tache de vin · Pétéchie · Café-au-lait</td></tr>
-            <tr><td>Papule</td><td>Élévation solide &lt; 1 cm</td><td>Verrue · Acné · Lichen plan</td></tr>
-            <tr><td>Plaque</td><td>Élévation solide &gt; 1 cm</td><td>Psoriasis · Mycosis fongoïde</td></tr>
-            <tr><td>Vésicule</td><td>Bulle claire &lt; 1 cm</td><td>Herpès · Zona · Varicelle</td></tr>
-            <tr><td>Bulle</td><td>Cavité liquidienne &gt; 1 cm</td><td>Pemphigus · Pemphigoïde · Brûlure</td></tr>
-            <tr><td>Pustule</td><td>Bulle purulente</td><td>Acné · Folliculite · Impétigo</td></tr>
-            <tr><td>Nodule</td><td>Élévation profonde solide &gt; 1 cm</td><td>Kératose actinique · Carcinome basocellulaire</td></tr>
-            <tr><td>Urticaire</td><td>Plaque érythémateuse œdématiée transitoire</td><td>Réaction allergique · Dermographisme</td></tr>
+            <tr><td><strong>Épiderme</strong></td><td>Kératinocytes (90 %), mélanocytes, cellules de Langerhans, cellules de Merkel</td><td>Barrière physique + protection UV (mélanine)</td></tr>
+            <tr><td><strong>Derme</strong></td><td>Collagène, élastine, fibroblastes, vaisseaux, nerfs, glandes</td><td>Soutien mécanique · thermorégulation · sensation</td></tr>
+            <tr><td><strong>Hypoderme</strong></td><td>Tissu adipeux, fascia superficiel</td><td>Isolation thermique · réservoir énergétique · amortissement</td></tr>
           </tbody>
         </table>
+        <p class="content-text" style="font-weight:600;margin-bottom:6px;">Fonctions principales</p>
+        <div class="flag-list">
+          <div class="flag-item"><span class="flag-dot blue"></span><span><strong>Barrière (principale) :</strong> chimique (pH acide, défensines, mélanine) · physique (couche kératinisée, glycolipides) · biologique (macrophagocytose)</span></div>
+          <div class="flag-item"><span class="flag-dot blue"></span><span><strong>Thermorégulation :</strong> vasodilatation/vasoconstriction · glandes sudoripares eccrines</span></div>
+          <div class="flag-item"><span class="flag-dot blue"></span><span><strong>Sensitive :</strong> mécanorécepteurs (Meissner, Pacini), thermorécepteurs, nocicepteurs</span></div>
+          <div class="flag-item"><span class="flag-dot blue"></span><span><strong>Métabolique :</strong> synthèse vitamine D · gestion collagénase</span></div>
+          <div class="flag-item"><span class="flag-dot ink"></span><span><strong>Réservoir sanguin :</strong> ∼ 5 % du volume sanguin circulant</span></div>
+          <div class="flag-item"><span class="flag-dot ink"></span><span><strong>Excrétoire :</strong> ammoniac, urée, électrolytes via la transpiration</span></div>
+        </div>
+        <div class="key-fact yellow" style="margin-top:8px;"><strong>Annexes cutanées :</strong> Glandes sudoripares (eccrines · apocrines · cérumineuses · mammaires) · Ongles · Poils et follicules pileux</div>
       </div>
 
-      <div class="block clin">
-        <div class="block-title" id="derm-2"><span class="tag">🔥 Inflammatoire</span></div>
+      <!-- ═══ DERM-2: DESCRIPTION LÉSIONS ═══ -->
+      <div class="block para" id="derm-2">
+        <div class="block-title"><span class="tag">🔍 2. Description d&apos;une lésion — Approche systématique</span></div>
+        <div class="key-fact blue" style="margin-bottom:10px;"><strong>4 étapes :</strong> Schéma de distribution → Morphologie de la lésion primaire &amp; topographie → Lésions secondaires → Réaction à la palpation (palp. ou non · blanchissage ou non)</div>
+
+        <p class="content-text" style="font-weight:600;margin-bottom:6px;">Schéma de distribution</p>
+        <div class="flag-list" style="margin-bottom:10px;">
+          <div class="flag-item"><span class="flag-dot ink"></span><span>Localisé vs multiple · unilatéral vs bilatéral · symétrique vs asymétrique</span></div>
+          <div class="flag-item"><span class="flag-dot ink"></span><span>Linéaire · groupé · aléatoire</span></div>
+          <div class="flag-item"><span class="flag-dot ink"></span><span><strong>Zones particulières :</strong> visage · tronc · zones photoexposées · creux · périmalléolaire · muqueuses</span></div>
+        </div>
+
+        <p class="content-text" style="font-weight:600;margin-bottom:6px;">Lésions primaires</p>
+        <table style="margin-bottom:10px;">
+          <thead><tr><th>Taille &lt; 1 cm</th><th>Taille &gt; 1 cm</th><th>Description</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Macule</strong></td><td><strong>Tache</strong></td><td>Non palpable · changement de couleur uniquement</td></tr>
+            <tr><td><strong>Papule</strong></td><td><strong>Plaque</strong></td><td>Palpable · relief cutané</td></tr>
+            <tr><td><strong>Vésicule</strong></td><td><strong>Bulle</strong></td><td>Palpable · contenu liquidien clair</td></tr>
+            <tr><td><strong>Pustule</strong></td><td>—</td><td>Contenu purulent</td></tr>
+            <tr><td>—</td><td><strong>Nodule</strong></td><td>&gt; 1,5 cm · profond · en relief</td></tr>
+          </tbody>
+        </table>
+
+        <p class="content-text" style="font-weight:600;margin-bottom:6px;">Lésions secondaires</p>
+        <table style="margin-bottom:10px;">
+          <thead><tr><th>Lésion</th><th>Description</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Érythème</strong></td><td>Rougeur vive · blanchit à la vitropression (= vasculaire, bénin)</td></tr>
+            <tr><td><strong>Verruqueux</strong></td><td>Sec, ferme et rugueux</td></tr>
+            <tr><td><strong>Lichénoïde</strong></td><td>Lésion palpable dont les bords sont abrupts</td></tr>
+            <tr><td><strong>Folliculaire</strong></td><td>Avec pilosité/poil au centre</td></tr>
+            <tr><td><strong>Croûte</strong></td><td>Exsudat séché</td></tr>
+            <tr><td><strong>Excoriation</strong></td><td>Liée au grattage · perte épidermique superficielle</td></tr>
+            <tr><td><strong>Érosion</strong></td><td>Perte épidermique uniquement · cicatrise sans séquelle</td></tr>
+            <tr><td><strong>Ulcère</strong></td><td>Perte d&apos;intégrité épiderme jusqu&apos;au derme ou plus profond</td></tr>
+            <tr><td><strong>Nécrose</strong></td><td>Tissu noir, ferme, en momification</td></tr>
+          </tbody>
+        </table>
+
+        <p class="content-text" style="font-weight:600;margin-bottom:6px;">Autres termes spécifiques</p>
+        <table style="margin-bottom:10px;">
+          <thead><tr><th>Terme</th><th>Description</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Exanthème</strong></td><td>Éruption maculopapulaire centripète → largement distribuée</td></tr>
+            <tr><td><strong>Énanthème</strong></td><td>Similaire à l&apos;exanthème mais sur les muqueuses</td></tr>
+            <tr><td><strong>Intertrigo</strong></td><td>Érythème dans les plis cutanés (chaleur + humidité)</td></tr>
+            <tr><td><strong>Pétéchies / Purpura / Ecchymoses</strong></td><td>Extravasation érythrocytaire dans le derme (ne blanchit PAS) · Pétéchies &lt; 4 mm · Purpura 4–9 mm · Ecchymoses ≥ 1 cm · Non palpable = svt bénin · Palpable = svt malin</td></tr>
+            <tr><td><strong>Livedo réticulaire</strong></td><td>Érythème violacé réticulaire → froid, choc, vascularites, connectivites</td></tr>
+            <tr><td><strong>Dermographisme</strong></td><td>Érythème apparaissant au toucher/frottement ou à un changement de température</td></tr>
+          </tbody>
+        </table>
+        <div class="key-fact red">🔑 <strong>Blanchissable (vitropression) = vasculaire (bénin) · Non blanchissable (pétéchies/purpura) = extravasation érythrocytaire → toujours investiguer</strong></div>
+      </div>
+
+      <!-- ═══ DERM-PHOTOTYPE ═══ -->
+      <div class="block clin" id="derm-phototype">
+        <div class="block-title"><span class="tag">☀️ 3. Phototypes de Fitzpatrick</span></div>
+        <table>
+          <thead><tr><th>Phototype</th><th>Caractéristiques</th><th>Réaction au soleil</th><th>Risque</th></tr></thead>
+          <tbody>
+            <tr><td><strong>I</strong></td><td>Peau très claire, taches de rousseur, cheveux roux/blonds, yeux bleus</td><td>Brûle toujours, ne bronze jamais</td><td>Très élevé (mélanome, CBC)</td></tr>
+            <tr><td><strong>II</strong></td><td>Peau claire, cheveux blonds/châtains, yeux clairs</td><td>Brûle facilement, bronze peu</td><td>Élevé</td></tr>
+            <tr><td><strong>III</strong></td><td>Peau intermédiaire, cheveux châtains, yeux noisette</td><td>Brûle parfois, bronze progressivement</td><td>Modéré</td></tr>
+            <tr><td><strong>IV</strong></td><td>Peau olive, cheveux bruns foncés, yeux bruns</td><td>Brûle peu, bronze facilement</td><td>Faible</td></tr>
+            <tr><td><strong>V</strong></td><td>Peau foncée, cheveux noirs, yeux bruns-noirs</td><td>Brûle rarement, bronze abondamment</td><td>Très faible</td></tr>
+            <tr><td><strong>VI</strong></td><td>Peau très foncée / noire</td><td>Ne brûle jamais, bronze toujours</td><td>Minimal mais attention mélanome acral/sous-unguéal</td></tr>
+          </tbody>
+        </table>
+        <div class="note">📋 <strong>Utilité clinique :</strong> Guide la protection solaire, le dépistage du mélanome et la fréquence des contrôles dermatologiques. Phototypes I–II = dépistage mélanome annuel recommandé.</div>
+      </div>
+
+      <!-- ═══ DERM-INFLAM: INFLAMMATOIRE ═══ -->
+      <div class="block flag" id="derm-inflam">
+        <div class="block-title"><span class="tag">🔥 4. Désordres Inflammatoires</span></div>
+
+        <!-- 4.1 PAPULOSQUAMEUX / ECZÉMATEUX -->
         <div class="accordion">
           <div class="accordion-item open">
-            <div class="accordion-header">Dermatites — Eczéma atopique & stase veineuse
+            <div class="accordion-header">🧴 4.1 Papulosquameux &amp; Dermatoeczémateux — Types de Dermatites
               <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
             </div>
             <div class="accordion-body">
-              <strong>Atopique (eczéma) :</strong> Contact avec allergène · souvent triade atopique (eczéma + asthme + rhinite allergique) · chronicisation → lichénification · Prurit intense · Xérose · Creux poplités/antécubitaux<br>
-              <strong>De stase veineuse :</strong> ATCD veineux/chirurgicaux · érythème + ulcère ± vésicule · stigmates d'insuffisance veineuse (hémosidérose, lipodermatosclérose, xérose)<br>
-              <strong>Tx :</strong> Émollients (base) · Corticostéroïdes topiques ± systémiques en phase aiguë · Tacrolimus 0,03–0,1 % (visage/plis) · <span class="drug-badge ci">‼️ Compression obligatoire si stase veineuse ‼️</span> (± injection sclérosante/embolisation selon les cas)<br>
-              Modéré-sévère (atopique) : <span class="drug-badge line1">Dupilumab (Dupixent)</span> 300 mg SC q2 sem · Anti-IL-4/IL-13
-            </div>
-          </div>
-          <div class="accordion-item">
-            <div class="accordion-header">Psoriasis
-              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-            </div>
-            <div class="accordion-body">
-              Papules érythémateuses + plaques à squames argentés bien délimitées · Coudes/genoux/cuir chevelu/sacrum · Signe d'Auspitz · étiologie variable (médicaments, stress) · peut s'associer à une arthrite psoriasique<br>
-              Formes : Vulgaris (80 %) · Guttata (post-strepto) · Pustulaire · Érythrodermique · Psoriasis arthropathique (30 %)<br>
-              <strong>PASI :</strong> score sévérité · &gt; 10 = modéré-sévère → candidat biologique<br>
-              <strong>Tx léger :</strong> Corticostéroïdes topiques · Calcipotriol · Tazarotène · PUVA<br>
-              <strong>Tx sévère/très sévère :</strong><br>
-              · <span class="drug-badge line1">Méthotrexate 7,5–25 mg/sem</span> (surveiller: FSC, ALT, Cr) · <span class="drug-badge line1">Ciclosporine</span> · Acitrétine<br>
-              · Biologiques : <span class="drug-badge line1">Anti-TNF (adalimumab/étanercept)</span> · Anti-IL-17 (sécukinumab/ixékizumab) · Anti-IL-23 (guselkumab/risankizumab)
-            </div>
-          </div>
-          <div class="accordion-item">
-            <div class="accordion-header">Urticaire & Érythème
-              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-            </div>
-            <div class="accordion-body">
-              <strong>Urticaire :</strong> Plaques érythémateuses prurigineuses · souvent IgE/IgG médiée → histamine, bradykinine, dégranulation des mastocytes<br>
-              <strong>Érythème (polymorphe) :</strong> Éruption maculopapulaire symétrique tronculaire (épargne souvent le visage) · souvent réaction à médiation T de type IV<br>
-              <strong>Déclencheurs :</strong> iatrogène/IgE (PNC, céphalosporines, TMP-SMX, antiépileptiques, AINS, IECA, allopurinol) · dégranulation mastocytaire (vancomycine, AINS, agrumes) · photosensibilité (AINS, tétracyclines) · lupus/vascularites (complément) · idiopathique<br>
-              <strong>Pyoderma gangrenosum :</strong> &gt; 55 ans · dérèglement IL/neutrophiles · associé aux maladies auto-immunes (PAR, MII) ou oncologiques<br>
-              <strong>Érythème noueux :</strong> nodules cutanés douloureux (panniculite) · étiologies infectieuses, MII, sarcoïdose, maladie de Behçet
-            </div>
-          </div>
-          <div class="accordion-item">
-            <div class="accordion-header">Acné vulgaire — Gradation
-              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-            </div>
-            <div class="accordion-body">
-              <strong>Légère (comédons) :</strong> Rétinoïde topique (trétinoïne 0,025–0,1 %) ± Peroxyde de benzoyle<br>
-              <strong>Modérée (papules/pustules) :</strong> + Antibiotique topique (clindamycine) · ATB PO si nécessaire (doxycycline 100 mg BID × 3 mois)<br>
-              <strong>Sévère (nodulo-kystique) :</strong> <span class="drug-badge line1">Isotrétinoïne (Accutane) 0,5–1 mg/kg/j × 4–6 mois</span> · <span class="drug-badge ci">Tératogène → iPLEDGE obligatoire</span><br>
-              · Surveillance : Lipides · ALT · Dépression · Contraception × 1 mois post-arrêt
-            </div>
-          </div>
-        </div>
-        <div class="flag-list" style="margin-top:10px;">
-          <div class="flag-item"><span class="fi-icon">🚨</span><span><strong>DRESS :</strong> hyperéosinophilie + distribution &gt; 50 % + fièvre + ictère + adénopathies + ↑ transaminases + IRA</span></div>
-          <div class="flag-item"><span class="fi-icon">🚨</span><span><strong>Stevens-Johnson (SJS) / Nécrolyse épidermique toxique (NET) :</strong> épidermolyse progressive, atteinte des muqueuses, signe de Nikolsky — mortalité SJS ≈ 10 %, NET ≈ 30 %</span></div>
-          <div class="flag-item"><span class="fi-icon">🚨</span><span><strong>Vascularites :</strong> selon le calibre des vaisseaux atteints (petits/moyens/gros) → souvent purpura palpable (petits vaisseaux) ± syndrome poumons-rein ANCA (microhémorragies alvéolaires + glomérulonéphrite)</span></div>
-        </div>
-      </div>
-
-      <div class="block clin">
-        <div class="block-title" id="derm-3"><span class="tag">🦠 Infectieux cutanés</span></div>
-        <div class="accordion">
-          <div class="accordion-item open">
-            <div class="accordion-header">Viral — Éruptions érythémateuses & papulovésiculaires
-              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-            </div>
-            <div class="accordion-body">
-              <strong>Éruption érythémateuse — penser :</strong> rougeole, méningococcémie, VIH, syphilis secondaire, Rickettsies — chez l'adulte, rechercher : vaccination rougeole/contact infectieux, comportement à risque ITSS, voyages (signes systémiques → avis infectiologie) · 🚨 signes systémiques + saignement extériorisé → isolement strict<br><br>
-              <strong>Famille Herpesviridae (papulovésiculaire) :</strong><br>
-              · <strong>VZV — Varicelle :</strong> primo-infection, éruption généralisée → traitement supportif<br>
-              · <strong>VZV — Zona :</strong> réactivation, distribution dermatomale (le plus souvent thoracique), prodrome douloureux → <span class="drug-badge line1">Valacyclovir 1 g BID × 7j</span> (débuter &lt; 72h) + analgésie (prévention névralgie post-herpétique : gabapentine, prégabaline, amitriptyline, lidocaïne patch, capsaïcine 8 %)<br>
-              · <strong>HSV (types 1 et 2) :</strong> lèvres/peau → Valacyclovir 1 g BID × 10j (1er épisode) ou 1 g DIE × 3j (récidive)<br>
-              🚨 <strong>Red flags zona :</strong> zona ophtalmique — atteinte V1, risque de cécité (urgence si nez de Hutchinson) · syndrome de Ramsay-Hunt (nerf auditif) · zona disséminé chez l'immunosupprimé → référer en spécialité · complications : encéphalite, méningite aseptique<br>
-              <strong>Prévention :</strong> Shingrix (Zoster recombinant) 2 doses q2–6 mois — gratuit &gt; 75 ans, à envisager &lt; 50 ans si immunosuppression sévère (≈ 95 % efficace)
-            </div>
-          </div>
-          <div class="accordion-item">
-            <div class="accordion-header">Bactérien — Cellulite, Impétigo/Ecthyma, Endocardite
-              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-            </div>
-            <div class="accordion-body">
-              <strong>Cellulite</strong> (forme infectieuse cutanée la plus courante chez l'adulte) : érythème aigu/subaigu douloureux ± symptômes systémiques · pathogènes : Streptococcus spp, Staphylococcus spp (cocci Gram +)<br>
-              · Variantes : érysipèle (Sx systémiques +, placard franc + atteinte lymphatique) · lymphangite (trainée érythémateuse le long du réseau lymphatique) · 🚨 ténosynovite/arthrite septique/ostéomyélite (atteinte des structures profondes) · 🚨 fasciite nécrosante, gangrène de Fournier, gangrène gazeuse clostridienne (infections nécrosantes)<br>
-              <strong>Tx :</strong> <span class="drug-badge line1">Céphalosporine de 1re génération × 5–7j</span> + suivi clinique obligatoire · progression de la plaie → hospitalisation · pas d'amélioration → réévaluer le diagnostic initial ou changer d'antibiotique<br><br>
-              <strong>Impétigo / Ecthyma</strong> (infection superficielle, souvent strepto/staphylo · FdR : mauvaise hygiène, porteur sain) :<br>
-              · Impétigo : vésicules sur fond érythémateux → croûte « miellée » dorée, bulleux ou non — souvent visage/lèvres chez l'enfant, plus diffus chez l'adulte<br>
-              · Ecthyma : forme ulcérée et purulente (vésiculaire à l'origine)<br>
-              · Tx : ATB topiques (mupirocine, fucidin) ou systémiques selon l'agent causal et la sensibilité<br><br>
-              <strong>Endocardite — manifestations cutanées possibles :</strong> forme aiguë → embolies septiques + microhémorragies (sous les paupières, sous-unguéales, paumes) · forme chronique (inflammatoire) → nodules d'Osler, lésions de Janeway, purpura
-            </div>
-          </div>
-          <div class="accordion-item">
-            <div class="accordion-header">Fungique — Dermatophytoses, Candidose, Intertrigo
-              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-            </div>
-            <div class="accordion-body">
-              <strong>Dermatophytoses</strong> (Tinea cruris/pedis/unguium) : creux cutanés · interdigital — pied d'athlète · ongles (faible succès d'éradication) → antifongique topique en 1re ligne, systémique si sévère/surinfecté/immunosupprimé<br>
-              <strong>Candidose :</strong> lésions satellites en périphérie d'une zone érythémateuse d'un pli cutané (chaleur/humidité) → antifongique topique<br>
-              <strong>Intertrigo</strong> (dermatite de contact irritative souvent surinfectée) : plis, irritation, chaleur et humidité → garder propre et sec (Interdry) — si surinfection, fungique &gt; bactérien possible
-            </div>
-          </div>
-        </div>
-        <div class="flag-list" style="margin-top:10px;">
-          <div class="flag-item"><span class="fi-icon">🚨</span><span><strong>Red flags bactériens :</strong> fasciite nécrosante (douleur disproportionnée) · cellulite du visage ou de la main · arthrite septique/ostéomyélite · dissémination systémique ou progression rapide · échec du traitement / suspicion de bactérie multirésistante</span></div>
-        </div>
-      </div>
-
-      <div class="block clin">
-        <div class="block-title" id="derm-4"><span class="tag">🔬 Néoplasique cutané</span></div>
-        <div class="accordion">
-          <div class="accordion-item open">
-            <div class="accordion-header">Lésions malignes — Mélanome, CEC, CBC, Lymphome cutané
-              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-            </div>
-            <div class="accordion-body">
-              <strong>Mélanome :</strong> FdR : exposition solaire, teint pâle, hérédité — piège : localisation sous-unguéale<br>
-              · <strong>ABCDE :</strong> <strong>A</strong>symétrie · <strong>B</strong>ords irréguliers · <strong>C</strong>ouleurs multiples (polychrome) · <strong>D</strong>iamètre &gt; 6 mm · <strong>É</strong>volution rapide — + ulcération, saignement, satellites<br>
-              · Stadification : Clark/Breslow (épaisseur en mm) → TNM · biopsie du ganglion sentinelle si épaisseur &gt; 0,8 mm<br>
-              · Tx stade IV : <span class="drug-badge line1">Anti-PD-1 (Nivolumab/Pembrolizumab)</span> · Anti-CTLA-4 (Ipilimumab) · BRAF muté : Dabrafénib + Tramétinib<br>
-              <strong>Carcinome épidermoïde (CEC) :</strong> FdR : âge, zones photoexposées, kératose actinique préexistante · métastase &lt; 5 % · Tx : excision chirurgicale<br>
-              <strong>Carcinome basocellulaire (CBC) :</strong> perle translucide télangectasique, aspect luisant, zones exposées · majoritairement indolent, rarement métastatique<br>
-              <strong>Kératoacanthome :</strong> croissance rapide avec cratère de kératine central → biopsie (peut mimer un CEC)<br>
-              <strong>Lymphome cutané :</strong> à considérer devant des plaques chroniques atypiques ou réfractaires<br>
-              FdR communs : UV · immunosuppression · xeroderma pigmentosum · arsenic · VPH · <strong>Tx général : exérèse ± oncologie</strong>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <div class="accordion-header">Lésions bénignes pouvant mimer le malin
-              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-            </div>
-            <div class="accordion-body">
-              <strong>Kératose actinique :</strong> faible risque de transformation — précurseur potentiel du CEC<br>
-              <strong>Lentigo solaire/sénile :</strong> macule pigmentée bénigne liée à la photoexposition<br>
-              <strong>Naevus :</strong> grain de beauté typique — comparer systématiquement à la méthode ABCDE pour distinguer d'un mélanome<br>
-              <strong>Kératose séborrhéique :</strong> lésion verruqueuse « collée » bénigne, fréquente avec l'âge
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="block para">
-        <div class="block-title" id="derm-5"><span class="tag">⚗️ Métabolique ou toxique</span></div>
-        <p class="content-text"><strong>Photodermatite :</strong> exposition solaire toujours impliquée — irritants cutanés en cause : agrumes, céleri, doxycycline (peut être sévère).</p>
-        <p class="content-text" style="margin-top:8px;"><strong>Obésité / Anorexie :</strong> altération du corticisme ou carences nutritionnelles → angiodermatite, stries violacées, alopécie, xérose.</p>
-        <p class="content-text" style="margin-top:8px;"><strong>Traitement :</strong> retrait de l'agent en cause ou supplémentation ciblée.</p>
-      </div>
-
-      <div class="block clin">
-        <div class="block-title" id="derm-6"><span class="tag">🩹 Plaies cutanées chroniques</span></div>
-        <div class="highlight cream" style="margin-bottom:10px;font-size:13px;"><strong>🚨 Plaies suspectes :</strong> apparition spontanée · chroniques (&gt; 6 semaines non guéries) · évolution ou histoire atypique</div>
-        <div class="accordion">
-          <div class="accordion-item open">
-            <div class="accordion-header">Plaies ischémiques
-              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-            </div>
-            <div class="accordion-body">
-              Causées par des comorbidités ischémiques (HTA, dyslipidémie, tabagisme, diabète) · étiologies variées : athéromatose, maladie de Buerger, cryoglobulinémies<br>
-              Présentation : peu exsudatives, localisées en distal, douleur +++, excroissance &gt; creux<br>
-              <span class="drug-badge ci">‼️ Priorité : éviter la surinfection (povidone iodée) + revasculariser si possible — amputation parfois inévitable ‼️</span>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <div class="accordion-header">Ulcère veineux
-              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-            </div>
-            <div class="accordion-body">
-              <strong>FdR :</strong> non modifiables (hérédité, âge, emploi, grossesse, ATCD de TVP, trauma/chirurgie des MI) · modifiables (obésité, tabagisme — retarde la guérison, position/activités)<br>
-              <strong>Apparition :</strong> spontanée ou précédée d'une dermatite de stase, ou retard de guérison anormal d'une plaie traumatique<br>
-              <strong>Indices :</strong> œdème vespéral des MI (souvent bilatéral), sensation de lourdeur sourde, plaie pré-tibiale ou périmalléolaire on/off, prurit/excoriation fréquents<br>
-              <strong>Stigmates d'insuffisance veineuse :</strong> dermite ocre (hémosidérose), eczéma variqueux, lipodermatosclérose, xérose/squames abondantes<br>
-              <strong>Tx :</strong> compression (bas 10–20 mmHg, si pas de compromis vasculaire) · corticostéroïdes topiques si dermatite associée (2–3 sem)
-            </div>
-          </div>
-          <div class="accordion-item">
-            <div class="accordion-header">Ulcère du pied diabétique (mal perforant)
-              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-            </div>
-            <div class="accordion-body">
-              <strong>Épidémiologie :</strong> 34 % de risque d'ulcère du pied au cours de la vie · 50 % se compliquent d'une infection → 20 % d'hospitalisation → 20 % d'amputation · mortalité à 5 ans post-amputation proximale ≈ 70 %<br>
-              <strong>Physiopathologie :</strong> polyneuropathies (sensitive, autonome, motrice) + atteinte micro-ischémique ± maladie artérielle + perturbations immunologiques (réponse neutrophilique altérée si hyperglycémie) → dommages/microhémorragies sous les callosités et/ou nécrose vasculaire → haut potentiel infectieux<br>
-              <strong>Classification WIfI</strong> (Wound/Ischemia/Foot Infection — bonne valeur prédictive de la guérison et du besoin de revascularisation) :
-              <table style="margin-top:6px;">
-                <thead><tr><th>Stade</th><th>Amputation majeure à 1 an</th><th>Survie sans amputation à 1 an</th></tr></thead>
+              <div class="key-fact blue" style="margin-bottom:8px;">Définition : inflammation de la couche superficielle de la peau par un facteur de provocation</div>
+              <table style="margin-bottom:10px;">
+                <thead><tr><th>Type</th><th>Présentation clinique</th><th>Caractéristiques distinctives</th></tr></thead>
                 <tbody>
-                  <tr><td>Stade 1 (très faible)</td><td>0 %</td><td>83 %</td></tr>
-                  <tr><td>Stade 2 (faible)</td><td>8 %</td><td>76 %</td></tr>
-                  <tr><td>Stade 3 (modéré)</td><td>11 %</td><td>75 %</td></tr>
-                  <tr><td>Stade 4 (élevé)</td><td>38 %</td><td>55 %</td></tr>
+                  <tr><td><strong>Dermatite atopique (eczéma)</strong></td><td>Contact avec allergène · prurit intense · erythème + vésicules + croûtes</td><td>⚠️ Souvent triade atopique : dermatite + asthme + rhinite allergique · Chronicisation → <strong>lichénification</strong></td></tr>
+                  <tr><td><strong>Dermatite de stase veineuse</strong></td><td>Antécédents veineux/chirurgicaux · érythème + ulcère ± vésicule périmalléolaire</td><td>Stigmates d&apos;insuffisance veineuse : hémosidérose, lipodermatosclérose, xérose · Côté médial MI</td></tr>
+                  <tr><td><strong>Dermatite de contact</strong></td><td>Érythème prurigineux délimité à la zone de contact</td><td>Irritative (pH, produits) vs Allergique (type IV, IgE)</td></tr>
+                  <tr><td><strong>Dermatite séborrhéique</strong></td><td>Plaques érythémateuses + squames grasses · cuir chevelu, sourcils, sillons nasogéniens</td><td>Rôle Malassezia spp · chronique-récidivant</td></tr>
                 </tbody>
               </table>
-              <p class="content-text" style="margin-top:8px;"><strong>Mise en décharge</strong> (curatif et préventif) : sandale type Barouk/Darco, botte de décharge, plâtre de contact total<br>
-              <strong>Prise en charge globale :</strong> culture si tableau infectieux + pus « de qualité » · Doppler artériel &gt; radiographie si indiqué · décharge/compression au besoin · pansement adapté<br>
-              <strong>Pansements (codes RAMQ) :</strong> DE101 (absorbants — mousse, alginates, hydrofibre) · DE58 (antimicrobiens — argent, iode, 1re utilisation) · DE339 (après DE58, délai 2 ans)</p>
+              <div class="sec-divider"><div class="sd-shape sq"></div><div class="sd-label">Traitement — Dermatites</div><div class="sd-line"></div></div>
+              <table>
+                <thead><tr><th>Phase</th><th>Traitement</th><th>Notes</th></tr></thead>
+                <tbody>
+                  <tr><td><strong>Aiguë</strong></td><td>Corticostéroïdes topiques ± systémiques · Hydratation +++ (émollients)</td><td>Choisir puissance selon localisation (visage = faible)</td></tr>
+                  <tr><td><strong>Stase veineuse</strong></td><td><span class="drug-badge warn">‼️ Compression obligatoire ‼️</span> · Corticostéroïdes topiques si dermatite (2–3 sem.)</td><td>Bas de compression 10–20 mmHg si pas de compromis vasculaire · Embolisation/injection sclérosante certains cas</td></tr>
+                  <tr><td><strong>Entretien (eczéma)</strong></td><td>Inhibiteurs calcineurine topiques (tacrolimus, pimécrolimus) · dupilumab (biologiques)</td><td>Éviter CS topiques puissants au long cours (atrophie)</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <div class="accordion-header">🟠 4.2 Psoriasis
+              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+            </div>
+            <div class="accordion-body">
+              <div class="flag-list">
+                <div class="flag-item"><span class="flag-dot red"></span><span><strong>Présentation :</strong> Papules érythémateuses + plaques avec squames argentées · coudes, genoux, cuir chevelu, ongles (pitting)</span></div>
+                <div class="flag-item"><span class="flag-dot ink"></span><span><strong>Étiologie :</strong> Dysrégulation immunitaire (Th17/IL-23) · déclencheurs : médicaments (lithium, BB, anti-TNF), stress, infection (strep)</span></div>
+                <div class="flag-item"><span class="flag-dot yellow"></span><span><strong>Associations :</strong> Arthrite psoriasique (30 %) · MCV · maladies métaboliques · obésité</span></div>
+              </div>
+              <table style="margin-top:8px;">
+                <thead><tr><th>Sévérité</th><th>Traitement</th></tr></thead>
+                <tbody>
+                  <tr><td><strong>Légère</strong></td><td>Corticostéroïdes topiques · analogues vitamine D (calcipotriol) · émollients · photothérapie</td></tr>
+                  <tr><td><strong>Modérée–Sévère</strong></td><td>Méthotrexate · cyclosporine · acitrétine · Biologiques : anti-TNF (adalimumab), anti-IL-17 (sécukinumab), anti-IL-23 (guselkumab)</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <div class="accordion-header">🌿 4.3 Urticaire &amp; Érythèmes médicamenteux
+              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+            </div>
+            <div class="accordion-body">
+              <div class="key-fact blue" style="margin-bottom:8px;"><strong>Urticaire :</strong> Plaques érythémateuses prurigineuses → IgE/IgG médiée, histamine, bradykinine, dégranulation mastocytes · Mobile et fugace</div>
+              <div class="key-fact blue" style="margin-bottom:8px;"><strong>Érythème médicamenteux :</strong> Éruption maculopapulaire symétrique tronculaire (épargne souvent le visage) → réaction T-médiée de type IV</div>
+              <table style="margin-bottom:8px;">
+                <thead><tr><th>Mécanisme</th><th>Médicaments impliqués</th></tr></thead>
+                <tbody>
+                  <tr><td>IgE médiée / histamine / bradykinine</td><td>PNC, céphalosporines, TMP-SMX, antiépileptiques, AINS, IECA, allopurinol</td></tr>
+                  <tr><td>Dégranulation mastocytes (non-IgE)</td><td>Vancomycine (Red Man Syndrome), AINS, agrumes</td></tr>
+                  <tr><td>Photosensibilité</td><td>AINS, tétracyclines, fluoroquinolones</td></tr>
+                  <tr><td>Lupus/vascularites</td><td>Impliquant le complément</td></tr>
+                </tbody>
+              </table>
+              <table>
+                <thead><tr><th>Autre érythème</th><th>Description</th><th>Contexte</th></tr></thead>
+                <tbody>
+                  <tr><td><strong>Pyoderma gangrenosum</strong></td><td>Ulcère douloureux à bords violacés, dérèglement IL/neutrophiles</td><td>&gt; 55 ans · associé aux maladies auto-immunes (PAR, MII) ou oncologiques</td></tr>
+                  <tr><td><strong>Érythème noueux</strong></td><td>Nodules cutanés douloureux · panniculite (inflammation tissu adipeux)</td><td>Étiologies : infectieux · MII · sarcoïdose · Behçet</td></tr>
+                </tbody>
+              </table>
+              <div class="note" style="margin-top:8px;"><strong>Traitement urticaire :</strong> Antihistaminiques H1 (cétirizine, loratadine) · H2 si réfractaire · Corticostéroïdes si sévère · Épinéphrine si anaphylaxie · Omalizumab si urticaire chronique réfractaire</div>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="block rx">
-        <div class="block-title" id="derm-7"><span class="tag">🧰 Outil interactif — Aide à l'identification d'une plaie chronique</span></div>
-        <p class="content-text" style="margin-bottom:14px;">Devant une <strong>plaie chronique des membres inférieurs</strong> (&gt; 6 semaines, ou évolution/histoire atypique), choisissez le tableau qui correspond le mieux à la présentation pour orienter l'évaluation et la prise en charge initiale. <em>Outil d'aide à la décision — ne remplace pas le jugement clinique ; en cas de doute ou de présentation mixte, référer pour évaluation vasculaire/spécialisée.</em></p>
+      <!-- ═══ DERM-INFECT: INFECTIEUX ═══ -->
+      <div class="block def" id="derm-infect">
+        <div class="block-title"><span class="tag">🦠 5. Désordres Infectieux</span></div>
 
-        <style>
-          .plaie-tool { font-family: var(--font); color: var(--ink); font-size: 14px; }
-          .plaie-tool .plaie-step { background: var(--cream2); border: 1px solid var(--cream3); padding: 16px 18px; margin-bottom: 14px; border-radius: var(--radius); }
-          .plaie-tool h4 { font-size: 13px; text-transform: uppercase; letter-spacing: .04em; margin-bottom: 10px; font-weight: 700; }
-          .plaie-tool .plaie-hint { font-size: 13px; font-weight: 400; margin-bottom: 10px; }
-          .plaie-tool .plaie-choice-grid { display: flex; flex-wrap: wrap; gap: 10px; }
-          .plaie-tool .plaie-choice-card { flex: 1 1 240px; cursor: pointer; background: #fff; border: 2px solid var(--cream3); border-radius: var(--radius); padding: 12px 14px; font-size: 13px; font-weight: 600; line-height: 1.4; transition: border-color .15s, background .15s, transform .1s, color .15s; }
-          .plaie-tool .plaie-choice-card:hover { border-color: var(--blue); background: var(--blue-lt); transform: translateY(-1px); }
-          .plaie-tool .plaie-choice-card.selected { border-color: var(--blue); background: var(--blue-lt); color: var(--blue); }
-          .plaie-tool .plaie-choice-card.selected.red { border-color: var(--red); background: var(--red-lt); color: var(--red); }
-          .plaie-tool .plaie-choice-card.selected.yellow { border-color: var(--yellow); background: rgba(240,180,41,.15); color: #92400e; }
-          .plaie-tool .plaie-hidden { display: none; }
-          .plaie-tool .plaie-result-box { background: var(--blue-lt); border-left: 6px solid var(--blue); padding: 18px; margin-top: 4px; border-radius: var(--radius); }
-          .plaie-tool .plaie-result-box.red { background: var(--red-lt); border-left-color: var(--red); }
-          .plaie-tool .plaie-result-box.yellow { background: rgba(240,180,41,.15); border-left-color: var(--yellow); }
-          .plaie-tool .plaie-result-title { font-weight: 700; text-transform: uppercase; font-size: 11px; letter-spacing: .04em; margin-bottom: 6px; }
-          .plaie-tool .plaie-result-title.blue { color: var(--blue); }
-          .plaie-tool .plaie-result-title.red { color: var(--red); }
-          .plaie-tool .plaie-result-title.yellow { color: #92400e; }
-          .plaie-tool .plaie-result-text { font-size: 13px; line-height: 1.6; }
-        </style>
+        <div class="accordion">
+          <div class="accordion-item open">
+            <div class="accordion-header">📲 5.1 Viral — Éruptions d&apos;origine virale
+              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+            </div>
+            <div class="accordion-body">
+              <div class="key-fact red" style="margin-bottom:8px;">Éruption érythémateuse → penser : Rougeole · VIH · Méningococcémie · Syphilis secondaire · Rickettsies<br>⚠️ Signes systémiques + saignement extériorisé → <strong>ISOLEMENT STRICT</strong></div>
+              <div class="key-fact ink" style="margin-bottom:8px;"><strong>Dépistage devant toute éruption érythémateuse :</strong> Vaccination rougeole à jour ? · RSNP ou comportement ITSS ? · Voyages récents (si sx systémiques → avis infectiologie)</div>
 
-        <div class="plaie-tool">
-          <div class="plaie-step">
-            <h4>Quel tableau correspond le mieux à la plaie observée?</h4>
-            <p class="plaie-hint">Considérer ensemble : localisation, douleur, exsudat, bordures, terrain/comorbidités</p>
-            <div class="plaie-choice-grid">
-              <div class="plaie-choice-card" onclick="plaieSelect('ischemique',this)">🔴 Distale (orteils/talon) · peu exsudative · <strong>très douloureuse</strong> · bordures nettes · FdR athéromateux (HTA, dyslipidémie, tabac, diabète, Buerger)</div>
-              <div class="plaie-choice-card" onclick="plaieSelect('veineux',this)">🔵 Périmalléolaire/pré-tibiale · exsudative · peu douloureuse · œdème vespéral bilatéral · stigmates veineux (dermite ocre, varices, lipodermatosclérose)</div>
-              <div class="plaie-choice-card" onclick="plaieSelect('diabetique',this)">🟡 Plante du pied / zone de pression (callosité) · souvent <strong>indolore</strong> · diabète connu avec neuropathie</div>
-              <div class="plaie-choice-card" onclick="plaieSelect('atypique',this)">⚪ Présentation atypique, mixte, ou apparition spontanée sans tableau clair</div>
+              <table style="margin-bottom:8px;">
+                <thead><tr><th>Pathogène</th><th>Présentation clinique</th><th>Traitement</th><th>Notes</th></tr></thead>
+                <tbody>
+                  <tr><td><strong>VZV — Varicelle</strong></td><td>Primo-infection · éruption généralisée prurigineuse · évolution macule → papule → vésicule → croûte</td><td>Supportif (antihistaminiques, calamine) · Valacyclovir si immunosupprimé ou adulte</td><td>Contagieux jusqu&apos;à assèchement de toutes les vésicules</td></tr>
+                  <tr><td><strong>VZV — Zona</strong></td><td>Réactivation VZV · distribution dermatomale · douleur neuropathique + éruption vésiculaire unilatérale</td><td><strong>Valacyclovir 1 g BID × 7 jours</strong> + analgésie (prévention névralgie post-herpétique)</td><td>Initier &lt; 72h · Vaccination zona gratuite &gt; 75 ans · envisager &lt; 50 si immunosuppression</td></tr>
+                  <tr><td><strong>HSV — Type 1 &amp; 2</strong></td><td>Lèvres, peau génitale · vésicules douloureuses regroupées sur fond érythémateux</td><td>1er épisode : <strong>Valacyclovir 1 g BID × 10 j</strong> · Récurrence : 1 g DIE × 3 j</td><td>Suppression long terme si récurrences fréquentes · Acyclovir si grossesse</td></tr>
+                  <tr><td><strong>VPH — Verrues</strong></td><td>Papules hyperkératosiques · verrues plantaires douloureuses</td><td>Acide salicylique topique · cryothérapie (N₂ liquide) · électrodessication</td><td>Souvent résistant · vaccination préventive</td></tr>
+                  <tr><td><strong>Molluscum contagiosum</strong></td><td>Papules perlées ombiliquées · auto-résolution possible</td><td>Curetage · cantharidin topique · cryothérapie</td><td>Enfants et immunosupprimés</td></tr>
+                </tbody>
+              </table>
+              <div class="highlight red" style="font-size:12px;"><strong>🚨 Drapeaux rouges — Zona :</strong> Zona ophtalmique (V1 → risque cécité) · Ramsay-Hunt (nerf auditif → paralysie faciale) · Zona disséminé chez immunosupprimé → référer en spécialité<br>Complications : encéphalite · méningite aseptique</div>
             </div>
           </div>
 
-          <div id="plaie-result-box" class="plaie-result-box plaie-hidden"></div>
+          <div class="accordion-item">
+            <div class="accordion-header">🧫 5.2 Bactérien
+              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+            </div>
+            <div class="accordion-body">
+              <table style="margin-bottom:10px;">
+                <thead><tr><th>Pathologie</th><th>Présentation</th><th>Agent</th><th>Traitement</th><th>Notes</th></tr></thead>
+                <tbody>
+                  <tr><td><strong>Cellulite</strong></td><td>Érythème aigu/subaigu douloureux ± sx systémiques · bords mal définis · chaleur + œdème</td><td><em>Streptococcus</em> spp, <em>Staphylococcus</em> spp (cocci Gram +)</td><td>Céphalosporines 1re génération × 5–7 jours · Suivi clinique obligatoire · Si progression → hospitalisation · Si échec → réévaluer Dx/changer ATB</td><td>Cause infectieuse la plus courante chez l&apos;adulte</td></tr>
+                  <tr><td><strong>Érysipèle</strong></td><td>Placard érythémateux franc + bords surélevés bien définis + sx systémiques plus présents + atteinte lymphatique</td><td><em>Streptococcus</em> pyogenes (Strep A)</td><td>Pénicilline G IV ou amoxicilline PO</td><td>Variante superficielle de la cellulite</td></tr>
+                  <tr><td><strong>Impétigo</strong></td><td>Vésicules sur fond érythémateux → croûte « miellée » (dorée) · bulleux ou non · surtout visage/lèvres</td><td><em>Streptococcus</em> / <em>Staphylococcus</em></td><td>ATB topiques (mupirocine, fucidin) · systémiques selon agent causal et sensibilité</td><td>FdR : mauvaise hygiène · porteur sain</td></tr>
+                  <tr><td><strong>Ecthyma</strong></td><td>Version ulcérée et purulente de l&apos;impétigo → vésiculaire → ulcère croûteux</td><td><em>Streptococcus</em> / <em>Staphylococcus</em></td><td>ATB systémiques (flucloxacilline, céphalosporines)</td><td>Atteint le derme (vs impétigo = épiderme)</td></tr>
+                  <tr><td><strong>Endocardite — Manifestations cutanées</strong></td><td>Aiguë : embolies septiques · hémorragies sous-unguéales / sous les paupières · Chronique : nodules d&apos;Osler · lésions de Janeway · purpura</td><td><em>Staphylococcus</em> / <em>Streptococcus</em></td><td>Référer · hémocultures · ATB IV prolongés</td><td>Purpura palpable + signes systémiques = urgence</td></tr>
+                </tbody>
+              </table>
+              <div class="highlight red" style="font-size:12px;"><strong>🚨 Drapeaux rouges bactériens :</strong> Fasciite nécrosante (douleur disproportionnée — urgence chirurgicale) · Cellulite main ou visage · Arthrite septique / ostéomyélite · Dissémination systémique · Progression rapide · Échec au traitement / suspicion SARM</div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <div class="accordion-header">🍄 5.3 Fungique
+              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+            </div>
+            <div class="accordion-body">
+              <table>
+                <thead><tr><th>Pathologie</th><th>Localisation</th><th>Présentation</th><th>Traitement</th></tr></thead>
+                <tbody>
+                  <tr><td><strong>Dermatophytoses</strong></td>
+                    <td>Tinea cruris (creux cutanés) · Tinea pedis (pied d&apos;athlète, interdigital) · Tinea unguium (ongles)</td>
+                    <td>Plaque érythémateuse annulaire à bords actifs · prurit · Ongles : épaississement + onycholyse + jaunissement</td>
+                    <td>Antifongique topique 1re ligne · Systémique (terbinafine, itraconazole) si sévère / surinfection / immunosuppression · Ongles : faible succès d&apos;éradication</td></tr>
+                  <tr><td><strong>Candidose</strong></td>
+                    <td>Plis cutanés (intertrigo) · muqueuses · génitale</td>
+                    <td>Lésions satellites en périphérie d&apos;une zone érythémateuse d&apos;un pli cutané · chaleur + humidité</td>
+                    <td>Antifongique topique (miconazole, clotrimazole) · Garder propre et sec (Interdry)</td></tr>
+                  <tr><td><strong>Intertrigo fongique</strong></td>
+                    <td>Plis (axillaires, inguinaux, sous-mammaires)</td>
+                    <td>Irritation + chaleur + humidité · surinfection bactérienne ou fongique possible</td>
+                    <td>Garder propre et sec · Si surinfection : fongique &gt; bactérien · Antifongique ± poudre absorbante</td></tr>
+                  <tr><td><strong>Pityriasis versicolor</strong></td>
+                    <td>Tronc, cou, épaules</td>
+                    <td>Macules hypo/hyperpigmentées · squames fines · fluorescence jaune-vert à la lampe de Wood</td>
+                    <td>Kétoconazole shampooing / crème · Sélénium sulfure · Systémique si récidivant</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
-
-        <script>
-          function plaieMarkSelected(container, el, colorClass) {
-            var cards = container.querySelectorAll('.plaie-choice-card');
-            cards.forEach(function(c){ c.classList.remove('selected','red','yellow'); });
-            el.classList.add('selected');
-            if (colorClass) el.classList.add(colorClass);
-          }
-          function plaieShowResult(type, title, html) {
-            var box = document.getElementById('plaie-result-box');
-            box.className = 'plaie-result-box' + (type ? ' ' + type : '');
-            box.innerHTML = '<div class="plaie-result-title' + (type ? ' ' + type : ' blue') + '">🎯 ' + title + '</div><div class="plaie-result-text">' + html + '</div>';
-            box.classList.remove('plaie-hidden');
-          }
-          function plaieSelect(value, el) {
-            plaieMarkSelected(el.parentElement, el, value === 'ischemique' ? 'red' : (value === 'diabetique' ? 'yellow' : null));
-
-            if (value === 'ischemique') {
-              plaieShowResult('red', 'Probable plaie ischémique', '<strong>Priorité : éviter la surinfection</strong> (povidone iodée) <strong>+ évaluer la revascularisation</strong> (Doppler artériel, indice tibio-brachial, référence en chirurgie vasculaire). Éviter la compression tant que la composante ischémique n\'est pas exclue. L\'amputation demeure parfois inévitable malgré une prise en charge optimale — agir rapidement.');
-            } else if (value === 'veineux') {
-              plaieShowResult('blue', 'Probable ulcère veineux', '<strong>Compression obligatoire</strong> (bas 10–20 mmHg) <em>une fois la composante artérielle exclue</em> (indice tibio-brachial avant compression) · corticostéroïdes topiques 2–3 sem si dermatite de stase associée · cesser le tabac (retarde la guérison) · surélévation des membres et mobilisation.');
-            } else if (value === 'diabetique') {
-              plaieShowResult('yellow', 'Probable ulcère du pied diabétique (mal perforant)', '<strong>Mise en décharge</strong> (sandale Barouk/Darco, botte de décharge, plâtre de contact total) · culture si tableau infectieux (pus « de qualité ») · Doppler artériel au besoin · classer selon <strong>WIfI</strong> pour estimer le pronostic et le besoin de revascularisation · pansements adaptés (codes RAMQ DE101/DE58/DE339) · <strong>haut potentiel infectieux</strong> — surveiller étroitement.');
-            } else {
-              plaieShowResult(null, 'Présentation atypique — élargir le diagnostic différentiel', 'Une plaie d\'apparition spontanée, chronique (&gt; 6 sem) ou d\'évolution/histoire atypique est <strong>suspecte</strong> : envisager une cause non vasculaire/non diabétique (vascularite, néoplasie cutanée, pyoderma gangrenosum, infection atypique) → <strong>biopsie</strong> et référence en dermatologie/spécialité au besoin, en plus du bilan vasculaire de base.');
-            }
-          }
-        </script>
       </div>
 
-      <div class="block flag">
-        <div class="block-title" id="derm-8"><span class="tag">🚨 Urgences & Drapeaux rouges dermatologiques</span></div>
-        <div class="flag-list">
-          <div class="flag-item"><span class="fi-icon">🔥</span><span><strong>DRESS / Stevens-Johnson / TEN :</strong> réaction médicamenteuse (sulfa · carbamazépine · allopurinol · AINS) → arrêt immédiat du médicament causal + hospitalisation, soins de brûlés si TEN</span></div>
-          <div class="flag-item"><span class="fi-icon">💧</span><span><strong>Pemphigus vulgaire :</strong> bulles flasques muqueuses + cutanées · signe de Nikolsky + · auto-immun (anti-desmogléine) → corticostéroïdes systémiques + rituximab</span></div>
-          <div class="flag-item"><span class="fi-icon">🦠</span><span><strong>Fasciite nécrosante :</strong> douleur disproportionnée + crépitation + gaz au TDM → chirurgie urgente + pipéracilline-tazobactam + clindamycine (anti-toxines)</span></div>
-          <div class="flag-item"><span class="fi-icon">👁️</span><span><strong>Zona ophtalmique / Ramsay-Hunt / disséminé :</strong> atteinte V1 (risque de cécité), atteinte du nerf auditif, ou dissémination chez l'immunosupprimé → référence urgente en spécialité</span></div>
-          <div class="flag-item"><span class="fi-icon">🩸</span><span><strong>Vascularites :</strong> purpura palpable ± syndrome poumons-rein (ANCA) → bilan urgent (microhémorragies alvéolaires + glomérulonéphrite)</span></div>
-          <div class="flag-item"><span class="fi-icon">🎗️</span><span><strong>Mélanome :</strong> ABCDE positif, évolution rapide, ulcération/saignement → biopsie sans délai</span></div>
+      <!-- ═══ DERM-NEO: NÉOPLASIQUE ═══ -->
+      <div class="block para" id="derm-neo">
+        <div class="block-title"><span class="tag">🔬 6. Désordres Néoplasiques</span></div>
+
+        <div class="accordion">
+          <div class="accordion-item open">
+            <div class="accordion-header">🚨 6.1 Tumeurs Malignes
+              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+            </div>
+            <div class="accordion-body">
+              <table style="margin-bottom:10px;">
+                <thead><tr><th>Néoplasie</th><th>FdR</th><th>Présentation</th><th>Traitement</th></tr></thead>
+                <tbody>
+                  <tr><td><strong>Mélanome</strong></td><td>Exposition solaire · teint pâle (phototype I–II) · hérédité · naevus multiples</td><td>Lésion asymétrique · bords irréguliers · couleur polychrome · diamètre &gt; 6 mm · évolution rapide · ⚠️ Piège : mélanome sous-unguéal (bande mélanotique sous l&apos;ongle)</td><td>Exérèse chirurgicale + ganglion sentinelle · Oncologie si stade avancé (immunothérapie anti-PD1, BRAF)</td></tr>
+                  <tr><td><strong>Carcinome basocellulaire (CBC)</strong></td><td>Zones photoexposées · âge · phototype clair</td><td>Nodule luisant/framboisé · télangiectasies · bords perlés · ulcération centrale · Évolution lente et locale</td><td>Exérèse chirurgicale · Curetage-électrodessication · Imiquimod topique si superficiel</td></tr>
+                  <tr><td><strong>Carcinome épidermoïde (CE)</strong></td><td>Âge · zones photoexposées · kératose actinique préexistante · immunosuppression · papillomavirus</td><td>Plaque hyperkératosique ulcérée · évolue souvent sur une kératose actinique · Peut métastaser</td><td>Exérèse chirurgicale · Radiothérapie si inopérable · Surveillance ganglionnaire</td></tr>
+                  <tr><td><strong>Lymphome cutané</strong></td><td>Âge · immunosuppression</td><td>Plaques érythémateuses diffuses (Mycosis fongoïde) ou nodules · évolution insidieuse</td><td>Référer dermatologie/oncologie hématologique</td></tr>
+                </tbody>
+              </table>
+
+              <!-- Méthode ABCDE -->
+              <div class="sec-divider"><div class="sd-shape sq"></div><div class="sd-label">Méthode ABCDE — Naevus vs Mélanome</div><div class="sd-line"></div></div>
+              <table>
+                <thead><tr><th>Critère</th><th>Bénin</th><th>Suspect (mélanome)</th></tr></thead>
+                <tbody>
+                  <tr><td><strong>A — Asymétrie</strong></td><td>Symétrique</td><td><span class="drug-badge warn">Asymétrique</span></td></tr>
+                  <tr><td><strong>B — Bords</strong></td><td>Réguliers, bien définis</td><td><span class="drug-badge warn">Irréguliers, dentelés</span></td></tr>
+                  <tr><td><strong>C — Couleur</strong></td><td>Uniforme</td><td><span class="drug-badge warn">Polychrome (brun, noir, rouge, bleu)</span></td></tr>
+                  <tr><td><strong>D — Diamètre</strong></td><td>&lt; 6 mm</td><td><span class="drug-badge warn">&gt; 6 mm</span></td></tr>
+                  <tr><td><strong>E — Évolution</strong></td><td>Stable</td><td><span class="drug-badge ci">Rapide — modification récente +++</span></td></tr>
+                </tbody>
+              </table>
+              <div class="key-fact red" style="margin-top:8px;">🚨 <strong>Tout ABCDE positif → biopsie excisionnelle obligatoire → examen anatomopathologique</strong></div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <div class="accordion-header">✅ 6.2 Lésions Bénignes (pouvant mimer le malin)
+              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+            </div>
+            <div class="accordion-body">
+              <table>
+                <thead><tr><th>Lésion</th><th>Présentation</th><th>Risque transformation</th><th>Prise en charge</th></tr></thead>
+                <tbody>
+                  <tr><td><strong>Kératose actinique</strong></td><td>Plaque érythémateuse squameuse rugueuse · zones photoexposées · ± prurit</td><td><strong>Faible</strong> (précurseur CE, mais lent)</td><td>Cryothérapie · Fluorouracile topique · Imiquimod · Surveillance annuelle</td></tr>
+                  <tr><td><strong>Lentigo solaire / sénile</strong></td><td>Macule brun clair uniforme · zones photoexposées · taille variée</td><td><strong>Très faible</strong> (bénin)</td><td>Traitement cosmétique si désiré (laser, crème dépigmentante) · Biopsie si doute</td></tr>
+                  <tr><td><strong>Naevus</strong></td><td>Macule ou papule brun homogène · bien délimitée</td><td><strong>Faible</strong> (sauf syndrome naevus atypiques)</td><td>Surveillance ABCDE annuelle · Exérèse si changement</td></tr>
+                  <tr><td><strong>Kératose séborrhéique</strong></td><td>Plaque ou papule brun-beige à « aspect collé » · surface verruqueuse · bords nets</td><td><strong>Nul</strong> (bénin)</td><td>Traitement si gêne esthétique (cryothérapie, curetage) · Pas de suivi nécessaire</td></tr>
+                  <tr><td><strong>Fibrome mou (acrochordon)</strong></td><td>Petite excroissance pédiculée · couleur chair · zones de frottement</td><td><strong>Nul</strong></td><td>Exérèse si gêne · Association IMC élevé et DINIG possible</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
+      </div>
+
+      <!-- ═══ DERM-AUTRE: MÉTABOLIQUE & PLAIES ═══ -->
+      <div class="block clin" id="derm-autre">
+        <div class="block-title"><span class="tag">⚗️ 7. Désordres Métaboliques/Toxiques &amp; Plaies</span></div>
+
+        <div class="accordion">
+          <div class="accordion-item open">
+            <div class="accordion-header">⚗️ 7.1 Désordres métaboliques ou toxiques
+              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+            </div>
+            <div class="accordion-body">
+              <table style="margin-bottom:8px;">
+                <thead><tr><th>Condition</th><th>Mécanisme/FdR</th><th>Manifestations cutanées</th><th>Traitement</th></tr></thead>
+                <tbody>
+                  <tr><td><strong>Photodermatite</strong></td><td>Exposition solaire toujours impliquée · Irritants : agrumes, céleri, doxycycline · Médicaments photosensibilisants (AINS, tétracyclines)</td><td>Érythème, vésicules, hyperpigmentation sur zones photoexposées</td><td>Retrait de l&apos;agent · Protection solaire · CS topiques si sévère</td></tr>
+                  <tr><td><strong>Obésité</strong></td><td>Altération du corticisme · Résistance à l&apos;insuline · Friction + humidité</td><td>Acanthosis nigricans (cou, aisselles) · Stries violacées · Intertrigo · Hidradénite suppurée</td><td>Perte de poids · Traitement des complications · Metformine (acanthosis nigricans)</td></tr>
+                  <tr><td><strong>Anorexie / malnutrition</strong></td><td>Carences nutritionnelles (zinc, vitamine A, biotine)</td><td>Alopécie · Xérose · Lanugo · Pélagre (niacine) · Chéilite angulaire (B2, B3)</td><td>Supplémentation · Réalimentation supervisée</td></tr>
+                  <tr><td><strong>Angiodermatite</strong></td><td>Insuffisance veineuse chronique + microangiopathie</td><td>Purpura « éclaboussure » réticulaire sur MI · lipodermatosclérose</td><td>Compression · Traitement de l&apos;insuffisance veineuse</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <div class="accordion-header">🩹 7.2 Plaies — Classification &amp; Prise en charge
+              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+            </div>
+            <div class="accordion-body">
+              <div class="key-fact red" style="margin-bottom:8px;">🚨 <strong>Plaies suspectes :</strong> Apparition spontanée · Chroniques (&gt; 6 semaines non guéries) · Évolution/histoire atypique → toujours investiguer</div>
+              <table style="margin-bottom:10px;">
+                <thead><tr><th>Type de plaie</th><th>Présentation typique</th><th>FdR / Étiologie</th><th>Traitement</th></tr></thead>
+                <tbody>
+                  <tr><td><strong>Plaie ischémique</strong></td><td>Peu exsudative · distal (orteils, pied) · Douleur +++ · Excroissance &gt; creux · Nécrose noire possible</td><td>Athéromatose · maladie de Buerger · cryoglobulinémies · HTA, DLP, tabagisme, DM</td><td>‼️ Éviter surinfection (povidone-iodée) · Revascularisation si possible · Amputation parfois inévitable</td></tr>
+                  <tr><td><strong>Ulcère veineux</strong></td><td>Pré-tibial ou périmalléolaire · Exsudatif · prurit · Présence de stigmates insuffisance veineuse (hémosidérose, eczéma variqueux, lipodermatosclérose, xérose)</td><td>Insuffisance veineuse chronique · ATCD TVP · obésité · grossesse · emploi debout</td><td>Compression (bas 10–20 mmHg) · CS topiques si dermatite · Embolisation/sclérose</td></tr>
+                  <tr><td><strong>Ulcère pied diabétique (mal perforant)</strong></td><td>Sous les zones de pression (callosités) · Peu douloureux (neuropathie!) · Profond · Potentiel infectieux élevé</td><td>Polyneuropathies (sensitive, autonome, motrice) · Micro-ischémie ± MAVE · Perturbations immunologiques (neutrophiles si hyperglycémie)</td><td>Mise en décharge (sandale Barouk/Darco, botte, plâtre) · Culture si infection · Doppler artériel · Débridement · Revascularisation si nécessaire</td></tr>
+                </tbody>
+              </table>
+              <div class="sec-divider"><div class="sd-shape sq"></div><div class="sd-label">Épidémiologie — Ulcère du pied diabétique</div><div class="sd-line"></div></div>
+              <div class="stat-row">
+                <div class="stat-card blue"><div class="stat-num">34 %</div><div class="stat-label">risque développer ulcère au cours de la vie</div></div>
+                <div class="stat-card ink"><div class="stat-num">50 %</div><div class="stat-label">se compliquent d&apos;une infection</div></div>
+                <div class="stat-card red"><div class="stat-num">20 %</div><div class="stat-label">hospitalisés → 20 % amputés</div></div>
+                <div class="stat-card yellow"><div class="stat-num">70 %</div><div class="stat-label">mortalité à 5 ans post-amputation proximale</div></div>
+              </div>
+              <div class="sec-divider" style="margin-top:12px;"><div class="sd-shape sq"></div><div class="sd-label">Classification WIFi — Pied diabétique (MDCalc)</div><div class="sd-line"></div></div>
+              <table style="margin-bottom:8px;">
+                <thead><tr><th>Score WIFi</th><th>Amputation majeure à 1 an</th><th>Survie sans amputation à 1 an</th></tr></thead>
+                <tbody>
+                  <tr><td>Stage 1 (Très faible)</td><td>0 %</td><td>83 %</td></tr>
+                  <tr><td>Stage 2 (Faible)</td><td>8 %</td><td>76 %</td></tr>
+                  <tr><td>Stage 3 (Modéré)</td><td>11 %</td><td>75 %</td></tr>
+                  <tr><td>Stage 4 (Élevé)</td><td>38 %</td><td>55 %</td></tr>
+                </tbody>
+              </table>
+              <div class="sec-divider" style="margin-top:10px;"><div class="sd-shape sq"></div><div class="sd-label">Codes RAMQ — Pansements</div><div class="sd-line"></div></div>
+              <table>
+                <thead><tr><th>Code</th><th>Type</th><th>Usage</th></tr></thead>
+                <tbody>
+                  <tr><td><strong>DE101</strong></td><td>Pansements absorbants (mousse, alginates, hydrofibre)</td><td>Plaies très exsudatives</td></tr>
+                  <tr><td><strong>DE58</strong></td><td>Pansements antimicrobiens (argent, iode) — <strong>1re utilisation</strong></td><td>Plaies infectées ou à risque</td></tr>
+                  <tr><td><strong>DE339</strong></td><td>Après utilisation du code DE58</td><td>Délai 2 ans entre utilisations</td></tr>
+                </tbody>
+              </table>
+              <div class="key-fact blue" style="margin-top:8px;"><strong>Prise en charge globale des plaies :</strong> Culture si tableau infectieux + pus de qualité · Doppler artériel &gt; radio (si indiqué) · Décharge/compression si indiqué · Pansement selon le besoin et le type de plaie</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ DERM-RED: DRAPEAUX ROUGES ═══ -->
+      <div class="block flag" id="derm-red">
+        <div class="block-title"><span class="tag">🚨 Drapeaux rouges &amp; Résumé diagnostique</span></div>
+        <div class="flag-list" style="margin-bottom:14px;">
+          <div class="flag-item"><span class="fi-icon">🚨</span><span><strong>DRESS</strong> (Drug Rash with Eosinophilia &amp; Systemic Symptoms) : Hyperéosinophilie · distribution &gt; 50 % · fièvre · ictère · adénopathies · ↑ transaminases · IRA — Médicaments : allopurinol, antiépileptiques (carbamazépine, phénytoïne), sulfamides, PNC</span></div>
+          <div class="flag-item"><span class="fi-icon">🚨</span><span><strong>Stevens-Johnson (SJS) / Nécrolyse épidermique toxique (TEN) :</strong> Épidermolyse progressive · atteinte des muqueuses · signe de Nikolsky + · Mortalité SJS ∼10 % · TEN ∼30 % — Urgence vitale · arrêt immédiat Rx causal · USI</span></div>
+          <div class="flag-item"><span class="fi-icon">🚨</span><span><strong>Zona ophtalmique (V1) :</strong> Risque cécité · <strong>Ramsay-Hunt :</strong> nerf auditif → paralysie faciale · <strong>Zona disséminé</strong> chez immunosupprimé → référer spécialité urgence</span></div>
+          <div class="flag-item"><span class="fi-icon">🚨</span><span><strong>Fasciite nécrosante :</strong> Douleur disproportionnée à l&apos;examen · gaz sous-cutané · évolution rapide → urgence chirurgicale absolue</span></div>
+          <div class="flag-item"><span class="fi-icon">🚨</span><span><strong>Cellulite main ou visage :</strong> Risque extension aux structures profondes (tendon, articulation, orbite)</span></div>
+          <div class="flag-item"><span class="fi-icon">🚨</span><span><strong>Mélanome :</strong> ABCDE positif → biopsie excisionnelle obligatoire</span></div>
+          <div class="flag-item"><span class="fi-icon">🚨</span><span><strong>Purpura palpable + syndrome poumons-rein :</strong> → vascularite ANCA (ANCA-MPO ou ANCA-PR3) → bilan urgent (créat · ANCA · biopsie rénale)</span></div>
+          <div class="flag-item"><span class="fi-icon">🚨</span><span><strong>Signes systémiques + éruption + saignement extériorisé :</strong> → ISOLEMENT STRICT · avis infectiologie · exclure fièvre hémorragique</span></div>
+          <div class="flag-item"><span class="fi-icon">🚨</span><span><strong>Vascularites :</strong> Purpura palpable (petits vaisseaux) · Syndrome poumons-rein (ANCA) = microhémorragies alvéolaires + glomérulonéphrite · Classification CHCC 2012</span></div>
+        </div>
+
+        <p class="content-text" style="font-weight:600;margin-bottom:6px;">Résumé — Clés diagnostiques &amp; Traitements pivot</p>
+        <table>
+          <thead><tr><th>Catégorie</th><th>Présentation typique</th><th>Clé diagnostique</th><th>Traitement pivot</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Inflammatoire</strong></td><td>Plaques · érythème · prurit · squames</td><td>Distribution · blanchissage · symétrie · FdR atopiques</td><td>Corticostéroïdes topiques ± systémiques · Émollients · Biologiques</td></tr>
+            <tr><td><strong>Infectieux viral</strong></td><td>Papulovésicules · érythème · distribution dermatomale</td><td>Contexte (voyage, ITSS, vaccination, immunosuppression)</td><td>Antiviraux (VZV → valacyclovir) · Supportif</td></tr>
+            <tr><td><strong>Infectieux bactérien</strong></td><td>Érythème aigu · chaleur · douleur · purulence</td><td>Gram · culture · signes systémiques</td><td>β-lactamines · Drainage si abcès</td></tr>
+            <tr><td><strong>Infectieux fungique</strong></td><td>Lésions satellites · plis · ongles épaissis</td><td>Localisation + humidité · KOH</td><td>Antifongiques topiques · systémiques si sévère</td></tr>
+            <tr><td><strong>Néoplasique malin</strong></td><td>ABCDE + · évolution rapide · ulcération</td><td>Biopsie excisionnelle</td><td>Exérèse ± oncologie</td></tr>
+            <tr><td><strong>Métabolique/Toxique</strong></td><td>Photoexposition · carences · zones de frottement</td><td>Anamnèse médicamenteuse/nutritionnelle</td><td>Retrait agent · Supplémentation · Protection solaire</td></tr>
+            <tr><td><strong>Plaies vasculaires</strong></td><td>Chroniques · atypiques · localisées selon étiologie</td><td>Étiologie vasculaire (ischémique vs veineuse vs neuropathique)</td><td>Compression / Décharge / Revascularisation · Pansements RAMQ</td></tr>
+          </tbody>
+        </table>
       </div>
     </div>
     <div class="section" id="sec-infections">
