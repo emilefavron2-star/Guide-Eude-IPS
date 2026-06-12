@@ -22147,19 +22147,22 @@ backTopBtn.addEventListener('click', () => mainScrollEl.scrollTo({ top: 0, behav
 
 // ── DMO INESSS : algorithme initiation ostéodensitométrie ──
 function dmoStep(step, val) {
-  const res = document.getElementById('dmo-result');
-  const s2  = document.getElementById('dmo-s2');
-  const s3  = document.getElementById('dmo-s3');
+  var res = document.getElementById('dmo-result');
+  var s2  = document.getElementById('dmo-s2');
+  var s3  = document.getElementById('dmo-s3');
 
-  const box = (title, body, bg, border) =>
-    `<div style="border-left:4px solid ${border};background:${bg};border-radius:0 10px 10px 0;padding:12px 14px;line-height:1.8;font-size:12.5px;">
-      <div style="font-weight:800;font-size:13px;margin-bottom:6px;">${title}</div>${body}</div>`;
+  function box(title, body, bg, border) {
+    return '<div style="border-left:4px solid ' + border + ';background:' + bg + ';border-radius:0 10px 10px 0;padding:12px 14px;line-height:1.8;font-size:12.5px;">'
+      + '<div style="font-weight:800;font-size:13px;margin-bottom:6px;">' + title + '</div>' + body + '</div>';
+  }
 
   if (step === 1) {
     if (val === 'oui') {
       s2.style.display = 'none'; s3.style.display = 'none';
-      res.innerHTML = box('⚠️ Attention particulière requise',
-        'Fracture de fragilisation ≥ 40 ans → <strong>cesser le protocole</strong>.<br>Orienter vers un professionnel approprié pour évaluation et traitement.',
+      res.innerHTML = box(
+        '&#9888;&#65039; Attention particuli&egrave;re requise',
+        'Fracture de fragilisation &ge; 40 ans &rarr; <strong>cesser le protocole</strong>.<br>'
+        + 'Orienter vers un professionnel appropri&eacute; pour &eacute;valuation et traitement.',
         '#fce4ec', '#dc2626');
       res.style.display = 'block';
     } else {
@@ -22169,39 +22172,44 @@ function dmoStep(step, val) {
   } else if (step === 2) {
     s3.style.display = 'none';
     if (val === 'lt10') {
-      res.innerHTML = box('✅ Ostéodensitométrie NON recommandée',
-        'FRAX sans score T &lt; 10 % → DMO non indiquée.<br><br>' +
-        '• Conseils sur saines habitudes de vie (activité physique, alimentation, alcool, tabac)<br>' +
-        '• <strong>Suivi dans ≥ 5 ans</strong> pour réévaluation du risque fracturaire',
+      res.innerHTML = box(
+        '&#10003; Osteod&eacute;nsitom&eacute;trie NON recommand&eacute;e',
+        'FRAX sans score T &lt; 10&nbsp;% &rarr; DMO non indiqu&eacute;e.<br><br>'
+        + '&bull; Conseils saines habitudes de vie (activit&eacute; physique, alimentation, alcool, tabac)<br>'
+        + '&bull; <strong>Suivi dans &ge; 5 ans</strong> pour r&eacute;&eacute;valuation du risque fracturaire',
         '#f0fdf4', '#059669');
       res.style.display = 'block';
     } else if (val === 'mid') {
-      res.innerHTML = box('📋 Ostéodensitométrie RECOMMANDÉE',
-        'FRAX sans score T 10–20 % → Rédiger une requête de DMO (col fémoral g/cm²).<br>' +
-        '<em style="font-size:11px;">Vérifier qu'aucune autre requête n'a été faite dans les 3 dernières années.</em><br><br>' +
-        '• Conseils sur saines habitudes de vie<br>' +
-        '• Après réception des résultats → recalculer <strong>FRAX avec score T</strong> (étape ③ ci-dessous)',
+      res.innerHTML = box(
+        '&#128203; Osteod&eacute;nsitom&eacute;trie RECOMMAND&Eacute;E',
+        'FRAX sans score T 10&ndash;20&nbsp;% &rarr; R&eacute;diger une requ&ecirc;te de DMO (col f&eacute;moral g/cm&sup2;).<br>'
+        + '<em style="font-size:11px;">V&eacute;rifier qu&apos;aucune autre requ&ecirc;te n&apos;a &eacute;t&eacute; faite dans les 3 derni&egrave;res ann&eacute;es.</em><br><br>'
+        + '&bull; Conseils saines habitudes de vie<br>'
+        + '&bull; Apr&egrave;s r&eacute;ception des r&eacute;sultats &rarr; recalculer <strong>FRAX avec score T</strong> (&eacute;tape &#9315; ci-dessous)',
         '#fefce8', '#ca8a04');
       res.style.display = 'block';
       s3.style.display = 'block';
     } else {
-      res.innerHTML = box('⚠️ Attention particulière requise',
-        'FRAX sans score T ≥ 20 % → <strong>cesser le protocole</strong>.<br>' +
-        '• Conseils sur saines habitudes de vie<br>' +
-        '• Orienter vers un professionnel approprié pour évaluation et traitement.',
+      res.innerHTML = box(
+        '&#9888;&#65039; Attention particuli&egrave;re requise',
+        'FRAX sans score T &ge; 20&nbsp;% &rarr; <strong>cesser le protocole</strong>.<br>'
+        + '&bull; Conseils saines habitudes de vie<br>'
+        + '&bull; Orienter vers un professionnel appropri&eacute; pour &eacute;valuation et traitement.',
         '#fce4ec', '#dc2626');
       res.style.display = 'block';
     }
   } else if (step === 3) {
     if (val === 'lt15') {
-      res.innerHTML = box('✅ Orientation non requise',
-        'FRAX avec score T &lt; 15 % → Pas de référence nécessaire.<br><br>' +
-        '• Conseils sur saines habitudes de vie<br>' +
-        '• <strong>Suivi dans ≥ 3 ans</strong> pour réévaluation du risque fracturaire',
+      res.innerHTML = box(
+        '&#10003; Orientation non requise',
+        'FRAX avec score T &lt; 15&nbsp;% &rarr; Pas de r&eacute;f&eacute;rence n&eacute;cessaire.<br><br>'
+        + '&bull; Conseils saines habitudes de vie<br>'
+        + '&bull; <strong>Suivi dans &ge; 3 ans</strong> pour r&eacute;&eacute;valuation du risque fracturaire',
         '#f0fdf4', '#059669');
     } else {
-      res.innerHTML = box('⚠️ Orienter vers professionnel approprié',
-        'FRAX avec score T ≥ 15 % → Référence à un professionnel approprié pour évaluation et prise en charge.',
+      res.innerHTML = box(
+        '&#9888;&#65039; Orienter vers professionnel appropri&eacute;',
+        'FRAX avec score T &ge; 15&nbsp;% &rarr; R&eacute;f&eacute;rence &agrave; un professionnel appropri&eacute; pour &eacute;valuation et prise en charge.',
         '#fce4ec', '#dc2626');
     }
     res.style.display = 'block';
@@ -22209,8 +22217,8 @@ function dmoStep(step, val) {
 }
 
 function dmoReset() {
-  ['dmo-s2','dmo-s3','dmo-result'].forEach(id => {
-    const el = document.getElementById(id);
+  ['dmo-s2','dmo-s3','dmo-result'].forEach(function(id) {
+    var el = document.getElementById(id);
     if (el) el.style.display = 'none';
   });
 }
