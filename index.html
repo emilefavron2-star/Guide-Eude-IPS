@@ -9939,208 +9939,416 @@ function icTabSwitch(type) {
 </div>
 
     <div class="section" id="sec-ira">
-      <div class="section-header">
-        <div class="section-accent" style="background:var(--red)">🫘</div>
-        <div class="section-title"><h1>Insuffisance Rénale Aiguë</h1><div class="breadcrumb">Néphrologie <span class="breadcrumb-sep">·</span> Section 10</div></div>
-      </div>
+      <div class="section-header"><div class="section-accent">🫘</div><div class="section-title"><h1>IRA — Insuffisance Rénale Aiguë</h1><div class="breadcrumb">Néphrologie <span class="breadcrumb-sep">·</span> Section</div></div></div>
+
+      <!-- PILLS NAV -->
       <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
-        <button onclick="document.getElementById('ira-1').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📌 Définition KDIGO</button>
-        <button onclick="document.getElementById('ira-2').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📊 Stadification</button>
-        <button onclick="document.getElementById('ira-3').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🧬 Physiopath.</button>
-        <button onclick="document.getElementById('ira-4').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🩺 Évaluation</button>
-        <button onclick="document.getElementById('ira-5').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📈 FdR & Complic.</button>
-        <button onclick="document.getElementById('ira-6').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔍 Causes</button>
-        <button onclick="document.getElementById('ira-7').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🧪 Prérénale vs NTA</button>
-        <button onclick="document.getElementById('ira-8').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">☢️ Néphrotoxicité</button>
-        <button onclick="document.getElementById('ira-9').scrollIntoView({behavior:'smooth'})" style="background:#0a7a4e;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">💊 Traitement</button>
-        <button onclick="document.getElementById('ira-10').scrollIntoView({behavior:'smooth'})" style="background:#c0392b;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🚨 Red Flags</button>
-      </div>
-      <div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:20px;">
-        <div style="flex:1;min-width:100px;background:#EEF2FF;border-radius:10px;padding:12px;text-align:center;"><div style="font-size:14px;font-weight:800;color:#1C3F8F;">KDIGO</div><div style="font-size:11px;color:#555;margin-top:4px;">Critères diagnostic IRA</div></div>
-        <div style="flex:1;min-width:100px;background:#FEF9C3;border-radius:10px;padding:12px;text-align:center;"><div style="font-size:14px;font-weight:800;color:#92400e;">Créat × 1,5</div><div style="font-size:11px;color:#555;margin-top:4px;">Stade 1 — 48h</div></div>
-        <div style="flex:1;min-width:100px;background:#FEE2E2;border-radius:10px;padding:12px;text-align:center;"><div style="font-size:14px;font-weight:800;color:#c0392b;">Oligurie &lt;0,5</div><div style="font-size:11px;color:#555;margin-top:4px;">mL/kg/h × 6h — Stade 1</div></div>
-      </div>
-      <div class="block def">
-        <div class="block-title" id="ira-1"><span class="tag">📌 Définition & Critères diagnostiques — KDIGO 2012 (≥ 1 critère)</span></div>
-        <div class="stat-row">
-          <div class="stat-card blue"><div class="stat-num">≥ 26,5</div><div class="stat-label">µmol/L Cr en 48h</div></div>
-          <div class="stat-card ink"><div class="stat-num">≥ 1,5×</div><div class="stat-label">la base en 7j</div></div>
-          <div class="stat-card red"><div class="stat-num">&lt; 0,5</div><div class="stat-label">mL/kg/h ≥ 6h</div></div>
-        </div>
-        <div class="key-fact black" style="margin-top:10px;">⚠️ L'IRA n'est <strong>pas une maladie unique</strong> mais un ensemble hétérogène de syndromes — résultat d'une ↑ créatinine, d'une ↓ diurèse, ou des deux</div>
+        <button onclick="document.getElementById('ira-def').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📌 Définition &amp; KDIGO</button>
+        <button onclick="document.getElementById('ira-fdr').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">⚠️ Facteurs de risque</button>
+        <button onclick="document.getElementById('ira-bio').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔬 Biomarqueurs</button>
+        <button onclick="document.getElementById('ira-physio').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">⚙️ Physiopath.</button>
+        <button onclick="document.getElementById('ira-classif').scrollIntoView({behavior:'smooth'})" style="background:#7b3fa0;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🗺️ Pré/Intra/Post</button>
+        <button onclick="document.getElementById('ira-nephrotox').scrollIntoView({behavior:'smooth'})" style="background:#c0392b;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">💊 Néphrotoxiques</button>
+        <button onclick="document.getElementById('ira-clinique').scrollIntoView({behavior:'smooth'})" style="background:#0a7a4e;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🩺 Clinique &amp; Dx</button>
+        <button onclick="document.getElementById('ira-complic').scrollIntoView({behavior:'smooth'})" style="background:#dc2626;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🚨 Complications</button>
+        <button onclick="document.getElementById('ira-pec').scrollIntoView({behavior:'smooth'})" style="background:#d97706;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🛠️ Prise en charge</button>
+        <button onclick="document.getElementById('ira-trr').scrollIntoView({behavior:'smooth'})" style="background:#be185d;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🏥 TRR / Dialyse</button>
+        <button onclick="document.getElementById('ira-continu').scrollIntoView({behavior:'smooth'})" style="background:#475569;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔄 Continuum IRC</button>
       </div>
 
-      <!-- STADIFICATION KDIGO -->
-      <div class="block def" style="border-left-color:var(--ink);">
-        <div class="block-title" id="ira-2"><span class="tag">📊 Stadification KDIGO — sévérité & pronostic</span></div>
-        <table style="margin-top:4px;">
-          <thead><tr><th>Stade</th><th>Créatinine sérique</th><th>Débit urinaire</th></tr></thead>
+      <!-- ═══ DÉFINITION & KDIGO ═══ -->
+      <div class="block def" id="ira-def">
+        <div class="block-title"><span class="tag">📌 1. Définition de l&apos;IRA (KDIGO 2012)</span></div>
+        <div class="key-fact red" style="margin-bottom:10px;">L&apos;IRA n&apos;est pas une maladie unique, mais un <strong>ensemble hétérogène de syndromes</strong>. Elle peut résulter d&apos;une augmentation rapide de la créatinine, d&apos;une diminution du débit urinaire, ou des deux simultanément.</div>
+        <div class="key-fact blue" style="margin-bottom:10px;"><strong>Diagnostic si AU MOINS UN des critères suivants :</strong></div>
+        <table style="margin-bottom:12px;">
+          <thead><tr><th>Critère</th><th>Seuil diagnostic</th></tr></thead>
           <tbody>
-            <tr><td><strong>1</strong></td><td>↑ ≥ 26,5 µmol/L/48h <strong>ou</strong> 1,5–1,9 × base/7j</td><td>&lt; 0,5 mL/kg/h pendant &gt; 6–12h</td></tr>
-            <tr><td><strong>2</strong></td><td>↑ 2–2,9 × base</td><td>&lt; 0,5 mL/kg/h pendant ≥ 12h</td></tr>
-            <tr><td><strong>3</strong></td><td>↑ ≥ 3 × base <strong>ou</strong> Cr ≥ 354 µmol/L <strong>ou</strong> début TRR</td><td>&lt; 0,3 mL/kg/h ≥ 24h <strong>ou</strong> anurie ≥ 12h</td></tr>
+            <tr><td><strong>↑ Créatinine sérique</strong></td><td>≥ 26,5 µmol/L en <strong>48 h</strong></td></tr>
+            <tr><td><strong>↑ Créatinine vs baseline</strong></td><td>≥ <strong>1,5 × la valeur de base</strong> en 7 jours</td></tr>
+            <tr><td><strong>Diurèse</strong></td><td>&lt; <strong>0,5 mL/kg/h</strong> pendant ≥ 6 h</td></tr>
           </tbody>
         </table>
-        <div class="key-fact black" style="margin-top:8px;">💡 La créatinine reste le critère le plus utilisé (diurèse rarement mesurée précisément hors USI) — mais c'est un <strong>marqueur tardif</strong> (↑ seulement 24–48h après la lésion). Biomarqueurs précoces (TIMP-2/IGFBP7, NGAL, KIM-1) encore peu utilisés en clinique courante.</div>
-        <div class="highlight cream" style="margin-top:8px;font-size:13px;"><strong>Pronostic — continuum IRA ↔ IRC :</strong> réparation <strong>adaptative</strong> (prolifération tubulaire, résolution de l'inflammation) → récupération mais ↑ risque de récidives jusqu'à l'IRC ; réparation <strong>maladaptative</strong> (arrêt du cycle cellulaire, dysfonction mitochondriale) → progression directe vers l'IRC. Risque post-IRA : <strong>+10 cas d'IRC / 100 personnes-années</strong>, +0,4 cas d'IRT/100 personnes-années.</div>
-      </div>
+        <div class="note" style="margin-bottom:12px;">La créatinine est le critère le plus utilisé — la diurèse est rarement mesurée avec précision en dehors des soins intensifs.</div>
 
-      <!-- PHYSIOPATHOLOGIE -->
-      <div class="block para" style="border-left-color:var(--blue);">
-        <div class="block-title" id="ira-3"><span class="tag">🧬 Physiopathologie brève</span></div>
-        <p class="content-text">Continuum lésionnel : <strong>stress cellulaire réversible</strong> (TIMP-2/IGFBP7) → <strong>lésion structurelle</strong> (apoptose des cellules tubulaires) → <strong>nécrose tubulaire aiguë</strong>. Mécanismes selon le type d'agression : <strong>ischémique</strong> (↓ pression de perfusion, activation SRAA) · <strong>inflammatoire/septique</strong> (cytokines, dysrégulation microcirculatoire, hypoxie médullaire) · <strong>toxique</strong> (vasoconstriction afférente/efférente, toxicité tubulaire directe).</p>
-        <p class="content-text" style="margin-top:8px;">Souvent <strong>multifactorielle</strong> (syndrome cardiorénal, hépatorénal, sepsis) chez des patients déjà vulnérables. Les cellules tubulaires peuvent se régénérer (réparation <strong>adaptative</strong>) ; si la lésion est trop sévère, la réparation devient <strong>maladaptative</strong> → fibrose → <strong>IRC</strong> — l'IRA et l'IRC forment un continuum.</p>
-      </div>
-
-      <!-- ÉVALUATION INITIALE -->
-      <div class="block clin">
-        <div class="block-title" id="ira-4"><span class="tag">🩺 Évaluation initiale — Anamnèse & examen physique</span></div>
-        <p class="content-text" style="margin-bottom:8px;"><strong>Anamnèse — surtout rechercher :</strong></p>
-        <div class="flag-list">
-          <div class="flag-item"><span class="flag-dot ink"></span><span>Souvent <strong>silencieuse</strong> (sauf obstruction → douleur, globe vésical) — deux présentations typiques : <strong>contexte connu</strong> (chirurgie majeure récente, sepsis, déshydratation) ou <strong>fonction anormale de durée inconnue</strong> (dilemme IRA vs IRC vs IRA sur IRC)</span></div>
-          <div class="flag-item"><span class="flag-dot ink"></span><span>Déshydratation, infection récente, prise de médicaments néphrotoxiques (AINS, IECA/ARA, IPP, ATB, contraste), symptômes obstructifs (rétention, lithiase, Sx prostatiques)</span></div>
-          <div class="flag-item"><span class="flag-dot ink"></span><span><strong>Estimer la fonction de base</strong> : ATCD + créatinines antérieures, taille des reins à l'imagerie (petits → chronicité probable), présence d'albuminurie — ↓ créatinine après admission évoque une IRA déjà présente avant l'hospitalisation</span></div>
-        </div>
-        <p class="content-text" style="margin:12px 0 8px;"><strong>Examen physique — évaluation du statut volémique :</strong></p>
-        <div class="flag-list">
-          <div class="flag-item"><span class="flag-dot blue"></span><span><strong>Hypovolémie</strong> : muqueuses sèches, ↓ larmoiement, veines jugulaires plates, TRC prolongé, hypotension/tachycardie</span></div>
-          <div class="flag-item"><span class="flag-dot blue"></span><span><strong>Surcharge</strong> : distension jugulaire (↑ PVC), crépitants pulmonaires, œdèmes périphériques</span></div>
-          <div class="flag-item"><span class="flag-dot blue"></span><span><strong>Globe vésical</strong> (bladder scan — toujours exclure une obstruction en premier), signes d'urémie (astérixis, frottement péricardique)</span></div>
-        </div>
-      </div>
-
-      <div class="block para" style="border-left-color:var(--ink);">
-        <div class="block-title" id="ira-5"><span class="tag">📈 Facteurs de risque, Syndrome multifactoriel & Complications</span></div>
-        <p class="content-text"><strong>Facteurs de risque :</strong> démographiques (âge avancé, sexe masculin) · rénaux préexistants (MRC, albuminurie/protéinurie) · cardiovasculaires (HTA, IC, MCAS, MVAS, chx cardiaque) · systémiques (diabète, insuffisance hépatique/HTP, MPOC, cancer, anémie) · situations aiguës (sepsis, trauma, chx majeure) · iatrogènes (Rx néphrotoxiques, interactions, produits de contraste) — <strong>l'IRA survient le plus souvent chez des patients déjà vulnérables avec plusieurs FdR combinés</strong></p>
-        <div class="highlight cream" style="margin-top:8px;font-size:13px;"><strong>IRA = syndrome multifactoriel — exemples de mécanismes combinés :</strong> <em>Sd cardiorénal</em> (↓ débit cardiaque + congestion veineuse rénale) · <em>Sd hépatorénal</em> (vasodilatation systémique majeure → ↓TA → activation SRAA → vasoconstriction rénale) · <em>Post-chx cardiaque</em> (↓DC postop, congestion, hypoperfusion sous CEC, inflammation systémique + Hb libre) · <strong>IRA & sepsis</strong> — mécanismes ≠ uniquement hypoperfusion (inflammation systémique, dysrégulation microcirculatoire, hypoxie médullaire, toxicité cellulaire) → <strong>mortalité à 60 jours 3–5× plus élevée</strong> si IRA en choc septique. L'IRA peut aussi causer une atteinte d'organes à distance (cœur, poumon, foie, cerveau — encéphalopathie urémique).</div>
-        <table style="margin-top:8px;">
-          <thead><tr><th>Complication</th><th>Seuil critique</th></tr></thead>
+        <p class="content-text" style="font-weight:600;margin-bottom:6px;">📊 Classification KDIGO — Stades de sévérité</p>
+        <table>
+          <thead><tr><th>Stade</th><th>Créatinine sérique</th><th>Débit urinaire</th><th>Urgence</th></tr></thead>
           <tbody>
-            <tr><td>Hypervolémie</td><td>Surcharge liquidienne / OAP</td></tr>
-            <tr><td>Hyperkaliémie</td><td>K⁺ &gt; 5,5 mmol/L</td></tr>
-            <tr><td>Acidose métabolique sévère</td><td>pH &lt; 7,2</td></tr>
-            <tr><td>Hyperphosphatémie</td><td>PO₄ &gt; 1,9 mmol/L</td></tr>
-            <tr><td>Urémie</td><td>Péricardite urémique, encéphalopathie</td></tr>
+            <tr><td><span class="drug-badge">Stade 1</span></td><td>↑ ≥ 26,5 µmol/L en 48h <strong>ou</strong> ↑ 1,5–1,9 × baseline en 7j</td><td>&lt; 0,5 mL/kg/h pendant &gt; 6–12 h</td><td><span class="drug-badge warn">Modéré</span></td></tr>
+            <tr><td><span class="drug-badge warn">Stade 2</span></td><td>↑ 2–2,9 × baseline</td><td>&lt; 0,5 mL/kg/h pendant ≥ 12 h</td><td><span class="drug-badge warn">Sévère</span></td></tr>
+            <tr><td><span class="drug-badge ci">Stade 3</span></td><td>↑ ≥ 3 × baseline <strong>ou</strong> créatinine ≥ 354 µmol/L <strong>ou</strong> début TRR</td><td>&lt; 0,3 mL/kg/h pendant ≥ 24 h ou anurie ≥ 12 h</td><td><span class="drug-badge ci">Urgence</span></td></tr>
           </tbody>
         </table>
       </div>
 
-      <div class="block clin">
-        <div class="block-title" id="ira-6"><span class="tag">🔍 Causes (classement)</span></div>
+      <!-- ═══ FACTEURS DE RISQUE ═══ -->
+      <div class="block para" id="ira-fdr">
+        <div class="block-title"><span class="tag">⚠️ 2. Facteurs de risque</span></div>
+        <div class="key-fact yellow" style="margin-bottom:10px;">🔑 L&apos;IRA survient le plus souvent chez des patients <strong>déjà vulnérables avec plusieurs FDR combinés.</strong></div>
+        <table>
+          <thead><tr><th>Catégorie</th><th>Exemples</th></tr></thead>
+          <tbody>
+            <tr><td>🗺️ <strong>Démographiques</strong></td><td>Âge avancé · sexe masculin · race noire</td></tr>
+            <tr><td>🫘 <strong>Rénaux préexistants</strong></td><td>MRC · albuminurie/protéinurie élevée</td></tr>
+            <tr><td>🫀 <strong>Cardiovasculaires</strong></td><td>HTA · IC · MCAS · MVAS · chirurgie cardiaque</td></tr>
+            <tr><td>🔴 <strong>Systémiques</strong></td><td>Diabète · insuffisance hépatique · hypertension portale · MPOC · cancer · anémie</td></tr>
+            <tr><td>🦠 <strong>Situations aiguës</strong></td><td>Sepsis · traumatisme · chirurgie majeure</td></tr>
+            <tr><td>💊 <strong>Iatrogènes</strong></td><td>Médicaments néphrotoxiques · interactions médicamenteuses · produits de contraste</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- ═══ BIOMARQUEURS ═══ -->
+      <div class="block clin" id="ira-bio">
+        <div class="block-title"><span class="tag">🔬 3. Méthodes diagnostiques &amp; Biomarqueurs</span></div>
+        <div class="key-fact red" style="margin-bottom:10px;"><strong>Limite de la créatinine :</strong> marqueur <em>tardif</em> — n&apos;augmente que <strong>24–48 h après la lésion rénale</strong>. Aussi influencée par la masse musculaire, l&apos;hydratation, l&apos;âge.</div>
+        <table>
+          <thead><tr><th>Phase</th><th>Biomarqueurs</th><th>Statut clinique</th></tr></thead>
+          <tbody>
+            <tr><td><strong>A — Stress cellulaire réversible</strong></td><td>TIMP-2 · IGFBP7</td><td>Encore en recherche</td></tr>
+            <tr><td><strong>B — Lésion cellulaire structurelle</strong></td><td>NGAL · KIM-1 · Cystatine C · N-acétyl-β-D-glucosaminidase · albumine</td><td>Encore peu utilisés en pratique</td></tr>
+            <tr><td><strong>C — Dysfonction rénale mesurable</strong></td><td>Créatinine · DFG · Cystatine C</td><td>Standard actuel</td></tr>
+          </tbody>
+        </table>
+        <div class="key-fact ink" style="margin-top:10px;"><strong>Analyse urinaire :</strong> Cylindres granuleux (NTA) · Cylindres leucocytaires (NIA) · Protéinurie (glomérulaire) · Hématurie · Densité urinaire · Na urinaire · FENA (fraction excrétée Na) : &lt; 1 % = prérénale · &gt; 2 % = intrinsèque</div>
+      </div>
+
+      <!-- ═══ PHYSIOPATH ═══ -->
+      <div class="block flag" id="ira-physio">
+        <div class="block-title"><span class="tag">⚙️ 4. Physiopathologie de l&apos;IRA &amp; Syndrome multifactoriel</span></div>
+
         <div class="accordion">
           <div class="accordion-item open">
-            <div class="accordion-header">Prérénale <span class="acc-badge" style="background:var(--blue-lt);color:var(--blue);">30–60 %</span>
+            <div class="accordion-header">🔬 Gradient de sévérité des lésions &amp; Étapes de l&apos;IRA
               <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
             </div>
             <div class="accordion-body">
-              <strong>↓ Volume circulant effectif</strong> : hypovolémie vraie (hémorragie, vomissements/diarrhée, brûlures, diurétiques, 3<sup>e</sup> espace — pancréatite, ascite) · pertes rénales (diabète insipide, diurèse osmotique)<br>
-              <strong>↓ Débit cardiaque</strong> : IC, choc cardiogénique, EP massive, tamponnade<br>
-              <strong>Vasodilatation systémique</strong> : sepsis, anaphylaxie, cirrhose (syndrome hépatorénal), anesthésie<br>
-              <strong>Altération de l'autorégulation rénale</strong> (vasoconstriction afférente / vasodilatation efférente) : <span class="drug-badge ci">AINS</span> <span class="drug-badge ci">IECA/ARA</span> <span class="drug-badge ci">iSGLT-2</span> <span class="drug-badge ci">Inhibiteurs de la calcineurine</span> · sténose bilatérale de l'artère rénale
+              <div class="flag-list" style="margin-bottom:10px;">
+                <div class="flag-item"><span class="flag-dot yellow"></span><span><strong>Lésion légère (sublethal) :</strong> stress cellulaire → récupération possible</span></div>
+                <div class="flag-item"><span class="flag-dot ink"></span><span><strong>Lésion modérée :</strong> apoptose des cellules tubulaires</span></div>
+                <div class="flag-item"><span class="flag-dot red"></span><span><strong>Lésion sévère :</strong> nécrose tubulaire aiguë (NTA)</span></div>
+              </div>
+              <div class="key-fact blue" style="margin-bottom:8px;"><strong>Étapes de développement :</strong> 1. Stress cellulaire (agression/exposition) → 2. Lésion cellulaire (dommage structurel cell. tubulaires) → 3. Dysfonction rénale mesurable (nécrose tubulaire &amp; apoptose)</div>
+              <table>
+                <thead><tr><th>Mécanisme d&apos;agression</th><th>Exemples</th></tr></thead>
+                <tbody>
+                  <tr><td><strong>Ischémique</strong></td><td>↓ pression de perfusion · activation SRAA · nécrose · cylindres tubulaires</td></tr>
+                  <tr><td><strong>Inflammatoire / septique → prérénale</strong></td><td>Lipopolysaccharides · inflammation systémique · dysrégulation microcirculatoire</td></tr>
+                  <tr><td><strong>Toxique</strong></td><td>Toxines bactériennes · cytokines · vasodilatation efférente · dysfonction endothéliale</td></tr>
+                </tbody>
+              </table>
+              <div class="key-fact yellow" style="margin-top:8px;">⭐ <strong>Capacité de régénération :</strong> Les cellules tubulaires peuvent se dédifférencier, proliférer et réparer le tubule. Mais si lésion trop sévère → fibrose rénale → IRC</div>
             </div>
           </div>
+
           <div class="accordion-item">
-            <div class="accordion-header">Intrinsèque <span class="acc-badge" style="background:var(--blue-lt);color:var(--blue);">40 %</span>
+            <div class="accordion-header">🩺 IRA = Syndrome multifactoriel
               <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
             </div>
             <div class="accordion-body">
-              <strong>Nécrose tubulaire aiguë (NTA) — la plus fréquente</strong> : ischémique (prérénale prolongée/non corrigée, chirurgie, choc) · toxique — <span class="drug-badge ci">Aminoglycosides</span> <span class="drug-badge ci">Produit de contraste</span> <span class="drug-badge ci">Vancomycine</span> <span class="drug-badge ci">Amphotéricine B</span> <span class="drug-badge ci">Cisplatine</span> · pigmenturie (rhabdomyolyse, hémolyse)<br>
-              <strong>Néphrite interstitielle aiguë (NIA)</strong> — cause fréquente et sous-diagnostiquée : <span class="drug-badge ci">IPP</span> <span class="drug-badge ci">AINS</span> <span class="drug-badge ci">Antibiotiques (β-lactamines, sulfamides, quinolones)</span> <span class="drug-badge ci">Allopurinol</span> · infections (pyélonéphrite, virale) · maladies auto-immunes<br>
-              <strong>Glomérulaire/vasculaire</strong> : glomérulonéphrite rapidement progressive, vasculites (ANCA), syndrome hémolytique et urémique, microangiopathie thrombotique, embols de cholestérol (post-angiographie)
-            </div>
-          </div>
-          <div class="accordion-item">
-            <div class="accordion-header">Postrénale <span class="acc-badge" style="background:var(--blue-lt);color:var(--blue);">10 %</span>
-              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-            </div>
-            <div class="accordion-body">
-              <strong>Obstruction vésicale/urétrale</strong> : HBP, sténose urétrale, vessie neurogène, caillots<br>
-              <strong>Obstruction urétérale bilatérale</strong> (ou unilatérale sur rein unique) : lithiases, néoplasie pelvienne (col, prostate, vessie, colorectal), fibrose rétropéritonéale, adénopathies compressives<br>
-              <strong>→ Toujours exclure en premier</strong> (bladder scan ± échographie rénale) — cause la plus rapidement réversible si traitée tôt
+              <table style="margin-bottom:8px;">
+                <thead><tr><th>Syndrome</th><th>Mécanisme principal</th></tr></thead>
+                <tbody>
+                  <tr><td><strong>Syndrome cardiorénal (SCR)</strong></td><td>Faible débit cardiaque → ↓ perfusion rénale + congestion veineuse rénale</td></tr>
+                  <tr><td><strong>IRA post-chirurgie cardiaque</strong></td><td>↓ débit postopératoire + congestion + hypoperfusion CEC + inflammation systémique + hémoglobine libre + FDR préexistants (MRC, DM)</td></tr>
+                  <tr><td><strong>Syndrome hépatorénal</strong></td><td>Activation SRAA → vasoconstriction rénale médiée par mécanismes neurohormonaux · Déclencheur : vasodilatation systémique majeure → ↓ TA</td></tr>
+                  <tr><td><strong>IRA &amp; Sepsis</strong></td><td>≠ toujours hypoperfusion rénale · Mécanismes : inflammation systémique, dysrégulation microcirculatoire, hypoxie médullaire, toxicité cellulaire, activation neurohormonale (SNS + SRAA) · <strong>Mortalité 60j : 3–5× plus élevée si IRA + choc septique</strong></td></tr>
+                </tbody>
+              </table>
+              <div class="key-fact ink"><strong>IRA = Maladie systémique :</strong> Cœur (SCR) · Poumon (interactions respiratoires/inflammation) · Foie (interactions métaboliques) · Cerveau (troubles cognitifs, encéphalopathie urémique)</div>
             </div>
           </div>
         </div>
-        <div class="key-fact red" style="margin-top:10px;"><strong>Triple Whammy :</strong> IECA/ARA + Diurétique + AINS → ↓↓↓ pression de filtration glomérulaire → IRA (combinaison à éviter, surtout si déshydratation/maladie aiguë intercurrente)</div>
       </div>
 
-      <div class="block para">
-        <div class="block-title" id="ira-7"><span class="tag">🧪 Différenciation Prérénale vs NTA</span></div>
+      <!-- ═══ CLASSIFICATION PRÉ/INTRA/POST ═══ -->
+      <div class="block def" id="ira-classif">
+        <div class="block-title"><span class="tag">🗺️ 5. Classification de l&apos;IRA — Pré / Intrinsèque / Post</span></div>
+
+        <!-- Interactive tabs -->
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px;">
+          <button onclick="iraTab('pre')" id="ira-tab-pre" style="background:#1C3F8F;color:#fff;border:none;border-radius:16px;padding:6px 16px;cursor:pointer;font-size:12px;">🔻 Prérénale</button>
+          <button onclick="iraTab('intra')" id="ira-tab-intra" style="background:#e2e8f0;color:#1e293b;border:none;border-radius:16px;padding:6px 16px;cursor:pointer;font-size:12px;">🔬 Intrinsèque</button>
+          <button onclick="iraTab('post')" id="ira-tab-post" style="background:#e2e8f0;color:#1e293b;border:none;border-radius:16px;padding:6px 16px;cursor:pointer;font-size:12px;">🚧 Postrénale</button>
+        </div>
+
+        <div id="ira-content-pre">
+          <div class="key-fact blue" style="margin-bottom:8px;"><strong>IRA Prérénale — Hypoperfusion rénale</strong> : Réduction du débit sanguin rénal <em>sans lésion structurelle initiale</em>. Réversible si traitée rapidement.</div>
+          <table>
+            <thead><tr><th>Mécanisme</th><th>Exemples cliniques</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Dysfonction cardiaque</strong></td><td>IM aigu · IC décompensée · tamponnade</td></tr>
+              <tr><td><strong>Vasodilatation systémique</strong></td><td>Sepsis · cirrhose · anaphylaxie · vasodilatateurs</td></tr>
+              <tr><td><strong>Hypovolémie</strong></td><td>Hémorragie · diarrhée profuse · diurèse excessive · brûlures</td></tr>
+              <tr><td><strong>↑ Résistance vasculaire</strong></td><td>Chirurgie majeure · anesthésie · syndrome compartimentaire abdominal</td></tr>
+            </tbody>
+          </table>
+          <div class="note" style="margin-top:8px;"><strong>FENA &lt; 1 % + densité urinaire élevée + Na urinaire &lt; 20 mmol/L</strong> → prérénale · Si prolongée → ischémie tubulaire → NTA (intrinsèque)</div>
+        </div>
+
+        <div id="ira-content-intra" style="display:none;">
+          <div class="key-fact blue" style="margin-bottom:8px;"><strong>IRA Intrinsèque — Atteinte rénale directe :</strong> Lésion structurelle du parenchyme rénal</div>
+          <table>
+            <thead><tr><th>Compartiment</th><th>Causes</th><th>Caractéristiques</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Tubulaire</strong> (le + fréquent)</td><td>Ischémie prolongée · médicaments néphrotoxiques (aminoglycosides, cisplatine, contraste) · rhabdomyolyse</td><td>FENA &gt; 2 % · Cylindres granuleux à l&apos;analyse urinaire</td></tr>
+              <tr><td><strong>Glomérulaire</strong></td><td>Glomérulonéphrite aiguë · syndrome néphrotique</td><td>Hématurie · protéinurie · cylindres hématiques</td></tr>
+              <tr><td><strong>Vasculaire</strong></td><td>Vasculite · sténose artère rénale · thrombose veineuse rénale · SHU/PTT</td><td>Selon étiologie</td></tr>
+              <tr><td><strong>Interstitiel</strong></td><td>Néphrite interstitielle aiguë (NIA) → infections, médicaments (IPP, pénicillines, AINS, vancomycine)</td><td>Pyurie stérile · éosinophiles urinaires · ↑ créatinine progressive</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div id="ira-content-post" style="display:none;">
+          <div class="key-fact red" style="margin-bottom:8px;">🚨 <strong>Toujours exclure une obstruction lors du bilan d&apos;une IRA !</strong> — Échographie rénale en priorité</div>
+          <table>
+            <thead><tr><th>Localisation</th><th>Exemples</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Intrarenale</strong></td><td>Néphrolothiase bilatérale · nécrose papillaire · dépôts cristallins (médicaments)</td></tr>
+              <tr><td><strong>Extrarenale</strong></td><td>Urolithiase · hypertrophie prostatique bénigne · cancer vésical / prostatique · compression extrinsèque (tumeur pelvienne, fibrose rétropéritonéale) · globe vésical</td></tr>
+            </tbody>
+          </table>
+          <div class="note" style="margin-top:8px;"><strong>Présentation :</strong> Souvent asymptomatique · Douleur lombaire si distension aiguë · Globe vésical palpable · Anurie ou oligurie variable · ↓ créatinine après décompression = confirme le diagnostic</div>
+        </div>
+      </div>
+
+      <!-- ═══ NÉPHROTOXIQUES ═══ -->
+      <div class="block flag" id="ira-nephrotox">
+        <div class="block-title"><span class="tag">💊 6. Médicaments Néphrotoxiques, Triple Whammy &amp; Contraste iodé</span></div>
+
+        <div class="accordion">
+          <div class="accordion-item open">
+            <div class="accordion-header">🧪 Mécanismes de néphrotoxicité médicamenteuse
+              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+            </div>
+            <div class="accordion-body">
+              <table style="margin-bottom:8px;">
+                <thead><tr><th>Mécanisme</th><th>Médicaments</th></tr></thead>
+                <tbody>
+                  <tr><td><strong>Vasoconstriction afférente</strong></td><td>Contraste iodé · AINS/COX-2 (célécoxib) · iSGLT2 · Inhibiteurs calcineurine (tacrolimus, cyclosporine) · Aminoglycosides (gentamycine, tobramycine)</td></tr>
+                  <tr><td><strong>Vasodilatation efférente</strong></td><td>IECA · ARA (↓ pression glomérulaire → protecteur à long terme mais risque si bas débit)</td></tr>
+                  <tr><td><strong>Toxicité tubulaire (NTA)</strong></td><td>Contraste iodé · Aminoglycosides · Amphotéricine B · Cisplatine · Ifosfamide</td></tr>
+                  <tr><td><strong>Néphrite interstitielle aiguë (NIA)</strong></td><td><span class="drug-badge ci">IPP (+++) </span> · Pénicillines · Céphalosporines (céfazoline, ceftriaxone) · Vancomycine · Ciprofloxacine · AINS · Rifampicine</td></tr>
+                  <tr><td><strong>Glomérulopathie</strong></td><td>AINS · Pénicillamine · Captopril · Sirolimus · Héroïne</td></tr>
+                  <tr><td><strong>Néphropathie cristalline</strong></td><td>Acyclovir · Indinavir · Ganciclovir · Foscarnet · Ampicilline · Sulfonamides · Quinolones · Méthotrexate</td></tr>
+                </tbody>
+              </table>
+              <div class="key-fact red"><strong>Arrêt temporaire recommandé en IRA :</strong> AINS · Diurétiques · Aminoglycosides · Amphotéricine B · Méthotrexate · <strong>Metformine si IRA + DFGe &lt; 30 mL/min/1,73 m²</strong> (risque d&apos;acidose lactique)</div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <div class="accordion-header">⚡ Triple Whammy — IECA/ARA + Diurétique + AINS
+              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+            </div>
+            <div class="accordion-body">
+              <div class="key-fact red" style="margin-bottom:10px;"><strong>⚡ IECA/ARA + Diurétique + AINS = risque TRÈS ÉLEVÉ d&apos;IRA</strong><br>Ces trois classes réduisent la perfusion glomérulaire par des mécanismes synergiques :<br>↓ pression hydrostatique glomérulaire + ↓ volémie + vasoconstriction afférente</div>
+              <table>
+                <thead><tr><th>Médicament</th><th>Mécanisme de l&apos;insulte</th></tr></thead>
+                <tbody>
+                  <tr><td><strong>IECA / ARA</strong></td><td>↓ angiotensine II → vasodilatation efférente → ↓ pression de filtration glomérulaire</td></tr>
+                  <tr><td><strong>Diurétique</strong></td><td>↓ volémie effective → hypoperfusion rénale → activation SRAA</td></tr>
+                  <tr><td><strong>AINS / COX-2</strong></td><td>Inhibition prostaglandines → vasoconstriction afférente → ↓ DFG · Particulièrement dangereux si bas débit ou déshydratation</td></tr>
+                </tbody>
+              </table>
+              <div class="note" style="margin-top:8px;">📋 <strong>À surveiller particulièrement chez :</strong> Patients &gt; 65 ans · DM + IRC + IECA + AINS · Patients sous diurétiques de l&apos;anse · Contexte de déshydratation ou d&apos;infection intercurrente</div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <div class="accordion-header">💊 IPP &amp; Atteinte rénale — Néphrite interstitielle aiguë
+              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+            </div>
+            <div class="accordion-body">
+              <div class="key-fact blue" style="margin-bottom:8px;"><strong>Mécanisme :</strong> Réaction immuno-allergique → infiltration inflammatoire interstitielle (lymphocytes, macrophages, éosinophiles) → inflammation tubulointerstitielle → ↓ DFG → IRA · Si non arrêtés : fibrose interstitielle → IRC</div>
+              <div class="flag-list" style="margin-bottom:8px;">
+                <div class="flag-item"><span class="flag-dot red"></span><span><strong>Cause fréquente</strong> de néphrite interstitielle aiguë médicamenteuse</span></div>
+                <div class="flag-item"><span class="flag-dot ink"></span><span>Présentation insidieuse (souvent sans fièvre ni rash) — diagnostic difficile</span></div>
+                <div class="flag-item"><span class="flag-dot ink"></span><span>Arrêt temporaire recommandé en IRA</span></div>
+              </div>
+              <div class="key-fact yellow"><strong>Autres effets systémiques des IPP :</strong> Hypomagnésémie chronique · Dysbiose et inflammation systémique · Carence vitamine B12 · Risque accru C. difficile, pneumonie, fractures osseuses · Progression de la MRC<br>⭐ <strong>Utiliser les IPP seulement si indication confirmée. Réévaluer régulièrement.</strong></div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <div class="accordion-header">🔄 Néphropathie au contraste iodé (CI-AKI)
+              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+            </div>
+            <div class="accordion-body">
+              <table style="margin-bottom:8px;">
+                <thead><tr><th></th><th>CA-AKI</th><th>CI-AKI</th></tr></thead>
+                <tbody>
+                  <tr><td><strong>Définition</strong></td><td>IRA survenant après contraste, <em>sans lien causal prouvé</em></td><td>IRA directement causée par le contraste — <strong>risque réel beaucoup plus faible qu&apos;on le pense</strong></td></tr>
+                </tbody>
+              </table>
+              <div class="note" style="margin-bottom:8px;">⚠️ Beaucoup de cas attribués au contraste sont en réalité liés à <strong>d&apos;autres causes</strong> : sepsis, hypovolémie, médicaments.</div>
+              <p class="content-text" style="font-weight:600;margin-bottom:4px;">Facteurs de risque principaux</p>
+              <div class="flag-list" style="margin-bottom:8px;">
+                <div class="flag-item"><span class="flag-dot red"></span><span><strong>DFGe &lt; 30 mL/min/1,73 m²</strong> — facteur principal</span></div>
+                <div class="flag-item"><span class="flag-dot red"></span><span>IRA préexistante · Diabète · Hypovolémie · IC</span></div>
+                <div class="flag-item"><span class="flag-dot ink"></span><span>Exposition répétée au contraste · Médicaments néphrotoxiques concomitants</span></div>
+              </div>
+              <p class="content-text" style="font-weight:600;margin-bottom:4px;">Mécanismes physiopathologiques</p>
+              <div class="flag-list" style="margin-bottom:8px;">
+                <div class="flag-item"><span class="flag-dot red"></span><span>Vasoconstriction rénale</span></div>
+                <div class="flag-item"><span class="flag-dot red"></span><span>Toxicité tubulaire directe</span></div>
+                <div class="flag-item"><span class="flag-dot ink"></span><span>Dysfonction microvasculaire</span></div>
+                <div class="flag-item"><span class="flag-dot ink"></span><span>Inflammation → apoptose cellulaire → nécrose → ↓ DFG</span></div>
+              </div>
+              <p class="content-text" style="font-weight:600;margin-bottom:4px;">Prévention</p>
+              <table>
+                <thead><tr><th>Mesure</th><th>Détails</th><th>Recommandation</th></tr></thead>
+                <tbody>
+                  <tr><td><strong>Hydratation IV préventive</strong></td><td>NaCl 0,9 % à 1 mL/kg/h · 6–12 h avant ET après la procédure (adapter si IC)</td><td><span class="drug-badge">✅ Recommandé</span></td></tr>
+                  <tr><td>Surveiller créatinine post-procédure</td><td>48–72 h après</td><td><span class="drug-badge">✅ Recommandé</span></td></tr>
+                  <tr><td>Minimiser volume de contraste</td><td>—</td><td><span class="drug-badge">✅ Recommandé</span></td></tr>
+                  <tr><td>N-acétylcystéine</td><td>—</td><td><span class="drug-badge ci">❌ Pas de protection prouvée</span></td></tr>
+                  <tr><td>Dialyse prophylactique</td><td>—</td><td><span class="drug-badge ci">❌ Non recommandé</span></td></tr>
+                  <tr><td>Évitement systématique du contraste</td><td>Si imagerie cliniquement nécessaire → ne pas refuser · Bénéfice diagnostique &gt; risque rénal</td><td><span class="drug-badge ci">❌ Non justifié</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ CLINIQUE ═══ -->
+      <div class="block clin" id="ira-clinique">
+        <div class="block-title"><span class="tag">🩺 7. Présentation clinique &amp; Diagnostic de l&apos;IRA</span></div>
+        <div class="key-fact ink" style="margin-bottom:10px;">La maladie rénale est généralement une <strong>affection silencieuse</strong> (exception : obstruction → douleur, globe vésical).</div>
+
+        <div class="accordion">
+          <div class="accordion-item open">
+            <div class="accordion-header">🩺 Présentation clinique
+              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+            </div>
+            <div class="accordion-body">
+              <table>
+                <thead><tr><th>Présentation</th><th>Contexte</th><th>Dilemme</th></tr></thead>
+                <tbody>
+                  <tr><td><strong>1 — Contexte connu</strong></td><td>Chirurgie majeure récente · maladie aiguë intercurrente (sepsis, déshydratation)</td><td>Étiologie souvent claire</td></tr>
+                  <tr><td><strong>2 — Durée inconnue</strong></td><td>Fonction rénale anormale sans antécédents documentés</td><td>IRA vs IRC vs IRA sur IRC</td></tr>
+                </tbody>
+              </table>
+              <div class="key-fact blue" style="margin-top:8px;"><strong>Estimer la fonction rénale de base via :</strong> ATCD médicaux + créatinine antérieure · Taille des reins à l&apos;imagerie (reins petits → chronicité probable) · Présence/absence d&apos;albuminurie · Historique des valeurs de créatinine<br>⚠️ ↓ créatinine après admission → IRA déjà présente avant l&apos;hospitalisation</div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <div class="accordion-header">🔍 Diagnostic clinique — Bilan
+              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+            </div>
+            <div class="accordion-body">
+              <table>
+                <thead><tr><th>Domaine</th><th>Éléments clés</th></tr></thead>
+                <tbody>
+                  <tr><td><strong>Histoire</strong></td><td>Déshydratation · infection · médicaments néphrotoxiques · obstruction · événement aigu récent</td></tr>
+                  <tr><td><strong>Examen physique</strong></td><td>Hypotension · surcharge hydrosodée (crépitants, œdèmes, JVD) · globe vésical · muqueuses sèches · TRC · pouls</td></tr>
+                  <tr><td><strong>Investigations</strong></td><td>Créatinine · urée · électrolytes · NFS · CK (rhabdomyolyse) · gaz veineux · analyse urinaire avec sédiment · ± éosinophilurie · échographie rénale</td></tr>
+                  <tr><td><strong>Statut volémique — Clinique</strong></td><td>Larmoiement/muqueuses sèches → hypovolémie · Veines jugulaires → PVC · Crépitants pulmonaires → surcharge · Pouls, TA, TRC, œdèmes</td></tr>
+                  <tr><td><strong>Statut volémique — Hémodynamique avancée (USI)</strong></td><td>PVC · ScvO₂ · Diamètre VCI à l&apos;échographie · Échocardiographie · Ligne artérielle · Variation pression pulsée · Test lever de jambe passif</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ COMPLICATIONS ═══ -->
+      <div class="block flag" id="ira-complic">
+        <div class="block-title"><span class="tag">🚨 8. Complications de l&apos;IRA</span></div>
         <table>
-          <thead><tr><th>Paramètre</th><th>Prérénale</th><th>NTA</th></tr></thead>
+          <thead><tr><th>Complication</th><th>Seuil critique / Manifestations</th><th>Urgence TRR?</th></tr></thead>
           <tbody>
-            <tr><td>Na⁺ urinaire</td><td>&lt; 20 mmol/L</td><td>&gt; 40 mmol/L</td></tr>
-            <tr><td>FeNa⁺</td><td><strong>&lt; 1 %</strong></td><td><strong>&gt; 2 %</strong></td></tr>
-            <tr><td>Osmolarité urinaire</td><td>&gt; 500 mOsm/kg</td><td>&lt; 400 mOsm/kg</td></tr>
-            <tr><td>Sédiment</td><td>Normal</td><td>Cylindres granuleux</td></tr>
+            <tr><td><strong>Hypervolémie</strong></td><td>Surcharge liquidienne → œdème pulmonaire</td><td>Si réfractaire aux diurétiques</td></tr>
+            <tr><td><strong>Hyperkaliémie</strong></td><td>K+ &gt; 5,5 mmol/L → modifications ECG → arythmies létales</td><td>Si K+ &gt; 6,5 mmol/L</td></tr>
+            <tr><td><strong>Acidose métabolique sévère</strong></td><td>pH &lt; 7,2 → hyperventilation compensatoire → dépression myocardique</td><td>Si pH &lt; 7,2 réfractaire</td></tr>
+            <tr><td><strong>Hyperphosphatémie</strong></td><td>PO₄ &gt; 1,9 mmol/L → calcifications vasculaires</td><td>Selon sévérité</td></tr>
+            <tr><td><strong>Urémie symptomatique</strong></td><td>Urée ↑ → péricardite urémique · encéphalopathie · neuropathie · prurit</td><td>Oui si symptômes</td></tr>
+            <tr><td><strong>Anémie</strong></td><td>↓ EPO · hémolyse · saignement</td><td>—</td></tr>
           </tbody>
         </table>
-        <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;">
-          <span class="drug-badge line3">Créatinine + urée + électrolytes</span>
-          <span class="drug-badge line3">Analyse urine + sédiment</span>
-          <span class="drug-badge line3">Bladder scan</span>
-          <span class="drug-badge line3">ECG (K⁺)</span>
-          <span class="drug-badge line3">CK (si rhabdomyolyse)</span>
-        </div>
       </div>
 
-      <div class="block para" style="border-left-color:var(--yellow);">
-        <div class="block-title" id="ira-8"><span class="tag">☢️ Néphrotoxicité — Mécanismes & Néphropathie au contraste</span></div>
-        <table style="margin-top:4px;font-size:12.5px;">
-          <thead><tr><th>Mécanisme</th><th>Agents typiques</th></tr></thead>
+      <!-- ═══ PRISE EN CHARGE ═══ -->
+      <div class="block para" id="ira-pec">
+        <div class="block-title"><span class="tag">🛠️ 9. Prise en charge de l&apos;IRA</span></div>
+        <div class="flag-list" style="margin-bottom:12px;">
+          <div class="flag-item"><span class="flag-dot red"></span><span><strong>1. Traiter la cause :</strong> hypovolémie → remplissage · sepsis → ATB + source control · obstruction → décompression urologique</span></div>
+          <div class="flag-item"><span class="flag-dot red"></span><span><strong>2. Optimiser la TA :</strong> maintenir MAP ≥ 65 mmHg (perfusion rénale) · vasopresseurs si sepsis</span></div>
+          <div class="flag-item"><span class="flag-dot ink"></span><span><strong>3. Optimiser la volémie :</strong> fluides IV · vasopresseurs · inotropes · éviter surcharge</span></div>
+          <div class="flag-item"><span class="flag-dot ink"></span><span><strong>4. Éviter toute nouvelle insulte rénale</strong> — pas de contraste iodé si non indispensable · ajuster les doses</span></div>
+          <div class="flag-item"><span class="flag-dot ink"></span><span><strong>5. Éviter médicaments néphrotoxiques</strong> — arrêter AINS, aminoglycosides, metformine si DFGe &lt; 30</span></div>
+          <div class="flag-item"><span class="flag-dot ink"></span><span><strong>6. Ajuster les doses</strong> selon DFGe actuel — antibiotiques, anticoagulants, antidiabétiques</span></div>
+          <div class="flag-item"><span class="flag-dot yellow"></span><span><strong>7. Surveiller complications métaboliques :</strong> hyperK+ · acidose · anémie · hyperglycémie · phosphore</span></div>
+          <div class="flag-item"><span class="flag-dot yellow"></span><span><strong>8. Soutien nutritionnel + prévention :</strong> ulcère de stress · infections nosocomiales</span></div>
+        </div>
+        <div class="sec-divider"><div class="sd-shape sq"></div><div class="sd-label">Équilibre des fluides — Concept clé</div><div class="sd-line"></div></div>
+        <div class="key-fact blue" style="margin-bottom:8px;">IRA = maladie d&apos;<strong>hypoperfusion ET de congestion</strong> · L&apos;objectif est d&apos;atteindre un <strong>équilibre optimal</strong> entre hypovolémie et surcharge.</div>
+        <table>
+          <thead><tr><th>Intervention</th><th>Recommandation</th></tr></thead>
           <tbody>
-            <tr><td>Vasoconstriction afférente</td><td>Contraste iodé · AINS (COX-2) · iSGLT-2 · Inhibiteurs calcineurine · Aminoglycosides</td></tr>
-            <tr><td>Vasodilatation efférente</td><td>IECA · ARA</td></tr>
-            <tr><td>Toxicité tubulaire (NTA)</td><td>Contraste iodé · Aminoglycosides · Amphotéricine B · Cisplatine · Ifosfamide</td></tr>
-            <tr><td>Néphrite interstitielle aiguë</td><td><strong>IPP (+++)</strong> · Pénicillines/céphalosporines · Vancomycine · Ciprofloxacine · AINS · Rifampicine</td></tr>
-            <tr><td>Glomérulopathie</td><td>AINS · Pénicillamine · Captopril · Sirolimus</td></tr>
-            <tr><td>Néphropathie cristalline</td><td>Acyclovir · Indinavir · Méthotrexate · Sulfonamides · Quinolones</td></tr>
+            <tr><td><strong>Fluides de choix</strong></td><td>Cristalloïdes isotoniques (ex. Lactate Ringer)</td></tr>
+            <tr><td><strong>N-acétylcystéine, bicarbonate</strong></td><td><span class="drug-badge ci">❌ Pas de protection prouvée pour la néphropathie au contraste</span></td></tr>
+            <tr><td><strong>Diurétiques</strong></td><td><span class="drug-badge ci">❌ Pas pour prévenir l&apos;IRA</span> · <span class="drug-badge ci">❌ Pas pour traiter l&apos;IRA</span> · <span class="drug-badge">✅ SAUF surcharge volémique cliniquement significative</span></td></tr>
           </tbody>
         </table>
-        <div class="key-fact red" style="margin-top:8px;">🛑 IPP au long cours — réaction immuno-allergique → néphrite interstitielle → ↓ DFG ; si non cessés → fibrose → IRC. Effets systémiques additionnels : hypoMg chronique, carence B12, ↑ risque <em>C. difficile</em>/pneumonie/fractures. <strong>N'utiliser que si indication confirmée, réévaluer régulièrement.</strong></div>
-        <p class="content-text" style="margin-top:10px;"><strong>Néphropathie au contraste iodé :</strong> CA-AKI (IRA temporellement associée, sans lien causal prouvé) vs CI-AKI (causée directement — risque réel <strong>bien plus faible</strong> qu'on le croit ; souvent confondu avec sepsis/hypovolémie/Rx concomitants). FdR principal : <strong>DFGe &lt; 30</strong> · IRA préexistante · diabète · IC · expositions répétées.</p>
-        <div class="highlight cream" style="margin-top:8px;font-size:13px;"><strong>✅ Prévention :</strong> hydratation IV préventive — NaCl 0,9 % à 1 mL/kg/h, <strong>6–12h avant et après</strong> (adapter si IC) · minimiser le volume de contraste · corriger l'hypovolémie · éviter néphrotoxiques concomitants · surveiller Cr post-procédure. <strong>❌ Non recommandés :</strong> N-acétylcystéine, dialyse prophylactique, évitement systématique du contraste si imagerie cliniquement nécessaire (le bénéfice diagnostique dépasse généralement le risque rénal)</div>
-        <div class="key-fact black" style="margin-top:8px;">🛑 <strong>Arrêt temporaire en IRA :</strong> AINS, diurétiques, aminoglycosides, amphotéricine B, méthotrexate · <strong>Metformine</strong> si IRA + DFGe &lt; 30 (risque acidose lactique)</div>
       </div>
 
-      <div class="block rx">
-        <div class="block-title" id="ira-9"><span class="tag">💊 Traitement</span></div>
-        <div class="criteria-list">
-          <div class="criteria-item"><div class="criteria-num blue">1</div><span>Traiter la cause (hypovolémie → cristalloïdes · obstruction → drainage · sepsis · cesser Rx causal)</span></div>
-          <div class="criteria-item"><div class="criteria-num blue">2</div><span>MAP ≥ 65 mmHg · Cesser tous les néphrotoxiques · Ajuster posologies selon DFGe</span></div>
-          <div class="criteria-item"><div class="criteria-num blue">3</div><span>Surveiller : diurèse, électrolytes, créatinine en série</span></div>
-        </div>
-        <div class="highlight red" style="margin-top:10px;font-size:13px;">❌ Diurétiques <strong>non recommandés</strong> pour prévenir l'IRA — seulement si surcharge symptomatique</div>
+      <!-- ═══ TRR / DIALYSE ═══ -->
+      <div class="block clin" id="ira-trr">
+        <div class="block-title"><span class="tag">🏥 10. Thérapie de Remplacement Rénal (TRR / Dialyse)</span></div>
+        <div class="key-fact yellow" style="margin-bottom:10px;">🔑 La dialyse <strong>traite les complications</strong> de l&apos;IRA mais <strong>ne guérit pas</strong> l&apos;IRA elle-même.</div>
+        <div class="key-fact ink" style="margin-bottom:10px;"><strong>Mnémotechnique AEIOU</strong> — Indications de la TRR</div>
+        <table>
+          <thead><tr><th>Lettre</th><th>Indication</th><th>Seuil / Définition</th></tr></thead>
+          <tbody>
+            <tr><td><strong>(A)</strong></td><td>Anurie</td><td>Production urinaire négligeable pendant ≥ 6 h</td></tr>
+            <tr><td><strong>(A)</strong></td><td>Acidose métabolique sévère</td><td>pH &lt; 7,2</td></tr>
+            <tr><td><strong>(A)</strong></td><td>Azotémie marquée</td><td>Urée &gt; <strong>30 mmol/L</strong> ou créatinine &gt; <strong>300 µmol/L</strong></td></tr>
+            <tr><td><strong>(E)</strong></td><td>Hyperkaliémie (Electrolytes)</td><td>K+ &gt; <strong>6,5 mmol/L</strong></td></tr>
+            <tr><td><strong>(I)</strong></td><td>Hypervolémie (Intoxication liquidienne)</td><td>Œdème pulmonaire ne répondant pas aux diurétiques</td></tr>
+            <tr><td><strong>(O)</strong></td><td>Oligurie sévère</td><td>Diurèse &lt; <strong>200 mL sur 12 h</strong></td></tr>
+            <tr><td><strong>(U)</strong></td><td>Urémie symptomatique</td><td>Encéphalopathie urémique · péricardite · neuropathie</td></tr>
+          </tbody>
+        </table>
+        <div class="note" style="margin-top:10px;"><strong>Modalités :</strong> Hémodialyse intermittente (HDD) · Hémodialyse continue (CRRT — préférable si instable hémodynamiquement) · Dialyse péritonéale</div>
       </div>
 
-      <!-- DIALYSE — BOÎTE DÉDIÉE -->
-      <div class="block def">
-        <div class="block-title"><span class="tag">🩺 Dialyse en contexte d'IRA — Indications & repères</span></div>
-        <p class="content-text" style="margin-bottom:10px;">La dialyse est envisagée en IRA lorsque les complications deviennent <strong>réfractaires au traitement médical</strong> ou menacent la vie — elle ne traite pas la cause sous-jacente, mais soutient le patient le temps que la fonction rénale récupère (ou que la cause soit corrigée).</p>
-        <div class="key-fact black"><strong>Mnémo AEIOU — indications classiques :</strong></div>
-        <div class="flag-list" style="margin-top:8px;">
-          <div class="flag-item"><span class="flag-dot red"></span><span><strong>A — Acidose</strong> métabolique sévère et réfractaire (pH &lt; 7,2 malgré correction)</span></div>
-          <div class="flag-item"><span class="flag-dot red"></span><span><strong>E — Électrolytes</strong> : hyperkaliémie &gt; 6,5 mmol/L réfractaire au traitement médical (ou anomalies ECG associées)</span></div>
-          <div class="flag-item"><span class="flag-dot red"></span><span><strong>I — Intoxication</strong> par une substance dialysable (ex. méthanol, éthylène glycol, lithium, salicylates, AAS, théophylline)</span></div>
-          <div class="flag-item"><span class="flag-dot red"></span><span><strong>O — Overload (surcharge)</strong> : œdème aigu du poumon résistant aux diurétiques</span></div>
-          <div class="flag-item"><span class="flag-dot red"></span><span><strong>U — Urémie symptomatique</strong> : encéphalopathie urémique, péricardite urémique, neuropathie/saignement urémique</span></div>
+      <!-- ═══ CONTINUUM IRA → IRC ═══ -->
+      <div class="block def" id="ira-continu">
+        <div class="block-title"><span class="tag">🔄 11. Continuum IRA → IRC &amp; Pronostic</span></div>
+        <div class="key-fact blue" style="margin-bottom:10px;">IRA et IRC font partie d&apos;un <strong>continuum rénal</strong>. Un épisode d&apos;IRA peut : 1. Guérir complètement · 2. Progresser vers l&apos;IRC · 3. Aggraver une IRC préexistante · 4. Progresser vers l&apos;IRT (dialyse chronique)</div>
+        <div class="stat-row" style="margin-bottom:12px;">
+          <div class="stat-card ink"><div class="stat-num">+10</div><div class="stat-label">cas IRC pour 100 personnes-années post-IRA</div></div>
+          <div class="stat-card red"><div class="stat-num">+0,4</div><div class="stat-label">cas IRT pour 100 personnes-années post-IRA</div></div>
         </div>
-        <div class="highlight yellow" style="margin-top:10px;font-size:13px;"><strong>Modalités :</strong> hémodialyse intermittente (instabilité légère, courte durée) · thérapie de remplacement rénal continue/CRRT (instabilité hémodynamique, soins critiques) · dialyse péritonéale (accès limité, ressources réduites). Le choix dépend de la stabilité hémodynamique, de la disponibilité et du contexte clinique — décision en collaboration avec la néphrologie.</div>
-        <div class="note" style="margin-top:8px;">ℹ️ La dialyse est une mesure de soutien temporaire en IRA — viser le sevrage dès la récupération de la diurèse/fonction rénale et la résolution des indications ci-dessus.</div>
-      </div>
-
-      <div class="block flag">
-        <div class="block-title" id="ira-10"><span class="tag">🚨 RED FLAGS</span></div>
-        <div class="flag-list">
-          <div class="flag-item"><span class="fi-icon">⚡</span><span><strong>Hyperkaliémie &gt; 6,5 mmol/L ou anomalies ECG</strong> (ondes T pointues, élargissement QRS, perte d'onde P) → urgence vitale, traitement immédiat ± dialyse</span></div>
-          <div class="flag-item"><span class="fi-icon">🩸</span><span><strong>Acidose métabolique sévère</strong> (pH &lt; 7,2) ou surcharge volémique réfractaire (OAP résistant aux diurétiques) → dialyse urgente</span></div>
-          <div class="flag-item"><span class="fi-icon">🧠</span><span><strong>Signes d'urémie</strong> (astérixis, confusion, frottement péricardique) → indication de dialyse, ne pas attendre l'aggravation</span></div>
-          <div class="flag-item"><span class="fi-icon">🚱</span><span><strong>Anurie ou oligurie marquée</strong> (&lt; 0,5 mL/kg/h × 6h) → exclure une obstruction (bladder scan/échographie) en priorité, puis réévaluer la cause</span></div>
-          <div class="flag-item"><span class="fi-icon">💊</span><span><strong>Triple Whammy actif</strong> (IECA/ARA + diurétique + AINS) ou IPP au long cours → revoir et cesser les agents néphrotoxiques systématiquement — causes fréquentes et sous-diagnostiquées (NIA)</span></div>
-        </div>
+        <table style="margin-bottom:10px;">
+          <thead><tr><th>Type de réparation</th><th>Mécanismes</th><th>Résultat</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Adaptative</strong></td><td>Prolifération tubulaire · régénération endothéliale · mitophagie · résolution de l&apos;inflammation</td><td>Récupération → mais risque IRA récurrente jusqu&apos;à IRC selon sévérité</td></tr>
+            <tr><td><strong>Maladaptative</strong></td><td>Arrêt cycle cellulaire · voies développementales aberrantes · dysfonction mitochondriale · réponse immunitaire dysfonctionnelle</td><td>IRA → IRC → IRT</td></tr>
+          </tbody>
+        </table>
+        <div class="key-fact yellow"><strong>Facteurs pronostiques déterminants :</strong> Sévérité de l&apos;IRA initiale · Durée de l&apos;épisode · Niveau de récupération de la fonction rénale · Sévérité AKD (Acute Kidney Disease) intermédiaire · Réserve rénale résiduelle</div>
+        <div class="key-fact blue" style="margin-top:8px;"><strong>Suivi post-IRA recommandé :</strong> Créatinine + DFGe à 3 mois · Protéinurie (A:C ratio) · TA · Médicaments à ajuster · Référence en néphrologie si DFGe &lt; 30 ou IRA stade 3 · Réévaluer néphrotoxiques</div>
       </div>
     </div>
-
-    <div class="section" id="sec-irc">
+    
+<script>
+function iraTab(tab) {
+  var tabs = ['pre','intra','post'];
+  var labels = {pre:'ira-tab-pre', intra:'ira-tab-intra', post:'ira-tab-post'};
+  tabs.forEach(function(t) {
+    var el = document.getElementById('ira-content-' + t);
+    if (el) el.style.display = (t === tab) ? 'block' : 'none';
+    var b  = document.getElementById('ira-tab-' + t);
+    if (b)  { b.style.background = (t === tab) ? '#1C3F8F' : '#e2e8f0'; b.style.color = (t === tab) ? '#fff' : '#1e293b'; }
+  });
+}
+</script>
+<div class="section" id="sec-irc">
       <div class="section-header">
         <div class="section-accent" style="background:var(--red)">🫘</div>
         <div class="section-title"><h1>IRC / MRC</h1><div class="breadcrumb">Néphrologie <span class="breadcrumb-sep">·</span> Section 11</div></div>
