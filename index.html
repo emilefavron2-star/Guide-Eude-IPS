@@ -6453,25 +6453,114 @@ function calculatePHQ9() {
       </div>
     </div>
 
+
+      <!-- SYNDROME MÉTABOLIQUE -->
+      <div class="block clin" id="dyslip-synd-metab">
+        <div class="block-title"><span class="tag">⚖️ Syndrome métabolique — critères diagnostiques (NCEP ATP III / IDF)</span></div>
+        <div class="key-fact blue" style="margin-bottom:12px;">Diagnostic : <strong>≥ 3 critères</strong> sur 5 présents simultanément — fortement associé au risque de DM2, MCAS et événements CV</div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px;">
+          <div>
+            <table>
+              <thead><tr><th colspan="3">Critères diagnostiques</th></tr>
+              <tr><th>Composante</th><th>Seuil (H / F)</th><th>Note</th></tr></thead>
+              <tbody>
+                <tr style="background:#FEF2F2;">
+                  <td><strong>🔴 Tour de taille</strong></td>
+                  <td>H &gt; 102 cm · F &gt; 88 cm<br><small style="color:#888;">(IDF : H ≥ 94 · F ≥ 80 cm)</small></td>
+                  <td>Obésité abdominale / centrale</td>
+                </tr>
+                <tr style="background:#FEF9C3;">
+                  <td><strong>🟡 Triglycérides</strong></td>
+                  <td>≥ 1,7 mmol/L<br><small style="color:#888;">ou traitement en cours</small></td>
+                  <td>Dyslipidémie athérogène</td>
+                </tr>
+                <tr style="background:#EFF6FF;">
+                  <td><strong>🔵 HDL-C</strong></td>
+                  <td>H &lt; 1,0 mmol/L<br>F &lt; 1,3 mmol/L</td>
+                  <td>Bas HDL</td>
+                </tr>
+                <tr style="background:#F0FFF4;">
+                  <td><strong>🟢 Tension artérielle</strong></td>
+                  <td>≥ 130 / 85 mmHg<br><small style="color:#888;">ou traitement HTA</small></td>
+                  <td>HTA modérée</td>
+                </tr>
+                <tr style="background:#FFF0F5;">
+                  <td><strong>🩷 Glycémie à jeun</strong></td>
+                  <td>≥ 5,6 mmol/L<br><small style="color:#888;">ou DM2 connu / traitement</small></td>
+                  <td>Dysrégulation glucidique</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div>
+            <div style="background:#FEF9C3;border-radius:10px;padding:14px;margin-bottom:10px;">
+              <p style="margin:0 0 8px;font-weight:700;color:#92400e;">⚠️ Pourquoi important en clinique IPS ?</p>
+              <ul style="margin:0;padding-left:18px;font-size:13px;line-height:1.7;">
+                <li>Risque de <strong>DM2 × 5</strong> (vs population générale)</li>
+                <li>Risque CV augmenté (≈ 2 ×) même sans DM2</li>
+                <li>Terrain de <strong>résistance à l'insuline</strong> → cercle vicieux</li>
+                <li>Association avec NAFLD / NASH, SOPK, hyperuricémie</li>
+                <li>Peut être réversible avec modifications des HDV</li>
+              </ul>
+            </div>
+            <div style="background:#DCFCE7;border-radius:10px;padding:14px;">
+              <p style="margin:0 0 8px;font-weight:700;color:#166534;">✅ Prise en charge prioritaire</p>
+              <ul style="margin:0;padding-left:18px;font-size:13px;line-height:1.7;">
+                <li><strong>Perte pondérale 5–10 %</strong> → améliore 3–4 critères simultanément</li>
+                <li>Activité physique aérobique ≥ 150 min/sem</li>
+                <li>Diète méditerranéenne ou DASH (↓ sucres raffinés, ↓ graisses trans)</li>
+                <li>Traiter chaque composante si persistante malgré HDV<br><small>→ HTA : IECA/ARA · DM2 : metformine/GLP-1 · TG : fibrate/icosapent · LDL : statine</small></li>
+                <li>Dépistage DM2 annuel (HbA1c ou glycémie à jeun)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:4px;">
+          <div style="background:#FEF2F2;border-radius:8px;padding:10px;text-align:center;">
+            <div style="font-size:18px;font-weight:800;color:#c0392b;">&gt;102/88</div>
+            <div style="font-size:10px;color:#666;">Tour taille (H/F cm)</div>
+          </div>
+          <div style="background:#FEF9C3;border-radius:8px;padding:10px;text-align:center;">
+            <div style="font-size:18px;font-weight:800;color:#92400e;">≥1,7</div>
+            <div style="font-size:10px;color:#666;">TG mmol/L</div>
+          </div>
+          <div style="background:#EFF6FF;border-radius:8px;padding:10px;text-align:center;">
+            <div style="font-size:18px;font-weight:800;color:#1d4ed8;">&lt;1,0/1,3</div>
+            <div style="font-size:10px;color:#666;">HDL (H/F mmol/L)</div>
+          </div>
+          <div style="background:#F0FFF4;border-radius:8px;padding:10px;text-align:center;">
+            <div style="font-size:18px;font-weight:800;color:#166534;">≥130/85</div>
+            <div style="font-size:10px;color:#666;">TA (mmHg)</div>
+          </div>
+          <div style="background:#FFF0F5;border-radius:8px;padding:10px;text-align:center;">
+            <div style="font-size:18px;font-weight:800;color:#9d174d;">≥5,6</div>
+            <div style="font-size:10px;color:#666;">Glycémie à jeun mmol/L</div>
+          </div>
+        </div>
+      </div>
+
     <!-- ══ MCAS ══ -->
     <div class="section" id="sec-mcas">
       <div class="section-header">
         <div class="section-accent">🫀</div>
-        <div class="section-title"><h1>MCAS & Angine Stable</h1><div class="breadcrumb">Cardiologie <span class="breadcrumb-sep">·</span> Section 4</div></div>
+        <div class="section-title"><h1>MCAS &amp; Angine Stable</h1><div class="breadcrumb">Cardiologie <span class="breadcrumb-sep">·</span> Section 4</div></div>
       </div>
 
       <!-- PILLS NAV -->
       <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
-        <button onclick="document.getElementById('mcas-1').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📌 Définitions</button>
-        <button onclick="document.getElementById('mcas-2').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🫀 Anatomie</button>
-        <button onclick="document.getElementById('mcas-3').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">⚡ Physiologie</button>
-        <button onclick="document.getElementById('mcas-4').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🧬 Physiopathologie</button>
-        <button onclick="document.getElementById('mcas-5').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔍 Diagnostic</button>
-        <button onclick="document.getElementById('mcas-6').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🩺 Évaluation</button>
-        <button onclick="document.getElementById('mcas-7').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🧪 Paraclinique</button>
-        <button onclick="document.getElementById('mcas-8').scrollIntoView({behavior:'smooth'})" style="background:#0a7a4e;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">💊 Traitement</button>
-        <button onclick="document.getElementById('mcas-9').scrollIntoView({behavior:'smooth'})" style="background:#c0392b;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🚨 Red Flags</button>
+        <button onclick="document.getElementById('mcas-def').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📌 Définitions</button>
+        <button onclick="document.getElementById('mcas-fdr').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">⚠️ Facteurs de risque</button>
+        <button onclick="document.getElementById('mcas-physio').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🧬 Physiopathologie</button>
+        <button onclick="document.getElementById('mcas-anat').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🫀 Anatomie coronarienne</button>
+        <button onclick="document.getElementById('mcas-o2').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">⚡ Balance O₂</button>
+        <button onclick="document.getElementById('mcas-angine').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔍 Angine stable</button>
+        <button onclick="document.getElementById('mcas-rx').scrollIntoView({behavior:'smooth'})" style="background:#0a7a4e;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">💊 Traitement</button>
+        <button onclick="document.getElementById('mcas-pec').scrollIntoView({behavior:'smooth'})" style="background:#7b3fa0;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🩺 Prise en charge IPS</button>
+        <button onclick="document.getElementById('mcas-flags').scrollIntoView({behavior:'smooth'})" style="background:#c0392b;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🚨 Red Flags</button>
       </div>
+
       <!-- STAT CARDS -->
       <div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:20px;">
         <div style="flex:1;min-width:120px;background:#EEF2FF;border-radius:10px;padding:14px;text-align:center;">
@@ -6480,299 +6569,756 @@ function calculatePHQ9() {
         </div>
         <div style="flex:1;min-width:120px;background:#FEE2E2;border-radius:10px;padding:14px;text-align:center;">
           <div style="font-size:20px;font-weight:800;color:#c0392b;">3 critères</div>
-          <div style="font-size:11px;color:#555;margin-top:4px;">Angine stable typique</div>
+          <div style="font-size:11px;color:#555;margin-top:4px;">Angine typique (tous 3)</div>
         </div>
         <div style="flex:1;min-width:120px;background:#DCFCE7;border-radius:10px;padding:14px;text-align:center;">
-          <div style="font-size:20px;font-weight:800;color:#0a7a4e;">≤ 10 min</div>
-          <div style="font-size:11px;color:#555;margin-top:4px;">Résolution au repos/NTG</div>
+          <div style="font-size:20px;font-weight:800;color:#0a7a4e;">&lt; 10 min</div>
+          <div style="font-size:11px;color:#555;margin-top:4px;">Résolution repos / NTG</div>
         </div>
         <div style="flex:1;min-width:120px;background:#FEF9C3;border-radius:10px;padding:14px;text-align:center;">
-          <div style="font-size:20px;font-weight:800;color:#92400e;">0,3–0,4 mg</div>
-          <div style="font-size:11px;color:#555;margin-top:4px;">NTG SL — crise aiguë</div>
+          <div style="font-size:20px;font-weight:800;color:#92400e;">≥ 50 %</div>
+          <div style="font-size:11px;color:#555;margin-top:4px;">Sténose obstructive significative</div>
         </div>
         <div style="flex:1;min-width:120px;background:#F3E8FF;border-radius:10px;padding:14px;text-align:center;">
-          <div style="font-size:20px;font-weight:800;color:#7b3fa0;">≥ 50 %</div>
-          <div style="font-size:11px;color:#555;margin-top:4px;">Sténose obstructive</div>
+          <div style="font-size:20px;font-weight:800;color:#7b3fa0;">0,3–0,4 mg</div>
+          <div style="font-size:11px;color:#555;margin-top:4px;">NTG SL — crise aiguë</div>
         </div>
       </div>
 
-      <div class="block def" id="mcas-1">
-        <div class="block-title"><span class="tag">📌 Définitions — distinguer MCAS et angine stable</span></div>
-        <p class="content-text"><strong>MCAS (maladie coronarienne athérosclérotique)</strong> : la <em>maladie sous-jacente</em> — présence de plaques d'athérome dans les artères coronaires épicardiques, avec ou sans sténose significative, et avec ou sans symptômes (peut être silencieuse).</p>
-        <p class="content-text" style="margin-top:8px;"><strong>Angine stable</strong> : le <em>syndrome clinique</em> — ischémie myocardique <strong>reproductible à l'effort</strong> (ou stress émotionnel) résultant d'une sténose coronarienne fixe ou d'une <strong>INOCA</strong> (ischémie sans maladie coronarienne obstructive — dysfonction microvasculaire ou vasospasme), soulagée &lt; 10 min au repos ou par NTG. Autrement dit : la MCAS est la maladie, l'angine stable est sa manifestation symptomatique typique.</p>
-        <div class="key-fact blue" style="margin-top:10px;"><strong>Signe de Levine</strong> : sensation d'éléphant assis sur la poitrine (poing serré sur sternum)</div>
+      <!-- DÉFINITIONS -->
+      <div class="block def" id="mcas-def">
+        <div class="block-title"><span class="tag">📌 Définitions — MCAS vs Angine stable</span></div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:10px;">
+          <div style="background:#EEF2FF;border-radius:10px;padding:14px;">
+            <p style="margin:0 0 6px;font-weight:700;color:#1C3F8F;">🦠 MCAS — la maladie</p>
+            <p style="margin:0;font-size:13px;">Présence de plaques d'athérome dans les artères coronaires épicardiques, avec ou sans sténose significative, avec ou sans symptômes. Peut être silencieuse pendant des décennies.</p>
+          </div>
+          <div style="background:#DCFCE7;border-radius:10px;padding:14px;">
+            <p style="margin:0 0 6px;font-weight:700;color:#166534;">💓 Angine stable — le syndrome</p>
+            <p style="margin:0;font-size:13px;">Ischémie myocardique <strong>reproductible à l'effort</strong> (ou stress émotionnel) due à une sténose fixe ou une INOCA (dysfonction microvasculaire / vasospasme), soulagée &lt; 10 min au repos ou NTG.</p>
+          </div>
+        </div>
+        <div class="key-fact blue"><strong>Signe de Levine</strong> : sensation d'étau ou d'éléphant sur la poitrine — poing fermé sur le sternum. Pathognomonique d'angine typique.</div>
+        <div class="key-fact yellow" style="margin-top:8px;"><strong>INOCA</strong> (Ischaemia with Non-Obstructive Coronary Arteries) : angine avec coronarographie normale — cause = dysfonction microvasculaire ou vasospasme. Plus fréquent chez la femme.</div>
       </div>
 
-      <!-- ANATOMIE CORONARIENNE -->
-      <div class="block clin" id="mcas-2">
-        <div class="block-title"><span class="tag">🫀 Anatomie coronarienne</span></div>
+      <!-- FACTEURS DE RISQUE -->
+      <div class="block clin" id="mcas-fdr">
+        <div class="block-title"><span class="tag">⚠️ Facteurs de risque cardiovasculaires</span></div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:12px;">
+          <div>
+            <p style="margin:0 0 8px;font-weight:700;color:#c0392b;">🔴 Non modifiables</p>
+            <table>
+              <thead><tr><th>Facteur</th><th>Précision</th></tr></thead>
+              <tbody>
+                <tr><td>Âge</td><td>H ≥ 45 ans · F ≥ 55 ans (ou ménopause précoce)</td></tr>
+                <tr><td>Sexe masculin</td><td>Risque plus précoce et plus élevé chez H</td></tr>
+                <tr><td>ATCD familiaux</td><td>MCAS chez parent 1er degré : H &lt; 55 ans · F &lt; 65 ans</td></tr>
+                <tr><td>Ethnicité</td><td>Asiatiques du Sud / Autochtones = risque plus élevé</td></tr>
+                <tr><td>Génétique</td><td>Hypercholestérolémie familiale (LDLR, ApoB, PCSK9)</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div>
+            <p style="margin:0 0 8px;font-weight:700;color:#0a7a4e;">🟢 Modifiables</p>
+            <table>
+              <thead><tr><th>Facteur</th><th>Impact</th></tr></thead>
+              <tbody>
+                <tr><td>Tabagisme</td><td>Risque CV × 2–4 ; cesse après 1–3 ans</td></tr>
+                <tr><td>HTA</td><td>Principal FdR modifiable — cible &lt; 130/80</td></tr>
+                <tr><td>Dyslipidémie</td><td>LDL &gt; 3,5 → atherogenèse accélérée</td></tr>
+                <tr><td>Diabète / prédiabète</td><td>Risque × 2–4 ; glucotoxicité endothéliale</td></tr>
+                <tr><td>Obésité abdominale</td><td>Tour taille H&gt;102/F&gt;88 cm</td></tr>
+                <tr><td>Sédentarité</td><td>Indépendant de l'obésité</td></tr>
+                <tr><td>Stress / dépression</td><td>↑ catécholamines → dysfonction endothéliale</td></tr>
+                <tr><td>Consommation OH</td><td>Risque neutre si &lt; 2U/j · délétère si excessif</td></tr>
+                <tr><td>Alimentation</td><td>Graisses saturées, ultra-transformés, sel</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="key-fact red">Les <strong>4 grands FdR modifiables</strong> (tabac · HTA · dyslipidémie · DM2) expliquent &gt; 90 % des IM selon INTERHEART — c'est là que vos interventions auront le plus grand impact.</div>
+      </div>
+
+      <!-- PHYSIOPATHOLOGIE -->
+      <div class="block path" id="mcas-physio">
+        <div class="block-title"><span class="tag">🧬 Physiopathologie — Continuum de l'athérosclérose</span></div>
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:16px;">
+          <div style="background:#EEF2FF;border-radius:10px;padding:12px;text-align:center;border-top:4px solid #1C3F8F;">
+            <div style="font-size:22px;margin-bottom:4px;">🅰️</div>
+            <div style="font-weight:700;color:#1C3F8F;margin-bottom:6px;">Vaisseau normal</div>
+            <div style="font-size:12px;color:#444;">Endothélium intact · Tunica media musculaire lisse · Flux laminaire · Production de NO (vasodilatation)</div>
+          </div>
+          <div style="background:#FEF9C3;border-radius:10px;padding:12px;text-align:center;border-top:4px solid #d97706;">
+            <div style="font-size:22px;margin-bottom:4px;">🅱️</div>
+            <div style="font-weight:700;color:#92400e;margin-bottom:6px;">Stries lipidiques</div>
+            <div style="font-size:12px;color:#444;">Dysfonction endothéliale → LDL oxydés entrent dans l'intima → macrophages &amp; cellules spumeuses → inflammation chronique</div>
+          </div>
+          <div style="background:#FEE2E2;border-radius:10px;padding:12px;text-align:center;border-top:4px solid #c0392b;">
+            <div style="font-size:22px;margin-bottom:4px;">🅲</div>
+            <div style="font-weight:700;color:#c0392b;margin-bottom:6px;">Plaque fibreuse</div>
+            <div style="font-size:12px;color:#444;">Chape fibreuse sur noyau lipidique · Calcification progressive · Sténose croissante · Angine d'effort stable si ≥ 50–70 %</div>
+          </div>
+          <div style="background:#FFF0F5;border-radius:10px;padding:12px;text-align:center;border-top:4px solid #9d174d;">
+            <div style="font-size:22px;margin-bottom:4px;">🅳</div>
+            <div style="font-weight:700;color:#9d174d;margin-bottom:6px;">Rupture / Érosion</div>
+            <div style="font-size:12px;color:#444;">Rupture de plaque instable → thrombose coronarienne aiguë → occlusion totale ou subtotale → SCA (AI / NSTEMI / STEMI)</div>
+          </div>
+        </div>
         <div class="accordion">
-          <div class="accordion-item open">
-            <div class="accordion-header">Artères coronaires — territoires irrigués
+          <div class="accordion-item">
+            <div class="accordion-header">Mécanismes de la dysfonction endothéliale
               <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
             </div>
             <div class="accordion-body">
-              <strong>Artère Coronaire Gauche (ACG)</strong> — se divise en 2 branches :<br>
-              &nbsp;&nbsp;• <strong>IVA (Interventriculaire Antérieure)</strong> : paroi antérieure VG · 2/3 antérieur du septum · apex · muscles papillaires ant.<br>
-              &nbsp;&nbsp;• <strong>Circonflexe</strong> : oreillette gauche · parois latérales et postérieures VG<br>
-              <strong>Artère Coronaire Droite (ACD)</strong> : oreillette droite · ventricule droit · nœud SA (dominance droite)<br>
-              <table style="margin-top:8px;">
-                <thead><tr><th>Dominance</th><th>Prévalence</th><th>Origine AIVP</th></tr></thead>
-                <tbody>
-                  <tr><td>Droite</td><td>~85 %</td><td>ACD</td></tr>
-                  <tr><td>Gauche</td><td>8–20 %</td><td>ACG</td></tr>
-                  <tr><td>Codominance</td><td>Reste</td><td>ACD + ACG</td></tr>
-                </tbody>
-              </table>
+              <p class="content-text">Le point de départ de l'athérosclérose est la <strong>dysfonction de l'endothélium vasculaire</strong>, déclenchée par :</p>
+              <ul style="margin:6px 0;padding-left:20px;font-size:13px;line-height:1.8;">
+                <li><strong>Stress hémodynamique</strong> : zones de turbulence (bifurcations, courbures) → forces de cisaillement anormales</li>
+                <li><strong>LDL oxydés</strong> : pénètrent l'intima → capturés par macrophages → cellules spumeuses (foam cells)</li>
+                <li><strong>Tabac</strong> : ↓ NO · ↑ oxydants · ↑ adhésion plaquettaire</li>
+                <li><strong>HTA</strong> : forces mécaniques → ↑ perméabilité endothéliale</li>
+                <li><strong>Hyperglycémie</strong> : glycation des protéines endothéliales · ↑ stress oxydatif</li>
+                <li><strong>Inflammation chronique</strong> : CRP, IL-6, TNF-α → recrutement de monocytes → macrophages → foam cells</li>
+              </ul>
+              <div class="key-fact blue">La <strong>statine</strong> agit non seulement en ↓ LDL mais aussi en ↓ l'inflammation (effet pléiotrope) et en stabilisant la plaque.</div>
             </div>
           </div>
           <div class="accordion-item">
-            <div class="accordion-header">Structures électriques & conséquences des occlusions
+            <div class="accordion-header">Plaque stable vs plaque vulnérable
               <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
             </div>
             <div class="accordion-body">
               <table>
-                <thead><tr><th>Structure</th><th>Artère principale</th><th>Conséquence occlusion</th></tr></thead>
+                <thead><tr><th>Caractéristique</th><th>Plaque stable</th><th>Plaque vulnérable</th></tr></thead>
                 <tbody>
-                  <tr><td>Nœud SA</td><td>ACD (ou Cx)</td><td>Bradycardie sinusale, arrêt sinusal</td></tr>
-                  <tr><td>Nœud AV</td><td>ACD (ou Cx)</td><td>Bloc AV (1er, 2e, 3e degré)</td></tr>
-                  <tr><td>Faisceau de His</td><td>IVA (branches septales)</td><td>BBD/BBG, bloc AV complet</td></tr>
-                  <tr><td>Branche droite</td><td>IVA (proximal) / ACD (distal)</td><td>Bloc de branche droit (BBD)</td></tr>
-                  <tr><td>Faisceau ant. gauche</td><td>IVA</td><td>Hémibloc antérieur gauche</td></tr>
-                  <tr><td>Faisceau post. gauche</td><td>IVA + ACD</td><td>Hémibloc postérieur gauche (rare)</td></tr>
+                  <tr><td>Chape fibreuse</td><td>Épaisse et solide</td><td>Mince et friable</td></tr>
+                  <tr><td>Noyau lipidique</td><td>Petit, calcifié</td><td>Grand, mou (lipide)</td></tr>
+                  <tr><td>Inflammation</td><td>Faible</td><td>Forte (macrophages +++)</td></tr>
+                  <tr><td>Sténose</td><td>Souvent &gt; 70 %</td><td>Souvent &lt; 50 % (!)</td></tr>
+                  <tr><td>Symptômes</td><td>Angine stable reproductible</td><td>Peut être asymptomatique jusqu'à rupture</td></tr>
+                  <tr><td>Risque SCA</td><td>Faible</td><td>Élevé → AI / NSTEMI / STEMI</td></tr>
                 </tbody>
               </table>
-              <div class="note" style="margin-top:8px;">⚠️ Occlusion ACD → IM inférieur (DII, DIII, aVF) + possible BAV + atteinte VD (hypotension + champs pulmonaires clairs → <strong>éviter nitrates et diurétiques</strong>)</div>
+              <div class="key-fact red">⚠️ La plupart des SCA surviennent sur des plaques <strong>non obstructives</strong> (&lt; 50 % sténose) — d'où l'importance de la prévention pharmacologique même sans sténose sévère.</div>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- PHYSIOLOGIE CORONARIENNE -->
-      <div class="block def" id="mcas-3">
-        <div class="block-title"><span class="tag">⚡ Physiologie coronarienne — Apport vs Demande en O₂</span></div>
-        <p class="content-text" style="margin-bottom:8px;"><strong>Apport en O₂</strong> = contenu en O₂ du sang (Hb, saturation) × débit coronarien</p>
-        <div class="flag-list">
-          <div class="flag-item"><span class="flag-dot blue"></span><span><strong>Débit coronarien</strong> — Loi d'Ohm : Q = P/R → Pression de perfusion = <strong>pression diastolique aortique</strong> (les artères sont comprimées en systole, perfusion se produit en diastole) — cible TAd ≥ 60 mmHg</span></div>
-          <div class="flag-item"><span class="flag-dot blue"></span><span><strong>Résistance vasculaire coronaire</strong> modulée par : facteurs métaboliques (adénosine = vasodilateur), facteurs endothéliaux (NO, prostacycline = vasodilatateurs ; endothéline-1 = vasoconstricteur), facteurs neurologiques (α = vasoconstriction, β = vasodilatation)</span></div>
-        </div>
-        <p class="content-text" style="margin:10px 0 8px;"><strong>Demande en O₂</strong> — 3 déterminants (Loi de Laplace)</p>
-        <div class="flag-list">
-          <div class="flag-item"><span class="flag-dot ink"></span><span><strong>Tension pariétale</strong> : T = P × r / 2h — ↑ pression (HTA, StAo) ou ↑ rayon (régurgitation) → ↑ demande ; ↑ épaisseur (HVG) → ↓ demande</span></div>
-          <div class="flag-item"><span class="flag-dot ink"></span><span><strong>Fréquence cardiaque</strong> : ↑ FC → ↑ demande O₂ (mais ↓ temps diastolique → ↓ perfusion)</span></div>
-          <div class="flag-item"><span class="flag-dot ink"></span><span><strong>Contractilité</strong> : catécholamines/inotropes positifs → ↑ demande ; inotropes négatifs (BB, BCC) → ↓ demande</span></div>
-        </div>
-        <table style="margin-top:10px;">
-          <thead><tr><th>% Occlusion</th><th>Impact sur le flux</th><th>Manifestation clinique</th></tr></thead>
-          <tbody>
-            <tr><td>&lt; 60 %</td><td>Circulation maximale non altérée</td><td>Asymptomatique</td></tr>
-            <tr><td>&gt; 70 %</td><td>Flux max ↓, flux basal préservé</td><td>Ischémie à l'effort (angine stable)</td></tr>
-            <tr><td>&gt; 90 %</td><td>Incapable d'atteindre l'état basal</td><td>Angine au repos</td></tr>
-          </tbody>
-        </table>
-        <div class="key-fact yellow" style="margin-top:8px;"><strong>Mécanismes anti-ischémiques des traitements :</strong> BB → ↓ FC + contractilité ; Nitrates → ↓ précharge (↓ T pariétale) + ↑ vasodilatation coronarienne ; Revascularisation → ↓ R (sténose)</div>
-      </div>
+      <!-- ANATOMIE CORONARIENNE -->
+      <div class="block clin" id="mcas-anat">
+        <div class="block-title"><span class="tag">🫀 Anatomie coronarienne — Modèle interactif</span></div>
+        <p style="font-size:13px;color:#555;margin:0 0 12px;">Cliquez sur une artère pour voir son territoire, sa fonction et l'impact d'une occlusion.</p>
 
-      <div class="block clin" id="mcas-4">
-        <div class="block-title"><span class="tag">🧬 Physiopathologie — MCAS vs angine stable</span></div>
-        <p class="content-text" style="margin-bottom:8px;"><strong>MCAS (le substrat) :</strong> dépôt progressif de lipoprotéines contenant l'ApoB dans l'intima → inflammation, captation par les macrophages, formation de la plaque d'athérome → <strong>sténose fixe</strong> de l'artère coronaire épicardique, avec dysfonction endothéliale associée (↓ NO, ↓ propriétés antithrombotiques) favorisant une vasoconstriction inappropriée.</p>
-        <p class="content-text"><strong>Angine stable (l'expression symptomatique) :</strong> à l'effort, la <strong>demande myocardique en O₂ ↑</strong> mais l'apport ne peut suivre en raison de l'obstruction fixe (ou de l'INOCA sous-jacente) → <strong>ischémie myocardique réversible</strong>, qui se résorbe au repos lorsque la demande redescend sous le seuil critique.</p>
-        <div class="key-fact yellow" style="margin-top:10px;">Stable = <strong>même effort, même durée, même intensité</strong> → reproductible. L'extraction myocardique d'O₂ se fait à 75 % en diastole → importance de la <strong>pression diastolique</strong> (cible ≥ 60 mmHg)</div>
-      </div>
+        <div style="display:flex;gap:16px;flex-wrap:wrap;align-items:flex-start;">
+          <!-- SVG HEART -->
+          <div style="flex:0 0 auto;">
+            <svg id="heart-svg" viewBox="0 0 520 460" width="340" height="295" xmlns="http://www.w3.org/2000/svg" style="cursor:pointer;display:block;">
+              <!-- Aorte -->
+              <rect x="238" y="10" width="28" height="70" rx="10" fill="#d1d5db" stroke="#9ca3af" stroke-width="1.5"/>
+              <rect x="200" y="55" width="110" height="18" rx="6" fill="#d1d5db" stroke="#9ca3af" stroke-width="1.5"/>
 
-      <div class="block clin" id="mcas-5">
-        <div class="block-title"><span class="tag">🔍 Critères diagnostiques — Angine stable (les 3 requis)</span></div>
-        <div class="criteria-list">
-          <div class="criteria-item"><div class="criteria-num blue">1</div><span>Provoquée par <strong>effort ou stress émotionnel</strong></span></div>
-          <div class="criteria-item"><div class="criteria-num blue">2</div><span>Soulagée par <strong>NTG sublinguale ou repos</strong> (&lt; 10 min)</span></div>
-          <div class="criteria-item"><div class="criteria-num blue">3</div><span>Douleur <strong>rétrosternale constrictive</strong> ± irradiation cou, mâchoire, épaule, bras G</span></div>
-        </div>
-        <div class="highlight blue" style="margin-top:10px;font-size:13px;">3/3 = douleur cardiaque typique · 2/3 = possible · 1/3 = non cardiaque</div>
-        <div class="highlight red" style="margin-top:10px;font-size:13px;">⚠️ Éliminer cocaïne/amphétamines (&lt; 96h) et iPDE-5 avant tout</div>
-      </div>
+              <!-- Coeur (corps) -->
+              <path d="M 80 170 Q 60 120 110 100 Q 160 80 190 120 Q 220 80 270 80 Q 320 80 330 130 Q 390 110 420 160 Q 460 210 420 260 Q 380 310 310 370 Q 260 420 260 420 Q 260 420 200 370 Q 120 300 90 250 Q 65 210 80 170 Z" fill="#FECACA" stroke="#fca5a5" stroke-width="2"/>
 
-      <div class="block clin" id="mcas-6">
-        <div class="block-title"><span class="tag">🩺 Évaluation initiale — Anamnèse & examen physique</span></div>
-        <p class="content-text"><strong>Anamnèse — rechercher :</strong> douleur rétrosternale constrictive ± irradiation (cou, mâchoire, dos, épigastre, bras G) · facteurs déclenchants (effort, froid, repas lourd, émotions, stimulants) · soulagement par repos/NTG &lt; 5–10 min · caractère <strong>reproductible</strong> (même effort = même durée = même intensité) · symptômes associés (nausées, diaphorèse, peau froide et moite)<br>
-        <strong>Équivalents angineux</strong> (penser ♀, personnes âgées, diabétiques) : dyspnée, fatigue, douleur épigastrique<br>
-        <strong>Facteurs de risque CV :</strong> non modifiables (âge &gt; 65, sexe masculin, origine ethnique, MCAS précoce familiale H ≤ 55a/F ≤ 65a) · modifiables (tabac, DLP, obésité, sédentarité, HTA, diabète, stress, alcool)</p>
-        <p class="content-text" style="margin-top:8px;"><strong>Examen physique :</strong> souvent normal entre les crises — rechercher signes d'IC (B3, crépitants, œdème), souffles vasculaires (carotidien), signes périphériques d'athérosclérose (pouls périphériques)</p>
-        <div class="highlight cream" style="margin-top:10px;font-size:13px;"><strong>Diagnostics différentiels de la DRS :</strong> dissection aortique, sténose aortique, CMP hypertrophique, péricardite, EP, pneumothorax · cholécystite, ulcère, RGO, spasme œsophagien · costochondrite, zona, anxiété/panique</div>
-        <div class="highlight yellow" style="margin-top:8px;font-size:13px;"><strong>Syndrome métabolique</strong> (≥ 3/5 critères → ↑ risque MCV, AVC et diabète) : tour de taille (H &gt; 102 cm / F &gt; 88 cm) · triglycérides ≥ 1,7 mmol/L · HDL (H &lt; 1,0 / F &lt; 1,3 mmol/L) · TA ≥ 130/85 mmHg · glycémie &gt; 5,6 mmol/L ou traitée par Rx</div>
-      </div>
+              <!-- ACD — artere coronaire droite (bleue) -->
+              <path id="art-acd" d="M 320 68 Q 370 75 400 110 Q 430 150 430 200 Q 430 260 410 310 Q 390 350 360 380 Q 330 390 300 400 Q 280 405 270 420" fill="none" stroke="#3B82F6" stroke-width="5" stroke-linecap="round" style="cursor:pointer;" onclick="showArtInfo('acd')"/>
+              <!-- Branche marginale droite -->
+              <path d="M 415 240 Q 445 255 455 275 Q 460 285 450 295" fill="none" stroke="#3B82F6" stroke-width="3" stroke-dasharray="4,2" stroke-linecap="round"/>
+              <!-- AIVP -->
+              <path d="M 310 400 Q 295 415 280 420 Q 265 422 255 415" fill="none" stroke="#3B82F6" stroke-width="3.5" stroke-linecap="round"/>
 
-      <div class="block para" id="mcas-7">
-        <div class="block-title"><span class="tag">🧪 Paraclinique — Algorithme selon probabilité pré-test (Score CADence)</span></div>
-        <table>
-          <thead><tr><th>Probabilité</th><th>Valeur</th><th>Investigation recommandée</th></tr></thead>
-          <tbody>
-            <tr><td>Très faible</td><td>&lt; 5 %</td><td>Aucun test — chercher causes non cardiaques</td></tr>
-            <tr><td>Faible</td><td>5–15 %</td><td>Score calcique ET/OU épreuve d'effort</td></tr>
-            <tr><td><strong>Intermédiaire-élevé</strong></td><td>&gt; 15 %</td><td>Test stress avec imagerie (écho stress / SPECT/PET) ou angio-TDM coronarien</td></tr>
-          </tbody>
-        </table>
-        <div class="highlight yellow" style="margin-top:10px;font-size:13px;"><strong>Critères haut risque à l'épreuve d'effort :</strong> Sous-décalage ST &gt; 2 mm précoce (stade 1–2) · Sus-décalage ST sans onde Q · Hypotension à l'effort · TV à faible charge · Incapacité stade 1–2<br><strong>FFR &lt; 0,80</strong> → sténose hémodynamiquement significative</div>
-      </div>
+              <!-- TC — Tronc commun (violet) -->
+              <path id="art-tc" d="M 220 68 Q 200 78 190 92 Q 182 105 180 115" fill="none" stroke="#8B5CF6" stroke-width="6" stroke-linecap="round" style="cursor:pointer;" onclick="showArtInfo('tc')"/>
 
-      <!-- OUTIL INTERACTIF — CADENCE (RF-CL) -->
-      <div class="block def" id="cadence-tool">
-        <div class="block-title"><span class="tag">🧰 Outil interactif — Probabilité pré-test de MCAS obstructive (modèle RF-CL / score CADence)</span></div>
-        <p class="content-text" style="margin-bottom:14px;">Le score CADence applique le modèle <strong>« Risk Factor-weighted Clinical Likelihood » (RF-CL)</strong> recommandé par l'ESC 2024 : il combine l'âge, le sexe, le type de douleur thoracique et le nombre de facteurs de risque CV pour estimer la probabilité de MCAS obstructive et orienter l'investigation. Cliquez sur les énoncés correspondant à la situation clinique pour obtenir une estimation catégorielle et la conduite à tenir. <em>Outil d'aide à la décision basé sur le cadre RF-CL — pour le pourcentage exact selon l'âge/le sexe précis, consultez le nomogramme complet des lignes directrices ESC 2024 (Figure 4) ou la calculatrice CADence; ne remplace pas le jugement clinique.</em></p>
+              <!-- IVA — Interventriculaire antérieure (rouge) -->
+              <path id="art-iva" d="M 180 115 Q 175 130 180 160 Q 190 220 210 280 Q 225 330 240 380 Q 248 405 255 415" fill="none" stroke="#EF4444" stroke-width="5" stroke-linecap="round" style="cursor:pointer;" onclick="showArtInfo('iva')"/>
+              <!-- Diagonale 1 -->
+              <path d="M 183 170 Q 160 195 145 215 Q 135 228 130 240" fill="none" stroke="#EF4444" stroke-width="3" stroke-dasharray="4,2" stroke-linecap="round"/>
+              <!-- Septale perforante -->
+              <path d="M 195 200 Q 210 210 215 225" fill="none" stroke="#EF4444" stroke-width="2.5" stroke-dasharray="3,2" stroke-linecap="round"/>
 
-        <style>
-          .cadence-tool { font-family: var(--font); color: var(--ink); font-size: 14px; }
-          .cadence-tool .cadence-step { background: var(--cream2); border: 1px solid var(--cream3); padding: 16px 18px; margin-bottom: 14px; border-radius: var(--radius); }
-          .cadence-tool h4 { font-size: 13px; text-transform: uppercase; letter-spacing: .04em; margin-bottom: 10px; font-weight: 700; }
-          .cadence-tool .cadence-hint { font-size: 13px; font-weight: 400; margin-bottom: 10px; }
-          .cadence-tool .cadence-choice-grid { display: flex; flex-wrap: wrap; gap: 10px; }
-          .cadence-tool .cadence-choice-card { flex: 1 1 220px; cursor: pointer; background: #fff; border: 2px solid var(--cream3); border-radius: var(--radius); padding: 12px 14px; font-size: 13px; font-weight: 600; line-height: 1.4; transition: border-color .15s, background .15s, transform .1s, color .15s; }
-          .cadence-tool .cadence-choice-card:hover { border-color: var(--blue); background: var(--blue-lt); transform: translateY(-1px); }
-          .cadence-tool .cadence-choice-card.selected { border-color: var(--blue); background: var(--blue-lt); color: var(--blue); }
-          .cadence-tool .cadence-choice-card.selected.red { border-color: var(--red); background: var(--red-lt); color: var(--red); }
-          .cadence-tool .cadence-choice-card.selected.yellow { border-color: var(--yellow); background: rgba(240,180,41,.15); color: #92400e; }
-          .cadence-tool .cadence-hidden { display: none; }
-          .cadence-tool .cadence-result-box { background: var(--blue-lt); border-left: 6px solid var(--blue); padding: 18px; margin-top: 4px; border-radius: var(--radius); }
-          .cadence-tool .cadence-result-box.red { background: var(--red-lt); border-left-color: var(--red); }
-          .cadence-tool .cadence-result-box.yellow { background: rgba(240,180,41,.15); border-left-color: var(--yellow); }
-          .cadence-tool .cadence-result-title { font-weight: 700; text-transform: uppercase; font-size: 11px; letter-spacing: .04em; margin-bottom: 6px; }
-          .cadence-tool .cadence-result-title.blue { color: var(--blue); }
-          .cadence-tool .cadence-result-title.red { color: var(--red); }
-          .cadence-tool .cadence-result-title.yellow { color: #92400e; }
-          .cadence-tool .cadence-result-text { font-size: 13px; line-height: 1.6; }
-        </style>
+              <!-- Cx — Circonflexe (orange) -->
+              <path id="art-cx" d="M 180 115 Q 165 120 145 130 Q 120 145 110 175 Q 100 205 110 240 Q 120 270 140 290" fill="none" stroke="#F97316" stroke-width="5" stroke-linecap="round" style="cursor:pointer;" onclick="showArtInfo('cx')"/>
+              <!-- Marginale gauche -->
+              <path d="M 117 198 Q 105 210 100 230 Q 97 245 103 260" fill="none" stroke="#F97316" stroke-width="3" stroke-dasharray="4,2" stroke-linecap="round"/>
 
-        <div class="cadence-tool">
-          <div class="cadence-step">
-            <h4>① Type de douleur thoracique</h4>
-            <p class="cadence-hint">Selon les 3 critères d'angine typique (provoquée par l'effort/stress, soulagée par le repos/NTG &lt; 10 min, douleur rétrosternale constrictive ± irradiation) :</p>
-            <div class="cadence-choice-grid">
-              <div class="cadence-choice-card" onclick="cadenceSelect(1,'typique',this)">🔴 Typique (3/3 critères)</div>
-              <div class="cadence-choice-card" onclick="cadenceSelect(1,'atypique',this)">🟡 Atypique (2/3 critères)</div>
-              <div class="cadence-choice-card" onclick="cadenceSelect(1,'non-angineuse',this)">🟢 Non angineuse (≤ 1/3 critère)</div>
-            </div>
+              <!-- Légendes -->
+              <text x="335" y="72" font-size="11" fill="#3B82F6" font-weight="700">ACD</text>
+              <text x="135" y="65" font-size="11" fill="#8B5CF6" font-weight="700">TC</text>
+              <text x="152" y="108" font-size="11" fill="#F97316" font-weight="700">Cx</text>
+              <text x="195" y="135" font-size="11" fill="#EF4444" font-weight="700">IVA</text>
+              <text x="453" y="285" font-size="10" fill="#3B82F6">Marg. D</text>
+              <text x="100" y="262" font-size="10" fill="#F97316">Marg. G</text>
+              <text x="117" y="240" font-size="10" fill="#EF4444">Diag.</text>
+              <text x="260" y="435" font-size="10" fill="#3B82F6">AIVP</text>
+
+              <!-- Titre -->
+              <text x="260" y="458" font-size="10" fill="#9ca3af" text-anchor="middle">Cliquez sur une artère colorée</text>
+            </svg>
           </div>
 
-          <div id="cadence-step2" class="cadence-step cadence-hidden">
-            <h4>② Facteurs de risque cardiovasculaire</h4>
-            <p class="cadence-hint">Combien des 5 facteurs suivants sont présents : <strong>tabagisme actif, dyslipidémie, HTA, diabète, ATCD familial de MCAS précoce</strong> (H &lt; 55 ans / F &lt; 65 ans)? L'âge ≥ 65 ans et le sexe masculin augmentent aussi la probabilité pré-test de base.</p>
-            <div class="cadence-choice-grid">
-              <div class="cadence-choice-card" onclick="cadenceSelect(2,'0-1',this)">🟢 0–1 facteur</div>
-              <div class="cadence-choice-card" onclick="cadenceSelect(2,'2-3',this)">🟡 2–3 facteurs</div>
-              <div class="cadence-choice-card" onclick="cadenceSelect(2,'4-5',this)">🔴 4–5 facteurs</div>
+          <!-- INFO PANEL -->
+          <div id="art-info-panel" style="flex:1;min-width:220px;background:#F9FAFB;border-radius:12px;padding:16px;border:2px solid #E5E7EB;min-height:230px;">
+            <div style="text-align:center;color:#9ca3af;padding-top:40px;">
+              <div style="font-size:32px;margin-bottom:8px;">🫀</div>
+              <div style="font-size:13px;">Cliquez sur une artère<br>pour voir les détails</div>
             </div>
           </div>
-
-          <div id="cadence-result-box" class="cadence-result-box cadence-hidden"></div>
         </div>
 
+        <!-- LÉGENDE COULEURS -->
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px;margin-bottom:16px;">
+          <span style="display:flex;align-items:center;gap:5px;font-size:12px;cursor:pointer;" onclick="showArtInfo('acd')"><span style="width:20px;height:4px;background:#3B82F6;border-radius:2px;display:inline-block;"></span>ACD</span>
+          <span style="display:flex;align-items:center;gap:5px;font-size:12px;cursor:pointer;" onclick="showArtInfo('tc')"><span style="width:20px;height:4px;background:#8B5CF6;border-radius:2px;display:inline-block;"></span>Tronc commun (TC)</span>
+          <span style="display:flex;align-items:center;gap:5px;font-size:12px;cursor:pointer;" onclick="showArtInfo('iva')"><span style="width:20px;height:4px;background:#EF4444;border-radius:2px;display:inline-block;"></span>IVA</span>
+          <span style="display:flex;align-items:center;gap:5px;font-size:12px;cursor:pointer;" onclick="showArtInfo('cx')"><span style="width:20px;height=4px;background:#F97316;border-radius:2px;display:inline-block;"></span>Cx (Circonflexe)</span>
+        </div>
+
+        <!-- TABLEAU RÉCAPITULATIF -->
+        <div class="accordion">
+          <div class="accordion-item">
+            <div class="accordion-header">Tableau des territoires coronariens &amp; occlusions
+              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+            </div>
+            <div class="accordion-body">
+              <table>
+                <thead><tr><th>Artère</th><th>Territoire irrigué</th><th>ECG si occlusion</th><th>Complication typique</th></tr></thead>
+                <tbody>
+                  <tr><td><strong style="color:#8B5CF6;">TC (Tronc commun)</strong></td><td>IVA + Cx (70 % du VG)</td><td>Sus-ST aVR + sous-ST V4–V6</td><td>Choc cardiogénique · TV/FV · Mort subite</td></tr>
+                  <tr><td><strong style="color:#EF4444;">IVA / LAD</strong></td><td>Paroi ant. VG · 2/3 ant. septum · apex · musc. papillaire ant.</td><td>Sus-ST V1–V4 (ant.)</td><td>Bloc de branche G · Dysfonction VG · Anévrisme</td></tr>
+                  <tr><td><strong style="color:#F97316;">Cx (Circonflexe)</strong></td><td>Paroi latérale VG · OG · paroi postéro-lat.</td><td>Sus-ST I, aVL, V5–V6</td><td>Fibrillation atriale · Dysfonction VG latérale</td></tr>
+                  <tr><td><strong style="color:#3B82F6;">ACD (Coronaire droite)</strong></td><td>VD · paroi inférieure VG · nœud SA (85%) · nœud AV (85%)</td><td>Sus-ST II, III, aVF (inf.) ± V3R-V4R</td><td>Bloc AV · Bradycardie · IM VD</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <div class="accordion-header">Structures électriques &amp; dominance coronarienne
+              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+            </div>
+            <div class="accordion-body">
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+                <div>
+                  <table>
+                    <thead><tr><th>Structure</th><th>Artère</th><th>Conséquence</th></tr></thead>
+                    <tbody>
+                      <tr><td>Nœud SA</td><td>ACD (85%) · Cx (15%)</td><td>Bradycardie sinusale, arrêt</td></tr>
+                      <tr><td>Nœud AV</td><td>ACD (85%) · Cx (15%)</td><td>Bloc AV (I, II, III)</td></tr>
+                      <tr><td>Faisceau His</td><td>IVA (branches septales)</td><td>BBD / BBG</td></tr>
+                      <tr><td>Faisceau ant. G</td><td>IVA</td><td>Hémibloc ant. G (HBAG)</td></tr>
+                      <tr><td>Faisceau post. G</td><td>ACD + Cx (double apport)</td><td>Hémibloc post. G (rare)</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div>
+                  <table>
+                    <thead><tr><th>Dominance</th><th>Prévalence</th><th>Origine AIVP</th></tr></thead>
+                    <tbody>
+                      <tr><td>Droite</td><td>~85 %</td><td>ACD</td></tr>
+                      <tr><td>Gauche</td><td>8–20 %</td><td>Cx</td></tr>
+                      <tr><td>Codominance</td><td>Reste</td><td>ACD + Cx</td></tr>
+                    </tbody>
+                  </table>
+                  <div class="key-fact blue" style="margin-top:8px;">La <strong>dominance</strong> est déterminée par l'artère qui donne naissance à l'AIVP (artère interventriculaire postérieure) — non pas par le volume irrigué.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- JS POUR L'INTERACTIF -->
         <script>
-          var cadenceState = { 1: null, 2: null };
-          var cadenceMatrix = {
-            'non-angineuse': {
-              '0-1': ['blue',  'Probabilité très faible (≈ ≤ 5 %)', 'Report des tests diagnostiques cardiaques à envisager — <strong>rechercher une cause non cardiaque</strong> à la douleur thoracique (musculosquelettique, digestive, anxieuse, etc.).'],
-              '2-3': ['blue',  'Probabilité faible (≈ 5–15 %)', '<strong>Score calcique coronarien (CACS)</strong> à envisager pour reclasser : un CACS = 0 permet souvent de ramener la probabilité dans la catégorie très faible et de différer d\'autres tests.'],
-              '4-5': ['yellow','Probabilité faible (≈ 5–15 %, vers la limite supérieure)', '<strong>Score calcique coronarien</strong> recommandé pour reclassification; envisager une épreuve d\'effort si le CACS n\'est pas disponible ou non contributif.']
+        function showArtInfo(id) {
+          var data = {
+            tc: {
+              nom: 'Tronc commun (TC) — Left Main',
+              couleur: '#8B5CF6',
+              territoire: 'Bifurcation en IVA + Cx &rarr; irrigue ~70 % du myocarde VG',
+              branches: 'IVA (ant. VG, septum) + Cx (lat. VG)',
+              ecg: 'Sus-ST aVR (&gt; 1 mm) + sous-ST diffus V4&ndash;V6',
+              consequence: 'Choc cardiogénique, TV/FV, mort subite',
+              traitement: 'Urgence absolue &mdash; PCI ou chirurgie bypass (CABG)'
             },
-            'atypique': {
-              '0-1': ['blue',  'Probabilité faible (≈ 5–15 %)', '<strong>Score calcique coronarien et/ou épreuve d\'effort</strong> à envisager selon l\'accessibilité et le contexte clinique.'],
-              '2-3': ['yellow','Probabilité faible à intermédiaire (≈ 5–15 %, possiblement > 15 %)', '<strong>Score calcique coronarien</strong> à privilégier pour préciser le risque; si élevé ou non contributif → test diagnostique avec imagerie (écho stress, SPECT/PET) ou angio-TDM coronarien.'],
-              '4-5': ['red',   'Probabilité intermédiaire-élevée (≈ &gt; 15 %)', '<strong>Test diagnostique avec imagerie</strong> (écho stress, SPECT/PET) <strong>ou angio-TDM coronarien</strong> recommandé d\'emblée.']
+            iva: {
+              nom: 'IVA (LAD) &mdash; Interventriculaire ant&eacute;rieure',
+              couleur: '#EF4444',
+              territoire: 'Paroi ant. VG &bull; 2/3 ant&eacute;rieur septum &bull; Apex &bull; Muscle papillaire ant&eacute;rieur',
+              branches: 'Diagonales (paroi lat&eacute;rale ant.) + Septales perforantes',
+              ecg: 'Sus-ST V1&ndash;V4 (IM ant&eacute;rieur) &pm; BBG nouveau',
+              consequence: 'Dysfonction VG s&eacute;v&egrave;re, an&eacute;vrisme, bloc de branche',
+              traitement: 'Reperfusion urgente &lt; 12h &mdash; PCI pr&eacute;f&eacute;r&eacute;'
             },
-            'typique': {
-              '0-1': ['yellow','Probabilité faible à intermédiaire (≈ 5–15 %, souvent &gt; 15 % si âge ≥ 65 ans ou sexe masculin)', '<strong>Score calcique et/ou test diagnostique avec imagerie</strong> selon l\'âge, le sexe et la présentation clinique globale.'],
-              '2-3': ['red',   'Probabilité intermédiaire-élevée (≈ &gt; 15 %)', '<strong>Test diagnostique avec imagerie</strong> (écho stress, SPECT/PET) <strong>ou angio-TDM coronarien</strong> recommandé.'],
-              '4-5': ['red',   'Probabilité élevée (≈ &gt; 15 %, souvent franchement élevée)', '<strong>Test diagnostique avec imagerie ou angio-TDM coronarien</strong> recommandé d\'emblée; envisager une référence directe en cardiologie si présentation à très haut risque ou instable (→ exclure un SCA).']
+            cx: {
+              nom: 'Cx &mdash; Arт&egrave;re Circonflexe',
+              couleur: '#F97316',
+              territoire: 'Paroi lat&eacute;rale et post&eacute;ro-lat&eacute;rale VG &bull; Oreillette gauche',
+              branches: 'Marginales obtuses (paroi lat. VG) &pm; AIVP (dominance gauche)',
+              ecg: 'Sus-ST I, aVL, V5&ndash;V6 (lat&eacute;ral) &mdash; parfois silencieux &agrave; l&apos;ECG standard',
+              consequence: 'Fibrillation atriale (FA), d&eacute;faillance lat&eacute;rale VG',
+              traitement: 'PCI si sus-ST ou NSTEMI &agrave; haut risque'
+            },
+            acd: {
+              nom: 'ACD &mdash; Art&egrave;re Coronaire Droite',
+              couleur: '#3B82F6',
+              territoire: 'VD (ventricule droit) &bull; Paroi inf&eacute;rieure VG &bull; N&oelig;ud SA (85%) &bull; N&oelig;ud AV (85%)',
+              branches: 'Marginale du bord droit &bull; AIVP (dominance droite)',
+              ecg: 'Sus-ST II, III, aVF (inf.) &pm; V3R-V4R (IM VD)',
+              consequence: 'Bloc AV, bradycardie sinusale, insuffisance VD',
+              traitement: 'Attention aux vasodilatateurs (NTG) si IM VD associ&eacute;'
             }
           };
-          function cadenceMarkSelected(container, el, colorClass) {
-            var cards = container.querySelectorAll('.cadence-choice-card');
-            cards.forEach(function(c){ c.classList.remove('selected','red','yellow'); });
-            el.classList.add('selected');
-            if (colorClass) el.classList.add(colorClass);
-          }
-          function cadenceShowResult(type, title, html) {
-            var box = document.getElementById('cadence-result-box');
-            box.className = 'cadence-result-box' + (type ? ' ' + type : '');
-            box.innerHTML = '<div class="cadence-result-title' + (type ? ' ' + type : ' blue') + '">🎯 ' + title + '</div><div class="cadence-result-text">' + html + '</div>';
-            box.classList.remove('cadence-hidden');
-          }
-          function cadenceSelect(step, value, el) {
-            var step2 = document.getElementById('cadence-step2');
-            var resultBox = document.getElementById('cadence-result-box');
-            if (step === 1) {
-              cadenceState[1] = value; cadenceState[2] = null;
-              cadenceMarkSelected(el.parentElement, el, value === 'typique' ? 'red' : (value === 'atypique' ? 'yellow' : null));
-              step2.querySelectorAll('.cadence-choice-card').forEach(function(c){ c.classList.remove('selected','red','yellow'); });
-              resultBox.classList.add('cadence-hidden');
-              step2.classList.remove('cadence-hidden');
-            } else if (step === 2) {
-              cadenceState[2] = value;
-              cadenceMarkSelected(el.parentElement, el, value === '4-5' ? 'red' : (value === '2-3' ? 'yellow' : null));
-              if (cadenceState[1] && cadenceState[2]) {
-                var entry = cadenceMatrix[cadenceState[1]][cadenceState[2]];
-                cadenceShowResult(entry[0], entry[1], entry[2] + ' <span class="drug-badge warn" style="margin-top:6px;display:inline-block;">Estimation catégorielle — pour le % précis selon l\'âge/le sexe exacts, consulter le nomogramme RF-CL complet (ESC 2024)</span>');
-              }
-            }
-          }
+          var d = data[id];
+          if (!d) return;
+          var panel = document.getElementById('art-info-panel');
+          panel.innerHTML =
+            '<div style="border-left:5px solid ' + d.couleur + ';padding-left:12px;margin-bottom:10px;">' +
+            '<div style="font-weight:700;font-size:14px;color:' + d.couleur + ';">' + d.nom + '</div>' +
+            '</div>' +
+            '<div style="display:grid;grid-template-columns:1fr;gap:7px;font-size:12px;">' +
+            '<div><span style="font-weight:600;color:#374151;">🗺️ Territoire :</span> ' + d.territoire + '</div>' +
+            '<div><span style="font-weight:600;color:#374151;">🌿 Branches :</span> ' + d.branches + '</div>' +
+            '<div><span style="font-weight:600;color:#374151;">📈 ECG :</span> <span style="color:#c0392b;">' + d.ecg + '</span></div>' +
+            '<div><span style="font-weight:600;color:#374151;">⚠️ Occlusion :</span> ' + d.consequence + '</div>' +
+            '<div style="background:#F0FDF4;padding:6px 8px;border-radius:6px;"><span style="font-weight:600;color:#166534;">💊 Traitement :</span> ' + d.traitement + '</div>' +
+            '</div>';
+        }
         </script>
       </div>
 
-      <div class="block rx" id="mcas-8">
-        <div class="block-title"><span class="tag">💊 Traitement</span></div>
-        <div class="highlight cream" style="margin-bottom:12px;">🚨 Crise : <strong>NTG sublinguale</strong></div>
+      <!-- BALANCE O2 -->
+      <div class="block path" id="mcas-o2">
+        <div class="block-title"><span class="tag">⚡ Circulation coronarienne &amp; Balance O₂</span></div>
+        <div class="key-fact blue" style="margin-bottom:12px;">L'ischémie survient quand la <strong>demande en O₂</strong> dépasse l'<strong>apport</strong> — comprendre ce déséquilibre est clé pour choisir le traitement</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:12px;">
+          <div style="background:#FEE2E2;border-radius:10px;padding:14px;">
+            <p style="margin:0 0 8px;font-weight:700;color:#c0392b;">📈 Demande en O₂ (MVO₂)</p>
+            <table>
+              <thead><tr><th>Déterminant</th><th>Mécanisme</th><th>Médicament ↓</th></tr></thead>
+              <tbody>
+                <tr><td>Fréquence cardiaque ↑</td><td>Plus de cycles → plus O₂/min</td><td>Bêtabloquant, Ivabradine</td></tr>
+                <tr><td>Précharge ↑ (volume)</td><td>↑ tension pariétale (Laplace)</td><td>Nitrates, Diurétiques</td></tr>
+                <tr><td>Postcharge ↑ (RVS)</td><td>↑ travail d'éjection</td><td>IECA, BCC, Nitrates</td></tr>
+                <tr><td>Contractilité ↑</td><td>↑ consommation ATP</td><td>Bêtabloquant</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div style="background:#DCFCE7;border-radius:10px;padding:14px;">
+            <p style="margin:0 0 8px;font-weight:700;color:#166534;">📉 Apport en O₂</p>
+            <table>
+              <thead><tr><th>Déterminant</th><th>Réducteur d'apport</th></tr></thead>
+              <tbody>
+                <tr><td>Perfusion coronarienne</td><td>↓ pression aortique diastolique (TAC)</td></tr>
+                <tr><td>Flux coronarien</td><td>Sténose ≥ 50 % → réserve ↓; ≥ 70 % → ischémie effort</td></tr>
+                <tr><td>Durée diastole</td><td>Tachycardie → ↓ temps perfusion sous-endocardique</td></tr>
+                <tr><td>Hémoglobine</td><td>Anémie → ↓ capacité de transport O₂</td></tr>
+                <tr><td>Vasospasme</td><td>Angine de Prinzmetal (vasospasme coronarien)</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="key-fact yellow">🔑 Le myocarde sous-endocardique est le plus vulnérable à l'ischémie (farthest from epicardial vessels, highest wall stress). Les modifications ST en sous-endocardique = sous-décalage en V4–V6.</div>
+      </div>
+
+      <!-- ANGINE STABLE -->
+      <div class="block clin" id="mcas-angine">
+        <div class="block-title"><span class="tag">🔍 Angine stable — Diagnostic &amp; présentation</span></div>
+
+        <!-- 3 CRITÈRES -->
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px;">
+          <div style="background:#EEF2FF;border-radius:10px;padding:12px;border-top:4px solid #1C3F8F;">
+            <div style="font-weight:700;color:#1C3F8F;margin-bottom:6px;">① Caractère de la douleur</div>
+            <div style="font-size:12px;">Rétrosternale · constrictive (serrement, pression) · peut irradier à gauche (bras, mâchoire, cou, épaule) · signe de Levine</div>
+          </div>
+          <div style="background:#EEF2FF;border-radius:10px;padding:12px;border-top:4px solid #1C3F8F;">
+            <div style="font-weight:700;color:#1C3F8F;margin-bottom:6px;">② Facteurs déclenchants</div>
+            <div style="font-size:12px;">Déclenchée par effort physique · stress émotionnel · repas copieux · froid · montée escaliers · reproductible selon le seuil</div>
+          </div>
+          <div style="background:#EEF2FF;border-radius:10px;padding:12px;border-top:4px solid #1C3F8F;">
+            <div style="font-weight:700;color:#1C3F8F;margin-bottom:6px;">③ Soulagement</div>
+            <div style="font-size:12px;">Soulagée &lt; 10 min au repos ET/OU par NTG sublinguale (0,3–0,4 mg) · délai d'action NTG : 1–3 min</div>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:14px;">
+          <div style="background:#DCFCE7;border-radius:8px;padding:8px;text-align:center;">
+            <div style="font-weight:700;color:#166534;font-size:13px;">Angine typique</div>
+            <div style="font-size:11px;color:#555;">3/3 critères présents</div>
+          </div>
+          <div style="background:#FEF9C3;border-radius:8px;padding:8px;text-align:center;">
+            <div style="font-weight:700;color:#92400e;font-size:13px;">Angine atypique</div>
+            <div style="font-size:11px;color:#555;">2/3 critères présents</div>
+          </div>
+          <div style="background:#FEE2E2;border-radius:8px;padding:8px;text-align:center;">
+            <div style="font-weight:700;color:#c0392b;font-size:13px;">Douleur non angineuse</div>
+            <div style="font-size:11px;color:#555;">0–1/3 critère présent</div>
+          </div>
+        </div>
+
+        <!-- DDX -->
         <div class="accordion">
-          <div class="accordion-item open">
-            <div class="accordion-header">Anti-angineux 1re ligne
-              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-            </div>
-            <div class="accordion-body"><span class="drug-badge line1">BB</span> <span class="drug-badge line1">BCC</span> (non-DHP à éviter si FEVG ↓↓)</div>
-          </div>
           <div class="accordion-item">
-            <div class="accordion-header">Anti-angineux 2e ligne
-              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-            </div>
-            <div class="accordion-body"><span class="drug-badge line2">Nitrates topiques</span> <span class="drug-badge line2">Ranolazine</span> <span class="drug-badge line2">Ivabradine</span></div>
-          </div>
-          <div class="accordion-item">
-            <div class="accordion-header">Prévention CV (tous les patients)
+            <div class="accordion-header">Diagnostic différentiel — Douleur thoracique
               <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
             </div>
             <div class="accordion-body">
-              <span class="drug-badge line1">AAS 81 mg/j</span> <span class="drug-badge line1">Statine haute intensité</span><br>
-              <span class="drug-badge line2">IECA/ARA</span> si HTA, DM2, IRC ou FEVG &lt; 40 %<br>
-              <span class="drug-badge warn">Rivaroxaban 2,5 mg BID + AAS</span> si risque CV élevé (COMPASS)
+              <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;">
+                <div>
+                  <p style="font-weight:700;color:#c0392b;margin:0 0 6px;">❤️ Cardiaque</p>
+                  <table style="font-size:12px;">
+                    <tbody>
+                      <tr><td>SCA (AI/NSTEMI/STEMI)</td></tr>
+                      <tr><td>Péricardite aiguë</td></tr>
+                      <tr><td>Myocardite</td></tr>
+                      <tr><td>Cardiomyopathie hypertrophique</td></tr>
+                      <tr><td>Spasme coronarien (Prinzmetal)</td></tr>
+                      <tr><td>Sténose aortique sévère</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div>
+                  <p style="font-weight:700;color:#2563EB;margin:0 0 6px;">🫁 Pulmonaire / Vasculaire</p>
+                  <table style="font-size:12px;">
+                    <tbody>
+                      <tr><td>EP (embolie pulmonaire)</td></tr>
+                      <tr><td>Pneumothorax spontané</td></tr>
+                      <tr><td>Pleurésie / pneumonie</td></tr>
+                      <tr><td>Dissection aortique</td></tr>
+                      <tr><td>HTAP</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div>
+                  <p style="font-weight:700;color:#7b3fa0;margin:0 0 6px;">🩻 Non cardiaque</p>
+                  <table style="font-size:12px;">
+                    <tbody>
+                      <tr><td>RGO / spasme oesophagien</td></tr>
+                      <tr><td>Ulcère gastroduodénal</td></tr>
+                      <tr><td>Douleur musculo-squelettique</td></tr>
+                      <tr><td>Costochondrite (Tietze)</td></tr>
+                      <tr><td>Zona intercostal</td></tr>
+                      <tr><td>Anxiété / attaque de panique</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="key-fact yellow" style="margin-top:10px;">🔑 DDX clé : douleur reproductible à la palpation → costochondrite · irradie dans le dos (déchirure) → dissection · soulagée par antiacides → RGO · pleurétique (↑ inspiration) → pleurésie / pneumothorax</div>
             </div>
           </div>
           <div class="accordion-item">
-            <div class="accordion-header">DAPT (haut risque ischémique)
+            <div class="accordion-header">Manifestations cliniques &amp; présentation de la femme
               <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
             </div>
             <div class="accordion-body">
-              <span class="drug-badge line1">AAS + Ticagrelor</span> × 12 mois post-stent minimum<br>
-              + <span class="drug-badge warn">IPP</span> si ≥ 1 FdR hémorragique (ATCD hémorragie, âge &gt; 60 ans, H. pylori, AINS/cortico/ACO)
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+                <div>
+                  <p style="font-weight:700;margin:0 0 8px;">Symptômes typiques</p>
+                  <ul style="margin:0;padding-left:16px;font-size:13px;line-height:1.8;">
+                    <li>Douleur / pression rétrosternale (signe de Levine)</li>
+                    <li>Irradiation : bras gauche, mâchoire, épaule, cou</li>
+                    <li>Dyspnée d'effort (équivalent angineux)</li>
+                    <li>Diaphorèse, nausées, malaise</li>
+                    <li>Soulagement &lt; 10 min repos/NTG</li>
+                  </ul>
+                </div>
+                <div style="background:#FFF0F5;border-radius:10px;padding:12px;">
+                  <p style="font-weight:700;color:#9d174d;margin:0 0 8px;">🩷 Présentation chez la femme (souvent atypique)</p>
+                  <ul style="margin:0;padding-left:16px;font-size:12px;line-height:1.8;">
+                    <li>Fatigue inexpliquée (symptôme le plus fréquent)</li>
+                    <li>Nausées · douleur épigastrique · dos · mâchoire</li>
+                    <li>Dyspnée d'effort sans douleur thoracique classique</li>
+                    <li>INOCA plus fréquente (dysfonction microvasculaire)</li>
+                    <li>⚠️ Risque de sous-diagnostic — prendre au sérieux même sans douleur typique</li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
           <div class="accordion-item">
-            <div class="accordion-header">Pharmacologie approfondie — Nitrates, BB & BCC
+            <div class="accordion-header">Classification CCS (Canadian Cardiovascular Society)
               <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
             </div>
             <div class="accordion-body">
-              <strong>Nitrates :</strong> veinodilatation &gt;&gt; artériodilatation → ↓ précharge/demande en O₂ · NTG SL 0,4 mg q5min ×3 (crise, début 1–3 min) · timbre 0,2–0,8 mg/h sur 12h/24h (fenêtre sans nitrate obligatoire pour éviter la tolérance — épuisement en sulfhydryles) · 5-ISMN (Imdur) 30–120 mg DIE le matin (prophylaxie) · <span class="drug-badge ci">CI absolue avec iPDE5</span> (sildénafil/vardénafil → délai 24h, tadalafil → 48h) et prudence si sténose aortique sévère/CMP hypertrophique<br>
-              <strong>BB :</strong> effet chronotrope/inotrope négatif → ↓ consommation d'O₂ myocardique · cible <strong>FC 55–60/min</strong> → ↑ durée diastolique → ↑ perfusion coronarienne · ↓ mortalité de 20–25 % à long terme post-SCA (FEVG &lt; 50 %) · bisoprolol/métoprolol/carvédilol = β1-sélectifs préférés (MPOC/asthme, MAP) · <strong>ne jamais cesser abruptement</strong> (tachycardie/HTA réflexe, exacerbation de l'angine — diminuer progressivement)<br>
-              <strong>BCC non-dihydropyridines</strong> (diltiazem, vérapamil) : ↓ contractilité/FC + vasodilatation coronarienne → 2e intention si BB CI/non toléré (alternative en asthme/MPOC) · <span class="drug-badge ci">jamais combiné avec un BB → bloc AV de haut grade/bradycardie</span> · CI si FEVG ≤ 40 %, bloc AV 2e-3e degré, maladie du sinus<br>
-              <strong>BCC dihydropyridines</strong> (amlodipine, nifédipine) : vasodilatation périphérique prédominante, effet négligeable sur la contractilité → traitement de l'HTA (pas 1re intention en MCAS) · <span class="drug-badge warn">toujours combiner avec un BB</span> pour éviter la tachycardie réflexe · amlodipine = sécuritaire en IC
+              <table>
+                <thead><tr><th>Classe CCS</th><th>Activités limitantes</th><th>Implication</th></tr></thead>
+                <tbody>
+                  <tr><td><strong>I</strong></td><td>Efforts extrêmes seulement · pas limitation quotidienne</td><td>Angine légère</td></tr>
+                  <tr><td><strong>II</strong></td><td>Légère limitation · monter 2 étages · marche rapide</td><td>Modérée</td></tr>
+                  <tr><td><strong>III</strong></td><td>Limitation marquée · 1 étage · moins de 200 m</td><td>Sévère</td></tr>
+                  <tr><td><strong>IV</strong></td><td>Toute activité · repos</td><td>Incapacitante</td></tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
-        <div class="key-fact black" style="margin-top:10px;">Suivi post-SCA : LDL à 1 mois · Adhérence DAPT/statine/IECA/BB · ETT si FEVG ↓ · Conduite : ≥ 14j perso · ≥ 30j commercial</div>
       </div>
 
-      <div class="block flag" id="mcas-9">
-        <div class="block-title"><span class="tag">🚨 RED FLAGS</span></div>
-        <div class="flag-list">
-          <div class="flag-item"><span class="fi-icon">⚡</span><span>Sus-décalage ST de novo → <strong>code STEMI immédiat</strong></span></div>
-          <div class="flag-item"><span class="fi-icon">🔬</span><span>Angine classe IV ou réfractaire ≥ 2–3 Rx → coronarographie urgente</span></div>
-          <div class="flag-item"><span class="fi-icon">🚫</span><span>Cocaïne → vasospasme → <strong>ne jamais donner de BB</strong></span></div>
+      <!-- TRAITEMENT -->
+      <div class="block rx" id="mcas-rx">
+        <div class="block-title"><span class="tag">💊 Traitement de l'angine stable — Algorithme &amp; pharmacologie</span></div>
+
+        <!-- ALGORITHME DROPDOWN -->
+        <div style="background:#F9FAFB;border-radius:12px;padding:16px;margin-bottom:16px;border:1px solid #E5E7EB;">
+          <p style="font-weight:700;color:#1C3F8F;margin:0 0 10px;">🎯 Aide à la décision — Choix de traitement</p>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px;">
+            <div>
+              <label style="font-size:12px;font-weight:600;color:#374151;">① Objectif prioritaire</label>
+              <select id="ang-obj" onchange="runAnginaAlgo()" style="width:100%;margin-top:4px;padding:7px;border-radius:8px;border:1px solid #D1D5DB;font-size:13px;">
+                <option value="">— Sélectionner —</option>
+                <option value="sym">🩺 Contrôle des symptômes</option>
+                <option value="prog">📈 Amélioration du pronostic</option>
+                <option value="both">✅ Les deux</option>
+              </select>
+            </div>
+            <div>
+              <label style="font-size:12px;font-weight:600;color:#374151;">② Contexte / comorbidités</label>
+              <select id="ang-ctx" onchange="runAnginaAlgo()" style="width:100%;margin-top:4px;padding:7px;border-radius:8px;border:1px solid #D1D5DB;font-size:13px;">
+                <option value="aucun">Aucun contexte particulier</option>
+                <option value="ic">🫀 Insuffisance cardiaque (FEVG ↓)</option>
+                <option value="diab">🍬 Diabète de type 2</option>
+                <option value="fa">💓 Fibrillation atriale</option>
+                <option value="asthme">🌬️ Asthme / BPCO</option>
+                <option value="hypot">⬇️ Hypotension / bradycardie</option>
+              </select>
+            </div>
+          </div>
+          <div id="angina-result" style="display:none;"></div>
+        </div>
+
+        <!-- TABLEAU MÉDICAMENTS -->
+        <div class="accordion">
+          <div class="accordion-item">
+            <div class="accordion-header">📋 Tableau complet — Médicaments de l'angine stable
+              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+            </div>
+            <div class="accordion-body" style="overflow-x:auto;">
+              <table style="min-width:700px;">
+                <thead>
+                  <tr>
+                    <th>Médicament / Classe</th>
+                    <th>Mécanisme</th>
+                    <th>Posologie</th>
+                    <th>EI principaux</th>
+                    <th>CI / Précautions</th>
+                    <th>Surveillance</th>
+                    <th style="background:#DCFCE7;">Rôle</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td colspan="7" style="background:#EEF2FF;font-weight:700;color:#1C3F8F;font-size:12px;">🔵 TRAITEMENT DES SYMPTÔMES (anti-ischémiques)</td></tr>
+                  <tr>
+                    <td><strong>NTG courte action</strong><br><small>Nitro SL · patch</small></td>
+                    <td>↓ précharge (venodilatation) · vasodilatation coronarienne</td>
+                    <td>0,3–0,4 mg SL q5 min × 3 · NTG patch 0,4–0,8 mg/h</td>
+                    <td>Céphalée (très fréquente) · hypotension · flush</td>
+                    <td>iPDE-5 (< 24h viagra · < 48h tadalafil) · HTO sévère · TSVD obstructive</td>
+                    <td>TA avant/après · éducation auto-administration</td>
+                    <td style="background:#DCFCE7;">Symptômes (crise)</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Nitrates longue action</strong><br><small>ISDN · ISMN</small></td>
+                    <td>↓ précharge chronique · tolérance si intervalle insuffisant</td>
+                    <td>ISDN 10–40 mg TID · ISMN 30–240 mg DIE · Fenêtre nitrate-free 10–12h/j</td>
+                    <td>Céphalée · tolérance (tachyphylaxie)</td>
+                    <td>Même CI que NTG court · nécessite fenêtre nitrate-free</td>
+                    <td>Symptômes · observance fenêtre libre</td>
+                    <td style="background:#DCFCE7;">Symptômes (entretien)</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Bêtabloquants (BB)</strong><br><small>Métoprolol · Aténolol · Bisoprolol · Carvédilol</small></td>
+                    <td>↓ FC · ↓ contractilité · ↓ PA → ↓ MVO₂ · ↑ durée diastole (↑ perfusion)</td>
+                    <td>Métoprolol 25–200 mg DIE · Bisoprolol 2,5–10 mg DIE · Cible : FC 55–60 bpm</td>
+                    <td>Bradycardie · bloc AV · fatigue · bronchospasme (non-sélectif) · dysfonction érectile · rebond si arrêt brusque</td>
+                    <td>Asthme · bloc AV ≥ 2e · bradycardie · hypotension · BPCO sévère (relatif)</td>
+                    <td>FC · TA · ECG · glycémie (masque hypoglycémie)</td>
+                    <td style="background:#DCFCE7;">Symptômes<br><span style="background:#EEF2FF;border-radius:4px;padding:1px 4px;font-size:10px;">+ Pronostic si IC-FEVG ↓</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>BCC dihydropyridines</strong><br><small>Amlodipine · Nifédipine LP · Félodipine</small></td>
+                    <td>Vasodilatation artérielle périphérique + coronarienne → ↓ postcharge</td>
+                    <td>Amlodipine 5–10 mg DIE · Nifédipine LP 30–90 mg DIE</td>
+                    <td>Oedème périphérique · flush · céphalée · tachycardie réflexe</td>
+                    <td>Insuffisance cardiaque sévère (FEVG ↓) · sténose aortique sévère</td>
+                    <td>TA · oedème · fréquence angineuse</td>
+                    <td style="background:#DCFCE7;">Symptômes</td>
+                  </tr>
+                  <tr>
+                    <td><strong>BCC non-DHP</strong><br><small>Vérapamil · Diltiazem</small></td>
+                    <td>↓ FC + vasodilatation coronarienne (effet nodal fort)</td>
+                    <td>Vérapamil LP 120–480 mg DIE · Diltiazem LP 120–480 mg DIE</td>
+                    <td>Bradycardie · constipation (Vérapamil) · bloc AV · ↓ FEVG</td>
+                    <td>Ne pas combiner avec BB · bloc AV · IC systolique</td>
+                    <td>FC · ECG · TA</td>
+                    <td style="background:#DCFCE7;">Symptômes (si BB intoléré)</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Ivabradine</strong><br><small>Lancora®</small></td>
+                    <td>Bloque If (courant funny) dans nœud SA → ↓ FC sans ↓ contractilité</td>
+                    <td>5–7,5 mg BID · Cible FC &lt; 60 bpm · si FC ≥ 70 bpm en rythme sinusal</td>
+                    <td>Phosphènes (flash lumineux) · bradycardie · FA (CI si FA)</td>
+                    <td>FA · bloc SA · FC &lt; 60 bpm · grossesse · inhibiteurs forts CYP3A4</td>
+                    <td>FC · ECG · phosphènes</td>
+                    <td style="background:#DCFCE7;">Symptômes (si BB CI ou intoléré)</td>
+                  </tr>
+                  <tr><td colspan="7" style="background:#DCFCE7;font-weight:700;color:#166534;font-size:12px;">🟢 AMÉLIORATION DU PRONOSTIC (réduction risque CV)</td></tr>
+                  <tr>
+                    <td><strong>AAS (aspirine)</strong><br><small>81 mg DIE</small></td>
+                    <td>Inhibition irréversible COX-1 → ↓ TXA2 → ↓ agrégation plaquettaire</td>
+                    <td>81 mg DIE (prévention secondaire) · ± IPP si risque GI</td>
+                    <td>Hémorragie GI · ulcère · allergie</td>
+                    <td>Allergie AAS (→ clopidogrel) · saignement actif</td>
+                    <td>Signes hémorragiques · ± Hb annuellement</td>
+                    <td style="background:#DCFCE7;">Pronostic ✓✓✓</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Statines haute intensité</strong><br><small>Atorvastatine 40–80 mg · Rosuvastatine 20–40 mg</small></td>
+                    <td>Inhibition HMG-CoA réductase → ↓ LDL · stabilisation plaque · effets anti-inflammatoires</td>
+                    <td>Atorvastatine 40–80 mg DIE · Cible LDL ≤ 1,8 mmol/L (prév. 2°)</td>
+                    <td>Myopathie (rare) · ↑ CPK · ↑ transaminases · ↑ risque DM2 léger</td>
+                    <td>Grossesse · myopathie sévère · interaction gemfibrozil</td>
+                    <td>CPK si myalgies · bilan lipidique 3 mois · transaminases</td>
+                    <td style="background:#DCFCE7;">Pronostic ✓✓✓</td>
+                  </tr>
+                  <tr>
+                    <td><strong>IECA / ARA</strong><br><small>Ramipril · Périndopril · Valsartan</small></td>
+                    <td>↓ angiotensine II → vasodilatation · protection rénale · remodelage VG</td>
+                    <td>Ramipril 10 mg DIE · Périndopril 8 mg DIE</td>
+                    <td>Toux (IECA) · hyperkaliémie · hypotension · insuffisance rénale aiguë</td>
+                    <td>Grossesse · angiooedème · sténose bilatérale artères rénales</td>
+                    <td>TA · créatinine · kaliémie à 1–2 sem puis q3–6 mois</td>
+                    <td style="background:#DCFCE7;">Pronostic si IC / DM / HTA</td>
+                  </tr>
+                  <tr>
+                    <td><strong>iSGLT2</strong><br><small>Empagliflozine · Dapagliflozine</small></td>
+                    <td>↓ glucose · ↓ volume · ↓ précharge/postcharge · protection rénale</td>
+                    <td>Empagliflozine 10 mg DIE · Dapagliflozine 10 mg DIE</td>
+                    <td>IVU · mycose génitale · acidocétose (rare) · amputation (risque pied)</td>
+                    <td>DFG &lt; 20 · amputation active · kétoacidose</td>
+                    <td>Glycémie · DFG · signes IVU · pieds si MAVP</td>
+                    <td style="background:#DCFCE7;">Pronostic si DM2 + MCAS ✓✓✓</td>
+                  </tr>
+                  <tr>
+                    <td><strong>GLP-1 RA</strong><br><small>Sémaglutide · Liraglutide</small></td>
+                    <td>Analogues GLP-1 → ↓ glycémie · ↓ poids · protection CV endothéliale</td>
+                    <td>Sémaglutide 0,5–2 mg SC semaine · Liraglutide 1,2–1,8 mg SC DIE</td>
+                    <td>Nausées · vomissements · diarrhée · pancréatite (rare)</td>
+                    <td>Antécédent CMT · NEM2 · pancréatite sévère</td>
+                    <td>Poids · glycémie · HbA1c · signes GI</td>
+                    <td style="background:#DCFCE7;">Pronostic si DM2 + MCAS ✓✓</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- JS ALGO ANGINE -->
+        <script>
+        function runAnginaAlgo() {
+          var obj = document.getElementById('ang-obj').value;
+          var ctx = document.getElementById('ang-ctx').value;
+          var res = document.getElementById('angina-result');
+          if (!obj) { res.style.display = 'none'; return; }
+          res.style.display = 'block';
+
+          var bg = '#F0FDF4'; var border = '#16a34a';
+          var html = '<div style="border-left:4px solid ' + border + ';background:' + bg + ';border-radius:8px;padding:14px;">';
+
+          if (obj === 'sym' || obj === 'both') {
+            html += '<p style="font-weight:700;color:#166534;margin:0 0 8px;">🩺 Traitement des SYMPTÔMES</p>';
+            if (ctx === 'asthme') {
+              html += '<div style="background:#FEF9C3;border-radius:6px;padding:8px;margin-bottom:6px;">⚠️ Asthme/BPCO : <strong>&#201;viter les BB non-s&eacute;lectifs</strong> → Utiliser BCC DHP (amlodipine) + nitrate long-action</div>';
+              html += '<ul style="margin:0;padding-left:16px;font-size:13px;"><li>Amlodipine 5&ndash;10 mg DIE (1&egrave;re ligne)</li><li>Nitrate long-action (ISMN) en 2&egrave; ligne</li><li>Ivabradine si FC &ge; 70 bpm en rythme sinusal</li></ul>';
+            } else if (ctx === 'fa') {
+              html += '<ul style="margin:0;padding-left:16px;font-size:13px;"><li>BB (r&acirc;le nodal) pour contr&ocirc;le de la FC angine + FA</li><li>Si BB intoler&eacute; : BCC non-DHP (diltiazem / v&eacute;rapamil)</li><li>⚠️ Ivabradine CI si FA</li></ul>';
+            } else if (ctx === 'ic') {
+              html += '<ul style="margin:0;padding-left:16px;font-size:13px;"><li>BB (bisoprolol / carvédilol / métoprolol succ.) — b&eacute;n&eacute;fice symptomatique ET pronostic</li><li>Ivabradine si FC &ge; 70 bpm malgr&eacute; BB</li><li>⚠️ BCC non-DHP CI si FEVG &lt; 40%</li><li>Nitrates si congestifs (↓ pr&eacute;charge)</li></ul>';
+            } else if (ctx === 'hypot') {
+              html += '<ul style="margin:0;padding-left:16px;font-size:13px;"><li>Prudence avec nitrates et BB (risque hypotension)</li><li>BCC DHP en 1&egrave;re ligne si TA basse syst&egrave;me</li><li>Ivabradine si FC &ge; 70 bpm sans bradycardie</li></ul>';
+            } else {
+              html += '<ul style="margin:0;padding-left:16px;font-size:13px;">';
+              html += '<li><strong>1&egrave;re ligne</strong> : BB (m&eacute;toprolol / bisoprolol) — cible FC 55&ndash;60 bpm</li>';
+              html += '<li><strong>Alternative</strong> : BCC DHP (amlodipine) si BB CI ou intoler&eacute;</li>';
+              html += '<li><strong>Crise aig&uuml;e</strong> : NTG SL 0,3&ndash;0,4 mg q5 min &times; 3 &mdash; si &gt; 3 doses sans soulagement &rarr; SCA</li>';
+              html += '<li><strong>Entretien</strong> : Nitrate long-action si sympt&ocirc;mes persistants malgr&eacute; BB ou BCC</li>';
+              html += '<li><strong>3&egrave;me ligne</strong> : Ivabradine (FC &ge; 70 bpm, rythme sinusal) ou combinaison BB + BCC DHP</li>';
+              html += '</ul>';
+            }
+          }
+          if (obj === 'prog' || obj === 'both') {
+            html += '<p style="font-weight:700;color:#1C3F8F;margin:' + (obj === 'both' ? '12px' : '0') + ' 0 8px;">📈 Am&eacute;lioration du PRONOSTIC</p>';
+            html += '<ul style="margin:0;padding-left:16px;font-size:13px;">';
+            html += '<li><strong>AAS 81 mg DIE</strong> — toujours (pr&eacute;vention secondaire) &pm; IPP si risque GI</li>';
+            html += '<li><strong>Statine haute intensit&eacute;</strong> — cible LDL &le; 1,8 mmol/L (atorvastatine 40&ndash;80 mg)</li>';
+            if (ctx === 'diab') {
+              html += '<li><strong>iSGLT2</strong> (empagliflozine 10 mg) &mdash; b&eacute;n&eacute;fice CV d&eacute;montr&eacute; si DM2 + MCAS</li>';
+              html += '<li><strong>GLP-1</strong> (s&eacute;maglutide) &mdash; si ob&eacute;sit&eacute; ou HbA1c non contr&ocirc;l&eacute;e malgr&eacute; iSGLT2</li>';
+            }
+            html += '<li><strong>IECA</strong> (ramipril 10 mg) &mdash; si HTA, diab&egrave;te, IC ou FEVG &lt; 40%</li>';
+            html += '<li>Modifications HDV : arr&ecirc;t tabac &bull; exercice 150 min/sem &bull; diète m&eacute;diterran&eacute;enne</li>';
+            html += '</ul>';
+          }
+          html += '</div>';
+          res.innerHTML = html;
+        }
+        </script>
+      </div>
+
+      <!-- PRISE EN CHARGE IPS -->
+      <div class="block clin" id="mcas-pec">
+        <div class="block-title"><span class="tag">🩺 Prise en charge IPS — Angine stable</span></div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:12px;">
+          <div>
+            <p style="font-weight:700;color:#1C3F8F;margin:0 0 8px;">📋 Bilan initial</p>
+            <table>
+              <thead><tr><th>Examen</th><th>Objectif</th></tr></thead>
+              <tbody>
+                <tr><td>ECG 12 dérivations</td><td>Baseline, BBG/BBD, ondes Q (IM ancien)</td></tr>
+                <tr><td>Bilan lipidique complet</td><td>LDL, HDL, TG, non-HDL</td></tr>
+                <tr><td>Glycémie/HbA1c</td><td>Dépistage DM2</td></tr>
+                <tr><td>Créatinine / DFG</td><td>Ajustement médicamenteux</td></tr>
+                <tr><td>FSC</td><td>Anémie (↓ apport O₂)</td></tr>
+                <tr><td>TSH</td><td>Thyroïde = FdR CV modifiable</td></tr>
+                <tr><td>Écho cardiaque</td><td>FEVG, cinétique segmentaire, valvulopathies</td></tr>
+                <tr><td>Test d'effort (EE)</td><td>Si pré-test probab. intermédiaire &amp; ECG interprétable</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div>
+            <p style="font-weight:700;color:#0a7a4e;margin:0 0 8px;">📅 Suivi clinique IPS</p>
+            <table>
+              <thead><tr><th>Fréquence</th><th>Contenu</th></tr></thead>
+              <tbody>
+                <tr><td>1–3 mois (initiation)</td><td>Tolérance médicaments · TA · FC · LDL (si statine)</td></tr>
+                <tr><td>6 mois</td><td>Bilan lipidique · HbA1c si DM2 · fréquence angineuse</td></tr>
+                <tr><td>Annuel</td><td>ECG · écho si symptômes changent · révision FdR · Fagerström</td></tr>
+                <tr><td>SOS NTG</td><td>Éducation patient : &gt; 3 NTG sans soulagement → 911</td></tr>
+              </tbody>
+            </table>
+            <div style="background:#FEF9C3;border-radius:8px;padding:10px;margin-top:10px;">
+              <p style="margin:0 0 6px;font-weight:700;color:#92400e;">🎓 Éducation du patient</p>
+              <ul style="margin:0;padding-left:16px;font-size:12px;line-height:1.8;">
+                <li>Auto-administration NTG SL (technique + conservation)</li>
+                <li>Quand appeler le 911 vs consulter</li>
+                <li>Modif. HDV : alimentation, exercice, tabac, stress</li>
+                <li>Observance médicamenteuse (statine surtout)</li>
+                <li>Activité sexuelle : après 2 étages sans DT → OK</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="key-fact blue">💊 Si contrôle insuffisant sous traitement médical optimal (BB + BCC + nitrate) → référer en cardiologie pour coronarographie ± revascularisation (PCI ou CABG).</div>
+      </div>
+
+      <!-- RED FLAGS -->
+      <div class="block alert" id="mcas-flags">
+        <div class="block-title"><span class="tag">🚨 Red Flags — Instabilisation / Évolution vers SCA</span></div>
+        <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:12px;">
+          <div class="flag-item"><span class="fi-icon">🚨</span><span>Angine <strong>au repos</strong> ou nocturne — SCA jusqu'à preuve du contraire</span></div>
+          <div class="flag-item"><span class="fi-icon">🚨</span><span>Angine <strong>crescendo</strong> — seuil ↓ progressivement sur semaines/jours</span></div>
+          <div class="flag-item"><span class="fi-icon">⚠️</span><span>NTG × 3 sans soulagement → 911 immédiatement</span></div>
+          <div class="flag-item"><span class="fi-icon">⚠️</span><span>Dyspnée sévère · diaphorèse · syncope associée</span></div>
+          <div class="flag-item"><span class="fi-icon">🚫</span><span>iPDE-5 (viagra/tadalafil) récent → CI absolue aux nitrates</span></div>
+          <div class="flag-item"><span class="fi-icon">🚫</span><span>Angine après revascularisation (PCI/CABG) → resténose à exclure</span></div>
         </div>
       </div>
     </div>
@@ -6781,319 +7327,430 @@ function calculatePHQ9() {
     <div class="section" id="sec-sca">
       <div class="section-header">
         <div class="section-accent">🫀</div>
-        <div class="section-title"><h1>Syndromes Coronariens Aigus</h1><div class="breadcrumb">Cardiologie <span class="breadcrumb-sep">·</span> Section 5</div></div>
+        <div class="section-title"><h1>Syndromes Coronariens Aigus (SCA)</h1><div class="breadcrumb">Cardiologie <span class="breadcrumb-sep">·</span> Section 5</div></div>
       </div>
 
       <!-- PILLS NAV -->
       <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
-        <button onclick="document.getElementById('sca-1').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🧬 Physiopatho</button>
-        <button onclick="document.getElementById('sca-2').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">⏱️ Stades & Pronostic</button>
-        <button onclick="document.getElementById('sca-3').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🩺 Évaluation</button>
-        <button onclick="document.getElementById('sca-4').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📊 Scores TIMI/GRACE</button>
-        <button onclick="document.getElementById('sca-5').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔬 MINOCA</button>
-        <button onclick="document.getElementById('sca-6').scrollIntoView({behavior:'smooth'})" style="background:#c0392b;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">⚡ AI / NSTEMI</button>
-        <button onclick="document.getElementById('sca-7').scrollIntoView({behavior:'smooth'})" style="background:#c0392b;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🚨 STEMI</button>
-        <button onclick="document.getElementById('sca-8').scrollIntoView({behavior:'smooth'})" style="background:#0a7a4e;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">💊 Antiplaquettaires P2Y12</button>
-        <button onclick="document.getElementById('sca-9').scrollIntoView({behavior:'smooth'})" style="background:#0a7a4e;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🛡️ Prévention & Suivi</button>
+        <button onclick="document.getElementById('sca-types').scrollIntoView({behavior:'smooth'})" style="background:#c0392b;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📋 Types de SCA</button>
+        <button onclick="document.getElementById('sca-physio').scrollIntoView({behavior:'smooth'})" style="background:#c0392b;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🧬 Physiopathologie</button>
+        <button onclick="document.getElementById('sca-trop').scrollIntoView({behavior:'smooth'})" style="background:#c0392b;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🧪 Troponines</button>
+        <button onclick="document.getElementById('sca-types-im').scrollIntoView({behavior:'smooth'})" style="background:#c0392b;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔢 Types IM &amp; MINOCA</button>
+        <button onclick="document.getElementById('sca-complic').scrollIntoView({behavior:'smooth'})" style="background:#c0392b;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">⚠️ Complications</button>
+        <button onclick="document.getElementById('sca-rx').scrollIntoView({behavior:'smooth'})" style="background:#0a7a4e;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">💊 Traitement</button>
+        <button onclick="document.getElementById('sca-pec').scrollIntoView({behavior:'smooth'})" style="background:#7b3fa0;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🩺 Prise en charge IPS</button>
       </div>
+
       <!-- STAT CARDS -->
       <div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:20px;">
         <div style="flex:1;min-width:120px;background:#FEE2E2;border-radius:10px;padding:14px;text-align:center;">
-          <div style="font-size:18px;font-weight:800;color:#c0392b;">3–12 h</div>
-          <div style="font-size:11px;color:#555;margin-top:4px;">Délai ↑ troponine</div>
-        </div>
-        <div style="flex:1;min-width:120px;background:#FEE2E2;border-radius:10px;padding:14px;text-align:center;">
-          <div style="font-size:18px;font-weight:800;color:#c0392b;">≤ 90 min</div>
-          <div style="font-size:11px;color:#555;margin-top:4px;">Délai porte-ballon STEMI</div>
+          <div style="font-size:20px;font-weight:800;color:#c0392b;">&lt; 120 min</div>
+          <div style="font-size:11px;color:#555;margin-top:4px;">Door-to-Balloon STEMI (cible)</div>
         </div>
         <div style="flex:1;min-width:120px;background:#FEF9C3;border-radius:10px;padding:14px;text-align:center;">
-          <div style="font-size:18px;font-weight:800;color:#92400e;">≤ 120 min</div>
-          <div style="font-size:11px;color:#555;margin-top:4px;">Délai 1er contact-ballon</div>
+          <div style="font-size:20px;font-weight:800;color:#92400e;">3–12 h</div>
+          <div style="font-size:11px;color:#555;margin-top:4px;">Délai élévation troponine hs</div>
         </div>
         <div style="flex:1;min-width:120px;background:#DCFCE7;border-radius:10px;padding:14px;text-align:center;">
-          <div style="font-size:18px;font-weight:800;color:#0a7a4e;">99 %</div>
-          <div style="font-size:11px;color:#555;margin-top:4px;">VPN troponine à 3 h</div>
+          <div style="font-size:20px;font-weight:800;color:#0a7a4e;">≥ 20 %</div>
+          <div style="font-size:11px;color:#555;margin-top:4px;">Variation troponine hs Δ diagnostic</div>
         </div>
         <div style="flex:1;min-width:120px;background:#EEF2FF;border-radius:10px;padding:14px;text-align:center;">
-          <div style="font-size:18px;font-weight:800;color:#1C3F8F;">≥ 20 %</div>
-          <div style="font-size:11px;color:#555;margin-top:4px;">Δ troponine = critère Dx</div>
+          <div style="font-size:20px;font-weight:800;color:#1C3F8F;">24–48 h</div>
+          <div style="font-size:11px;color:#555;margin-top:4px;">Coronarographie AI/NSTEMI</div>
+        </div>
+        <div style="flex:1;min-width:120px;background:#F3E8FF;border-radius:10px;padding:14px;text-align:center;">
+          <div style="font-size:20px;font-weight:800;color:#7b3fa0;">5 types</div>
+          <div style="font-size:11px;color:#555;margin-top:4px;">Classification IM (+ MINOCA)</div>
         </div>
       </div>
 
-      <div class="block clin" id="sca-1">
-        <div class="block-title"><span class="tag">🧬 Physiopathologie brève</span></div>
-        <p class="content-text">Rupture ou érosion d'une <strong>plaque athérosclérotique vulnérable</strong> → activation de l'agrégation plaquettaire + cascade de coagulation → <strong>formation d'un thrombus</strong> ± vasoconstriction → obstruction partielle ou complète de l'artère coronaire.</p>
-        <table style="margin-top:8px;">
-          <thead><tr><th>Type</th><th>Mécanisme</th><th>ECG</th><th>Troponine</th></tr></thead>
-          <tbody>
-            <tr><td>Angine instable</td><td>Thrombus — obstruction partielle</td><td>Normal (± inversion T, ↓ ST transitoire)</td><td>Négative</td></tr>
-            <tr><td>NSTEMI</td><td>Occlusion partielle — nécrose myocardique</td><td>Normal ou inversion T / ↓ ST</td><td>Positive ↑</td></tr>
-            <tr><td><strong>STEMI</strong></td><td>Occlusion <strong>complète</strong> — ischémie transmurale</td><td>↑ ST</td><td>Positive ↑↑</td></tr>
-          </tbody>
-        </table>
-        <div class="key-fact black" style="margin-top:8px;"><strong>Troponines :</strong> critère Dx si ↑ ≥ 20 % vs valeur initiale · s'élève 3–12 h, pic 12–48 h · VPN 99 % si négative à 3 h. Type 1 (rupture de plaque) vs type 2 (ischémie 2° : EP, anémie, arythmie, crise HTA, sepsis)</div>
-        <div class="note" style="margin-top:8px;"><strong>Types universels d'infarctus (classification ESC/ACC)</strong>
-          <table style="margin-top:6px;">
-            <thead><tr><th>Type</th><th>Description</th></tr></thead>
+      <!-- TYPES DE SCA -->
+      <div class="block def" id="sca-types">
+        <div class="block-title"><span class="tag">📋 Types de SCA — AI vs NSTEMI vs STEMI</span></div>
+        <div style="overflow-x:auto;">
+          <table style="min-width:650px;">
+            <thead>
+              <tr><th>Caractéristique</th><th style="color:#f97316;">Angine instable (AI)</th><th style="color:#c0392b;">NSTEMI</th><th style="color:#7b3fa0;">STEMI</th></tr>
+            </thead>
             <tbody>
-              <tr><td><strong>1</strong></td><td>SCA primaire — rupture de plaque athérosclérotique → thrombus coronarien</td></tr>
-              <tr><td><strong>2</strong></td><td>Déséquilibre offre/demande O₂ (vasospasme, embolie, arythmie, anémie, HTA sévère)</td></tr>
-              <tr><td><strong>3</strong></td><td>Mort subite avec ECG ou autopsie compatible STEMI (avant biomarqueurs)</td></tr>
-              <tr><td><strong>4a</strong></td><td>Complication per-PCI (biomarqueurs &gt; 5× LSN)</td></tr>
-              <tr><td><strong>4b</strong></td><td>Thrombose de stent documentée</td></tr>
-              <tr><td><strong>5</strong></td><td>Post-pontage aortocoronarien PAC (biomarqueurs &gt; 10× LSN)</td></tr>
+              <tr><td>Physiopathologie</td><td>Rupture plaque → thrombus <strong>non occlusif</strong></td><td>Rupture plaque → thrombus non occlusif + micronécrose</td><td>Rupture plaque → thrombus <strong>occlusif total</strong></td></tr>
+              <tr><td>Nécrose myocardique</td><td>Non (pas de nécrose)</td><td>Oui (transmural partiel ou sous-endocardique)</td><td>Oui (transmural complet)</td></tr>
+              <tr><td>Troponines</td><td>Normales (&lt; 99e percentile)</td><td><strong>Élevées</strong> ≥ 99e percentile ± Δ ≥ 20%</td><td><strong>Élevées</strong> (délai 3–6h)</td></tr>
+              <tr><td>ECG</td><td>Sous-décalage ST · ondes T inversées (ou normal)</td><td>Sous-décalage ST · ondes T inversées</td><td><strong>Sus-décalage ST</strong> ou nouveau BBG</td></tr>
+              <tr><td>Troponine cinétique</td><td>Stable / normale</td><td>↑ progressive avec pic 12–48h</td><td>↑ rapide avec pic 12–24h</td></tr>
+              <tr><td>Traitement urgent</td><td>Coronarographie dans 24–48h</td><td>Coronarographie dans 24–48h (ou plus tôt si haut risque)</td><td>PCI primaire &lt; 120 min (ou fibrinolyse si délai &gt; 120 min)</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px;">
+          <div style="background:#FEF9C3;border-radius:10px;padding:12px;">
+            <p style="font-weight:700;color:#92400e;margin:0 0 8px;">📊 Angine STABLE vs INSTABLE — clés cliniques</p>
+            <table style="font-size:12px;">
+              <thead><tr><th>Critère</th><th>Stable</th><th>Instable</th></tr></thead>
+              <tbody>
+                <tr><td>Survenue</td><td>Effort prévisible · seuil fixe</td><td>Repos · effort minimal · nocturne</td></tr>
+                <tr><td>Durée</td><td>&lt; 10 min · répond NTG</td><td>&gt; 20 min ou NTG inefficace</td></tr>
+                <tr><td>Seuil</td><td>Reproductible</td><td>Abaissé ou imprévisible</td></tr>
+                <tr><td>Troponines</td><td>Normales</td><td>Peuvent être élevées (NSTEMI)</td></tr>
+                <tr><td>Urgence</td><td>Différable</td><td>Hospitalisation immédiate</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div style="background:#F3E8FF;border-radius:10px;padding:12px;">
+            <p style="font-weight:700;color:#7b3fa0;margin:0 0 6px;">⚡ Présentation clinique SCA</p>
+            <ul style="margin:0;padding-left:16px;font-size:12px;line-height:1.8;">
+              <li>Douleur thoracique rétrosternale &gt; 20 min</li>
+              <li>Diaphorèse, nausées, vomissements</li>
+              <li>Dyspnée, syncope, palpitations</li>
+              <li>Présentation silencieuse (DM, femme, âgé++)</li>
+              <li>IM inférieur : douleur épigastrique, vomissements</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- PHYSIOPATHOLOGIE SCA -->
+      <div class="block path" id="sca-physio">
+        <div class="block-title"><span class="tag">🧬 Physiopathologie du SCA</span></div>
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:14px;">
+          <div style="background:#EEF2FF;border-radius:10px;padding:12px;text-align:center;border-top:4px solid #1C3F8F;">
+            <div style="font-size:18px;margin-bottom:4px;">🩸</div>
+            <div style="font-weight:700;color:#1C3F8F;margin-bottom:6px;">Rupture / érosion</div>
+            <div style="font-size:12px;">Rupture chape fibreuse ou érosion endothéliale → exposition core lipidique thrombogène</div>
+          </div>
+          <div style="background:#FEF9C3;border-radius:10px;padding:12px;text-align:center;border-top:4px solid #d97706;">
+            <div style="font-size:18px;margin-bottom:4px;">🔗</div>
+            <div style="font-weight:700;color:#92400e;margin-bottom:6px;">Activation plaquettaire</div>
+            <div style="font-size:12px;">Agrégation plaquettaire via GP IIb/IIIa · ADP (P2Y12) · TXA2 → thrombus plaquettaire blanc</div>
+          </div>
+          <div style="background:#FEE2E2;border-radius:10px;padding:12px;text-align:center;border-top:4px solid #c0392b;">
+            <div style="font-size:18px;margin-bottom:4px;">⬆️</div>
+            <div style="font-weight:700;color:#c0392b;margin-bottom:6px;">Cascade coagulation</div>
+            <div style="font-size:12px;">Facteur tissulaire → thrombine → fibrine → thrombus rouge complet → occlusion totale</div>
+          </div>
+          <div style="background:#FFF0F5;border-radius:10px;padding:12px;text-align:center;border-top:4px solid #9d174d;">
+            <div style="font-size:18px;margin-bottom:4px;">💔</div>
+            <div style="font-weight:700;color:#9d174d;margin-bottom:6px;">Nécrose ischémique</div>
+            <div style="font-size:12px;">Ischémie &gt; 20–40 min → nécrose irréversible · zone de risque = territoire de l'artère occluse</div>
+          </div>
+        </div>
+        <div class="key-fact red">⏱️ <strong>Time is muscle</strong> : chaque 30 min de délai → ↑ mortalité 7,5 % et perte définitive de tissu myocardique. La reperfusion précoce (PCI &lt; 120 min) est l'objectif principal du STEMI.</div>
+      </div>
+
+      <!-- TROPONINES -->
+      <div class="block clin" id="sca-trop">
+        <div class="block-title"><span class="tag">🧪 Troponines — Rôle diagnostique &amp; cinétique</span></div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:12px;">
+          <div>
+            <table>
+              <thead><tr><th colspan="2">Cinétique de la Troponine hs (TnI / TnT)</th></tr></thead>
+              <tbody>
+                <tr><td>Élévation initiale</td><td>3–12h après début des symptômes</td></tr>
+                <tr><td>Pic</td><td>12–48h (TnI) · 12–24h (TnT) si STEMI</td></tr>
+                <tr><td>Retour à la normale</td><td>7–14 jours (TnI) · 10–14 jours (TnT)</td></tr>
+                <tr><td>Critère Δ diagnostic</td><td>Variation ≥ <strong>20 %</strong> à 0–3h ou 0–6h</td></tr>
+                <tr><td>Seuil (99e percentile)</td><td>Spécifique à chaque laboratoire</td></tr>
+                <tr><td>VPN (hs-Trop haute sensibilité)</td><td><strong>&gt; 99 %</strong> à 1h si valeur très basse</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div>
+            <p style="font-weight:700;margin:0 0 8px;color:#c0392b;">⚠️ Causes d'élévation troponine SANS SCA</p>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+              <div style="background:#FEF9C3;border-radius:8px;padding:10px;font-size:12px;">
+                <strong>Cardiaques</strong><br>
+                Myocardite · Péricardite · IC décompensée · SAS · Contusion myocardique · Cardioversion · Ablation
+              </div>
+              <div style="background:#EEF2FF;border-radius:8px;padding:10px;font-size:12px;">
+                <strong>Non-cardiaques</strong><br>
+                EP massive · HTAP · AVC / AIT · Sepsis sévère · IRC · Rhabdomyolyse · Brûlure étendue
+              </div>
+            </div>
+            <div class="key-fact blue" style="margin-top:8px;">Troponine seule ne = pas SCA. Toujours interpréter dans le <strong>contexte clinique + ECG</strong>. La cinétique (Δ) et la valeur absolue ensemble font le diagnostic.</div>
+          </div>
+        </div>
+        <div style="background:#DCFCE7;border-radius:10px;padding:12px;">
+          <p style="font-weight:700;color:#166534;margin:0 0 8px;">📝 Algorithme diagnostique rapide (0h / 1h / 3h)</p>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;font-size:12px;">
+            <div style="background:#fff;border-radius:8px;padding:10px;text-align:center;">
+              <div style="font-weight:700;color:#166534;margin-bottom:4px;">0h</div>
+              Prélèvement à l'arrivée · Si TnI très basse + symptômes &lt; 2h → 1h d'intervalle
+            </div>
+            <div style="background:#fff;border-radius:8px;padding:10px;text-align:center;">
+              <div style="font-weight:700;color:#166534;margin-bottom:4px;">1h ou 3h</div>
+              Répéter → Δ ≥ 20% ou valeur &gt; 99e pctile = NSTEMI confirmé
+            </div>
+            <div style="background:#fff;border-radius:8px;padding:10px;text-align:center;">
+              <div style="font-weight:700;color:#166534;margin-bottom:4px;">6h</div>
+              Répéter si suspicion élevée ET valeur à 3h encore borderline
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TYPES IM + MINOCA -->
+      <div class="block path" id="sca-types-im">
+        <div class="block-title"><span class="tag">🔢 Types d'infarctus du myocarde (ESC 4e définition universelle)</span></div>
+        <div style="overflow-x:auto;">
+          <table>
+            <thead><tr><th>Type</th><th>Mécanisme</th><th>Exemple clinique</th></tr></thead>
+            <tbody>
+              <tr style="background:#FEE2E2;"><td><strong style="color:#c0392b;">Type 1</strong></td><td>Rupture / érosion de plaque → thrombose coronarienne spontanée</td><td>SCA athérosclérotique classique</td></tr>
+              <tr><td><strong>Type 2</strong></td><td>Déséquilibre offre/demande O₂ SANS rupture de plaque</td><td>Tachyarythmie · sepsis · anémie · spasme · dissection · HTA urgence</td></tr>
+              <tr><td><strong>Type 3</strong></td><td>IM avec mort subite avant dosage troponine possible</td><td>Arrêt cardiaque avant sérologie disponible</td></tr>
+              <tr><td><strong>Type 4a</strong></td><td>Complication de PCI (&gt; 5× 99e pctile + critères)</td><td>Post-angioplastie dans les 48h</td></tr>
+              <tr><td><strong>Type 4b</strong></td><td>Thrombose sur stent (tardive ou précoce)</td><td>Ré-occlusion stent</td></tr>
+              <tr><td><strong>Type 5</strong></td><td>Complication de chirurgie de pontage (CABG)</td><td>Post-CABG (&gt; 10× 99e pctile + critères)</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div style="margin-top:14px;">
+          <div class="accordion">
+            <div class="accordion-item">
+              <div class="accordion-header">MINOCA — Infarctus sans coronaropathie obstructive
+                <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+              </div>
+              <div class="accordion-body">
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+                  <div>
+                    <p style="font-weight:700;margin:0 0 8px;">Définition MINOCA</p>
+                    <ul style="margin:0;padding-left:16px;font-size:13px;line-height:1.8;">
+                      <li>Critères IM présents (troponine ↑ + symptômes)</li>
+                      <li>Absence de coronaropathie obstructive (&lt; 50% toutes artères)</li>
+                      <li>Pas d'autre cause clinique évidente (myocardite, cardiomyopathie)</li>
+                      <li>Plus fréquent chez la <strong>femme jeune</strong></li>
+                    </ul>
+                  </div>
+                  <div>
+                    <p style="font-weight:700;margin:0 0 8px;">Mécanismes possibles</p>
+                    <table style="font-size:12px;">
+                      <tbody>
+                        <tr><td>Vasospasme coronarien</td><td>Angine de Prinzmetal</td></tr>
+                        <tr><td>Dissection coronarienne spontanée</td><td>SCAD — femme péri-partum</td></tr>
+                        <tr><td>Embolie coronarienne</td><td>FA · endocardite · thrombose</td></tr>
+                        <tr><td>Dysfonction microvasculaire</td><td>Syndrome X cardiaque</td></tr>
+                        <tr><td>Tako-Tsubo</td><td>Cardiomyopathie de stress</td></tr>
+                        <tr><td>Myocardite (mimant IM)</td><td>Virale · auto-immune</td></tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div class="key-fact yellow" style="margin-top:8px;">MINOCA n'est pas bénin — mortalité à 1 an de 3–4 %. Prise en charge selon étiologie identifiée. L'IRM cardiaque est l'examen clé pour différencier myocardite, tako-tsubo, et MINOCA vrai.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- COMPLICATIONS -->
+      <div class="block alert" id="sca-complic">
+        <div class="block-title"><span class="tag">⚠️ Complications de l'infarctus du myocarde</span></div>
+        <div style="overflow-x:auto;">
+          <table style="min-width:700px;">
+            <thead>
+              <tr><th>Catégorie</th><th>Complication</th><th>Délai typique</th><th>Clinique / Diagnostic</th><th>Prise en charge</th></tr>
+            </thead>
+            <tbody>
+              <tr><td rowspan="3" style="background:#FEE2E2;font-weight:700;color:#c0392b;">Ischémiques</td>
+                <td>Extension de l'infarctus / ré-occlusion</td><td>24–72h</td><td>Reprise douleur · sus-ST réapparu · retropération troponine</td><td>PCI urgente · revoir anticoagulation</td></tr>
+              <tr><td>Récidive de douleur angineuse</td><td>Jours–semaines</td><td>Angine résiduelle post-IM</td><td>Bêtabloquant · révascularisation résidu</td></tr>
+              <tr><td>Angine de Dressler</td><td>1–6 semaines</td><td>Fièvre + péricardite + pleurésie</td><td>AAS / AINS · colchicine</td></tr>
+              <tr><td rowspan="3" style="background:#FFF0F5;font-weight:700;color:#9d174d;">Mécaniques</td>
+                <td>Rupture de paroi libre</td><td>3–7 jours</td><td>Collapsus soudain · tamponnade</td><td>Chirurgie urgente (mortalité élevée)</td></tr>
+              <tr><td>Rupture septum interventriculaire (SIV)</td><td>3–5 jours</td><td>Souffle holosystolique nouveau · choc</td><td>Écho urgent · IABP · chirurgie</td></tr>
+              <tr><td>Insuffisance mitrale aiguë</td><td>2–7 jours</td><td>Rupture muscle papillaire · OAP soudain</td><td>Écho · chirurgie valvulaire urgente</td></tr>
+              <tr><td rowspan="3" style="background:#EEF2FF;font-weight:700;color:#1C3F8F;">Arythmiques</td>
+                <td>Fibrillation ventriculaire (FV)</td><td>Premières 48h</td><td>Mort subite / ACR</td><td>Défibrillation immédiate · amiodarone</td></tr>
+              <tr><td>Bloc AV complet</td><td>Heures–jours</td><td>IM inférieur + ACD ++</td><td>Atropine · pace temporaire si hémodynamie compromise</td></tr>
+              <tr><td>Tachycardie ventriculaire (TV)</td><td>Premières 72h ou tardive</td><td>ECG + clinique</td><td>Amiodarone / cardioversion · DAI si FEVG ≤ 35% à distance</td></tr>
+              <tr><td rowspan="2" style="background:#DCFCE7;font-weight:700;color:#166534;">Fonctionnelles</td>
+                <td>Choc cardiogénique</td><td>Premières 24h</td><td>PAs &lt; 90 · IC ↓ · lactate ↑</td><td>PCI urgente · dobutamine · IABP · ECMO si réfractaire</td></tr>
+              <tr><td>IC congestive / OAP</td><td>Jours–semaines</td><td>Killip II-IV</td><td>Diurétiques · IECA · BB · écho</td></tr>
+              <tr><td style="background:#FEF9C3;font-weight:700;color:#92400e;">Autres</td>
+                <td>Thrombus VG · AVC · Anévrisme VG · Péricardite précoce</td><td>Variable</td><td>Écho à J0 et 4–6 sem</td><td>Anticoagulation si thrombus · suivi FEVG</td></tr>
             </tbody>
           </table>
         </div>
       </div>
 
-      <div class="block clin" id="sca-2" style="border-left-color:var(--ink);">
-        <div class="block-title"><span class="tag">⏱️ Stades de l'ischémie & Stratification pronostique post-IM</span></div>
-        <table>
-          <thead><tr><th>Stade</th><th>Délai</th><th>Description</th></tr></thead>
-          <tbody>
-            <tr><td>① Ischémie réversible</td><td>0–20 min</td><td>Lésions potentiellement réversibles si reperfusion rapide</td></tr>
-            <tr><td>② Nécrose irréversible</td><td>20 min – 3 j</td><td>Nécrose des cardiomyocytes, libération des biomarqueurs</td></tr>
-            <tr><td>③ Inflammation & nettoyage</td><td>3–7 j</td><td>Neutrophiles puis macrophages → élimination des tissus nécrotiques</td></tr>
-            <tr><td>④ Guérison & cicatrisation</td><td>7 j – 2 mois</td><td>Dépôt de collagène → fibrose/tissu cicatriciel</td></tr>
-          </tbody>
-        </table>
-        <div class="key-fact black" style="margin-top:8px;"><strong>Sidération myocardique :</strong> dysfonction systolique transitoire post-ischémie sévère · <strong>Préconditionnement ischémique :</strong> meilleure résistance aux épisodes ultérieurs · <strong>Onde Q pathologique :</strong> &gt; 0,04 sec ET &gt; 25 % de la hauteur du QRS, dans plusieurs dérivations (équivalent postérieur : ↑ onde R en V1-V2)</div>
-        <div class="highlight cream" style="margin-top:8px;font-size:13px;"><strong>Stratification tardive — FEVG (facteur pronostique le plus important) :</strong> &lt; 50 % → ↑ mortalité à 6 mois-1 an · ≤ 35 % → ↑ risque de mort subite, candidat DAI · absence d'amélioration entre J1-7 et sem. 2-12 → ↑ risque de complications. Autres facteurs défavorables : ↓ FEVD, régurgitation mitrale, sexe féminin</div>
-      </div>
+      <!-- TRAITEMENT SCA -->
+      <div class="block rx" id="sca-rx">
+        <div class="block-title"><span class="tag">💊 Traitement des SCA — Algorithme &amp; pharmacologie</span></div>
 
-      <div class="block para" id="sca-4" style="border-left-color:var(--ink);">
-        <div class="block-title"><span class="tag">🔬 MINOCA & complications de l'infarctus</span></div>
-        <p class="content-text"><strong>MINOCA</strong> (5–7 % des IM, diagnostic d'exclusion) : critères d'IAM <strong>+</strong> absence de sténose ≥ 50 % à l'angiographie <strong>+</strong> absence de cause non ischémique → physiopathologies évoquées : vasospasme, embolie, dysfonction microvasculaire</p>
-        <div class="flag-list" style="margin-top:8px;">
-          <div class="flag-item"><span class="fi-icon">💔</span><span><strong>Mécaniques :</strong> remodelage ventriculaire · rupture de la paroi inter-ventriculaire, de la paroi libre ou d'un muscle papillaire · épanchement péricardique</span></div>
-          <div class="flag-item"><span class="fi-icon">⚡</span><span><strong>Arythmiques :</strong> TV/FV/ESV, RIVA, bradycardie — <strong>90 % des IM engendrent une arythmie</strong></span></div>
-          <div class="flag-item"><span class="fi-icon">🫀</span><span><strong>Fonctionnelles & autres :</strong> insuffisance cardiaque · douleurs résiduelles/extension de l'IM · péricardite (rarement syndrome de Dressler)</span></div>
+        <div style="background:#F9FAFB;border-radius:12px;padding:16px;margin-bottom:16px;border:1px solid #E5E7EB;">
+          <p style="font-weight:700;color:#c0392b;margin:0 0 10px;">🎯 Aide à la décision — AI/NSTEMI vs STEMI</p>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px;">
+            <div>
+              <label style="font-size:12px;font-weight:600;color:#374151;">① Type de SCA</label>
+              <select id="sca-type-sel" onchange="runScaAlgo()" style="width:100%;margin-top:4px;padding:7px;border-radius:8px;border:1px solid #D1D5DB;font-size:13px;">
+                <option value="">— Sélectionner —</option>
+                <option value="ai-nstemi">🟡 AI / NSTEMI (sans sus-ST)</option>
+                <option value="stemi">🔴 STEMI (sus-ST ou BBG nouveau)</option>
+              </select>
+            </div>
+            <div>
+              <label style="font-size:12px;font-weight:600;color:#374151;">② Contexte</label>
+              <select id="sca-ctx-sel" onchange="runScaAlgo()" style="width:100%;margin-top:4px;padding:7px;border-radius:8px;border:1px solid #D1D5DB;font-size:13px;">
+                <option value="aucun">Aucun contexte particulier</option>
+                <option value="choc">💥 Choc cardiogénique</option>
+                <option value="hemo">🩸 Risque hémorragique élevé</option>
+                <option value="irc">🔵 IRC sévère (DFG &lt; 30)</option>
+                <option value="pci">🏥 PCI primaire &lt; 120 min possible</option>
+                <option value="nopci">🚑 PCI impossible — fibrinolyse</option>
+              </select>
+            </div>
+          </div>
+          <div id="sca-result" style="display:none;"></div>
         </div>
-      </div>
 
-      <div class="block clin" id="sca-3">
-        <div class="block-title"><span class="tag">🩺 Évaluation initiale — Anamnèse & examen physique</span></div>
-        <p class="content-text"><strong>Anamnèse — rechercher :</strong> DRS au repos ou au moindre effort &gt; 20 min, peu/partiellement soulagée par NTG (vs angine stable &lt; 5 min) · angor <strong>de novo, crescendo ou de repos</strong> · irradiation bras G/mâchoire/dos/épigastre · diaphorèse, nausées/vomissements, dyspnée<br>
-        <strong>Présentation atypique</strong> fréquente (♀, personnes âgées, diabétiques) : équivalents angineux (dyspnée, fatigue, douleur épigastrique)</p>
-        <p class="content-text" style="margin-top:8px;"><strong>Examen physique :</strong> signes de choc cardiogénique (hypoTA, marbrures, altération de conscience) · signes d'IC aiguë (crépitants, B3, TVJ, OAP) · nouveau souffle (rupture papillaire/CIV) · pouls périphériques · <strong>ECG 12 dérivations STAT</strong> (&lt; 10 min de l'arrivée)</p>
-        <div class="highlight cream" style="margin-top:8px;font-size:13px;">Bilan initial : Troponines hs sériées + ECG répété q5–10 min · Scores de stratification : TIMI (0–2 faible · 3–4 intermédiaire · ≥ 5 élevé) · GRACE · HEART</div>
-      </div>
-
-      <!-- SCORES DE STRATIFICATION -->
-      <div class="block para" id="sca-5">
-        <div class="block-title"><span class="tag">📊 Scores de stratification — TIMI & GRACE</span></div>
-        <p class="content-text" style="margin-bottom:8px;"><strong>Score TIMI</strong> (NSTEMI/Angine instable) — risque de mortalité, IM ou revascularisation urgente à 14 jours :</p>
-        <table style="margin-bottom:12px;">
-          <thead><tr><th>Strate</th><th>Score</th><th>Risque</th><th>Conduite</th></tr></thead>
-          <tbody>
-            <tr><td>Faible</td><td>0–2</td><td>4,7–8,3 %</td><td>Stratégie conservatrice envisageable</td></tr>
-            <tr><td>Intermédiaire</td><td>3–4</td><td>13,2–19,9 %</td><td>Risque significatif → surveillance accrue</td></tr>
-            <tr><td>Élevé</td><td>5–7</td><td>26,2–40,9 %</td><td>Stratégie invasive précoce recommandée</td></tr>
-          </tbody>
-        </table>
-        <p class="content-text" style="margin-bottom:8px;"><strong>Score GRACE</strong> — mortalité à 6 mois post-SCA :</p>
-        <table>
-          <thead><tr><th>Catégorie</th><th>Score intra-hosp.</th><th>Score 6 mois</th><th>Signification</th></tr></thead>
-          <tbody>
-            <tr><td>Faible</td><td>&lt; 109</td><td>&lt; 89</td><td>Décès &lt; 1 % (hosp.) / &lt; 3 % à 6 mois</td></tr>
-            <tr><td>Intermédiaire</td><td>109–140</td><td>89–118</td><td>Décès 1–3 % (hosp.) / 3–8 % à 6 mois</td></tr>
-            <tr><td>Élevé</td><td>&gt; 140</td><td>&gt; 118</td><td>Décès &gt; 3 % / &gt; 8 % à 6 mois → invasif d'emblée</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <!-- SCINTIGRAPHIE SPECT -->
-      <div class="block para" id="sca-5b" style="border-left-color:var(--blue);">
-        <div class="block-title"><span class="tag">🔬 Épreuves diagnostiques — Scintigraphie SPECT & Épreuve d'effort</span></div>
+        <!-- TABLEAU MÉDICAMENTS SCA -->
         <div class="accordion">
-          <div class="accordion-item open">
-            <div class="accordion-header">Scintigraphie de perfusion myocardique (SPECT / Sesta-MIBI)
+          <div class="accordion-item">
+            <div class="accordion-header">📋 Tableau complet — Médicaments SCA
               <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
             </div>
-            <div class="accordion-body">
-              Traceur radioactif (Tc-99m) : zones bien irriguées = brillantes · zones ischémiques = sombres<br>
-              <table style="margin-top:8px;">
-                <thead><tr><th>Anomalie</th><th>Image SPECT</th><th>Signification</th></tr></thead>
+            <div class="accordion-body" style="overflow-x:auto;">
+              <table style="min-width:750px;">
+                <thead>
+                  <tr><th>Médicament</th><th>Mécanisme</th><th>Posologie</th><th>EI principaux</th><th>CI / Précautions</th><th>Surveillance</th></tr>
+                </thead>
                 <tbody>
-                  <tr><td>Ischémie (défaut réversible)</td><td>Tache froide stress → normale repos</td><td>Sténose coronarienne — tissu vivant souffrant à l'effort</td></tr>
-                  <tr><td>Infarctus / cicatrice (défaut fixe)</td><td>Sombre au stress ET au repos</td><td>Nécrose irréversible — tissu mort</td></tr>
-                  <tr><td><strong>Myocarde hibernant</strong></td><td>Défaut persistant mais métabol. actif</td><td>Tissu chroniquement ischémique → <strong>récupère si revascularisation</strong></td></tr>
-                  <tr><td><strong>TID</strong> (dilatation transitoire VG)</td><td>VG plus grand au stress qu'au repos</td><td>Haut risque — maladie tritronculaire ou tronc commun</td></tr>
-                  <tr><td>Captation pulmonaire ↑</td><td>↑ captation poumons au stress</td><td>Dysfonction VG sévère → mauvais pronostic</td></tr>
+                  <tr><td colspan="6" style="background:#FEF9C3;font-weight:700;color:#92400e;font-size:12px;">🟡 AI / NSTEMI</td></tr>
+                  <tr><td><strong>NTG IV</strong></td><td>Venodilatation · ↓ précharge · anti-ischémique</td><td>5–200 mcg/min IV continu · titrer selon douleur / TA</td><td>Céphalée · hypotension · tolérance</td><td>iPDE-5 &lt; 24–48h · TA systolique &lt; 90 · IM VD</td><td>TA q5 min · douleur</td></tr>
+                  <tr><td><strong>AAS</strong></td><td>Anti-plaquettaire COX-1</td><td>Dose de charge 160–325 mg PO (mastiqué) · puis 81 mg DIE</td><td>Hémorragie GI</td><td>Allergie (→ clopidogrel) · saignement actif</td><td>Saignements</td></tr>
+                  <tr><td><strong>Ticagrélor</strong><br><small>(Brilinta®) — préféré</small></td><td>Inhibiteur réversible P2Y12 · rapide</td><td>Charge 180 mg PO · puis 90 mg BID × 12 mois</td><td>Dyspnée (15–20%) · saignement · bradycardie</td><td>AVC hémorragique · saignement majeur actif · insuffisance hépatique sévère</td><td>Dyspnée · saignement</td></tr>
+                  <tr><td><strong>Clopidogrel</strong><br><small>si ticagrélor CI</small></td><td>Irréversible P2Y12 (prodrug CYP2C19)</td><td>Charge 300–600 mg PO · puis 75 mg DIE × 12 mois</td><td>Saignement · variabilité réponse (CYP2C19)</td><td>Avec prasugrel (pas ATCD AIT/AVC)</td><td>Saignement</td></tr>
+                  <tr><td><strong>Prasugrel</strong><br><small>si anatomie connue</small></td><td>Irréversible P2Y12 (actif, plus puissant)</td><td>Charge 60 mg PO · puis 10 mg DIE (5 mg si &gt; 75 ans ou &lt; 60 kg)</td><td>Saignement ↑↑ (plus que clopidogrel)</td><td>ATCD AIT/AVC · &gt; 75 ans (relatif) · &lt; 60 kg (dose adj.)</td><td>Saignement</td></tr>
+                  <tr><td><strong>IPP</strong><br><small>Pantoprazole</small></td><td>Protection gastrique si double antiplaquettaire</td><td>40 mg PO/IV DIE · si ATCD ulcère ou &gt; 60 ans</td><td>↓ absorption vitamines · hypoMg chronique</td><td>Pantoprazole préféré (↓ interaction clopidogrel vs oméprazole)</td><td>Symptômes GI</td></tr>
+                  <tr><td><strong>HNF / HBPM</strong></td><td>Anticoagulant (inhibe Xa et thrombine)</td><td>HNF : 60 U/kg IV bolus · puis 12 U/kg/h (cible TCA 50–70s) · HBPM : enoxaparine 1 mg/kg SC BID</td><td>Saignement · TIH (HNF)</td><td>IRC sévère (HNF préféré si DFG &lt; 30)</td><td>TCA (HNF) · numération plaquettaire · signes saignement</td></tr>
+                  <tr><td><strong>Colchicine 0,5 mg</strong></td><td>Anti-inflammatoire (↓ NLRP3) · ↓ risque péricardite post-IM</td><td>0,5 mg DIE × 3 mois après SCA</td><td>Diarrhée · nausées</td><td>DFG &lt; 30 · interactions CYP3A4 / P-gp</td><td>Symptômes GI · DFG</td></tr>
+                  <tr><td colspan="6" style="background:#FEE2E2;font-weight:700;color:#c0392b;font-size:12px;">🔴 STEMI — Reperfusion</td></tr>
+                  <tr><td><strong>PCI primaire</strong></td><td>Angioplastie mécanique + stent · Gold standard</td><td>Cible : Door-to-Balloon &lt; <strong>120 min</strong> (60 min si choc)</td><td>Dissection · no-reflow · resténose</td><td>PCI possible en temps voulu?</td><td>ECG post-PCI · TA · troponines</td></tr>
+                  <tr><td><strong>Ténectéplase (TNK)</strong><br><small>Fibrinolyse si PCI impossible</small></td><td>Fibrinolytique recombinant (tPA)</td><td>Dose UNIQUE IV selon poids : &lt;60 kg → 30 mg · 60–69 kg → 35 mg · 70–79 kg → 40 mg · 80–89 kg → 45 mg · ≥90 kg → 50 mg</td><td>Hémorragie intracrânienne (1%) · saignement systémique</td><td>AVC récent (&lt;3 mois) · chirurgie &lt;3 sem · saignement actif · HTA &gt; 180/110</td><td>TA · neurologique · signes hémorragiques</td></tr>
+                  <tr><td><strong>Anti-GP IIb/IIIa</strong><br><small>Abciximab · Tirofiban</small></td><td>Bloque récepteur final agrégation plaquettaire</td><td>Abciximab : 0,25 mg/kg IV bolus puis 0,125 mcg/kg/min × 12h</td><td>Saignement · thrombocytopénie</td><td>Saignement actif · chirurgie récente</td><td>NFS · saignement · TA</td></tr>
+                  <tr><td colspan="6" style="background:#DCFCE7;font-weight:700;color:#166534;font-size:12px;">🟢 Prévention secondaire post-SCA (tous)</td></tr>
+                  <tr><td><strong>BB</strong> (métoprolol / bisoprolol)</td><td>↓ FC · ↓ remodelage VG · anti-arythmique</td><td>Métoprolol 25–200 mg DIE · bisoprolol 2,5–10 mg DIE · si FC ≥ 60 bpm &amp; TA OK</td><td>Bradycardie · bloc AV · fatigue</td><td>Choc cardiogénique aigu · bloc AV ≥ 2e · asthme sévère</td><td>FC · TA · ECG</td></tr>
+                  <tr><td><strong>IECA</strong> (ramipril)</td><td>↓ remodelage VG · néphroprotection · ↓ mortalité post-IM</td><td>Ramipril 10 mg DIE (commencer dans 24h si stable)</td><td>Toux · hyperkaliémie · hypotension</td><td>Choc · angiooedème · DFG &lt; 30 (prudence)</td><td>TA · DFG · K+</td></tr>
+                  <tr><td><strong>Statine haute intensité</strong></td><td>↓ LDL · stabilisation plaque · anti-inflammatoire</td><td>Atorvastatine 80 mg DIE dès J1 · cible LDL ≤ 1,8 mmol/L</td><td>Myopathie · ↑ transaminases</td><td>Grossesse</td><td>CPK · bilan lipidique à 3 mois</td></tr>
+                  <tr><td><strong>Éplérénone</strong><br><small>Anti-aldostérone</small></td><td>↓ fibrose · ↓ mortalité si FEVG ≤ 40% post-IM + diabète ou IC</td><td>25 mg DIE → 50 mg DIE · si DFG &gt; 30 · K+ &lt; 5</td><td>Hyperkaliémie · hypotension</td><td>DFG &lt; 30 · K+ &gt; 5 mmol/L</td><td>DFG · K+ à 1 sem puis mensuel</td></tr>
                 </tbody>
               </table>
             </div>
           </div>
+
           <div class="accordion-item">
-            <div class="accordion-header">Épreuve d'effort — Protocole Bruce
+            <div class="accordion-header">Comparatif anti-P2Y12 : Ticagrélor vs Clopidogrel vs Prasugrel
               <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
             </div>
             <div class="accordion-body">
-              Sensibilité 65–70 % · reproduit les Sx ou détecte changements ECG<br>
-              <table style="margin-top:8px;">
-                <thead><tr><th>Critère haut risque</th><th>Seuil</th></tr></thead>
+              <table>
+                <thead><tr><th>Caractéristique</th><th>Ticagrélor (Brilinta)</th><th>Clopidogrel</th><th>Prasugrel</th></tr></thead>
                 <tbody>
-                  <tr><td>Sous-décalage ST horizontal/descendant</td><td>&gt; 2 mm, précoce (stade 1–2) ou persistant &gt; 5 min</td></tr>
-                  <tr><td>Sus-décalage ST (sans onde Q)</td><td>Ischémie transmurale sévère</td></tr>
-                  <tr><td>Hypotension à l'effort</td><td>MCAS sévère ou dysfonction VG</td></tr>
-                  <tr><td>TV/doublets à faible charge</td><td>Risque arythmique élevé</td></tr>
-                  <tr><td>Incompétence chronotrope</td><td>Incapacité à atteindre 85 % FCMP → ↑ mortalité</td></tr>
-                  <tr><td>Capacité fonctionnelle</td><td>Faible risque si complétion stade 3 Bruce</td></tr>
+                  <tr><td>Type liaison P2Y12</td><td>Réversible (direct)</td><td>Irréversible (prodrug)</td><td>Irréversible (prodrug)</td></tr>
+                  <tr><td>Métabolisme</td><td>CYP3A4 (direct)</td><td>CYP2C19 (variabilité +++)</td><td>Hydrolyse plasmatique (fiable)</td></tr>
+                  <tr><td>Délai d'action</td><td>~30 min (rapide)</td><td>2–6h</td><td>~30 min (rapide)</td></tr>
+                  <tr><td>Dose charge</td><td>180 mg puis 90 mg BID</td><td>300–600 mg puis 75 mg DIE</td><td>60 mg puis 10 mg DIE</td></tr>
+                  <tr><td>EI spécifiques</td><td>Dyspnée (15%) · bradycardie</td><td>Résistance CYP2C19</td><td>Saignement ↑↑ (plus puissant)</td></tr>
+                  <tr><td>CI spécifiques</td><td>AVC hémorragique · IH sévère</td><td>Interaction IPP (oméprazole)</td><td>ATCD AIT/AVC · &gt;75 ans (relatif)</td></tr>
+                  <tr><td>Préférence SCA</td><td>✅ 1ère ligne NSTEMI/STEMI</td><td>Si ticagrélor CI ou indisponible</td><td>Si anatomie coronarienne connue pré-PCI</td></tr>
                 </tbody>
               </table>
-              <div class="note" style="margin-top:6px;"><strong>FFR &lt; 0,80</strong> à la coronarographie = sténose hémodynamiquement significative → PCI justifiée · sténose ≥ 70 % (ou ≥ 50 % tronc commun) = significative</div>
             </div>
           </div>
         </div>
+
+        <script>
+        function runScaAlgo() {
+          var type = document.getElementById('sca-type-sel').value;
+          var ctx = document.getElementById('sca-ctx-sel').value;
+          var res = document.getElementById('sca-result');
+          if (!type) { res.style.display = 'none'; return; }
+          res.style.display = 'block';
+
+          var html = '';
+          if (type === 'ai-nstemi') {
+            var bg = '#FFFBEB'; var border = '#d97706';
+            html += '<div style="border-left:4px solid ' + border + ';background:' + bg + ';border-radius:8px;padding:14px;">';
+            html += '<p style="font-weight:700;color:#92400e;margin:0 0 10px;">🟡 Prise en charge AI / NSTEMI</p>';
+            html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;font-size:12px;">';
+            html += '<div><strong>Mesures imm&eacute;diates</strong><ul style="margin:4px 0;padding-left:16px;line-height:1.8;"><li>O&sup2; si SpO&sup2; &lt; 90%</li><li>NTG SL (si TA OK &amp; pas IM VD)</li><li>Monitoring ECG continu &bull; acc&egrave;s IV</li><li>NTG IV si douleur persist. / HTA</li></ul></div>';
+            html += '<div><strong>Antiagr&eacute;gation</strong><ul style="margin:4px 0;padding-left:16px;line-height:1.8;"><li>AAS 160&ndash;325 mg (mast.) d&egrave;s arriv&eacute;e</li><li>Ticagr&eacute;lor 180 mg charge (pr&eacute;f&eacute;r&eacute;)</li><li>HBPM / HNF selon DFG</li><li>IPP si double antiplaquettaire</li><li>Colchicine 0,5 mg &times; 3 mois</li></ul></div>';
+            html += '</div>';
+            if (ctx === 'choc') {
+              html += '<div style="background:#FEE2E2;border-radius:6px;padding:8px;margin-top:8px;">⚡ Choc cardiogénique : coronarographie <strong>imm&eacute;diate</strong> (m&ecirc;me si NSTEMI) · support h&eacute;modynamique (IABP / ECMO)</div>';
+            } else if (ctx === 'irc') {
+              html += '<div style="background:#EEF2FF;border-radius:6px;padding:8px;margin-top:8px;">🔵 IRC : pr&eacute;f&eacute;rer HNF plut&ocirc;t qu&apos;HBPM si DFG &lt; 30 · r&eacute;duire dose fondaparinux · hydratation post-PCI</div>';
+            } else if (ctx === 'hemo') {
+              html += '<div style="background:#FEF9C3;border-radius:6px;padding:8px;margin-top:8px;">🩸 Risque h&eacute;morragique &eacute;lev&eacute; : privil&eacute;gier monoth&eacute;rapie antiplaquettaire apr&egrave;s 3&ndash;6 mois · &eacute;valuer score HAS-BLED</div>';
+            }
+            html += '<div style="background:#DCFCE7;border-radius:6px;padding:8px;margin-top:8px;font-size:12px;"><strong>Coronarographie :</strong> 24&ndash;48h si stable &bull; &lt; 2h si haut risque (instabilit&eacute; h&eacute;mo · sus-ST aVR &bull; Killip &ge; III · FV/TV)</div>';
+            html += '</div>';
+          } else if (type === 'stemi') {
+            var bg2 = '#FEF2F2'; var border2 = '#c0392b';
+            html += '<div style="border-left:4px solid ' + border2 + ';background:' + bg2 + ';border-radius:8px;padding:14px;">';
+            html += '<p style="font-weight:700;color:#c0392b;margin:0 0 10px;">🔴 Prise en charge STEMI — urgence absolue</p>';
+            html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;font-size:12px;">';
+            html += '<div><strong>Mesures imm&eacute;diates</strong><ul style="margin:4px 0;padding-left:16px;line-height:1.8;"><li>Appel STEMI alert (cath lab)</li><li>O&sup2; si SpO&sup2; &lt; 90%</li><li>NTG SL (si TA OK &amp; pas IM VD)</li><li>AAS 160&ndash;325 mg d&egrave;s ECG diagnostic</li><li>Ticagr&eacute;lor 180 mg charge (ou clopidogrel 600 mg)</li><li>HNF 5000 UI IV bolus</li></ul></div>';
+            if (ctx === 'nopci') {
+              html += '<div><strong>Fibrinolyse (si PCI &gt; 120 min)</strong><ul style="margin:4px 0;padding-left:16px;line-height:1.8;"><li>Tn&eacute;ct&eacute;plase IV dose unique selon poids</li><li>HNF ou HBPM apr&egrave;s lyse</li><li>Transf&eacute;rer vers centre PCI d&egrave;s possible</li><li>ECG 60&ndash;90 min : si &eacute;chec → PCI de sauvetage</li></ul></div>';
+            } else {
+              html += '<div><strong>PCI Primaire (&lt; 120 min)</strong><ul style="margin:4px 0;padding-left:16px;line-height:1.8;"><li>Door-to-Balloon &lt; 120 min (cible)</li><li>Aspirine + Ticagr&eacute;lor avant cath</li><li>HNF / bivalirudine en salle</li><li>Stent actif (DES) pr&eacute;f&eacute;r&eacute;</li></ul></div>';
+            }
+            html += '</div>';
+            if (ctx === 'choc') {
+              html += '<div style="background:#FFF0F5;border-radius:6px;padding:8px;margin-top:8px;font-size:12px;">💥 Choc : PCI <strong>imm&eacute;diate</strong> · vasopresseurs (nor&eacute;pin&eacute;phrine) · support IABP / Impella / ECMO · int&eacute;ger en soins intensifs</div>';
+            }
+            html += '<div style="background:#EEF2FF;border-radius:6px;padding:8px;margin-top:8px;font-size:12px;"><strong>Post-STEMI :</strong> IECA + BB + statine haute intensit&eacute; + double antiplaquettaire × 12 mois · &eacute;cho &agrave; 4&ndash;6 semaines · DAI si FEVG &le; 35%</div>';
+            html += '</div>';
+          }
+          res.innerHTML = html;
+        }
+        </script>
       </div>
 
-      <div class="block def" id="sca-6">
-        <div class="block-title"><span class="tag">AI — Angine Instable</span></div>
-        <p class="content-text">SCA sans sus-décalage ST + troponines <strong>normales</strong>. Angine de novo (CF ≥ III), crescendo, ou de repos &gt; 20 min.</p>
-        <div class="highlight cream" style="margin-top:8px;font-size:13px;">Bilan : Troponines hs STAT + 1–3h · ECG répété q5–10 min · Scores : TIMI (0–2 faible · 3–4 intermédiaire · ≥ 5 élevé) · GRACE · HEART</div>
-      </div>
-
-      <div class="block def" id="sca-6b">
-        <div class="block-title"><span class="tag">NSTEMI</span></div>
-        <p class="content-text">SCA sans sus-décalage ST + troponines <strong>↑</strong> (variation &gt; 20 %). Lésion myocardique confirmée.</p>
-      </div>
-
-      <div class="block para" id="sca-8" style="border-left-color:var(--blue);">
-        <div class="block-title"><span class="tag">💊 Antiplaquettaires P2Y12 — comparaison & durée du DAPT</span></div>
-        <table>
-          <thead><tr><th></th><th>Ticagrélor (Brilinta)</th><th>Clopidogrel (Plavix)</th><th>Prasugrel (Effient)</th></tr></thead>
-          <tbody>
-            <tr><td>Mécanisme</td><td>Inhibiteur réversible direct P2Y12</td><td>Inhibiteur irréversible — promédicament (CYP2C19)</td><td>Inhibiteur irréversible — promédicament</td></tr>
-            <tr><td>Début d'action</td><td>30 min</td><td>2 h</td><td>30 min</td></tr>
-            <tr><td>Dose de charge</td><td>180 mg ×1</td><td>300–600 mg ×1</td><td>60 mg ×1</td></tr>
-            <tr><td>Entretien</td><td>90 mg BID</td><td>75 mg DIE</td><td>10 mg DIE (5 mg si ≥ 75 ans ou ≤ 60 kg)</td></tr>
-            <tr><td>Indication SCA</td><td>AI/NSTEMI/STEMI ± ICP, pontage</td><td>AI/NSTEMI/STEMI ± ICP, pontage</td><td>SCA <strong>avec ICP seulement</strong></td></tr>
-            <tr><td>Arrêt préop</td><td>48–72 h</td><td>48–72 h (idéalement 5 j)</td><td>5 jours</td></tr>
-          </tbody>
-        </table>
-        <div class="key-fact blue" style="margin-top:8px;">Ticagrélor &gt; Clopidogrel en SCA (↓ mortalité CV/IAM/AVC à 12 mois) · Switch Clopidogrel→Ticagrélor : DC 180 mg ×1 puis 90 mg BID · Ticagrélor→Clopidogrel : DC 300–600 mg puis 75 mg DIE</div>
-        <div class="highlight cream" style="margin-top:8px;font-size:13px;"><strong>Durée du DAPT (lignes directrices canadiennes 2023)</strong> : SCA avec ICP → AAS + ticagrélor/prasugrel × <strong>1 an</strong> · SCA sans revascularisation ou avec pontage → (ticagrélor &gt; clopidogrel) + AAS × 1 an · ICP élective (angine stable) ou pontage sans SCA → AAS + clopidogrel 75 mg × 6 mois–1 an · Haut risque hémorragique → désescalade à 1–3 mois (clopidogrel &gt; AAS) · faible risque → DAPT prolongé jusqu'à 3 ans · ne plus débuter le DAPT pour AI/NSTEMI si coronarographie prévue ≤ 24 h</div>
-      </div>
-
-      <div class="block rx" id="sca-7">
-        <div class="block-title"><span class="tag">💊 Traitement AI + NSTEMI selon risque</span></div>
-        <div class="accordion">
-          <div class="accordion-item open">
-            <div class="accordion-header"><span class="drug-badge line3" style="margin-right:6px;">Faible risque</span>
-              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-            </div>
-            <div class="accordion-body"><span class="drug-badge line1">AAS</span> <span class="drug-badge line1">BB ou BCC non-DHP</span> <span class="drug-badge line1">IECA/ARA</span> <span class="drug-badge line1">Statine</span> → congé</div>
+      <!-- PRISE EN CHARGE IPS SCA -->
+      <div class="block clin" id="sca-pec">
+        <div class="block-title"><span class="tag">🩺 Prise en charge IPS — SCA</span></div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:12px;">
+          <div>
+            <p style="font-weight:700;color:#c0392b;margin:0 0 8px;">🚨 Phase aiguë — Déclenchement protocole SCA</p>
+            <table>
+              <thead><tr><th>Étape</th><th>Action IPS</th></tr></thead>
+              <tbody>
+                <tr><td>1. Reconnaître</td><td>ECG 12 dérivations &lt; 10 min dès arrivée · Sus-ST ou BBG nouveau → STEMI alert</td></tr>
+                <tr><td>2. Stabiliser</td><td>O₂ si SpO₂ &lt; 90% · accès IV · monitoring · NTG si pas de CI</td></tr>
+                <tr><td>3. Traiter</td><td>AAS + ticagrélor · HNF IV · morphine si douleur rebelle (prudemment)</td></tr>
+                <tr><td>4. Orienter</td><td>AI/NSTEMI → cardiologie · STEMI → cath lab</td></tr>
+                <tr><td>5. Documenter</td><td>Heure symptômes · médicaments donnés · ECG horodaté</td></tr>
+              </tbody>
+            </table>
           </div>
-          <div class="accordion-item">
-            <div class="accordion-header"><span class="drug-badge warn" style="margin-right:6px;">Risque intermédiaire</span>
-              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-            </div>
-            <div class="accordion-body">+ O₂ si SpO₂ &lt; 90 % · Morphine · <span class="drug-badge line1">Héparine IV</span> · <span class="drug-badge line1">Ticagrélor 90 mg BID</span> (TAPD 12 mois)</div>
-          </div>
-          <div class="accordion-item">
-            <div class="accordion-header"><span class="drug-badge ci" style="margin-right:6px;">Risque élevé</span>
-              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-            </div>
-            <div class="accordion-body">+ Coronarographie précoce · Nitrates IV ± inhibiteur GP IIb/IIIa si ischémie récurrente</div>
+          <div>
+            <p style="font-weight:700;color:#0a7a4e;margin:0 0 8px;">📅 Suivi post-SCA (rôle IPS)</p>
+            <table>
+              <thead><tr><th>Délai</th><th>Contenu</th></tr></thead>
+              <tbody>
+                <tr><td>1–2 sem</td><td>Bilan post-sortie · tolérance médicaments · TA · FC</td></tr>
+                <tr><td>4–6 sem</td><td>Écho FEVG · réhabilitation cardiaque · bilan lipidique</td></tr>
+                <tr><td>3 mois</td><td>LDL cible ≤ 1,8 · HbA1c si DM2 · fréquence angineuse</td></tr>
+                <tr><td>6–12 mois</td><td>Durée double antiplaquettaire (DAP) 12 mois · arrêt ticagrélor → AAS seul</td></tr>
+                <tr><td>DAI</td><td>Réévaluer FEVG à 3 mois si &lt; 40% post-IM → DAI prophylactique si &lt; 35%</td></tr>
+              </tbody>
+            </table>
           </div>
         </div>
-      </div>
 
-      <div class="block def" id="sca-7b">
-        <div class="block-title"><span class="tag">STEMI — Urgence absolue</span></div>
-        <div class="stat-row">
-          <div class="stat-card red"><div class="stat-num">&lt;90 min</div><div class="stat-label">délai cible ICP primaire</div></div>
-          <div class="stat-card ink"><div class="stat-num">&lt;30 min</div><div class="stat-label">délai thrombolyse si ICP indisponible</div></div>
-          <div class="stat-card yellow"><div class="stat-num">12 mois</div><div class="stat-label">durée DAPT (AAS + Ticagrélor)</div></div>
-        </div>
-        <p class="content-text" style="margin-top:10px;">Sus-décalage persistant ST + nécrose transmurale. Clinique : DRS intense, diaphorèse, dyspnée. Sévérité Killip I → IV (choc cardiogénique).</p>
-      </div>
-
-      <div class="block rx" id="sca-7c">
-        <div class="block-title"><span class="tag">💊 Traitement STEMI</span></div>
-        <div class="accordion">
-          <div class="accordion-item open">
-            <div class="accordion-header">Reperfusion — Priorité absolue
-              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-            </div>
-            <div class="accordion-body">
-              <span class="drug-badge line1">ICP primaire</span> — délai &lt; 90–120 min (1er choix)<br>
-              <span class="drug-badge line2">Thrombolyse IV</span> si ICP indisponible ou délai &gt; 120 min → &lt; 30 min après arrivée
-            </div>
-          </div>
-          <div class="accordion-item">
-            <div class="accordion-header">Antiplaquettaires
-              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-            </div>
-            <div class="accordion-body">AAS 160–325 mg mâché → 81 mg/j + <span class="drug-badge line1">Ticagrélor 180 mg bolus → 90 mg BID</span> (ou prasugrel) × 12 mois</div>
-          </div>
-          <div class="accordion-item">
-            <div class="accordion-header">Anticoagulation
-              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-            </div>
-            <div class="accordion-body"><span class="drug-badge line1">Héparine IV</span> (si ICP) · <span class="drug-badge line2">Énoxaparine</span> (si thrombolyse) · <span class="drug-badge line2">Fondaparinux</span> (si pas d'ICP)</div>
-          </div>
-          <div class="accordion-item">
-            <div class="accordion-header">Traitement adjuvant
-              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-            </div>
-            <div class="accordion-body"><span class="drug-badge line1">BB PO</span> &lt; 24h · <span class="drug-badge line1">IECA/ARA</span> si IC ou FEVG &lt; 40 % · <span class="drug-badge line1">Spironolactone</span> si FEVG ≤ 40 % + IC · <span class="drug-badge line1">Statine haute intensité</span></div>
-          </div>
-          <div class="accordion-item">
-            <div class="accordion-header">Fibrinolyse — Tenecteplase (si délai ICP &gt; 120 min)
-              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-            </div>
-            <div class="accordion-body">
-              <strong>1er choix</strong> (moins de saignements, bolus en 5–10 secondes) — à donner ≤ 30 min de l'arrivée, en concomitance avec AAS + clopidogrel + héparine IV/HBPM<br>
-              Dose unique selon le poids : &lt; 60 kg = 30 mg · 60–69 kg = 35 mg · 70–79 kg = 40 mg · 80–89 kg = 45 mg · ≥ 90 kg = 50 mg
-            </div>
-          </div>
-          <div class="accordion-item">
-            <div class="accordion-header">GP IIb/IIIa & Colchicine post-SCA
-              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-            </div>
-            <div class="accordion-body">
-              <span class="drug-badge warn">Inhibiteurs GP IIb/IIIa</span> (abciximab, eptifibatide, tirofiban) — non utilisés de routine, seulement à la demande de l'hémodynamicien (retour de flux nul/lent, embolisation distale, charge thrombotique importante) → ↓ décès/IM ~40 % avec ICP, ~10 % en gestion médicale · risque ↑ saignements/thrombocytopénie<br>
-              <span class="drug-badge line2">Colchicine 0,5 mg DIE</span> post-SCA (étude COLCOT) → ↓ 23 % du composite primaire (mortalité, IAM, AVC, hospitalisation pour angine), surtout ↓ 74 % AVC et ↓ 50 % hospit. pour angine, ↓ 66 % CRP — pas encore intégrée aux lignes directrices actuelles
-            </div>
+        <div style="background:#F3E8FF;border-radius:10px;padding:14px;">
+          <p style="font-weight:700;color:#7b3fa0;margin:0 0 8px;">🎓 Réadaptation cardiaque &amp; éducation post-SCA</p>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;font-size:12px;">
+            <div><strong>Médicaments</strong><br>Explication de chaque médicament · importance observance · double antiplaquettaire × 12 mois (NE PAS arrêter sans avis cardio)</div>
+            <div><strong>Activité</strong><br>Réhabilitation cardiaque supervisée · retour conduite 48h (simple) · retour activité sexuelle après 2 étages sans DT</div>
+            <div><strong>Prévention secondaire</strong><br>Arrêt tabac absolu · diète méditerranéenne · contrôle TA · DM2 · poids · dépression post-IM</div>
           </div>
         </div>
-      </div>
-
-      <!-- PRÉVENTION & SUIVI POST-SCA -->
-      <div class="block clin" id="sca-9">
-        <div class="block-title"><span class="tag">🛡️ Prévention primaire vs secondaire & Suivi post-SCA</span></div>
-        <table style="margin-bottom:12px;">
-          <thead><tr><th></th><th>Prévention Primaire</th><th>Prévention Secondaire</th></tr></thead>
-          <tbody>
-            <tr><td><strong>Population</strong></td><td>Patients sans MCAS connue</td><td>Patients avec MCAS établie ou post-SCA</td></tr>
-            <tr><td><strong>Objectif</strong></td><td>Contrôle des FdR modifiables</td><td>ASA à vie + statine haute intensité</td></tr>
-            <tr><td><strong>Pharmacologie</strong></td><td>Statine si risque élevé (FRS ≥ 20 %)</td><td>BB si FEVG ↓, IECA/ARA si FEVG &lt; 40 %</td></tr>
-            <tr><td><strong>Durée DAPT</strong></td><td>—</td><td>Minimum 12 mois post-stent</td></tr>
-          </tbody>
-        </table>
-        <p class="content-text" style="margin-bottom:8px;"><strong>Suivi post-SCA — Checklist IPS :</strong></p>
-        <div class="flag-list">
-          <div class="flag-item"><span class="flag-dot blue"></span><span>LDL dans <strong>1 mois</strong> (cible ≤ 1,8 mmol/L ou ↓ ≥ 50 % vs baseline)</span></div>
-          <div class="flag-item"><span class="flag-dot blue"></span><span>Observance DAPT (min. 12 mois) — ne jamais cesser sans consultation · surveiller saignements</span></div>
-          <div class="flag-item"><span class="flag-dot blue"></span><span>BB + IECA/ARA si FEVG &lt; 40 % · ETT à 6–12 semaines si dysfonction VG</span></div>
-          <div class="flag-item"><span class="flag-dot blue"></span><span>Si DM2 : HbA1c ≤ 7 % · préférer <span class="drug-badge line1">iSGLT2</span> + <span class="drug-badge line1">GLP-1</span> (bénéfice CV démontré)</span></div>
-          <div class="flag-item"><span class="flag-dot blue"></span><span>Réadaptation cardiaque — référence systématique si disponible</span></div>
-          <div class="flag-item"><span class="flag-dot blue"></span><span>Cessation tabagique — intervention systématique à chaque visite</span></div>
-          <div class="flag-item"><span class="flag-dot blue"></span><span>Conduite automobile : <strong>véhicule personnel ≥ 14 jours</strong> · <strong>véhicule commercial ≥ 30 jours</strong> (CCS 2023)</span></div>
-        </div>
-        <div class="note" style="margin-top:8px;"><strong>Interactions & CI à mémoriser :</strong> iPDE5 + nitrates → hypotension sévère (CI absolue, délai 24h sildénafil / 48h tadalafil) · BB + BCC non-DHP (vérapamil/diltiazem) → bloc AV/bradycardie (CI absolue) · IECA + ARA → hyperkaliémie/IRA (CI absolue) · BCC non-DHP si FEVG ≤ 40 % → aggravation IC</div>
-      </div>
-
-      <div class="block flag" id="sca-rf">
-        <div class="block-title"><span class="tag">🚨 RED FLAGS</span></div>
-        <div class="flag-list">
-          <div class="flag-item"><span class="fi-icon">💀</span><span>Choc cardiogénique (TAS &lt; 90 &gt; 30 min) → coronarographie STAT · mortalité <strong>50–60 %</strong></span></div>
-          <div class="flag-item"><span class="fi-icon">🫀</span><span>IM cœur droit : hypotension + VJ distendues + poumons clairs → remplissage · <strong>éviter nitrés + diurétiques</strong></span></div>
-          <div class="flag-item"><span class="fi-icon">🔊</span><span>Rupture papillaire/SIV (J2–J10) : OAP + nouveau souffle → chirurgie urgente</span></div>
-          <div class="flag-item"><span class="fi-icon">🚫</span><span>iPDE-5 récent → CI absolue aux nitrates (&lt; 24h · 48h si tadalafil)</span></div>
-        </div>
+        <div class="key-fact red" style="margin-top:10px;">⚠️ Arrêt du double antiplaquettaire avant 12 mois sans consultation cardiologique = risque majeur de thrombose sur stent et de récidive de SCA.</div>
       </div>
     </div>
 
