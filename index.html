@@ -7831,349 +7831,794 @@ function calculatePHQ9() {
     </div>
 
     <div class="section" id="sec-fa">
-      <div class="section-header">
-        <div class="section-accent">🫀</div>
-        <div class="section-title">
-          <h1>FA & Arythmies</h1>
-          <div class="breadcrumb">Cardiologie <span class="breadcrumb-sep">·</span> Sections 6 & 6b</div>
-        </div>
-      </div>
+      <div class="section-header"><div class="section-accent">⚡</div><div class="section-title"><h1>Fibrillation Auriculaire &amp; Arythmies</h1><div class="breadcrumb">Cardiologie <span class="breadcrumb-sep">·</span> Section 6</div></div></div>
 
       <!-- PILLS NAV FA -->
       <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
-        <button onclick="document.getElementById('fa-1').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📌 Définition & Physio</button>
-        <button onclick="document.getElementById('fa-2').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🩺 Évaluation</button>
-        <button onclick="document.getElementById('fa-3').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🧪 Paraclinique</button>
-        <button onclick="document.getElementById('fa-4').scrollIntoView({behavior:'smooth'})" style="background:#0a7a4e;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">💊 Traitement FA</button>
-        <button onclick="document.getElementById('fa-5').scrollIntoView({behavior:'smooth'})" style="background:#0a7a4e;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🛡️ Anticoagulation CHADS-65</button>
-        <button onclick="document.getElementById('fa-6').scrollIntoView({behavior:'smooth'})" style="background:#0a7a4e;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">💊 AOD & Posologie</button>
-        <button onclick="document.getElementById('fa-7').scrollIntoView({behavior:'smooth'})" style="background:#7b3fa0;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔌 Ablation</button>
-        <button onclick="document.getElementById('fa-8').scrollIntoView({behavior:'smooth'})" style="background:#7b3fa0;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🧰 Outil interactif</button>
-        <button onclick="document.getElementById('fa-9').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📌 Flutter & TSVP</button>
-        <button onclick="document.getElementById('fa-10').scrollIntoView({behavior:'smooth'})" style="background:#7b3fa0;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">⚗️ Antiarythmiques</button>
-        <button onclick="document.getElementById('fa-11').scrollIntoView({behavior:'smooth'})" style="background:#c0392b;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🚨 Red Flags</button>
+        <button onclick="document.getElementById('fa-1').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📌 Physiopath FA</button>
+        <button onclick="document.getElementById('fa-1b').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔎 Classification &amp; ECG FA</button>
+        <button onclick="document.getElementById('fa-flutter').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">⚡ Flutter Auriculaire</button>
+        <button onclick="document.getElementById('fa-depistage').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔬 Dépistage &amp; Dx</button>
+        <button onclick="document.getElementById('fa-bilan').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🧪 Bilan paraclinique</button>
+        <button onclick="document.getElementById('fa-3-piliers').scrollIntoView({behavior:'smooth'})" style="background:#0a7a4e;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">⚙️ 3 Piliers FA</button>
+        <button onclick="document.getElementById('fa-freq').scrollIntoView({behavior:'smooth'})" style="background:#0a7a4e;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">💊 Contrôle Fréquence</button>
+        <button onclick="document.getElementById('fa-rythme').scrollIntoView({behavior:'smooth'})" style="background:#0a7a4e;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🎵 Contrôle Rythme</button>
+        <button onclick="document.getElementById('fa-cardio').scrollIntoView({behavior:'smooth'})" style="background:#0a7a4e;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔋 Cardioversion</button>
+        <button onclick="document.getElementById('fa-anticoag').scrollIntoView({behavior:'smooth'})" style="background:#7b3fa0;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">💉 Anticoag CHADS-65</button>
+        <button onclick="document.getElementById('fa-hasbled').scrollIntoView({behavior:'smooth'})" style="background:#7b3fa0;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🩸 HAS-BLED &amp; Situations</button>
       </div>
 
-
-      <div class="sec-divider">
-        <div class="sd-shape ci"></div>
-        <div class="sd-label">Fibrillation Auriculaire</div>
-        <div class="sd-line"></div>
-      </div>
+      <!-- ═══ FA-1: PHYSIOPATHOLOGIE FA ═══ -->
       <div class="block def" id="fa-1">
-        <div class="block-title"><span class="tag">📌 Définition & Classification</span></div>
+        <div class="block-title"><span class="tag">📌 1. Physiopathologie de la FA</span></div>
         <div class="stat-row">
-          <div class="stat-card blue"><div class="stat-num">&lt; 7j</div><div class="stat-label">Paroxystique</div></div>
-          <div class="stat-card ink"><div class="stat-num">&gt; 7j</div><div class="stat-label">Persistante</div></div>
-          <div class="stat-card yellow"><div class="stat-num">&gt; 1 an</div><div class="stat-label">Permanente</div></div>
+          <div class="stat-card blue"><div class="stat-num">1–2 %</div><div class="stat-label">prévalence ≥ 50 ans</div></div>
+          <div class="stat-card ink"><div class="stat-num">12 %</div><div class="stat-label">prévalence ≥ 80 ans</div></div>
+          <div class="stat-card red"><div class="stat-num">20×</div><div class="stat-label">↑ risque AVC</div></div>
+          <div class="stat-card yellow"><div class="stat-num">90 %</div><div class="stat-label">thrombus dans l&apos;AAG</div></div>
         </div>
-        <div class="key-fact black" style="margin-top:10px;">Chercher : valvulopathie mitrale · IC · hyperthyroïdie · apnée du sommeil · alcool · Échelle EHRA : 1 = asymptomatique → 4 = invalidant</div>
-      </div>
+        <div class="key-fact red" style="margin:10px 0;"><strong>FA = facteur de risque #1 d&apos;AVC</strong> · 1/4 des AVC sont causés par la FA · risque jusqu&apos;à 23 % chez les ≥ 80 ans selon comorbidités</div>
 
-      <div class="block clin" id="fa-1b">
-        <div class="block-title"><span class="tag">🧬 Physiopathologie brève</span></div>
-        <p class="content-text"><strong>Mécanisme :</strong> anomalies électrophysiologiques des myocytes auriculaires (dilatation, fibrose) déclenchées par un <strong>foyer ectopique</strong> (souvent veines pulmonaires) ou des réentrées (favorisées par oreillette dilatée, ↑ pression, infiltration/inflammation) — via <strong>automaticité augmentée</strong> et <strong>post-dépolarisations</strong>. FA <strong>paroxystique</strong> = foyer ectopique · <strong>persistante</strong> = remodelage électrique + fibrose · <strong>chronique</strong> = fibrose étendue/remodelage sévère.</p>
-        <div class="key-fact yellow" style="margin-top:8px;">FA <strong>primaire</strong> (processus pathologique établi) vs <strong>secondaire</strong> (précipitant aigu réversible/auto-limité — chirurgie, infection, alcool, hyperthyroïdie)</div>
-        <div class="highlight cream" style="margin-top:8px;font-size:13px;"><strong>Mécanisme d'apparition des symptômes :</strong> FC &gt; 100 bpm → rythme ventriculaire rapide → ↓ débit cardiaque → hypotension + congestion pulmonaire (surtout si VG hypertrophié) · désorganisation auriculaire → stase sanguine → thrombus → <strong>embolie cérébrale ou systémique</strong> · perte du « kick » auriculaire → peut déclencher/aggraver une IC</div>
-      </div>
-
-      <div class="block clin" id="fa-2">
-        <div class="block-title"><span class="tag">🩺 Évaluation initiale — Anamnèse & examen physique</span></div>
-        <p class="content-text"><strong>Anamnèse — rechercher :</strong> palpitations, dyspnée, fatigue, intolérance à l'effort, syncope, symptômes d'IC, AVC/AIT (souvent <strong>asymptomatique</strong> — dépistage fortuit fréquent, pourtant morbidité/mortalité significatives)<br>
-        <strong>Causes/précipitants à rechercher :</strong> valvulopathie mitrale, IC, hyperthyroïdie, apnée du sommeil, alcool (« holiday heart »), infection/sepsis, chirurgie récente, embolie pulmonaire</p>
-        <p class="content-text" style="margin-top:8px;"><strong>Examen physique :</strong> pouls <strong>irrégulièrement irrégulier</strong> · signes d'IC (crépitants, œdème, TVJ) · souffle cardiaque (valvulopathie) · signes d'hyperthyroïdie (goitre, tremblements, exophtalmie) · TA</p>
-      </div>
-
-      <div class="block para" id="fa-3">
-        <div class="block-title"><span class="tag">🧪 Paraclinique</span></div>
-        <div style="display:flex;flex-wrap:wrap;gap:6px;">
-          <span class="drug-badge line1">ECG</span><span class="drug-badge line3">FSC + électrolytes (Ca²⁺, Mg²⁺)</span><span class="drug-badge line3">Créatinine · TSH · Glucose</span><span class="drug-badge line3">Écho transthoracique</span><span class="drug-badge warn">ETO avant cardioversion</span>
-        </div>
-        <div class="highlight yellow" style="margin-top:8px;font-size:13px;">ECG : exclure pré-excitation/faisceau accessoire. ETO : exclure thrombus OG avant cardioversion planifiée.</div>
-      </div>
-
-      <div class="block rx" id="fa-4">
-        <div class="block-title"><span class="tag">💊 Traitement</span></div>
-        <div class="accordion">
-          <div class="accordion-item open">
-            <div class="accordion-header">Contrôle de la fréquence — FA aiguë
-              <span class="acc-badge" style="background:var(--blue-lt);color:var(--blue);">Cible &lt; 100/min</span>
-              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-            </div>
-            <div class="accordion-body"><span class="drug-badge line1">BB (1er choix)</span> <span class="drug-badge line2">BCC non-DHP (diltiazem, vérapamil)</span> <span class="drug-badge line3">Digoxine</span></div>
-          </div>
-          <div class="accordion-item">
-            <div class="accordion-header">Cardioversion pharmacologique
-              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-            </div>
-            <div class="accordion-body"><span class="drug-badge line1">Procaïnamide</span> <span class="drug-badge line1">Propafénone⁺</span> <span class="drug-badge line1">Flécaïnide⁺</span> <span class="drug-badge line2">Vernakalant</span><br><span class="drug-badge warn" style="margin-top:6px;">⚠️ Classe IC → toujours + bloquant NAV</span></div>
-          </div>
-          <div class="accordion-item">
-            <div class="accordion-header">Cardioversion électrique
-              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-            </div>
-            <div class="accordion-body">3 semaines d'anticoagulation + ETO avant → anticoagulation <strong>4 semaines post-cardioversion</strong><br>Instabilité hémodynamique → <strong>cardioversion immédiate</strong></div>
-          </div>
-          <div class="accordion-item">
-            <div class="accordion-header">Contrôle du rythme — FA chronique
-              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-            </div>
-            <div class="accordion-body">
-              <span class="drug-badge line1">Amiodarone</span> <span class="drug-badge line2">Dronédarone</span> <span class="drug-badge line2">Sotalol</span> <span class="drug-badge line3">Flécaïnide⁺</span> <span class="drug-badge line3">Propafénone⁺</span><br>
-              <span class="drug-badge ci" style="margin-top:6px;">FEVG ≤ 40 % → Amiodarone UNIQUEMENT</span><br>Si échec → ablation par cathéter
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="block para" id="fa-5">
-        <div class="block-title"><span class="tag">💊 Anticoagulation — CHADS-65 (SCC 2020)</span></div>
-        <table>
-          <thead><tr><th>Situation</th><th>Recommandation</th></tr></thead>
-          <tbody>
-            <tr><td>FA + âge ≥ 65 ans OU CHADS₂ ≥ 1</td><td><span class="drug-badge line1">AOD (préférés)</span></td></tr>
-            <tr><td>FA + âge &lt; 65 ans + CHADS₂ = 0 + MCAS/MAV</td><td>Antiplaquettaire</td></tr>
-            <tr><td>FA + âge &lt; 65 ans + CHADS₂ = 0 sans MCAS/MAV</td><td>Aucun antithrombique</td></tr>
-            <tr><td>FA valvulaire (sténose mitrale / valve mécanique)</td><td><span class="drug-badge ci">Warfarine — pas d'AOD</span></td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="block para" id="fa-6">
-        <div class="block-title"><span class="tag">💊 AOD — Posologie selon la fonction rénale (FA non valvulaire)</span></div>
-        <table style="font-size:12.5px;">
-          <thead><tr><th>DFGe (ml/min)</th><th>Apixaban (Eliquis®)</th><th>Dabigatran (Pradaxa®)</th><th>Rivaroxaban (Xarelto®)</th><th>Edoxaban (Lixiana®)</th></tr></thead>
-          <tbody>
-            <tr><td><strong>&gt; 50</strong></td><td>5 mg BID (ou 2,5 mg BID si ≥ 2 critères*)</td><td>150 mg BID</td><td>20 mg DIE (avec repas)</td><td>60 mg DIE</td></tr>
-            <tr><td><strong>30–50</strong></td><td>5 mg BID (ou 2,5 mg BID si ≥ 2 critères*)</td><td><strong>110 mg BID</strong></td><td><strong>15 mg DIE</strong></td><td><strong>30 mg DIE</strong></td></tr>
-            <tr><td><strong>15–29</strong></td><td>5 mg BID (ou 2,5 mg BID si ≥ 2 critères*)</td><td><span class="drug-badge ci">CI</span></td><td>15 mg DIE (données limitées)</td><td>30 mg DIE (données limitées)</td></tr>
-            <tr><td><strong>&lt; 15 ou dialyse</strong></td><td><span class="drug-badge ci">CI</span></td><td><span class="drug-badge ci">CI</span></td><td><span class="drug-badge ci">CI</span></td><td><span class="drug-badge ci">CI → Warfarine</span></td></tr>
-          </tbody>
-        </table>
-        <div class="highlight yellow" style="margin-top:6px;font-size:12.5px;">
-          <strong>*Critères de réduction Apixaban → 2,5 mg BID :</strong> ≥ 2 des 3 critères suivants : âge ≥ 80 ans · poids ≤ 60 kg · créatinine ≥ 133 µmol/L<br>
-          <strong>Antidotes AOD :</strong> Dabigatran → <span class="drug-badge line1">Idarucizumab (Praxbind®) 5 g IV</span> · Apixaban/Rivaroxaban/Edoxaban → <span class="drug-badge line2">Andexanet alfa (Ondexxya®)</span> ou CCP 4 facteurs si non disponible
-        </div>
-        <div class="key-fact black" style="margin-top:8px;">90 % des thrombus FA se forment dans l'<strong>appendice auriculaire gauche (AAG)</strong> — base de l'effet protecteur des ACO · 1/4 des AVC sont attribuables à la FA</div>
-      </div>
-
-      <div class="block para" id="fa-7">
-        <div class="block-title"><span class="tag">🔌 Ablation par cathéter — Indications & Résultats</span></div>
-        <div class="criteria-list">
-          <div class="criteria-item"><div class="criteria-num blue">Qui</div><span>&lt; 80 ans · FA symptomatique (paroxystique &gt; persistante) · OG &lt; 55 mm · IC incluse (bénéfice documenté ICFEr)</span></div>
-          <div class="criteria-item"><div class="criteria-num blue">Quand</div><span>Après échec ou intolérance antiarythmique <strong>OU</strong> d'emblée en 1re intention chez patients sélectionnés (jeune, FA récente, peu de fibrose)</span></div>
-          <div class="criteria-item"><div class="criteria-num blue">Comment</div><span>Isolation des veines pulmonaires — RF (radiofréquence) · Cryoablation · Électroporation (pulsed field) ± ablation du substrat</span></div>
-          <div class="criteria-item"><div class="criteria-num yellow">Résultats</div><span>Succès : <strong>70–80 % FA paroxystique</strong> · 50–70 % FA persistante · Post-ablation : ACO systématique 2 mois PUIS selon CHADS-65</span></div>
-        </div>
-      </div>
-
-      <!-- ALGORITHME SCC — TRAITEMENT FA + ANTICOAGULATION -->
-      <div class="block def" id="fa-8">
-        <div class="block-title"><span class="tag">🧰 Outil interactif — Aide à la décision : Prise en charge de la FA (SCC)</span></div>
-        <p class="content-text" style="margin-bottom:14px;">Cliquez sur les énoncés correspondant à la situation clinique pour obtenir la conduite à tenir. <em>Outil d'aide à la décision — ne remplace pas le jugement clinique ni les lignes directrices de la Société canadienne de cardiologie.</em></p>
-
-        <style>
-          .fa-tool { font-family: var(--font); color: var(--ink); font-size: 14px; }
-          .fa-tool .fa-step { background: var(--cream2); border: 1px solid var(--cream3); padding: 16px 18px; margin-bottom: 14px; border-radius: var(--radius); }
-          .fa-tool h4 { font-size: 13px; text-transform: uppercase; letter-spacing: .04em; margin-bottom: 10px; font-weight: 700; }
-          .fa-tool .fa-hint { font-size: 13px; font-weight: 400; margin-bottom: 10px; }
-          .fa-tool .fa-choice-grid { display: flex; flex-wrap: wrap; gap: 10px; }
-          .fa-tool .fa-choice-card { flex: 1 1 220px; cursor: pointer; background: #fff; border: 2px solid var(--cream3); border-radius: var(--radius); padding: 12px 14px; font-size: 13px; font-weight: 600; line-height: 1.4; transition: border-color .15s, background .15s, transform .1s, color .15s; }
-          .fa-tool .fa-choice-card:hover { border-color: var(--blue); background: var(--blue-lt); transform: translateY(-1px); }
-          .fa-tool .fa-choice-card.selected { border-color: var(--blue); background: var(--blue-lt); color: var(--blue); }
-          .fa-tool .fa-choice-card.selected.red { border-color: var(--red); background: var(--red-lt); color: var(--red); }
-          .fa-tool .fa-hidden { display: none; }
-          .fa-tool .fa-result-box { background: var(--blue-lt); border-left: 6px solid var(--blue); padding: 18px; margin-top: 4px; border-radius: var(--radius); }
-          .fa-tool .fa-result-box.red { background: var(--red-lt); border-left-color: var(--red); }
-          .fa-tool .fa-result-title { font-weight: 700; text-transform: uppercase; font-size: 11px; letter-spacing: .04em; margin-bottom: 6px; }
-          .fa-tool .fa-result-title.blue { color: var(--blue); }
-          .fa-tool .fa-result-title.red { color: var(--red); }
-          .fa-tool .fa-result-text { font-size: 13px; line-height: 1.6; }
-        </style>
-
-        <div class="fa-tool">
-          <div class="fa-step">
-            <h4>① Stabilité hémodynamique?</h4>
-            <p class="fa-hint">Rechercher : hypotension, IC aiguë, ischémie myocardique active</p>
-            <div class="fa-choice-grid">
-              <div class="fa-choice-card" onclick="faSelect(1,'instable',this)">🔴 Instable — hypoTA / IC aiguë / ischémie active</div>
-              <div class="fa-choice-card" onclick="faSelect(1,'stable',this)">🟢 Stable hémodynamiquement</div>
-            </div>
-          </div>
-
-          <div id="fa-step2" class="fa-step fa-hidden">
-            <h4>② Facteurs favorisant le contrôle du rythme?</h4>
-            <p class="fa-hint">Symptômes persistants malgré le contrôle de fréquence · FA de novo &lt; 1 an · IC associée (FEVG ↓) · patient jeune/actif</p>
-            <div class="fa-choice-grid">
-              <div class="fa-choice-card" onclick="faSelect(2,'rythme',this)">🔵 Oui — au moins un facteur présent</div>
-              <div class="fa-choice-card" onclick="faSelect(2,'frequence',this)">🟢 Non — aucun facteur particulier</div>
-            </div>
-          </div>
-
-          <div id="fa-result-box" class="fa-result-box fa-hidden"></div>
-
-          <div class="fa-step" style="margin-top:14px;margin-bottom:0;background:rgba(209,48,38,.06);border-color:var(--red);">
-            <h4 style="color:var(--red);">🚨 Rappel transversal — toujours applicable, peu importe la stratégie choisie</h4>
-            <div class="fa-result-text">
-              <strong>Anticoagulation — décision indépendante du choix fréquence/rythme :</strong> appliquer le score <strong>CHADS-65</strong> à TOUS les patients (voir tableau plus haut) — le retour en rythme sinusal ne dispense PAS de l'anticoagulation si les critères sont rencontrés.<br><br>
-              <strong>Avant une cardioversion</strong> (pharmacologique ou électrique), si la FA dure &gt; 48 h ou que sa durée est inconnue → <strong>anticoagulation 3 semaines avant + 4 semaines après</strong> (ou ETO pour exclure un thrombus de l'oreillette gauche et procéder à une cardioversion précoce).
-            </div>
-          </div>
-        </div>
-
-        <script>
-          function faMarkSelected(container, el, colorClass) {
-            var cards = container.querySelectorAll('.fa-choice-card');
-            cards.forEach(function(c){ c.classList.remove('selected','red'); });
-            el.classList.add('selected');
-            if (colorClass) el.classList.add(colorClass);
-          }
-          function faShowResult(type, title, html) {
-            var box = document.getElementById('fa-result-box');
-            box.className = 'fa-result-box' + (type ? ' ' + type : '');
-            box.innerHTML = '<div class="fa-result-title' + (type ? ' ' + type : ' blue') + '">🎯 ' + title + '</div><div class="fa-result-text">' + html + '</div>';
-            box.classList.remove('fa-hidden');
-          }
-          function faSelect(step, value, el) {
-            var step2 = document.getElementById('fa-step2');
-            var resultBox = document.getElementById('fa-result-box');
-
-            if (step === 1) {
-              faMarkSelected(el.parentElement, el, value === 'instable' ? 'red' : null);
-              step2.querySelectorAll('.fa-choice-card').forEach(function(c){ c.classList.remove('selected','red'); });
-
-              if (value === 'instable') {
-                step2.classList.add('fa-hidden');
-                faShowResult('red', 'Conduite à tenir — urgence', '<strong>Cardioversion électrique immédiate</strong>, peu importe la durée de la FA. Ne pas retarder la cardioversion pour l\'anticoagulation chez un patient instable — gérer le risque thromboembolique en parallèle/après stabilisation selon le contexte.');
-              } else {
-                resultBox.classList.add('fa-hidden');
-                step2.classList.remove('fa-hidden');
-              }
-              return;
-            }
-
-            if (step === 2) {
-              faMarkSelected(el.parentElement, el, null);
-              if (value === 'frequence') {
-                faShowResult('blue', 'Conduite à tenir — contrôle de la fréquence', '<strong>Contrôle de la fréquence d\'abord</strong> (bêta-bloqueur ou bloqueur des canaux calciques non-dihydropyridine, cible &lt; 100/min) — approche de choix chez la majorité des patients stables, non inférieure au contrôle du rythme sur la mortalité (étude AFFIRM).');
-              } else {
-                faShowResult('blue', 'Conduite à tenir — contrôle du rythme', '<strong>Contrôle du rythme à privilégier</strong> : cardioversion (pharmacologique ou électrique) ± antiarythmique d\'entretien ± ablation par cathéter selon la réponse et les préférences du patient. Respecter les règles d\'anticoagulation périprocédurales (voir rappel transversal ci-dessous) avant toute cardioversion si la FA dure &gt; 48 h ou que sa durée est inconnue.');
-              }
-            }
-          }
-        </script>
-      </div>
-
-      <div class="block flag" id="fa-11">
-        <div class="block-title"><span class="tag">🚨 RED FLAGS</span></div>
+        <p class="content-text" style="font-weight:600;margin-bottom:6px;">Mécanisme physiopathologique</p>
         <div class="flag-list">
-          <div class="flag-item"><span class="fi-icon">⚡</span><span>Pré-excitation + FA → <strong>CI absolue aux bloquants NAV</strong> (risque FV)</span></div>
-          <div class="flag-item"><span class="fi-icon">🔩</span><span>FA + valve mécanique → <strong>Warfarine obligatoire</strong></span></div>
-          <div class="flag-item"><span class="fi-icon">🦋</span><span>FA + hyperthyroïdie → anticoaguler jusqu'au retour en euthyroïdie</span></div>
+          <div class="flag-item"><span class="flag-dot blue"></span><span><strong>Anomalies électrophysiologiques</strong> des myocytes auriculaires → dilatation + fibrose auriculaire → substrat arythmogène</span></div>
+          <div class="flag-item"><span class="flag-dot blue"></span><span><strong>FA paroxystique :</strong> déclenchée par foyer ectopique (veines pulmonaires) → source focale initiale</span></div>
+          <div class="flag-item"><span class="flag-dot ink"></span><span><strong>FA persistante :</strong> remodelage électrique auriculaire progressif + fibrose → perpétuation par réentrées multiples</span></div>
+          <div class="flag-item"><span class="flag-dot red"></span><span><strong>FA chronique :</strong> fibrose étendue + remodelage sévère → structure auriculaire profondément altérée</span></div>
+          <div class="flag-item"><span class="flag-dot yellow"></span><span><strong>FA primaire</strong> = causée par processus pathophysiologique établi · <strong>FA secondaire</strong> = précipitant aigu réversible ou auto-limité</span></div>
         </div>
-      </div>
 
-      <div class="sec-divider" style="margin-top:32px;">
-        <div class="sd-shape sq"></div>
-        <div class="sd-label">Flutter & Arythmies</div>
-        <div class="sd-line"></div>
-      </div>
-      <div class="block def" id="fa-9">
-        <div class="block-title"><span class="tag">📌 Flutter Auriculaire</span></div>
-        <ul style="padding-left:18px;line-height:1.8;font-size:13.5px;">
-          <li>Macro-réentrée autour de l'isthme cavo-tricuspidien (typique) → <strong>ablation = 1re ligne</strong> (succès 97 %)</li>
-          <li>ECG : ondes en dents de scie négatives DII/DIII/aVF ; FC auriculaire ~300 bpm → FC ventriculaire 150 (2:1), 100 (3:1)</li>
-          <li>Anticoagulation selon CHADS-65</li>
-        </ul>
-      </div>
-
-      <div class="block clin" id="fa-9b">
-        <div class="block-title"><span class="tag">🧬 TSVP — Physiopathologie & Traitement</span></div>
-        <p class="content-text"><strong>Mécanisme :</strong> dans la majorité des cas (ex. tachycardie par réentrée nodale AV — TRNAV), une <strong>boucle de réentrée</strong> se forme au niveau du nœud AV (double voie nodale — voie lente + voie rapide) ou via une <strong>voie accessoire</strong> (ex. Wolff-Parkinson-White) reliant oreillettes et ventricules. Un battement prématuré déclenche un circuit auto-entretenu → tachycardie à QRS étroit, régulière, à début et fin brusques (palpitations soudaines ± étourdissements/dyspnée).</p>
-        <ul class="content-text" style="padding-left:18px;margin-top:8px;">
-          <li><strong>Manœuvres vagales</strong> (Valsalva, massage carotidien) → 1<sup>re</sup> intention, ralentit/bloque transitoirement le nœud AV</li>
-          <li><strong>Adénosine</strong> : 6 mg IV rapide → échec → 12 mg IV → 12 mg IV | Demi-vie 10–15 sec — bloque transitoirement le nœud AV pour interrompre le circuit de réentrée</li>
-          <li><strong>Pill-in-the-pocket</strong> (épisodes récurrents, peu fréquents, chez patient sans cardiopathie structurelle) : Flécaïnide 200–300 mg OU Propafénone 450–600 mg + <strong>BB obligatoire</strong> (prévient la conduction 1:1 si transformation en flutter)</li>
-          <li>Récidives fréquentes/symptomatiques → référence en <strong>électrophysiologie pour ablation</strong> (curative dans la majorité des cas)</li>
-        </ul>
-      </div>
-
-      <div class="block para" id="fa-10">
-        <div class="block-title"><span class="tag">📌 Classification de Vaughan Williams</span></div>
+        <p class="content-text" style="font-weight:600;margin-top:12px;margin-bottom:6px;">Facteurs de risque &amp; Précipitants</p>
         <table>
-          <thead><tr><th>Classe</th><th>Médicaments</th><th>Cible</th><th>Effet</th></tr></thead>
+          <thead><tr><th>Non-modifiables</th><th>Modifiables</th><th>Précipitants réversibles</th></tr></thead>
           <tbody>
-            <tr><td>Ia</td><td>Quinidine, Procaïnamide</td><td>Na⁺</td><td>↑ QRS + période réfractaire ↑</td></tr>
-            <tr><td>Ib</td><td>Lidocaïne, Mexilétine</td><td>Na⁺</td><td>Moins puissant, VT/FV</td></tr>
-            <tr><td>Ic</td><td>Propafénone, Flécaïnide</td><td>Na⁺</td><td>Puissant ; CI cardiopathie structurelle</td></tr>
-            <tr><td>II</td><td>Bêtabloqueurs</td><td>Récepteurs β</td><td>Bloque NAV, ↓ FC</td></tr>
-            <tr><td>III</td><td>Amiodarone, Sotalol, Dronédarone</td><td>K⁺</td><td>↑ QT ; période réfractaire ↑</td></tr>
-            <tr><td>IV</td><td>Diltiazem, Vérapamil</td><td>Ca²⁺</td><td>Allonge période réfractaire NAV</td></tr>
+            <tr><td>Âge ≥ 65 ans</td><td>Tabagisme</td><td>Chirurgie cardiaque/non-cardiaque</td></tr>
+            <tr><td>Sexe masculin</td><td>HTA</td><td>Maladie pulmonaire aiguë (pneumonie, EP)</td></tr>
+            <tr><td>Antécédents familiaux</td><td>Diabète</td><td>Infection / Sepsis</td></tr>
+            <tr><td>Cardiopathie structurelle</td><td>Obésité</td><td>Hyperthyroïdie</td></tr>
+            <tr><td></td><td>Apnée du sommeil</td><td>Alcool / stimulants / stress</td></tr>
+            <tr><td></td><td>MCAS</td><td>TSV sous-jacente</td></tr>
           </tbody>
         </table>
+        <div class="key-fact yellow" style="margin-top:8px;">Conséquences d&apos;un AVC : 50–60 % dépendance fonctionnelle · 25 % démence · mortalité 20 % à 30j / 30 % à 1 an · seulement 10 % sans séquelles</div>
       </div>
 
-      <div class="block para" style="border-left-color:var(--red);">
-        <div class="block-title"><span class="tag">⛔ Digoxine & Contre-indications des antiarythmiques</span></div>
-        <p class="content-text"><strong>Digoxine — mécanisme double :</strong> ① active le SNP → ↑ tonus vagal → ↓ conduction au nœud AV → ↓ FC ventriculaire (moins d'impulsions fibrillatoires transmises) ; ② inhibe la pompe Na⁺/K⁺-ATPase → ↑ Na⁺ intracellulaire → ↓ échangeur Na⁺/Ca²⁺ → ↑ Ca²⁺ intracellulaire → <strong>effet inotrope positif</strong> (intéressant si FA + ICFEr)</p>
-        <p class="content-text" style="margin-top:6px;font-size:13px;"><strong>EI :</strong> arythmies (toxicité → surcharge calcique → post-dépolarisations → rythmes ectopiques/tachycardies) · troubles digestifs (anorexie, N/V, douleur abdo) · troubles neuro (confusion, faiblesse) · troubles électrolytiques</p>
-        <div class="key-fact red" style="margin-top:8px;"><strong>CI digoxine :</strong> WPW (risque FV) · bloc AV/dysfonction sinusale sans pacemaker · FV · myocardite active · CMP hypertrophique obstructive · hypoK⁺/hypoMg²⁺/hyperCa²⁺</div>
-        <table style="margin-top:8px;">
-          <thead><tr><th>Classe d'antiarythmique</th><th>Contre-indication principale</th></tr></thead>
+      <!-- ═══ FA-1b: CLASSIFICATION & ECG FA ═══ -->
+      <div class="block para" id="fa-1b">
+        <div class="block-title"><span class="tag">🔎 2. Classification de la FA &amp; Présentation ECG</span></div>
+
+        <p class="content-text" style="font-weight:600;margin-bottom:6px;">Classification temporelle</p>
+        <table style="margin-bottom:12px;">
+          <thead><tr><th>Type</th><th>Définition</th><th>Implication clinique</th></tr></thead>
           <tbody>
-            <tr><td>Classe Ic (flécaïnide, propafénone)</td><td>Cardiopathie structurelle : ATCD IM, IC, HVG sévère</td></tr>
-            <tr><td>Prolongateurs du QT (Ia, sotalol, dofétilide, disopyramide)</td><td>Sd du QT long congénital/acquis · ATCD torsades de pointes</td></tr>
-            <tr><td>Sotalol, dofétilide (élimination rénale)</td><td>Insuffisance rénale sévère</td></tr>
-            <tr><td>Majorité des antiarythmiques</td><td>Bradycardie sévère, dysfonction sinusale, bloc AV avancé sans pacemaker</td></tr>
+            <tr><td><strong>FA paroxystique</strong></td><td>Épisode &gt; 30 sec, prend fin en &lt; 7 jours (avec ou sans Tx)</td><td>1re intention pour contrôle du rythme · pill-in-the-pocket envisageable</td></tr>
+            <tr><td><strong>FA persistante</strong></td><td>Épisode continu 7 jours à 1 an</td><td>Contrôle fréquence + envisager rythme si symptomatique</td></tr>
+            <tr><td><strong>FA persistante longue durée</strong></td><td>FA continue &gt; 1 an avec contrôle du rythme encore envisagé</td><td>Substrat fibrotique avancé — succès ablation moindre</td></tr>
+            <tr><td><strong>FA permanente</strong></td><td>Décision thérapeutique de ne pas restaurer le rythme sinusal</td><td>Contrôle fréquence uniquement</td></tr>
+            <tr><td><strong>FA valvulaire</strong></td><td>Prothèse mécanique OU sténose mitrale ≥ modérée</td><td><span class="drug-badge ci">Warfarine obligatoire — AOD CI</span></td></tr>
+            <tr><td><strong>FA non-valvulaire</strong></td><td>Toutes autres origines</td><td>AOD 1re ligne · CHADS-65 pour indication ACO</td></tr>
           </tbody>
         </table>
+
+        <!-- ECG FA VISUALIZATION -->
+        <p class="content-text" style="font-weight:600;margin-bottom:8px;">Critères ECG — Fibrillation auriculaire</p>
+        <div style="background:var(--surface);border:2px solid #1C3F8F;border-radius:10px;padding:14px;margin-bottom:12px;">
+          <table style="margin-bottom:10px;">
+            <thead><tr><th>Critère ECG</th><th>Description</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Onde P</strong></td><td><span class="drug-badge ci">Absente</span> — pas d&apos;onde P organisée, activité fibrillatoire chaotique</td></tr>
+              <tr><td><strong>Activité auriculaire</strong></td><td>Fibrillatoire, variable et irrégulière · fréquence auriculaire <strong>400–600 bpm</strong></td></tr>
+              <tr><td><strong>Rythme ventriculaire</strong></td><td><span class="drug-badge warn">Irrégulièrement irrégulier</span> — intervalles RR variables</td></tr>
+              <tr><td><strong>Complexe QRS</strong></td><td>Habituellement étroit (fin si conduction normale) · large si bloc de branche</td></tr>
+              <tr><td><strong>Ligne de base</strong></td><td>Ondulante/chaotique entre les QRS</td></tr>
+            </tbody>
+          </table>
+          <!-- SVG ECG FA schématique -->
+          <div style="text-align:center;font-weight:600;font-size:12px;color:#1C3F8F;margin-bottom:6px;">Tracé ECG schématique — FA (rythme irrégulièrement irrégulier, absence d&apos;onde P)</div>
+          <svg viewBox="0 0 700 120" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;background:#fff8e7;border-radius:6px;border:1px solid #e2c97a;">
+            <!-- Ligne de base isoélectrique -->
+            <line x1="0" y1="60" x2="700" y2="60" stroke="#d4b896" stroke-width="0.5"/>
+            <!-- Activité fibrillatoire baseline (ligne ondulante) -->
+            <path d="M10,60 q5,-3 10,0 q5,3 10,-2 q5,-4 10,1 q5,3 10,-1 q5,-2 10,3 q5,2 10,-1 q5,-3 10,2 q5,2 10,-2 q5,-3 10,1" stroke="#aaa" fill="none" stroke-width="0.8"/>
+            <!-- QRS 1 -->
+            <path d="M80,60 L85,60 L87,50 L89,60 L93,75 L95,60 L100,60" stroke="#1C3F8F" fill="none" stroke-width="2"/>
+            <!-- fibrillation -->
+            <path d="M100,60 q4,-3 8,1 q4,3 8,-2 q4,-2 8,2 q4,1 8,-1" stroke="#aaa" fill="none" stroke-width="0.8"/>
+            <!-- QRS 2 (intervalle différent = irrégulier) -->
+            <path d="M140,60 L145,60 L147,48 L149,60 L153,77 L155,60 L162,60" stroke="#1C3F8F" fill="none" stroke-width="2"/>
+            <!-- fibrillation -->
+            <path d="M162,60 q5,-4 10,2 q5,3 10,-3 q5,-2 10,1 q5,2 10,-1 q5,-1 10,2" stroke="#aaa" fill="none" stroke-width="0.8"/>
+            <!-- QRS 3 (intervalle encore différent) -->
+            <path d="M225,60 L230,60 L232,52 L234,60 L238,74 L240,60 L246,60" stroke="#1C3F8F" fill="none" stroke-width="2"/>
+            <!-- fibrillation -->
+            <path d="M246,60 q4,-2 8,1 q4,3 8,-1 q4,-3 8,2 q4,2 8,-2 q4,-1 8,1 q4,2 8,-1" stroke="#aaa" fill="none" stroke-width="0.8"/>
+            <!-- QRS 4 -->
+            <path d="M310,60 L315,60 L317,50 L319,60 L323,76 L325,60 L332,60" stroke="#1C3F8F" fill="none" stroke-width="2"/>
+            <!-- fibrillation -->
+            <path d="M332,60 q5,-3 10,2 q5,4 10,-2 q5,-3 10,1 q5,3 10,-2 q5,-1 10,3 q5,1 10,-1" stroke="#aaa" fill="none" stroke-width="0.8"/>
+            <!-- QRS 5 -->
+            <path d="M410,60 L415,60 L417,47 L419,60 L423,78 L425,60 L430,60" stroke="#1C3F8F" fill="none" stroke-width="2"/>
+            <!-- fibrillation -->
+            <path d="M430,60 q4,-2 8,1 q4,2 8,-3 q4,-2 8,2 q4,3 8,-1 q4,-2 8,1 q4,1 8,-2" stroke="#aaa" fill="none" stroke-width="0.8"/>
+            <!-- QRS 6 -->
+            <path d="M510,60 L515,60 L517,53 L519,60 L523,75 L525,60 L530,60" stroke="#1C3F8F" fill="none" stroke-width="2"/>
+            <!-- fibrillation suite -->
+            <path d="M530,60 q5,-3 10,2 q5,2 10,-1 q5,-3 10,2 q5,1 10,-2 q5,-2 10,1 q5,3 10,-2" stroke="#aaa" fill="none" stroke-width="0.8"/>
+            <!-- QRS 7 -->
+            <path d="M620,60 L625,60 L627,50 L629,60 L633,76 L635,60 L640,60" stroke="#1C3F8F" fill="none" stroke-width="2"/>
+            <path d="M640,60 q5,-2 10,1 q5,2 10,-1" stroke="#aaa" fill="none" stroke-width="0.8"/>
+            <!-- Flèches annotations -->
+            <text x="88" y="38" font-size="9" fill="#dc2626" font-weight="bold">QRS</text>
+            <text x="150" y="38" font-size="9" fill="#dc2626" font-weight="bold">QRS</text>
+            <text x="230" y="38" font-size="9" fill="#dc2626" font-weight="bold">QRS</text>
+            <text x="100" y="100" font-size="9" fill="#888">← intervalles RR irréguliers →</text>
+            <text x="350" y="98" font-size="9" fill="#1C3F8F" font-weight="bold">Ligne de base ondulante (fibrillatoire)</text>
+            <text x="10" y="15" font-size="10" fill="#555" font-style="italic">Fibrillation auriculaire — absence onde P, rythme irrégulièrement irrégulier</text>
+          </svg>
+        </div>
+
+        <div class="note">⚠️ Rendement diagnostique du dépistage de masse par ECG = 2 % — FA souvent asymptomatique et intermittente · Symptômes : palpitations, dyspnée, fatigue, intolérance à l&apos;effort, AVC</div>
       </div>
 
-      <div class="block para" id="fa-10b">
-        <div class="block-title"><span class="tag">📌 Amiodarone — Surveillance multi-organique</span></div>
-        <table>
-          <thead><tr><th>Système</th><th>Effet</th><th>Incidence</th><th>Surveillance</th></tr></thead>
+      <!-- ═══ FA-FLUTTER: FLUTTER AURICULAIRE ═══ -->
+      <div class="block clin" id="fa-flutter">
+        <div class="block-title"><span class="tag">⚡ 3. Flutter Auriculaire — Physiopathologie &amp; ECG</span></div>
+
+        <div class="key-fact blue" style="margin-bottom:10px;"><strong>Mécanisme :</strong> Arythmie par macro-réentrée (contrairement à la FA chaotique)</div>
+        <table style="margin-bottom:10px;">
+          <thead><tr><th>Paramètre</th><th>Flutter typique</th><th>Flutter atypique</th></tr></thead>
           <tbody>
-            <tr><td>Cardiaque</td><td>Bradycardie / ↑ QT / torsade</td><td>&lt; 1 %</td><td>ECG chaque visite ; arrêt si QT > 550 ms</td></tr>
-            <tr><td>Hépatique</td><td>Cytolyse</td><td>15 %</td><td>AST/ALT q6 mois</td></tr>
-            <tr><td>Thyroïdien</td><td>Hyper/Hypothyroïdie</td><td>3 % / 20 %</td><td>TSH ± T3/T4 2–3×/an</td></tr>
-            <tr><td>Pulmonaire</td><td>Toxicité pulmonaire</td><td>&lt; 3 %</td><td>TFR + Rx thorax ; arrêt immédiat si suspicion</td></tr>
-            <tr><td>Dermatologique</td><td>Photosensibilité</td><td>25–75 %</td><td>FPS 50 obligatoire</td></tr>
-            <tr><td>Ophtalmologique</td><td>Dépôts cornéens/névrite</td><td>&lt; 1 %</td><td>Bénin sauf névrite → arrêt</td></tr>
+            <tr><td><strong>Circuit</strong></td><td>Autour de l&apos;isthme cavo-tricuspidien (OD)</td><td>Autour d&apos;une cicatrice chirurgicale (OG ou OD)</td></tr>
+            <tr><td><strong>Succès ablation</strong></td><td><strong>97 %</strong></td><td><strong>90 %</strong></td></tr>
+            <tr><td><strong>Fréquence auriculaire</strong></td><td colspan="2">∼ 300 bpm (isthme = zone de conduction lente)</td></tr>
+            <tr><td><strong>FC ventriculaire</strong></td><td colspan="2">150 bpm (2:1) · 100 bpm (3:1) · 75 bpm (4:1)</td></tr>
           </tbody>
         </table>
-      </div>
 
-      <div class="block para" id="fa-10c">
-        <div class="block-title"><span class="tag">📌 Score HAS-BLED (seuil alerte ≥ 3)</span></div>
-        <table>
-          <thead><tr><th>Lettre</th><th>Facteur</th><th>Points</th></tr></thead>
-          <tbody>
-            <tr><td>H</td><td>HTA non contrôlée (> 160 mmHg)</td><td>1</td></tr>
-            <tr><td>A</td><td>Fonction rénale/hépatique anormale</td><td>1–2</td></tr>
-            <tr><td>S</td><td>AVC antérieur</td><td>1</td></tr>
-            <tr><td>B</td><td>Saignement antérieur ou prédisposition</td><td>1</td></tr>
-            <tr><td>L</td><td>INR labile (&lt; 60 % temps thérapeutique)</td><td>1</td></tr>
-            <tr><td>E</td><td>Âge > 65 ans</td><td>1</td></tr>
-            <tr><td>D</td><td>Drogues (AINS/AAS) ou alcool</td><td>1–2</td></tr>
-          </tbody>
-        </table>
-        <div class="alert alert-yellow" style="margin-top:8px;font-size:13px;">HAS-BLED ≥ 3 → corriger les facteurs modifiables, <strong>NE PAS arrêter l'ACO</strong></div>
-      </div>
+        <!-- ECG FLUTTER VISUALIZATION -->
+        <p class="content-text" style="font-weight:600;margin-bottom:8px;">Critères ECG — Flutter auriculaire typique</p>
+        <div style="background:var(--surface);border:2px solid #d97706;border-radius:10px;padding:14px;margin-bottom:12px;">
+          <table style="margin-bottom:10px;">
+            <thead><tr><th>Critère ECG</th><th>Description</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Ondes F</strong></td><td>Ondes en dents de scie <strong>négatives</strong> en DII, DIII, aVF (« en toit d&apos;usine ») · <strong>positives</strong> en V1</td></tr>
+              <tr><td><strong>Rythme auriculaire</strong></td><td>Régulier ∼ 300 bpm</td></tr>
+              <tr><td><strong>Conduction AV</strong></td><td>Habituellement fixe : 2:1 (FC 150 bpm) ou 3:1 ou 4:1</td></tr>
+              <tr><td><strong>QRS</strong></td><td>Étroit si conduction normale · pas de ligne isoélectrique entre les ondes F</td></tr>
+            </tbody>
+          </table>
+          <!-- SVG ECG Flutter schématique -->
+          <div style="text-align:center;font-weight:600;font-size:12px;color:#d97706;margin-bottom:6px;">Tracé ECG schématique — Flutter typique (ondes F en dents de scie, conduction 2:1)</div>
+          <svg viewBox="0 0 700 120" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;background:#fff8e7;border-radius:6px;border:1px solid #e2c97a;">
+            <line x1="0" y1="60" x2="700" y2="60" stroke="#d4b896" stroke-width="0.5"/>
+            <!-- Ondes F en dents de scie (régulières, ∼ toutes les 23px pour 300 bpm) -->
+            <!-- Sawtooth waves -->
+            <path d="M10,60 L18,45 L22,65 L30,45 L34,65 L42,45 L46,65" stroke="#d97706" fill="none" stroke-width="1.5"/>
+            <!-- QRS 1 at 2:1 conduction -->
+            <path d="M46,65 L50,65 L52,40 L54,65 L58,80 L60,65 L65,65" stroke="#1C3F8F" fill="none" stroke-width="2.5"/>
+            <!-- Continue saw waves -->
+            <path d="M65,65 L73,45 L77,65 L85,45 L89,65 L97,45 L101,65" stroke="#d97706" fill="none" stroke-width="1.5"/>
+            <!-- QRS 2 -->
+            <path d="M101,65 L105,65 L107,40 L109,65 L113,80 L115,65 L120,65" stroke="#1C3F8F" fill="none" stroke-width="2.5"/>
+            <!-- Continue saw waves -->
+            <path d="M120,65 L128,45 L132,65 L140,45 L144,65 L152,45 L156,65" stroke="#d97706" fill="none" stroke-width="1.5"/>
+            <!-- QRS 3 -->
+            <path d="M156,65 L160,65 L162,40 L164,65 L168,80 L170,65 L175,65" stroke="#1C3F8F" fill="none" stroke-width="2.5"/>
+            <!-- Continue -->
+            <path d="M175,65 L183,45 L187,65 L195,45 L199,65 L207,45 L211,65" stroke="#d97706" fill="none" stroke-width="1.5"/>
+            <!-- QRS 4 -->
+            <path d="M211,65 L215,65 L217,40 L219,65 L223,80 L225,65 L232,65" stroke="#1C3F8F" fill="none" stroke-width="2.5"/>
+            <!-- Continue -->
+            <path d="M232,65 L240,45 L244,65 L252,45 L256,65 L264,45 L268,65" stroke="#d97706" fill="none" stroke-width="1.5"/>
+            <!-- QRS 5 -->
+            <path d="M268,65 L272,65 L274,40 L276,65 L280,80 L282,65 L288,65" stroke="#1C3F8F" fill="none" stroke-width="2.5"/>
+            <!-- Continue -->
+            <path d="M288,65 L296,45 L300,65 L308,45 L312,65 L320,45 L324,65" stroke="#d97706" fill="none" stroke-width="1.5"/>
+            <path d="M324,65 L332,45 L336,65 L344,45 L348,65 L356,45 L360,65" stroke="#d97706" fill="none" stroke-width="1.5"/>
+            <!-- QRS 6 -->
+            <path d="M360,65 L364,65 L366,40 L368,65 L372,80 L374,65 L380,65" stroke="#1C3F8F" fill="none" stroke-width="2.5"/>
+            <path d="M380,65 L388,45 L392,65 L400,45 L404,65 L412,45 L416,65" stroke="#d97706" fill="none" stroke-width="1.5"/>
+            <!-- QRS 7 -->
+            <path d="M416,65 L420,65 L422,40 L424,65 L428,80 L430,65 L436,65" stroke="#1C3F8F" fill="none" stroke-width="2.5"/>
+            <path d="M436,65 L444,45 L448,65 L456,45 L460,65 L468,45 L472,65" stroke="#d97706" fill="none" stroke-width="1.5"/>
+            <!-- QRS 8 -->
+            <path d="M472,65 L476,65 L478,40 L480,65 L484,80 L486,65 L492,65" stroke="#1C3F8F" fill="none" stroke-width="2.5"/>
+            <path d="M492,65 L500,45 L504,65 L512,45 L516,65 L524,45 L528,65" stroke="#d97706" fill="none" stroke-width="1.5"/>
+            <!-- QRS 9 -->
+            <path d="M528,65 L532,65 L534,40 L536,65 L540,80 L542,65 L548,65" stroke="#1C3F8F" fill="none" stroke-width="2.5"/>
+            <path d="M548,65 L556,45 L560,65 L568,45 L572,65 L580,45 L584,65" stroke="#d97706" fill="none" stroke-width="1.5"/>
+            <!-- QRS 10 -->
+            <path d="M584,65 L588,65 L590,40 L592,65 L596,80 L598,65 L604,65" stroke="#1C3F8F" fill="none" stroke-width="2.5"/>
+            <path d="M604,65 L612,45 L616,65 L624,45 L628,65 L636,45 L640,65" stroke="#d97706" fill="none" stroke-width="1.5"/>
+            <!-- QRS 11 -->
+            <path d="M640,65 L644,65 L646,40 L648,65 L652,80 L654,65 L660,65" stroke="#1C3F8F" fill="none" stroke-width="2.5"/>
+            <path d="M660,65 L668,45 L672,65 L680,45 L684,65 L692,45 L696,65" stroke="#d97706" fill="none" stroke-width="1.5"/>
+            <!-- Labels -->
+            <text x="15" y="38" font-size="9" fill="#d97706" font-weight="bold">Ondes F (300/min)</text>
+            <text x="48" y="30" font-size="9" fill="#1C3F8F" font-weight="bold">QRS 150/min</text>
+            <text x="10" y="15" font-size="10" fill="#555" font-style="italic">Flutter typique — ondes F en dents de scie, conduction 2:1 (FC ≈ 150 bpm)</text>
+            <text x="200" y="100" font-size="9" fill="#d97706">← Intervalles réguliers (chaque 2 ondes F = 1 QRS) →</text>
+          </svg>
+        </div>
 
-      <div class="block flag">
-        <div class="block-title"><span class="tag">🚨 Alertes</span></div>
         <div class="flag-list">
-          <div class="flag-item"><span class="fi-icon">🚨</span><span>Flutter → ablation 1re ligne</span></div>
-          <div class="flag-item"><span class="fi-icon">🚨</span><span>Amiodarone QT > 550 ms → arrêt</span></div>
-          <div class="flag-item"><span class="fi-icon">🚨</span><span>Amiodarone + dyspnée progressive → exclure toxicité pulmonaire</span></div>
-          <div class="flag-item"><span class="fi-icon">🚨</span><span>Triple thérapie (ACO + DAPT post-SCA) : préférer AOD + clopidogrel (sans AAS) après phase aiguë</span></div>
-          <div class="flag-item"><span class="fi-icon">🚨</span><span>Arrêt péri-procédural : CHADS₂ 1–2 → cesser sans relais | ATCD AVC/ICT → relais HBPM (tinzaparine 175 UI/kg SC die)</span></div>
-          <div class="flag-item"><span class="fi-icon">🚨</span><span>Post-ablation : ACO systématique 2 mois PUIS selon CHADS-65</span></div>
+          <div class="flag-item"><span class="flag-dot red"></span><span><strong>Ablation = 1re ligne</strong> de traitement (nettement supérieure aux antiarythmiques) — succès 97 % flutter typique, 90 % atypique</span></div>
+          <div class="flag-item"><span class="flag-dot ink"></span><span><strong>Contrôle FC :</strong> souvent plus difficile qu&apos;en FA · BB 1re ligne · BCC non-DHP si CI BB · combinaison fréquemment nécessaire · digoxine 3e ligne</span></div>
+          <div class="flag-item"><span class="flag-dot blue"></span><span><strong>Anticoagulation :</strong> identique à la FA selon CHADS-65 · post-ablation ACO systématique 2 mois puis réévaluation CHADS-65</span></div>
         </div>
+        <div class="highlight red" style="margin-top:8px;font-size:13px;">⚠️ <strong>Flécaïnide/Propafénone SANS bloquant NAV → flutter 1:1 → conduction ventriculaire 300 bpm → risque arrêt cardiaque</strong><br>⚠️ <strong>WPW + flutter → CI absolue des bloquants NAV</strong> (BB, BCC, digoxine) → risque conduction via faisceau accessoire → FV</div>
+      </div>
+
+      <!-- ═══ FA-DÉPISTAGE ═══ -->
+      <div class="block para" id="fa-depistage">
+        <div class="block-title"><span class="tag">🔬 4. Dépistage &amp; Diagnostic</span></div>
+
+        <!-- Algorithme dépistage reproduit en SVG -->
+        <p class="content-text" style="font-weight:600;margin-bottom:8px;">Algorithme de dépistage opportuniste (≥ 65 ans)</p>
+        <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:12px;margin-bottom:12px;">
+          <div style="display:grid;grid-template-columns:1fr auto 1fr;align-items:start;gap:10px;text-align:center;">
+            <div style="background:#1C3F8F;color:#fff;border-radius:8px;padding:10px;font-size:12px;font-weight:600;">
+              Dépistage fondé sur le pouls<br>
+              <div style="font-weight:normal;font-size:11px;margin-top:4px;">• Palpation du pouls<br>• Lecteurs de TA<br>• Pléthysmographe</div>
+            </div>
+            <div style="display:flex;flex-direction:column;align-items:center;padding-top:20px;">
+              <div style="font-size:11px;color:#64748b;font-weight:600;border:1px solid #cbd5e1;border-radius:6px;padding:4px 8px;">Dépistage ≥ 65 ans</div>
+            </div>
+            <div style="background:#1C3F8F;color:#fff;border-radius:8px;padding:10px;font-size:12px;font-weight:600;">
+              Dépistage fondé sur le rythme<br>
+              <div style="font-weight:normal;font-size:11px;margin-top:4px;">• Monitoring ECG 1 dérivation<br>• Apple Watch / Kardia<br>• CardioSTAT (7–14 j)</div>
+            </div>
+          </div>
+          <div style="text-align:center;margin:10px 0;">
+            <div style="display:inline-block;background:#e05d20;color:#fff;border-radius:8px;padding:8px 20px;font-size:12px;font-weight:600;">FA suspectée</div>
+          </div>
+          <div style="text-align:center;margin:8px 0;">
+            <div style="display:inline-block;background:#2d8a4e;color:#fff;border-radius:8px;padding:8px 20px;font-size:12px;font-weight:600;">ECG 12 dérivations obligatoire</div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px;">
+            <div style="text-align:center;">
+              <div style="background:#e05d20;color:#fff;border-radius:8px;padding:8px;font-size:12px;font-weight:600;margin-bottom:8px;">Pas de confirmation de FA</div>
+              <div style="background:#2d8a4e;color:#fff;border-radius:8px;padding:8px;font-size:11px;">Autres mesures de surveillance fondées sur le rythme</div>
+            </div>
+            <div style="text-align:center;">
+              <div style="background:#dc2626;color:#fff;border-radius:8px;padding:8px;font-size:12px;font-weight:600;margin-bottom:8px;">Diagnostic de FA</div>
+              <div style="background:#2d8a4e;color:#fff;border-radius:8px;padding:8px;font-size:11px;"><strong>3 piliers :</strong><br>1. Prévention AVC (CHADS-65)<br>2. Traitement arythmie<br>3. Facteurs de risque</div>
+            </div>
+          </div>
+        </div>
+
+        <p class="content-text" style="font-weight:600;margin-bottom:6px;">Outils de monitoring cardiaque</p>
+        <table>
+          <thead><tr><th>Outil</th><th>Durée</th><th>Sensibilité</th><th>Particularités</th></tr></thead>
+          <tbody>
+            <tr><td>Holter 24–72h</td><td>24–72h</td><td>Faible (&lt; 5–13 %)</td><td>Utile si symptômes ≥ 1×/semaine</td></tr>
+            <tr><td>Monitor événements (Spider Flash)</td><td>7–30 j</td><td>∼ 36 %</td><td>Enregistrement non-continu, activation auto ou manuelle</td></tr>
+            <tr><td>CardioSTAT</td><td>7–14 j</td><td>Bonne</td><td>Enregistrement continu, 1 dérivation</td></tr>
+            <tr><td>Kardia (AliveCor)</td><td>Usage quotidien</td><td>Excellente</td><td>Manque les épisodes courts · coût 99–179 $</td></tr>
+            <tr><td>Apple Watch (série 4+)</td><td>Continu</td><td>&gt; 90 %</td><td>À partir de 529 $ · excellent pour dépistage</td></tr>
+            <tr><td>Moniteur implantable (Reveal)</td><td>2–3 ans</td><td>Très élevée</td><td>Syncopes inexpliquées · AVC récurrents · gold standard</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- ═══ FA-BILAN ═══ -->
+      <div class="block clin" id="fa-bilan">
+        <div class="block-title"><span class="tag">🧪 5. Bilan paraclinique initial</span></div>
+        <table>
+          <thead><tr><th>Test</th><th>Justification</th></tr></thead>
+          <tbody>
+            <tr><td>ECG 12 dérivations</td><td>Confirmation FA · classification · rythme sinusal basal · HVG · BBG · WPW</td></tr>
+            <tr><td>ÉTT (échocardiographie)</td><td>FEVG (guide choix antiarythmique) · taille OG · valvulopathie (FA valvulaire?) · HTAP</td></tr>
+            <tr><td>FSC</td><td>Anémie (précipitant) · leucocytose (infection)</td></tr>
+            <tr><td>Créatinine + DFGe</td><td>Ajustement posologie AOD · surveillance sous Rx</td></tr>
+            <tr><td>Électrolytes (K⁺, Mg²⁺)</td><td>HypoK⁺ = CI sotalol/amiodarone + arythmogène</td></tr>
+            <tr><td>TSH</td><td>Hyperthyroïdie = cause réversible FA · hypothyroïdie → bradycardie sous BB</td></tr>
+            <tr><td>Bilan hépatique (AST/ALT)</td><td>Surveillance amiodarone · HASBLED</td></tr>
+            <tr><td>Glycémie à jeun + HbA1c</td><td>DM = FdR FA + CHADS-65</td></tr>
+            <tr><td>Profil lipidique</td><td>Évaluation globale risque CV + CHADS-65 si MCAS</td></tr>
+          </tbody>
+        </table>
+        <div class="note" style="margin-top:8px;">📋 <strong>Suivi de routine :</strong> FC au repos (cible &lt; 100 bpm) · ECG si antiarythmique initié · QTc si sotalol/amiodarone · Sotalol : ECG q2h post-dose initiation · Amiodarone : TSH 2–3×/an + AST/ALT q6 mois + TFR + radio thorax · Créatinine + DFG q6–12 mois (AOD)</div>
+      </div>
+
+      <!-- ═══ FA-3-PILIERS: VUE D'ENSEMBLE TRAITEMENT ═══ -->
+      <div class="block rx" id="fa-3-piliers">
+        <div class="block-title"><span class="tag">⚙️ 6. Les 3 Piliers du Traitement FA</span></div>
+
+        <!-- Algorithme traitement vue d'ensemble -->
+        <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px;margin-bottom:14px;">
+          <div style="text-align:center;margin-bottom:12px;">
+            <div style="display:inline-block;border:2px solid #4a5568;border-radius:8px;padding:8px 16px;font-weight:700;font-size:13px;">Diagnostic de FA</div>
+          </div>
+          <div style="text-align:center;margin-bottom:10px;">
+            <div style="display:inline-block;background:#dc2626;color:#fff;border-radius:8px;padding:6px 14px;font-size:12px;font-weight:600;">⚠️ Identification et traitement des facteurs précipitants (en tout temps)</div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:10px;">
+            <div style="text-align:center;">
+              <div style="background:#1C3F8F;color:#fff;border-radius:8px;padding:10px;font-size:12px;font-weight:700;margin-bottom:8px;">PILIER 1<br>Évaluation risque thromboembolique<br>(CHADS-65)</div>
+              <div style="background:#2d8a4e;color:#fff;border-radius:8px;padding:8px;font-size:11px;">Traitement antithrombotique approprié</div>
+            </div>
+            <div style="text-align:center;">
+              <div style="background:#1C3F8F;color:#fff;border-radius:8px;padding:10px;font-size:12px;font-weight:700;margin-bottom:8px;">PILIER 2<br>Traitement de l&apos;arythmie</div>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;">
+                <div style="background:#2d8a4e;color:#fff;border-radius:8px;padding:6px;font-size:11px;font-weight:600;">Contrôle de la fréquence</div>
+                <div style="background:#2d8a4e;color:#fff;border-radius:8px;padding:6px;font-size:11px;font-weight:600;">Contrôle du rythme</div>
+              </div>
+              <div style="font-size:10px;color:#64748b;margin-top:4px;">↔ complémentaires, non exclusifs</div>
+            </div>
+            <div style="text-align:center;">
+              <div style="background:#1C3F8F;color:#fff;border-radius:8px;padding:10px;font-size:12px;font-weight:700;margin-bottom:8px;">PILIER 3<br>Évaluation des facteurs de risque</div>
+              <div style="background:#2d8a4e;color:#fff;border-radius:8px;padding:8px;font-size:11px;">Modification des facteurs de risque (HTA, obésité, DM, apnée, alcool)</div>
+            </div>
+          </div>
+          <div style="background:#f8f9fa;border-radius:8px;padding:8px;font-size:11px;">
+            <strong>Objectifs du traitement :</strong> Prévenir AVC/TE · ↓ risque CV global · ↑ symptômes/qualité de vie · prévenir complications (dysfonction VG, chutes)
+          </div>
+        </div>
+
+        <!-- Algorithme FA paroxystique vs persistante -->
+        <p class="content-text" style="font-weight:600;margin-bottom:8px;">Algorithme contrôle rythme vs fréquence — FA Paroxystique vs Persistante</p>
+        <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px;margin-bottom:12px;">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+            <div>
+              <div style="background:#6b7280;color:#fff;border-radius:8px;padding:8px;text-align:center;font-weight:700;font-size:13px;margin-bottom:10px;">FA PAROXYSTIQUE</div>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+                <div style="border:1px solid #cbd5e1;border-radius:8px;padding:8px;font-size:11px;">
+                  <div style="font-weight:600;margin-bottom:4px;">Récidives peu fréquentes</div>
+                  <div style="background:#2d8a4e;color:#fff;border-radius:6px;padding:4px;font-size:10px;text-align:center;margin-top:4px;">Observation</div>
+                  <div style="background:#2d8a4e;color:#fff;border-radius:6px;padding:4px;font-size:10px;text-align:center;margin-top:4px;">Antiarythmique « pill-in-the-pocket »</div>
+                </div>
+                <div style="border:1px solid #cbd5e1;border-radius:8px;padding:8px;font-size:11px;">
+                  <div style="font-weight:600;margin-bottom:4px;">Récidives fréquentes</div>
+                  <div style="background:#2d8a4e;color:#fff;border-radius:6px;padding:4px;font-size:10px;text-align:center;margin-top:4px;">Traitement antiarythmique de maintien</div>
+                </div>
+              </div>
+              <div style="background:#dc2626;color:#fff;border-radius:8px;padding:6px;text-align:center;font-size:11px;font-weight:700;margin-top:8px;">Ablation par cathéter (1re intention chez certains patients)</div>
+            </div>
+            <div>
+              <div style="background:#6b7280;color:#fff;border-radius:8px;padding:8px;text-align:center;font-weight:700;font-size:13px;margin-bottom:10px;">FA PERSISTANTE</div>
+              <div style="background:#e05d20;color:#fff;border-radius:8px;padding:6px;text-align:center;font-size:11px;font-weight:600;margin-bottom:8px;">Amorcer contrôle fréquence · Envisager traitement long terme</div>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:8px;">
+                <div style="background:#2d8a4e;color:#fff;border-radius:8px;padding:8px;font-size:11px;">
+                  <div style="font-weight:700;margin-bottom:4px;">✓ Privilégier contrôle rythme si :</div>
+                  <ul style="margin:0;padding-left:12px;font-size:10px;">
+                    <li>FA &lt; 1 an</li>
+                    <li>Très symptomatique</li>
+                    <li>Récidives multiples</li>
+                    <li>Diff. contrôler FC</li>
+                    <li>Tachycardiomyopathie</li>
+                  </ul>
+                </div>
+                <div style="background:#1C3F8F;color:#fff;border-radius:8px;padding:8px;font-size:11px;">
+                  <div style="font-weight:700;margin-bottom:4px;">Optimiser contrôle fréquence</div>
+                  <div style="font-size:10px;">→ Cardioversion · évaluer si symptômes persistent → Ablation</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ FA-FREQ: CONTRÔLE FRÉQUENCE ═══ -->
+      <div class="block rx" id="fa-freq">
+        <div class="block-title"><span class="tag">💊 Contrôle de la Fréquence — Médicaments &amp; Algorithme</span></div>
+        <div class="key-fact blue" style="margin-bottom:10px;"><strong>Cible : FC &lt; 100 bpm au repos</strong> · FA persistante = 1re étape avant d&apos;envisager le contrôle du rythme</div>
+
+        <!-- Dropdown algorithme contrôle fréquence selon FEVG -->
+        <div style="display:flex;gap:10px;margin-bottom:14px;flex-wrap:wrap;">
+          <button id="fa-freq-btn-low" onclick="faFreqSwitch('low')" style="background:#1C3F8F;color:#fff;border:none;border-radius:8px;padding:10px 20px;cursor:pointer;font-size:13px;font-weight:600;">FEVG ≤ 40 %</button>
+          <button id="fa-freq-btn-high" onclick="faFreqSwitch('high')" style="background:#e2e8f0;color:#1e293b;border:none;border-radius:8px;padding:10px 20px;cursor:pointer;font-size:13px;font-weight:600;">FEVG &gt; 40 %</button>
+        </div>
+        <div id="fa-freq-low">
+          <div class="key-fact red" style="margin-bottom:8px;">⚠️ FEVG ≤ 40 % — Diltiazem/Vérapamil <strong>CONTRE-INDIQUÉS</strong> (inotrope négatif → aggravation IC)</div>
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <div style="border:2px solid #1C3F8F;border-radius:8px;padding:10px;background:rgba(28,63,143,0.06);">
+              <div style="font-weight:700;color:#1C3F8F;font-size:13px;margin-bottom:4px;">1re ligne : Bêtabloquant ❤️</div>
+              <div style="font-size:12px;">Bisoprolol 2,5→10 mg DIE · Carvédilol 3,125→25 mg BID · Métoprolol 25→200 mg BID</div>
+            </div>
+            <div style="border:2px solid #d97706;border-radius:8px;padding:10px;background:rgba(217,119,6,0.06);">
+              <div style="font-weight:700;color:#d97706;font-size:13px;margin-bottom:4px;">2e ligne : Ajouter Digoxine</div>
+              <div style="font-size:12px;">0,0625–0,25 mg/j · digoxinémie 0,6–1,0 nmol/L · prudence IRC · peu efficace à l&apos;effort</div>
+            </div>
+            <div style="border:2px solid #dc2626;border-radius:8px;padding:10px;background:rgba(220,38,38,0.06);">
+              <div style="font-weight:700;color:#dc2626;font-size:13px;margin-bottom:4px;">3e ligne : Ablation nœud AV + stimulateur cardiaque</div>
+              <div style="font-size:12px;">Si échec Rx · envisager TRC si FEVG ≤ 40 %</div>
+            </div>
+          </div>
+        </div>
+        <div id="fa-freq-high" style="display:none;">
+          <div class="key-fact blue" style="margin-bottom:8px;">FEVG &gt; 40 % — tous les agents peuvent être utilisés selon profil</div>
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <div style="border:2px solid #1C3F8F;border-radius:8px;padding:10px;background:rgba(28,63,143,0.06);">
+              <div style="font-weight:700;color:#1C3F8F;font-size:13px;margin-bottom:4px;">1re ligne : Bêtabloquant OU BCC non-DHP</div>
+              <div style="font-size:12px;"><strong>BB :</strong> Bisoprolol / Métoprolol / Carvédilol — préféré si IC ou MCAS<br><strong>BCC-nDHP :</strong> Diltiazem 120–360 mg/j LP · Vérapamil 120–480 mg/j</div>
+            </div>
+            <div style="border:2px solid #0a7a4e;border-radius:8px;padding:10px;background:rgba(10,122,78,0.06);">
+              <div style="font-weight:700;color:#0a7a4e;font-size:13px;margin-bottom:4px;">2e ligne : Ajouter BCC non-DHP ou Digoxine OU Combiner BB + BCC</div>
+              <div style="font-size:12px;">Digoxine 0,0625–0,25 mg/j · synergie BB + BCC si FEVG &gt; 40 % seulement</div>
+            </div>
+            <div style="border:2px solid #dc2626;border-radius:8px;padding:10px;background:rgba(220,38,38,0.06);">
+              <div style="font-weight:700;color:#dc2626;font-size:13px;margin-bottom:4px;">3e ligne : Envisager contrôle du rythme ou Ablation nœud AV + stimulateur</div>
+            </div>
+          </div>
+        </div>
+
+        <p class="content-text" style="font-weight:600;margin-top:14px;margin-bottom:6px;">Tableau des médicaments — Contrôle fréquence</p>
+        <div style="overflow-x:auto;">
+        <table style="min-width:650px;">
+          <thead><tr><th>Médicament</th><th>Classe</th><th>Dose PO (init. → max.)</th><th>IV</th><th>EI</th><th>CI</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Bisoprolol</strong></td><td>BB</td><td>2,5→10 mg DIE</td><td>—</td><td>Bradycardie, fatigue, hypotension</td><td>WPW · asthme</td></tr>
+            <tr><td><strong>Métoprolol</strong></td><td>BB</td><td>25→200 mg BID</td><td>2,5–5 mg IV sur 2 min × 3</td><td>Bradycardie, fatigue, dépression</td><td>WPW · bronchospasme</td></tr>
+            <tr><td><strong>Carvédilol</strong></td><td>BB (α+β)</td><td>6,5→25 mg BID</td><td>—</td><td>Hypotension orthostatique, fatigue</td><td>WPW</td></tr>
+            <tr><td><strong>Diltiazem</strong></td><td>BCC non-DHP</td><td>30–90 mg QID ou 120–360 mg DIE</td><td>0,25 mg/kg IV puis 0,35 mg/kg</td><td>Bradycardie, hypotension, constipation, œdème MI</td><td><strong>FEVG &lt; 40 %</strong> · pré-excitation WPW · IC décompensée</td></tr>
+            <tr><td><strong>Vérapamil</strong></td><td>BCC non-DHP</td><td>80–120 mg TID ou 120–480 mg DIE</td><td>5–10 mg IV sur 2 min</td><td>Bradycardie, hypotension, inotrope négatif marqué</td><td><strong>FEVG &lt; 40 %</strong> · WPW</td></tr>
+            <tr><td><strong>Digoxine</strong></td><td>Glycoside</td><td>0,0625–0,25 mg/j</td><td>10–15 mcg/kg en doses divisées</td><td>Bradycardie, intoxication (vision jaune/verte, anorexie)</td><td>Index étroit · prudence IRC · hypoK⁺</td></tr>
+          </tbody>
+        </table>
+        </div>
+      </div>
+      <script>
+function faFreqSwitch(type) {
+  var low  = document.getElementById('fa-freq-low');
+  var high = document.getElementById('fa-freq-high');
+  var btnL = document.getElementById('fa-freq-btn-low');
+  var btnH = document.getElementById('fa-freq-btn-high');
+  if (low)  low.style.display  = (type === 'low')  ? 'block' : 'none';
+  if (high) high.style.display = (type === 'high') ? 'block' : 'none';
+  if (btnL) { btnL.style.background = (type === 'low')  ? '#1C3F8F' : '#e2e8f0'; btnL.style.color = (type === 'low')  ? '#fff' : '#1e293b'; }
+  if (btnH) { btnH.style.background = (type === 'high') ? '#1C3F8F' : '#e2e8f0'; btnH.style.color = (type === 'high') ? '#fff' : '#1e293b'; }
+}
+</script>
+
+      <!-- ═══ FA-RYTHME: CONTRÔLE DU RYTHME ═══ -->
+      <div class="block rx" id="fa-rythme">
+        <div class="block-title"><span class="tag">🎵 Contrôle du Rythme — FA paroxystique &amp; persistante</span></div>
+
+        <div class="key-fact blue" style="margin-bottom:10px;">FA paroxystique = 1re intention pour contrôle rythme · FA persistante si : FA &lt; 1 an, très symptomatique, récidives multiples, difficulté contrôle FC, tachycardiomyopathie</div>
+
+        <!-- Dropdown selon profil cardiaque -->
+        <div style="display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;">
+          <button id="fa-rythme-btn-ic" onclick="faRythmeSwitch('ic')" style="background:#1C3F8F;color:#fff;border:none;border-radius:8px;padding:8px 16px;cursor:pointer;font-size:12px;font-weight:600;">IC (FEVG)</button>
+          <button id="fa-rythme-btn-mcas" onclick="faRythmeSwitch('mcas')" style="background:#e2e8f0;color:#1e293b;border:none;border-radius:8px;padding:8px 16px;cursor:pointer;font-size:12px;font-weight:600;">Coronaropathie</button>
+          <button id="fa-rythme-btn-sain" onclick="faRythmeSwitch('sain')" style="background:#e2e8f0;color:#1e293b;border:none;border-radius:8px;padding:8px 16px;cursor:pointer;font-size:12px;font-weight:600;">Pas d&apos;IC ni coronaropathie</button>
+        </div>
+        <div id="fa-rythme-ic">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+            <div style="border:2px solid #1C3F8F;border-radius:8px;padding:10px;background:rgba(28,63,143,0.06);">
+              <div style="font-weight:700;color:#1C3F8F;font-size:12px;margin-bottom:6px;">IC — FEVG ≤ 40 %</div>
+              <div style="background:#dc2626;color:#fff;border-radius:6px;padding:6px;font-size:12px;text-align:center;font-weight:700;">Amiodarone UNIQUEMENT</div>
+              <div style="font-size:11px;margin-top:6px;color:var(--text-muted);">Charge : 400 mg BID × 1 sem, puis 400 mg die × 2 sem, puis 400 mg die × 1 mois<br>Entretien : 100–200 mg die</div>
+            </div>
+            <div style="border:2px solid #0a7a4e;border-radius:8px;padding:10px;background:rgba(10,122,78,0.06);">
+              <div style="font-weight:700;color:#0a7a4e;font-size:12px;margin-bottom:6px;">IC — FEVG &gt; 40 %</div>
+              <div style="display:flex;flex-direction:column;gap:6px;">
+                <div style="background:#2d8a4e;color:#fff;border-radius:6px;padding:6px;font-size:12px;text-align:center;font-weight:700;">Amiodarone</div>
+                <div style="background:#2d8a4e;color:#fff;border-radius:6px;padding:6px;font-size:12px;text-align:center;font-weight:700;">Sotalol (40→160 mg BID)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="fa-rythme-mcas" style="display:none;">
+          <div style="border:2px solid #d97706;border-radius:8px;padding:12px;background:rgba(217,119,6,0.06);">
+            <div style="font-weight:700;color:#d97706;font-size:13px;margin-bottom:8px;">Coronaropathie / MCAS</div>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;">
+              <div style="background:#2d8a4e;color:#fff;border-radius:6px;padding:8px 14px;font-weight:600;font-size:12px;">Amiodarone</div>
+              <div style="background:#2d8a4e;color:#fff;border-radius:6px;padding:8px 14px;font-weight:600;font-size:12px;">Dronédarone (400 mg BID)</div>
+              <div style="background:#2d8a4e;color:#fff;border-radius:6px;padding:8px 14px;font-weight:600;font-size:12px;">Sotalol (40→160 mg BID)</div>
+            </div>
+            <div class="drug-badge ci" style="margin-top:8px;display:inline-block;">Flécaïnide/Propafénone — CI si MCAS (proarythmique)</div>
+          </div>
+        </div>
+        <div id="fa-rythme-sain" style="display:none;">
+          <div style="border:2px solid #0a7a4e;border-radius:8px;padding:12px;background:rgba(10,122,78,0.06);">
+            <div style="font-weight:700;color:#0a7a4e;font-size:13px;margin-bottom:8px;">Pas d&apos;IC ni coronaropathie — plus d&apos;options</div>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px;">
+              <div style="background:#2d8a4e;color:#fff;border-radius:6px;padding:8px 14px;font-weight:600;font-size:12px;">Amiodarone</div>
+              <div style="background:#2d8a4e;color:#fff;border-radius:6px;padding:8px 14px;font-weight:600;font-size:12px;">Dronédarone</div>
+              <div style="background:#1C3F8F;color:#fff;border-radius:6px;padding:8px 14px;font-weight:600;font-size:12px;">Flécaïnide 50–150 mg BID ⚠️</div>
+              <div style="background:#1C3F8F;color:#fff;border-radius:6px;padding:8px 14px;font-weight:600;font-size:12px;">Propafénone 150–300 mg TID ⚠️</div>
+              <div style="background:#2d8a4e;color:#fff;border-radius:6px;padding:8px 14px;font-weight:600;font-size:12px;">Sotalol</div>
+            </div>
+            <div class="highlight red" style="font-size:12px;">⚠️ Flécaïnide/Propafénone = obligatoirement combiner avec un bloquant NAV (BB ou BCC) → prévenir flutter 1:1 à 300 bpm</div>
+          </div>
+        </div>
+
+        <!-- Pill-in-the-pocket -->
+        <div style="border:2px solid #7b3fa0;border-radius:10px;padding:12px;margin-top:14px;">
+          <div style="font-weight:700;color:#7b3fa0;font-size:13px;margin-bottom:8px;">Traitement « Pill-in-the-Pocket » — FA paroxystique</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;font-size:12px;">
+            <div>
+              <div style="font-weight:600;margin-bottom:4px;">Critères d&apos;éligibilité :</div>
+              <ol style="margin:0;padding-left:16px;">
+                <li>FA paroxystique symptomatique, ≥ 2h, &lt; 1×/mois</li>
+                <li>Sans symptômes graves (syncope, dyspnée, douleur thoracique)</li>
+                <li>Capacité à suivre les instructions</li>
+              </ol>
+            </div>
+            <div>
+              <div style="font-weight:600;margin-bottom:4px;">Contre-indications :</div>
+              <ul style="margin:0;padding-left:16px;">
+                <li>Cardiopathie structurelle (FEVG &lt; 50 % ou MCAS active)</li>
+                <li>QRS &gt; 120 ms ou PR &gt; 200 ms ou pré-excitation</li>
+                <li>Dysfonction nœud sino-auriculaire</li>
+                <li>TAS &lt; 100 mmHg</li>
+              </ul>
+            </div>
+          </div>
+          <div style="background:#f3e8ff;border-radius:6px;padding:8px;margin-top:8px;font-size:11px;"><strong>Administration :</strong> BB ou BCC (diltiazem 60 mg, verapamil 80 mg ou métoprolol 25 mg) <strong>30 min avant</strong> la dose de classe Ic : Flécaïnide 200–300 mg (si &gt; 70 kg) ou Propafénone 450–600 mg (si &gt; 70 kg) · Demeurer en position assise/couchée 4h</div>
+        </div>
+
+        <!-- Tableau méds contrôle rythme -->
+        <p class="content-text" style="font-weight:600;margin-top:14px;margin-bottom:6px;">Tableau des antiarythmiques — Contrôle du rythme long terme</p>
+        <div style="overflow-x:auto;">
+        <table style="min-width:650px;">
+          <thead><tr><th>Médicament</th><th>Classe</th><th>Posologie</th><th>CI majeures</th><th>Surveillance ECG — arrêt</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Flécaïnide</strong></td><td>Ic</td><td>50–75 mg BID → 150 mg BID</td><td>MCAS · IC clinique · FEVG ≤ 40 % · Brugada · bloc AV avancé · HVG</td><td>↑ QRS &gt; 25 % ou &gt; 150 ms · PR &gt; 200 ms</td></tr>
+            <tr><td><strong>Propafénone</strong></td><td>Ic</td><td>150 mg BID → 300 mg TID</td><td>Mêmes CI que flécaïnide · myasthénie</td><td>↑ QRS &gt; 25 % ou &gt; 150 ms · PR &gt; 200 ms</td></tr>
+            <tr><td><strong>Sotalol</strong></td><td>III + BB</td><td>40 mg BID → 160 mg BID</td><td>QTc allongé · DFGe &lt; 40 · HVG · hypoK⁺ · FEVG ≤ 40 % · âge &gt; 75 ans</td><td>↑ QTc &gt; 25 % ou &gt; 500 ms</td></tr>
+            <tr><td><strong>Dronédarone</strong></td><td>III</td><td>400 mg BID</td><td>IC décompensée · FEVG ≤ 40 % · FA permanente · QTc allongé · amiodarone récente</td><td>↑ QTc &gt; 25 % ou &gt; 500 ms</td></tr>
+            <tr><td><strong>Amiodarone</strong></td><td>I+II+III+IV</td><td>Charge : 400 mg BID 1 sem → 400 mg die 2 sem → 400 mg die 1 mois<br>Entretien : 100–200 mg die</td><td>BAV avancé · maladie pulmonaire avancée · hépatite active · QTc allongé · dysthyroïdie non contrôlée</td><td>↑ QTc &gt; 25 % ou &gt; 500 ms · arrêt si QT &gt; 550 ms</td></tr>
+          </tbody>
+        </table>
+        </div>
+
+        <!-- Tableau méds cardioversion aiguë -->
+        <p class="content-text" style="font-weight:600;margin-top:14px;margin-bottom:6px;">Tableau — Contrôle du rythme en contexte aigu (cardioversion pharmacologique)</p>
+        <table>
+          <thead><tr><th>Médicament</th><th>Classe</th><th>Dose</th><th>Délai conversion</th><th>EI importants</th><th>Surveillance</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Procainamide</strong></td><td>Ia</td><td>15–18 mg/kg IV sur 30–60 min</td><td>∼ 1 h</td><td>Hypotension · bradycardie · proarythmie ventriculaire</td><td>1h post-perfusion</td></tr>
+            <tr><td><strong>Flécaïnide</strong></td><td>Ic</td><td>300 mg PO (&gt;70 kg) ou 200 mg (&lt;70 kg)</td><td>2–6 h</td><td>Hypotension · bradycardie · flutter 1:1 si pas de bloquant NAV</td><td>6h post-dose</td></tr>
+            <tr><td><strong>Propafénone</strong></td><td>Ic</td><td>600 mg PO (&gt;70 kg) ou 450 mg (&lt;70 kg)</td><td>2–6 h</td><td>Idem flécaïnide</td><td>6h post-dose</td></tr>
+            <tr><td><strong>Ibutilide</strong></td><td>III</td><td>1 mg IV sur 10 min · répéter 1×</td><td>∼ 1 h</td><td>Torsade de pointes · ↑ QT · hypotension</td><td>4h post-perfusion</td></tr>
+            <tr><td><strong>Vernakalant</strong></td><td>III</td><td>3 mg/kg IV × 10 min, puis 2 mg/kg si pas de conversion</td><td>12–30 min</td><td>Hypotension · bradycardie</td><td>2h post-perfusion</td></tr>
+            <tr><td><strong>Amiodarone IV</strong></td><td>III</td><td>150 mg bolus, puis 60 mg/h × 6h, puis 30 mg/h × 18h</td><td>8–12 h</td><td>Hypotension · bradycardie · bloc AV · torsade · phlébite</td><td>ECG continu</td></tr>
+          </tbody>
+        </table>
+        <div class="highlight red" style="margin-top:8px;font-size:13px;">⚠️ Amiodarone = surveillance multi-systémique obligatoire : Thyroïde (3–20 %) · Hépatique (15 %) · Pulmonaire (&lt; 3 %) · Photosensibilité (25–75 %) · Cornéens · Cardiovasculaire (bradycardie, ↑ QT)</div>
+      </div>
+      <script>
+function faRythmeSwitch(type) {
+  var els = {ic: document.getElementById('fa-rythme-ic'), mcas: document.getElementById('fa-rythme-mcas'), sain: document.getElementById('fa-rythme-sain')};
+  var btns = {ic: document.getElementById('fa-rythme-btn-ic'), mcas: document.getElementById('fa-rythme-btn-mcas'), sain: document.getElementById('fa-rythme-btn-sain')};
+  Object.keys(els).forEach(function(k) {
+    if (els[k]) els[k].style.display = (k === type) ? 'block' : 'none';
+    if (btns[k]) { btns[k].style.background = (k === type) ? '#1C3F8F' : '#e2e8f0'; btns[k].style.color = (k === type) ? '#fff' : '#1e293b'; }
+  });
+}
+</script>
+
+      <!-- ═══ FA-CARDIO: CARDIOVERSION ═══ -->
+      <div class="block clin" id="fa-cardio">
+        <div class="block-title"><span class="tag">🔋 Cardioversion &amp; Ablation par cathéter</span></div>
+
+        <!-- Anticoagulation contexte cardioversion -->
+        <p class="content-text" style="font-weight:600;margin-bottom:8px;">Anticoagulation dans le contexte de cardioversion</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;">
+          <div style="border:2px solid #1C3F8F;border-radius:8px;padding:10px;">
+            <div style="font-weight:700;color:#1C3F8F;font-size:12px;margin-bottom:8px;">Cardioversion DÉLAYÉE (ACO ≥ 3 sem. avant)</div>
+            <ul style="font-size:12px;padding-left:16px;margin:0;">
+              <li>FA valvulaire (peu importe durée)</li>
+              <li>FA non-valv. &lt; 12h + ATCD récent AVC/ICT</li>
+              <li>FA non-valv. 12–48h + CHADS &gt; 2</li>
+              <li>FA non-valv. &gt; 48h</li>
+            </ul>
+            <div style="background:#e8f0fe;border-radius:6px;padding:6px;margin-top:8px;font-size:11px;">Alternative : ÉTO pour exclure thrombus auriculaire gauche avant cardioversion</div>
+          </div>
+          <div style="border:2px solid #0a7a4e;border-radius:8px;padding:10px;">
+            <div style="font-weight:700;color:#0a7a4e;font-size:12px;margin-bottom:8px;">Cardioversion IMMÉDIATE (ACO dès que possible, de préférence avant)</div>
+            <ul style="font-size:12px;padding-left:16px;margin:0;">
+              <li>FA récente instable sur plan HD</li>
+              <li>FA non-valv. &lt; 12h + aucun ATCD AVC/ICT</li>
+              <li>FA non-valv. 12–48h + CHADS 0–1</li>
+            </ul>
+          </div>
+        </div>
+        <div class="key-fact red" style="margin-bottom:12px;">→ <strong>CARDIOVERSION</strong> → Anticoagulation <strong>4 semaines post-CVE</strong> → Puis évaluation selon CHADS-65 pour anticoagulation à long terme</div>
+
+        <p class="content-text" style="font-weight:600;margin-bottom:6px;">Cardioversion électrique (CVE)</p>
+        <div class="flag-list" style="margin-bottom:10px;">
+          <div class="flag-item"><span class="flag-dot blue"></span><span><strong>Succès &gt; 90 %</strong> · Synchronisée 200–360 joules (mono vs biphasique) · NPO + sédation/anesthésie · bilan biochimique préalable</span></div>
+          <div class="flag-item"><span class="flag-dot ink"></span><span><strong>Indications :</strong> FA récemment diagnostiquée (&lt; 1 an) · très symptomatique · récidives fréquentes · difficultés contrôle FC · tachycardiomyopathie</span></div>
+        </div>
+
+        <p class="content-text" style="font-weight:600;margin-bottom:6px;">Ablation par cathéter</p>
+        <table>
+          <thead><tr><th>QUI</th><th>QUAND</th><th>COMMENT</th><th>RÉSULTATS</th></tr></thead>
+          <tbody>
+            <tr><td>&lt; 80 ans · FA symptomatique · OG &lt; 55 mm · IC incluse</td><td>Après échec/intolérance antiarythmique OU 1re intention chez patients sélectionnés</td><td>Isolation veines pulmonaires (RF / Cryo / Électroporation) ± ablation du substrat</td><td>Succès 70–80 % (paroxystique) · 50–70 % (persistante) · vs ∼ 20–30 % antiarythmiques</td></tr>
+          </tbody>
+        </table>
+        <div class="key-fact yellow" style="margin-top:8px;">⚠️ Post-ablation : ACO systématique <strong>2 mois</strong> puis réévaluation CHADS-65 — peu importe le succès apparent. Flutter typique : ablation = 1re ligne (succès 97 %)</div>
+      </div>
+
+      <!-- ═══ FA-ANTICOAG: CHADS-65 & AOD ═══ -->
+      <div class="block para" id="fa-anticoag">
+        <div class="block-title"><span class="tag">💉 7. Anticoagulation &amp; FA — CHADS-65 &amp; Choix de l&apos;ACO</span></div>
+
+        <!-- Algorithme CHADS-65 -->
+        <p class="content-text" style="font-weight:600;margin-bottom:8px;">Algorithme CHADS-65 — Prévention de l&apos;AVC</p>
+        <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:12px;margin-bottom:12px;">
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <div style="display:flex;align-items:center;gap:12px;">
+              <div style="background:#1C3F8F;color:#fff;border-radius:8px;padding:8px 14px;font-size:12px;font-weight:600;min-width:200px;">Âge ≥ 65 ans ?</div>
+              <div style="font-size:20px;color:#1C3F8F;">→</div>
+              <div style="font-size:11px;font-weight:600;">OUI</div>
+              <div style="font-size:20px;color:#1C3F8F;">→</div>
+              <div style="background:#2d8a4e;color:#fff;border-radius:8px;padding:8px 14px;font-size:12px;font-weight:600;">Anticoagulants oraux (AOD 1re ligne)</div>
+            </div>
+            <div style="margin-left:30px;font-size:11px;color:#64748b;">↓ NON</div>
+            <div style="display:flex;align-items:center;gap:12px;margin-left:20px;">
+              <div style="background:#1C3F8F;color:#fff;border-radius:8px;padding:8px 14px;font-size:11px;font-weight:600;min-width:200px;">ATCD AVC/ICT OU HTA OU IC OU DM OU MCAS ?<br><span style="font-weight:normal;">(facteurs CHADS₂)</span></div>
+              <div style="font-size:20px;color:#1C3F8F;">→</div>
+              <div style="font-size:11px;font-weight:600;">OUI</div>
+              <div style="font-size:20px;color:#1C3F8F;">→</div>
+              <div style="background:#2d8a4e;color:#fff;border-radius:8px;padding:8px 14px;font-size:12px;font-weight:600;">Anticoagulants oraux</div>
+            </div>
+            <div style="margin-left:50px;font-size:11px;color:#64748b;">↓ NON</div>
+            <div style="display:flex;align-items:center;gap:12px;margin-left:40px;">
+              <div style="background:#1C3F8F;color:#fff;border-radius:8px;padding:8px 14px;font-size:11px;font-weight:600;min-width:200px;">Maladie coronarienne ou MAPO ?</div>
+              <div style="font-size:20px;color:#1C3F8F;">→</div>
+              <div style="font-size:11px;font-weight:600;">OUI</div>
+              <div style="font-size:20px;color:#1C3F8F;">→</div>
+              <div style="background:#e05d20;color:#fff;border-radius:8px;padding:8px 14px;font-size:12px;font-weight:600;">Traitement antiplaquettaire</div>
+            </div>
+            <div style="margin-left:70px;font-size:11px;color:#64748b;">↓ NON</div>
+            <div style="margin-left:60px;">
+              <div style="background:#dc2626;color:#fff;border-radius:8px;padding:8px 14px;font-size:12px;font-weight:600;display:inline-block;">Aucun traitement antithrombotique</div>
+            </div>
+          </div>
+        </div>
+
+        <p class="content-text" style="font-weight:600;margin-bottom:6px;">Calcul du score CHADS-65</p>
+        <table style="margin-bottom:10px;">
+          <thead><tr><th>Critère</th><th>Points</th></tr></thead>
+          <tbody>
+            <tr><td>Âge ≥ 65 ans</td><td><strong>2</strong></td></tr>
+            <tr><td>ATCD AVC / ICT</td><td><strong>2</strong></td></tr>
+            <tr><td>HTA</td><td>1</td></tr>
+            <tr><td>Diabète (DM2)</td><td>1</td></tr>
+            <tr><td>IC</td><td>1</td></tr>
+            <tr><td>MCAS</td><td>1</td></tr>
+          </tbody>
+        </table>
+        <div class="key-fact blue">≥ 1 point → anticoagulation indiquée · <strong>AOD 1re ligne (FA non-valvulaire)</strong> · Warfarine : valve mécanique · sténose mitrale rhumatismale · hémodialyse (DFG &lt; 15)</div>
+
+        <p class="content-text" style="font-weight:600;margin-top:12px;margin-bottom:6px;">Posologie des AOD selon la fonction rénale</p>
+        <div style="overflow-x:auto;">
+        <table style="min-width:600px;">
+          <thead><tr><th>CrCl (mL/min)</th><th>Apixaban</th><th>Dabigatran</th><th>Rivaroxaban</th><th>Edoxaban</th><th>Warfarine</th></tr></thead>
+          <tbody>
+            <tr style="background:rgba(10,122,78,0.08);">
+              <td><strong>&gt; 50</strong></td>
+              <td>5 mg BID †</td>
+              <td>150 mg BID *</td>
+              <td>20 mg DIE</td>
+              <td>60 mg DIE ∞</td>
+              <td rowspan="2" style="vertical-align:top;padding-top:8px;">Dose ajustée pour RIN 2,0–3,0 (FA valvulaire : 2,5–3,5 si valve mécanique)</td>
+            </tr>
+            <tr style="background:rgba(10,122,78,0.04);">
+              <td><strong>30–49</strong></td>
+              <td>5 mg BID †</td>
+              <td>110 mg BID (**)</td>
+              <td>15 mg DIE</td>
+              <td>30 mg DIE</td>
+            </tr>
+            <tr style="background:rgba(217,119,6,0.08);">
+              <td><strong>15–29</strong></td>
+              <td>5 mg BID †</td>
+              <td><span class="drug-badge ci">Contre-indiqué</span></td>
+              <td>15 mg DIE</td>
+              <td>30 mg DIE</td>
+              <td>Données limitées</td>
+            </tr>
+            <tr style="background:rgba(220,38,38,0.08);">
+              <td><strong>&lt; 15 / dialyse</strong></td>
+              <td>Décision partagée</td>
+              <td><span class="drug-badge ci">CI</span></td>
+              <td><span class="drug-badge ci">CI</span></td>
+              <td><span class="drug-badge ci">CI</span></td>
+              <td>Warfarine ou décision partagée</td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+        <div style="font-size:11px;color:var(--text-muted);margin-top:6px;">
+          † Réduction apixaban → 2,5 mg BID si ≥ 2/3 critères : âge ≥ 80 ans · poids &lt; 60 kg · créatinine sérique &gt; 133 µmol/L<br>
+          * Dabigatran 110 mg si âge ≥ 80 ans OU ≥ 75 ans + risque hémorragique élevé (incluant CrCl 30–50 mL/min)<br>
+          ∞ Edoxaban 30 mg si poids ≤ 60 kg ou inhibiteur P-gp (sauf amiodarone/vérapamil)
+        </div>
+      </div>
+
+      <!-- ═══ FA-HASBLED: HAS-BLED & SITUATIONS PARTICULIÈRES ═══ -->
+      <div class="block para" id="fa-hasbled">
+        <div class="block-title"><span class="tag">🩸 HAS-BLED, Situations Particulières &amp; Arrêt Périprocédural</span></div>
+
+        <p class="content-text" style="font-weight:600;margin-bottom:6px;">Score HAS-BLED — Évaluation risque hémorragique</p>
+        <table style="margin-bottom:10px;">
+          <thead><tr><th>Lettre</th><th>Critère</th><th>Points</th></tr></thead>
+          <tbody>
+            <tr><td><strong>H</strong></td><td>Hypertension non contrôlée (&gt; 160 mmHg systolique)</td><td>1</td></tr>
+            <tr><td><strong>A</strong></td><td>Fonction Anormale : créatinine &gt; 200 µmol/L ou cirrhose ou AST/ALT &gt; 3× LSN</td><td>1 ou 2</td></tr>
+            <tr><td><strong>S</strong></td><td>AVC antérieur</td><td>1</td></tr>
+            <tr><td><strong>B</strong></td><td>Saignement antérieur ou prédisposition</td><td>1</td></tr>
+            <tr><td><strong>L</strong></td><td>INR Labile (&lt; 60 % du temps en zone thérapeutique)</td><td>1</td></tr>
+            <tr><td><strong>E</strong></td><td>Elderly (Âge &gt; 65 ans)</td><td>1</td></tr>
+            <tr><td><strong>D</strong></td><td>Drogues (AINS / AAS) ou alcool &gt; 8 consommations/die</td><td>1 ou 2</td></tr>
+          </tbody>
+        </table>
+        <div class="key-fact red" style="margin-bottom:10px;">⚠️ HAS-BLED ≥ 3 = risque élevé de saignement → <strong>NE PAS arrêter l&apos;anticoagulation</strong> ! Identifier et corriger les facteurs modifiables. Ajouter gastroprotection si indiqué. Le bénéfice anti-AVC dépasse le risque hémorragique dans la majorité des cas.</div>
+
+        <p class="content-text" style="font-weight:600;margin-bottom:6px;">Situations particulières</p>
+        <table style="margin-bottom:10px;">
+          <thead><tr><th>Situation</th><th>Conduite à tenir</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Patient âgé à risque de chute</strong></td><td><strong>ACO recommandé</strong> — bénéfice anti-AVC &gt; risque hémorragique lié à la chute (recommandation forte CCS 2020) · &gt; 200 chutes/année nécessaires pour égaler le risque d&apos;AVC</td></tr>
+            <tr><td><strong>FA valvulaire</strong></td><td>Warfarine obligatoire (valve mécanique · sténose mitrale rhumatismale ≥ modérée) · INR 2,0–3,0 (FA valvulaire) · 2,5–3,5 (valve mécanique)</td></tr>
+            <tr><td><strong>FA + grossesse</strong></td><td>AOD contre-indiqués → warfarine ou HBPM selon le trimestre</td></tr>
+            <tr><td><strong>WPW + FA/Flutter</strong></td><td><span class="drug-badge ci">CI absolue bloquants NAV (BB, BCC, digoxine)</span> → risque conduction via faisceau accessoire → FV · Référence urgente</td></tr>
+            <tr><td><strong>Hyperthyroïdie + FA</strong></td><td>ACO jusqu&apos;à gestion de l&apos;hyperthyroïdie · puis réévaluation CHADS-65</td></tr>
+          </tbody>
+        </table>
+
+        <p class="content-text" style="font-weight:600;margin-bottom:6px;">Triple thérapie vs Double thérapie (FA + MCAS)</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px;">
+          <div style="border:2px solid #dc2626;border-radius:8px;padding:10px;">
+            <div style="font-weight:700;color:#dc2626;font-size:13px;margin-bottom:6px;">Triple Thérapie (ACO + DAPT)</div>
+            <div style="font-size:12px;margin-bottom:6px;"><strong>Indications :</strong></div>
+            <ul style="font-size:11px;padding-left:14px;margin:0 0 8px 0;">
+              <li>SCA avec ICP</li>
+              <li>ICP élective à haut risque thrombotique coronarien</li>
+            </ul>
+            <div style="font-size:11px;background:#fef2f2;border-radius:6px;padding:6px;">
+              <strong>Schéma :</strong> ACO + AAS + clopidogrel → <strong>1–30 jours</strong><br>
+              ↓ puis ACO + P2Y12 (&lt; 12 mois) → ↓ ACO seul<br>
+              ⚠️ Pas de ticagrelor en triple thérapie
+            </div>
+          </div>
+          <div style="border:2px solid #d97706;border-radius:8px;padding:10px;">
+            <div style="font-weight:700;color:#d97706;font-size:13px;margin-bottom:6px;">Double Thérapie (ACO + antiplaquettaire)</div>
+            <div style="font-size:12px;margin-bottom:6px;"><strong>Indications :</strong></div>
+            <ul style="font-size:11px;padding-left:14px;margin:0 0 8px 0;">
+              <li>SCA sans ICP</li>
+              <li>ICP élective sans haut risque thrombotique</li>
+              <li>MCAS stable</li>
+            </ul>
+            <div style="font-size:11px;background:#fffbeb;border-radius:6px;padding:6px;">
+              <strong>Schéma :</strong> ACO + clopidogrel → <strong>1–12 mois post-ICP</strong><br>
+              ↓ puis ACO seul<br>
+              ⚠️ Warfarine + clopidogrel + AAS = à éviter (↑↑ risque hémorragique)
+            </div>
+          </div>
+        </div>
+
+        <p class="content-text" style="font-weight:600;margin-bottom:6px;">Arrêt périprocédural des anticoagulants (selon CHADS-65)</p>
+        <table style="margin-bottom:10px;">
+          <thead><tr><th>Score CHADS-65</th><th>Stratégie</th></tr></thead>
+          <tbody>
+            <tr><td>1–2</td><td>Cesser AOD sans relais (délai 48–72h selon DFGe)</td></tr>
+            <tr><td>3–4 (sans ATCD AVC/ICT)</td><td>Cesser AOD sans relais possible</td></tr>
+            <tr><td>3–4 (avec ATCD AVC/ICT)</td><td>Relais HBPM (ex. : tinzaparine 175 UI/kg sc die · ne pas donner la veille)</td></tr>
+            <tr><td>5–6</td><td>Relais HBPM d&apos;emblée</td></tr>
+          </tbody>
+        </table>
+
+        <!-- Tableau AOD urgence/non-urgence -->
+        <p class="content-text" style="font-weight:600;margin-bottom:6px;">Gestion périopératoire selon l&apos;urgence</p>
+        <table>
+          <thead><tr><th>Type intervention</th><th>AVK (warfarine)</th><th>AOD</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Urgence (heures)</strong></td><td>Vitamine K IV 5–10 mg + CCP ou CCPa</td><td>Idarucizumab (dabigatran) · CCP si pas d&apos;antidote</td></tr>
+            <tr><td><strong>Urgente (heures–jours)</strong></td><td>Retarder 12–24h · Vit K IV 2,5–5 mg</td><td>Retarder 12–24h · idarucizumab si dabigatran impossible à repousser</td></tr>
+            <tr><td><strong>Non-urgente (jours)</strong></td><td>Arrêt J-5 (AVK); HBPM si relais indiqué</td><td>AOD : arrêt J-2 (faible risque) ou J-3 (élevé) · Dabigatran + CrCl &lt; 50 : arrêt J-3 (faible) ou J-4 (élevé)</td></tr>
+          </tbody>
+        </table>
+        <div class="highlight red" style="margin-top:8px;font-size:13px;">⚠️ <strong>Interactions &amp; CI clés :</strong> Flécaïnide/Propafénone sans bloquant NAV → flutter 1:1 → arrêt cardiaque · Bloquants NAV si WPW → CI absolue → FV · Sotalol + hypoK⁺ ou QTc &gt; 500 ms → torsade de pointes · Dabigatran si DFGe &lt; 30 → CI · BCC non-DHP si FEVG &lt; 40 % → CI</div>
+        <div class="key-fact blue" style="margin-top:8px;font-size:13px;">📋 <strong>Conseil IPS :</strong> Évaluer CHADS-65 chez tout patient FA/flutter · AOD 1re ligne sauf FA valvulaire/dialyse · ECG systématique à l&apos;initiation d&apos;un antiarythmique · Corriger FdR modifiables (HAS-BLED) plutôt qu&apos;arrêter ACO · Post-ablation : ACO 2 mois puis CHADS-65 (pas selon succès apparent)</div>
       </div>
     </div>
-
     <div class="section" id="sec-ic">
       <div class="section-header"><div class="section-accent">🫀</div><div class="section-title"><h1>Insuffisance Cardiaque</h1><div class="breadcrumb">Cardiologie <span class="breadcrumb-sep">·</span> Section 7</div></div></div>
 
@@ -8594,36 +9039,6 @@ function icTabSwitch(type) {
       </div>
 
       <!-- ═══ IC-7: TRAITEMENT ICFEp ACCORDION ═══ -->
-      <div class="block rx" id="ic-7">
-        <div class="block-title"><span class="tag">💊 Traitement ICFEp — Algorithme par ligne</span></div>
-        <div class="accordion">
-          <div class="accordion-item open">
-            <div class="accordion-header"><span style="font-family:var(--mono);font-weight:700;color:var(--blue);margin-right:8px;">①</span> 1<sup>re</sup> ligne — Tous les patients ICFEp
-              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-            </div>
-            <div class="accordion-body">
-              <span class="drug-badge line1">iSGLT-2 — Dapagliflozine 10 mg/j</span> Code RAMQ CV679 — si NYHA II–IV + NT-proBNP confirmant IC (EMPEROR-Preserved, DELIVER)<br>
-              <span class="drug-badge line1">ARM — Spironolactone</span> données TOPCAT — bénéfice surtout si FEVG &lt; 57 %
-            </div>
-          </div>
-          <div class="accordion-item">
-            <div class="accordion-header"><span style="font-family:var(--mono);font-weight:700;color:var(--blue);margin-right:8px;">②</span> 2<sup>e</sup> ligne / selon profil
-              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-            </div>
-            <div class="accordion-body">
-              <span class="drug-badge line2">GLP-1 — Sémaglutide</span> si IMC ≥ 30 — ↓ symptômes + perte pondérale (STEP-HFpEF)<br>
-              <span class="drug-badge line2">ARNI ou Candésartan</span> — contrôle TA + prévention remodelage<br>
-              <span class="drug-badge line3">Diurétiques de l&apos;anse</span> — congestion uniquement, dose minimale efficace
-            </div>
-          </div>
-          <div class="accordion-item">
-            <div class="accordion-header"><span style="font-family:var(--mono);font-weight:700;color:var(--blue);margin-right:8px;">③</span> Toujours en parallèle — comorbidités
-              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-            </div>
-            <div class="accordion-body">Optimiser <strong>chaque comorbidité</strong> — souvent plus déterminant sur le pronostic que la pharmacothérapie ciblée : HTA · apnée du sommeil (CPAP) · FA · DM2 · perte pondérale · réadaptation à l&apos;effort</div>
-          </div>
-        </div>
-      </div>
 
       <!-- ═══ IC-10: NON-PHARMACOLOGIQUE ═══ -->
       <div class="block clin" id="ic-10">
