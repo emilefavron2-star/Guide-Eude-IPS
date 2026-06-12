@@ -8179,124 +8179,283 @@ function calculatePHQ9() {
 
       <!-- PILLS NAV IC -->
       <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
-        <button onclick="document.getElementById('ic-1').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📌 Définition</button>
-        <button onclick="document.getElementById('ic-2').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔬 Physiologie</button>
-        <button onclick="document.getElementById('ic-3').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🧬 ICFEr vs ICFEp</button>
-        <button onclick="document.getElementById('ic-4').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🩺 Évaluation</button>
-        <button onclick="document.getElementById('ic-5').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🧪 Paraclinique</button>
-        <button onclick="document.getElementById('ic-6').scrollIntoView({behavior:'smooth'})" style="background:#0a7a4e;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">💊 Quadruple thérapie ICFEr</button>
-        <button onclick="document.getElementById('ic-7').scrollIntoView({behavior:'smooth'})" style="background:#0a7a4e;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">💊 Traitement ICFEp</button>
-        <button onclick="document.getElementById('ic-8').scrollIntoView({behavior:'smooth'})" style="background:#7b3fa0;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">⚡ Hyperkaliémie & iSRAA</button>
-        <button onclick="document.getElementById('ic-9').scrollIntoView({behavior:'smooth'})" style="background:#c0392b;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🚨 SADMANS & Red Flags</button>
+        <button onclick="document.getElementById('ic-1').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📌 Définition &amp; Épidémio</button>
+        <button onclick="document.getElementById('ic-1b').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔎 Classification &amp; Dx</button>
+        <button onclick="document.getElementById('ic-3-eti').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🧬 Étiologies</button>
+        <button onclick="document.getElementById('ic-5').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🧪 Bilan &amp; NT-proBNP</button>
+        <button onclick="document.getElementById('ic-6-algo').scrollIntoView({behavior:'smooth'})" style="background:#0a7a4e;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">⚙️ Algo ICFEr vs ICFEp</button>
+        <button onclick="document.getElementById('ic-6').scrollIntoView({behavior:'smooth'})" style="background:#0a7a4e;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">💊 Quadruple thérapie</button>
+        <button onclick="document.getElementById('ic-6b').scrollIntoView({behavior:'smooth'})" style="background:#0a7a4e;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🟢 4 Principes ICFEp</button>
+        <button onclick="document.getElementById('ic-10').scrollIntoView({behavior:'smooth'})" style="background:#0a7a4e;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🥗 Non-pharmacologique</button>
+        <button onclick="document.getElementById('ic-8').scrollIntoView({behavior:'smooth'})" style="background:#7b3fa0;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">⚡ Hyperkaliémie</button>
+        <button onclick="document.getElementById('ic-9').scrollIntoView({behavior:'smooth'})" style="background:#c0392b;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🚨 SADMANS &amp; Red Flags</button>
       </div>
 
+      <!-- ═══ 1. DÉFINITION & ÉPIDÉMIOLOGIE ═══ -->
       <div class="block def" id="ic-1">
-        <div class="block-title"><span class="tag">📌 Définition universelle & Épidémiologie</span></div>
+        <div class="block-title"><span class="tag">📌 1. Définition &amp; Épidémiologie</span></div>
+        <div class="key-fact blue" style="margin-bottom:12px;"><strong>Définition universelle :</strong> Symptômes et/ou signes d&apos;IC causés par une anomalie cardiaque structurelle et/ou fonctionnelle, corroborée par un taux élevé de peptide natriurétique ou une preuve objective de congestion.</div>
         <div class="stat-row">
-          <div class="stat-card blue"><div class="stat-num">750 000</div><div class="stat-label">Canadiens atteints d'IC</div></div>
-          <div class="stat-card ink"><div class="stat-num">1 sur 5</div><div class="stat-label">&gt; 40 ans développera l'IC</div></div>
-          <div class="stat-card red"><div class="stat-num">~50 %</div><div class="stat-label">n'atteignent pas 5 ans</div></div>
+          <div class="stat-card blue"><div class="stat-num">750 000</div><div class="stat-label">Canadiens vivent avec l&apos;IC</div></div>
+          <div class="stat-card ink"><div class="stat-num">1 / 5</div><div class="stat-label">&gt; 40 ans développera l&apos;IC</div></div>
+          <div class="stat-card red"><div class="stat-num">22 000</div><div class="stat-label">décès/an au Canada</div></div>
+          <div class="stat-card yellow"><div class="stat-num">~50 %</div><div class="stat-label">n&apos;atteignent pas 5 ans post-Dx</div></div>
         </div>
-        <div class="key-fact blue" style="margin-top:10px;">Définition : Sx et/ou signes d'IC causés par anomalie cardiaque structurelle/fonctionnelle + <strong>NT-proBNP ↑ ou preuve objective de congestion</strong></div>
-        <table style="margin-top:10px;">
-          <thead><tr><th>Type</th><th>FEVG</th><th>Acronyme</th></tr></thead>
+        <table style="margin-top:12px;">
+          <thead><tr><th>Donnée</th><th>Valeur</th></tr></thead>
           <tbody>
-            <tr><td>ICFEr — systolique</td><td>≤ 40 %</td><td>HFrEF</td></tr>
-            <tr><td>ICFEmr — intermédiaire</td><td>41–49 %</td><td>HFmrEF</td></tr>
-            <tr><td>ICFEp — diastolique</td><td>≥ 50 %</td><td>HFpEF</td></tr>
+            <tr><td>Hospitalisations (65+)</td><td>Cause <strong>#1</strong> d&apos;hospitalisation</td></tr>
+            <tr><td>Coût annuel projeté (2030)</td><td>≈ 2,8 milliards $/an en soins de santé</td></tr>
+            <tr><td>Québécois atteints</td><td>≈ 160 000</td></tr>
+            <tr><td>Patients prenant les Rx recommandés</td><td><strong>&lt; 70 %</strong></td></tr>
+            <tr><td>Patients atteignant les doses cibles</td><td><strong>&lt; 30 %</strong></td></tr>
+            <tr><td>Réadmission à 30 jours</td><td>20–30 % (inchangé depuis 10 ans)</td></tr>
+            <tr><td>Suivis en clinique spécialisée</td><td>15 % (Canada) · 30 % (Québec)</td></tr>
           </tbody>
         </table>
-        <div class="highlight cream" style="margin-top:8px;font-size:13px;"><strong>Classe NYHA :</strong> I = aucune limitation · II = effort intense · III = effort modéré (marche terrain plat) · IV = repos</div>
+        <div class="highlight red" style="margin-top:10px;font-size:13px;">⚠️ <strong>Défi clinique IPS :</strong> 22 000 décès/an = cancers du sein + colorectal + prostate + pancréas <strong>combinés</strong>. Priorité → initier les 4 agents avant d&apos;optimiser les doses.</div>
       </div>
 
+      <!-- ═══ 1b. CLASSIFICATION & DIAGNOSTIC ═══ -->
+      <div class="block para" id="ic-1b">
+        <div class="block-title"><span class="tag">🔎 2. Classification &amp; Diagnostic</span></div>
+
+        <p class="content-text" style="font-weight:600;margin-bottom:6px;">Classification selon la FEVG</p>
+        <table style="margin-bottom:12px;">
+          <thead><tr><th>Type</th><th>FEVG</th><th>Acronyme</th><th>Caractéristique</th></tr></thead>
+          <tbody>
+            <tr><td><strong>IC à FEVG réduite</strong></td><td>≤ 40 %</td><td>ICFEr / HFrEF</td><td>Dysfonction systolique — quadruple thérapie prouvée</td></tr>
+            <tr><td><strong>IC à FEVG légèrement réduite</strong></td><td>41–49 %</td><td>ICFEmr / HFmrEF</td><td>Zone intermédiaire — traitement similaire à ICFEr</td></tr>
+            <tr><td><strong>IC à FEVG préservée</strong></td><td>≥ 50 %</td><td>ICFEp / HFpEF</td><td>Dysfonction diastolique — traiter les comorbidités</td></tr>
+          </tbody>
+        </table>
+
+        <p class="content-text" style="font-weight:600;margin-bottom:6px;">Classification NYHA — Sévérité fonctionnelle</p>
+        <table style="margin-bottom:12px;">
+          <thead><tr><th>Classe</th><th>Description</th><th>Exemple clinique</th></tr></thead>
+          <tbody>
+            <tr><td><span class="drug-badge line1">I</span></td><td>Aucune limitation</td><td>Activité ordinaire sans symptômes</td></tr>
+            <tr><td><span class="drug-badge line2">II</span></td><td>Légère limitation</td><td>Symptômes à l&apos;effort intense (escaliers, pente)</td></tr>
+            <tr><td><span class="drug-badge warn">III</span></td><td>Limitation marquée</td><td>Dyspnée à l&apos;effort modéré — marche terrain plat</td></tr>
+            <tr><td><span class="drug-badge ci">IV</span></td><td>Symptômes au repos</td><td>Incapacité totale à l&apos;effort — dyspnée au repos</td></tr>
+          </tbody>
+        </table>
+
+        <p class="content-text" style="font-weight:600;margin-bottom:6px;">Approche diagnostique</p>
+        <div class="flag-list">
+          <div class="flag-item"><span class="flag-dot blue"></span><span><strong>Symptômes :</strong> dyspnée d&apos;effort / orthopnée / DPN · œdème des MI · fatigue · distension abdominale · nycturie</span></div>
+          <div class="flag-item"><span class="flag-dot ink"></span><span><strong>Signes physiques :</strong> distension jugulaire · reflux hépato-jugulaire · B3 · crépitants pulm. · œdème · apex déplacé</span></div>
+          <div class="flag-item"><span class="flag-dot red"></span><span><strong>Confirmation biologique :</strong> NT-proBNP &gt; 125 pg/mL (ambulatoire) · seuils aiguë selon l&apos;âge</span></div>
+          <div class="flag-item"><span class="flag-dot blue"></span><span><strong>ÉTT :</strong> gold standard — FEVG, cavités, fonction diastolique, valves, PAP</span></div>
+        </div>
+        <div class="key-fact yellow" style="margin-top:8px;">Facteurs précipitants <strong>(ABCDEFGHIRST)</strong> : Anémie · Bactéries · Compliance · Drogues (AINS/CCB) · EP · Fluides · Grossesse · HTA · Ischémie · Rein · Sel · Thyroïde</div>
+      </div>
+
+      <!-- ═══ IC-2: PHYSIOLOGIE ═══ -->
       <div class="block para" id="ic-2" style="border-left-color:var(--ink);">
-        <div class="block-title"><span class="tag">🔬 Bases physiologiques & Mécanismes compensateurs</span></div>
+        <div class="block-title"><span class="tag">🔬 Bases physiologiques &amp; Mécanismes compensateurs</span></div>
         <table>
           <thead><tr><th>Paramètre</th><th>Définition</th><th>Note</th></tr></thead>
           <tbody>
-            <tr><td><strong>Fraction d'éjection</strong></td><td>FE = (VTD − VTS) / VTD</td><td>Normale 60–70 %</td></tr>
-            <tr><td><strong>Précharge</strong></td><td>Distension du myocarde en fin de diastole</td><td>↓ déshydratation/hémorragie · ↑ surcharge volémique</td></tr>
-            <tr><td><strong>Post-charge</strong></td><td>Résistance contre laquelle le ventricule éjecte</td><td>Loi de Laplace : T = (P × r) / 2h</td></tr>
-            <tr><td><strong>Contractilité</strong></td><td>Propriété intrinsèque, indépendante de pré/post-charge</td><td>↑ catécholamines · ↓ en IC</td></tr>
+            <tr><td><strong>Fraction d&apos;éjection</strong></td><td>FE = (VTD − VTS) / VTD</td><td>Normale 60–70 %</td></tr>
+            <tr><td><strong>Précharge</strong></td><td>Distension du myocarde en fin de diastole</td><td>↓ déshydratation · ↑ surcharge volémique</td></tr>
+            <tr><td><strong>Post-charge</strong></td><td>Résistance contre laquelle le VG éjecte</td><td>Loi de Laplace : T = (P × r) / 2h</td></tr>
+            <tr><td><strong>Contractilité</strong></td><td>Propriété intrinsèque indépendante de pré/post-charge</td><td>↑ catécholamines · ↓ en IC avancée</td></tr>
           </tbody>
         </table>
-        <div class="key-fact black" style="margin-top:8px;">Loi de Frank-Starling : ↑ précharge → ↑ étirement des fibres myocardiques → ↑ volume d'éjection — relation qui s'épuise en IC avancée</div>
+        <div class="key-fact black" style="margin-top:8px;">Loi de Frank-Starling : ↑ précharge → ↑ étirement fibres → ↑ volume éjection — relation qui s&apos;épuise en IC avancée</div>
         <div class="block-title" style="margin-top:14px;"><span class="tag">⚙️ Mécanismes compensateurs — cercle vicieux neuro-hormonal</span></div>
         <div class="flag-list">
-          <div class="flag-item"><span class="flag-dot ink"></span><span><strong>Système adrénergique</strong> (précoce) : ↓ DC → barorécepteurs (sinus carotidien/arche aortique) → ↑ sympathique/↓ parasympathique → ↑ FC, contractilité, vasoconstriction · <em>long terme</em> → down-régulation des récepteurs β → ↓ réponse inotropique</span></div>
-          <div class="flag-item"><span class="flag-dot ink"></span><span><strong>SRAA</strong> (précoce) : ↓ perfusion rénale/Na⁺ macula densa → rénine → angiotensine II → vasoconstriction + aldostérone (rétention Na⁺/H₂O) + soif → ↑ précharge/DC · <em>long terme</em> → ↑ post-charge, rétention hydrosodée, remodelage délétère</span></div>
-          <div class="flag-item"><span class="flag-dot blue"></span><span><strong>ADH (vasopressine)</strong> : sécrétée via les barorécepteurs → rétention d'eau dans les néphrons distaux → ↑ volume intravasculaire/précharge/DC + vasoconstriction</span></div>
-          <div class="flag-item"><span class="flag-dot blue"></span><span><strong>Peptides natriurétiques</strong> (ANP — oreillettes distendues · BNP — stress ventriculaire) — contre-balanciers : natriurèse, vasodilatation, ↓ rénine, antagonisent angiotensine II/aldostérone/ADH</span></div>
-          <div class="flag-item"><span class="flag-dot red"></span><span><strong>Hypertrophie/remodelage</strong> : concentrique (surcharge de pression — HTA, SA → épaississement sans dilatation) vs excentrique (surcharge de volume — régurgitations → allongement des myocytes + dilatation) → ↑ rigidité → ↑ pression diastolique → dilatation progressive → IC</span></div>
+          <div class="flag-item"><span class="flag-dot ink"></span><span><strong>Système adrénergique :</strong> ↓ DC → ↑ sympathique → ↑ FC/contractilité/vasoconstriction → long terme : down-régulation β → ↓ réponse inotropique</span></div>
+          <div class="flag-item"><span class="flag-dot ink"></span><span><strong>SRAA :</strong> ↓ perfusion rénale → rénine → angiotensine II → vasoconstriction + aldostérone → long terme : ↑ post-charge + remodelage délétère</span></div>
+          <div class="flag-item"><span class="flag-dot blue"></span><span><strong>ADH :</strong> rétention eau → ↑ volume intravasculaire + vasoconstriction</span></div>
+          <div class="flag-item"><span class="flag-dot blue"></span><span><strong>Peptides natriurétiques (ANP/BNP) :</strong> contre-balanciers → natriurèse, vasodilatation, ↓ rénine</span></div>
+          <div class="flag-item"><span class="flag-dot red"></span><span><strong>Remodelage :</strong> concentrique (surcharge pression) vs excentrique (surcharge volume) → dilatation progressive → IC</span></div>
         </div>
       </div>
 
+      <!-- ═══ IC-3: PHYSIOPATH ═══ -->
       <div class="block clin" id="ic-3">
-        <div class="block-title"><span class="tag">🧬 Physiopathologie brève — commune</span></div>
-        <p class="content-text">Incapacité du cœur à assurer un <strong>débit cardiaque</strong> suffisant aux besoins métaboliques, ou seulement au prix de <strong>pressions de remplissage élevées</strong>. Activation compensatoire neuro-hormonale (SRAA, système sympathique, peptides natriurétiques) → maintien du débit à court terme, mais favorise le <strong>remodelage ventriculaire</strong> et la progression à long terme.</p>
-        <div class="key-fact yellow" style="margin-top:8px;">IC <strong>aiguë</strong> = apparition/aggravation soudaine des Sx (svt facteur précipitant — SCA, arythmie, myocardite, valvulopathie aiguë, HTA sévère) · IC <strong>chronique</strong> = anomalie structurelle/fonctionnelle persistante (NT-proBNP ↑ et/ou congestion objective)</div>
-        <div class="highlight cream" style="margin-top:8px;font-size:13px;"><strong>Étiologies clés :</strong> Ischémique (50–70 %) · Valvulopathie · Toxique (ROH, anthracyclines, clozapine) · Infiltratif (amyloïdose) · Myocardite · Rhythmique (tachycardiomyopathie) · Métabolique (dysthyroïdie, péri-partum)</div>
+        <div class="block-title"><span class="tag">🧬 Physiopathologie</span></div>
+        <p class="content-text">Incapacité du cœur à assurer un <strong>débit cardiaque</strong> suffisant aux besoins métaboliques, ou seulement au prix de <strong>pressions de remplissage élevées</strong>. Activation compensatoire neuro-hormonale → maintien du débit à court terme, mais favorise le <strong>remodelage ventriculaire</strong> et la progression.</p>
+        <div class="key-fact yellow">IC <strong>aiguë</strong> = apparition/aggravation soudaine des Sx (facteur précipitant) · IC <strong>chronique</strong> = anomalie structurelle persistante (NT-proBNP ↑ et/ou congestion objective)</div>
       </div>
 
+      <!-- ═══ IC-3b / IC-3c: MÉCANISMES SPÉCIFIQUES ═══ -->
       <div class="block clin" id="ic-3b" style="border-left-color:#2563eb;">
         <div class="block-title"><span class="tag">🧬 ICFEr (systolique) — Mécanisme spécifique</span></div>
-        <p class="content-text"><strong>Dysfonction systolique</strong> : perte de cardiomyocytes (infarctus, toxique, infiltratif) ou surcharge chronique → <strong>↓ contractilité</strong> et dilatation ventriculaire (remodelage excentrique). Le volume d'éjection chute → activation neuro-hormonale compensatoire (SRAA, sympathique) qui, à long terme, aggrave le remodelage et la fibrose — cercle vicieux que cible la quadruple thérapie (chaque pilier bloque un axe neuro-hormonal distinct).</p>
+        <p class="content-text"><strong>Dysfonction systolique :</strong> perte de cardiomyocytes (infarctus, toxique, infiltratif) → ↓ contractilité + dilatation (remodelage excentrique). ↓ volume éjection → activation SRAA/sympathique → aggravation remodelage + fibrose → cercle vicieux que cible la <strong>quadruple thérapie</strong>.</p>
       </div>
-
       <div class="block clin" id="ic-3c" style="border-left-color:var(--yellow);">
         <div class="block-title"><span class="tag">🧬 ICFEp (diastolique) — Mécanisme spécifique</span></div>
-        <p class="content-text"><strong>Dysfonction diastolique</strong> : ↓ relaxation et ↓ compliance du VG (souvent hypertrophie concentrique 2° HTA chronique, vieillissement, obésité, diabète) → <strong>↑ pressions de remplissage</strong> à volume normal ou réduit → congestion en amont malgré une FEVG préservée. Très souvent associée à un état pro-inflammatoire systémique multi-comorbidités (obésité, SAOS, FA, IRC) plutôt qu'à une atteinte myocardique primaire isolée — d'où l'importance de traiter les comorbidités.</p>
+        <p class="content-text"><strong>Dysfonction diastolique :</strong> ↓ relaxation + ↓ compliance VG (HTA chronique, obésité, DM, vieillissement) → ↑ pressions remplissage à volume normal → congestion malgré FEVG préservée. État pro-inflammatoire systémique multi-comorbidités.</p>
       </div>
 
-      <div class="block clin" id="ic-4">
-        <div class="block-title"><span class="tag">🩺 Évaluation initiale — Anamnèse & examen physique</span></div>
-        <ul class="content-text" style="padding-left:18px;">
-          <li><strong>Anamnèse — IC gauche (congestion pulmonaire) :</strong> dyspnée d'effort, orthopnée, dyspnée paroxystique nocturne, toux de décubitus, fatigue, intolérance à l'effort</li>
-          <li><strong>Anamnèse — IC droite (congestion systémique) :</strong> œdème des membres inférieurs, prise de poids rapide, nycturie, distension abdominale, anorexie/satiété précoce</li>
-          <li><strong>Précipitants à rechercher (ABCDEFGHIRST) :</strong> Anémie, Bactéries (infection), Compliance (Rx/diète), Drogues (AINS, CCB, glitazones), EP, Fluides (surcharge), Grossesse, HTA, Ischémie, Rein (IRA), Sel, Thyroïde</li>
-        </ul>
-        <p class="content-text" style="margin-top:8px;"><strong>Examen physique :</strong> signes congestifs (distension jugulaire, reflux hépato-jugulaire, B3, crépitants pulmonaires, œdème, hépatomégalie, ascite) · signes de bas débit (extrémités froides, hypotension, pouls filiforme, altération de l'état mental) · apex déplacé (cardiomégalie)</p>
-      </div>
-
-      <div class="block para" id="ic-5">
-        <div class="block-title"><span class="tag">🧪 Paraclinique — NT-proBNP & Bilan</span></div>
+      <!-- ═══ IC-3-ETI: ÉTIOLOGIES ═══ -->
+      <div class="block def" id="ic-3-eti">
+        <div class="block-title"><span class="tag">🧬 3. Étiologies de l&apos;IC</span></div>
         <table>
-          <thead><tr><th>Contexte</th><th>Seuil IC probable</th><th>Note</th></tr></thead>
+          <thead><tr><th>Catégorie</th><th>Exemples</th><th>Note clinique</th></tr></thead>
           <tbody>
-            <tr><td>Ambulatoire (tous âges)</td><td>&gt; 125 pg/mL</td><td></td></tr>
-            <tr><td>Aigu &lt; 50 ans</td><td>&gt; 450 pg/mL</td><td rowspan="3">⚠️ Obésité ↓ BNP (pas NT-proBNP) · IRC ↑ les taux</td></tr>
-            <tr><td>Aigu 50–75 ans</td><td>&gt; 900 pg/mL</td></tr>
-            <tr><td>Aigu &gt; 75 ans</td><td>&gt; 1800 pg/mL</td></tr>
+            <tr><td><strong>Ischémique</strong></td><td>Cardiopathie ischémique, post-IAM</td><td>Cause la plus fréquente (50–70 %) — toujours rechercher MCAS</td></tr>
+            <tr><td><strong>Valvulaire</strong></td><td>IM, IA (surcharge volume) · SA, SM (surcharge pression)</td><td>Régurgitations sévères → remodelage excentrique · SA sévère → concentrique</td></tr>
+            <tr><td><strong>Toxique</strong></td><td>Alcool · Cocaïne · Anthracyclines · Anti-TNF · Clozapine</td><td>Dosage cumulatif anthracyclines = FdR · réversibilité possible si sevrage précoce</td></tr>
+            <tr><td><strong>Infiltratif</strong></td><td>Amyloïdose AL / ATTR · Maladie de Fabry</td><td>ATTR = forme vieillissante à ne pas manquer — scintigraphie Tc-DPD</td></tr>
+            <tr><td><strong>Myocardite</strong></td><td>Virale · Sarcoïdose · Cellules géantes · Immunothérapie</td><td>Troponine ↑ + anomalie VG chez jeune → IRM cardiaque</td></tr>
+            <tr><td><strong>Rythmique</strong></td><td>Tachyarythmie chronique · Pacing VD prolongé · Fardeau ESV élevé</td><td>Tachycardiomyopathie = cause réversible — contrôle FC prioritaire</td></tr>
+            <tr><td><strong>Métabolique</strong></td><td>Dysthyroïdie · Phéochromocytome · Malnutrition · Cardiomyopathie péripartum</td><td>TSH + ferritine/TSAT au bilan initial</td></tr>
+            <tr><td><strong>Génétique</strong></td><td>CMP hypertrophique · CMP dilatée · CMP restrictive · Hémochromatose</td><td>Dépistage familial si CMP génétique confirmée</td></tr>
           </tbody>
         </table>
-        <table style="margin-top:10px;">
-          <thead><tr><th>Pression OG estimée</th><th>Trouvaille radiologique</th></tr></thead>
-          <tbody>
-            <tr><td>&lt; 10 mmHg</td><td>Normal</td></tr>
-            <tr><td>&gt; 15 mmHg</td><td>Redistribution vasculaire vers les sommets</td></tr>
-            <tr><td>&gt; 20 mmHg</td><td>Œdème interstitiel (lignes B), effacement vasculaire</td></tr>
-            <tr><td>&gt; 25–30 mmHg</td><td>Œdème alvéolaire (opacification de l'espace aérien)</td></tr>
-          </tbody>
-        </table>
-        <div class="key-fact black" style="margin-top:6px;">Cardiomégalie = ratio cardiothoracique &gt; 0,5 · ÉTT (gold standard) : FEVG, taille des cavités, fonction diastolique, cinétique pariétale, valves, péricarde, pression artérielle pulmonaire</div>
-        <div class="highlight cream" style="margin-top:8px;font-size:13px;"><strong>Bilan initial :</strong> ECG + ÉTT (FEVG) + NT-proBNP + Créatinine + K⁺ + FSC + HbA1c + TSH + Ferritine/TSAT</div>
+        <div class="key-fact yellow" style="margin-top:8px;">Toujours rechercher une cause <strong>réversible</strong> (tachycardiomyopathie, valvulopathie, toxique, métabolique) — traitement spécifique peut normaliser la FEVG.</div>
       </div>
 
+      <!-- ═══ IC-4: ÉVALUATION ═══ -->
+      <div class="block clin" id="ic-4">
+        <div class="block-title"><span class="tag">🩺 Évaluation initiale — Anamnèse &amp; examen physique</span></div>
+        <ul class="content-text" style="padding-left:18px;">
+          <li><strong>IC gauche (congestion pulmonaire) :</strong> dyspnée d&apos;effort, orthopnée, DPN, toux de décubitus, fatigue, intolérance à l&apos;effort</li>
+          <li><strong>IC droite (congestion systémique) :</strong> œdème des MI, prise de poids rapide, nycturie, distension abdominale, anorexie</li>
+          <li><strong>Précipitants ABCDEFGHIRST :</strong> Anémie · Bactéries · Compliance · Drogues (AINS, CCB) · EP · Fluides · Grossesse · HTA · Ischémie · Rein · Sel · Thyroïde</li>
+        </ul>
+        <p class="content-text" style="margin-top:8px;"><strong>Examen physique :</strong> distension jugulaire · reflux hépato-jugulaire · B3 · crépitants · œdème · hépatomégalie · apex déplacé · signes de bas débit</p>
+      </div>
+
+      <!-- ═══ IC-5: BILAN NT-proBNP ═══ -->
+      <div class="block para" id="ic-5">
+        <div class="block-title"><span class="tag">🧪 3. Bilan initial — NT-proBNP, BNP &amp; paraclinique</span></div>
+
+        <p class="content-text" style="font-weight:600;margin-bottom:6px;">NT-proBNP vs BNP — Différences clés</p>
+        <table style="margin-bottom:12px;">
+          <thead><tr><th>Paramètre</th><th>NT-proBNP</th><th>BNP</th></tr></thead>
+          <tbody>
+            <tr><td>Origine</td><td>Fragment N-terminal (inactif) clivé du précurseur proBNP</td><td>Fragment C-terminal (biologiquement actif)</td></tr>
+            <tr><td>Demi-vie plasmatique</td><td><strong>60–120 min</strong> (stable)</td><td>20 min (dégradé par néprilysine)</td></tr>
+            <tr><td>Élimination</td><td>Rénale principalement</td><td>Récepteurs natriurétiques + néprilysine</td></tr>
+            <tr><td>Effet de l&apos;obésité</td><td>Peu affecté</td><td><strong>↓ BNP en obésité</strong> — faux négatif possible</td></tr>
+            <tr><td>Effet de l&apos;IRC</td><td>↑ (élimination rénale réduite)</td><td>↑ (mais moins que NT-proBNP)</td></tr>
+            <tr><td>Effet de l&apos;ARNI (Entresto)</td><td>Non affecté (peut légèrement augmenter)</td><td><strong>↑ BNP sous ARNI</strong> — ne pas utiliser pour suivi</td></tr>
+            <tr><td>Utilité clinique sous ARNI</td><td>Préférable pour suivi sous ARNI</td><td>Non fiable sous ARNI (fausse élévation)</td></tr>
+          </tbody>
+        </table>
+
+        <p class="content-text" style="font-weight:600;margin-bottom:6px;">Seuils NT-proBNP — IC probable</p>
+        <table style="margin-bottom:12px;">
+          <thead><tr><th>Contexte</th><th>Seuil diagnostique</th><th>Note</th></tr></thead>
+          <tbody>
+            <tr><td>Ambulatoire — tous âges</td><td><strong>&gt; 125 pg/mL</strong></td><td>Valeur pronostique + diagnostique</td></tr>
+            <tr><td>IC aiguë — &lt; 50 ans</td><td><strong>&gt; 450 pg/mL</strong></td><td rowspan="3">⚠️ Obésité → ↓ BNP (mais <strong>pas</strong> NT-proBNP) · IRC → ↑ les deux</td></tr>
+            <tr><td>IC aiguë — 50–75 ans</td><td><strong>&gt; 900 pg/mL</strong></td></tr>
+            <tr><td>IC aiguë — &gt; 75 ans</td><td><strong>&gt; 1800 pg/mL</strong></td></tr>
+          </tbody>
+        </table>
+
+        <p class="content-text" style="font-weight:600;margin-bottom:6px;">Bilan biologique et paraclinique initial complet</p>
+        <table style="margin-bottom:10px;">
+          <thead><tr><th>Test</th><th>Justification</th></tr></thead>
+          <tbody>
+            <tr><td>NT-proBNP / BNP</td><td>Valeur diagnostique ET pronostique — répéter pour évaluer réponse Tx</td></tr>
+            <tr><td>ECG</td><td>Rythme, HVG, ischémie, BBG (critères TRC), FA</td></tr>
+            <tr><td>Échographie transthoracique (ÉTT)</td><td>FEVG, structure, fonction diastolique, valves, PAP — gold standard</td></tr>
+            <tr><td>Créatinine + DFGe</td><td>Ajustement médicamenteux · surveillance ARNI/ARM/iSGLT-2</td></tr>
+            <tr><td>Électrolytes (K⁺)</td><td>Hyperkaliémie (CI ARM si K⁺ &gt; 5,5) · hypokaliémie (diurétiques)</td></tr>
+            <tr><td>FSC</td><td>Anémie (facteur précipitant) · Leucocytose (infection)</td></tr>
+            <tr><td>Glycémie / HbA1c</td><td>DM = comorbidité majeure ICFEp + indication iSGLT-2</td></tr>
+            <tr><td>TSH</td><td>Dysthyroïdie = cause réversible d&apos;IC</td></tr>
+            <tr><td>Ferritine + TSAT</td><td>Carence martiale fréquente sans anémie — indication fer IV</td></tr>
+          </tbody>
+        </table>
+        <div class="note">📋 Radiographie thoracique : redistribution vasculaire (OG &gt; 15 mmHg) · lignes B de Kerley (OG &gt; 20 mmHg) · œdème alvéolaire (OG &gt; 25 mmHg) · cardiomégalie si ratio cardiothoracique &gt; 0,5</div>
+      </div>
+
+      <!-- ═══ IC-6-ALGO: ALGORITHME INTERACTIF ICFEr vs ICFEp ═══ -->
+      <div class="block rx" id="ic-6-algo">
+        <div class="block-title"><span class="tag">⚙️ Algorithme interactif — Traitement IC selon le type</span></div>
+        <div style="display:flex;gap:10px;margin-bottom:14px;flex-wrap:wrap;">
+          <button id="ic-btn-icfer" onclick="icTabSwitch('icfer')" style="background:#1C3F8F;color:#fff;border:none;border-radius:8px;padding:10px 20px;cursor:pointer;font-size:14px;font-weight:600;">&#10084; ICFEr — FEVG ≤ 40 %</button>
+          <button id="ic-btn-icfep" onclick="icTabSwitch('icfep')" style="background:#e2e8f0;color:#1e293b;border:none;border-radius:8px;padding:10px 20px;cursor:pointer;font-size:14px;font-weight:600;">&#128309; ICFEp — FEVG ≥ 50 %</button>
+        </div>
+
+        <!-- ICFEr ALGORITHM -->
+        <div id="ic-algo-icfer">
+          <div class="key-fact blue" style="margin-bottom:12px;">🏆 <strong>Quadruple thérapie = standard ICFEr</strong> — initier les 4 agents avant d&apos;optimiser les doses. Bénéfices dès les faibles doses.</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px;">
+            <div style="border:2px solid #1C3F8F;border-radius:8px;padding:10px;background:rgba(28,63,143,0.06);">
+              <div style="font-weight:700;color:#1C3F8F;margin-bottom:6px;">① ARNI — Sacubitril/Valsartan</div>
+              <div style="font-size:12px;">24/26 mg BID → cible <strong>103/97 mg BID</strong><br>↓ 20 % mortalité · Code RAMQ <strong>CV 419</strong><br><span style="color:#dc2626;">⚠ Arrêter IECA ≥ 36h avant · Surveiller Cr + K⁺ J7–14</span></div>
+            </div>
+            <div style="border:2px solid #0a7a4e;border-radius:8px;padding:10px;background:rgba(10,122,78,0.06);">
+              <div style="font-weight:700;color:#0a7a4e;margin-bottom:6px;">② Bêtabloquant</div>
+              <div style="font-size:12px;"><strong>Bisoprolol</strong> 1,25→10 mg/j · <strong>Carvédilol</strong> 3,125→25 mg BID · <strong>Métoprolol</strong> 12,5→100 mg BID<br>FC cible : <strong>60–70 bpm</strong> (sinusal) · 80–89 bpm (FA)<br><span style="color:#dc2626;">⚠ Ne pas initier en décompensation aiguë</span></div>
+            </div>
+            <div style="border:2px solid #7b3fa0;border-radius:8px;padding:10px;background:rgba(123,63,160,0.06);">
+              <div style="font-weight:700;color:#7b3fa0;margin-bottom:6px;">③ ARM — Spironolactone / Éplérénone</div>
+              <div style="font-size:12px;"><strong>Spiro</strong> 12,5→50 mg/j · <strong>Éplérénone</strong> 12,5→50 mg/j<br>Gynécomastie spiro → préférer éplérénone<br><span style="color:#dc2626;">⚠ K⁺ + Cr J7–14 · CI si K⁺ &gt; 5,5</span></div>
+            </div>
+            <div style="border:2px solid #d97706;border-radius:8px;padding:10px;background:rgba(217,119,6,0.06);">
+              <div style="font-weight:700;color:#d97706;margin-bottom:6px;">④ iSGLT-2 — Dapagliflozine</div>
+              <div style="font-size:12px;"><strong>10 mg/j</strong> · Code RAMQ <strong>CV 399</strong><br>↓ mortalité 25 % · ↓ hospit. 30 % (DAPA-HF)<br><span style="color:#dc2626;">⚠ CI : DFGe &lt; 25 · TAS &lt; 95 · SADMANS journée maladie</span></div>
+            </div>
+          </div>
+          <p class="content-text" style="font-weight:600;margin-bottom:6px;">Adjuvants selon présentation</p>
+          <table>
+            <thead><tr><th>Médicament</th><th>Indication</th><th>Dose / Note</th></tr></thead>
+            <tbody>
+              <tr><td>Furosémide</td><td>Congestion uniquement — dose min. efficace</td><td>40–80 mg PO/IV · IV 2,5× dose PO · ↓ à l&apos;euvolémie</td></tr>
+              <tr><td>Ivabradine (Lancora)</td><td>FC &gt; 70 bpm + rythme sinusal + BB max ou CI</td><td>5 mg BID → cible 60–70 bpm · Code CV399 · <strong>CI en FA</strong></td></tr>
+              <tr><td>Digoxine</td><td>IC + FA (contrôle FC, 2e ligne)</td><td>0,0625–0,25 mg/j · Zone 0,9–2 ng/mL · IRC prudence</td></tr>
+              <tr><td>Hydralazine + Nitrates</td><td>CI IECA/ARA/ARNI · afro-américains · grossesse</td><td>Nitrates : fenêtre 8–12h/nuit · CI : iPDE-5</td></tr>
+              <tr><td>Fer IV</td><td>Ferritine &lt; 100 ou (ferritine &lt; 300 + TSAT &lt; 20 %)</td><td>↑ capacité effort · ↓ hospit.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- ICFEp ALGORITHM -->
+        <div id="ic-algo-icfep" style="display:none;">
+          <div class="key-fact blue" style="margin-bottom:12px;">🟢 <strong>ICFEp :</strong> Pas de quadruple thérapie universelle — prioriser iSGLT-2 + traitement des comorbidités.</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px;">
+            <div style="border:2px solid #0a7a4e;border-radius:8px;padding:10px;background:rgba(10,122,78,0.06);">
+              <div style="font-weight:700;color:#0a7a4e;margin-bottom:6px;">1re ligne</div>
+              <div style="font-size:12px;"><strong>iSGLT-2 (dapagliflozine 10 mg/j)</strong> si NYHA II–IV + BNP/NT-proBNP confirmant IC · Code RAMQ <strong>CV 679</strong><br><strong>ARM (spironolactone)</strong> — données TOPCAT, bénéfice surtout FEVG &lt; 57 %</div>
+            </div>
+            <div style="border:2px solid #1C3F8F;border-radius:8px;padding:10px;background:rgba(28,63,143,0.06);">
+              <div style="font-weight:700;color:#1C3F8F;margin-bottom:6px;">2e ligne</div>
+              <div style="font-size:12px;"><strong>GLP-1 (sémaglutide)</strong> si obésité IMC ≥ 30 — STEP-HFpEF<br><strong>ARNI ou candésartan</strong> — contrôle TA + prévention remodelage<br><strong>Diurétiques</strong> — décongestion uniquement, dose min.</div>
+            </div>
+          </div>
+          <div class="key-fact yellow">🎯 <strong>Cibles ICFEp :</strong> TA · HbA1c · FC &lt; 100 bpm (FA) · Traitement DLP/MCAS · Exercice + perte de poids · CPAP (apnée du sommeil) · Sevrage tabagique</div>
+        </div>
+      </div>
+      <script>
+function icTabSwitch(type) {
+  var icfer = document.getElementById('ic-algo-icfer');
+  var icfep = document.getElementById('ic-algo-icfep');
+  var btnF  = document.getElementById('ic-btn-icfer');
+  var btnP  = document.getElementById('ic-btn-icfep');
+  if (icfer) icfer.style.display = (type === 'icfer') ? 'block' : 'none';
+  if (icfep) icfep.style.display = (type === 'icfep') ? 'block' : 'none';
+  if (btnF) { btnF.style.background = (type === 'icfer') ? '#1C3F8F' : '#e2e8f0'; btnF.style.color = (type === 'icfer') ? '#fff' : '#1e293b'; }
+  if (btnP) { btnP.style.background = (type === 'icfep') ? '#0a7a4e' : '#e2e8f0'; btnP.style.color = (type === 'icfep') ? '#fff' : '#1e293b'; }
+}
+</script>
+
+      <!-- ═══ IC-6: QUADRUPLE THÉRAPIE DÉTAIL ACCORDION ═══ -->
       <div class="block rx" id="ic-6">
-        <div class="block-title"><span class="tag">💊 Quadruple thérapie ICFEr — Nouveau standard</span></div>
-        <div class="key-fact blue">La majorité des bénéfices est observable dès les <strong>faibles doses</strong> — initier les 4 agents avant d'optimiser les doses</div>
-        <div class="accordion" style="margin-top:10px;">
+        <div class="block-title"><span class="tag">💊 5. Traitement ICFEr — Quadruple thérapie détaillée &amp; Tableau récapitulatif</span></div>
+        <div class="key-fact blue" style="margin-bottom:10px;">Majorité des bénéfices observable dès les <strong>faibles doses</strong> — initier les 4 agents avant d&apos;optimiser</div>
+        <div class="accordion" style="margin-bottom:16px;">
           <div class="accordion-item open">
-            <div class="accordion-header"><span style="font-family:var(--mono);font-weight:700;color:var(--blue);margin-right:8px;">①</span> ARNI — Sacubitril/Valsartan (Entresto)
+            <div class="accordion-header"><span style="font-family:var(--mono);font-weight:700;color:var(--blue);margin-right:8px;">①</span> ARNI — Sacubitril/Valsartan (Entresto®)
               <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
             </div>
             <div class="accordion-body">
               <div class="med-card">
-                <div class="med-row"><span class="med-label">💊 Posologie</span><span class="med-value">24/26 mg BID → titrer q4 sem jusqu'à <strong>103/97 mg BID</strong></span></div>
-                <div class="med-row"><span class="med-label">📊 Bénéfice</span><span class="med-value">↓ 20 % mortalité (PARADIGM-HF) · <span class="drug-badge line1">Code RAMQ CV 419</span></span></div>
-                <div class="med-row"><span class="med-label">🔄 Transition</span><span class="med-value"><span class="drug-badge warn">Arrêter IECA ≥ 36 h avant le début (risque d'angioœdème)</span></span></div>
-                <div class="med-row"><span class="med-label">🔬 Surveillance</span><span class="med-value">Cr + K⁺ à J7–14 · <span class="drug-badge ci">Accepter une ↑ de Cr ≤ 30 %</span></span></div>
-                <div class="med-row"><span class="med-label">⛔ Contre-indications</span><span class="med-value">Angioœdème, grossesse · si ARNI non toléré → IECA ou ARA (2<sup>e</sup> ligne)</span></div>
+                <div class="med-row"><span class="med-label">Mécanisme</span><span class="med-value">Inhibition de la <strong>néprilysine</strong> (↑ peptides natriurétiques) + blocage SRAA (valsartan)</span></div>
+                <div class="med-row"><span class="med-label">Posologie</span><span class="med-value">24/26 mg BID → titrer q4 sem → cible <strong>103/97 mg BID</strong></span></div>
+                <div class="med-row"><span class="med-label">Bénéfice</span><span class="med-value">↓ 20 % mortalité CV · ↓ 21 % 1re hospit. (PARADIGM-HF) · Code RAMQ <strong>CV 419</strong></span></div>
+                <div class="med-row"><span class="med-label">Transition IECA→ARNI</span><span class="med-value"><span class="drug-badge warn">Arrêter IECA ≥ 36 h avant (risque angioœdème)</span></span></div>
+                <div class="med-row"><span class="med-label">Surveillance</span><span class="med-value">Cr + K⁺ à J7–14 · Accepter ↑ Cr ≤ 30 % · NT-proBNP préférable (BNP ↑ sous ARNI)</span></div>
+                <div class="med-row"><span class="med-label">EI / CI</span><span class="med-value">Hypotension (TAS &lt; 100) · Hyperkaliémie · IRC (créat &gt; 200 µmol/L) · Grossesse · Angioœdème ATCD</span></div>
               </div>
             </div>
           </div>
@@ -8306,38 +8465,39 @@ function calculatePHQ9() {
             </div>
             <div class="accordion-body">
               <div class="med-card">
-                <div class="med-row"><span class="med-label">📊 Bénéfice</span><span class="med-value">↓ mortalité 34–36 % · ↓ arythmie fatale 40–45 %</span></div>
-                <div class="med-row"><span class="med-label">🎯 Cible FC</span><span class="med-value"><strong>60–70 bpm</strong> (rythme sinusal) · <strong>80–89 bpm</strong> (si FA)</span></div>
-                <div class="med-row"><span class="med-label">💊 Agents</span><span class="med-value"><span class="drug-badge line1">Bisoprolol 1,25 → 10 mg/j</span> <span class="drug-badge line1">Carvédilol 3,125 → 25 mg BID</span> <span class="drug-badge line1">Métoprolol 12,5 → 100 mg BID</span></span></div>
-                <div class="med-row"><span class="med-label">⛔ Attention</span><span class="med-value"><span class="drug-badge ci">Ne pas initier en décompensation aiguë</span> · EI : fatigue, bradycardie, hypotension orthostatique</span></div>
+                <div class="med-row"><span class="med-label">Mécanisme</span><span class="med-value">Suppression catécholamines → inversion du remodelage → amélioration structure/fonction VG</span></div>
+                <div class="med-row"><span class="med-label">Posologie</span><span class="med-value">Bisoprolol 1,25→10 mg/j · Carvédilol 3,125→25 mg BID (&lt;85 kg) / 50 mg BID (&gt;85 kg) · Métoprolol 12,5→100 mg BID</span></div>
+                <div class="med-row"><span class="med-label">Bénéfice</span><span class="med-value">↓ mortalité 34–36 % · ↓ hospit. 34 % · ↓ arythmie fatale 40–45 %</span></div>
+                <div class="med-row"><span class="med-label">Cible FC</span><span class="med-value"><strong>60–70 bpm</strong> (rythme sinusal) · 80–89 bpm (FA)</span></div>
+                <div class="med-row"><span class="med-label">EI / CI</span><span class="med-value">Fatigue · Bradycardie · Hypotension · Dysfonction sexuelle · Ne pas initier en décompensation aiguë · Ne jamais arrêter brusquement</span></div>
               </div>
             </div>
           </div>
           <div class="accordion-item">
-            <div class="accordion-header"><span style="font-family:var(--mono);font-weight:700;color:var(--blue);margin-right:8px;">③</span> ARM — Spironolactone / Éplérénone
+            <div class="accordion-header"><span style="font-family:var(--mono);font-weight:700;color:var(--blue);margin-right:8px;">③</span> ARM — Antagonistes des récepteurs minéralocorticoïdes
               <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
             </div>
             <div class="accordion-body">
               <div class="med-card">
-                <div class="med-row"><span class="med-label">💊 Posologie</span><span class="med-value">Spironolactone 12,5 → 50 mg/j · Éplérénone 12,5 → 50 mg/j</span></div>
-                <div class="med-row"><span class="med-label">📊 Bénéfice</span><span class="med-value">↓ mortalité 15–30 %</span></div>
-                <div class="med-row"><span class="med-label">🔄 Choix d'agent</span><span class="med-value"><span class="drug-badge warn">Gynécomastie avec spironolactone → préférer éplérénone</span></span></div>
-                <div class="med-row"><span class="med-label">🔬 Surveillance</span><span class="med-value">K⁺ + Cr à J7–14 · favoriser l'ARM plutôt que des suppléments de K⁺</span></div>
-                <div class="med-row"><span class="med-label">⛔ Contre-indications</span><span class="med-value"><span class="drug-badge ci">K⁺ &gt; 5,5 mmol/L</span></span></div>
+                <div class="med-row"><span class="med-label">Mécanisme</span><span class="med-value">Blocage aldostérone → ↓ fibrose · ↓ remodelage · ↓ arythmies</span></div>
+                <div class="med-row"><span class="med-label">Posologie</span><span class="med-value">Spironolactone 12,5→50 mg/j · Éplérénone 12,5→50 mg/j</span></div>
+                <div class="med-row"><span class="med-label">Bénéfice</span><span class="med-value">↓ mortalité 15–30 % · ↓ hospit. 20–35 % (RALES, EMPHASIS, EPHESUS)</span></div>
+                <div class="med-row"><span class="med-label">EI / CI</span><span class="med-value">Hyperkaliémie · IRA · Gynécomastie (spiro → préférer éplérénone) · CI si K⁺ &gt; 5,5 ou DFGe &lt; 30</span></div>
+                <div class="med-row"><span class="med-label">Surveillance</span><span class="med-value">K⁺ + Cr à J7–14 · Favoriser ARM plutôt que suppléments K⁺ pour corriger hypokaliémie (diurétiques)</span></div>
               </div>
             </div>
           </div>
           <div class="accordion-item">
-            <div class="accordion-header"><span style="font-family:var(--mono);font-weight:700;color:var(--blue);margin-right:8px;">④</span> iSGLT-2 — Dapagliflozine
+            <div class="accordion-header"><span style="font-family:var(--mono);font-weight:700;color:var(--blue);margin-right:8px;">④</span> iSGLT-2 — Dapagliflozine / Empagliflozine
               <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
             </div>
             <div class="accordion-body">
               <div class="med-card">
-                <div class="med-row"><span class="med-label">💊 Posologie</span><span class="med-value">Dapagliflozine <strong>10 mg/j</strong></span></div>
-                <div class="med-row"><span class="med-label">📊 Bénéfice</span><span class="med-value">↓ mortalité 25 % · ↓ hospitalisations 30 % (DAPA-HF) — effets similaires chez les DM2 ET non-DM2 · <span class="drug-badge line1">Code RAMQ CV 399 (ICFEr) / CV 679 (ICFEp, FEVG &gt; 40 %)</span></span></div>
-                <div class="med-row"><span class="med-label">🔄 Ajustement</span><span class="med-value">Si patient euvolémique : ↓ diurétiques de 25–50 % à l'initiation</span></div>
-                <div class="med-row"><span class="med-label">⛔ Contre-indications</span><span class="med-value"><span class="drug-badge ci">DFGe &lt; 25 · TAS &lt; 95 mmHg</span></span></div>
-                <div class="med-row"><span class="med-label">🚨 Journée de maladie</span><span class="med-value"><span class="drug-badge warn">SADMANS — suspendre si déshydratation, fièvre ou vomissements</span></span></div>
+                <div class="med-row"><span class="med-label">Mécanisme</span><span class="med-value">Natriurèse + glycosurie via inhibition SGLT-2 → ↓ précharge/postcharge · effet cardio-rénal · amélioration bioénergétique cardiaque</span></div>
+                <div class="med-row"><span class="med-label">Posologie</span><span class="med-value">Dapagliflozine 10 mg/j (CV399 ICFEr · CV679 ICFEp) · Empagliflozine 10–25 mg/j (non couvert RAMQ sauf DM)</span></div>
+                <div class="med-row"><span class="med-label">Bénéfice</span><span class="med-value">↓ mortalité 25 % · ↓ hospit. 30 % (DAPA-HF, EMPEROR-Reduced) — effets identiques DM2 vs non-DM2</span></div>
+                <div class="med-row"><span class="med-label">EI / CI</span><span class="med-value">Mycose génitale · DFGe &lt; 25 (CI) · TAS &lt; 95 mmHg · Journée maladie → <strong>SADMANS</strong></span></div>
+                <div class="med-row"><span class="med-label">Ajustement</span><span class="med-value">Si euvolémique à l&apos;initiation → ↓ diurétiques de 25–50 %</span></div>
               </div>
             </div>
           </div>
@@ -8347,105 +8507,172 @@ function calculatePHQ9() {
             </div>
             <div class="accordion-body">
               <div class="med-card">
-                <div class="med-row"><span class="med-label"><span class="drug-badge line2">Furosémide</span></span><span class="med-value">Congestion uniquement · dose minimale efficace · ↓ à l'atteinte de l'euvolémie · IV à haute dose = 2,5× la dose PO</span></div>
-                <div class="med-row"><span class="med-label"><span class="drug-badge line2">Ivabradine</span></span><span class="med-value">Si FC &gt; 70 bpm + rythme sinusal + BB à dose max ou CI · cible 60–70 bpm · <span class="drug-badge ci">CI si FA</span> · Code RAMQ CV 399</span></div>
-                <div class="med-row"><span class="med-label"><span class="drug-badge line3">Vericiguat</span></span><span class="med-value">Stimulateur de la guanylate cyclase soluble (sGC) · Indication : ICFEr + aggravation Sx + hospitalisation pour IC dans les 6 derniers mois → ↓ réadmissions (étude VICTORIA)</span></div>
-                <div class="med-row"><span class="med-label"><span class="drug-badge line2">Digoxine</span></span><span class="med-value">IC + FA (2<sup>e</sup> ligne) · zone thérapeutique 0,9–2 ng/mL · toxicité : nausées, vision jaune/verte · prudence en IRC</span></div>
-                <div class="med-row"><span class="med-label"><span class="drug-badge line2">Hydralazine + Nitrates</span></span><span class="med-value">Si contre-indication aux IECA/ARA/ARNI · patients afro-américains · grossesse</span></div>
-                <div class="med-row"><span class="med-label"><span class="drug-badge line3">Fer IV</span></span><span class="med-value">Si ferritine &lt; 100 ou (ferritine &lt; 300 + TSAT &lt; 20 %) · ↑ qualité de vie et capacité à l'effort</span></div>
-                <div class="med-row"><span class="med-label">🔌 Dispositifs</span><span class="med-value"><strong>DCI (prévention primaire)</strong> si FEVG ≤ 35 % + NYHA II–III + traitement médical optimal ≥ 3 mois + espérance vie > 1 an · <strong>DCI (prévention secondaire)</strong> si survivant d'arrêt cardiaque/FV/TV sans cause réversible · <strong>CRT</strong> si FEVG ≤ 35 % + NYHA II–IV ambulatoire + QRS ≥ 130 ms (idéalement BBG) ou QRS ≥ 150 ms</span></div>
+                <div class="med-row"><span class="med-label">Furosémide</span><span class="med-value">Congestion uniquement · dose min. efficace · IV haute dose = 2,5× dose PO · ↓ ou cesser à l&apos;euvolémie</span></div>
+                <div class="med-row"><span class="med-label">Ivabradine</span><span class="med-value">FC &gt; 70 bpm + rythme sinusal + BB max ou CI · 5 mg BID → 60–70 bpm · Code CV399 · CI : FA</span></div>
+                <div class="med-row"><span class="med-label">Digoxine</span><span class="med-value">IC + FA (2e ligne) · 0,0625–0,25 mg/j · Zone 0,9–2 ng/mL · digoxinémie J5–7 · prudence IRC</span></div>
+                <div class="med-row"><span class="med-label">Hydralazine + Nitrates</span><span class="med-value">CI IECA/ARA/ARNI · afro-américains · grossesse · fenêtre nitrates 8–12h/nuit · CI iPDE-5</span></div>
+                <div class="med-row"><span class="med-label">Fer IV</span><span class="med-value">Ferritine &lt; 100 ou (ferritine &lt; 300 + TSAT &lt; 20 %) · ↑ qualité vie + ↓ hospit.</span></div>
               </div>
             </div>
           </div>
         </div>
-        <div class="key-fact red" style="margin-top:10px;">OAP aigu : O₂ + Furosémide 40–80 mg IV + NTG IV (TAS &gt; 100) + VNI si FR &gt; 25 ± morphine IV</div>
-      </div>
 
-      <div class="block def" id="ic-6b">
-        <div class="block-title"><span class="tag">📌 ICFEp (FEVG ≥ 50 %) — Comorbidités à traiter</span></div>
-        <p class="content-text" style="margin-bottom:8px;">Pas de traitement « anti-remodelage » unique comme en ICFEr — la prise en charge repose sur le <strong>traitement systématique des comorbidités</strong> (souvent le moteur principal de la maladie) en parallèle de la pharmacothérapie ciblée.</p>
-        <div class="note" style="margin-bottom:10px;"><strong>Score H2FPEF</strong> — aide diagnostique ICFEp (calculé sur MDCalc) : Heavy (obésité IMC > 30) + Hypertensive (≥ 2 anti-HTA) + atrial Fibrillation + Pulmonary HTN (PAPs > 35 mmHg) + Elder (≥ 60 ans) + Filling pressure (E/e' > 9). Score ≥ 6 = ICFEp probable.</div>
-        <div class="note" style="margin-bottom:10px;"><strong>DDx ICFEp</strong> : Valvulopathie gauche (SA, IM, SM) · Trouble du péricarde (tamponnade, péricardite constrictive) · Insuffisance VD (HTA pulm., valvulopathie pulm./tricusp., IM VD) · Cardiomyopathie infiltrative (amyloïdose AL/ATTR, Fabry), inflammatoire (sarcoïdose), hypertrophique, génétique (hémochromatose)</div>
-        <table>
-          <thead><tr><th>Comorbidité</th><th>Prévalence ICFEp</th></tr></thead>
+        <!-- TABLEAU RÉCAPITULATIF -->
+        <p class="content-text" style="font-weight:600;margin-bottom:6px;">Tableau récapitulatif — Médicaments clés en IC</p>
+        <div style="overflow-x:auto;">
+        <table style="min-width:700px;">
+          <thead><tr><th>Médicament</th><th>Mécanisme</th><th>Posologie init. → cible</th><th>EI principaux</th><th>CI / Précautions</th><th>Surveillance</th></tr></thead>
           <tbody>
-            <tr><td>Obésité</td><td>jusqu'à 80 %</td></tr>
-            <tr><td>Apnée du sommeil</td><td>55–80 %</td></tr>
-            <tr><td>MCAS</td><td>50–75 %</td></tr>
-            <tr><td>IRC stade 3</td><td>jusqu'à 50 %</td></tr>
-            <tr><td>FA</td><td>40–50 %</td></tr>
-            <tr><td>Diabète type 2</td><td>28–40 %</td></tr>
+            <tr><td><strong>ARNI (Sacubitril/Valsartan)</strong></td><td>Inhib. néprilysine + blocage SRAA</td><td>24/26 → 103/97 mg BID</td><td>Hypotension, angioœdème, hyperK⁺</td><td>Arrêter IECA ≥ 36h · créat &gt; 200 · grossesse</td><td>Cr + K⁺ J7–14</td></tr>
+            <tr><td><strong>Bisoprolol / Carvédilol</strong></td><td>Blocage β → ↓ catécholamines → inversion remodelage</td><td>Bisoprolol 1,25→10 mg/j · Carvédilol 3,125→25 mg BID</td><td>Fatigue, bradycardie, hypotension</td><td>Ne pas initier en décompensation · prudence asthme</td><td>FC cible 60–70 bpm</td></tr>
+            <tr><td><strong>Spironolactone / Éplérénone</strong></td><td>Blocage aldostérone → ↓ fibrose + remodelage</td><td>12,5→50 mg/j</td><td>HyperK⁺, IRA, gynécomastie (spiro)</td><td>K⁺ &gt; 5,5 · DFGe &lt; 30</td><td>K⁺ + Cr J7–14</td></tr>
+            <tr><td><strong>Dapagliflozine</strong></td><td>Inhib. SGLT-2 → natriurèse + cardiorénal</td><td>10 mg/j</td><td>Mycose génitale, polyurie</td><td>DFGe &lt; 25 · TAS &lt; 95</td><td>SADMANS si déshydratation</td></tr>
+            <tr><td><strong>Furosémide</strong></td><td>Bloque réabsorption Na⁺ anse ascendante</td><td>20–80 mg/j PO ou IV</td><td>HypoK⁺, IRA pré-rénale, ototoxicité</td><td>Déshydratation sévère</td><td>K⁺ · Cr · poids quotidien</td></tr>
+            <tr><td><strong>Ivabradine (Lancora)</strong></td><td>Inhib. courant pacemaker sinusal (If)</td><td>5 mg BID → FC cible</td><td>Phosphènes, bradycardie</td><td>FA · bradycardie · bloc AV</td><td>FC cible 60–70 bpm</td></tr>
+            <tr><td><strong>Digoxine</strong></td><td>Inhib. Na⁺/K⁺ ATPase → ↑ Ca²⁺ inotropie + ↓ chronotropie</td><td>0,0625–0,25 mg/j</td><td>Nausée, anorexie, vision jaune/verte, arythmies</td><td>Bradycardie, BAV, hypoK⁺, IRC</td><td>Digoxinémie J5–7 (0,9–2 ng/mL)</td></tr>
           </tbody>
         </table>
+        </div>
+        <div class="highlight red" style="margin-top:10px;font-size:13px;">⚠️ <strong>Interactions clés :</strong> IECA + ARNI simultanément → angioœdème · IECA + ARA → jamais · Nitrates + iPDE5 → hypotension sévère · BCC non-DHP si FEVG ≤ 40 % → CI (amlodipine OK) · AINS → rétention sodée + ↑ IC</div>
       </div>
 
+      <!-- ═══ IC-6b: 4 PRINCIPES ICFEp ═══ -->
+      <div class="block def" id="ic-6b">
+        <div class="block-title"><span class="tag">🟢 6. ICFEp — Les 4 Principes</span></div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px;">
+          <div style="border:2px solid var(--blue);border-radius:10px;padding:12px;">
+            <div style="font-weight:700;color:var(--blue);font-size:14px;margin-bottom:8px;">Principe #1</div>
+            <div style="font-weight:600;margin-bottom:6px;">Rechercher la présentation clinique ICFEp</div>
+            <div style="font-size:12px;color:var(--text-muted);">Présentation typique :
+              <ol style="margin:6px 0 0 16px;padding:0;">
+                <li>Œdème pulmonaire / congestion systémique</li>
+                <li>Dyspnée (effort ou repos)</li>
+                <li>Utilisation de diurétiques</li>
+                <li>Épanchement pleureux</li>
+              </ol>
+            </div>
+          </div>
+          <div style="border:2px solid var(--yellow);border-radius:10px;padding:12px;">
+            <div style="font-weight:700;color:#b45309;font-size:14px;margin-bottom:8px;">Principe #2</div>
+            <div style="font-weight:600;margin-bottom:6px;">Identifier et traiter les comorbidités</div>
+            <table style="font-size:11px;margin-top:6px;">
+              <thead><tr><th>Comorbidité</th><th>Prévalence ICFEp</th></tr></thead>
+              <tbody>
+                <tr><td>HTA</td><td>Très fréquente</td></tr>
+                <tr><td>Obésité</td><td>jusqu&apos;à 80 %</td></tr>
+                <tr><td>Apnée du sommeil</td><td>55–80 %</td></tr>
+                <tr><td>MCAS</td><td>50–75 %</td></tr>
+                <tr><td>FA</td><td>40–50 %</td></tr>
+                <tr><td>DM2</td><td>28–40 %</td></tr>
+                <tr><td>MPOC</td><td>jusqu&apos;à 40 %</td></tr>
+                <tr><td>IRC stade 3</td><td>jusqu&apos;à 50 %</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div style="border:2px solid #ef4444;border-radius:10px;padding:12px;">
+            <div style="font-weight:700;color:#dc2626;font-size:14px;margin-bottom:8px;">Principe #3</div>
+            <div style="font-weight:600;margin-bottom:6px;">Rechercher l&apos;étiologie causant l&apos;IC</div>
+            <div style="font-size:12px;color:var(--text-muted);">DDx ICFEp à éliminer :
+              <ul style="margin:6px 0 0 16px;padding:0;">
+                <li><strong>Valvulopathie gauche :</strong> SA, RA, SM, RM</li>
+                <li><strong>Péricarde :</strong> tamponnade, péricardite constrictive</li>
+                <li><strong>Insuff. VD :</strong> HTA pulm., valvulopathie pulm./tricusp.</li>
+                <li><strong>CMP :</strong> infiltrative (amyloïdose), inflammatoire (sarcoïdose), hypertrophique, génétique (Fabry, hémochromatose)</li>
+              </ul>
+            </div>
+          </div>
+          <div style="border:2px solid #0a7a4e;border-radius:10px;padding:12px;">
+            <div style="font-weight:700;color:#0a7a4e;font-size:14px;margin-bottom:8px;">Principe #4</div>
+            <div style="font-weight:600;margin-bottom:6px;">Score diagnostique H2FPEF (MDCalc)</div>
+            <div style="font-size:12px;color:var(--text-muted);">
+              <strong>H</strong> = Heavy (IMC &gt; 30) · <strong>2</strong> = Hypertensif (≥ 2 anti-HTA) · <strong>F</strong> = FA · <strong>P</strong> = PAPs &gt; 35 mmHg · <strong>E</strong> = Elder (≥ 60 ans) · <strong>F</strong> = Filling pressure (E/e&apos; &gt; 9)<br><br>
+              Score ≥ 6 = ICFEp très probable
+            </div>
+          </div>
+        </div>
+        <div class="note">Pharmacothérapie ICFEp : <strong>iSGLT-2 (dapagliflozine 10 mg/j)</strong> 1re ligne (Code CV679) · <strong>ARM</strong> (données TOPCAT) · <strong>GLP-1 (sémaglutide)</strong> si obésité (STEP-HFpEF) · ARNI ou candésartan pour contrôle TA</div>
+      </div>
+
+      <!-- ═══ IC-7: TRAITEMENT ICFEp ACCORDION ═══ -->
       <div class="block rx" id="ic-7">
         <div class="block-title"><span class="tag">💊 Traitement ICFEp — Algorithme par ligne</span></div>
         <div class="accordion">
           <div class="accordion-item open">
-            <div class="accordion-header">
-              <span><span style="font-family:var(--mono);font-weight:700;color:var(--blue);margin-right:8px;">①</span>1<sup>re</sup> ligne</span>
-              <span class="acc-badge line1">Tous les patients ICFEp</span>
+            <div class="accordion-header"><span style="font-family:var(--mono);font-weight:700;color:var(--blue);margin-right:8px;">①</span> 1<sup>re</sup> ligne — Tous les patients ICFEp
               <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
             </div>
             <div class="accordion-body">
-              <span class="drug-badge line1">iSGLT-2 — Dapagliflozine 10 mg/j</span> (Code RAMQ CV679) — bénéfice démontré indépendamment du statut diabétique (EMPEROR-Preserved/DELIVER)<br>
-              <span class="drug-badge line1">ARM — Spironolactone</span> (données TOPCAT — bénéfice surtout si FEVG dans la portion basse de la plage préservée)
+              <span class="drug-badge line1">iSGLT-2 — Dapagliflozine 10 mg/j</span> Code RAMQ CV679 — si NYHA II–IV + NT-proBNP confirmant IC (EMPEROR-Preserved, DELIVER)<br>
+              <span class="drug-badge line1">ARM — Spironolactone</span> données TOPCAT — bénéfice surtout si FEVG &lt; 57 %
             </div>
           </div>
           <div class="accordion-item">
-            <div class="accordion-header">
-              <span><span style="font-family:var(--mono);font-weight:700;color:var(--blue);margin-right:8px;">②</span>2<sup>e</sup> ligne / selon profil</span>
+            <div class="accordion-header"><span style="font-family:var(--mono);font-weight:700;color:var(--blue);margin-right:8px;">②</span> 2<sup>e</sup> ligne / selon profil
               <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
             </div>
             <div class="accordion-body">
-              <span class="drug-badge line2">GLP-1 — Sémaglutide</span> si IMC ≥ 30 (étude STEP-HFpEF — ↓ symptômes + perte pondérale)<br>
-              <span class="drug-badge line2">ARNI ou Candésartan</span> — bénéfice plus marqué si FEVG plus basse dans la plage préservée<br>
-              <span class="drug-badge line3">Diurétiques de l'anse</span> — congestion uniquement, dose minimale efficace
+              <span class="drug-badge line2">GLP-1 — Sémaglutide</span> si IMC ≥ 30 — ↓ symptômes + perte pondérale (STEP-HFpEF)<br>
+              <span class="drug-badge line2">ARNI ou Candésartan</span> — contrôle TA + prévention remodelage<br>
+              <span class="drug-badge line3">Diurétiques de l&apos;anse</span> — congestion uniquement, dose minimale efficace
             </div>
           </div>
           <div class="accordion-item">
-            <div class="accordion-header">
-              <span><span style="font-family:var(--mono);font-weight:700;color:var(--blue);margin-right:8px;">③</span>Toujours en parallèle</span>
+            <div class="accordion-header"><span style="font-family:var(--mono);font-weight:700;color:var(--blue);margin-right:8px;">③</span> Toujours en parallèle — comorbidités
               <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
             </div>
-            <div class="accordion-body">Optimiser <strong>chaque comorbidité</strong> du tableau ci-dessus (HTA, apnée du sommeil/CPAP, FA, diabète, perte pondérale, réadaptation à l'effort) — souvent plus déterminant sur le pronostic que la pharmacothérapie ciblée seule.</div>
+            <div class="accordion-body">Optimiser <strong>chaque comorbidité</strong> — souvent plus déterminant sur le pronostic que la pharmacothérapie ciblée : HTA · apnée du sommeil (CPAP) · FA · DM2 · perte pondérale · réadaptation à l&apos;effort</div>
           </div>
         </div>
       </div>
 
-      <!-- GESTION HYPERKALIÉMIE -->
-      <div class="block para" id="ic-8" style="border-left-color:var(--yellow);">
-        <div class="block-title"><span class="tag">⚡ Gestion de l'hyperkaliémie sous iSRAA (ICFEr & ICFEp)</span></div>
-        <p class="content-text" style="margin-bottom:8px;"><strong>Principe</strong> : avant d'arrêter les agents néphroprotecteurs, ↓ diurétiques épargneurs de K⁺, ↓ apport alimentaire en K⁺ et optimiser la volémie. Si K⁺ persiste élevé → chélateur de K⁺.</p>
+      <!-- ═══ IC-10: NON-PHARMACOLOGIQUE ═══ -->
+      <div class="block clin" id="ic-10">
+        <div class="block-title"><span class="tag">🥗 7. Traitements non pharmacologiques</span></div>
         <table>
-          <thead><tr><th>Chélateur</th><th>Dose</th><th>Statut RAMQ</th></tr></thead>
+          <thead><tr><th>Intervention</th><th>Recommandation</th><th>Données probantes</th></tr></thead>
           <tbody>
-            <tr><td>Kayexalate (polystyrène sodique)</td><td>15–30 g, 2–3×/sem à die</td><td>Couvert</td></tr>
-            <tr><td>Cyclosilicate de zirconium (Lokelma)</td><td>5–10 g die</td><td>Médicament d'exception</td></tr>
-            <tr><td>Patiromer (Veltassa)</td><td>8,4–25,2 g die</td><td>Médicament d'exception</td></tr>
+            <tr><td><strong>Exercice physique</strong></td><td>Aérobie modéré 3–5×/sem · Réadaptation cardiaque</td><td>↑ qualité de vie + capacité effort (HF-ACTION) · ↓ réadmissions</td></tr>
+            <tr><td><strong>Restriction sodée</strong></td><td>&lt; 2 g/j de sodium</td><td>↓ rétention hydrosodée + symptômes congestifs</td></tr>
+            <tr><td><strong>Restriction hydrique</strong></td><td>Approche individualisée — <strong>pas</strong> de restriction stricte systématique</td><td>Restriction 1,5 L/j n&apos;améliore pas les outcomes (FRESH-UP 2025)</td></tr>
+            <tr><td><strong>Surveillance du poids</strong></td><td>Pesée quotidienne à jeun, même heure</td><td>↑ &gt; 2 kg/48h = alarme → ajuster diurétique</td></tr>
+            <tr><td><strong>Perte de poids</strong></td><td>Cible IMC &lt; 35 kg/m² (surtout ICFEp)</td><td>↓ pression de remplissage + ↓ symptômes</td></tr>
+            <tr><td><strong>Cessation tabagique</strong></td><td>Arrêt complet</td><td>↓ risque réadmission et décès</td></tr>
+            <tr><td><strong>Traitement apnée du sommeil</strong></td><td>CPAP (obstructive) / VNI (centrale)</td><td>↑ qualité vie + ↓ arythmies (prévalence 55–80 % ICFEp)</td></tr>
+            <tr><td><strong>Sevrage alcoolique</strong></td><td>Arrêt complet si CMP alcoolique</td><td>Récupération FEVG possible</td></tr>
+            <tr><td><strong>Vaccination</strong></td><td>Grippe · Pneumocoque · COVID-19</td><td>↓ hospitalisations infectieuses</td></tr>
           </tbody>
         </table>
-        <div class="note" style="margin-top:8px;">⚠️ EI communs des chélateurs : constipation, diarrhée, douleur abdominale, N&V. Lokelma et Patiromer sont mieux tolérés que le Kayexalate (ancienne génération).</div>
+        <div class="key-fact blue" style="margin-top:10px;">📋 <strong>Suivi :</strong> Pesée quotidienne · Cr + K⁺ J7–14 · FC cible · FEVG par ÉTT (réévaluer post-optimisation) · Ferritine/TSAT annuellement · Titration doses-cibles q2–4 sem · Enseigner SADMANS</div>
       </div>
 
-      <div class="block flag" id="ic-9">
-        <div class="block-title"><span class="tag">🚨 SADMANS — Journée de maladie & Red Flags</span></div>
-        <p class="content-text" style="margin-bottom:8px;">Le moyen mnémotechnique <strong>SADMANS</strong> rappelle quels médicaments <strong>suspendre temporairement</strong> en cas de maladie aiguë (déshydratation, fièvre, diarrhée, vomissements) — ces agents peuvent précipiter une insuffisance rénale aiguë ou une hypotension lorsque le volume circulant chute. Reprendre dès le retour à l'état habituel.</p>
-        <div class="key-fact red"><strong>SADMANS :</strong> Suspendre <u>S</u>GLT-2 · <u>A</u>CEI (IECA) · <u>D</u>iurétique · <u>M</u>etformin · <u>A</u>RA · <u>N</u>SAID (AINS) · <u>S</u>ulfonylurée</div>
+      <!-- ═══ IC-8: HYPERKALIÉMIE ═══ -->
+      <div class="block para" id="ic-8" style="border-left-color:var(--yellow);">
+        <div class="block-title"><span class="tag">⚡ 8. Gestion de l&apos;hyperkaliémie sous iSRAA</span></div>
+        <div class="key-fact yellow" style="margin-bottom:10px;"><strong>Stratégie avant d&apos;arrêter les agents néphroprotecteurs :</strong> ↓ diurétiques épargneurs K⁺ · ↓ apport alimentaire K⁺ · optimiser la volémie · ajuster dose ARM. Si K⁺ ≥ 5,5 persistant → chélateur de K⁺ pour maintenir l&apos;ARM/ARNI.</div>
+        <table style="margin-bottom:10px;">
+          <thead><tr><th>Chélateur</th><th>Dose</th><th>Statut RAMQ</th><th>Avantages</th></tr></thead>
+          <tbody>
+            <tr><td>Kayexalate (polystyrène sodique)</td><td>15–30 g, 2–3×/sem à die</td><td>Couvert</td><td>Peu coûteux · effet lent</td></tr>
+            <tr><td>Cyclosilicate de zirconium (Lokelma)</td><td>5–10 g die</td><td>Médicament d&apos;exception</td><td>Action rapide (1–6h) · sélectif K⁺</td></tr>
+            <tr><td>Patiromer (Veltassa)</td><td>8,4–25,2 g die</td><td>Médicament d&apos;exception</td><td>Mieux toléré que Kayexalate</td></tr>
+          </tbody>
+        </table>
+        <div class="note">EI communs : constipation · diarrhée · douleur abdominale · N&amp;V · Lokelma et Veltassa mieux tolérés que Kayexalate.</div>
+        <div class="highlight red" style="margin-top:8px;font-size:13px;">🚨 Hyperkaliémie sévère (K⁺ &gt; 6,5 ou ECG modifié) → urgence → arrêt ARNI/ARM/IECA + calcium gluconate IV + insuline-glucose → référer urgence</div>
+      </div>
 
-        <div class="sec-divider" style="margin-top:14px;">
-          <div class="sd-shape ci"></div>
-          <div class="sd-label">Red Flags — Référer / agir rapidement</div>
-          <div class="sd-line"></div>
+      <!-- ═══ IC-9: SADMANS & RED FLAGS ═══ -->
+      <div class="block flag" id="ic-9">
+        <div class="block-title"><span class="tag">🚨 SADMANS — Journée de maladie &amp; Red Flags</span></div>
+        <p class="content-text" style="margin-bottom:8px;"><strong>SADMANS</strong> = médicaments à <strong>suspendre temporairement</strong> lors de maladie aiguë (déshydratation, fièvre, diarrhée, vomissements) — risque IRA ou hypotension. Reprendre dès retour à l&apos;état habituel.</p>
+        <div class="key-fact red"><strong>SADMANS :</strong> Suspendre <u>S</u>GLT-2 · <u>A</u>CEI (IECA) · <u>D</u>iurétique · <u>M</u>etformin · <u>A</u>RA · <u>N</u>SAID (AINS) · <u>S</u>ulfonylurée</div>
+        <div class="flag-list" style="margin-top:12px;">
+          <div class="flag-item"><span class="fi-icon">🚨</span><span><strong>Red Flags IC :</strong> FEVG &lt; 25 % · Natrémie &lt; 133 mEq/L · NT-proBNP très élevé · FC élevée malgré Tx · ESV fréquentes · Incapacité à marcher terrain plat &gt; 3 min → référence urgente cardiologie</span></div>
+          <div class="flag-item"><span class="fi-icon">⛔</span><span>OAP avec instabilité hémodynamique → VNI ± intubation urgente · Mauvaise réponse aux médicaments</span></div>
+          <div class="flag-item"><span class="fi-icon">💊</span><span><span class="drug-badge ci">IECA + ARNI simultanément → angioœdème</span> · <span class="drug-badge ci">IECA + ARA → jamais ensemble</span> · <span class="drug-badge ci">Nitrates + iPDE5 → hypotension sévère</span> · <span class="drug-badge ci">BCC non-DHP + FEVG ≤ 40 % → CI (amlodipine OK)</span></span></div>
+          <div class="flag-item"><span class="fi-icon">📋</span><span><strong>Action IPS :</strong> Référence urgente clinique spécialisée · Réévaluer quadruple thérapie · Traitements avancés (DAI, TRC, transplantation) · Discussion objectifs de soins</span></div>
         </div>
-        <div class="flag-list" style="margin-top:10px;">
-          <div class="flag-item"><span class="fi-icon">🚨</span><span>FEVG &lt; 25 % · Natrémie &lt; 133 · BNP/NT-proBNP très élevé · FC élevée malgré Tx · ESV fréquentes · Incapacité à marcher sur terrain plat à rythme normal &gt; 3 min · IC sévère sans facteur précipitant identifiable → mauvais pronostic → référence urgente en clinique spécialisée</span></div>
-          <div class="flag-item"><span class="fi-icon">⛔</span><span>OAP avec instabilité hémodynamique → VNI ± intubation urgente</span></div>
-          <div class="flag-item"><span class="fi-icon">💊</span><span><span class="drug-badge ci">IECA + ARNI simultanément → angioœdème</span> · <span class="drug-badge ci">IECA + ARA → jamais ensemble</span> · <span class="drug-badge ci">Nitrates + iPDE5 → hypotension sévère</span></span></div>
-          <div class="flag-item"><span class="fi-icon">⚠️</span><span><span class="drug-badge ci">BCC non-DHP si FEVG ≤ 40 % → aggravent IC</span> (amlodipine = sécuritaire) · <span class="drug-badge ci">AINS → rétention hydrosodée + ↑ TA</span></span></div>
-        </div>
-        <div class="highlight cream" style="margin-top:8px;font-size:13px;"><strong>Suivi :</strong> Poids quotidien (↑ &gt; 2 kg/48h = alarme) · Cr + K⁺ à J7–14 après changement · FC cible 60–70 bpm · FEVG par ÉTT · Ferritine/TSAT annuellement · Titration dose-cible q2–4 sem</div>
+        <div class="highlight cream" style="margin-top:8px;font-size:13px;"><strong>Conseil IPS :</strong> Prioriser l&apos;initiation des 4 agents avant la titration maximale · ↑ &gt; 2 kg/48h = alarme → ajuster diurétique · NT-proBNP préférable au BNP pour suivi sous ARNI</div>
       </div>
     </div>
     <div class="section" id="sec-stenose-aortique">
