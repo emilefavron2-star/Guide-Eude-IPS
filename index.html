@@ -21579,6 +21579,12 @@ function dkRenal(view) {
 <div class="section" id="sec-antidepresseurs">
       <div class="section-header"><div class="section-accent">💭</div><div class="section-title"><h1>Antidépresseurs &amp; Rôle de l&apos;IPSSA</h1><div class="breadcrumb">Santé mentale <span class="breadcrumb-sep">·</span> Section</div></div></div>
 
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px;">
+        <button onclick="document.getElementById('sm-role').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🩺 Rôle IPSSA</button>
+        <button onclick="document.getElementById('sm-classes-ad').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">💊 Classes &amp; Doses</button>
+        <button onclick="document.getElementById('sm-choix-ad').scrollIntoView({behavior:'smooth'})" style="background:#7b3fa0;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🗺️ Algorithme choix AD</button>
+      </div>
+
       <div class="block def" id="sm-role">
         <div class="block-title"><span class="tag">🩺 Rôle de l&apos;IPSSA en Santé Mentale (OIIQ)</span></div>
         <table>
@@ -21595,34 +21601,67 @@ function dkRenal(view) {
       </div>
 
       <div class="block clin" id="sm-classes-ad">
-        <div class="block-title"><span class="tag">💊 Classes d&apos;Antidépresseurs</span></div>
-        <table style="margin-bottom:12px;">
-          <thead><tr><th>Classe</th><th>Exemples</th><th>Mécanisme</th><th>Particularités / EI clés</th></tr></thead>
-          <tbody>
-            <tr><td><strong>ISRS</strong></td><td>Sertraline · Escitalopram · Fluoxétine · Citalopram · Paroxétine</td><td>Inhibition recapture 5-HT</td><td>1re ligne · Nausées · Insomnie · Dysfonction sexuelle · Fluoxétine = longue ½ vie (utile inobservance)</td></tr>
-            <tr><td><strong>IRSN</strong></td><td>Venlafaxine · Desvenlafaxine · Duloxétine</td><td>Inhibition recapture 5-HT + NE</td><td>Douleur chronique · HTA · Sevrage difficile (venlafaxine courte ½ vie)</td></tr>
-            <tr><td><strong>Bupropion</strong></td><td>Wellbutrin · Zyban</td><td>Inhibition recapture DA + NE</td><td>Surpoids · Fatigue · Tabagisme · Pas de dysfonction sexuelle · CI: épilepsie, trouble alimentaire</td></tr>
-            <tr><td><strong>Mirtazapine</strong></td><td>Remeron</td><td>Antagoniste α2 + H1 + 5-HT2/3</td><td>≤ 15 mg = sédatif · Appétit ↑ · Poids ↑ · Utile insomnie + faible poids · Risque saignement ↓</td></tr>
-            <tr><td><strong>ATC</strong></td><td>Amitriptyline · Nortriptyline · Imipramine</td><td>Inhibition recapture 5-HT + NE + effets anticholinergiques</td><td>Douleur chronique · Insomnie · CI: post-IM, glaucome, HBP · Toxicité cardiaque (surdose)</td></tr>
-            <tr><td><strong>Vortioxétine</strong></td><td>Trintellix</td><td>Inhibition recapture + modulateur 5-HT</td><td>Dysfonction cognitive · Dysfonction sexuelle ↓</td></tr>
-          </tbody>
-        </table>
-        <div class="key-fact blue" style="margin-bottom:8px;"><strong>Choix selon symptôme dominant :</strong></div>
+        <div class="block-title"><span class="tag">💊 Classes d&apos;Antidépresseurs — Doses &amp; EI</span></div>
         <table>
-          <thead><tr><th>Symptôme</th><th>Molécule(s) privilégiée(s)</th></tr></thead>
+          <thead><tr><th>Classe / Molécule</th><th>Dose départ</th><th>Dose cible</th><th>Dose max</th><th>EI clés &amp; Particularités</th></tr></thead>
           <tbody>
-            <tr><td>Anxiété · Fatigue</td><td>ISRS · IRSN</td></tr>
-            <tr><td>Faible poids / appétit</td><td>Mirtazapine</td></tr>
-            <tr><td>Surpoids · Tabagisme</td><td>Bupropion</td></tr>
-            <tr><td>MCAS</td><td>Sertraline (profil sécuritaire le mieux documenté)</td></tr>
-            <tr><td>Insomnie</td><td>Mirtazapine ≤ 15 mg · ATC</td></tr>
-            <tr><td>Douleur chronique</td><td>Duloxétine · Venlafaxine · ATC</td></tr>
-            <tr><td>Dysfonction sexuelle</td><td>Bupropion · Desvenlafaxine · Mirtazapine · Vortioxétine</td></tr>
-            <tr><td>Dysfonction cognitive</td><td>ISRS · Duloxétine · Bupropion · Vortioxétine</td></tr>
-            <tr><td>Risque saignement ↑</td><td>Mirtazapine (éviter ISRS)</td></tr>
-            <tr><td>Inobservance</td><td>Fluoxétine (longue ½ vie)</td></tr>
+            <tr><td colspan="5" style="background:#e8f0fe;font-weight:700;color:#1C3F8F;">ISRS — Inhibiteurs sélectifs de la recapture de la sérotonine</td></tr>
+            <tr><td><strong>Escitalopram</strong> (Cipralex)</td><td>5–10 mg/j</td><td>10–20 mg/j</td><td>20 mg/j</td><td>Meilleure tolérabité · Nausées · Insomnie · Dysfonction sexuelle</td></tr>
+            <tr><td><strong>Sertraline</strong> (Zoloft)</td><td>25–50 mg/j</td><td>100–200 mg/j</td><td>200 mg/j</td><td>MCAS (profil sécuritaire documenté) · Nausées · Diarrhée</td></tr>
+            <tr><td><strong>Fluoxétine</strong> (Prozac)</td><td>10–20 mg/j</td><td>20–60 mg/j</td><td>80 mg/j</td><td>Longue ½ vie → utile inobservance · Sevrage facile · Inhibiteur CYP2D6</td></tr>
+            <tr><td><strong>Citalopram</strong> (Celexa)</td><td>10–20 mg/j</td><td>20–40 mg/j</td><td>40 mg/j</td><td>Prolongation QTc à dose élevée · Max 20 mg si &gt; 60 ans</td></tr>
+            <tr><td><strong>Paroxétine</strong> (Paxil)</td><td>10 mg/j</td><td>20–40 mg/j</td><td>60 mg/j</td><td>Sédatif · Prise de poids · Courte ½ vie → sevrage difficile · Tératogène</td></tr>
+            <tr><td colspan="5" style="background:#f0e8fe;font-weight:700;color:#7b3fa0;">IRSN — Inhibiteurs de la recapture de la sérotonine et de la noradrénaline</td></tr>
+            <tr><td><strong>Venlafaxine XR</strong> (Effexor)</td><td>37,5–75 mg/j</td><td>75–225 mg/j</td><td>225 mg/j</td><td>Douleur · HTA dose-dépendante · Sevrage difficile · Anxiété · Nausées</td></tr>
+            <tr><td><strong>Duloxétine</strong> (Cymbalta)</td><td>30 mg/j</td><td>60 mg/j</td><td>120 mg/j</td><td>Douleur chronique · Neuropathie · HTA · Nausées · Interaction alcool (hépatotox.)</td></tr>
+            <tr><td><strong>Desvenlafaxine</strong> (Pristiq)</td><td>50 mg/j</td><td>50 mg/j</td><td>100 mg/j</td><td>Dysfonction sexuelle ↓ vs venlafaxine · Dose fixe pratique</td></tr>
+            <tr><td colspan="5" style="background:#fef3cd;font-weight:700;color:#856404;">Autres classes</td></tr>
+            <tr><td><strong>Bupropion XL</strong> (Wellbutrin)</td><td>150 mg/j</td><td>150–300 mg/j</td><td>450 mg/j</td><td>Surpoids · Tabagisme · Fatigue · Pas de dysfonction sexuelle · CI: épilepsie, TCA</td></tr>
+            <tr><td><strong>Mirtazapine</strong> (Remeron)</td><td>15 mg HS</td><td>15–45 mg HS</td><td>45 mg/j</td><td>≤ 15 mg = sédatif · Appétit ↑ · Prise de poids · Faible risque dysfonction sexuelle</td></tr>
+            <tr><td><strong>Vortioxétine</strong> (Trintellix)</td><td>10 mg/j</td><td>10–20 mg/j</td><td>20 mg/j</td><td>Dysfonction cognitive · Dysfonction sexuelle ↓ · Nausées fréquentes en début</td></tr>
+            <tr><td><strong>Amitriptyline</strong> (ATC)</td><td>25 mg HS</td><td>75–150 mg HS</td><td>300 mg/j</td><td>Douleur chronique · Insomnie · CI: post-IM, glaucome · Toxicité cardiaque (surdose)</td></tr>
           </tbody>
         </table>
+      </div>
+
+      <!-- DROPDOWN ALGO CHOIX AD -->
+      <div class="block para" id="sm-choix-ad">
+        <div class="block-title"><span class="tag">🗺️ Algorithme — Choix de l&apos;Antidépresseur</span></div>
+        <div style="background:#f8fafc;border:2px solid #7b3fa0;border-radius:10px;padding:16px;margin-bottom:12px;">
+          <p style="font-weight:700;color:#7b3fa0;margin-bottom:12px;">Sélectionnez les paramètres cliniques :</p>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;">
+            <div>
+              <label style="font-size:12px;font-weight:600;color:#475569;display:block;margin-bottom:4px;">Symptôme / contexte dominant</label>
+              <select id="ad-symptome" onchange="choixAD()" style="width:100%;padding:8px;border:1px solid #cbd5e1;border-radius:6px;font-size:13px;">
+                <option value="">-- Choisir --</option>
+                <option value="anxiete">Anxiété prédominante</option>
+                <option value="fatigue">Fatigue / manque d&apos;énergie</option>
+                <option value="insomnie">Insomnie</option>
+                <option value="faible-poids">Faible poids / appétit ↓</option>
+                <option value="surpoids">Surpoids / appétit ↑</option>
+                <option value="mcas">MCAS / cardiopathie</option>
+                <option value="douleur">Douleur chronique / neuropathie</option>
+                <option value="tabagisme">Tabagisme concomitant</option>
+                <option value="dysfonction-sex">Dysfonction sexuelle à éviter</option>
+                <option value="cognitive">Dysfonction cognitive</option>
+                <option value="saignement">Risque de saignement ↑</option>
+                <option value="inobservance">Inobservance prévisible</option>
+              </select>
+            </div>
+            <div>
+              <label style="font-size:12px;font-weight:600;color:#475569;display:block;margin-bottom:4px;">Comorbidité / CI à considérer</label>
+              <select id="ad-comorbidite" onchange="choixAD()" style="width:100%;padding:8px;border:1px solid #cbd5e1;border-radius:6px;font-size:13px;">
+                <option value="">-- Aucune particulière --</option>
+                <option value="epilepsie">Épilepsie</option>
+                <option value="grossesse">Grossesse / allaitement</option>
+                <option value="hepatique">Insuffisance hépatique</option>
+                <option value="renale">Insuffisance rénale</option>
+              </select>
+            </div>
+          </div>
+          <div id="ad-output" style="background:#fff;border-left:4px solid #7b3fa0;border-radius:0 8px 8px 0;padding:12px;min-height:40px;display:none;">
+          </div>
+        </div>
       </div>
     </div>
     <div class="section" id="sec-stabilisateurs">
@@ -21701,183 +21740,152 @@ function dkRenal(view) {
       <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px;">
         <button onclick="document.getElementById('ap-mec').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">⚙️ Mécanisme D2</button>
         <button onclick="document.getElementById('ap-sep').scrollIntoView({behavior:'smooth'})" style="background:#7b3fa0;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔶 Tableau SEP</button>
-        <button onclick="document.getElementById('ap-algo').scrollIntoView({behavior:'smooth'})" style="background:#d97706;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🗺️ Algo traitement</button>
+        <button onclick="document.getElementById('ap-algo').scrollIntoView({behavior:'smooth'})" style="background:#d97706;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🗺️ Algo traitement SEP</button>
         <button onclick="document.getElementById('ap-echelles').scrollIntoView({behavior:'smooth'})" style="background:#0a7a4e;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📊 Échelles</button>
-        <button onclick="document.getElementById('ap-clozapine').scrollIntoView({behavior:'smooth'})" style="background:#dc2626;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">❤️ Clozapine &amp; Cardio</button>
+        <button onclick="document.getElementById('ap-clozapine').scrollIntoView({behavior:'smooth'})" style="background:#dc2626;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">❤️ Clozapine</button>
       </div>
 
-      <!-- MÉCANISME -->
       <div class="block def" id="ap-mec">
         <div class="block-title"><span class="tag">⚙️ Mécanisme d&apos;action des Antipsychotiques</span></div>
-        <div class="key-fact blue" style="margin-bottom:8px;"><strong>Mécanisme principal :</strong> Blocage des récepteurs D2 dans la <strong>voie nigro-striée</strong> (voie dopaminergique reliant la substance noire au striatum) → ↓ dopamine → ↑ ACTH → Symptômes parkinsoniens / SEP</div>
+        <div class="key-fact blue" style="margin-bottom:8px;"><strong>Mécanisme principal :</strong> Blocage des récepteurs D2 dans la <strong>voie nigro-striée</strong> → ↓ dopamine → ↑ ACTH → Symptômes parkinsoniens / SEP</div>
         <table>
           <thead><tr><th>Voie dopaminergique</th><th>Effet du blocage D2</th><th>Pertinence clinique</th></tr></thead>
           <tbody>
-            <tr><td><strong>Mésolimbique</strong></td><td>↓ Symptômes positifs (hallucinations, délires)</td><td>Effet antipsychotique recherché</td></tr>
-            <tr><td><strong>Mésocorticale</strong></td><td>↓ Symptômes négatifs (→ aggravation possible)</td><td>Effet indésirable</td></tr>
+            <tr><td><strong>Mésolimbique</strong></td><td>↓ Symptômes positifs (hallucinations, délires)</td><td>Effet antipsychotique <em>recherché</em></td></tr>
+            <tr><td><strong>Mésocorticale</strong></td><td>↓ Symptômes négatifs (aggravation possible)</td><td>Effet indésirable</td></tr>
             <tr><td><strong>Nigro-striée</strong></td><td>↓ Mouvement → SEP</td><td>Principale cause de SEP</td></tr>
-            <tr><td><strong>Tubéro-infundibulaire</strong></td><td>↑ Prolactine → galactorrhée, aménorrhée</td><td>EI endocrinien</td></tr>
+            <tr><td><strong>Tubéro-infundibulaire</strong></td><td>↑ Prolactine</td><td>Galactorrhée, aménorrhée</td></tr>
           </tbody>
         </table>
-        <div class="key-fact yellow" style="margin-top:8px;">💡 Les AP de 2e génération (ex: quétiapine, clozapine) ont une affinité D2 plus faible + action sur 5-HT2A → moins de SEP mais plus d&apos;effets métaboliques.</div>
+        <div class="key-fact yellow" style="margin-top:8px;">💡 AP de 2e génération (quétiapine, clozapine) : affinité D2 plus faible + action 5-HT2A → moins de SEP mais plus d&apos;effets métaboliques.</div>
       </div>
 
-      <!-- TABLEAU SEP -->
       <div class="block flag" id="ap-sep">
-        <div class="block-title"><span class="tag">🔶 Tableau des Symptômes Extrapyramidaux (SEP)</span></div>
+        <div class="block-title"><span class="tag">🔶 Tableau Complet des SEP</span></div>
         <table>
-          <thead><tr><th>SEP</th><th>Délai d&apos;apparition</th><th>Présentation clinique</th><th>Facteurs de risque</th></tr></thead>
+          <thead><tr><th>SEP</th><th>Délai</th><th>Présentation</th><th>Facteurs de risque</th><th>Traitement clé</th></tr></thead>
           <tbody>
             <tr>
               <td><strong>Dystonie aiguë</strong></td>
-              <td>24–96 h après instauration/changement de dose · Possible après arrêt Tx</td>
-              <td>Spasmes musculaires · Crise oculogyre · Torticolis · Opisthotonos</td>
+              <td>24–96 h (instauration/changement dose)</td>
+              <td>Spasmes musculaires · Crise oculogyre · Torticolis · Opisthotonus</td>
               <td>Jeune homme · Halopéridol</td>
+              <td>Benztropine 1–2 mg IM/PO ou Diphenhydramine 25–50 mg IM/PO</td>
             </tr>
             <tr>
               <td><strong>Akathisie</strong></td>
-              <td>3 sem – 2 mois (début du Tx)</td>
-              <td>Agitation intérieure intense · Envie de bouger · Incapacité à rester assis · Peut mimer une agitation psychotique</td>
-              <td>Aripiprazole · Lurasidone · ↑ dose rapide</td>
+              <td>3 sem – 2 mois</td>
+              <td>Agitation intérieure · Envie de bouger · Incapacité à rester assis</td>
+              <td>Aripiprazole · Lurasidone · Dose élevée</td>
+              <td>Propranolol 10–40 mg BID · BZD · Mirtazapine 15 mg</td>
             </tr>
             <tr>
-              <td><strong>Parkinsonisme induit</strong></td>
-              <td>Premiers jours – semaines suivant début Tx</td>
-              <td>Tremblements · Rigidité · Bradykinésie · Faciès masqué · Démarche à petits pas</td>
-              <td>Femme · Âge avancé · AP puissant (halopéridol)</td>
+              <td><strong>Parkinsonisme</strong></td>
+              <td>Jours–semaines</td>
+              <td>Tremblements · Rigidité · Bradykinésie · Faciès masqué</td>
+              <td>Femme · Âge ↑ · AP puissant</td>
+              <td>Benztropine 1–6 mg/j · Diphenhydramine 25–300 mg/j</td>
             </tr>
             <tr>
               <td><strong>Dyskinésie tardive</strong></td>
-              <td>Mois–années (usage prolongé)</td>
-              <td>Mouvements choréiformes involontaires (langue, lèvres, membres) · Hypersensibilité D2</td>
-              <td>Caucasien · AP 1re génération · ATCD SEP précoces</td>
+              <td>Mois–années</td>
+              <td>Mouvements choréiformes (langue, lèvres, membres)</td>
+              <td>AP 1re gén. · Usage prolongé · ATCD SEP précoces</td>
+              <td>Valbenazine 40→80 mg/j · Deutétrabénazine 6→36 mg/j</td>
             </tr>
           </tbody>
         </table>
-        <div class="key-fact yellow" style="margin-top:8px;">💡 <strong>Conseil général SEP :</strong> Débuter AP à faible dose, titration graduelle · Ne pas utiliser anticholinergiques en prophylaxie systématique · Évaluer régulièrement la nécessité du traitement AP</div>
       </div>
 
-      <!-- ALGO TRAITEMENT SEP -->
+      <!-- DROPDOWN ALGO SEP -->
       <div class="block para" id="ap-algo">
-        <div class="block-title"><span class="tag">🗺️ Algorithme de Traitement — SEP</span></div>
-
-        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px;">
-          <button onclick="sepTab('dystonie')" id="septab-dystonie" style="background:#1C3F8F;color:#fff;border:none;border-radius:16px;padding:6px 14px;cursor:pointer;font-size:12px;">Dystonie</button>
-          <button onclick="sepTab('akathisie')" id="septab-akathisie" style="background:#e2e8f0;color:#1e293b;border:none;border-radius:16px;padding:6px 14px;cursor:pointer;font-size:12px;">Akathisie</button>
-          <button onclick="sepTab('parkinsonisme')" id="septab-parkinsonisme" style="background:#e2e8f0;color:#1e293b;border:none;border-radius:16px;padding:6px 14px;cursor:pointer;font-size:12px;">Parkinsonisme</button>
-          <button onclick="sepTab('dyskinese')" id="septab-dyskinese" style="background:#e2e8f0;color:#1e293b;border:none;border-radius:16px;padding:6px 14px;cursor:pointer;font-size:12px;">Dyskinésie tardive</button>
-        </div>
-
-        <div id="sep-content-dystonie">
-          <div class="key-fact blue" style="margin-bottom:6px;"><strong>Dystonie aiguë</strong></div>
-          <div class="flag-list">
-            <div class="flag-item"><span class="flag-dot ink"></span><span><strong>Prévention :</strong> Débuter AP à faible dose · Augmentation graduelle · Anticholinergique préventif si agitation importante et AP puissant</span></div>
-            <div class="flag-item"><span class="flag-dot ink"></span><span><strong>Légère–modérée :</strong> Benztropine 1–2 mg PO ou Diphenhydramine 25–50 mg PO · Résolution rapide attendue</span></div>
-            <div class="flag-item"><span class="flag-dot red"></span><span><strong>Sévère (crise) :</strong> Benztropine 1–2 mg IM ou Diphenhydramine 25–50 mg IM/IV · BZD si insuffisant · Envisager changement AP</span></div>
+        <div class="block-title"><span class="tag">🗺️ Algorithme de Traitement — SEP (avec doses)</span></div>
+        <div style="background:#f8fafc;border:2px solid #d97706;border-radius:10px;padding:16px;margin-bottom:12px;">
+          <p style="font-weight:700;color:#d97706;margin-bottom:12px;">Sélectionnez le type de SEP et la sévérité :</p>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;">
+            <div>
+              <label style="font-size:12px;font-weight:600;color:#475569;display:block;margin-bottom:4px;">Type de SEP</label>
+              <select id="sep-drop-type" onchange="algoSEP()" style="width:100%;padding:8px;border:1px solid #cbd5e1;border-radius:6px;font-size:13px;">
+                <option value="">-- Choisir --</option>
+                <option value="dystonie-leg">Dystonie — Légère/Modérée</option>
+                <option value="dystonie-sev">Dystonie — Sévère (crise)</option>
+                <option value="akathisie">Akathisie</option>
+                <option value="parkinsonisme">Parkinsonisme induit</option>
+                <option value="dyskinese">Dyskinésie tardive</option>
+              </select>
+            </div>
+            <div>
+              <label style="font-size:12px;font-weight:600;color:#475569;display:block;margin-bottom:4px;">Contexte</label>
+              <select id="sep-drop-contexte" onchange="algoSEP()" style="width:100%;padding:8px;border:1px solid #cbd5e1;border-radius:6px;font-size:13px;">
+                <option value="">-- Contexte --</option>
+                <option value="premier">Premier épisode / nouveau AP</option>
+                <option value="chronique">Traitement AP chronique</option>
+                <option value="urgent">Urgence — patient très agité</option>
+              </select>
+            </div>
+          </div>
+          <div id="sep-output" style="background:#fff;border-left:4px solid #d97706;border-radius:0 8px 8px 0;padding:12px;min-height:40px;display:none;">
           </div>
         </div>
-
-        <div id="sep-content-akathisie" style="display:none;">
-          <div class="key-fact blue" style="margin-bottom:6px;"><strong>Akathisie</strong></div>
-          <div class="flag-list">
-            <div class="flag-item"><span class="flag-dot ink"></span><span><strong>Prévention :</strong> Débuter AP à faible dose · Augmentation graduelle</span></div>
-            <div class="flag-item"><span class="flag-dot ink"></span><span><strong>1re ligne :</strong> ↓ dose AP ou changement AP · <strong>Propranolol 10 mg BID</strong> (EI: HTO, ↓ FC) — agent le plus efficace · Échelle BARS q2–4 sem</span></div>
-            <div class="flag-item"><span class="flag-dot ink"></span><span><strong>Si insuffisant :</strong> BZD (lorazépam, clonazépam) · Mirtazapine · Anticholinergiques (moins efficaces dans l&apos;akathisie vs autres SEP)</span></div>
-          </div>
-        </div>
-
-        <div id="sep-content-parkinsonisme" style="display:none;">
-          <div class="key-fact blue" style="margin-bottom:6px;"><strong>Parkinsonisme induit</strong></div>
-          <div class="flag-list">
-            <div class="flag-item"><span class="flag-dot ink"></span><span><strong>Prévention :</strong> Débuter AP à faible dose · Augmentation graduelle</span></div>
-            <div class="flag-item"><span class="flag-dot ink"></span><span><strong>Traitement :</strong> ↓ dose AP ou changer AP → <strong>Anticholinergiques :</strong> Benztropine 1–6 mg/j · Diphenhydramine 25–300 mg/j</span></div>
-            <div class="flag-item"><span class="flag-dot ink"></span><span><strong>Si tremblements sévères ou résistance :</strong> Propranolol · Amélioration attendue en semaines · Échelle SAS (MSAS)</span></div>
-          </div>
-        </div>
-
-        <div id="sep-content-dyskinese" style="display:none;">
-          <div class="key-fact red" style="margin-bottom:6px;"><strong>Dyskinésie tardive — Les dommages peuvent être permanents</strong></div>
-          <div class="flag-list">
-            <div class="flag-item"><span class="flag-dot red"></span><span><strong>Prévention :</strong> Utiliser AP seulement si indiqué · Plus petite dose possible · Éviter utilisation concomitante de médicaments pouvant causer dyskinésie · Utiliser anticholinergique seulement si indiqué, courte durée</span></div>
-            <div class="flag-item"><span class="flag-dot ink"></span><span><strong>Traitement :</strong> Cesser AP ou ↓ dose → Changer pour <strong>quétiapine ou clozapine</strong> (moins de SEP)</span></div>
-            <div class="flag-item"><span class="flag-dot ink"></span><span><strong>Autres traitements :</strong> Valbenazine · Deutétrabénazine (inhibiteurs VMAT2) · Vit B6 · Tétrabénazine · Gingko biloba · Clonazépam · Botox local</span></div>
-            <div class="flag-item"><span class="flag-dot ink"></span><span>Tenter réduire dose si patient stable · Vitamine E (évidences contradictoires) · Échelles AIMS/DISCUS q6 mois</span></div>
-          </div>
-        </div>
+        <div class="key-fact yellow"><strong>Conseil général :</strong> Débuter AP à faible dose · Titration graduelle · Ne pas utiliser anticholinergiques en prophylaxie systématique · Évaluer régulièrement la nécessité du traitement AP</div>
       </div>
 
-      <!-- ÉCHELLES -->
       <div class="block clin" id="ap-echelles">
         <div class="block-title"><span class="tag">📊 Échelles d&apos;Évaluation des SEP</span></div>
         <table>
-          <thead><tr><th>Échelle</th><th>Acronyme</th><th>Cible</th><th>Seuil clinique</th></tr></thead>
+          <thead><tr><th>Échelle</th><th>Acronyme</th><th>Cible</th><th>Seuil clinique</th><th>Fréquence suivi</th></tr></thead>
           <tbody>
-            <tr><td><strong>Barnes Akathisia Rating Scale</strong></td><td>BARS</td><td>Akathisie</td><td>Score ≥ 2 = akathisie présente</td></tr>
-            <tr><td><strong>Modified Simpson-Angus Scale</strong></td><td>MSAS / SAS</td><td>Parkinsonisme</td><td>Somme scores / nombre items : &gt; 0,3 = normal si ≤ 0,3</td></tr>
-            <tr><td><strong>Abnormal Involuntary Movement Scale</strong></td><td>AIMS</td><td>Dyskinésie tardive</td><td>≥ 2 items avec score ≥ 2 = légère · 1 item ≥ 3 = modérée ou +</td></tr>
-            <tr><td><strong>Dyskinesia Identification System DISCUS</strong></td><td>DISCUS</td><td>Dyskinésie tardive</td><td>Score ≥ 5 = drapeau rouge</td></tr>
+            <tr><td><strong>Barnes Akathisia Rating Scale</strong></td><td>BARS</td><td>Akathisie</td><td>Score ≥ 2 = akathisie présente</td><td>q2–4 semaines si traitement actif</td></tr>
+            <tr><td><strong>Modified Simpson-Angus Scale</strong></td><td>MSAS / SAS</td><td>Parkinsonisme</td><td>Somme/nb items : &gt; 0,3 = anormal</td><td>q semaines si nouveau Tx</td></tr>
+            <tr><td><strong>Abnormal Involuntary Movement Scale</strong></td><td>AIMS</td><td>Dyskinésie tardive</td><td>≥ 2 items avec score ≥ 2 = légère · 1 item ≥ 3 = modérée</td><td>q3–6 mois (AP chronique)</td></tr>
+            <tr><td><strong>Dyskinesia Identification System Condensed User Scale</strong></td><td>DISCUS</td><td>Dyskinésie tardive</td><td>Score ≥ 5 = drapeau rouge</td><td>q6 mois (AP chronique)</td></tr>
           </tbody>
         </table>
       </div>
 
-      <!-- CLOZAPINE -->
       <div class="block flag" id="ap-clozapine">
         <div class="block-title"><span class="tag">❤️ Clozapine — Toxicité Cardiovasculaire</span></div>
-
         <div class="accordion">
           <div class="accordion-item open">
-            <div class="accordion-header">⚡ Tachycardie Sinusale (&gt; 100 bpm)
+            <div class="accordion-header">⚡ Tachycardie Sinusale
               <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
             </div>
             <div class="accordion-body">
-              <div class="key-fact blue" style="margin-bottom:8px;"><strong>Incidence :</strong> ~25 % des patients · ↑ de ~15 bpm typiquement · Surtout en début de traitement ou lors d&apos;augmentation de dose</div>
-              <div class="key-fact blue" style="margin-bottom:8px;"><strong>Mécanisme :</strong> Effet anticholinergique direct (blocage M2 cardiaque → tachycardie) OU réflexe à l&apos;hypotension orthostatique (vasodilatation α1 → ↑ FC compensatoire)</div>
-              <div class="key-fact red" style="margin-bottom:8px;">⚠️ <strong>IMPORTANT :</strong> Traiter la tachycardie trop rapidement peut masquer un diagnostic de myocardite!</div>
+              <div class="key-fact blue" style="margin-bottom:8px;"><strong>Incidence :</strong> ~25 % · ↑ ~15 bpm · Surtout début Tx ou ↑ dose<br><strong>Mécanisme :</strong> Effet anticholinergique (blocage M2) OU réflexe à hypotension α1</div>
+              <div class="key-fact red" style="margin-bottom:8px;">⚠️ Traiter trop rapidement = masquer une myocardite!</div>
               <table>
-                <thead><tr><th>Seuil / Situation</th><th>Prise en charge</th></tr></thead>
+                <thead><tr><th>Situation</th><th>Action</th></tr></thead>
                 <tbody>
                   <tr><td>FC &lt; 120 bpm, asymptomatique</td><td>Holter · Surveillance · Titration plus lente</td></tr>
-                  <tr><td>FC &gt; 120 bpm OU symptomatique OU persistante &gt; 4 semaines</td><td>↓ dose + titration plus lente · Bêtabloquant cardiosélectif (ex: métoprolol)</td></tr>
-                  <tr><td>FC persistante &gt; 120 bpm malgré traitement</td><td>Cesser la clozapine</td></tr>
+                  <tr><td>FC &gt; 120 bpm OU symptomatique OU &gt; 4 semaines</td><td>↓ dose + titration lente · Métoprolol (bêtabloquant cardiosélectif)</td></tr>
+                  <tr><td>FC persistante &gt; 120 bpm malgré Tx</td><td>Cesser la clozapine</td></tr>
                 </tbody>
               </table>
             </div>
           </div>
-
           <div class="accordion-item">
             <div class="accordion-header">🫀 Myocardite secondaire à la Clozapine
               <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
             </div>
             <div class="accordion-body">
-              <div class="key-fact red" style="margin-bottom:8px;"><strong>Incidence :</strong> ~1 % · Risque maximal au cours du <strong>1er mois</strong> de traitement</div>
-              <div class="key-fact blue" style="margin-bottom:8px;"><strong>Mécanisme probable :</strong> Réaction d&apos;hypersensibilité immunologique (IgE-médiée ou autre) → inflammation myocardique · Augmentation rapide de dose = facteur précipitant</div>
-              <p class="content-text" style="font-weight:600;margin-bottom:6px;">Présentation chronologique :</p>
+              <div class="key-fact red" style="margin-bottom:8px;"><strong>Incidence :</strong> ~1 % · Risque maximal au <strong>1er mois</strong><br><strong>Mécanisme :</strong> Hypersensibilité immuno (IgE) → inflammation myocardique · Augmentation rapide de dose = facteur précipitant</div>
               <div class="flag-list" style="margin-bottom:8px;">
-                <div class="flag-item"><span class="flag-dot red"></span><span><strong>Tachycardie ↑ en premier</strong> (augmentation 20–30 bpm)</span></div>
-                <div class="flag-item"><span class="flag-dot red"></span><span><strong>CRP ↑</strong> précède l&apos;élévation des troponines de 1–5 jours</span></div>
-                <div class="flag-item"><span class="flag-dot red"></span><span><strong>Troponines ↑</strong> (lésion myocardique)</span></div>
-                <div class="flag-item"><span class="flag-dot ink"></span><span>Éosinophilie possible · Fièvre · Symptômes pseudo-grippaux inexpliqués</span></div>
-                <div class="flag-item"><span class="flag-dot ink"></span><span>ECG insuffisant pour Dx → <strong>Échocardiographie nécessaire</strong></span></div>
+                <div class="flag-item"><span class="flag-dot red"></span><span><strong>1. Tachycardie ↑</strong> en premier (↑ 20–30 bpm)</span></div>
+                <div class="flag-item"><span class="flag-dot red"></span><span><strong>2. CRP ↑</strong> précède troponines de 1–5 jours</span></div>
+                <div class="flag-item"><span class="flag-dot red"></span><span><strong>3. Troponines ↑</strong> (lésion myocardique)</span></div>
+                <div class="flag-item"><span class="flag-dot ink"></span><span>Fièvre · Éosinophilie possible · Pseudogrippe · ECG insuffisant → <strong>Écho cardiaque pour Dx</strong></span></div>
               </div>
-              <p class="content-text" style="font-weight:600;margin-bottom:6px;">Protocole de surveillance (initiation) :</p>
-              <div class="note" style="margin-bottom:8px;"><strong>CRP + Troponines q semaine × 6 semaines lors de l&apos;initiation</strong></div>
+              <p class="content-text" style="font-weight:600;margin-bottom:6px;">Protocole surveillance initiation : CRP + Troponines q semaine × 6 semaines</p>
               <table style="margin-bottom:8px;">
                 <thead><tr><th>Résultat</th><th>Action</th></tr></thead>
                 <tbody>
-                  <tr><td>CRP &gt; 50 mg/L <strong>ET</strong> Fièvre <strong>ET</strong> Symptômes non spécifiques</td><td>Suspecter myocardite → Envisager cesser clozapine</td></tr>
-                  <tr><td>CRP &gt; 100 mg/L <strong>OU</strong> Troponine &gt; 2× LSN</td><td><strong>Cesser clozapine</strong> + Échocardiographie + Cardiologue URGENT</td></tr>
+                  <tr><td>CRP &gt; 50 mg/L + Fièvre + Sx non spécifiques</td><td>Suspecter myocardite → Envisager cesser clozapine</td></tr>
+                  <tr><td>CRP &gt; 100 mg/L OU Troponine &gt; 2× LSN</td><td><strong>Cesser clozapine</strong> + Échocardiographie + Cardiologue URGENT</td></tr>
                 </tbody>
               </table>
-              <div class="note"><strong>Risques associés à la clozapine :</strong> Péricardite · Épanchement péricardique · Cardiomyopathie · IC · IDM · Insuffisance mitrale · Myocardite</div>
+              <div class="note"><strong>Suivi :</strong> FSC hebdo × 18 sem → mensuelle (agranulocytose) · FC + TA chaque visite · Poids, glycémie, lipides · Renouvellement conditionnel à la surveillance hématologique</div>
             </div>
           </div>
-        </div>
-
-        <div class="sec-divider"><div class="sd-shape sq"></div><div class="sd-label">Suivi clinique Clozapine</div><div class="sd-line"></div></div>
-        <div class="flag-list">
-          <div class="flag-item"><span class="flag-dot red"></span><span><strong>FSC hebdomadaire × 18 semaines</strong> → puis mensuelle (agranulocytose — 1–3 %) · Renouvellement conditionnel à la surveillance hématologique</span></div>
-          <div class="flag-item"><span class="flag-dot ink"></span><span>FC + TA à chaque visite</span></div>
-          <div class="flag-item"><span class="flag-dot ink"></span><span>Poids · Glycémie · Lipides (effets métaboliques importants)</span></div>
         </div>
       </div>
     </div>
@@ -22161,42 +22169,36 @@ function dkRenal(view) {
       <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px;">
         <button onclick="document.getElementById('tdc-criteres').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📌 Critères &amp; Dépistage</button>
         <button onclick="document.getElementById('tdc-bilan').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔬 Bilan</button>
-        <button onclick="document.getElementById('tdc-phases').scrollIntoView({behavior:'smooth'})" style="background:#0a7a4e;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📅 Phases traitement</button>
+        <button onclick="document.getElementById('tdc-phases').scrollIntoView({behavior:'smooth'})" style="background:#0a7a4e;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📅 Phases</button>
         <button onclick="document.getElementById('tdc-nonpharmaco').scrollIntoView({behavior:'smooth'})" style="background:#d97706;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🌿 Non-pharmaco</button>
         <button onclick="document.getElementById('tdc-algo').scrollIntoView({behavior:'smooth'})" style="background:#7b3fa0;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🗺️ Algorithme Rx</button>
+        <button onclick="document.getElementById('tdc-resp-algo').scrollIntoView({behavior:'smooth'})" style="background:#be185d;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📊 Gestion réponse</button>
         <button onclick="document.getElementById('tdc-serotonine').scrollIntoView({behavior:'smooth'})" style="background:#dc2626;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🚨 Toxicité sérotonin.</button>
       </div>
 
-      <!-- CRITÈRES DSM-5 -->
       <div class="block def" id="tdc-criteres">
-        <div class="block-title"><span class="tag">📌 Critères Diagnostiques DSM-5 &amp; Dépistage</span></div>
-        <div class="key-fact blue" style="margin-bottom:8px;"><strong>Critères DSM-5 :</strong> ≥ 2 semaines + altération du fonctionnement<br>Nécessite <strong>1 des 2</strong> : Humeur dépressive (triste/désespéré) OU Apathie/Anhédonie</div>
-        <div class="key-fact ink" style="margin-bottom:10px;"><strong>+ ≥ 4 des symptômes suivants (Mnémo SIGECAPS) :</strong><br>
-        <strong>S</strong>leep — insomnie/hypersomnie · <strong>I</strong>ntérêt ↓ (anhédonie) · <strong>G</strong>uilt — culpabilité/dévalorisation · <strong>E</strong>nergie (fatigue) · <strong>C</strong>oncentration (difficulté à se concentrer/penser) · <strong>A</strong>ppétit (perte/gain de poids ou appétit) · <strong>P</strong>sychomoteur (agitation vs retardation) · <strong>S</strong>uicidaire</div>
-        <div class="sec-divider"><div class="sd-shape sq"></div><div class="sd-label">Outils de dépistage</div><div class="sd-line"></div></div>
+        <div class="block-title"><span class="tag">📌 Critères DSM-5 &amp; Dépistage</span></div>
+        <div class="key-fact blue" style="margin-bottom:8px;"><strong>Critères DSM-5 :</strong> ≥ 2 semaines + altération du fonctionnement · Nécessite <strong>1 des 2</strong> : Humeur dépressive OU Anhédonie<br>+ <strong>≥ 4 symptômes SIGECAPS</strong> : Sleep · Intérêt ↓ · Guilt · Énergie · Concentration · Appétit · Psychomoteur · Suicidaire</div>
         <table>
-          <thead><tr><th>Outil</th><th>Description</th><th>Seuils</th></tr></thead>
+          <thead><tr><th>Outil</th><th>Description</th><th>Seuils cliniques</th></tr></thead>
           <tbody>
-            <tr><td><strong>PHQ-2</strong></td><td>Dépistage rapide · 2 premiers items du PHQ-9</td><td>Score ≥ 2 = positif → compléter PHQ-9</td></tr>
-            <tr><td><strong>PHQ-9</strong></td><td>9 items · 2 dernières semaines · Sensibilité et spécificité 83 %</td><td>0–4 minimal · 5–9 léger · 10–14 modéré · 15–19 mod-sévère · 20–27 sévère · <strong>Score ≥ 10 = évocateur de TDC</strong></td></tr>
+            <tr><td><strong>PHQ-2</strong></td><td>Dépistage rapide — 2 items</td><td>Score ≥ 2 → compléter PHQ-9</td></tr>
+            <tr><td><strong>PHQ-9</strong></td><td>9 items · 2 dernières semaines · Sensibilité/Spécificité 83 %</td><td>0–4 minimal · 5–9 léger · 10–14 modéré · 15–19 mod-sévère · 20–27 sévère · <strong>≥ 10 = évocateur TDC</strong></td></tr>
           </tbody>
         </table>
       </div>
 
-      <!-- BILAN -->
       <div class="block clin" id="tdc-bilan">
         <div class="block-title"><span class="tag">🔬 Bilan — Exclure causes organiques</span></div>
         <div class="flag-list">
-          <div class="flag-item"><span class="flag-dot red"></span><span><strong>Évaluation des idéations suicidaires à chaque visite</strong></span></div>
-          <div class="flag-item"><span class="flag-dot ink"></span><span><strong>Laboratoires :</strong> TSH · FSC · B12 · Glycémie · Calcium · DFGe · Bilan hépatique si pertinent</span></div>
-          <div class="flag-item"><span class="flag-dot ink"></span><span><strong>Causes organiques à exclure :</strong> Hypothyroïdie · Anémie · Carence B12 · Insuffisance surrénalienne · Maladies neurologiques · Cancer</span></div>
-          <div class="flag-item"><span class="flag-dot ink"></span><span><strong>Médicaments dépressogènes :</strong> Bêtabloquants · Corticostéroïdes · Contraceptifs hormonaux · Anticonvulsivants · Statines (rare)</span></div>
-          <div class="flag-item"><span class="flag-dot ink"></span><span><strong>Substances :</strong> ROH · Cannabis · Benzodiazépines · Opioïdes</span></div>
-          <div class="flag-item"><span class="flag-dot yellow"></span><span>Évaluer comorbidités psychiatriques : anxiété, trouble bipolaire (avant AD!), TDAH</span></div>
+          <div class="flag-item"><span class="flag-dot red"></span><span><strong>Idéations suicidaires → évaluer à chaque visite</strong></span></div>
+          <div class="flag-item"><span class="flag-dot ink"></span><span><strong>Laboratoires :</strong> TSH · FSC · B12 · Glycémie · Calcium · DFGe</span></div>
+          <div class="flag-item"><span class="flag-dot ink"></span><span><strong>Causes organiques :</strong> Hypothyroïdie · Anémie · Carence B12 · Insuffisance surrénalienne · Cancer</span></div>
+          <div class="flag-item"><span class="flag-dot ink"></span><span><strong>Médicaments dépressogènes :</strong> Bêtabloquants · Corticostéroïdes · Contraceptifs hormonaux</span></div>
+          <div class="flag-item"><span class="flag-dot yellow"></span><span><strong>Éliminer trouble bipolaire avant d&apos;initier un AD!</strong> (risque de virage maniaque)</span></div>
         </div>
       </div>
 
-      <!-- PHASES -->
       <div class="block para" id="tdc-phases">
         <div class="block-title"><span class="tag">📅 Phases de Traitement (CANMAT 2023)</span></div>
         <table>
@@ -22206,124 +22208,119 @@ function dkRenal(view) {
             <tr><td><strong>Maintien</strong></td><td>6–24 mois</td><td>Prévenir rechutes · Qualité de vie · Fonction sociale/professionnelle</td></tr>
           </tbody>
         </table>
-        <div class="key-fact blue" style="margin-top:8px;"><strong>Durée minimale de traitement :</strong> ≥ 12 mois après rémission · ≥ 2 ans si facteurs de risque de récurrence (ex: symptômes résiduels, ATCD abus, épisodes chroniques, comorbidités)</div>
+        <div class="key-fact blue" style="margin-top:8px;"><strong>Durée minimale :</strong> ≥ 12 mois après rémission · ≥ 2 ans si FDR récurrence (symptômes résiduels, ATCD abus enfance, épisodes chroniques, comorbidités, faible soutien social)</div>
       </div>
 
-      <!-- NON-PHARMACO -->
       <div class="block flag" id="tdc-nonpharmaco">
         <div class="block-title"><span class="tag">🌿 Interventions Non-Pharmacologiques (CANMAT 2023)</span></div>
-        <table style="margin-bottom:8px;">
+        <table>
           <thead><tr><th>Ligne</th><th>Intervention</th><th>Détails</th></tr></thead>
           <tbody>
-            <tr><td><span class="drug-badge">1re ligne</span></td><td><strong>Exercice supervisé</strong></td><td>40 min · légère–modérée · 3×/semaine × ≥ 9 sem (EDC léger)</td></tr>
-            <tr><td><span class="drug-badge">1re ligne</span></td><td><strong>Luminothérapie</strong></td><td>10 000 lux · 30 min/jour (EDC saisonnier)</td></tr>
-            <tr><td><span class="drug-badge">Adjuvant</span></td><td>Exercice adjuvant</td><td>EDC modéré</td></tr>
-            <tr><td><span class="drug-badge">Adjuvant</span></td><td>Luminothérapie (non saisonniers)</td><td>Légère–modérée</td></tr>
-            <tr><td><span class="drug-badge">Adjuvant</span></td><td>Hygiène du sommeil + TCC</td><td>—</td></tr>
-            <tr><td><span class="drug-badge">Adjuvant</span></td><td>Régime méditerranéen</td><td>Alimentation saine</td></tr>
+            <tr><td><span class="drug-badge">1re ligne</span></td><td>Exercice supervisé</td><td>40 min · légère–modérée · 3×/sem × ≥ 9 sem</td></tr>
+            <tr><td><span class="drug-badge">1re ligne</span></td><td>Luminothérapie</td><td>10 000 lux · 30 min/jour (EDC saisonnier)</td></tr>
+            <tr><td><span class="drug-badge">Adjuvant</span></td><td>Psychothérapie (TCC · IPT · Psychodynamique)</td><td>Équivalente pharmaco pour EDC légère–modérée · Combinaison &gt; monothérapie</td></tr>
+            <tr><td><span class="drug-badge">Adjuvant</span></td><td>Millepertuis</td><td>EDC légère seulement · Fort inducteur CYP3A4 · Interactions ↑</td></tr>
           </tbody>
         </table>
-        <div class="key-fact blue">Millepertuis (1re ligne EDC léger) : Fort inducteur CYP3A4 → interactions médicamenteuses importantes · EI: GI, céphalées, anxiété · <strong>Éviter avec d&apos;autres médicaments</strong></div>
-        <div class="key-fact ink" style="margin-top:6px;"><strong>Psychothérapie = équivalente à la pharmacothérapie</strong> pour EDC léger–modéré · TCC · Psychodynamique · Interpersonnelle · Combinaison psychothérapie + pharmaco &gt; monothérapie</div>
       </div>
 
-      <!-- ALGORITHME RX -->
+      <!-- ALGO CHOIX AD + ONGLETS GESTION -->
       <div class="block para" id="tdc-algo">
         <div class="block-title"><span class="tag">🗺️ Algorithme Pharmacologique — Antidépresseurs</span></div>
 
         <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px;">
           <button onclick="tdcTab('efficacite')" id="tdctab-efficacite" style="background:#1C3F8F;color:#fff;border:none;border-radius:16px;padding:6px 14px;cursor:pointer;font-size:12px;">📊 Évaluation efficacité</button>
-          <button onclick="tdcTab('sooptimale')" id="tdctab-sooptimale" style="background:#e2e8f0;color:#1e293b;border:none;border-radius:16px;padding:6px 14px;cursor:pointer;font-size:12px;">⚠️ Réponse sous-optimale</button>
           <button onclick="tdcTab('adjuvant')" id="tdctab-adjuvant" style="background:#e2e8f0;color:#1e293b;border:none;border-radius:16px;padding:6px 14px;cursor:pointer;font-size:12px;">🔄 Changer vs Adjuvant</button>
           <button onclick="tdcTab('arret')" id="tdctab-arret" style="background:#e2e8f0;color:#1e293b;border:none;border-radius:16px;padding:6px 14px;cursor:pointer;font-size:12px;">⏹️ Durée &amp; Arrêt</button>
         </div>
 
         <div id="tdc-content-efficacite">
-          <div class="key-fact blue" style="margin-bottom:8px;"><strong>Évaluation de l&apos;efficacité — Définitions :</strong></div>
-          <table>
+          <table style="margin-bottom:8px;">
             <thead><tr><th>Terme</th><th>Définition</th></tr></thead>
             <tbody>
-              <tr><td><strong>Amélioration précoce</strong></td><td>≥ 20 % amélioration à 4 semaines → fort prédicteur de réponse · Si absence : fortement associé à l&apos;absence de réponse finale</td></tr>
-              <tr><td><strong>Réponse</strong></td><td>≥ 50 % du score de base (PHQ-9 ou HAM-D)</td></tr>
+              <tr><td><strong>Amélioration précoce</strong></td><td>≥ 20 % amélioration à semaine 4 → fort prédicteur de réponse finale</td></tr>
+              <tr><td><strong>Réponse</strong></td><td>≥ 50 % du score PHQ-9 de base</td></tr>
               <tr><td><strong>Rémission</strong></td><td>HAM-D ≤ 7 OU PHQ-9 ≤ 4</td></tr>
             </tbody>
           </table>
-          <div class="note" style="margin-top:8px;"><strong>Suivi recommandé :</strong> PHQ-9 à chaque visite · Évaluation à 4 semaines (amélioration précoce?) · Évaluation à 8 semaines (réponse complète?) · Évaluer idéations suicidaires à chaque visite</div>
-        </div>
-
-        <div id="tdc-content-sooptimale" style="display:none;">
-          <div class="key-fact red" style="margin-bottom:8px;"><strong>Si &lt; 20 % amélioration à la semaine 4 → Agir!</strong></div>
-          <p class="content-text" style="font-weight:600;margin-bottom:6px;">Causes à explorer :</p>
-          <div class="flag-list" style="margin-bottom:10px;">
-            <div class="flag-item"><span class="flag-dot ink"></span><span>Diagnostic incorrect (bipolaire? TDAH? anxiété primaire?)</span></div>
-            <div class="flag-item"><span class="flag-dot ink"></span><span>Dose sous-thérapeutique (optimiser avant de changer)</span></div>
-            <div class="flag-item"><span class="flag-dot ink"></span><span>Inobservance (EI, coût, stigma)</span></div>
-            <div class="flag-item"><span class="flag-dot ink"></span><span>Interactions médicamenteuses</span></div>
-            <div class="flag-item"><span class="flag-dot ink"></span><span>Comorbidités non traitées (anxiété, dépendance, trouble médical)</span></div>
-            <div class="flag-item"><span class="flag-dot ink"></span><span>Facteurs psychosociaux persistants</span></div>
-          </div>
-          <div class="key-fact blue"><strong>Algorithme réponse sous-optimale :</strong><br>
-          1. Optimiser la dose (dose maximale tolérée avant de changer)<br>
-          2. Si &lt; 20 % amélioration sem 4 → Considérer changer ou ajouter<br>
-          3. Si réponse partielle (≥ 20 %) → Considérer adjuvant<br>
-          4. Si absence de réponse → Considérer changer d&apos;antidépresseur</div>
+          <div class="note"><strong>Suivi :</strong> PHQ-9 + idéations suicidaires à chaque visite · Évaluation efficacité à 4 sem (amélioration précoce?) · 8 sem (réponse complète?) · 12–16 sem (rémission?)</div>
         </div>
 
         <div id="tdc-content-adjuvant" style="display:none;">
-          <table style="margin-bottom:12px;">
-            <thead><tr><th>Critère</th><th>Changer d&apos;antidépresseur</th><th>Ajouter un adjuvant</th></tr></thead>
+          <table style="margin-bottom:10px;">
+            <thead><tr><th>Critère</th><th>Changer AD</th><th>Ajouter adjuvant</th></tr></thead>
             <tbody>
-              <tr><td><strong>Réponse initiale</strong></td><td>Premier essai, absence de réponse (&lt; 20 %)</td><td>Réponse partielle (≥ 20 %)</td></tr>
-              <tr><td><strong>EI</strong></td><td>EI majeurs intolérables</td><td>Sx résiduels spécifiques ciblables</td></tr>
-              <tr><td><strong>Sévérité</strong></td><td>Dépression plus sévère + atteinte fonctionnelle importante</td><td>Dépression moins sévère</td></tr>
-              <tr><td><strong>Avantages</strong></td><td>Choix AP 1re ligne avec preuves sup. · Utiliser switchrx.com</td><td>Conserve bénéfices partiels · Évite Sx de retrait · Mécanisme complémentaire</td></tr>
-              <tr><td><strong>Désavantages</strong></td><td>Perte du bénéfice partiel · Risque de retrait</td><td>EI additifs · ↑ coût · Risque interaction · ↓ observance · Peu de preuves pour Tx de maintien</td></tr>
+              <tr><td><strong>Réponse</strong></td><td>&lt; 20 % amélioration sem 4 (absence de réponse)</td><td>≥ 20 % réponse partielle</td></tr>
+              <tr><td><strong>EI</strong></td><td>EI majeurs intolérables</td><td>Sx résiduels ciblables (insomnie, anxiété)</td></tr>
+              <tr><td><strong>Avantages</strong></td><td>Mécanisme différent · Utiliser switchrx.com</td><td>Conserve bénéfice partiel · Évite sevrage</td></tr>
             </tbody>
           </table>
-          <div class="key-fact blue" style="margin-bottom:8px;"><strong>Antipsychotiques atypiques — Adjuvants avec preuves les plus robustes :</strong><br>
-          Aripiprazole · Brexpiprazole · Olanzapine · Rispéridone · Quétiapine<br>
-          Preuves d&apos;efficacité robustes (méta-analyses) · Doses plus faibles que pour schizophrénie/bipolaire · Considérer risque effets métaboliques</div>
-          <div class="key-fact ink"><strong>Autres adjuvants :</strong> Lithium · Hormone T3 · L-méthylfolate · Bupropion + ISRS · Buspirone · Benzodiazépine (court terme)</div>
+          <div class="key-fact blue" style="margin-bottom:8px;"><strong>Antipsychotiques atypiques — Adjuvants (preuves les + robustes) :</strong><br>
+          Aripiprazole 2–5 mg/j · Brexpiprazole 1–3 mg/j · Quétiapine XR 50–300 mg/j · Rispéridone 0,5–2 mg/j<br>Doses plus faibles que pour psychose · Surveiller effets métaboliques</div>
+          <div class="key-fact ink"><strong>Autres adjuvants :</strong> Lithium 300 mg BID-TID (lithémie 0,4–0,8 mmol/L) · Hormone T3 25–50 mcg/j · L-méthylfolate 7,5–15 mg/j · Buspirone 10–30 mg/j · BZD court terme</div>
         </div>
 
         <div id="tdc-content-arret" style="display:none;">
-          <div class="key-fact blue" style="margin-bottom:8px;"><strong>Durée recommandée :</strong></div>
-          <table style="margin-bottom:8px;">
-            <thead><tr><th>Population</th><th>Durée minimale</th></tr></thead>
+          <div class="key-fact red" style="margin-bottom:8px;"><strong>Sevrage graduel (toujours!) :</strong> ↓ ~25 %/semaine · Plus difficile si courte ½ vie (paroxétine, venlafaxine) · Plus facile si longue ½ vie (fluoxétine)<br>
+          Sx de sevrage : Pseudo-grippaux · Insomnie · Nausées · <strong>Brain zaps (chocs électriques sensoriels)</strong> · Déséquilibre</div>
+          <table>
+            <thead><tr><th>Population</th><th>Durée minimale de traitement</th></tr></thead>
             <tbody>
-              <tr><td>Général (1er épisode)</td><td>≥ 12 mois après rémission</td></tr>
-              <tr><td>Risque de récurrence ↑</td><td>≥ 2 ans — inclut: symptômes résiduels persistants · ATCD abus dans l&apos;enfance · Sévérité initiale élevée · Épisodes chroniques · Comorbidités · Faible soutien social · Événements stressants persistants · Multiples épisodes antérieurs</td></tr>
+              <tr><td>1er épisode</td><td>≥ 12 mois après rémission complète</td></tr>
+              <tr><td>Récurrence / FDR élevés</td><td>≥ 2 ans · Évaluer bénéfice-risque à vie</td></tr>
             </tbody>
           </table>
-          <div class="key-fact red" style="margin-bottom:8px;"><strong>Sevrage graduel :</strong> ↓ ~25 %/semaine · Plus difficile si courte demi-vie · Plus facile si longue demi-vie (ex: fluoxétine)<br>
-          Symptômes de sevrage : pseudo-grippaux · Insomnie · Nausées · Déséquilibre · <strong>Troubles sensoriels (chocs électriques — brain zaps)</strong></div>
-          <div class="note"><strong>Traitement séquentiel :</strong> Pour dépression récurrente → Psychothérapie après stabilisation médicamenteuse pour prévenir les rechutes à long terme</div>
         </div>
       </div>
 
-      <!-- TOXICITÉ SÉROTONINERGIQUE -->
+      <!-- DROPDOWN GESTION RÉPONSE -->
+      <div class="block clin" id="tdc-resp-algo">
+        <div class="block-title"><span class="tag">📊 Algorithme — Gestion de la Réponse au Traitement</span></div>
+        <div style="background:#f8fafc;border:2px solid #be185d;border-radius:10px;padding:16px;margin-bottom:12px;">
+          <p style="font-weight:700;color:#be185d;margin-bottom:12px;">Évaluation de la réponse :</p>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;">
+            <div>
+              <label style="font-size:12px;font-weight:600;color:#475569;display:block;margin-bottom:4px;">Semaine d&apos;évaluation</label>
+              <select id="resp-semaine" onchange="gestionReponse()" style="width:100%;padding:8px;border:1px solid #cbd5e1;border-radius:6px;font-size:13px;">
+                <option value="">-- Choisir --</option>
+                <option value="sem4">Semaine 4</option>
+                <option value="sem8">Semaine 8</option>
+                <option value="sem12">Semaine 12–16</option>
+              </select>
+            </div>
+            <div>
+              <label style="font-size:12px;font-weight:600;color:#475569;display:block;margin-bottom:4px;">% d&apos;amélioration PHQ-9 vs baseline</label>
+              <select id="resp-amelioration" onchange="gestionReponse()" style="width:100%;padding:8px;border:1px solid #cbd5e1;border-radius:6px;font-size:13px;">
+                <option value="">-- Choisir --</option>
+                <option value="aucune">&lt; 20 % (pas de réponse)</option>
+                <option value="partielle">20–49 % (réponse partielle)</option>
+                <option value="bonne">≥ 50 % (réponse)</option>
+                <option value="remission">PHQ-9 ≤ 4 (rémission)</option>
+              </select>
+            </div>
+          </div>
+          <div id="resp-output" style="background:#fff;border-left:4px solid #be185d;border-radius:0 8px 8px 0;padding:12px;min-height:40px;display:none;">
+          </div>
+        </div>
+      </div>
+
       <div class="block flag" id="tdc-serotonine">
-        <div class="block-title"><span class="tag">🚨 Toxicité Sérotoninergique (Syndrome Sérotoninergique)</span></div>
-        <div class="key-fact red" style="margin-bottom:8px;"><strong>Définition :</strong> Problème induit par médicaments causé par la présence de trop de sérotonine dans les synapses du cerveau → Triade 3A :<br>
-        <strong>A</strong>ltération de l&apos;état mental · <strong>A</strong>ctivité autonomique ↑ · <strong>A</strong>normalités neuromusculaires</div>
-        <table style="margin-bottom:10px;">
+        <div class="block-title"><span class="tag">🚨 Toxicité Sérotoninergique</span></div>
+        <div class="key-fact red" style="margin-bottom:8px;"><strong>Triade 3A :</strong> Altération état mental · Activité autonomique ↑ · Anomalies neuromusculaires<br><strong>Début rapide (&lt; 24h)</strong> après initiation ou ↑ dose d&apos;un agent sérotoninergique</div>
+        <table style="margin-bottom:8px;">
           <thead><tr><th>Sévérité</th><th>Symptômes</th></tr></thead>
           <tbody>
-            <tr><td><strong>Légère (Groupe A)</strong></td><td>Nervosité · Tremblements · Insomnie · Mydriase · Nausées · Diarrhée · Hyperréflexie · Transpiration · Agitation · Fébrilité</td></tr>
+            <tr><td><strong>Légère (Groupe A)</strong></td><td>Nervosité · Tremblements · Insomnie · Mydriase · Nausées · Diarrhée · Hyperréflexie · Diaphorèse · Agitation légère</td></tr>
             <tr><td><strong>Grave (Groupe B)</strong></td><td>Fièvre &gt; 38,5 °C · Confusion · Delirium · <strong>Clonus</strong> · <strong>Rigidité musculaire</strong> · Rhabdomyolyse</td></tr>
           </tbody>
         </table>
-        <div class="note" style="margin-bottom:8px;"><strong>Exemple classique :</strong> Linézolide + Sertraline · ISRS + Tramadol · ISRS + Triptans · ISRS + Fentanyl · IMAO → ISRS · Début rapide (&lt; 24h) après initiation ou ↑ dose</div>
-        <div class="sec-divider"><div class="sd-shape sq"></div><div class="sd-label">Prise en charge</div><div class="sd-line"></div></div>
+        <div class="note" style="margin-bottom:8px;"><strong>Exemples classiques :</strong> Linézolide + Sertraline · ISRS + Tramadol · ISRS + Triptans · ISRS + Fentanyl · IMAO → ISRS</div>
         <div class="flag-list" style="margin-bottom:8px;">
-          <div class="flag-item"><span class="flag-dot red"></span><span><strong>Arrêter TOUS les médicaments sérotoninergiques immédiatement</strong></span></div>
+          <div class="flag-item"><span class="flag-dot red"></span><span><strong>Arrêter TOUS les agents sérotoninergiques immédiatement</strong></span></div>
           <div class="flag-item"><span class="flag-dot red"></span><span><strong>Hospitalisation si forme modérée–grave</strong></span></div>
-          <div class="flag-item"><span class="flag-dot ink"></span><span>Soins de soutien : hydratation · Contrôle de la température · Monitoring</span></div>
-          <div class="flag-item"><span class="flag-dot ink"></span><span>Benzodiazépines si agitation</span></div>
-          <div class="flag-item"><span class="flag-dot ink"></span><span>Cyproheptadine (antagoniste 5-HT) si forme grave</span></div>
+          <div class="flag-item"><span class="flag-dot ink"></span><span>Soins de soutien · BZD si agitation · <strong>Cyproheptadine (antagoniste 5-HT)</strong> si forme grave · Résolution en 24–72h</span></div>
         </div>
-        <div class="key-fact blue"><strong>Résolution attendue en 24–72h</strong> après arrêt des agents · Surveillance : température · FC · TA · Réflexes<br>
-        <strong>Prévention :</strong> Interroger MVL/PSN/drogues · Éviter 2 agents sérotoninergiques à forte dose · Surveillance rapprochée à l&apos;initiation · Évaluation psychiatrique avant réintroduction</div>
+        <div class="key-fact blue"><strong>Prévention :</strong> Interroger MVL/PSN/drogues · Éviter 2 agents sérotoninergiques à forte dose · Surveillance rapprochée à l&apos;initiation</div>
       </div>
     </div>
     <div class="section" id="sec-anxiete">
@@ -22331,92 +22328,102 @@ function dkRenal(view) {
 
       <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px;">
         <button onclick="document.getElementById('anx-criteres').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📌 Critères &amp; Évaluation</button>
-        <button onclick="document.getElementById('anx-pharmaco').scrollIntoView({behavior:'smooth'})" style="background:#7b3fa0;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">💊 Pharmacothérapie</button>
+        <button onclick="document.getElementById('anx-pharmaco').scrollIntoView({behavior:'smooth'})" style="background:#7b3fa0;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🗺️ Algorithme pharmacothérapie</button>
         <button onclick="document.getElementById('anx-bzd').scrollIntoView({behavior:'smooth'})" style="background:#dc2626;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">⚠️ BZD &amp; Sevrage</button>
       </div>
 
-      <!-- CRITÈRES -->
       <div class="block def" id="anx-criteres">
-        <div class="block-title"><span class="tag">📌 Critères Diagnostiques &amp; Évaluation de Base</span></div>
-        <div class="key-fact blue" style="margin-bottom:8px;"><strong>GAD-7 (Généralized Anxiety Disorder 7-item) :</strong></div>
+        <div class="block-title"><span class="tag">📌 Critères &amp; Évaluation de Base</span></div>
         <table style="margin-bottom:10px;">
-          <thead><tr><th>Score</th><th>Interprétation</th></tr></thead>
+          <thead><tr><th>Score GAD-7</th><th>Interprétation</th></tr></thead>
           <tbody>
             <tr><td>0–4</td><td>Aucune anxiété significative</td></tr>
-            <tr><td>5–9</td><td>Légère</td></tr>
-            <tr><td>10–14</td><td>Modérée</td></tr>
-            <tr><td>15–21</td><td>Sévère</td></tr>
+            <tr><td>5–9</td><td><span class="drug-badge warn">Légère</span></td></tr>
+            <tr><td>10–14</td><td><span class="drug-badge warn">Modérée</span></td></tr>
+            <tr><td>15–21</td><td><span class="drug-badge ci">Sévère</span></td></tr>
           </tbody>
         </table>
-        <div class="key-fact yellow" style="margin-bottom:8px;"><strong>GAD-7 ≥ 5</strong> → indicateur diagnostique</div>
-        <div class="sec-divider"><div class="sd-shape sq"></div><div class="sd-label">Évaluation de base</div><div class="sd-line"></div></div>
         <div class="flag-list">
-          <div class="flag-item"><span class="flag-dot ink"></span><span><strong>Évaluation physique :</strong> Exclure cause organique (hyperthyroïdie, phéochromocytome, arythmie, sevrage)</span></div>
-          <div class="flag-item"><span class="flag-dot ink"></span><span><strong>Laboratoires :</strong> FSC + TSH minimum · Glycémie si pertinent</span></div>
-          <div class="flag-item"><span class="flag-dot ink"></span><span><strong>Médicaments pris par le patient :</strong> ISRS (début), salbutamol, méthylphénidate, corticostéroïdes</span></div>
-          <div class="flag-item"><span class="flag-dot red"></span><span><strong>Substances anxiogènes courantes :</strong> Caféine · Nicotine · Alcool (rebond) · Cannabis · Antidépresseurs en début de traitement</span></div>
-          <div class="flag-item"><span class="flag-dot yellow"></span><span><strong>BZD non recommandées dans :</strong> TOC et SSPT</span></div>
+          <div class="flag-item"><span class="flag-dot ink"></span><span><strong>Laboratoires :</strong> FSC + TSH (minimum) · Exclure hyperthyroïdie, arythmie, phéochromocytome</span></div>
+          <div class="flag-item"><span class="flag-dot red"></span><span><strong>Substances anxiogènes courantes :</strong> Caféine · Nicotine · Alcool (rebond) · Cannabis · ISRS en début de Tx (transitoire)</span></div>
+          <div class="flag-item"><span class="flag-dot red"></span><span><strong>BZD non recommandées dans :</strong> TOC · SSPT</span></div>
+          <div class="flag-item"><span class="flag-dot yellow"></span><span><strong>Start low, go slow!</strong> Exacerbation transitoire anxiété en début de traitement = normale → prévenir le patient</span></div>
         </div>
       </div>
 
-      <!-- PHARMACO -->
+      <!-- DROPDOWN ALGO ANXIETE -->
       <div class="block para" id="anx-pharmaco">
-        <div class="block-title"><span class="tag">💊 Pharmacothérapie (Canadian CPG 2014)</span></div>
-        <div class="key-fact blue" style="margin-bottom:8px;">Délai d&apos;action : <strong>4–16 semaines</strong> · Durée recommandée : <strong>12–24 mois</strong> · <strong>1re ligne : ISRS et IRSN</strong> (meilleure tolérabité vs ATC/IMAO)</div>
-        <div class="key-fact yellow" style="margin-bottom:10px;"><strong>Start low, go slow!</strong> Les patients anxieux sont plus sensibles aux EI · <strong>Exacerbation transitoire de l&apos;anxiété en début de traitement = normale</strong> · Prévenir le patient</div>
+        <div class="block-title"><span class="tag">🗺️ Algorithme Pharmacothérapie — Troubles Anxieux (CPG 2014)</span></div>
+        <div class="key-fact blue" style="margin-bottom:10px;">Délai d&apos;action : <strong>4–16 semaines</strong> · Durée recommandée : <strong>12–24 mois</strong> · <strong>1re ligne : ISRS et IRSN</strong> · 1re intention = TCC ± pharmaco</div>
 
-        <div style="background:#f8fafc;border:2px solid #7b3fa0;border-radius:10px;padding:14px;margin-bottom:14px;">
-          <p style="font-weight:700;color:#7b3fa0;margin-bottom:8px;font-size:14px;">🗺️ Algorithme décisionnel — Troubles Anxieux</p>
-          <div class="flag-list">
-            <div class="flag-item"><span class="flag-dot ink"></span><span><strong>1re intention :</strong> TCC <strong>ET/OU</strong> ISRS/IRSN (efficacité équivalente pour anxiété légère–modérée, combinaison supérieure)</span></div>
-            <div class="flag-item"><span class="flag-dot ink"></span><span><strong>ISRS :</strong> Escitalopram · Sertraline · Paroxétine (bien documentés pour l&apos;anxiété)</span></div>
-            <div class="flag-item"><span class="flag-dot ink"></span><span><strong>IRSN :</strong> Venlafaxine · Duloxétine</span></div>
-            <div class="flag-item"><span class="flag-dot yellow"></span><span><strong>2e–3e ligne :</strong> Prégabaline (Lyrica) · Buspirone (TAG seulement, délai 2–4 sem) · Gabapentine (hors indication)</span></div>
-            <div class="flag-item"><span class="flag-dot red"></span><span><strong>BZD :</strong> Anxiété/agitation aiguë seulement OU adjuvant court terme (&lt; 3 semaines) · <strong>NON recommandées dans TOC et SSPT</strong></span></div>
+        <div style="background:#f8fafc;border:2px solid #7b3fa0;border-radius:10px;padding:16px;margin-bottom:14px;">
+          <p style="font-weight:700;color:#7b3fa0;margin-bottom:12px;">Algorithme de choix pharmacologique :</p>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;">
+            <div>
+              <label style="font-size:12px;font-weight:600;color:#475569;display:block;margin-bottom:4px;">Type de trouble anxieux</label>
+              <select id="anx-drop-type" onchange="algoAnxiete()" style="width:100%;padding:8px;border:1px solid #cbd5e1;border-radius:6px;font-size:13px;">
+                <option value="">-- Choisir --</option>
+                <option value="tag">TAG — Trouble anxieux généralisé</option>
+                <option value="panique">Trouble panique ± agoraphobie</option>
+                <option value="sociale">Phobie sociale (Anxiété sociale)</option>
+                <option value="toc">TOC — Trouble obsessionnel compulsif</option>
+                <option value="sspt">SSPT — Trouble de stress post-traumatique</option>
+                <option value="aiguë">Anxiété/agitation aiguë</option>
+              </select>
+            </div>
+            <div>
+              <label style="font-size:12px;font-weight:600;color:#475569;display:block;margin-bottom:4px;">Sévérité / Contexte</label>
+              <select id="anx-drop-severite" onchange="algoAnxiete()" style="width:100%;padding:8px;border:1px solid #cbd5e1;border-radius:6px;font-size:13px;">
+                <option value="">-- Choisir --</option>
+                <option value="leg-mod">Légère à modérée</option>
+                <option value="severe">Sévère ou réfractaire</option>
+                <option value="comorbid-dep">Avec comorbidité dépressive</option>
+              </select>
+            </div>
+          </div>
+          <div id="anx-output" style="background:#fff;border-left:4px solid #7b3fa0;border-radius:0 8px 8px 0;padding:12px;min-height:40px;display:none;">
           </div>
         </div>
+
+        <p class="content-text" style="font-weight:600;margin-bottom:8px;">Tableau des doses — ISRS/IRSN pour anxiété</p>
         <table>
-          <thead><tr><th>Situation</th><th>Recommandation</th></tr></thead>
+          <thead><tr><th>Molécule</th><th>Dose départ</th><th>Dose cible</th><th>Particularités anxiété</th></tr></thead>
           <tbody>
-            <tr><td>Anxiété légère–modérée</td><td>TCC ou ISRS/IRSN · Combinaison si réponse insuffisante</td></tr>
-            <tr><td>Anxiété sévère ou avec comorbidité dépressive</td><td>Combinaison ISRS + TCC d&apos;emblée</td></tr>
-            <tr><td>Anxiété aiguë ou crise de panique</td><td>BZD court terme · ISRS en parallèle pour long terme</td></tr>
-            <tr><td>Réponse insuffisante</td><td>Prégabaline · Buspirone · Changer ISRS · Référer psychiatrie</td></tr>
+            <tr><td><strong>Escitalopram</strong></td><td>5 mg/j</td><td>10–20 mg/j</td><td>TAG · Phobie sociale · Meilleure tolérabité</td></tr>
+            <tr><td><strong>Sertraline</strong></td><td>25 mg/j</td><td>50–200 mg/j</td><td>TAG · Panique · SSPT · Phobie sociale · TOC</td></tr>
+            <tr><td><strong>Paroxétine CR</strong></td><td>12,5 mg/j</td><td>25–62,5 mg/j</td><td>Panique · TAG · Phobie sociale · SSPT · Sevrage difficile</td></tr>
+            <tr><td><strong>Venlafaxine XR</strong></td><td>37,5 mg/j</td><td>75–225 mg/j</td><td>TAG · Phobie sociale · Panique · HTA possible</td></tr>
+            <tr><td><strong>Duloxétine</strong></td><td>30 mg/j</td><td>60 mg/j</td><td>TAG · Douleur comorbide</td></tr>
+            <tr><td><strong>Buspirone</strong></td><td>5 mg BID</td><td>10–20 mg BID</td><td>TAG uniquement · Délai 2–4 sem · Pas d&apos;effet immédiat · Pas de dépendance</td></tr>
+            <tr><td><strong>Prégabaline</strong> (2e ligne)</td><td>75 mg BID</td><td>150–300 mg BID</td><td>TAG · Effet plus rapide · Sédation · Risque abus</td></tr>
           </tbody>
         </table>
       </div>
 
-      <!-- BZD -->
       <div class="block flag" id="anx-bzd">
         <div class="block-title"><span class="tag">⚠️ Benzodiazépines — Mécanisme &amp; Sevrage</span></div>
-        <div class="key-fact blue" style="margin-bottom:8px;"><strong>Mécanisme d&apos;action :</strong> Potentialisation de l&apos;action du GABA sur le récepteur GABA-A → ↑ fréquence d&apos;ouverture canal Cl⁻ → hyperpolarisation → ↓ excitabilité neuronale → sédation · anxiolyse · relaxation musculaire · anticonvulsivant</div>
-        <div class="key-fact red" style="margin-bottom:10px;"><strong>Utilisation chronique :</strong> Down-regulation récepteurs GABA + activité glutamate compensatoire → À l&apos;arrêt : hyperexcitation sévère (glutamate non compensé, GABA insuffisant) → Sevrage similaire à l&apos;alcool</div>
-
-        <div class="sec-divider"><div class="sd-shape sq"></div><div class="sd-label">Symptômes de Sevrage BZD</div><div class="sd-line"></div></div>
+        <div class="key-fact blue" style="margin-bottom:8px;"><strong>Mécanisme :</strong> Potentialisation GABA sur récepteur GABA-A → ↑ fréquence ouverture canal Cl⁻ → hyperpolarisation → ↓ excitabilité neuronale</div>
+        <div class="key-fact red" style="margin-bottom:8px;"><strong>Utilisation chronique :</strong> Down-regulation récepteurs GABA + activité glutamate compensatoire → À l&apos;arrêt : hyperexcitation sévère → Sevrage similaire à l&apos;alcool<br>Sévère à considérer si BZD utilisées régulièrement &gt; 4 semaines</div>
         <table style="margin-bottom:10px;">
-          <thead><tr><th>Physiques</th><th>Psychologiques</th></tr></thead>
+          <thead><tr><th>Sx Physiques</th><th>Sx Psychologiques</th><th>Délai d&apos;apparition</th></tr></thead>
           <tbody>
-            <tr><td>Rigidité musculaire · Tremblements · Tachycardie · Troubles GI · Paresthésies · Pseudo-grippaux · Convulsions (usage prolongé)</td><td>Anxiété · Agitation · Insomnie · Delirium · Hallucinations · Dépression</td></tr>
+            <tr><td>Rigidité · Tremblements · Tachycardie · Troubles GI · Paresthésies · Convulsions</td><td>Anxiété · Agitation · Insomnie · Delirium · Hallucinations</td><td>1–3 jours (courte ½ vie) · 4–10 jours (longue ½ vie)</td></tr>
           </tbody>
         </table>
-        <div class="note" style="margin-bottom:10px;"><strong>Délai d&apos;apparition du sevrage :</strong> 1–3 jours (BZD courte demi-vie) · 4–10 jours (BZD longue demi-vie) · Sevrage à considérer si BZD utilisées régulièrement &gt; 4 semaines</div>
-
-        <div class="sec-divider"><div class="sd-shape sq"></div><div class="sd-label">Calendrier de Sevrage Individualisé</div><div class="sd-line"></div></div>
+        <div class="sec-divider"><div class="sd-shape sq"></div><div class="sd-label">Calendrier de Sevrage</div><div class="sd-line"></div></div>
         <table style="margin-bottom:8px;">
-          <thead><tr><th>Phase</th><th>Réduction</th></tr></thead>
+          <thead><tr><th>Phase</th><th>Réduction</th><th>Durée</th></tr></thead>
           <tbody>
-            <tr><td><strong>Phase 1</strong></td><td>↓ 25 % par semaine jusqu&apos;à 50 % de la dose initiale</td></tr>
-            <tr><td><strong>Phase 2</strong></td><td>↓ 12,5 % de la dose initiale q4–7 jours ensuite</td></tr>
+            <tr><td><strong>Phase 1</strong></td><td>↓ 25 %/semaine jusqu&apos;à 50 % de la dose initiale</td><td>~4 semaines</td></tr>
+            <tr><td><strong>Phase 2</strong></td><td>↓ 12,5 % de la dose initiale q4–7 jours</td><td>1–4 mois selon durée d&apos;utilisation</td></tr>
           </tbody>
         </table>
-        <div class="key-fact blue" style="margin-bottom:8px;"><strong>Durée totale :</strong> 1–2 mois (si &lt; 1 an de BZD) · 4+ mois (si ≥ 1 an de BZD)</div>
-        <div class="flag-list" style="margin-bottom:8px;">
-          <div class="flag-item"><span class="flag-dot ink"></span><span><strong>Outil de suivi :</strong> BWSQ (Bennett Withdrawal Symptom Questionnaire) · Score &gt; 20 ou ↑ 3 points = changer de stratégie</span></div>
-          <div class="flag-item"><span class="flag-dot ink"></span><span><strong>Dernière ligne :</strong> Substitution au diazépam (longue demi-vie · petites formulations) → utile si haute dose ou BZD courte durée d&apos;action</span></div>
-          <div class="flag-item"><span class="flag-dot ink"></span><span><strong>Traiter l&apos;anxiété sous-jacente</strong> avec ISRS/IRSN en parallèle du sevrage</span></div>
-          <div class="flag-item"><span class="flag-dot red"></span><span>Ne pas arrêt brusque! Risque convulsions si usage prolongé · Ne tient pas compte des Sx de rebond de la maladie</span></div>
+        <div class="flag-list">
+          <div class="flag-item"><span class="flag-dot ink"></span><span><strong>BWSQ :</strong> Score &gt; 20 ou ↑ 3 points → changer de stratégie</span></div>
+          <div class="flag-item"><span class="flag-dot ink"></span><span><strong>Dernière ligne :</strong> Substitution au diazépam (longue ½ vie) → sevrage plus graduel</span></div>
+          <div class="flag-item"><span class="flag-dot ink"></span><span>Traiter l&apos;anxiété sous-jacente avec ISRS/IRSN en parallèle · Consultation hebdo en phase active</span></div>
+          <div class="flag-item"><span class="flag-dot red"></span><span><strong>Ne jamais arrêter brusquement si usage prolongé → risque convulsions</strong></span></div>
         </div>
-        <div class="note"><strong>Suivi sevrage BZD :</strong> Consultation hebdomadaire en phase active · Surveiller anxiété de rebond vs symptômes de sevrage · Différenciation clinique importante</div>
       </div>
     </div>
     <div class="section" id="sec-bipolaire">
@@ -25548,6 +25555,181 @@ function tdcTab(tab) {
     var b  = document.getElementById('tdctab-' + t);
     if (b)  { b.style.background = (t === tab) ? '#1C3F8F' : '#e2e8f0'; b.style.color = (t === tab) ? '#fff' : '#1e293b'; }
   });
+}
+</script>
+
+<script>
+// ─── Choix Antidépresseur ──────────────────────────────────────────────────
+function choixAD() {
+  var sx = document.getElementById("ad-symptome").value;
+  var co = document.getElementById("ad-comorbidite").value;
+  var out = document.getElementById("ad-output");
+  if (!sx) { out.style.display = "none"; return; }
+  var rec = {
+    "anxiete":       { mol: "Escitalopram ou Sertraline (ISRS — EI anxiété transitoire en début Tx)", dose: "Escitalopram: débuter 5 mg/j → ↑ à 10–20 mg/j | Sertraline: débuter 25 mg/j → ↑ à 50–200 mg/j", note: "Prévenir le patient d'une possible anxiété initiale dans les 1–2 premières semaines." },
+    "fatigue":       { mol: "Bupropion XL (mécanisme DA+NA) ou Vortioxétine", dose: "Bupropion XL: 150 mg/j → ↑ à 300 mg/j | Vortioxétine: 10 mg/j → ↑ à 20 mg/j", note: "Éviter le soir — effet activateur. Bupropion CI si épilepsie ou TCA." },
+    "insomnie":      { mol: "Mirtazapine (surtout si poids insuffisant) ou antidépresseur HS", dose: "Mirtazapine: 15 mg HS (sédatif à dose faible) → ↑ à 15–45 mg/j", note: "À dose ≤ 15 mg, l'effet sédatif est maximal (antagonisme H1). À dose plus élevée, effet noradrénergique ↑ sédation." },
+    "faible-poids":  { mol: "Mirtazapine (↑ appétit, ↑ poids)", dose: "Mirtazapine: 15 mg HS → 15–45 mg/j", note: "↑ appétit via antagonisme 5-HT2C et H1. Moins de dysfonction sexuelle." },
+    "surpoids":      { mol: "Bupropion XL (neutre sur poids) ou Vortioxétine", dose: "Bupropion XL: 150 mg/j → 300 mg/j | Vortioxétine: 10–20 mg/j", note: "Éviter mirtazapine, paroxétine (prise de poids ↑↑). Vortioxétine neutre." },
+    "mcas":          { mol: "Sertraline (données de sécurité cardiovasculaire documentées)", dose: "Sertraline: 25–50 mg/j → 100–200 mg/j", note: "POST-IDM: Sertraline = agent de choix (étude SADHART). Éviter ATC (cardiotoxique)." },
+    "douleur":       { mol: "Duloxétine (1re ligne douleur) ou Venlafaxine XR", dose: "Duloxétine: 30 mg/j → 60 mg/j (max 120 mg) | Venlafaxine XR: 75–225 mg/j", note: "Duloxétine approuvée pour neuropathie diabétique, fibromyalgie, lombalgie chronique. Prudence si IR ou IH." },
+    "tabagisme":     { mol: "Bupropion XL (double indication dépression + sevrage tabagique)", dose: "Bupropion XL: 150 mg/j × 3j → 300 mg/j. Débuter 1–2 semaines avant arrêt tabac.", note: "Durée recommandée sevrage: 7–12 semaines. Surveiller TA, sautes d'humeur." },
+    "dysfonction-sex": { mol: "Bupropion XL ou Mirtazapine ou Vortioxétine (moins de dysfonction sexuelle)", dose: "Bupropion XL: 150–300 mg/j | Mirtazapine: 15–45 mg HS | Vortioxétine: 10–20 mg/j", note: "Éviter paroxétine (dysfonction sexuelle ↑↑). Alternatives: can also add bupropion 150 mg/j en adjuvant à l'ISRS." },
+    "cognitive":     { mol: "Vortioxétine (données sur cognition)", dose: "Vortioxétine: 10 mg/j → 20 mg/j", note: "Données issues d'essais cliniques (CONNECT, FOCUS): ↑ vitesse de traitement et mémoire de travail." },
+    "saignement":    { mol: "Éviter ISRS/IRSN seuls. Ajouter IPP si AINS concomitants. Préférer Mirtazapine.", dose: "Mirtazapine: 15–45 mg HS | Si ISRS nécessaire → ajouter oméprazole 20 mg/j", note: "Mécanisme: ISRS ↓ agrégation plaquettaire → ↑ risque GI si AINS/ASA concomitants." },
+    "inobservance":  { mol: "Fluoxétine (longue demi-vie — 1–4 jours, métabolite actif jusqu'à 1–2 semaines)", dose: "Fluoxétine: 10–20 mg/j → 20–60 mg/j. Peut être prise en mode hebdomadaire (Prozac Weekly: 90 mg/semaine).", note: "Seul ISRS avec demi-vie suffisamment longue pour tolérer l'inobservance occasionnelle." }
+  };
+  var ci = {
+    "epilepsie":    "⚠️ CI: Bupropion (↓ seuil épileptique) · Préférer ISRS ou IRSN",
+    "grossesse":    "⚠️ Éviter paroxétine (malformations cardiaques) · Privilégier sertraline ou escitalopram. Suivi neonatal si fin grossesse.",
+    "hepatique":    "⚠️ Prudence: duloxétine (hépatotoxique), ATC. Préférer sertraline ou citalopram (dose réduite).",
+    "renale":       "⚠️ Prudence: desvenlafaxine, venlafaxine (élimination rénale). Sertraline ou escitalopram préférés."
+  };
+  var r = rec[sx];
+  var ciTxt = co ? ci[co] : "";
+  out.style.display = "block";
+  out.innerHTML = "<strong style='color:#7b3fa0'>💊 Recommandation :</strong> " + r.mol +
+    "<br><span style='font-size:12px;color:#475569;margin-top:4px;display:block'><strong>Doses :</strong> " + r.dose + "</span>" +
+    "<span style='font-size:12px;color:#475569;display:block;margin-top:4px;padding:6px;background:#f1f5f9;border-radius:4px'>💡 " + r.note + "</span>" +
+    (ciTxt ? "<span style='font-size:12px;color:#b91c1c;display:block;margin-top:6px;padding:6px;background:#fef2f2;border-radius:4px'>" + ciTxt + "</span>" : "");
+}
+
+// ─── Algo SEP ──────────────────────────────────────────────────────────────
+function algoSEP() {
+  var type = document.getElementById("sep-drop-type").value;
+  var ctx  = document.getElementById("sep-drop-contexte").value;
+  var out  = document.getElementById("sep-output");
+  if (!type) { out.style.display = "none"; return; }
+  var recs = {
+    "dystonie-leg": {
+      titre: "🦾 Dystonie aiguë — Légère / Modérée",
+      premier: "Benztropine 1–2 mg PO + réévaluation 30–60 min.<br>Alternative: Diphenhydramine 25–50 mg PO.",
+      chronique: "Benztropine 1–6 mg/j (diviser en 2–3 prises) · ou Diphenhydramine 25–300 mg/j.<br>Réévaluer la nécessité des anticholinergiques q3 mois.",
+      urgent: "Benztropine 1–2 mg IM ou IV (effet en 5–15 min) · Alternative: Diphenhydramine 25–50 mg IM/IV."
+    },
+    "dystonie-sev": {
+      titre: "🚨 Dystonie aiguë — Sévère / Crise",
+      premier: "Benztropine 1–2 mg IM + Lorazépam 0,5–1 mg IM si spasme sévère · Urgence médicale si opisthotonus ou crise oculogyre persistante.",
+      chronique: "Benztropine 1–2 mg IM + consulter pour changement AP · Envisager passage à AP atypique à plus faible risque SEP.",
+      urgent: "Benztropine 2 mg IV + Diphenhydramine 25–50 mg IV · Monitoring cardiorespiratoitre · Envisager réduction dose AP ou changement."
+    },
+    "akathisie": {
+      titre: "😣 Akathisie",
+      premier: "Propranolol 10–20 mg BID (1re intention) · Alternative: Lorazépam 0,5–1 mg BID ou Mirtazapine 15 mg HS · Réduire dose AP si possible.",
+      chronique: "Propranolol 10–40 mg BID · Réévaluer après 4 sem · Si insuffisant: envisager switch AP (ex: quétiapine, clozapine).",
+      urgent: "Lorazépam 0,5–2 mg IM · Propranolol 20 mg PO · Réduire dose AP si sécuritaire."
+    },
+    "parkinsonisme": {
+      titre: "🧓 Parkinsonisme induit",
+      premier: "Benztropine 0,5–1 mg BID → ↑ à 1–4 mg/j selon tolérance · ou Diphenhydramine 25 mg BID → ↑ à 25–75 mg/j.<br>Réévaluer q2–4 sem.",
+      chronique: "Benztropine 1–6 mg/j · Réévaluer la nécessité q3 mois · Envisager réduction dose AP ou switch si symptômes persistants.",
+      urgent: "Benztropine 1–2 mg IM · Réduire dose AP si sécuritaire · Éviter chez personnes âgées (effets anticholinergiques ↑)."
+    },
+    "dyskinese": {
+      titre: "💃 Dyskinésie tardive",
+      premier: "1re étape: ↓ dose AP ou switch vers AP atypique (clozapine, quétiapine).<br>Si insuffisant: Valbenazine 40 mg/j × 4 sem → 80 mg/j · ou Deutétrabénazine 6 mg/j → ↑ 6 mg/sem (max 36 mg/j).",
+      chronique: "Valbenazine 40–80 mg/j ou Deutétrabénazine 6–36 mg/j · Ne pas utiliser anticholinergiques (peuvent aggraver dyskinésie tardive!).",
+      urgent: "Clonazépam 0,5–1 mg peut atténuer temporairement · Urgence: référer psychiatrie pour réévaluation AP global."
+    }
+  };
+  var r = recs[type];
+  if (!r) { out.style.display = "none"; return; }
+  var ctxRecs = {
+    "premier": r.premier,
+    "chronique": r.chronique,
+    "urgent": r.urgent
+  };
+  var body = ctx ? ctxRecs[ctx] : (r.premier + "<br><em style='color:#64748b;font-size:11px'>Sélectionnez le contexte pour une recommandation spécifique.</em>");
+  out.style.display = "block";
+  out.innerHTML = "<strong style='color:#d97706'>" + r.titre + "</strong>" +
+    "<div style='margin-top:8px;font-size:13px'>" + body + "</div>" +
+    "<div style='margin-top:8px;font-size:11px;color:#64748b;background:#fffbeb;padding:6px;border-radius:4px'>⚠️ Principe : 1) Réduire ou changer AP si possible 2) Anticholinergiques (dystonie/parkinsonisme) 3) Propranolol/BZD (akathisie) 4) VMAT2 inhibiteurs (dyskinésie tardive)</div>";
+}
+
+// ─── Algo Anxiété ─────────────────────────────────────────────────────────
+function algoAnxiete() {
+  var type = document.getElementById("anx-drop-type").value;
+  var sev  = document.getElementById("anx-drop-severite").value;
+  var out  = document.getElementById("anx-output");
+  if (!type) { out.style.display = "none"; return; }
+  var recs = {
+    "tag": {
+      titre: "😟 TAG — Trouble Anxieux Généralisé",
+      "leg-mod": "ISRS 1re ligne: Escitalopram 5 mg/j → 10–20 mg/j · ou Sertraline 25 mg/j → 50–200 mg/j.<br>Alternative: Buspirone 5 mg BID → 10–20 mg BID (délai 2–4 sem, pas d'effet immédiat).<br>TCC en parallèle (équivalence pharmaco).",
+      "severe": "Venlafaxine XR 37,5 mg/j → 75–225 mg/j · ou Duloxétine 30 mg/j → 60 mg/j.<br>Prégabaline 75 mg BID → 150–300 mg BID si ISRS/IRSN insuffisants.<br>BZD court terme seulement (max 4 sem).",
+      "comorbid-dep": "ISRS ou IRSN (traite les deux) · Escitalopram ou Venlafaxine XR · Éviter buspirone seul si dépression."
+    },
+    "panique": {
+      titre: "😰 Trouble Panique (± agoraphobie)",
+      "leg-mod": "ISRS: Escitalopram 5 mg/j → 10–20 mg/j · Sertraline 25 mg/j → 50–200 mg/j.<br>Débuter à faible dose (exacerbation initiale possible!).<br>TCC (exposition) = traitement de choix à long terme.",
+      "severe": "Paroxétine CR 12,5 mg/j → 25–62,5 mg/j · ou Venlafaxine XR 37,5 mg/j → 75–225 mg/j.<br>BZD court terme si sévère (lorazépam 0,5–1 mg PRN), puis sevrage graduel.",
+      "comorbid-dep": "Venlafaxine XR ou Escitalopram (données solides dans les deux indications)."
+    },
+    "sociale": {
+      titre: "🫂 Phobie Sociale (Anxiété Sociale)",
+      "leg-mod": "ISRS: Escitalopram 5–10 mg/j → 20 mg/j · ou Sertraline 25 mg/j → 50–200 mg/j.<br>TCC (exposition graduée) = recommandée en parallèle.",
+      "severe": "Paroxétine CR 12,5–62,5 mg/j · ou Venlafaxine XR 75–225 mg/j.<br>Propranolol 10–40 mg PRN pour phobie situationnelle (ex: performance musicale).",
+      "comorbid-dep": "Venlafaxine XR ou ISRS — traite les deux conditions."
+    },
+    "toc": {
+      titre: "🔄 TOC — Trouble Obsessionnel Compulsif",
+      "leg-mod": "ISRS à doses plus élevées que TDC:<br>Sertraline 50 mg/j → 100–200 mg/j · Escitalopram 10 mg/j → 20–40 mg/j.<br>Délai de réponse: 8–12 semaines minimum.",
+      "severe": "Clomipramine (ATC) 25 mg HS → 75–250 mg/j · ou ISRS à dose maximale · Adjuvant: rispéridone 0,5–2 mg/j ou aripiprazole 10–30 mg/j.<br>⚠️ BZD non recommandées dans le TOC.",
+      "comorbid-dep": "ISRS à dose élevée traite les deux · Sertraline ou escitalopram préférés."
+    },
+    "sspt": {
+      titre: "💔 SSPT — Stress Post-Traumatique",
+      "leg-mod": "Sertraline 25 mg/j → 50–200 mg/j (1re intention Santé Canada).<br>ou Paroxétine CR 12,5–62,5 mg/j.<br>TCC centrée sur le trauma (EMDR) = traitement de choix.",
+      "severe": "Venlafaxine XR 37,5–225 mg/j · Prazosin (cauchemars: 1–15 mg HS).<br>⚠️ BZD non recommandées dans le SSPT (favorisent évitement et dépendance).",
+      "comorbid-dep": "Sertraline ou venlafaxine XR."
+    },
+    "aiguë": {
+      titre: "⚡ Anxiété / Agitation Aiguë",
+      "leg-mod": "Lorazépam 0,5–1 mg PO/SL · Diazépam 2–5 mg PO · Durée: ≤ 2–4 semaines · Initier ISRS/IRSN en parallèle.",
+      "severe": "Lorazépam 0,5–2 mg IM · ou Diazépam 5–10 mg IV lent si nécessaire · Monitoring respiratoire.",
+      "comorbid-dep": "BZD court terme + initier ISRS/IRSN le plus tôt possible pour traitement de fond."
+    }
+  };
+  var r = recs[type];
+  if (!r) { out.style.display = "none"; return; }
+  var body = sev ? r[sev] : r["leg-mod"] + "<br><em style='color:#64748b;font-size:11px'>Sélectionnez la sévérité pour une recommandation adaptée.</em>";
+  out.style.display = "block";
+  out.innerHTML = "<strong style='color:#7b3fa0'>" + r.titre + "</strong>" +
+    "<div style='margin-top:8px;font-size:13px'>" + body + "</div>" +
+    "<div style='margin-top:8px;font-size:11px;color:#64748b;background:#f5f3ff;padding:6px;border-radius:4px'>💡 Rappel: Débuter à dose faible · Délai d'action: 4–16 sem · Durée: 12–24 mois · Associer TCC pour meilleure réponse à long terme</div>";
+}
+
+// ─── Gestion Réponse AD ────────────────────────────────────────────────────
+function gestionReponse() {
+  var sem = document.getElementById("resp-semaine").value;
+  var amel = document.getElementById("resp-amelioration").value;
+  var out = document.getElementById("resp-output");
+  if (!sem || !amel) { out.style.display = "none"; return; }
+  var matrix = {
+    "sem4": {
+      "aucune":    { action: "CHANGER d'antidépresseur (mécanisme différent)", detail: "Ex: ISRS → IRSN ou bupropion. Absence de réponse précoce à 4 sem = faible probabilité de réponse finale avec ce médicament.", color: "#dc2626" },
+      "partielle": { action: "Optimiser la dose actuelle", detail: "Augmenter à la dose thérapeutique cible si tolérée. Continuer l'évaluation à semaine 8.", color: "#d97706" },
+      "bonne":     { action: "Maintenir la dose — réévaluer à semaine 8", detail: "Bonne réponse précoce = fort prédicteur de rémission. Titration vers dose cible.", color: "#059669" },
+      "remission": { action: "Maintenir la dose — planifier phase de maintien", detail: "Rémission précoce exceptionnelle. Maintenir ≥ 12 mois. Prévention rechute.", color: "#059669" }
+    },
+    "sem8": {
+      "aucune":    { action: "CHANGER d'antidépresseur", detail: "Absence de réponse à 8 sem = changement impératif. Réévaluer diagnostic (bipolaire? comorbidités?).", color: "#dc2626" },
+      "partielle": { action: "Stratégie d'augmentation (adjuvant)", detail: "Ajouter: aripiprazole 2–5 mg/j, brexpiprazole 1–3 mg/j, quétiapine XR 50–300 mg/j, ou lithium 300 mg BID-TID.<br>Alternative: changer si EI intolérables.", color: "#d97706" },
+      "bonne":     { action: "Optimiser la dose — viser rémission à semaine 12–16", detail: "Augmenter dose si possible. Surveiller PHQ-9.", color: "#059669" },
+      "remission": { action: "Maintenir — planifier sortie de phase aiguë", detail: "Réponse complète à 8 sem. Planifier phase de maintien: ≥ 12 mois.", color: "#059669" }
+    },
+    "sem12": {
+      "aucune":    { action: "Réévaluer le diagnostic — considérer psychiatrie", detail: "Dépression réfractaire (≥ 2 essais AD). Options: kétamine, TEC, MAOIs. Référer psychiatrie.", color: "#dc2626" },
+      "partielle": { action: "Stratégie d'augmentation ou changement", detail: "Adjuvant AP atypique ou lithium. Si aucune amélioration depuis semaine 8: changer et réévaluer.", color: "#d97706" },
+      "bonne":     { action: "Continuer — phase de maintien en vue", detail: "≥ 50 % amélioration à 12 sem. Viser rémission complète. PHQ-9 ≤ 4 = objectif.", color: "#059669" },
+      "remission": { action: "Début de la phase de maintien", detail: "PHQ-9 ≤ 4 atteint! 1er épisode: continuer ≥ 12 mois. Récurrence / FDR: ≥ 2 ans. Pas de sevrage brusque.", color: "#059669" }
+    }
+  };
+  var r = matrix[sem] && matrix[sem][amel];
+  if (!r) { out.style.display = "none"; return; }
+  out.style.display = "block";
+  out.innerHTML = "<strong style='color:" + r.color + "'>➤ " + r.action + "</strong>" +
+    "<div style='margin-top:6px;font-size:13px;color:#374151'>" + r.detail + "</div>";
 }
 </script>
 </body>
