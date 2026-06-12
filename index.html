@@ -13466,7 +13466,7 @@ function dkRenal(view) {
         if (necrose) base.push(necrose + '% de nécrose');
         if (fibrine) base.push(fibrine + '% de fibrine/slough');
         if (granul)  base.push(granul + '% de tissu de granulation');
-        if (epithe)  base.push(epithe + '% d'épithélialisation');
+        if (epithe)  base.push(epithe + "% d'épithélialisation");
         if (base.length > 0) parts.push('base composée de ' + base.join(', '));
 
         // Bords
@@ -13484,9 +13484,9 @@ function dkRenal(view) {
 
         // Infection
         if (infSigns.length > 0) {
-          parts.push('signes locaux d'infection présents : ' + infSigns.join(', '));
+          parts.push("signes locaux d'infection présents : " + infSigns.join(', '));
         } else {
-          parts.push('aucun signe local d'infection noté');
+          parts.push("aucun signe local d'infection noté");
         }
 
         // Douleur
