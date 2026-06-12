@@ -6710,75 +6710,60 @@ function calculatePHQ9() {
       <!-- ANATOMIE CORONARIENNE -->
       <div class="block clin" id="mcas-anat">
         <div class="block-title"><span class="tag">🫀 Anatomie coronarienne — Modèle interactif</span></div>
-        <p style="font-size:13px;color:#555;margin:0 0 12px;">Cliquez sur une artère pour voir son territoire, sa fonction et l'impact d'une occlusion.</p>
+        <p style="font-size:13px;color:#555;margin:0 0 12px;">Cliquez sur un bouton pour afficher le territoire, l'ECG et les conséquences cliniques.</p>
+
+        <!-- BOUTONS DE SÉLECTION (remplace les clics SVG peu fiables) -->
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px;">
+          <button onclick="showArtInfo('acd')" style="background:#3B82F6;color:#fff;border:none;border-radius:8px;padding:8px 16px;cursor:pointer;font-weight:700;font-size:13px;">🔵 ACD</button>
+          <button onclick="showArtInfo('tc')"  style="background:#8B5CF6;color:#fff;border:none;border-radius:8px;padding:8px 16px;cursor:pointer;font-weight:700;font-size:13px;">🟣 Tronc commun (TC)</button>
+          <button onclick="showArtInfo('iva')" style="background:#EF4444;color:#fff;border:none;border-radius:8px;padding:8px 16px;cursor:pointer;font-weight:700;font-size:13px;">🔴 IVA (LAD)</button>
+          <button onclick="showArtInfo('cx')"  style="background:#F97316;color:#fff;border:none;border-radius:8px;padding:8px 16px;cursor:pointer;font-weight:700;font-size:13px;">🟠 Cx (Circonflexe)</button>
+        </div>
 
         <div style="display:flex;gap:16px;flex-wrap:wrap;align-items:flex-start;">
-          <!-- SVG HEART -->
+          <!-- SVG HEART (visuel seulement) -->
           <div style="flex:0 0 auto;">
-            <svg id="heart-svg" viewBox="0 0 520 460" width="340" height="295" xmlns="http://www.w3.org/2000/svg" style="cursor:pointer;display:block;">
+            <svg id="heart-svg" viewBox="0 0 520 460" width="320" height="280" xmlns="http://www.w3.org/2000/svg" style="display:block;">
               <!-- Aorte -->
               <rect x="238" y="10" width="28" height="70" rx="10" fill="#d1d5db" stroke="#9ca3af" stroke-width="1.5"/>
               <rect x="200" y="55" width="110" height="18" rx="6" fill="#d1d5db" stroke="#9ca3af" stroke-width="1.5"/>
-
               <!-- Coeur (corps) -->
               <path d="M 80 170 Q 60 120 110 100 Q 160 80 190 120 Q 220 80 270 80 Q 320 80 330 130 Q 390 110 420 160 Q 460 210 420 260 Q 380 310 310 370 Q 260 420 260 420 Q 260 420 200 370 Q 120 300 90 250 Q 65 210 80 170 Z" fill="#FECACA" stroke="#fca5a5" stroke-width="2"/>
-
-              <!-- ACD — artere coronaire droite (bleue) -->
-              <path id="art-acd" d="M 320 68 Q 370 75 400 110 Q 430 150 430 200 Q 430 260 410 310 Q 390 350 360 380 Q 330 390 300 400 Q 280 405 270 420" fill="none" stroke="#3B82F6" stroke-width="5" stroke-linecap="round" style="cursor:pointer;" onclick="showArtInfo('acd')"/>
-              <!-- Branche marginale droite -->
+              <!-- ACD -->
+              <path d="M 320 68 Q 370 75 400 110 Q 430 150 430 200 Q 430 260 410 310 Q 390 350 360 380 Q 330 390 300 400 Q 280 405 270 420" fill="none" stroke="#3B82F6" stroke-width="5" stroke-linecap="round" id="vis-acd"/>
               <path d="M 415 240 Q 445 255 455 275 Q 460 285 450 295" fill="none" stroke="#3B82F6" stroke-width="3" stroke-dasharray="4,2" stroke-linecap="round"/>
-              <!-- AIVP -->
               <path d="M 310 400 Q 295 415 280 420 Q 265 422 255 415" fill="none" stroke="#3B82F6" stroke-width="3.5" stroke-linecap="round"/>
-
-              <!-- TC — Tronc commun (violet) -->
-              <path id="art-tc" d="M 220 68 Q 200 78 190 92 Q 182 105 180 115" fill="none" stroke="#8B5CF6" stroke-width="6" stroke-linecap="round" style="cursor:pointer;" onclick="showArtInfo('tc')"/>
-
-              <!-- IVA — Interventriculaire antérieure (rouge) -->
-              <path id="art-iva" d="M 180 115 Q 175 130 180 160 Q 190 220 210 280 Q 225 330 240 380 Q 248 405 255 415" fill="none" stroke="#EF4444" stroke-width="5" stroke-linecap="round" style="cursor:pointer;" onclick="showArtInfo('iva')"/>
-              <!-- Diagonale 1 -->
+              <!-- TC -->
+              <path d="M 220 68 Q 200 78 190 92 Q 182 105 180 115" fill="none" stroke="#8B5CF6" stroke-width="6" stroke-linecap="round" id="vis-tc"/>
+              <!-- IVA -->
+              <path d="M 180 115 Q 175 130 180 160 Q 190 220 210 280 Q 225 330 240 380 Q 248 405 255 415" fill="none" stroke="#EF4444" stroke-width="5" stroke-linecap="round" id="vis-iva"/>
               <path d="M 183 170 Q 160 195 145 215 Q 135 228 130 240" fill="none" stroke="#EF4444" stroke-width="3" stroke-dasharray="4,2" stroke-linecap="round"/>
-              <!-- Septale perforante -->
-              <path d="M 195 200 Q 210 210 215 225" fill="none" stroke="#EF4444" stroke-width="2.5" stroke-dasharray="3,2" stroke-linecap="round"/>
-
-              <!-- Cx — Circonflexe (orange) -->
-              <path id="art-cx" d="M 180 115 Q 165 120 145 130 Q 120 145 110 175 Q 100 205 110 240 Q 120 270 140 290" fill="none" stroke="#F97316" stroke-width="5" stroke-linecap="round" style="cursor:pointer;" onclick="showArtInfo('cx')"/>
-              <!-- Marginale gauche -->
+              <!-- Cx -->
+              <path d="M 180 115 Q 165 120 145 130 Q 120 145 110 175 Q 100 205 110 240 Q 120 270 140 290" fill="none" stroke="#F97316" stroke-width="5" stroke-linecap="round" id="vis-cx"/>
               <path d="M 117 198 Q 105 210 100 230 Q 97 245 103 260" fill="none" stroke="#F97316" stroke-width="3" stroke-dasharray="4,2" stroke-linecap="round"/>
-
-              <!-- Légendes -->
-              <text x="335" y="72" font-size="11" fill="#3B82F6" font-weight="700">ACD</text>
-              <text x="135" y="65" font-size="11" fill="#8B5CF6" font-weight="700">TC</text>
-              <text x="152" y="108" font-size="11" fill="#F97316" font-weight="700">Cx</text>
-              <text x="195" y="135" font-size="11" fill="#EF4444" font-weight="700">IVA</text>
-              <text x="453" y="285" font-size="10" fill="#3B82F6">Marg. D</text>
-              <text x="100" y="262" font-size="10" fill="#F97316">Marg. G</text>
-              <text x="117" y="240" font-size="10" fill="#EF4444">Diag.</text>
-              <text x="260" y="435" font-size="10" fill="#3B82F6">AIVP</text>
-
-              <!-- Titre -->
-              <text x="260" y="458" font-size="10" fill="#9ca3af" text-anchor="middle">Cliquez sur une artère colorée</text>
+              <!-- Labels -->
+              <text x="338" y="72" font-size="12" fill="#3B82F6" font-weight="700">ACD</text>
+              <text x="130" y="62" font-size="12" fill="#8B5CF6" font-weight="700">TC</text>
+              <text x="148" y="112" font-size="12" fill="#F97316" font-weight="700">Cx</text>
+              <text x="192" y="138" font-size="12" fill="#EF4444" font-weight="700">IVA</text>
+              <text x="455" y="288" font-size="10" fill="#3B82F6">Marg.D</text>
+              <text x="96" y="265" font-size="10" fill="#F97316">Marg.G</text>
+              <text x="112" y="244" font-size="10" fill="#EF4444">Diag.</text>
+              <text x="260" y="455" font-size="10" fill="#3B82F6" text-anchor="middle">AIVP</text>
             </svg>
           </div>
 
           <!-- INFO PANEL -->
           <div id="art-info-panel" style="flex:1;min-width:220px;background:#F9FAFB;border-radius:12px;padding:16px;border:2px solid #E5E7EB;min-height:230px;">
-            <div style="text-align:center;color:#9ca3af;padding-top:40px;">
+            <div style="text-align:center;color:#9ca3af;padding-top:30px;">
               <div style="font-size:32px;margin-bottom:8px;">🫀</div>
-              <div style="font-size:13px;">Cliquez sur une artère<br>pour voir les détails</div>
+              <div style="font-size:13px;">Sélectionnez une artère<br>avec les boutons ci-dessus</div>
             </div>
           </div>
         </div>
 
-        <!-- LÉGENDE COULEURS -->
-        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px;margin-bottom:16px;">
-          <span style="display:flex;align-items:center;gap:5px;font-size:12px;cursor:pointer;" onclick="showArtInfo('acd')"><span style="width:20px;height:4px;background:#3B82F6;border-radius:2px;display:inline-block;"></span>ACD</span>
-          <span style="display:flex;align-items:center;gap:5px;font-size:12px;cursor:pointer;" onclick="showArtInfo('tc')"><span style="width:20px;height:4px;background:#8B5CF6;border-radius:2px;display:inline-block;"></span>Tronc commun (TC)</span>
-          <span style="display:flex;align-items:center;gap:5px;font-size:12px;cursor:pointer;" onclick="showArtInfo('iva')"><span style="width:20px;height:4px;background:#EF4444;border-radius:2px;display:inline-block;"></span>IVA</span>
-          <span style="display:flex;align-items:center;gap:5px;font-size:12px;cursor:pointer;" onclick="showArtInfo('cx')"><span style="width:20px;height=4px;background:#F97316;border-radius:2px;display:inline-block;"></span>Cx (Circonflexe)</span>
-        </div>
-
         <!-- TABLEAU RÉCAPITULATIF -->
-        <div class="accordion">
+        <div class="accordion" style="margin-top:16px;">
           <div class="accordion-item">
             <div class="accordion-header">Tableau des territoires coronariens &amp; occlusions
               <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
@@ -6822,71 +6807,80 @@ function calculatePHQ9() {
                       <tr><td>Codominance</td><td>Reste</td><td>ACD + Cx</td></tr>
                     </tbody>
                   </table>
-                  <div class="key-fact blue" style="margin-top:8px;">La <strong>dominance</strong> est déterminée par l'artère qui donne naissance à l'AIVP (artère interventriculaire postérieure) — non pas par le volume irrigué.</div>
+                  <div class="key-fact blue" style="margin-top:8px;">La <strong>dominance</strong> est déterminée par l'artère qui donne naissance à l'AIVP — non pas par le volume irrigué.</div>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- JS POUR L'INTERACTIF -->
         <script>
+        var artData = {
+          tc: {
+            nom: 'Tronc commun (TC) — Left Main',
+            couleur: '#8B5CF6',
+            territoire: 'Bifurcation en IVA + Cx &rarr; irrigue ~70 % du myocarde VG',
+            branches: 'IVA (paroi ant. VG, septum) + Cx (paroi lat. VG)',
+            ecg: 'Sus-ST aVR (&gt; 1 mm) + sous-ST diffus V4&ndash;V6',
+            consequence: 'Choc cardiogénique · TV/FV · Mort subite',
+            traitement: 'Urgence absolue &mdash; PCI ou chirurgie bypass (CABG)'
+          },
+          iva: {
+            nom: 'IVA (LAD) &mdash; Interventriculaire Ant&eacute;rieure',
+            couleur: '#EF4444',
+            territoire: 'Paroi ant. VG &bull; 2/3 ant&eacute;rieur septum &bull; Apex &bull; Muscle papillaire ant&eacute;rieur',
+            branches: 'Diagonales (paroi lat&eacute;rale ant.) + Septales perforantes',
+            ecg: 'Sus-ST V1&ndash;V4 (IM ant&eacute;rieur) &pm; BBG nouveau',
+            consequence: 'Dysfonction VG s&eacute;v&egrave;re · An&eacute;vrisme · Bloc de branche',
+            traitement: 'Reperfusion urgente &lt; 12h &mdash; PCI pr&eacute;f&eacute;r&eacute;'
+          },
+          cx: {
+            nom: 'Cx &mdash; Art&egrave;re Circonflexe',
+            couleur: '#F97316',
+            territoire: 'Paroi lat&eacute;rale et post&eacute;ro-lat&eacute;rale VG &bull; Oreillette gauche',
+            branches: 'Marginales obtuses (paroi lat. VG) &pm; AIVP (dominance gauche)',
+            ecg: 'Sus-ST I, aVL, V5&ndash;V6 (lat&eacute;ral) &mdash; parfois silencieux &agrave; l&apos;ECG 12D',
+            consequence: 'Fibrillation atriale (FA) · D&eacute;faillance lat&eacute;rale VG',
+            traitement: 'PCI si sus-ST ou NSTEMI &agrave; haut risque'
+          },
+          acd: {
+            nom: 'ACD &mdash; Art&egrave;re Coronaire Droite',
+            couleur: '#3B82F6',
+            territoire: 'VD (ventricule droit) &bull; Paroi inf&eacute;rieure VG &bull; N&oelig;ud SA (85%) &bull; N&oelig;ud AV (85%)',
+            branches: 'Marginale du bord droit &bull; AIVP (dominance droite)',
+            ecg: 'Sus-ST II, III, aVF (inf.) &pm; V3R-V4R si IM VD',
+            consequence: 'Bloc AV · Bradycardie sinusale · Insuffisance VD',
+            traitement: 'Prudence avec NTG/vasodilatateurs si IM VD associ&eacute;'
+          }
+        };
+        var activeArt = null;
+        var visIds = ['vis-acd','vis-tc','vis-iva','vis-cx'];
+        var artColors = {acd:'#3B82F6', tc:'#8B5CF6', iva:'#EF4444', cx:'#F97316'};
         function showArtInfo(id) {
-          var data = {
-            tc: {
-              nom: 'Tronc commun (TC) — Left Main',
-              couleur: '#8B5CF6',
-              territoire: 'Bifurcation en IVA + Cx &rarr; irrigue ~70 % du myocarde VG',
-              branches: 'IVA (ant. VG, septum) + Cx (lat. VG)',
-              ecg: 'Sus-ST aVR (&gt; 1 mm) + sous-ST diffus V4&ndash;V6',
-              consequence: 'Choc cardiogénique, TV/FV, mort subite',
-              traitement: 'Urgence absolue &mdash; PCI ou chirurgie bypass (CABG)'
-            },
-            iva: {
-              nom: 'IVA (LAD) &mdash; Interventriculaire ant&eacute;rieure',
-              couleur: '#EF4444',
-              territoire: 'Paroi ant. VG &bull; 2/3 ant&eacute;rieur septum &bull; Apex &bull; Muscle papillaire ant&eacute;rieur',
-              branches: 'Diagonales (paroi lat&eacute;rale ant.) + Septales perforantes',
-              ecg: 'Sus-ST V1&ndash;V4 (IM ant&eacute;rieur) &pm; BBG nouveau',
-              consequence: 'Dysfonction VG s&eacute;v&egrave;re, an&eacute;vrisme, bloc de branche',
-              traitement: 'Reperfusion urgente &lt; 12h &mdash; PCI pr&eacute;f&eacute;r&eacute;'
-            },
-            cx: {
-              nom: 'Cx &mdash; Arт&egrave;re Circonflexe',
-              couleur: '#F97316',
-              territoire: 'Paroi lat&eacute;rale et post&eacute;ro-lat&eacute;rale VG &bull; Oreillette gauche',
-              branches: 'Marginales obtuses (paroi lat. VG) &pm; AIVP (dominance gauche)',
-              ecg: 'Sus-ST I, aVL, V5&ndash;V6 (lat&eacute;ral) &mdash; parfois silencieux &agrave; l&apos;ECG standard',
-              consequence: 'Fibrillation atriale (FA), d&eacute;faillance lat&eacute;rale VG',
-              traitement: 'PCI si sus-ST ou NSTEMI &agrave; haut risque'
-            },
-            acd: {
-              nom: 'ACD &mdash; Art&egrave;re Coronaire Droite',
-              couleur: '#3B82F6',
-              territoire: 'VD (ventricule droit) &bull; Paroi inf&eacute;rieure VG &bull; N&oelig;ud SA (85%) &bull; N&oelig;ud AV (85%)',
-              branches: 'Marginale du bord droit &bull; AIVP (dominance droite)',
-              ecg: 'Sus-ST II, III, aVF (inf.) &pm; V3R-V4R (IM VD)',
-              consequence: 'Bloc AV, bradycardie sinusale, insuffisance VD',
-              traitement: 'Attention aux vasodilatateurs (NTG) si IM VD associ&eacute;'
-            }
-          };
-          var d = data[id];
+          var d = artData[id];
           if (!d) return;
+          activeArt = id;
+          // Highlight selected artery
+          visIds.forEach(function(vid) {
+            var el = document.getElementById(vid);
+            if (el) el.setAttribute('opacity', vid === 'vis-' + id ? '1' : '0.25');
+          });
           var panel = document.getElementById('art-info-panel');
           panel.innerHTML =
-            '<div style="border-left:5px solid ' + d.couleur + ';padding-left:12px;margin-bottom:10px;">' +
+            '<div style="border-left:5px solid ' + d.couleur + ';padding-left:12px;margin-bottom:12px;">' +
             '<div style="font-weight:700;font-size:14px;color:' + d.couleur + ';">' + d.nom + '</div>' +
             '</div>' +
-            '<div style="display:grid;grid-template-columns:1fr;gap:7px;font-size:12px;">' +
-            '<div><span style="font-weight:600;color:#374151;">🗺️ Territoire :</span> ' + d.territoire + '</div>' +
-            '<div><span style="font-weight:600;color:#374151;">🌿 Branches :</span> ' + d.branches + '</div>' +
-            '<div><span style="font-weight:600;color:#374151;">📈 ECG :</span> <span style="color:#c0392b;">' + d.ecg + '</span></div>' +
-            '<div><span style="font-weight:600;color:#374151;">⚠️ Occlusion :</span> ' + d.consequence + '</div>' +
-            '<div style="background:#F0FDF4;padding:6px 8px;border-radius:6px;"><span style="font-weight:600;color:#166534;">💊 Traitement :</span> ' + d.traitement + '</div>' +
+            '<div style="display:grid;gap:8px;font-size:12px;">' +
+            '<div style="background:#F3F4F6;border-radius:6px;padding:8px;"><span style="font-weight:600;color:#374151;">🗺️ Territoire :</span><br>' + d.territoire + '</div>' +
+            '<div style="background:#F3F4F6;border-radius:6px;padding:8px;"><span style="font-weight:600;color:#374151;">🌿 Branches :</span><br>' + d.branches + '</div>' +
+            '<div style="background:#FEE2E2;border-radius:6px;padding:8px;"><span style="font-weight:600;color:#c0392b;">📈 ECG si occlusion :</span><br>' + d.ecg + '</div>' +
+            '<div style="background:#FEF9C3;border-radius:6px;padding:8px;"><span style="font-weight:600;color:#92400e;">⚠️ Conséquences :</span><br>' + d.consequence + '</div>' +
+            '<div style="background:#DCFCE7;border-radius:6px;padding:8px;"><span style="font-weight:600;color:#166534;">💊 Traitement :</span><br>' + d.traitement + '</div>' +
             '</div>';
         }
         </script>
       </div>
+
 
       <!-- BALANCE O2 -->
       <div class="block path" id="mcas-o2">
