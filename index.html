@@ -1131,7 +1131,6 @@
         <div class="nav-item" onclick="showSection('antipsychotiques')">47. Antipsychotiques</div>
         <div class="nav-item" onclick="showSection('hypnotiques')">48. Hypnotiques / Sédatifs</div>
         <div class="nav-item" onclick="showSection('tdah')">49. TDAH</div>
-        <div class="nav-item" onclick="showSection('urgences-psy')">50. Urgences à mémoriser</div>
         <div class="nav-item" onclick="showSection('tdc')">51. TDC — Trouble Dépressif</div>
         <div class="nav-item" onclick="showSection('anxiete')">52. Troubles Anxieux</div>
         <div class="nav-item" onclick="showSection('bipolaire')">53. Trouble Bipolaire</div>
@@ -24755,7 +24754,6 @@ const SEARCH_INDEX = [
   { id:'antipsychotiques',    title:'Antipsychotiques',               specialty:'Santé Mentale',  keywords:['antipsychotique','clozapine','olanzapine','rispéridone','halopéridol','smn'] },
   { id:'hypnotiques',         title:'Hypnotiques / Sédatifs',         specialty:'Santé Mentale',  keywords:['hypnotique','benzodiazépine','zopiclone','mélatonine','insomnie'] },
   { id:'tdah',                title:'TDAH',                           specialty:'Santé Mentale',  keywords:['tdah','méthylphénidate','amphétamine','atomoxétine','guanfacine'] },
-  { id:'urgences-psy',        title:'Urgences Psychiatriques',        specialty:'Santé Mentale',  keywords:['syndrome sérotoninergique','toxicité lithium','smn','clozapine','agranulocytose'] },
   { id:'tdc',                 title:'TDC — Trouble Dépressif Caractérisé', specialty:'Santé Mentale', keywords:['tdc','trouble dépressif','dépression','dsm-5','sigecaps','phq-9','phq-2','canmat','anhédonie'] },
   { id:'anxiete',             title:'Troubles Anxieux',               specialty:'Santé Mentale',  keywords:['trouble anxieux','gad-7','anxiété','tag','phobies','toc','sspt','isrs anxiété','prégabaline'] },
   { id:'oncogenes',           title:'Oncogènes & Cellule Cancéreuse', specialty:'Oncologie',       keywords:['oncogène','tp53','kras','egfr','alk','driver','tmb','résistance','tki'] },
@@ -24960,7 +24958,7 @@ const SECTION_ORDER = [
   // Hépato-biliaire
   'douleur-abdo','anatomie-foie','fonctions-foie','calculs-biliaires','cholecystite','cdiff','steatose','cirrhose','htp','preop',
   // Santé mentale
-  'antidepresseurs','stabilisateurs','antipsychotiques','hypnotiques','tdah','urgences-psy','tdc','anxiete','bipolaire','schizophrenie','toc-tspt',
+  'antidepresseurs','stabilisateurs','antipsychotiques','hypnotiques','tdah','tdc','anxiete','bipolaire','schizophrenie','toc-tspt',
   // Oncologie
   'oncogenes','paraneoplasiques','urgences-onco','epanchement-pleural','toxicites-onco','onco-thoracique','onco-gyneco','amm',
   // Gynécologie
@@ -24990,7 +24988,7 @@ const SECTION_TITLES = {
   'appendicite':'Appendicite',
   'ccr':'Cancer Colorectal','ugd':'UGD','constipation':'Constipation','diarrhee':'Diarrhée','mrgo':'MRGO & Antiacides',
   'antidepresseurs':'Antidépresseurs','stabilisateurs':'Stabilisateurs','antipsychotiques':'Antipsychotiques',
-  'hypnotiques':'Hypnotiques','tdah':'TDAH','urgences-psy':'Urgences Psy.','tdc':'TDC','anxiete':'Troubles Anxieux','bipolaire':'Trouble Bipolaire','schizophrenie':'Schizophrénie','toc-tspt':'TOC & TSPT',
+  'hypnotiques':'Hypnotiques','tdah':'TDAH','tdc':'TDC','anxiete':'Troubles Anxieux','bipolaire':'Trouble Bipolaire','schizophrenie':'Schizophrénie','toc-tspt':'TOC & TSPT',
   'oncogenes':'Oncogènes','paraneoplasiques':'Paranéoplasiques','urgences-onco':'Urgences Onco.','epanchement-pleural':'Épanchement Pleural',
   'toxicites-onco':'Toxicités Onco.','onco-thoracique':'Onco. Thoracique','onco-gyneco':'Onco. Gynécologique','amm':'AMM',
   'anatomie-tfr':'Anatomie & TFR','neo-poumon':'Néo. Poumon','amiante':'Amiante & Maladies Prof.','niveau-soins':'Niveau de Soins (AMM & Palliatif)',
