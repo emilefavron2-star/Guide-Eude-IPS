@@ -19673,9 +19673,80 @@ function calculatePHQ9() {
         <div class="section-title"><h1>Oncogènes & Biologie du Cancer</h1><div class="breadcrumb">Oncologie <span class="breadcrumb-sep">·</span> Section 48</div></div>
       </div>
       <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
-        <button onclick="document.getElementById('onc-1').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📌 Mécanismes carcinogenèse</button>
+        <button onclick="document.getElementById('onc-concept').scrollIntoView({behavior:'smooth'})" style="background:#7f1d1d;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">💡 Concept général</button>
+        <button onclick="document.getElementById('onc-hallmarks').scrollIntoView({behavior:'smooth'})" style="background:#7f1d1d;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🎯 Hallmarks (10)</button>
+        <button onclick="document.getElementById('onc-cell-cycle').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔄 Cycle cellulaire</button>
+        <button onclick="document.getElementById('onc-carcinogenese').scrollIntoView({behavior:'smooth'})" style="background:#0a7a4e;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔬 Carcinogenèse</button>
+        <button onclick="document.getElementById('onc-1').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📌 Mécanismes</button>
         <button onclick="document.getElementById('onc-2').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🎯 Mutations ciblables</button>
         <button onclick="document.getElementById('onc-3').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🧪 Dépistage génétique</button>
+      </div>
+      <div class="block def" id="onc-concept">
+        <div class="block-title"><span class="tag">💡 Concept général — Nature du Cancer</span></div>
+        <div class="key-fact blue">Le cancer = accumulation d'altérations de l'ADN (mutations, changements de nombre de copies, réarrangements, modifications épigénétiques) qui perturbent l'équilibre entre <strong>prolifération cellulaire</strong> et <strong>mort/quiescence</strong>.</div>
+      </div>
+      <div class="block para" id="onc-hallmarks">
+        <div class="block-title"><span class="tag">🎯 Hallmarks of Cancer — Hanahan &amp; Weinberg (10 caractéristiques)</span></div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px;">
+          <div style="background:#fef3f2;border-radius:8px;padding:8px 10px;border-left:3px solid #ef4444;font-size:12.5px;"><strong>1. Autosuffisance en signaux de croissance</strong><br><span style="color:#666;font-size:11.5px;">Oncogènes activés (RAS, MYC, EGFR…)</span></div>
+          <div style="background:#fef3f2;border-radius:8px;padding:8px 10px;border-left:3px solid #ef4444;font-size:12.5px;"><strong>2. Insensibilité aux signaux antiprolifératifs</strong><br><span style="color:#666;font-size:11.5px;">Suppresseurs de tumeur inactivés (RB, p53…)</span></div>
+          <div style="background:#fff7ed;border-radius:8px;padding:8px 10px;border-left:3px solid #f97316;font-size:12.5px;"><strong>3. Résistance à l'apoptose</strong><br><span style="color:#666;font-size:11.5px;">Mort cellulaire programmée évitée (BCL-2↑, p53↓)</span></div>
+          <div style="background:#fff7ed;border-radius:8px;padding:8px 10px;border-left:3px solid #f97316;font-size:12.5px;"><strong>4. Potentiel réplicatif illimité</strong><br><span style="color:#666;font-size:11.5px;">Réactivation de la télomérase</span></div>
+          <div style="background:#f0fdf4;border-radius:8px;padding:8px 10px;border-left:3px solid #22c55e;font-size:12.5px;"><strong>5. Angiogenèse soutenue</strong><br><span style="color:#666;font-size:11.5px;">VEGF ↑, néovascularisation tumorale → cible : bevacizumab</span></div>
+          <div style="background:#f0fdf4;border-radius:8px;padding:8px 10px;border-left:3px solid #22c55e;font-size:12.5px;"><strong>6. Invasion tissulaire &amp; métastases</strong><br><span style="color:#666;font-size:11.5px;">Perte d'adhésion, transition épithélio-mésenchymateuse (EMT)</span></div>
+          <div style="background:#f5f3ff;border-radius:8px;padding:8px 10px;border-left:3px solid #8b5cf6;font-size:12.5px;"><strong>7. Reprogrammation métabolique</strong><br><span style="color:#666;font-size:11.5px;">Effet Warburg : glycolyse aérobie même en présence d'O₂</span></div>
+          <div style="background:#f5f3ff;border-radius:8px;padding:8px 10px;border-left:3px solid #8b5cf6;font-size:12.5px;"><strong>8. Évasion immunitaire</strong><br><span style="color:#666;font-size:11.5px;">Échappement à la surveillance immunitaire → base de l'immunothérapie (anti-PD-1, anti-PD-L1, anti-CTLA-4)</span></div>
+          <div style="background:#fefce8;border-radius:8px;padding:8px 10px;border-left:3px solid #eab308;font-size:12.5px;"><strong>9. Inflammation pro-tumorale</strong><br><span style="color:#666;font-size:11.5px;">Microenvironnement tumoral inflammatoire</span></div>
+          <div style="background:#fefce8;border-radius:8px;padding:8px 10px;border-left:3px solid #eab308;font-size:12.5px;"><strong>10. Instabilité génomique</strong><br><span style="color:#666;font-size:11.5px;">Mutations cumulées plus rapidement → évolution clonale accélérée</span></div>
+        </div>
+        <div class="key-fact green" style="font-size:12.5px;">💡 <strong>Immunothérapie</strong> (anti-PD-1/PD-L1, anti-CTLA-4) cible le hallmark <strong>#8 évasion immunitaire</strong>. <strong>Thérapies anti-angiogéniques</strong> (bevacizumab) ciblent le hallmark <strong>#5 angiogenèse</strong>.</div>
+      </div>
+      <div class="block clin" id="onc-cell-cycle">
+        <div class="block-title"><span class="tag">🔄 Cycle cellulaire &amp; Contrôle</span></div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px;align-items:center;justify-content:center;">
+          <div style="background:#dbeafe;border-radius:8px;padding:8px 14px;text-align:center;font-size:12px;min-width:70px;"><strong>G1</strong><br><span style="color:#666;font-size:11px;">Croissance</span></div>
+          <div style="color:#6b7280;font-size:16px;font-weight:700;">→</div>
+          <div style="background:#dcfce7;border-radius:8px;padding:8px 14px;text-align:center;font-size:12px;min-width:70px;"><strong>S</strong><br><span style="color:#666;font-size:11px;">Synthèse ADN</span></div>
+          <div style="color:#6b7280;font-size:16px;font-weight:700;">→</div>
+          <div style="background:#fef9c3;border-radius:8px;padding:8px 14px;text-align:center;font-size:12px;min-width:70px;"><strong>G2</strong><br><span style="color:#666;font-size:11px;">Préparation</span></div>
+          <div style="color:#6b7280;font-size:16px;font-weight:700;">→</div>
+          <div style="background:#fce7f3;border-radius:8px;padding:8px 14px;text-align:center;font-size:12px;min-width:70px;"><strong>M</strong><br><span style="color:#666;font-size:11px;">Mitose</span></div>
+          <div style="color:#6b7280;font-size:16px;font-weight:700;">→</div>
+          <div style="background:#f3f4f6;border-radius:8px;padding:8px 14px;text-align:center;font-size:12px;min-width:70px;"><strong>G0</strong><br><span style="color:#666;font-size:11px;">Quiescence</span></div>
+        </div>
+        <table>
+          <thead><tr><th>Checkpoint</th><th>Régulateurs clés</th><th>Rôle</th></tr></thead>
+          <tbody>
+            <tr><td><strong>G1/S</strong></td><td>p53, RB, p16 (CDKN2A)</td><td>Décide d'entrer en phase S · Vérifie intégrité ADN</td></tr>
+            <tr><td><strong>G2/M</strong></td><td>ATM/ATR, CHK1/CHK2</td><td>Vérifie intégrité ADN avant mitose</td></tr>
+            <tr><td><strong>Fuseau mitotique</strong></td><td>APC/C, séparase</td><td>Alignement correct des chromosomes avant séparation</td></tr>
+          </tbody>
+        </table>
+        <div class="flag-list" style="margin-top:8px;">
+          <div class="flag-item"><span class="fi-icon">⚙️</span><span><strong>Cyclines + CDK</strong> (kinases dépendantes des cyclines) : moteurs de progression du cycle</span></div>
+          <div class="flag-item"><span class="fi-icon">🛑</span><span><strong>Inhibiteurs CDK (CKI) :</strong> CDKN2A = p16, CDKN1A = p21 — freins endogènes; inactivés dans de nombreux cancers</span></div>
+        </div>
+      </div>
+      <div class="block rx" id="onc-carcinogenese">
+        <div class="block-title"><span class="tag">🔬 Carcinogenèse — Les 3 étapes</span></div>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:10px;">
+          <div style="background:#fef3f2;border-radius:10px;padding:12px;border-top:4px solid #ef4444;text-align:center;">
+            <div style="font-size:22px;font-weight:800;color:#ef4444;">1</div>
+            <div style="font-weight:700;font-size:13px;margin:4px 0;">Initiation</div>
+            <div style="font-size:12px;color:#555;">Altération de l'ADN (mutation) par un agent cancérigène ou erreur de réplication. La cellule garde la lésion mais reste <em>apparemment normale</em>.</div>
+          </div>
+          <div style="background:#fff7ed;border-radius:10px;padding:12px;border-top:4px solid #f97316;text-align:center;">
+            <div style="font-size:22px;font-weight:800;color:#f97316;">2</div>
+            <div style="font-weight:700;font-size:13px;margin:4px 0;">Promotion</div>
+            <div style="font-size:12px;color:#555;">Facteurs promoteurs stimulent la multiplication répétée de la cellule initiée → <strong>hyperplasie anormale</strong>. Étape réversible si le promoteur est retiré.</div>
+          </div>
+          <div style="background:#fef9c3;border-radius:10px;padding:12px;border-top:4px solid #eab308;text-align:center;">
+            <div style="font-size:22px;font-weight:800;color:#ca8a04;">3</div>
+            <div style="font-weight:700;font-size:13px;margin:4px 0;">Progression</div>
+            <div style="font-size:12px;color:#555;">Accumulation de nouvelles mutations → caractéristiques malignes, prolifération autonome, capacité à former des <strong>métastases</strong>. Irréversible.</div>
+          </div>
+        </div>
+        <div class="key-fact cream" style="font-size:12.5px;">⚠️ <strong>Concept clé :</strong> Initiation = mutation permanente · Promotion = expansion clonale · Progression = malignisation irréversible avec instabilité génomique croissante</div>
       </div>
       <div class="block def">
         <div class="block-title" id="onc-1"><span class="tag">📌 Mécanismes de carcinogenèse</span></div>
@@ -20511,6 +20582,143 @@ function calculatePHQ9() {
             <tr><td><strong>Anorexie/exercice ↑</strong></td><td>↓ Kisspeptine → ↓ GnRH pulsatilité → hypogonadisme hypogonadotrope fonctionnel</td><td>↓</td><td>↓</td><td>↓↓</td><td>Aménorrhée hypothalamique, ostéoporose</td></tr>
           </tbody>
         </table>
+      <div class="block def" id="cyc-terminologie">
+        <div class="block-title"><span class="tag">📖 Objectif 2 — Terminologie des Saignements Utérins (FIGO)</span></div>
+        <div class="key-fact yellow" style="margin-bottom:12px;">⚠️ <strong>Note FIGO (2007-2011) :</strong> La FIGO recommande d'<strong>abandonner</strong> ménorragie, métrorragie, ménométrorragie, polyménorrhée, oligoménorrhée, hyperménorrhée et «&nbsp;saignement utérin dysfonctionnel&nbsp;» — jugés <em>confus ou mal définis</em> — au profit d'une <strong>terminologie descriptive</strong> (volume, régularité, fréquence, durée) et de la classification <strong>PALM-COEIN</strong>. Ces termes restent toutefois utiles à connaître.</div>
+        <div style="overflow-x:auto;margin:0 0 6px;">
+          <svg id="terms-tl" viewBox="0 0 720 360" style="font-family:system-ui,sans-serif;min-width:580px;width:100%;cursor:default;">
+            <rect width="720" height="360" fill="#f9fafb" rx="10"/>
+            <text x="360" y="15" text-anchor="middle" font-size="11" font-weight="700" fill="#374151">Ligne du temps — cycles menstruels (jours 1→42) · Cliquez une ligne</text>
+            <line x1="158" y1="30" x2="715" y2="30" stroke="#d1d5db" stroke-width="1"/>
+            <line x1="158.0" y1="33" x2="158.0" y2="39" stroke="#9ca3af" stroke-width="1"/><text x="158.0" y="29" text-anchor="middle" font-size="9" fill="#6b7280">1</text>
+            <line x1="212.3" y1="33" x2="212.3" y2="39" stroke="#9ca3af" stroke-width="1"/><text x="212.3" y="29" text-anchor="middle" font-size="9" fill="#6b7280">5</text>
+            <line x1="280.3" y1="33" x2="280.3" y2="39" stroke="#9ca3af" stroke-width="1"/><text x="280.3" y="29" text-anchor="middle" font-size="9" fill="#6b7280">10</text>
+            <line x1="334.6" y1="33" x2="334.6" y2="39" stroke="#9ca3af" stroke-width="1"/><text x="334.6" y="29" text-anchor="middle" font-size="9" fill="#6b7280">14</text>
+            <line x1="389.0" y1="33" x2="389.0" y2="39" stroke="#9ca3af" stroke-width="1"/><text x="389.0" y="29" text-anchor="middle" font-size="9" fill="#6b7280">18</text>
+            <line x1="470.5" y1="33" x2="470.5" y2="39" stroke="#9ca3af" stroke-width="1"/><text x="470.5" y="29" text-anchor="middle" font-size="9" fill="#6b7280">24</text>
+            <line x1="524.8" y1="33" x2="524.8" y2="39" stroke="#9ca3af" stroke-width="1"/><text x="524.8" y="29" text-anchor="middle" font-size="9" fill="#6b7280">28</text>
+            <line x1="660.7" y1="33" x2="660.7" y2="39" stroke="#9ca3af" stroke-width="1"/><text x="660.7" y="29" text-anchor="middle" font-size="9" fill="#6b7280">38</text>
+            <line x1="715.0" y1="33" x2="715.0" y2="39" stroke="#9ca3af" stroke-width="1"/><text x="715.0" y="29" text-anchor="middle" font-size="9" fill="#6b7280">42</text>
+            <line x1="470.5" y1="30" x2="470.5" y2="355" stroke="#3b82f6" stroke-width="0.8" stroke-dasharray="4,3"/>
+            <text x="470.5" y="355" text-anchor="middle" font-size="8" fill="#3b82f6">seuil poly</text>
+            <line x1="660.7" y1="30" x2="660.7" y2="355" stroke="#f97316" stroke-width="0.8" stroke-dasharray="4,3"/>
+            <text x="660.7" y="355" text-anchor="middle" font-size="8" fill="#f97316">seuil oligo</text>
+            <rect id="row-normal" x="0" y="50" width="720" height="40" fill="#ffffff" style="cursor:pointer" onclick="showTerm('normal')"/>
+            <rect x="0" y="50" width="155" height="40" fill="#ffffff"/>
+            <text x="152" y="74" text-anchor="end" font-size="11" font-weight="700" fill="#374151" pointer-events="none">Normal (28j)</text>
+            <line x1="0" y1="90" x2="715" y2="90" stroke="#e5e7eb" stroke-width="0.5"/>
+            <rect id="row-metro" x="0" y="90" width="720" height="40" fill="#f3f4f6" style="cursor:pointer" onclick="showTerm('metro')"/>
+            <rect x="0" y="90" width="155" height="40" fill="#f3f4f6"/>
+            <text x="152" y="114" text-anchor="end" font-size="11" font-weight="700" fill="#374151" pointer-events="none">Métrorragie</text>
+            <line x1="0" y1="130" x2="715" y2="130" stroke="#e5e7eb" stroke-width="0.5"/>
+            <rect id="row-menor" x="0" y="130" width="720" height="40" fill="#ffffff" style="cursor:pointer" onclick="showTerm('menor')"/>
+            <rect x="0" y="130" width="155" height="40" fill="#ffffff"/>
+            <text x="152" y="154" text-anchor="end" font-size="11" font-weight="700" fill="#374151" pointer-events="none">Ménorragie</text>
+            <line x1="0" y1="170" x2="715" y2="170" stroke="#e5e7eb" stroke-width="0.5"/>
+            <rect id="row-menometro" x="0" y="170" width="720" height="40" fill="#f3f4f6" style="cursor:pointer" onclick="showTerm('menometro')"/>
+            <rect x="0" y="170" width="155" height="40" fill="#f3f4f6"/>
+            <text x="152" y="194" text-anchor="end" font-size="11" font-weight="700" fill="#374151" pointer-events="none">Ménométrorragie</text>
+            <line x1="0" y1="210" x2="715" y2="210" stroke="#e5e7eb" stroke-width="0.5"/>
+            <rect id="row-poly" x="0" y="210" width="720" height="40" fill="#ffffff" style="cursor:pointer" onclick="showTerm('poly')"/>
+            <rect x="0" y="210" width="155" height="40" fill="#ffffff"/>
+            <text x="152" y="234" text-anchor="end" font-size="11" font-weight="700" fill="#374151" pointer-events="none">Polyménorrhée</text>
+            <line x1="0" y1="250" x2="715" y2="250" stroke="#e5e7eb" stroke-width="0.5"/>
+            <rect id="row-oligo" x="0" y="250" width="720" height="40" fill="#f3f4f6" style="cursor:pointer" onclick="showTerm('oligo')"/>
+            <rect x="0" y="250" width="155" height="40" fill="#f3f4f6"/>
+            <text x="152" y="274" text-anchor="end" font-size="11" font-weight="700" fill="#374151" pointer-events="none">Oligoménorrhée</text>
+            <line x1="0" y1="290" x2="715" y2="290" stroke="#e5e7eb" stroke-width="0.5"/>
+            <rect id="row-amen" x="0" y="292" width="720" height="40" fill="#ffffff" style="cursor:pointer" onclick="showTerm('amen')"/>
+            <rect x="0" y="292" width="155" height="40" fill="#ffffff"/>
+            <text x="152" y="316" text-anchor="end" font-size="11" font-weight="700" fill="#374151" pointer-events="none">Aménorrhée</text>
+            <line x1="0" y1="332" x2="715" y2="332" stroke="#e5e7eb" stroke-width="0.5"/>
+            <rect x="158.0" y="57" width="176.6" height="26" fill="#fce7f3" opacity="1.0" rx="3"/>
+            <rect x="348.2" y="57" width="190.2" height="26" fill="#fef9c3" opacity="1.0" rx="3"/>
+            <rect x="158.0" y="57" width="67.9" height="26" fill="#ef4444" opacity="1.0" rx="3"/><text x="192.0" y="72.8" text-anchor="middle" font-size="8" fill="#fff" font-weight="600" pointer-events="none">Mens.</text>
+            <polygon points="341.4,62 346.4,74 336.4,74" fill="#f59e0b" stroke="#d97706" stroke-width="1"/>
+            <rect x="538.4" y="57" width="40.8" height="26" fill="#ef4444" opacity="0.4" rx="3"/>
+            <text x="239.5" y="87" text-anchor="middle" font-size="7.5" fill="#be185d" pointer-events="none">Folliculaire</text>
+            <text x="429.7" y="87" text-anchor="middle" font-size="7.5" fill="#92400e" pointer-events="none">Lutéale</text>
+            <rect x="158.0" y="97" width="176.6" height="26" fill="#fce7f3" opacity="1.0" rx="3"/>
+            <rect x="348.2" y="97" width="190.2" height="26" fill="#fef9c3" opacity="1.0" rx="3"/>
+            <rect x="158.0" y="97" width="67.9" height="26" fill="#ef4444" opacity="1.0" rx="3"/>
+            <polygon points="341.4,102 346.4,114 336.4,114" fill="#f59e0b" stroke="#d97706" stroke-width="1"/>
+            <rect x="280.3" y="97" width="40.8" height="26" fill="#fca5a5" opacity="1.0" rx="3"/>
+            <rect x="538.4" y="97" width="40.8" height="26" fill="#ef4444" opacity="0.4" rx="3"/>
+            <text x="293.9" y="127" text-anchor="middle" font-size="7.5" fill="#dc2626" pointer-events="none">↑ saign. intermenstruel</text>
+            <rect x="158.0" y="137" width="176.6" height="26" fill="#fce7f3" opacity="1.0" rx="3"/>
+            <rect x="348.2" y="137" width="190.2" height="26" fill="#fef9c3" opacity="1.0" rx="3"/>
+            <rect x="158.0" y="137" width="122.3" height="26" fill="#991b1b" opacity="1.0" rx="3"/><text x="219.1" y="152.8" text-anchor="middle" font-size="8" fill="#fff" font-weight="600" pointer-events="none">↑ Durée/Volume</text>
+            <polygon points="341.4,142 346.4,154 336.4,154" fill="#f59e0b" stroke="#d97706" stroke-width="1"/>
+            <rect x="538.4" y="137" width="40.8" height="26" fill="#ef4444" opacity="0.4" rx="3"/>
+            <text x="212.3" y="167" text-anchor="middle" font-size="7.5" fill="#7f1d1d" pointer-events="none">Menstruation prolongée &amp; abondante</text>
+            <rect x="158.0" y="177" width="176.6" height="26" fill="#fce7f3" opacity="1.0" rx="3"/>
+            <rect x="348.2" y="177" width="190.2" height="26" fill="#fef9c3" opacity="1.0" rx="3"/>
+            <rect x="158.0" y="177" width="122.3" height="26" fill="#991b1b" opacity="1.0" rx="3"/>
+            <rect x="280.3" y="177" width="40.8" height="26" fill="#fca5a5" opacity="1.0" rx="3"/>
+            <polygon points="341.4,182 346.4,194 336.4,194" fill="#f59e0b" stroke="#d97706" stroke-width="1"/>
+            <rect x="538.4" y="177" width="40.8" height="26" fill="#ef4444" opacity="0.4" rx="3"/>
+            <text x="212.3" y="207" text-anchor="middle" font-size="7.5" fill="#7f1d1d" pointer-events="none">Ménorragie + Métrorragie combinées</text>
+            <rect x="158.0" y="217" width="122.3" height="26" fill="#fce7f3" opacity="1.0" rx="3"/>
+            <rect x="280.3" y="217" width="149.4" height="26" fill="#fef9c3" opacity="1.0" rx="3"/>
+            <rect x="158.0" y="217" width="54.3" height="26" fill="#ef4444" opacity="1.0" rx="3"/>
+            <polygon points="273.5,222 278.5,234 268.5,234" fill="#f59e0b" stroke="#d97706" stroke-width="1"/>
+            <rect x="429.7" y="217" width="122.3" height="26" fill="#fce7f3" opacity="1.0" rx="3"/>
+            <rect x="552.0" y="217" width="176.6" height="26" fill="#fef9c3" opacity="1.0" rx="3"/>
+            <rect x="429.7" y="217" width="54.3" height="26" fill="#ef4444" opacity="1.0" rx="3"/>
+            <polygon points="545.2,222 550.2,234 540.2,234" fill="#f59e0b" stroke="#d97706" stroke-width="1"/>
+            <text x="280.3" y="247" text-anchor="middle" font-size="7.5" fill="#1d4ed8" pointer-events="none">Cycle 1 (~20j) · Cycle 2 (~20j) → intervalle &lt;24j</text>
+            <rect x="158.0" y="257" width="475.5" height="26" fill="#fce7f3" opacity="1.0" rx="3"/>
+            <rect x="633.5" y="257" width="95.1" height="26" fill="#fef9c3" opacity="1.0" rx="3"/>
+            <rect x="158.0" y="257" width="67.9" height="26" fill="#ef4444" opacity="1.0" rx="3"/>
+            <polygon points="626.7,262 631.7,274 621.7,274" fill="#f59e0b" stroke="#d97706" stroke-width="1"/>
+            <text x="389.0" y="287" text-anchor="middle" font-size="7.5" fill="#7c3aed" pointer-events="none">Phase folliculaire prolongée · Ovulation tardive → intervalle &gt;38j</text>
+            <rect x="158.0" y="299" width="570.6" height="26" fill="#e5e7eb" opacity="1.0" rx="3"/><text x="443.3" y="315.1" text-anchor="middle" font-size="9" fill="#6b7280" font-weight="600" pointer-events="none">Absence totale de menstruation</text>
+            <text x="429.7" y="329" text-anchor="middle" font-size="7.5" fill="#4b5563" pointer-events="none">Aménorrhée primaire (abs. ménarche à 15 ans) ou secondaire (arrêt ≥6 mois)</text>
+          </svg>
+        </div>
+        <div id="tt-def" style="min-height:40px;padding:8px 14px;background:#f0f4ff;border-radius:8px;font-size:13px;line-height:1.5;color:#333;margin-bottom:14px;border-left:3px solid #6366f1;transition:border-color 0.2s;">
+          <em style="color:#9ca3af;">Cliquez une ligne pour voir la définition.</em>
+        </div>
+        <script>
+          (function(){
+            var defs = {
+  normal: {c:'#374151', t:'<strong>Cycle normal (FIGO) :</strong> Intervalles 24–38 j · Durée ≤ 8 j · Régularité : variation ≤ 7–9 j. Phases : folliculaire (j1–13), ovulation (j14), lutéale (j15–28).'},
+  metro: {c:'#dc2626', t:'<strong>Métrorragie :</strong> Saignement <em>entre</em> les menstruations (intermenstruel). Causes : saignement ovulatoire physiologique léger, malignité utérine, érosions cervicales, polypes endométriaux, effet secondaire de l\'œstrogénothérapie.'},
+  menor: {c:'#7f1d1d', t:'<strong>Ménorragie :</strong> Augmentation (souvent invalidante) de la <em>quantité ou durée</em> du saignement menstruel. Causes habituelles : lésions organes reproducteurs — léiomyomes, polypes endométriaux, adénomyose.'},
+  menometro: {c:'#9a3412', t:'<strong>Ménométrorragie :</strong> Combinaison ménorragie + métrorragie : saignement abondant/prolongé <em>et</em> intermenstruel. Terme jugé imprécis par la FIGO → remplacé par terminologie descriptive PALM-COEIN.'},
+  poly: {c:'#1d4ed8', t:'<strong>Polyménorrhée :</strong> Fréquence accrue des menstruations — intervalles <strong>&lt;24 jours</strong>. Peut être associée à l\'anovulation et causée par des facteurs endocriniens ou systémiques.'},
+  oligo: {c:'#7c3aed', t:'<strong>Oligoménorrhée :</strong> Menstruations peu fréquentes — intervalles <strong>&gt;38 jours</strong>. Reflète habituellement un défaut d\'ovulation lié à un trouble endocrinien ou systémique (SOPK, hypothyroïdie, etc.).'},
+  amen: {c:'#4b5563', t:'<strong>Aménorrhée :</strong> Absence de menstruation. <em>Primaire</em> = absence de ménarche à 15 ans. <em>Secondaire</em> = arrêt des règles ≥ 6 mois (ou ≥ 3 cycles habituels). Causes : stress, SOPK, hyperprolactinémie, néoplasmes ovariens/surrénaliens/hypophysaires, insuffisance ovarienne.'}
+};
+            window.showTerm = function(id){
+              var d = defs[id]; if(!d) return;
+              var el = document.getElementById('tt-def');
+              el.innerHTML = d.t;
+              el.style.borderColor = d.c;
+              ['normal','metro','menor','menometro','poly','oligo','amen'].forEach(function(r){
+                var row = document.getElementById('row-'+r);
+                if(row) row.setAttribute('opacity', r===id ? '1' : '0.5');
+              });
+            };
+          })();
+        </script>
+        <table style="margin-top:4px;">
+          <thead><tr><th>Terme</th><th>Définition</th></tr></thead>
+          <tbody>
+            <tr><td><strong>a. Métrorragie</strong></td><td>Saignement <strong>entre les menstruations</strong> (intermenstruel). Causes : saignement ovulatoire physiologique, malignité utérine, érosions cervicales, polypes endométriaux, œstrogénothérapie.</td></tr>
+            <tr><td><strong>b. Ménorragie</strong></td><td>Augmentation (souvent invalidante) de la <strong>quantité ou durée</strong> du saignement menstruel. Causes : léiomyomes, polypes endométriaux, adénomyose.</td></tr>
+            <tr><td><strong>c. Ménométrorragie</strong></td><td>Combinaison <strong>ménorragie + métrorragie</strong> : saignement abondant/prolongé <em>et</em> intermenstruel irrégulier. Terme jugé imprécis par la FIGO.</td></tr>
+            <tr><td><strong>d. Aménorrhée primaire</strong></td><td>Absence de <strong>ménarche à 15 ans</strong>.</td></tr>
+            <tr><td><strong>d. Aménorrhée secondaire</strong></td><td>Arrêt des règles <strong>≥ 6 mois</strong> (ou ≥ 3 cycles habituels). Causes : stress, SOPK, hyperprolactinémie, néoplasmes ovariens/surrénaliens/hypophysaires.</td></tr>
+            <tr><td><strong>e. Oligoménorrhée</strong></td><td>Menstruations <strong>peu fréquentes</strong> — intervalles <strong>&gt; 38 jours</strong>. Défaut d'ovulation lié à un trouble endocrinien ou systémique.</td></tr>
+            <tr><td><strong>f. Polyménorrhée</strong></td><td><strong>Fréquence accrue</strong> des menstruations — intervalles <strong>&lt; 24 jours</strong>. Facteurs endocriniens ou systémiques.</td></tr>
+          </tbody>
+        </table>
+        <div class="key-fact blue" style="margin-top:10px;font-size:13px;">
+          <strong>Paramètres FIGO du saignement normal :</strong> Cycle 24–38 j · Durée ≤ 8 j · Régularité : variation ≤ 7–9 j · Fréquent &lt; 24 j · Peu fréquent &gt; 38 j · Prolongé &gt; 8 j<br>
+          <em>Termes connexes : Hypoménorrhée = flux insuffisant · Saignement utérin dysfonctionnel = terme abandonné FIGO</em>
+        </div>
+      </div>
       </div>
     </div>
 
