@@ -1012,13 +1012,14 @@ m
         <svg class="chevron" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
       </div>
       <div class="specialty-items">
-        <div class="nav-item" onclick="showSection('hypothyroidie')">18. Hypothyroïdie</div>
-        <div class="nav-item" onclick="showSection('hyperthyroidie')">19. Hyperthyroïdie</div>
-        <div class="nav-item" onclick="showSection('nodule-thyroidien')">20. Nodule Thyroïdien</div>
-        <div class="nav-item" onclick="showSection('insuff-surrenalienne')">21. Insuff. Surrénalienne</div>
-        <div class="nav-item" onclick="showSection('dyskaliemie')">22. Dyskaliémie</div>
-        <div class="nav-item" onclick="showSection('dysnatremie')">23. Dysnatrémie</div>
-        <div class="nav-item" onclick="showSection('diabete')">24. Diabète</div>
+        <div class="nav-item" onclick="showSection('bases-endo')">18. Bases Physiologiques Endo.</div>
+        <div class="nav-item" onclick="showSection('hypothyroidie')">19. Hypothyroïdie</div>
+        <div class="nav-item" onclick="showSection('hyperthyroidie')">20. Hyperthyroïdie</div>
+        <div class="nav-item" onclick="showSection('nodule-thyroidien')">21. Nodule Thyroïdien</div>
+        <div class="nav-item" onclick="showSection('insuff-surrenalienne')">22. Insuff. Surrénalienne</div>
+        <div class="nav-item" onclick="showSection('dyskaliemie')">23. Dyskaliémie</div>
+        <div class="nav-item" onclick="showSection('dysnatremie')">24. Dysnatrémie</div>
+        <div class="nav-item" onclick="showSection('diabete')">25. Diabète</div>
       </div>
     </div>
 
@@ -14361,16 +14362,281 @@ function showABR(n){
           <div class="flag-item"><span class="fi-icon">🧪</span><span>ATR type IV + IECA/ARA + IRC → hyperkaliémie → surveiller</span></div>
         </div>
       </div>
-
       <!-- ═══ MÉTHODE CLEAR ═══ -->
 
 
     </div>
 
+
+
+    <!-- ══ Bases Physiologiques Endocriniennes ══ -->
+    <div id="sec-bases-endo" class="section">
+      <div class="section-header">
+        <div class="section-accent" style="background:linear-gradient(135deg,#7c3aed,#a855f7);"></div>
+        <div>
+          <div class="section-tag">🧬 Endocrinologie</div>
+          <h1 class="section-title">Bases Physiologiques Endocriniennes</h1>
+          <div class="breadcrumb">Endocrinologie <span class="breadcrumb-sep">·</span> Section 18</div>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px;">
+        <button onclick="document.getElementById('bases-1').scrollIntoView({behavior:'smooth'})" style="background:#7c3aed;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🏗️ Axe HHS</button>
+        <button onclick="document.getElementById('bases-2').scrollIntoView({behavior:'smooth'})" style="background:#6d28d9;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🧠 Neurohypophyse</button>
+        <button onclick="document.getElementById('bases-3').scrollIntoView({behavior:'smooth'})" style="background:#5b21b6;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔬 Adénohypophyse</button>
+        <button onclick="document.getElementById('bases-4').scrollIntoView({behavior:'smooth'})" style="background:#4c1d95;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🏝️ Pancréas endocrine</button>
+        <button onclick="document.getElementById('bases-5').scrollIntoView({behavior:'smooth'})" style="background:#7c3aed;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">💉 Insuline & RTK</button>
+        <button onclick="document.getElementById('bases-6').scrollIntoView({behavior:'smooth'})" style="background:#6d28d9;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">⚡ Glucagon</button>
+        <button onclick="document.getElementById('bases-7').scrollIntoView({behavior:'smooth'})" style="background:#5b21b6;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">⚖️ Régulation glucose</button>
+      </div>
+
+      <!-- bases-1 : Axe HHS -->
+      <div class="block para" style="border-left-color:#7c3aed;">
+        <div class="block-title" id="bases-1"><span class="tag">🏗️ 1. Axe Hypothalamo-Hypophyso-Surrénalien (HHS)</span></div>
+        <p class="content-text">Système hiérarchique à 3 niveaux contrôlant la thyroïde, les surrénales, les gonades et la croissance via des boucles de <strong>rétrocontrôle négatif</strong>.</p>
+        <table style="font-size:12px;width:100%;margin:8px 0;">
+          <thead><tr><th>Niveau</th><th>Structure</th><th>Communication</th></tr></thead>
+          <tbody>
+            <tr><td><strong>1</strong></td><td>Hypothalamus</td><td>Hormones libératrices/inhibitrices → système porte hypophysaire</td></tr>
+            <tr><td><strong>2a</strong></td><td>Adénohypophyse (ant.)</td><td>Hormones tropiques → circulation sanguine</td></tr>
+            <tr><td><strong>2b</strong></td><td>Neurohypophyse (post.)</td><td>Axones neuronaux directs depuis l'hypothalamus</td></tr>
+            <tr><td><strong>3</strong></td><td>Glandes périphériques</td><td>Hormones effectrices → organes cibles</td></tr>
+          </tbody>
+        </table>
+        <div class="key-fact blue">🔑 <strong>Rétrocontrôle négatif :</strong> L'hormone périphérique ↓ la libération hypothalamique ET hypophysaire → homéostasie. Exception : LH/pic pré-ovulatoire (rétrocontrôle positif transitoire).</div>
+        <table style="font-size:12px;width:100%;margin:8px 0;">
+          <thead><tr><th>Pathologie</th><th>Hormone périphérique</th><th>Hormone tropique</th><th>Type</th></tr></thead>
+          <tbody>
+            <tr><td>Addison (primaire)</td><td>Cortisol ↓</td><td>ACTH ↑</td><td>Primaire</td></tr>
+            <tr><td>Hypothyroïdie primaire</td><td>T4 ↓</td><td>TSH ↑</td><td>Primaire</td></tr>
+            <tr><td>Hypopituitarisme</td><td>T4 ↓</td><td>TSH ↓</td><td>Secondaire</td></tr>
+            <tr><td>Cushing surrénalien</td><td>Cortisol ↑</td><td>ACTH ↓</td><td>Primaire</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- bases-2 : Neurohypophyse -->
+      <div class="block def" style="border-left-color:#7c3aed;">
+        <div class="block-title" id="bases-2"><span class="tag">🧠 2. Neurohypophyse — ADH & Ocytocine</span></div>
+        <p class="content-text">Les axones neuronaux de l'hypothalamus (noyaux supraoptique et paraventriculaire) se terminent dans la neurohypophyse et libèrent directement les hormones dans la circulation.</p>
+        <table style="font-size:12px;width:100%;margin:8px 0;">
+          <thead><tr><th>Hormone</th><th>Stimulus principal</th><th>Cible</th><th>Action</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><strong>ADH (Vasopressine)</strong></td>
+              <td>↑ osmolalité plasmatique · ↓ volémie</td>
+              <td>Tube collecteur rénal (V2) · artérioles (V1)</td>
+              <td>↑ Réabsorption eau (aquaporines 2) · Vasoconstriction si ↓↓ volémie</td>
+            </tr>
+            <tr>
+              <td><strong>Ocytocine</strong></td>
+              <td>Distension col utérin · succion mammaire</td>
+              <td>Utérus · canaux galactophores</td>
+              <td>Contractions utérines (accouchement) · Éjection lactée</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="key-fact red">⚠️ <strong>SIADH :</strong> Sécrétion inappropriée d'ADH → rétention hydrique → hyponatrémie dilutionnelle euvolémique. Critères Schwartz-Bartter : Osm plasma &lt; 275 + Osm urine &gt; 100 + Na⁺ urinaire &gt; 20 + euvolémie + TSH/cortisol normaux.</div>
+        <div class="key-fact yellow">💊 <strong>Diabète insipide central :</strong> Déficit ADH → polyurie hypotonique massive (3–15 L/j) + polydipsie. Traitement : desmopressine (analogue V2).</div>
+      </div>
+
+      <!-- bases-3 : Adénohypophyse -->
+      <div class="block para" style="border-left-color:#5b21b6;">
+        <div class="block-title" id="bases-3"><span class="tag">🔬 3. Adénohypophyse — Hormones Tropiques</span></div>
+        <table style="font-size:11.5px;width:100%;margin:8px 0;">
+          <thead><tr><th>Cellule</th><th>Hormone</th><th>Régulation hypothalamique</th><th>Glande cible</th><th>Hormone périphérique</th></tr></thead>
+          <tbody>
+            <tr><td>Corticotrope</td><td><strong>ACTH</strong></td><td>CRH ↑</td><td>Cortex surrénalien</td><td>Cortisol, DHEA</td></tr>
+            <tr><td>Thyréotrope</td><td><strong>TSH</strong></td><td>TRH ↑</td><td>Thyroïde</td><td>T3, T4</td></tr>
+            <tr><td>Gonadotrope</td><td><strong>LH, FSH</strong></td><td>GnRH ↑ (pulsatile)</td><td>Ovaires / Testicules</td><td>Œstrogènes, Progestérone, Testostérone</td></tr>
+            <tr><td>Somatotrope</td><td><strong>GH</strong></td><td>GHRH ↑ / Somatostatine ↓</td><td>Foie, muscles, os</td><td>IGF-1</td></tr>
+            <tr><td>Lactotrope</td><td><strong>Prolactine</strong></td><td>Dopamine ↓ (tonique)</td><td>Glandes mammaires</td><td>Lactation</td></tr>
+          </tbody>
+        </table>
+        <div class="key-fact blue">🔑 <strong>Mnémo cellules hypophysaires :</strong> <em>« CATS & LH »</em> — Corticotrope, Adénotrope (TSH), Thyréotrope (TSH), Somatotrope, Lactotrope, Gonadotrope (LH/FSH).</div>
+        <div class="key-fact yellow">⚠️ <strong>Dopamine = seul inhibiteur tonique :</strong> Les antipsychotiques bloquent les récepteurs dopaminergiques → désinhibition → hyperprolactinémie → galactorrhée, aménorrhée, dysfonction érectile.</div>
+      </div>
+
+      <!-- bases-4 : Pancréas endocrine -->
+      <div class="block def" style="border-left-color:#7c3aed;">
+        <div class="block-title" id="bases-4"><span class="tag">🏝️ 4. Pancréas Endocrine — Îlots de Langerhans</span></div>
+        <p class="content-text">Amas de cellules endocrines (~1–2 % du pancréas) dispersés dans le parenchyme exocrine. Architecture concentrique : cellules β au centre, cellules α en périphérie.</p>
+        <table style="font-size:12px;width:100%;margin:8px 0;">
+          <thead><tr><th>Cellule</th><th>%</th><th>Hormone(s)</th><th>Rôle</th></tr></thead>
+          <tbody>
+            <tr><td><strong>β (bêta)</strong></td><td>60–70 % — centre</td><td>Insuline, C-peptide, Amyline, Proinsuline</td><td>↓ Glycémie (état postprandial)</td></tr>
+            <tr><td><strong>α (alpha)</strong></td><td>20–25 % — périphérie</td><td>Glucagon</td><td>↑ Glycémie (jeûne/hypoglycémie)</td></tr>
+            <tr><td><strong>δ (delta)</strong></td><td>5–10 %</td><td>Somatostatine</td><td>Inhibition paracrine des cellules α et β</td></tr>
+            <tr><td><strong>PP (F)</strong></td><td>1–5 %</td><td>Polypeptide pancréatique</td><td>Régulation sécrétion exocrine + appétit</td></tr>
+          </tbody>
+        </table>
+        <div class="key-fact blue">🔑 <strong>Mnémo :</strong> β au centre = insuline au cœur du métabolisme. α en périphérie = glucagon surveille (état de jeûne). δ = arbitre (freine les deux).</div>
+        <div class="key-fact yellow">💊 <strong>C-peptide clinique :</strong> Sécrété en équimolaire avec l'insuline mais non présent dans les insulines exogènes → marqueur de la sécrétion endogène résiduelle. C-peptide bas + anti-GAD65 (+) → LADA/DT1.</div>
+      </div>
+
+      <!-- bases-5 : Insuline & RTK -->
+      <div class="block rx" style="border-left-color:#7c3aed;">
+        <div class="block-title" id="bases-5"><span class="tag">💉 5. Insuline — Sécrétion, Récepteur RTK & Effets</span></div>
+        <div class="accordion">
+          <div class="accordion-item open">
+            <div class="accordion-header" onclick="this.closest('.accordion-item').classList.toggle('open')">Mécanisme de sécrétion des cellules β (voie canonique)
+              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+            </div>
+            <div class="accordion-body">
+              <strong>Séquence :</strong><br>
+              1. Glucose → cellule β via <strong>GLUT2</strong> (transport passif proportionnel à la glycémie)<br>
+              2. Glycolyse → ↑ ATP/ADP intracellulaire<br>
+              3. ↑ ATP → <strong>fermeture canaux K⁺ ATP-dépendants (K<sub>ATP</sub>)</strong> → accumulation K⁺<br>
+              4. Dépolarisation membranaire<br>
+              5. Ouverture <strong>canaux Ca²⁺ voltage-dépendants</strong><br>
+              6. ↑ Ca²⁺ intracellulaire → <strong>exocytose</strong> des vésicules d'insuline<br><br>
+              <strong>⚡ Sécrétion biphasique :</strong><br>
+              — Phase 1 (rapide, 5–10 min) : libération des vésicules pré-formées<br>
+              — Phase 2 (prolongée, 60–120 min) : synthèse + libération de nouvelles vésicules<br><br>
+              <div class="key-fact blue">🔑 <strong>Sulfonylurées</strong> (glyburide, gliclazide) → bloquent directement les canaux K<sub>ATP</sub> → sécrétion d'insuline <em>glucose-indépendante</em> → risque hypoglycémie. <strong>GLP-1/GIP (incrétines)</strong> → ↑ AMPc → amplifient la sécrétion de façon <em>glucose-dépendante</em> → pas d'hypoglycémie en monothérapie.</div>
+              <table style="font-size:12px;margin-top:8px;">
+                <thead><tr><th>Stimulateurs ✅</th><th>Mécanisme</th><th>Inhibiteurs ❌</th><th>Mécanisme</th></tr></thead>
+                <tbody>
+                  <tr><td>Glucose ⭐</td><td>Voie canonique K<sub>ATP</sub></td><td>Somatostatine</td><td>↓ AMPc, inhibition exocytose</td></tr>
+                  <tr><td>Acides aminés (Arg, Leu)</td><td>Même cascade</td><td>Épinéphrine/Norépi (α₂)</td><td>↓ AMPc → ↓ sécrétion</td></tr>
+                  <tr><td>GIP, GLP-1 (incrétines)</td><td>↑ AMPc → exocytose glucose-déP.</td><td>Jeûne prolongé</td><td>↓ glycémie → ↓ stimulus</td></tr>
+                  <tr><td>Acétylcholine (parasympa.)</td><td>↑ Ca²⁺ → exocytose</td><td>Diazoxide</td><td>Ouverture K<sub>ATP</sub></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="accordion-item open">
+            <div class="accordion-header" onclick="this.closest('.accordion-item').classList.toggle('open')">Récepteur à l'insuline (RTK) — Voie de signalisation
+              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+            </div>
+            <div class="accordion-body">
+              <strong>Structure :</strong> Récepteur à activité tyrosine kinase intrinsèque (RTK) — hétérotétramère (2α + 2β)<br><br>
+              <strong>Cascade de signalisation :</strong><br>
+              1. Insuline se lie aux sous-unités α extracellulaires<br>
+              2. Autophosphorylation des sous-unités β → activation tyrosine kinase<br>
+              3. Phosphorylation des substrats IRS-1/IRS-2 (Insulin Receptor Substrate)<br>
+              4. <strong>Voie PI3K → AKT</strong> : synthèse glycogène, lipogenèse, translocation GLUT4<br>
+              5. <strong>Voie MAPK (MEK/ERK)</strong> : croissance cellulaire, prolifération<br><br>
+              <div class="key-fact blue">🔑 <strong>GLUT4 est insulino-dépendant</strong> — présent dans le muscle squelettique et le tissu adipeux uniquement. Le foie utilise GLUT2 (constitutif, non insulino-dépendant). En résistance à l'insuline (DT2) : ↓ translocation GLUT4 → muscle et tissu adipeux captent moins de glucose.</div>
+              <table style="font-size:12px;margin-top:8px;">
+                <thead><tr><th>Tissu</th><th>Insuline ↑ (état nourri)</th><th>Insuline ↓ (jeûne/DT1)</th></tr></thead>
+                <tbody>
+                  <tr><td><strong>Muscle</strong></td><td>GLUT4 ↑ · ↑ Glycogène · ↑ Protéines</td><td>↓ Captage glucose · ↑ Catabolisme protéique</td></tr>
+                  <tr><td><strong>Tissu adipeux</strong></td><td>GLUT4 ↑ · ↑ Lipogenèse · ↓ Lipolyse</td><td>↑ Lipolyse · ↑ AGL circulants</td></tr>
+                  <tr><td><strong>Foie</strong></td><td>↓ Gluconéogenèse · ↑ Glycogène · ↑ Lipogenèse</td><td>↑ Gluconéogenèse · ↑ Glycogénolyse · ↑ Cétogenèse</td></tr>
+                  <tr><td><strong>Cellules α</strong></td><td>↓ Glucagon (inhibition paracrine)</td><td>↑ Glucagon → aggrave hyperglycémie</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- bases-6 : Glucagon -->
+      <div class="block def" style="border-left-color:#6d28d9;">
+        <div class="block-title" id="bases-6"><span class="tag">⚡ 6. Glucagon — Sécrétion & Effets</span></div>
+        <p class="content-text"><strong>Synthèse :</strong> Proglucagon clivé différemment selon le tissu → <strong>Glucagon</strong> (pancréas, cellules α) ou <strong>GLP-1/GLP-2</strong> (intestin, cellules L).</p>
+        <div class="accordion">
+          <div class="accordion-item open">
+            <div class="accordion-header" onclick="this.closest('.accordion-item').classList.toggle('open')">Mécanisme de sécrétion + stimulateurs/inhibiteurs
+              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+            </div>
+            <div class="accordion-body">
+              <strong>Voie directe (hypoglycémie) :</strong> ↓ Glucose → ↓ ATP → fermeture canaux K<sub>ATP</sub> → dépolarisation → ↑ Ca²⁺ → exocytose glucagon<br>
+              <strong>Voie SNS :</strong> Hypoglycémie → activation SNS → NE → récepteurs β₂ des cellules α → ↑ AMPc → exocytose<br><br>
+              <table style="font-size:12px;margin-top:6px;">
+                <thead><tr><th>Stimulateurs ✅</th><th>Inhibiteurs ❌</th></tr></thead>
+                <tbody>
+                  <tr><td>Hypoglycémie ⭐ · Acides aminés (Ala, Arg)</td><td>Glucose ↑ · Insuline (paracrine) · Somatostatine</td></tr>
+                  <tr><td>Épinéphrine/SNS · Exercice · Cortisol · GH</td><td>GLP-1 · Corps cétoniques · AGL libres</td></tr>
+                  <tr><td>Jeûne prolongé</td><td>Sécrétion en réponse aux incrétines ↓ dans DT2</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="accordion-item open">
+            <div class="accordion-header" onclick="this.closest('.accordion-item').classList.toggle('open')">Effets par tissu + antagonisme insuline
+              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+            </div>
+            <div class="accordion-body">
+              <table style="font-size:12px;">
+                <thead><tr><th>Tissu</th><th>Actions du glucagon</th></tr></thead>
+                <tbody>
+                  <tr><td><strong>Foie ⭐⭐</strong></td><td>↑ Glycogénolyse · ↑ Gluconéogenèse (AA, glycérol, lactate) · ↓ Glycolyse · ↑ Cétogenèse</td></tr>
+                  <tr><td><strong>Tissu adipeux</strong></td><td>↑ Lipolyse → ↑ AGL et glycérol (substrats gluconéogenèse)</td></tr>
+                  <tr><td><strong>Muscle</strong></td><td>Effets très faibles (peu de récepteurs)</td></tr>
+                </tbody>
+              </table>
+              <table style="font-size:12px;margin-top:8px;">
+                <thead><tr><th>Voie métabolique</th><th>Insuline</th><th>Glucagon</th></tr></thead>
+                <tbody>
+                  <tr><td>Glycémie</td><td>↓</td><td>↑</td></tr>
+                  <tr><td>Glycogénogenèse</td><td>↑</td><td>↓</td></tr>
+                  <tr><td>Gluconéogenèse</td><td>↓</td><td>↑</td></tr>
+                  <tr><td>Lipolyse</td><td>↓</td><td>↑</td></tr>
+                  <tr><td>Cétogenèse</td><td>↓</td><td>↑</td></tr>
+                </tbody>
+              </table>
+              <div class="key-fact blue">🔑 <strong>Règle :</strong> Insuline = <strong>ANABOLISME</strong> (stockage) · Glucagon = <strong>CATABOLISME</strong> (mobilisation). Le ratio insuline/glucagon détermine l'état métabolique global.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- bases-7 : Régulation glucose -->
+      <div class="block flag" style="border-left-color:#7c3aed;">
+        <div class="block-title" id="bases-7"><span class="tag">⚖️ 7. Régulation de la Glycémie — États Métaboliques</span></div>
+        <div class="accordion">
+          <div class="accordion-item open">
+            <div class="accordion-header" onclick="this.closest('.accordion-item').classList.toggle('open')">État postprandial — Dominance insuline
+              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+            </div>
+            <div class="accordion-body">
+              ↑ Glycémie → ↑ Insuline + ↓ Glucagon<br>
+              — ↑ Captage glucose par muscle (GLUT4) et tissu adipeux (GLUT4)<br>
+              — ↑ Synthèse glycogène hépatique et musculaire<br>
+              — ↑ Lipogenèse hépatique (excès glucidique → TG)<br>
+              — ↓ Glycogénolyse · ↓ Gluconéogenèse · ↓ Lipolyse · ↓ Cétogenèse<br>
+              — Incrétines (GIP + GLP-1) amplifient la sécrétion d'insuline
+            </div>
+          </div>
+          <div class="accordion-item open">
+            <div class="accordion-header" onclick="this.closest('.accordion-item').classList.toggle('open')">État de jeûne — Dominance glucagon
+              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+            </div>
+            <div class="accordion-body">
+              ↓ Glycémie → ↓ Insuline + ↑ Glucagon<br>
+              — ↑ Glycogénolyse hépatique (75 % de la production glucose à jeun)<br>
+              — ↑ Gluconéogenèse hépatique (AA, glycérol, lactate → glucose)<br>
+              — ↑ Lipolyse → ↑ AGL (énergie) + corps cétoniques (énergie cérébrale si jeûne prolongé)<br>
+              — Hormones contre-régulatrices (cortisol, GH, épinéphrine) amplifient si jeûne prolongé/stress
+            </div>
+          </div>
+          <div class="accordion-item open">
+            <div class="accordion-header" onclick="this.closest('.accordion-item').classList.toggle('open')">Hormones contre-régulatrices — Tableau
+              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+            </div>
+            <div class="accordion-body">
+              <table style="font-size:12px;">
+                <thead><tr><th>Hormone</th><th>Source</th><th>Mécanisme hyperglycémiant</th><th>Contexte d'activation</th></tr></thead>
+                <tbody>
+                  <tr><td><strong>Glucagon</strong></td><td>Cellules α</td><td>↑ Glycogénolyse + gluconéogenèse hépatique</td><td>Jeûne, hypoglycémie</td></tr>
+                  <tr><td><strong>Épinéphrine</strong></td><td>Médullosurrénale</td><td>↑ Glycogénolyse hépatique + musculaire · ↓ Sécrétion insuline</td><td>Stress, exercice intense</td></tr>
+                  <tr><td><strong>Cortisol</strong></td><td>Cortex surrénalien</td><td>↑ Gluconéogenèse · ↑ Résistance insulinique périphérique</td><td>Stress chronique, jeûne prolongé</td></tr>
+                  <tr><td><strong>GH</strong></td><td>Adénohypophyse</td><td>↑ Lipolyse · Antagoniste de l'insuline en périphérie</td><td>Sommeil, exercice, hypoglycémie</td></tr>
+                </tbody>
+              </table>
+              <div class="key-fact red">⚠️ <strong>DT1 sans glucagon d'urgence :</strong> Les patients DT1 perdent progressivement la réponse du glucagon à l'hypoglycémie → dépendance accrue à l'épinéphrine → hypoglycémies graves plus fréquentes si β-bloquants (masquent la tachycardie).</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
     <div class="section" id="sec-hypothyroidie">
       <div class="section-header">
         <div class="section-accent" style="background:var(--yellow)">🦋</div>
-        <div class="section-title"><h1>Hypothyroïdie</h1><div class="breadcrumb">Endocrinologie <span class="breadcrumb-sep">·</span> Section 18</div></div>
+        <div class="section-title"><h1>Hypothyroïdie</h1><div class="breadcrumb">Endocrinologie <span class="breadcrumb-sep">·</span> Section 19</div></div>
       </div>
       <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
         <button onclick="document.getElementById('hypo-1').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📌 Définition/Cibles</button>
@@ -14510,7 +14776,7 @@ function showABR(n){
     <div class="section" id="sec-hyperthyroidie">
       <div class="section-header">
         <div class="section-accent" style="background:var(--yellow)">🦋</div>
-        <div class="section-title"><h1>Hyperthyroïdie</h1><div class="breadcrumb">Endocrinologie <span class="breadcrumb-sep">·</span> Section 19</div></div>
+        <div class="section-title"><h1>Hyperthyroïdie</h1><div class="breadcrumb">Endocrinologie <span class="breadcrumb-sep">·</span> Section 20</div></div>
       </div>
       <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
         <button onclick="document.getElementById('hpert-1').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📌 Étiologies</button>
@@ -14638,7 +14904,7 @@ function showABR(n){
     <div class="section" id="sec-nodule-thyroidien">
       <div class="section-header">
         <div class="section-accent" style="background:var(--yellow)">🦋</div>
-        <div class="section-title"><h1>Nodule Thyroïdien</h1><div class="breadcrumb">Endocrinologie <span class="breadcrumb-sep">·</span> Section 20</div></div>
+        <div class="section-title"><h1>Nodule Thyroïdien</h1><div class="breadcrumb">Endocrinologie <span class="breadcrumb-sep">·</span> Section 21</div></div>
       </div>
       <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
         <button onclick="document.getElementById('nt-1').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📌 Définition</button>
@@ -14773,7 +15039,7 @@ function showABR(n){
     <div class="section" id="sec-insuff-surrenalienne">
       <div class="section-header">
         <div class="section-accent" style="background:var(--yellow)">🦋</div>
-        <div class="section-title"><h1>Insuffisance Surrénalienne</h1><div class="breadcrumb">Endocrinologie <span class="breadcrumb-sep">·</span> Section 21</div></div>
+        <div class="section-title"><h1>Insuffisance Surrénalienne</h1><div class="breadcrumb">Endocrinologie <span class="breadcrumb-sep">·</span> Section 22</div></div>
       </div>
       <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
         <button onclick="document.getElementById('surr-1').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📌 Classification</button>
@@ -15385,7 +15651,7 @@ function dkRenal(view) {
 <div class="section" id="sec-dysnatremie">
       <div class="section-header">
         <div class="section-accent" style="background:var(--yellow)">🦋</div>
-        <div class="section-title"><h1>Dysnatrémie</h1><div class="breadcrumb">Endocrinologie <span class="breadcrumb-sep">·</span> Section 23</div></div>
+        <div class="section-title"><h1>Dysnatrémie</h1><div class="breadcrumb">Endocrinologie <span class="breadcrumb-sep">·</span> Section 24</div></div>
       </div>
       <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
         <button onclick="document.getElementById('natr-1').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📌 Valeurs normales</button>
@@ -15522,7 +15788,7 @@ function dkRenal(view) {
     <div class="section" id="sec-diabete">
       <div class="section-header">
         <div class="section-accent" style="background:var(--yellow)">🦋</div>
-        <div class="section-title"><h1>Diabète & Hypoglycémiants</h1><div class="breadcrumb">Endocrinologie <span class="breadcrumb-sep">·</span> Section 24</div></div>
+        <div class="section-title"><h1>Diabète & Hypoglycémiants</h1><div class="breadcrumb">Endocrinologie <span class="breadcrumb-sep">·</span> Section 25</div></div>
       </div>
       <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
         <button onclick="document.getElementById('diab-1').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📌 Critères Dx</button>
@@ -15847,6 +16113,424 @@ function dkRenal(view) {
           <div class="flag-item"><span class="fi-icon">🤰</span><span>DG : Metformine SI ≥ 13 sem · RAMQ couvre insuline en priorité · Cibles : jeun &lt; 5,3 · 1h &lt; 7,8 · 2h &lt; 6,7</span></div>
         </div>
       </div>
+
+        <!-- ── BLOCS ENRICHIS ── -->
+
+        <!-- diab-13 : Classification -->
+        <div class="block def" style="border-left-color:#1C3F8F;">
+          <div class="block-title" id="diab-13"><span class="tag">🗂️ 13. Classification Complète du Diabète</span></div>
+          <table style="font-size:12px;width:100%;margin:8px 0;">
+            <thead><tr><th>Type</th><th>Physiopath</th><th>Marqueurs</th><th>Âge typique</th></tr></thead>
+            <tbody>
+              <tr><td><strong>DT1a (classique)</strong></td><td>Destruction auto-immune des cellules β</td><td>Anti-GAD65+, anti-IA-2+, IAA+, anti-ZnT8+</td><td>Enfant/Ado</td></tr>
+              <tr><td><strong>DT1b (idiopathique)</strong></td><td>Non auto-immune, carence absolue insuline</td><td>Auto-Ac négatifs</td><td>Variable</td></tr>
+              <tr><td><strong>LADA</strong></td><td>DT1 à évolution lente (latente auto-immune adulte)</td><td>Anti-GAD65+ · C-peptide bas</td><td>≥ 30 ans</td></tr>
+              <tr><td><strong>DT2</strong></td><td>Résistance insulinique + déficit sécrétion β progressive</td><td>Auto-Ac négatifs · C-peptide normal/bas</td><td>≥ 40 ans (↓↓)</td></tr>
+              <tr><td><strong>MODY</strong></td><td>Monogénique (AD) : HNF-1α (MODY3), glucokinase (MODY2), etc.</td><td>Histoire familiale forte · Jeune · Ac négatifs</td><td>&lt; 25 ans</td></tr>
+              <tr><td><strong>KPD</strong></td><td>Kétose-Prone Diabetes — DT2 variant (surtout Afro-Américains)</td><td>DKA sans DT1 classique · Rémission possible</td><td>Variable</td></tr>
+              <tr><td><strong>DG</strong></td><td>Insuffisance sécrétion β sur résistance insulinique grossesse</td><td>HGPO 75g : jeun ≥ 5,1 · 1h ≥ 10,0 · 2h ≥ 8,5</td><td>24–28 sem G.</td></tr>
+            </tbody>
+          </table>
+          <div class="key-fact yellow">🔑 <strong>Diabètes secondaires — mnémo PIGE-MED :</strong>
+            <strong>P</strong>ancréatite/Pancréatectomie · <strong>I</strong>nfections (CMV, Coxsackie B) · <strong>G</strong>lucocorticoïdes & autres médicaments · <strong>E</strong>ndocrinopathies (Cushing, acromégalie, phéochromocytome, glucagonome) · <strong>M</strong>aladies génétiques (hémochromatose, Prader-Willi) · <strong>E</strong>ndocrinopathies ovariennes (SOPK) · <strong>D</strong>iabète mitochondrial
+          </div>
+        </div>
+
+        <!-- diab-14 : Physiopath DT1 -->
+        <div class="block para" style="border-left-color:#c0392b;">
+          <div class="block-title" id="diab-14"><span class="tag">🧬 14. Physiopathologie DT1 — Stades & Auto-Anticorps</span></div>
+          <p class="content-text">Destruction auto-immune des cellules β par lymphocytes T CD8+ cytotoxiques (présentation antigénique par HLADR3/DR4). La masse des cellules β décline sur des années avant l'hyperglycémie clinique.</p>
+          <table style="font-size:12px;width:100%;margin:8px 0;">
+            <thead><tr><th>Stade</th><th>Description</th><th>Glycémie</th><th>Clinique</th></tr></thead>
+            <tbody>
+              <tr><td><strong>0</strong></td><td>Prédisposition génétique (HLA DR3/DR4) — masse β intacte</td><td>Normale</td><td>Asymptomatique</td></tr>
+              <tr><td><strong>1</strong></td><td>Auto-immunité (+) : ≥ 2 auto-Ac positifs — masse β intacte</td><td>Normale</td><td>Asymptomatique</td></tr>
+              <tr><td><strong>2</strong></td><td>Auto-immunité (+) + dysglycémie (prédiabète) — ↓ masse β</td><td>Prédiabète</td><td>Asymptomatique</td></tr>
+              <tr><td><strong>3</strong></td><td>Diabète clinique (&gt; 80 % des cellules β détruites)</td><td>DM</td><td>3P + fatigue + perte de poids + DKA possible</td></tr>
+              <tr><td><strong>4</strong></td><td>Diabète établi de longue durée</td><td>DM</td><td>Complications chroniques</td></tr>
+            </tbody>
+          </table>
+          <div class="key-fact blue">🔑 <strong>Auto-Anticorps (sensibilité cumulative &gt; 95 %) :</strong><br>
+            <strong>Anti-GAD65</strong> (décarboxylase acide glutamique) — le plus sensible, présent tôt<br>
+            <strong>Anti-IA-2</strong> (tyrosine phosphatase insulinome) — prédicteur de progression rapide<br>
+            <strong>IAA</strong> (anti-insuline) — surtout chez enfants &lt; 5 ans avant insuline exogène<br>
+            <strong>Anti-ZnT8</strong> (transporteur zinc) — ajouté dépistage récent, ↑ sensibilité
+          </div>
+          <div class="key-fact yellow">💊 <strong>LADA vs DT1 classique :</strong> Auto-Ac (+) + âge ≥ 30 ans + début insidieux sans DKA + C-peptide bas mais résiduel + parfois contrôlé initialement avec ADO → LADA (DT1 latente adulte). Traitement ultime = insuline.</div>
+        </div>
+
+        <!-- diab-15 : Physiopath DT2 -->
+        <div class="block para" style="border-left-color:#e67e22;">
+          <div class="block-title" id="diab-15"><span class="tag">🧬 15. Physiopathologie DT2 — Résistance Insulinique & Octet de DeFronzo</span></div>
+          <p class="content-text">Le DT2 résulte de l'<strong>interaction</strong> entre résistance à l'insuline (foie, muscle, tissu adipeux) et incapacité progressive des cellules β à compenser. Plusieurs organes contribuent à l'hyperglycémie.</p>
+          <table style="font-size:12px;width:100%;margin:8px 0;">
+            <thead><tr><th>#</th><th>Organe/Mécanisme</th><th>Anomalie DT2</th><th>Cible thérapeutique</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td>Cellules β pancréatiques</td><td>↓ Sécrétion insuline (progressive)</td><td>Sulfonylurées, insuline</td></tr>
+              <tr><td>2</td><td>Foie</td><td>↑ Production glucose hépatique (gluconéogenèse)</td><td>Metformine</td></tr>
+              <tr><td>3</td><td>Muscle squelettique</td><td>↓ Captage glucose (résistance GLUT4)</td><td>Exercice, TZD</td></tr>
+              <tr><td>4</td><td>Tissu adipeux</td><td>↑ Lipolyse → ↑ AGL → aggrave résistance</td><td>TZD</td></tr>
+              <tr><td>5</td><td>Intestin (incrétines)</td><td>↓ Effet incrétine (↓ GLP-1/GIP)</td><td>AR-GLP1, iDPP4</td></tr>
+              <tr><td>6</td><td>Cellules α pancréatiques</td><td>↑ Glucagon inapproprié à la glycémie</td><td>AR-GLP1</td></tr>
+              <tr><td>7</td><td>Rein</td><td>↑ Réabsorption glucose (↑ SGLT2)</td><td>iSGLT2</td></tr>
+              <tr><td>8</td><td>Cerveau</td><td>↑ Appétit, ↓ satiété, résistance insuline cérébrale</td><td>AR-GLP1</td></tr>
+            </tbody>
+          </table>
+          <div class="key-fact blue">🔑 <strong>Stades de décompensation β :</strong> Insulinorésistance → hyperinsulinisme compensatoire → épuisement β progressif → ↓ sécrétion insuline → DT2 clinique. La résistance précède de 10–15 ans le diagnostic.</div>
+        </div>
+
+        <!-- diab-16 : HbA1c -->
+        <div class="block def" style="border-left-color:#1C3F8F;">
+          <div class="block-title" id="diab-16"><span class="tag">🧪 16. HbA1c — Principes & Facteurs Altérants</span></div>
+          <table style="font-size:12px;width:100%;margin:8px 0;">
+            <thead><tr><th>Aspect</th><th>Détails</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Principe</strong></td><td>Hémoglobine glyquée de façon non enzymatique, irréversible. Reflète la glycémie MOYENNE des 2–3 derniers mois (½ vie GR = 120 j)</td></tr>
+              <tr><td><strong>Valeur normale</strong></td><td>&lt; 6,0 % (5,7–6,4 % = prédiabète) · DM si ≥ 6,5 %</td></tr>
+              <tr><td><strong>Cible DT2 générale</strong></td><td>≤ 7,0 % · Individualisée selon âge, fragilité, HX hypoglycémies</td></tr>
+              <tr><td><strong>Cible DT1 générale</strong></td><td>≤ 7,0 % si hypo non problématique · ≤ 8,0 % si hypos sévères récurrentes</td></tr>
+            </tbody>
+          </table>
+          <table style="font-size:12px;width:100%;margin:8px 0;">
+            <thead><tr><th>Fausse ↑ HbA1c</th><th>Raison</th><th>Fausse ↓ HbA1c</th><th>Raison</th></tr></thead>
+            <tbody>
+              <tr><td>IRC sévère (DFG &lt; 30)</td><td>Acidose → ↑ glycation chimique</td><td>Anémie hémolytique</td><td>↓ Durée de vie des GR → moins de glycation</td></tr>
+              <tr><td>Splénectomie</td><td>GR vieux restent ↑ en circulation → ↑ HbA1c</td><td>Réticulocytose (hémorragie, carence Fe)</td><td>GR jeunes → moins glyqués</td></tr>
+              <tr><td>Carence en fer</td><td>Possible ↑ HbA1c (mécanisme partiel)</td><td>Hémoglobinopathies (HbS, HbC, HbE)</td><td>HbA1 altérée → fausse valeur selon méthode</td></tr>
+              <tr><td>Alcoolisme chronique</td><td>Acétaldéhyde → carbamylation</td><td>Grossesse (T2-T3)</td><td>Expansion volémique → dilution relative</td></tr>
+            </tbody>
+          </table>
+          <div class="key-fact red">⚠️ Dans ces situations, utiliser la glycémie capillaire / TIR (CGM) ou le fructosamine (reflète les 2–3 dernières semaines) pour évaluer le contrôle glycémique.</div>
+        </div>
+
+        <!-- diab-17 : Objectifs ABCDESSS + TIR -->
+        <div class="block flag" style="border-left-color:#0a7a4e;">
+          <div class="block-title" id="diab-17"><span class="tag">🎯 17. Objectifs Cliniques ABCDESSS + TIR</span></div>
+          <table style="font-size:12px;width:100%;margin:8px 0;">
+            <thead><tr><th>Paramètre</th><th>Cible</th><th>Notes</th></tr></thead>
+            <tbody>
+              <tr><td><strong>A — HbA1c</strong></td><td>≤ 7,0 % (individualisé)</td><td>≤ 8,0 % si fragile/âgé · ≤ 6,5 % si GG, jeune, pas d''hypoglycémies</td></tr>
+              <tr><td><strong>B — BP (PA)</strong></td><td>&lt; 130/80 mmHg</td><td>IECA 1re ligne si protéinurie. ARA si intolérant IECA</td></tr>
+              <tr><td><strong>C — Cholestérol (LDL)</strong></td><td>&lt; 2,0 mmol/L (haut risque) · ↓ 50 % si DM + MCAS</td><td>Statine = premier choix. Non-HDL-C &lt; 2,6</td></tr>
+              <tr><td><strong>D — Dépistage/Drogues (médicaments)</strong></td><td>Statine, IECA/ARA, ASA (prévention 2°), iSGLT2/AR-GLP1 si indiqués</td><td>Voir cardioprotection</td></tr>
+              <tr><td><strong>E — Exercice</strong></td><td>≥ 150 min/sem aérobie + 2× force/sem</td><td>Diminue HbA1c ~0,5–1 %, PA, poids, lipides</td></tr>
+              <tr><td><strong>S — Sevrage tabagique</strong></td><td>Arrêt complet</td><td>Tabac = facteur de risque CV majeur et aggrave résistance insulinique</td></tr>
+              <tr><td><strong>S — Stress/Santé mentale</strong></td><td>PHQ-9 annuel · Dépistage anxiété, détresse diabétique</td><td>Dépression ↑ risque décompensation glycémique</td></tr>
+              <tr><td><strong>S — Surpoids</strong></td><td>Perte ≥ 5 % si surpoids → ↓ HbA1c · ≥ 10 % → rémission DT2 possible</td><td>AR-GLP1 + chirurgie bariatrique plus efficaces</td></tr>
+            </tbody>
+          </table>
+          <div class="key-fact blue">🔑 <strong>TIR (Time In Range) — CGM :</strong><br>
+            — DT1/DT2 général : <strong>&gt; 70 %</strong> dans 3,9–10,0 mmol/L<br>
+            — Temps sous 3,9 mmol/L : <strong>&lt; 4 %</strong> · Temps sous 3,0 mmol/L : <strong>&lt; 1 %</strong><br>
+            — Grossesse DT1 : TIR 3,5–7,8 mmol/L &gt; 70 % · &lt; 3,5 mmol/L &lt; 4 %<br>
+            — Personnes âgées/fragiles : TIR 3,9–10,0 mmol/L &gt; 50 % acceptable
+          </div>
+        </div>
+
+        <!-- diab-18 : ACD enrichie -->
+        <div class="block rx" style="border-left-color:#c0392b;">
+          <div class="block-title" id="diab-18"><span class="tag">🚨 18. Acidocétose Diabétique (ACD) — Version Enrichie</span></div>
+          <table style="font-size:12px;width:100%;margin:8px 0;">
+            <thead><tr><th>Critère</th><th>Légère</th><th>Modérée</th><th>Sévère</th></tr></thead>
+            <tbody>
+              <tr><td>pH artériel</td><td>7,25–7,30</td><td>7,00–7,24</td><td>&lt; 7,00</td></tr>
+              <tr><td>HCO₃⁻ (mmol/L)</td><td>15–18</td><td>10–14</td><td>&lt; 10</td></tr>
+              <tr><td>État mental</td><td>Alerte</td><td>Somnolent</td><td>Obnubilé/coma</td></tr>
+              <tr><td>Trou anionique (TA)</td><td colspan="3">&gt; 12 mmol/L (Na - Cl - HCO₃) · Anion gap élevé = ACD</td></tr>
+            </tbody>
+          </table>
+          <div class="accordion">
+            <div class="accordion-item open">
+              <div class="accordion-header" onclick="this.closest('.accordion-item').classList.toggle('open')">Physiopathologie
+                <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+              </div>
+              <div class="accordion-body">
+                Carence absolue ou relative en insuline → ↑ Glucagon → ↑ Lipolyse → ↑ AGL → ↑ Bêta-oxydation hépatique → Corps cétoniques (acétoacétate, β-hydroxybutyrate, acétone).<br>
+                Corps cétoniques = acides faibles → acidose métabolique à TA élevé.<br>
+                Diurèse osmotique → déshydratation + perte électrolytes.<br><br>
+                <strong>Facteurs précipitants (5I) :</strong> Infection (50 %) · Insuline oubliée · Infarctus · Iatrogène (cortico, iSGLT2) · Idiopathique
+              </div>
+            </div>
+            <div class="accordion-item open">
+              <div class="accordion-header" onclick="this.closest('.accordion-item').classList.toggle('open')">Prise en charge étape par étape
+                <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+              </div>
+              <div class="accordion-body">
+                <strong>1. Hydratation :</strong> NaCl 0,9 % 1 L/h × 2h → 0,5 L/h × 4h → Ajuster selon bilan<br>
+                <strong>2. Potassium :</strong><br>
+                — K⁺ &lt; 3,5 mmol/L → <span style="color:#c0392b;font-weight:bold;">Corriger AVANT insuline</span> (risque arrêt cardiaque) → KCl 20–40 mEq/h IV<br>
+                — K⁺ 3,5–5,0 → KCl 20–30 mEq/L dans les solutés<br>
+                — K⁺ &gt; 5,0 → Ne pas donner K⁺, surveiller aux 2h<br>
+                <strong>3. Insuline :</strong> Bolus 0,1 U/kg IV puis 0,1 U/kg/h en perfusion continue<br>
+                — Cible : ↓ Glycémie de 2–3 mmol/L/h (pas trop vite → œdème cérébral)<br>
+                — Quand Glc &lt; 14 → Ajouter D5W pour maintenir Glc 10–14 et continuer insuline<br>
+                <strong>4. Bicarb :</strong> Uniquement si pH &lt; 6,9 (controverse) · 50–100 mEq sur 1h<br>
+                <strong>5. Résolution :</strong> pH &gt; 7,3 + HCO₃ &gt; 18 + TA normalisé + Alimentation tolérée → Transition insuline SC (attendre 2h avant arrêt IV)
+              </div>
+            </div>
+          </div>
+          <div class="key-fact red">⚠️ <strong>ACD euglycémique (ECDKA) :</strong> Glycémie parfois normale ou &lt; 14 sous iSGLT2 — Ne pas exclure ACD sur la glycémie seule. Cétonémie/cétonurie toujours obligatoire si suspicion.</div>
+        </div>
+
+        <!-- diab-19 : EHH enrichi -->
+        <div class="block rx" style="border-left-color:#c0392b;">
+          <div class="block-title" id="diab-19"><span class="tag">🚨 19. État Hyperglycémique Hyperosmolaire (EHH) — Version Enrichie</span></div>
+          <table style="font-size:12px;width:100%;margin:8px 0;">
+            <thead><tr><th>Critère diagnostique</th><th>Valeur</th></tr></thead>
+            <tbody>
+              <tr><td>Glycémie plasmatique</td><td>&gt; 33 mmol/L (&gt; 600 mg/dL)</td></tr>
+              <tr><td>Osmolalité plasmatique effective</td><td>&gt; 320 mOsm/kg · Formule : 2×Na + Glc (mmol/L)</td></tr>
+              <tr><td>pH artériel</td><td>≥ 7,3 (si ACD mixte, peut être abaissé)</td></tr>
+              <tr><td>HCO₃⁻</td><td>≥ 15 mmol/L</td></tr>
+              <tr><td>Corps cétoniques</td><td>Négatifs ou traces (insuline résiduelle inhibe cétogenèse)</td></tr>
+            </tbody>
+          </table>
+          <div class="accordion">
+            <div class="accordion-item open">
+              <div class="accordion-header" onclick="this.closest('.accordion-item').classList.toggle('open')">PEC — Points clés
+                <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+              </div>
+              <div class="accordion-body">
+                <strong>1. Hydratation ++ :</strong> Déficit estimé 8–10 L → NaCl 0,9 % 1 L/h × 2–4h · Puis ½ NS si Na corrigé élevé<br>
+                — Na corrigé = Na mesuré + 2,4 × (Glc − 5) / 5 mmol/L<br>
+                <strong>2. Insuline :</strong> Débuter APRÈS 1–2h d''hydratation · Dose faible 0,05–0,1 U/kg/h IV<br>
+                — Objectif glycémique : ↓ 3–4 mmol/L/h max (correction trop rapide → œdème cérébral)<br>
+                <strong>3. Potassium :</strong> Même protocole ACD (surveiller étroitement)<br>
+                <strong>4. Anticoagulation :</strong> Héparine prophylactique (hypercoagulabilité ++ dans EHH)<br>
+                <strong>5. Résolution :</strong> Glycémie &lt; 15 + Osmolalité &lt; 315 + Conscient + Alimentation<br><br>
+                <div class="key-fact red">⚠️ Mortalité 5–15 % vs &lt; 1 % ACD. Personnes âgées + comorbidités. Facteurs précipitants : infection, AVC, IM, médicaments (cortico, diurétiques, antipsychotiques).</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- diab-20 : Hypoglycémie enrichie -->
+        <div class="block flag" style="border-left-color:#e67e22;">
+          <div class="block-title" id="diab-20"><span class="tag">⚡ 20. Hypoglycémie — Niveaux 1-2-3 & Algorithme</span></div>
+          <table style="font-size:12px;width:100%;margin:8px 0;">
+            <thead><tr><th>Niveau</th><th>Glycémie</th><th>Définition</th><th>Action</th></tr></thead>
+            <tbody>
+              <tr><td><strong>1 (Alerte)</strong></td><td>&lt; 3,9 mmol/L</td><td>Suffisamment bas pour traiter. Peut être asymptomatique</td><td>Règle 15-15</td></tr>
+              <tr><td><strong>2 (Cliniquement significatif)</strong></td><td>&lt; 3,0 mmol/L</td><td>Neuroglycopénie possible · Sueurs, tremblements, palpitations</td><td>Traitement urgent PO si conscient</td></tr>
+              <tr><td><strong>3 (Sévère)</strong></td><td>Toute glycémie</td><td>Assistance tierce nécessaire · Perte de conscience / convulsions</td><td>Glucagon IM/SC/IN ou D50W IV</td></tr>
+            </tbody>
+          </table>
+          <div class="accordion">
+            <div class="accordion-item open">
+              <div class="accordion-header" onclick="this.closest('.accordion-item').classList.toggle('open')">Règle 15-15 + Glucagon
+                <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+              </div>
+              <div class="accordion-body">
+                <strong>Règle 15-15 :</strong><br>
+                1. Ingérer <strong>15 g de glucides rapides</strong> : 4 comprimés glucose · 125 mL jus · 3 sachets sucre<br>
+                2. Attendre <strong>15 minutes</strong><br>
+                3. Si Glc &lt; 3,9 → Répéter 15 g<br>
+                4. Quand Glc ≥ 4,0 → Manger une collation avec protéines (ex : craquelins + beurre d''arachides)<br><br>
+                <strong>Glucagon (niveau 3) :</strong><br>
+                — <strong>IM/SC :</strong> 1 mg (adulte) / 0,5 mg (&lt; 20 kg)<br>
+                — <strong>Nasal (Baqsimi®) :</strong> 3 mg dans une narine — très utile (pas besoin d''aiguille)<br>
+                — <strong>D50W IV :</strong> 25–50 mL IV push si accès veineux — milieu hospitalier<br><br>
+                <div class="key-fact yellow">⚠️ <strong>Sulfonylurées :</strong> Risque hypoglycémie prolongée — surveillance 24h minimum + D10W en continu si sévère car risque récidive.</div>
+              </div>
+            </div>
+            <div class="accordion-item open">
+              <div class="accordion-header" onclick="this.closest('.accordion-item').classList.toggle('open')">Hormones contre-régulatrices & Hypoglycémie non ressentie
+                <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+              </div>
+              <div class="accordion-body">
+                <strong>Séquence normale :</strong> Glc ↓ → 1) ↓ Insuline · 2) ↑ Glucagon · 3) ↑ Épinéphrine (signes adrénergiques : tremblement, sueurs, palpitations) · 4) Symptômes neuroglycopéniques (confusion, convulsions)<br><br>
+                <strong>Hypoglycémie non ressentie (IAH) :</strong> DT1 longue durée → perte réponse glucagon puis perte réponse épinéphrine → Seuil perception abaissé → découverte lors d''hypoglycémie sévère<br>
+                <strong>Solution :</strong> Éviter hypoglycémies 2–3 sem → restaure partiellement la perception. CGM + alarmes recommandés.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- diab-21 : Complications macrovasculaires -->
+        <div class="block para" style="border-left-color:#7b3fa0;">
+          <div class="block-title" id="diab-21"><span class="tag">🫀 21. Complications Macrovasculaires</span></div>
+          <p class="content-text">Principal déterminant de la mortalité dans le DT2. Le diabète ↑ risque CV de 2–4× même après ajustement des autres facteurs.</p>
+          <table style="font-size:12px;width:100%;margin:8px 0;">
+            <thead><tr><th>Complication</th><th>Présentation</th><th>Dépistage</th><th>Particularités DM</th></tr></thead>
+            <tbody>
+              <tr><td><strong>MCAS</strong></td><td>Angor, IM, mort subite</td><td>ECG annuel si symptômes · Score calcique si intermédiaire</td><td>Ischémie silencieuse fréquente (neuropathie autonome) · Femmes = même risque que hommes</td></tr>
+              <tr><td><strong>AVC/AIT</strong></td><td>Déficits neuro, aphasie, etc.</td><td>Dépistage FA (pouls irrégulier, Holter)</td><td>DM × 2 risque AVC · Hyperglycémie aggrave lésions ischémiques</td></tr>
+              <tr><td><strong>MAP</strong></td><td>Claudication, plaie chronique, gangrène</td><td>IPS si symptômes (IPS &lt; 0,9 = MAP significative)</td><td>Calcification artérielle → IPS peut être faussement élevé · Pied diabétique</td></tr>
+            </tbody>
+          </table>
+          <div class="key-fact blue">🔑 <strong>Pied diabétique — Classification Wagner :</strong> 0 = pied à risque · 1 = ulcère superficiel · 2 = profond (tendon/capsule) · 3 = profond + ostéite/abcès · 4 = gangrène localisée · 5 = gangrène pied entier. Référence podologie/vasculaire dès grade ≥ 2.</div>
+        </div>
+
+        <!-- diab-22 : Complications microvasculaires -->
+        <div class="block para" style="border-left-color:#7b3fa0;">
+          <div class="block-title" id="diab-22"><span class="tag">🔬 22. Complications Microvasculaires</span></div>
+          <div class="accordion">
+            <div class="accordion-item open">
+              <div class="accordion-header" onclick="this.closest('.accordion-item').classList.toggle('open')">Rétinopathie diabétique
+                <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+              </div>
+              <div class="accordion-body">
+                <table style="font-size:12px;">
+                  <thead><tr><th>Stade</th><th>Caractéristiques</th><th>Traitement</th></tr></thead>
+                  <tbody>
+                    <tr><td>RDNP légère</td><td>Microanévrismes seulement</td><td>Contrôle glycémique + PA + lipides</td></tr>
+                    <tr><td>RDNP modérée</td><td>Exsudats, hémorragies, nodules cotonneux</td><td>Idem + surveillance ophtalmo 6–12 mois</td></tr>
+                    <tr><td>RDNP sévère</td><td>Hémorragies 4 quadrants, anomalies veineuses, AMIR</td><td>Référence urgente ophtalmo</td></tr>
+                    <tr><td>RDP (proliférante)</td><td>Néovascularisation, vitrée, décollement rétine</td><td>Photocoagulation laser / anti-VEGF / vitrectomie</td></tr>
+                    <tr><td>OMC (œdème maculaire)</td><td>Perte vision centrale — indépendant du stade RDNP</td><td>Anti-VEGF intravitréen</td></tr>
+                  </tbody>
+                </table>
+                Dépistage : DT1 → fond d''œil annuel dès 5 ans de DM · DT2 → fond d''œil dès diagnostic puis annuel
+              </div>
+            </div>
+            <div class="accordion-item open">
+              <div class="accordion-header" onclick="this.closest('.accordion-item').classList.toggle('open')">Néphropathie diabétique
+                <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+              </div>
+              <div class="accordion-body">
+                <table style="font-size:12px;">
+                  <thead><tr><th>Stade</th><th>RAC (mg/mmol)</th><th>DFG</th><th>Action</th></tr></thead>
+                  <tbody>
+                    <tr><td>Normoalbuminurie</td><td>&lt; 2</td><td>Variable</td><td>Dépistage annuel</td></tr>
+                    <tr><td>Microalbuminurie (A2)</td><td>2–20</td><td>Variable</td><td>IECA/ARA · Contrôle PA · iSGLT2</td></tr>
+                    <tr><td>Macroalbuminurie (A3)</td><td>&gt; 20</td><td>Souvent ↓</td><td>IECA/ARA · iSGLT2 · Référence néphro</td></tr>
+                  </tbody>
+                </table>
+                <strong>Finérénone</strong> (antagoniste récepteur minéralocorticoïde non-stéroïdien) : ↓ progression néphropathie + ↓ risque CV · Indication : DT2 + MRC + protéinurie persistante malgré IECA/ARA<br>
+                Dépistage : RAC urinaire (spot urine) + DFGe annuels dès diagnostic DT2 · DT1 après 5 ans
+              </div>
+            </div>
+            <div class="accordion-item open">
+              <div class="accordion-header" onclick="this.closest('.accordion-item').classList.toggle('open')">Neuropathie diabétique
+                <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+              </div>
+              <div class="accordion-body">
+                <table style="font-size:12px;">
+                  <thead><tr><th>Type</th><th>Présentation</th><th>Traitement</th></tr></thead>
+                  <tbody>
+                    <tr><td>Polyneuropathie distale symétrique (PDS) ⭐</td><td>Brûlures, paresthésies, perte de sensibilité "en chaussette" — pieds d''abord</td><td>Gabapentine/Prégabaline · Duloxétine · Amitriptyline · Tramadol</td></tr>
+                    <tr><td>Neuropathie autonome</td><td>Hypotension orthostatique · Gastroparésie · Dysfonction vésicale · Dysfonction érectile</td><td>Selon organe cible</td></tr>
+                    <tr><td>Mononeuropathies</td><td>NC III (ptosis, diplopie) · Amyotrophie diabétique</td><td>Souvent auto-limité</td></tr>
+                  </tbody>
+                </table>
+                Dépistage : Monofilament 10g + diapason 128 Hz + réflexes achilléens annuels
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- diab-23 : Bilan nouveau diagnostic -->
+        <div class="block def" style="border-left-color:#1C3F8F;">
+          <div class="block-title" id="diab-23"><span class="tag">🩺 23. Bilan au Nouveau Diagnostic</span></div>
+          <table style="font-size:12px;width:100%;margin:8px 0;">
+            <thead><tr><th>Investigation</th><th>Raison</th><th>Fréquence suivi</th></tr></thead>
+            <tbody>
+              <tr><td>HbA1c</td><td>Référence baseline + contrôle glycémique</td><td>Aux 3 mois jusqu''à cible → puis 2×/an si stable</td></tr>
+              <tr><td>Glycémie à jeun</td><td>Dx + baseline</td><td>Variable selon traitement</td></tr>
+              <tr><td>RAC urinaire (spot)</td><td>Dépistage néphropathie</td><td>Annuel</td></tr>
+              <tr><td>DFGe (créatinine)</td><td>Fonction rénale baseline + ajustement médicaments</td><td>Annuel (plus fréquent si MRC)</td></tr>
+              <tr><td>Bilan lipidique (jeûne)</td><td>Risque CV baseline</td><td>Annuel si sur statine · q3 ans si bas risque sans statine</td></tr>
+              <tr><td>TSH</td><td>Association DT1-hypothyroïdie (6–30 %) · DT2 si symptômes</td><td>DT1 : annuel · DT2 : si symptômes</td></tr>
+              <tr><td>ECG</td><td>Baseline risque CV · Ischémie silencieuse</td><td>Annuel si FRCV élevés</td></tr>
+              <tr><td>Fond d''œil</td><td>Dépistage rétinopathie</td><td>DT2 : dès Dx puis annuel · DT1 : dès 5 ans de DM puis annuel</td></tr>
+              <tr><td>Exam pieds (monofilament)</td><td>Dépistage neuropathie + plaies</td><td>Annuel (ou à chaque visite si risque élevé)</td></tr>
+              <tr><td>PA</td><td>FRCV + néphropathie</td><td>À chaque visite</td></tr>
+              <tr><td>Anti-GAD65 ± autres Ac</td><td>Si DT2 atypique (jeune, mince, réponse ADO insuffisante) → LADA?</td><td>Au diagnostic si suspicion</td></tr>
+            </tbody>
+          </table>
+          <div class="key-fact blue">🔑 <strong>Dépistage populationnel Diabète Canada :</strong> Outil CANRISK (score facteurs de risque). Dépistage universel recommandé ≥ 40 ans aux <strong>3 ans</strong>. Plus fréquent si : DG passé · SOPK · DT1 ou DT2 1er degré · obésité · HTA · dyslipidémie.</div>
+        </div>
+
+        <!-- diab-24 : Comorbidités -->
+        <div class="block flag" style="border-left-color:#7b3fa0;">
+          <div class="block-title" id="diab-24"><span class="tag">🧠 24. Comorbidités Associées au Diabète</span></div>
+          <table style="font-size:12px;width:100%;margin:8px 0;">
+            <thead><tr><th>Comorbidité</th><th>Fréquence/Lien</th><th>Dépistage</th><th>Intervention</th></tr></thead>
+            <tbody>
+              <tr>
+                <td><strong>Dépression</strong></td>
+                <td>2–3× plus fréquente dans DM · Bidirectionnelle (dépression → ↑ HbA1c)</td>
+                <td><strong>PHQ-9</strong> annuel</td>
+                <td>ISRS · TCC · Collaboration santé mentale. Duloxétine si neuropathie + dépression</td>
+              </tr>
+              <tr>
+                <td><strong>SAOS</strong></td>
+                <td>50–80 % des DT2 obèses · SAOS → résistance insulinique + HTA nocturne</td>
+                <td><strong>STOP-BANG</strong> · Polysomnographie si score ≥ 3</td>
+                <td>CPAP : ↓ PA, améliore sensibilité insuline légèrement</td>
+              </tr>
+              <tr>
+                <td><strong>Parodontite</strong></td>
+                <td>Bidirectionnelle · DM → ↑ parodontite · Parodontite → ↑ HbA1c ~0,5 %</td>
+                <td>Histoire et examen dentaire annuel</td>
+                <td>Traitement parodontal → ↓ HbA1c modeste</td>
+              </tr>
+              <tr>
+                <td><strong>Ostéoporose</strong></td>
+                <td>DT1 → ↓ DMO (déficit insuline → ↓ IGF-1). DT2 → DMO normale mais qualité osseuse ↓ (AGE glycation)</td>
+                <td>DXA si ≥ 65 ans ou fracture ou ≥ 10 ans DT1</td>
+                <td>Vitamine D + Ca²⁺ · Bisphosphonates · Éviter thiazolidinédiones (↑ fractures)</td>
+              </tr>
+              <tr>
+                <td><strong>NAFLD/MASH</strong></td>
+                <td>Très fréquent dans DT2 obèse · Fibrose → cirrhose · AR-GLP1 et iSGLT2 bénéfiques</td>
+                <td>Bilan hépatique · FIB-4 score · Échographie abdominale</td>
+                <td>Perte poids · AR-GLP1 · Optimisation glycémique</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- diab-25 : Cardioprotection -->
+        <div class="block rx" style="border-left-color:#0a7a4e;">
+          <div class="block-title" id="diab-25"><span class="tag">❤️ 25. Cardioprotection & Prévention CV dans le DM</span></div>
+          <table style="font-size:12px;width:100%;margin:8px 0;">
+            <thead><tr><th>Traitement</th><th>Indication dans DM</th><th>Bénéfice CV</th><th>Notes</th></tr></thead>
+            <tbody>
+              <tr>
+                <td><strong>Statines</strong></td>
+                <td>DM + ≥ 40 ans OU tout DM avec FRCV supplémentaire</td>
+                <td>↓ LDL → ↓ IM, AVC (prévention 1° et 2°)</td>
+                <td>Statines légèrement diabétogènes (effet classe, faible ampleur) — bénéfice &gt;&gt; risque</td>
+              </tr>
+              <tr>
+                <td><strong>IECA / ARA</strong></td>
+                <td>DM + HTA · DM + protéinurie</td>
+                <td>↓ PA, ↓ progression néphropathie, ↓ risque CV</td>
+                <td>1re ligne HTA dans DM · Surveiller K⁺ et créatinine après démarrage</td>
+              </tr>
+              <tr>
+                <td><strong>iSGLT2</strong> ⭐</td>
+                <td>DT2 + MCAS établie · DT2 + insuffisance cardiaque (FEVG ↓ ou préservée) · DT2 + MRC (DFGe ≥ 20)</td>
+                <td>↓ Hospitalisations IC 30–35 % · ↓ progression MRC · ↓ MACE modeste</td>
+                <td>Empagliflozine, Canagliflozine, Dapagliflozine. Suspendre si chirurgie/jeûne</td>
+              </tr>
+              <tr>
+                <td><strong>AR-GLP1</strong> ⭐</td>
+                <td>DT2 + MCAS établie · DT2 + haut risque CV · DT2 + obésité (indépendamment CV)</td>
+                <td>↓ MACE 12–26 % · ↓ AVC ++++ · ↓ progression néphropathie</td>
+                <td>Sémaglutide (SUSTAIN-6, SOUL), Liraglutide (LEADER). Effets GI communs</td>
+              </tr>
+              <tr>
+                <td><strong>ASA</strong></td>
+                <td><strong>Prévention secondaire seulement</strong> (MCAS, AVC, MAP établis)</td>
+                <td>↓ récidives MACE</td>
+                <td>En prévention primaire DM : bénéfice CV = risque hémorragie → Non recommandé routine</td>
+              </tr>
+              <tr>
+                <td><strong>Finérénone</strong></td>
+                <td>DT2 + MRC (stade 2–4) + macroalbuminurie malgré IECA/ARA max</td>
+                <td>↓ Progression MRC 23 % · ↓ Hospitalisations IC 29 % · ↓ MACE 14 %</td>
+                <td>Surveiller K⁺ (risque hyperkaliémie). Non disponible RAMQ (2025 — vérifier)</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="key-fact blue">🔑 <strong>Algorythme décision cardioprotection :</strong><br>
+            DT2 + MCAS établie → iSGLT2 + AR-GLP1 (bénéfice additionnel) + Statine + IECA/ARA + ASA (prévention 2°)<br>
+            DT2 + IC → iSGLT2 en priorité · DT2 + MRC + protéinurie → iSGLT2 + finérénone
+          </div>
+        </div>
+
     </div>
     <div class="section" id="sec-dermato">
       <div class="section-header"><div class="section-accent">🔬</div><div class="section-title"><h1>Dermatologie</h1><div class="breadcrumb">Spécialités <span class="breadcrumb-sep">·</span> Section</div></div></div>
