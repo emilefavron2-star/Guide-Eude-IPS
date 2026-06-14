@@ -24977,14 +24977,16 @@ SLA · Dystrophie myotonique · Cyphoscoliose sévère · Paralysie diaphragmati
         <div class="section-accent" style="background:#92400e">🟤</div>
         <div class="section-title"><h1>Cirrhose hépatique</h1><div class="breadcrumb">Hépato-biliaire <span class="breadcrumb-sep">·</span> Section 8</div></div>
       </div>
-                  <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
+                        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
         <button onclick="document.getElementById('cir-1').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📌 Définition</button>
         <button onclick="document.getElementById('cir-2').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔬 Physiopathologie</button>
         <button onclick="document.getElementById('cir-3').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔍 Compensée vs Décompensée</button>
         <button onclick="document.getElementById('cir-4').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📌 Scores</button>
-        <button onclick="document.getElementById('cir-5').scrollIntoView({behavior:'smooth'})" style="background:#c0392b;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🚨 FdR</button>
-        <button onclick="document.getElementById('cir-6').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔍 Examen clinique</button>
+        <button onclick="document.getElementById('cir-5').scrollIntoView({behavior:'smooth'})" style="background:#c0392b;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🚨 FdR Cirrhose</button>
+        <button onclick="document.getElementById('cir-6').scrollIntoView({behavior:'smooth'})" style="background:#92400e;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🍷 Cirrhose alcoolique</button>
+        <button onclick="document.getElementById('cir-7').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔍 Examen clinique</button>
       </div>
+
 
 
       <div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:20px;">
@@ -24992,7 +24994,7 @@ SLA · Dystrophie myotonique · Cyphoscoliose sévère · Paralysie diaphragmati
         <div style="flex:1;min-width:100px;background:#FEF9C3;border-radius:10px;padding:12px;text-align:center;"><div style="font-size:16px;font-weight:800;color:#92400e;">Child-Pugh</div><div style="font-size:11px;color:#555;margin-top:4px;">Pronostic cirrhose</div></div>
         <div style="flex:1;min-width:100px;background:#FEE2E2;border-radius:10px;padding:12px;text-align:center;"><div style="font-size:16px;font-weight:800;color:#c0392b;">F4</div><div style="font-size:11px;color:#555;margin-top:4px;">Cirrhose (METAVIR)</div></div>
       </div>
-                  <div class="block def">
+                        <div class="block def">
         <div class="block-title" id="cir-1"><span class="tag">📌 8.1 Définition de la cirrhose hépatique</span></div>
         <div class="key-fact blue" style="margin-bottom:10px;"><strong>Définition :</strong> Stade terminal de toute maladie hépatique chronique (F4 METAVIR) — transformation structurelle <strong>irréversible</strong> du foie par remplacement du parenchyme normal par des <strong>nodules de régénération entourés de septa fibreux</strong>, entraînant une distorsion de l'architecture vasculaire et une hypertension portale (HTP).</div>
         <table style="font-size:12px;">
@@ -25110,8 +25112,70 @@ SLA · Dystrophie myotonique · Cyphoscoliose sévère · Paralysie diaphragmati
         <div class="key-fact blue" style="margin-top:8px;">💡 <strong>Scores de dépistage alcool :</strong> AUDIT-C (3 questions, ≥ 3 femme / ≥ 4 homme = positif) · AUDIT complet (≥ 8 = risque) · CAGE (≥ 2 = TLUA suspect) · NIAAA single-question screen · <a href="https://www.mdcalc.com/calc/2021/audit-c-alcohol-use" target="_blank" style="color:var(--blue)">MDCalc — AUDIT-C</a></div>
       </div>
 
+      <div class="block def">
+        <div class="block-title" id="cir-6"><span class="tag">🍷 8.6 Cirrhose alcoolique — Physiopathologie & Facteurs de risque</span></div>
+        <div class="key-fact blue" style="margin-bottom:10px;font-size:12px;"><strong>Continuum MAF :</strong> Stéatose alcoolique → Hépatite alcoolique → Fibrose → <strong>Cirrhose</strong> → Carcinome hépatocellulaire &nbsp;·&nbsp; 1ʳᵉ cause de mortalité hépatique dans les pays développés</div>
+
+        <div style="display:flex;gap:6px;flex-wrap:wrap;margin:8px 0 12px;">
+          <button onclick="showPanel('alc','alc0',3)" data-panel="alc0" style="background:#92400e;color:#fff;border:1.5px solid #92400e;border-radius:20px;padding:5px 13px;cursor:pointer;font-size:12px;font-weight:600;transition:.15s;">🔬 Physiopathologie</button>
+          <button onclick="showPanel('alc','alc1',3)" data-panel="alc1" style="background:#7f1d1d;color:#fff;border:1.5px solid #7f1d1d;border-radius:20px;padding:5px 13px;cursor:pointer;font-size:12px;font-weight:600;transition:.15s;">⚠️ Seuils de risque</button>
+          <button onclick="showPanel('alc','alc2',3)" data-panel="alc2" style="background:#991b1b;color:#fff;border:1.5px solid #991b1b;border-radius:20px;padding:5px 13px;cursor:pointer;font-size:12px;font-weight:600;transition:.15s;">🚨 Facteurs de risque</button>
+        </div>
+
+        <div id="alc0" style="display:block;">
+          <table style="font-size:12px;">
+            <thead><tr><th>Étape</th><th>Mécanisme</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Absorption</strong></td><td>Alcool absorbé rapidement dès l'estomac → foie (effet de premier passage hépatique)</td></tr>
+              <tr><td><strong>Métabolisme hépatique</strong></td><td>Voie oxydative (ADH → acétaldéhyde → ALDH → acétate) + voie non oxydative (FAEE) → <strong>métabolites réactifs toxiques</strong></td></tr>
+              <tr><td><strong>Stéatose</strong></td><td>Accumulation de triglycérides intra-hépatocytaires (↑ NADH → ↑ synthèse AG, ↓ β-oxydation)</td></tr>
+              <tr><td><strong>Inflammation</strong></td><td>Acétaldéhyde + LPS (translocation bactérienne intestinale) → activation Kupffer cells → TNF-α, IL-6, IL-8 → hépatite alcoolique</td></tr>
+              <tr><td><strong>Fibrose</strong></td><td>Inflammation chronique → activation cellules étoilées → myofibroblastes → collagène type I/III → septa fibreux → cirrhose</td></tr>
+              <tr><td><strong>Entité MetALD</strong></td><td>MASLD + consommation significative d'alcool (140–350 g/sem H · 70–210 g/sem F) → <strong>synergie fibrogénique</strong>, pronostic intermédiaire</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div id="alc1" style="display:none;">
+          <table style="font-size:12px;">
+            <thead><tr><th>Référence</th><th>Seuil / Définition</th></tr></thead>
+            <tbody>
+              <tr><td><strong>🍷 1 verre standard</strong></td><td><strong>10 g d'alcool pur</strong> = 12 cl de vin · 25 cl de bière · 4 cl de spiritueux</td></tr>
+              <tr><td><strong>Seuil faible risque hépatique (OMS)</strong></td><td>Femme : ≤ 20 g/j (≈ 2 verres) &nbsp;·&nbsp; Homme : ≤ 30 g/j (≈ 3 verres)</td></tr>
+              <tr><td><strong>Seuil cirrhose / hépatite alcoolique sévère</strong></td><td>&gt; 80 g/j pendant &gt; 15 ans → risque élevé de cirrhose et d'hépatite alcoolique sévère</td></tr>
+              <tr><td><strong>Consommation à risque MASLD (exclusion)</strong></td><td>H : &gt; 140 g/sem · F : &gt; 70 g/sem → dépasse les critères MASLD → ALD ou MetALD</td></tr>
+              <tr><td><strong>Binge drinking</strong></td><td>≥ 6 verres (60 g) en une seule occasion → particulièrement hépatotoxique (pic d'acétaldéhyde)</td></tr>
+              <tr><td><strong>Pattern aggravant</strong></td><td>Consommation <strong>en dehors des repas</strong> plus toxique (absorption plus rapide) · Alcool quotidien &gt; épisodique</td></tr>
+            </tbody>
+          </table>
+          <div class="highlight cream" style="margin-top:8px;font-size:12px;">💡 <strong>Outil de dépistage :</strong> AUDIT-C (3 questions, seuil ≥ 4 H / ≥ 3 F = consommation à risque) · CAGE (4 questions, ≥ 2 = problème probable) · AUDIT complet (10 questions)</div>
+        </div>
+
+        <div id="alc2" style="display:none;">
+          <table style="font-size:12px;">
+            <thead><tr><th>Catégorie</th><th>Facteur de risque</th><th>Mécanisme / Note</th></tr></thead>
+            <tbody>
+              <tr><td rowspan="4"><strong>Liés à la consommation</strong></td><td>Quantité cumulative</td><td>Risque ↑ proportionnel à la dose cumulée (g × années)</td></tr>
+              <tr><td>Durée</td><td>&gt; 10–15 ans de consommation excessive = seuil critique</td></tr>
+              <tr><td>Pattern</td><td>Binge drinking (≥ 6 verres) + consommation hors repas = plus toxique</td></tr>
+              <tr><td>Type de boisson</td><td>Moins déterminant que la quantité totale d'alcool pur</td></tr>
+              <tr><td rowspan="4"><strong>Liés à l'hôte</strong></td><td>Sexe féminin ⭐</td><td>À dose égale : atteinte + rapide + sévère (↓ volume distribution, ↓ ADH gastrique, effet œstrogènes)</td></tr>
+              <tr><td>Polymorphismes génétiques</td><td>PNPLA3 p.I148M · Variants ADH / ALDH → ↑ accumulation acétaldéhyde</td></tr>
+              <tr><td>Origine ethnique</td><td>Variabilité interindividuelle marquée (susceptibilité génétique)</td></tr>
+              <tr><td>Trouble usage alcool (DSM-5)</td><td>Dépendance → consommation chronique compulsive</td></tr>
+              <tr><td rowspan="6"><strong>Facteurs synergiques ⭐</strong></td><td>Tabagisme ⭐</td><td>Accélère la fibrogenèse par stress oxydatif additionnel</td></tr>
+              <tr><td>Obésité / Syndrome métabolique</td><td>MASLD coexistante → entité MetALD, synergie fibrogénique</td></tr>
+              <tr><td>Hépatite B chronique ⭐</td><td>Alcool × VHB = risque CHC multiplié (effet synergique)</td></tr>
+              <tr><td>Hépatite C chronique ⭐</td><td>VHC + alcool = progression fibrose accelerée ×2–4</td></tr>
+              <tr><td>Hémochromatose / surcharge fer</td><td>Fer catalyse la formation de radicaux libres → hépatotoxicité ↑</td></tr>
+              <tr><td>Médicaments hépatotoxiques</td><td>Méthotrexate, paracétamol (surdose), statines (rare) → toxicité additionnelle</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
       <div class="block clin">
-        <div class="block-title" id="cir-6"><span class="tag">🔍 8.6 Examen clinique — Patient cirrhotique</span></div>
+        <div class="block-title" id="cir-7"><span class="tag">🔍 8.7 Examen clinique — Patient cirrhotique</span></div>
         <table>
           <thead><tr><th>Système</th><th>Signes</th></tr></thead>
           <tbody>
