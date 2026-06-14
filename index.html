@@ -28887,7 +28887,8 @@ function buildSectionNavs() {
     prevBtn.className = 'sec-nav-btn prev';
     if (prevId) {
       prevBtn.innerHTML = `
-        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg>        <div class="sec-nav-label">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg>
+        <div class="sec-nav-label">
           <span class="sec-nav-sub">Précédent</span>
           <span class="sec-nav-title">${SECTION_TITLES[prevId] || prevId}</span>
         </div>`;
@@ -28907,14 +28908,15 @@ function buildSectionNavs() {
     nextBtn.className = 'sec-nav-btn next';
     if (nextId) {
       nextBtn.innerHTML = `
-        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>        <div class="sec-nav-label">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+        <div class="sec-nav-label">
           <span class="sec-nav-sub">Suivant</span>
           <span class="sec-nav-title">${SECTION_TITLES[nextId] || nextId}</span>
         </div>`;
       nextBtn.onclick = () => showSection(nextId);
     } else {
       nextBtn.disabled = true;
-      nextBtn.innerHTML = `<div class="sec-nav-label"><span class="sec-nav-sub">Fin</span></div><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>;
+      nextBtn.innerHTML = `<div class="sec-nav-label"><span class="sec-nav-sub">Fin</span></div><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>`;
     }
 
     nav.appendChild(prevBtn);
