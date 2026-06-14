@@ -1166,7 +1166,7 @@ m
         <div class="nav-item" onclick="showSection('calculs-biliaires')">4. Calculs biliaires &amp; Colique biliaire</div>
         <div class="nav-item" onclick="showSection('cholecystite')">5. Cholécystite aiguë</div>
         <div class="nav-item" onclick="showSection('cdiff')">6. C.difficile</div>
-        <div class="nav-item" onclick="showSection('steatose')">7. Maladie hépatique — MASLD/MASH</div>
+        <div class="nav-item" onclick="showSection('steatose')">7. Maladie hépatique — Stéatose/Fibrose</div>
         <div class="nav-item" onclick="showSection('cirrhose')">8. Cirrhose hépatique</div>
         <div class="nav-item" onclick="showSection('htp')">9. Hypertension portale</div>
         <div class="nav-item" onclick="showSection('preop')">10. Évaluation préopératoire</div>
@@ -24763,22 +24763,25 @@ SLA · Dystrophie myotonique · Cyphoscoliose sévère · Paralysie diaphragmati
 <div class="section" id="sec-steatose">
       <div class="section-header">
         <div class="section-accent" style="background:#065f46">🫁</div>
-        <div class="section-title"><h1>Maladie hépatique — MASLD / MASH</h1><div class="breadcrumb">Hépato-biliaire <span class="breadcrumb-sep">·</span> Section 7</div></div>
+        <div class="section-title"><h1>Maladie hépatique — Stéatose, MASLD, MASH, Fibrose</h1><div class="breadcrumb">Hépato-biliaire <span class="breadcrumb-sep">·</span> Section 7</div></div>
       </div>
-            <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
+                  <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
         <button onclick="document.getElementById('st-1').scrollIntoView({behavior:'smooth'})" style="background:#7b3fa0;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">⏱️ Chronologie</button>
         <button onclick="document.getElementById('st-2').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📌 MASLD vs MASH</button>
         <button onclick="document.getElementById('st-3').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📊 Stéatose vs Fibrose</button>
-        <button onclick="document.getElementById('st-4').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔬 Investigation non-invasive</button>
-        <button onclick="document.getElementById('st-5').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔬 Investigation invasive</button>
+        <button onclick="document.getElementById('st-4').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📌 METAVIR</button>
+        <button onclick="document.getElementById('st-5').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📌 Dépistage fibrose</button>
+        <button onclick="document.getElementById('st-6').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔬 Investigation non-invasive</button>
+        <button onclick="document.getElementById('st-7').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔬 Investigation invasive</button>
       </div>
+
 
       <div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:20px;">
         <div style="flex:1;min-width:100px;background:#FEF9C3;border-radius:10px;padding:12px;text-align:center;"><div style="font-size:16px;font-weight:800;color:#92400e;">30 %</div><div style="font-size:11px;color:#555;margin-top:4px;">Prévalence MASLD (adultes)</div></div>
         <div style="flex:1;min-width:100px;background:#FEE2E2;border-radius:10px;padding:12px;text-align:center;"><div style="font-size:16px;font-weight:800;color:#c0392b;">5 %</div><div style="font-size:11px;color:#555;margin-top:4px;">Stéatose → MASH/an</div></div>
         <div style="flex:1;min-width:100px;background:#EEF2FF;border-radius:10px;padding:12px;text-align:center;"><div style="font-size:16px;font-weight:800;color:#1C3F8F;">FIB-4</div><div style="font-size:11px;color:#555;margin-top:4px;">Score fibrose non-invasif</div></div>
       </div>
-            <div class="block def">
+                  <div class="block def">
         <div class="block-title" id="st-1"><span class="tag">⏱️ 7.1 Chronologie — Progression MASLD → Cirrhose</span></div>
         <div style="display:flex;flex-wrap:wrap;gap:0;margin:10px 0;font-size:12px;align-items:stretch;">
           <div style="flex:1;min-width:100px;background:#f0fdf4;border:1.5px solid #86efac;border-radius:8px 0 0 8px;padding:10px 8px;text-align:center;">
@@ -24867,8 +24870,37 @@ SLA · Dystrophie myotonique · Cyphoscoliose sévère · Paralysie diaphragmati
         </table>
       </div>
 
+      <div class="block def">
+        <div class="block-title" id="st-4"><span class="tag">📌 7.4 Stades de fibrose (METAVIR F0–F4)</span></div>
+        <table>
+          <thead><tr><th>Stade</th><th>Description histologique</th><th>Présentation clinique</th></tr></thead>
+          <tbody>
+            <tr><td><strong>F0</strong></td><td>Aucune fibrose — architecture hépatique normale</td><td>Asymptomatique, enzymes normales ou légèrement ↑</td></tr>
+            <tr><td><strong>F1</strong></td><td>Fibrose légère péri-portale sans septa</td><td>Asymptomatique · enzymes ± ↑</td></tr>
+            <tr><td><strong>F2</strong></td><td>Fibrose modérée avec quelques septa porto-portaux</td><td>Asymptomatique ou fatigue légère · FIB-4 intermédiaire</td></tr>
+            <tr><td><strong>F3</strong></td><td>Fibrose sévère — nombreux septa reliant les espaces portes, sans cirrhose complète</td><td>Début d'HTP possible · FIB-4 &gt; 2,67 · FibroScan ≥ 8 kPa</td></tr>
+            <tr><td><strong>F4 = Cirrhose</strong></td><td>Foie nodulaire · Destruction de l'architecture lobulaire · Nodules de régénération entourés de fibrose</td><td>Compensée (asymptomatique) ou décompensée (ascite, varices, encéphalopathie)</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="block def">
+        <div class="block-title" id="st-5"><span class="tag">📌 7.5 Dépistage de la fibrose hépatique (EASL 2024)</span></div>
+        <p class="content-text"><strong>Populations à dépister :</strong> Diabète de type 2 · Obésité abdominale + ≥ 1 FR cardiométabolique · Enzymes hépatiques persistamment élevées sans autre cause · Stéatose découverte fortuitement à l'imagerie</p>
+        <div class="highlight cream" style="font-size:12px;margin-top:8px;">
+          <strong>Algorithme EASL 2024 :</strong><br>
+          Population à risque → <strong>FIB-4</strong><br>
+          &lt; 1,3 → faible risque → FIB-4 tous les 1–3 ans<br>
+          1,3–2,67 → intermédiaire → VCTE (FibroScan) ou ELF/MRE<br>
+          &nbsp;&nbsp;&nbsp;· &lt; 8 kPa → suivi + gestion intensifiée comorbidités<br>
+          &nbsp;&nbsp;&nbsp;· ≥ 8 kPa → référer hépatologie<br>
+          &gt; 2,67 → élevé → référer hépatologie directement
+        </div>
+        <div class="key-fact red">⚠️ <strong>Surveillance du CHC :</strong> Cirrhose MASLD → échographie ± α-FP aux 6 mois si candidat traitement · F3 sans cirrhose → surveillance individualisée · Pas de surveillance systématique si fibrose &lt; F3</div>
+      </div>
+
       <div class="block para">
-        <div class="block-title" id="st-4"><span class="tag">🔬 7.4 Investigation non-invasive de la maladie hépatique</span></div>
+        <div class="block-title" id="st-6"><span class="tag">🔬 7.6 Investigation non-invasive de la maladie hépatique</span></div>
         <table>
           <thead><tr><th>Test</th><th>Cible</th><th>Seuil / Valeur</th></tr></thead>
           <tbody>
@@ -24884,7 +24916,7 @@ SLA · Dystrophie myotonique · Cyphoscoliose sévère · Paralysie diaphragmati
       </div>
 
       <div class="block para">
-        <div class="block-title" id="st-5"><span class="tag">🔬 7.5 Investigation invasive</span></div>
+        <div class="block-title" id="st-7"><span class="tag">🔬 7.7 Investigation invasive</span></div>
         <table>
           <thead><tr><th>Examen</th><th>Indication</th><th>Notes</th></tr></thead>
           <tbody>
@@ -24900,35 +24932,56 @@ SLA · Dystrophie myotonique · Cyphoscoliose sévère · Paralysie diaphragmati
         <div class="section-accent" style="background:#92400e">🟤</div>
         <div class="section-title"><h1>Cirrhose hépatique</h1><div class="breadcrumb">Hépato-biliaire <span class="breadcrumb-sep">·</span> Section 8</div></div>
       </div>
-      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
-        <button onclick="document.getElementById('cir-1').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📌 METAVIR</button>
-        <button onclick="document.getElementById('cir-2').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔍 Compensée vs Décompensée</button>
-        <button onclick="document.getElementById('cir-3').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📌 Scores</button>
-        <button onclick="document.getElementById('cir-4').scrollIntoView({behavior:'smooth'})" style="background:#c0392b;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🚨 FdR</button>
-        <button onclick="document.getElementById('cir-5').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📌 Dépistage fibrose</button>
+                  <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
+        <button onclick="document.getElementById('cir-1').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📌 Définition</button>
+        <button onclick="document.getElementById('cir-2').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔬 Physiopathologie</button>
+        <button onclick="document.getElementById('cir-3').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔍 Compensée vs Décompensée</button>
+        <button onclick="document.getElementById('cir-4').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📌 Scores</button>
+        <button onclick="document.getElementById('cir-5').scrollIntoView({behavior:'smooth'})" style="background:#c0392b;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🚨 FdR</button>
         <button onclick="document.getElementById('cir-6').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔍 Examen clinique</button>
       </div>
+
+
       <div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:20px;">
         <div style="flex:1;min-width:100px;background:#EEF2FF;border-radius:10px;padding:12px;text-align:center;"><div style="font-size:16px;font-weight:800;color:#1C3F8F;">MELD</div><div style="font-size:11px;color:#555;margin-top:4px;">Score greffe hépatique</div></div>
         <div style="flex:1;min-width:100px;background:#FEF9C3;border-radius:10px;padding:12px;text-align:center;"><div style="font-size:16px;font-weight:800;color:#92400e;">Child-Pugh</div><div style="font-size:11px;color:#555;margin-top:4px;">Pronostic cirrhose</div></div>
         <div style="flex:1;min-width:100px;background:#FEE2E2;border-radius:10px;padding:12px;text-align:center;"><div style="font-size:16px;font-weight:800;color:#c0392b;">F4</div><div style="font-size:11px;color:#555;margin-top:4px;">Cirrhose (METAVIR)</div></div>
       </div>
-      <div class="block def">
-        <div class="block-title" id="cir-1"><span class="tag">📌 8.1 Stades de fibrose (METAVIR F0–F4)</span></div>
-        <table>
-          <thead><tr><th>Stade</th><th>Description histologique</th><th>Présentation clinique</th></tr></thead>
+                  <div class="block def">
+        <div class="block-title" id="cir-1"><span class="tag">📌 8.1 Définition de la cirrhose hépatique</span></div>
+        <div class="key-fact blue" style="margin-bottom:10px;"><strong>Définition :</strong> Stade terminal de toute maladie hépatique chronique (F4 METAVIR) — transformation structurelle <strong>irréversible</strong> du foie par remplacement du parenchyme normal par des <strong>nodules de régénération entourés de septa fibreux</strong>, entraînant une distorsion de l'architecture vasculaire et une hypertension portale (HTP).</div>
+        <table style="font-size:12px;">
+          <thead><tr><th>Critère</th><th>Description</th></tr></thead>
           <tbody>
-            <tr><td><strong>F0</strong></td><td>Aucune fibrose — architecture hépatique normale</td><td>Asymptomatique, enzymes normales ou légèrement ↑</td></tr>
-            <tr><td><strong>F1</strong></td><td>Fibrose légère péri-portale sans septa</td><td>Asymptomatique · enzymes ± ↑</td></tr>
-            <tr><td><strong>F2</strong></td><td>Fibrose modérée avec quelques septa porto-portaux</td><td>Asymptomatique ou fatigue légère · FIB-4 intermédiaire</td></tr>
-            <tr><td><strong>F3</strong></td><td>Fibrose sévère — nombreux septa reliant les espaces portes, sans cirrhose complète</td><td>Début d'HTP possible · FIB-4 &gt; 2,67 · FibroScan ≥ 8 kPa</td></tr>
-            <tr><td><strong>F4 = Cirrhose</strong></td><td>Foie nodulaire · Destruction de l'architecture lobulaire · Nodules de régénération entourés de fibrose</td><td>Compensée (asymptomatique) ou décompensée (ascite, varices, encéphalopathie)</td></tr>
+            <tr><td><strong>Stade fibrose</strong></td><td>F4 (METAVIR) — fibrose maximale avec nodules de régénération</td></tr>
+            <tr><td><strong>Réversibilité</strong></td><td>❌ <strong>IRRÉVERSIBLE</strong> (≠ fibrose F1-F3 qui peut régresser si cause traitée)</td></tr>
+            <tr><td><strong>Prévalence</strong></td><td>~2% adultes à l'échelle mondiale · 1ʳᵉ cause de greffe hépatique (MASLD au Canada)</td></tr>
+            <tr><td><strong>Principales étiologies</strong></td><td>MASLD/MASH ⭐ (1ʳᵉ cause) · Alcool · VHC / VHB · Maladies cholestatiques (CBP, CSP) · Hémochromatose · Wilson</td></tr>
+            <tr><td><strong>Évolution</strong></td><td>Compensée (silencieuse, &gt;12 ans survie médiane) → Décompensée (~2 ans survie) → CHC / décès / greffe</td></tr>
+            <tr><td><strong>Maladie systémique</strong></td><td>La cirrhose décompensée affecte tous les organes (rein, cœur, poumons, cerveau, système immunitaire)</td></tr>
           </tbody>
         </table>
       </div>
 
+      <div class="block def">
+        <div class="block-title" id="cir-2"><span class="tag">🔬 8.2 Physiopathologie de la cirrhose</span></div>
+        <table style="font-size:12px;">
+          <thead><tr><th>Étape</th><th>Mécanisme</th><th>Conséquence</th></tr></thead>
+          <tbody>
+            <tr><td><strong>1. Agression chronique</strong></td><td>Alcool · Stéatose métabolique · Virus (VHB/VHC) · Toxiques · Maladies auto-immunes</td><td>Nécrose hépatocytaire répétée</td></tr>
+            <tr><td><strong>2. Inflammation persistante</strong></td><td>Activation Kupffer cells → cytokines pro-fibrotiques (TGF-β, TNF-α, IL-6)</td><td>Signaux de réparation chroniques</td></tr>
+            <tr><td><strong>3. Activation cellules étoilées</strong></td><td>Cellules de Ito (péri-sinusoïdales) → <strong>myofibroblastes</strong> → synthèse collagène type I et III</td><td>Dépôt matrice extracellulaire (fibrose)</td></tr>
+            <tr><td><strong>4. Fibrose progressive</strong></td><td>Accumulation de collagène → septa fibreux entourant des îlots d'hépatocytes (nodules de régénération)</td><td>Perte architecture lobulaire normale</td></tr>
+            <tr><td><strong>5. ↑ Résistance vasculaire</strong></td><td>Fibrose + nodules compriment sinusoïdes → ↑ résistance à l'écoulement portal + <strong>vasoconstriction active</strong> (↓ NO hépatique)</td><td>Hypertension portale (GPP &gt;5 mmHg)</td></tr>
+            <tr><td><strong>6. Vasodilatation splanchnique</strong></td><td>Réponse compensatrice → ↑ NO systémique → vasodilatation périphérique et splanchnique → <strong>circulation hyperdynamique</strong></td><td>↑ Débit portal · ↓ Résistances périphériques</td></tr>
+            <tr><td><strong>7. Complications</strong></td><td>HTP → varices, ascite · ↓ synthèse hépatique → coagulopathie, hypoalbuminémie · ↓ métabolisme → encéphalopathie</td><td>Décompensation → défaillance multi-organes</td></tr>
+          </tbody>
+        </table>
+        <div class="highlight cream" style="margin-top:8px;font-size:12px;">⚠️ <strong>Point clé :</strong> La vasoconstriction active intra-hépatique (via ↓ eNOS et ↑ endothéline-1) contribue à ~30% de l'↑ résistance portale — cible thérapeutique des bêta-bloquants non sélectifs (propranolol, nadolol) dans la prévention des décompensations.</div>
+      </div>
+
       <div class="block clin">
-        <div class="block-title" id="cir-2"><span class="tag">🔍 8.2 Cirrhose compensée vs décompensée (EASL 2018)</span></div>
+        <div class="block-title" id="cir-3"><span class="tag">🔍 8.3 Cirrhose compensée vs décompensée (EASL 2018)</span></div>
         <table>
           <thead><tr><th></th><th>Compensée</th><th>Décompensée</th></tr></thead>
           <tbody>
@@ -24942,7 +24995,7 @@ SLA · Dystrophie myotonique · Cyphoscoliose sévère · Paralysie diaphragmati
       </div>
 
       <div class="block def">
-        <div class="block-title" id="cir-3"><span class="tag">📌 8.3 Scores de sévérité</span></div>
+        <div class="block-title" id="cir-4"><span class="tag">📌 8.4 Scores de sévérité</span></div>
                 <div style="display:flex;gap:6px;flex-wrap:wrap;margin:8px 0 12px;">
           <button onclick="showPanel('ap70','ap700',3)" data-panel="ap700" style="background:#6b7280;color:#fff;border:1.5px solid #6b7280;border-radius:20px;padding:5px 13px;cursor:pointer;font-size:12px;font-weight:600;transition:.15s;">Child-Pugh</button>
           <button onclick="showPanel('ap70','ap701',3)" data-panel="ap701" style="background:var(--cream2);color:var(--ink);border:1.5px solid #6b7280;border-radius:20px;padding:5px 13px;cursor:pointer;font-size:12px;font-weight:600;transition:.15s;">MELD (Model for End-Stage Liver Disease)</button>
@@ -24985,7 +25038,7 @@ SLA · Dystrophie myotonique · Cyphoscoliose sévère · Paralysie diaphragmati
       </div>
 
       <div class="block flag">
-        <div class="block-title" id="cir-4"><span class="tag">🚨 8.4 Facteurs de risque — Cirrhose métabolique & alcoolique</span></div>
+        <div class="block-title" id="cir-5"><span class="tag">🚨 8.5 Facteurs de risque — Cirrhose métabolique & alcoolique</span></div>
         <div style="display:flex;gap:16px;flex-wrap:wrap;">
           <div style="flex:1;min-width:200px;">
             <p style="font-size:13px;font-weight:700;margin-bottom:4px;">MASLD / Cirrhose métabolique</p>
@@ -25012,24 +25065,8 @@ SLA · Dystrophie myotonique · Cyphoscoliose sévère · Paralysie diaphragmati
         <div class="key-fact blue" style="margin-top:8px;">💡 <strong>Scores de dépistage alcool :</strong> AUDIT-C (3 questions, ≥ 3 femme / ≥ 4 homme = positif) · AUDIT complet (≥ 8 = risque) · CAGE (≥ 2 = TLUA suspect) · NIAAA single-question screen · <a href="https://www.mdcalc.com/calc/2021/audit-c-alcohol-use" target="_blank" style="color:var(--blue)">MDCalc — AUDIT-C</a></div>
       </div>
 
-      <div class="block def">
-        <div class="block-title" id="cir-5"><span class="tag">📌 8.5 Dépistage de la fibrose hépatique (EASL 2024)</span></div>
-        <p class="content-text"><strong>Populations à dépister :</strong> Diabète de type 2 · Obésité abdominale + ≥ 1 FR cardiométabolique · Enzymes hépatiques persistamment élevées sans autre cause · Stéatose découverte fortuitement à l'imagerie</p>
-        <div class="highlight cream" style="font-size:12px;margin-top:8px;">
-          <strong>Algorithme EASL 2024 :</strong><br>
-          Population à risque → <strong>FIB-4</strong><br>
-          &lt; 1,3 → faible risque → FIB-4 tous les 1–3 ans<br>
-          1,3–2,67 → intermédiaire → VCTE (FibroScan) ou ELF/MRE<br>
-          &nbsp;&nbsp;&nbsp;· &lt; 8 kPa → suivi + gestion intensifiée comorbidités<br>
-          &nbsp;&nbsp;&nbsp;· ≥ 8 kPa → référer hépatologie<br>
-          &gt; 2,67 → élevé → référer hépatologie directement
-        </div>
-        <div class="key-fact red">⚠️ <strong>Surveillance du CHC :</strong> Cirrhose MASLD → échographie ± α-FP aux 6 mois si candidat traitement · F3 sans cirrhose → surveillance individualisée · Pas de surveillance systématique si fibrose &lt; F3</div>
-      </div>
-
-
       <div class="block clin">
-        <div class="block-title" id="cir-6"><span class="tag">🔍 Examen clinique — Patient cirrhotique</span></div>
+        <div class="block-title" id="cir-6"><span class="tag">🔍 8.6 Examen clinique — Patient cirrhotique</span></div>
         <table>
           <thead><tr><th>Système</th><th>Signes</th></tr></thead>
           <tbody>
@@ -28613,7 +28650,7 @@ const SECTION_TITLES = {
   'uro-physio':'Physiologie miction','uro-sbau':'SBAU','uro-hbp':'HBP','uro-vha':'Vessie hyperactive','uro-incontinence':'Incontinence urinaire','uro-pna':'Pyélonéphrite aiguë','uro-cancer-prostate':'Cancer prostate','uro-iu-recidivante':'IU récidivantes','uro-sgu':'SGU ménopause','uro-orchi':'Orchi-épididymite','uro-prostatite':'Prostatite aiguë','uro-de':'Dysfonction érectile',
   'douleur-abdo':'Douleur Abdominale','anatomie-foie':'Anatomie Foie','fonctions-foie':'Fonctions Foie',
   'calculs-biliaires':'Calculs Biliaires','cholecystite':'Cholécystite','cdiff':'C.difficile',
-  'steatose':'MASLD / MASH','cirrhose':'Cirrhose Hépatique','htp':'HTP','preop':'Éval. Préopératoire',
+  'steatose':'Stéatose / Fibrose','cirrhose':'Cirrhose Hépatique','htp':'HTP','preop':'Éval. Préopératoire',
   'appendicite':'Appendicite',
   'ccr':'Cancer Colorectal','ugd':'UGD','constipation':'Constipation','diarrhee':'Diarrhée','mrgo':'MRGO & Antiacides',
   'antidepresseurs':'Antidépresseurs','stabilisateurs':'Stabilisateurs','antipsychotiques':'Antipsychotiques',
