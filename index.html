@@ -24488,37 +24488,84 @@ SLA · Dystrophie myotonique · Cyphoscoliose sévère · Paralysie diaphragmati
 
       <div class="block rx">
         <div class="block-title" id="cc-6"><span class="tag">💊 5.6 Traitement</span></div>
-                <div style="display:flex;gap:6px;flex-wrap:wrap;margin:8px 0 12px;">
-          <button onclick="showPanel('ap68','ap680',3)" data-panel="ap680" style="background:#6b7280;color:#fff;border:1.5px solid #6b7280;border-radius:20px;padding:5px 13px;cursor:pointer;font-size:12px;font-weight:600;transition:.15s;">Soins de soutien & antibiothérapie</button>
-          <button onclick="showPanel('ap68','ap681',3)" data-panel="ap681" style="background:var(--cream2);color:var(--ink);border:1.5px solid #6b7280;border-radius:20px;padding:5px 13px;cursor:pointer;font-size:12px;font-weight:600;transition:.15s;">Cholécystectomie laparoscopique</button>
-          <button onclick="showPanel('ap68','ap682',3)" data-panel="ap682" style="background:var(--cream2);color:var(--ink);border:1.5px solid #6b7280;border-radius:20px;padding:5px 13px;cursor:pointer;font-size:12px;font-weight:600;transition:.15s;">Drainage percutané (cholécystostomie)</button>
+                <div style="background:#fef9ec;border-left:4px solid #d97706;border-radius:8px;padding:10px 14px;margin-bottom:12px;font-size:13px;">
+          <strong>Principe :</strong> La <strong>cholécystectomie est le traitement définitif</strong>. Le choix et le moment dépendent de la <strong>sévérité</strong> et du <strong>risque chirurgical</strong>. En attendant : soins de support + antibiotiques.
         </div>
-        <div id="ap680" style="display:block;">
-
-              <strong>Soins de soutien :</strong> NPO (diète légère après stabilisation) · Hydratation IV · Analgésie (AINS ± opioïdes; kétorolac IV efficace)<br><br>
-              <strong>Antibiothérapie IV :</strong> indiquée si fièvre, GB élevés, grade II/III<br>
-              <span class="drug-badge line1">Pipéracilline-tazobactam</span> 3,375 g IV q6h (couvre gram-négatifs + anaérobies)<br>
-              <span class="drug-badge line2">Céfazoline 2g IV q8h + métronidazole 500 mg IV q12h</span> (alternative)<br>
-              <span class="drug-badge warn">Allergie pénicilline</span> → ciprofloxacine + métronidazole<br>
-              Durée : 3–5 jours post-cholécystectomie (grade I–II) ou 5–7 jours (grade III)
-            
-        </div>
-        <div id="ap681" style="display:none;">
-
-              <strong>Traitement définitif</strong> — voie laparoscopique préférée<br>
-              <span class="drug-badge line1">Précoce (dans les 72 h)</span> : Grade I, grade II stable → ↓ durée hospitalisation, ↓ complications, ↓ conversions en chirurgie ouverte<br>
-              <span class="drug-badge warn">Différée (4–6 semaines)</span> : si chirurgie précoce non possible (instabilité, refus patient, ressources) → drainage percutané en attente<br>
-              <div class="key-fact blue" style="margin-top:8px;">💡 Algorithme Tokyo 2018 : Grade I → cholécystectomie immédiate · Grade II → cholécystectomie précoce si expérience chirurgicale suffisante · Grade III → drainage percutané urgent + cholécystectomie différée</div>
-            
-        </div>
-        <div id="ap682" style="display:none;">
-
-              Alternative bridging pour patients grade III ou contre-indication chirurgicale<br>
-              Effectué sous guidage écho ou TDM · Drain dans la vésicule → décompression + cultures<br>
-              Laissé en place jusqu'à stabilisation → cholécystectomie différée dès que possible
-            
+        <div style="display:flex;gap:6px;flex-wrap:wrap;margin:8px 0 12px;">
+          <button onclick="showPanel('cctx','cctx0',5)" data-panel="cctx0" style="background:#6b7280;color:#fff;border:1.5px solid #6b7280;border-radius:20px;padding:5px 13px;cursor:pointer;font-size:12px;font-weight:600;transition:.15s;">A. Soins initiaux</button>
+          <button onclick="showPanel('cctx','cctx1',5)" data-panel="cctx1" style="background:var(--cream2);color:var(--ink);border:1.5px solid #6b7280;border-radius:20px;padding:5px 13px;cursor:pointer;font-size:12px;font-weight:600;transition:.15s;">B. Antibiothérapie</button>
+          <button onclick="showPanel('cctx','cctx2',5)" data-panel="cctx2" style="background:var(--cream2);color:var(--ink);border:1.5px solid #6b7280;border-radius:20px;padding:5px 13px;cursor:pointer;font-size:12px;font-weight:600;transition:.15s;">C. Cholécystectomie</button>
+          <button onclick="showPanel('cctx','cctx3',5)" data-panel="cctx3" style="background:var(--cream2);color:var(--ink);border:1.5px solid #6b7280;border-radius:20px;padding:5px 13px;cursor:pointer;font-size:12px;font-weight:600;transition:.15s;">D. Drainage vésiculaire</button>
+          <button onclick="showPanel('cctx','cctx4',5)" data-panel="cctx4" style="background:var(--cream2);color:var(--ink);border:1.5px solid #6b7280;border-radius:20px;padding:5px 13px;cursor:pointer;font-size:12px;font-weight:600;transition:.15s;">E. Autres options</button>
         </div>
 
+        <div id="cctx0" style="display:block;">
+          <table style="font-size:12px;width:100%;">
+            <tbody>
+              <tr><td style="width:28%;font-weight:700;padding:5px 8px;">Hospitalisation</td><td style="padding:5px 8px;">Requise dans tous les cas</td></tr>
+              <tr><td style="font-weight:700;padding:5px 8px;">À jeun (NPO)</td><td style="padding:5px 8px;">Tube nasogastrique seulement si vomissements importants</td></tr>
+              <tr><td style="font-weight:700;padding:5px 8px;">Hydratation IV</td><td style="padding:5px 8px;">+ correction des troubles électrolytiques</td></tr>
+              <tr><td style="font-weight:700;padding:5px 8px;">Analgésie</td><td style="padding:5px 8px;"><strong>AINS (ex. kétorolac)</strong> préférés — soulagement en 20–30 min · <strong>Opioïdes</strong> (morphine, hydromorphone) si CI/échec aux AINS<br><span style="font-size:11px;color:#666;">⚠️ Tous les opioïdes ↑ pression du sphincter d'Oddi — pas de raison suffisante d'éviter la morphine</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div id="cctx1" style="display:none;">
+          <div style="margin-bottom:10px;font-size:13px;">La cholécystite est d'abord un <strong>processus inflammatoire</strong>, mais une <strong>infection bactérienne secondaire</strong> (stase + obstruction) est fréquente.</div>
+          <table style="font-size:12px;width:100%;margin-bottom:10px;">
+            <tbody>
+              <tr><td style="width:30%;font-weight:700;padding:5px 8px;">Compliquée</td><td style="padding:5px 8px;">Antibiotiques à large spectre <strong>requis</strong></td></tr>
+              <tr><td style="font-weight:700;padding:5px 8px;">Non compliquée</td><td style="padding:5px 8px;">Antibiotiques <strong>suggérés</strong> (surtout si fragile, diabétique, immunosupprimé)</td></tr>
+              <tr><td style="font-weight:700;padding:5px 8px;">Cibles</td><td style="padding:5px 8px;">Enterobacterales (BGN) ± anaérobes · Bonne concentration biliaire</td></tr>
+              <tr><td style="font-weight:700;padding:5px 8px;">Agents</td><td style="padding:5px 8px;"><span class="drug-badge line1">Pipéracilline-tazobactam</span> · <span class="drug-badge line1">Amoxicilline-ac. clavulanique</span> · <span class="drug-badge line2">Ceftriaxone + métronidazole</span> · Relais PO : amox-clav ou fluoroquinolone + métronidazole</td></tr>
+              <tr><td style="font-weight:700;padding:5px 8px;">Délai</td><td style="padding:5px 8px;">Choc septique → <strong>dans l'heure</strong> · Autres → <strong>dans les 6 h</strong></td></tr>
+              <tr><td style="font-weight:700;padding:5px 8px;">Durée</td><td style="padding:5px 8px;">Cholécystectomie cas non compliqué → <strong>cesser le lendemain de la chirurgie</strong> · Traitement non opératoire → jusqu'à résolution clinique</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div id="cctx2" style="display:none;">
+          <table style="font-size:12px;width:100%;margin-bottom:10px;">
+            <thead><tr><th>Situation</th><th>Conduite</th></tr></thead>
+            <tbody>
+              <tr>
+                <td style="font-weight:700;padding:6px 8px;color:#c0392b;">🚨 Urgence (tout risque)</td>
+                <td style="padding:6px 8px;">Cholécystite <strong>compliquée</strong> (gangrène/nécrose, perforation, emphysémateuse) <strong>ou progression</strong> malgré traitement</td>
+              </tr>
+              <tr>
+                <td style="font-weight:700;padding:6px 8px;color:#0a7a4e;">✅ Bon candidat</td>
+                <td style="padding:6px 8px;"><strong>Cholécystectomie précoce</strong> durant l'hospitalisation initiale, idéalement <strong>&lt; 3 jours</strong> après le début des symptômes · <strong>Laparoscopie</strong> = standard · ↓ morbidité/mortalité périopératoires</td>
+              </tr>
+              <tr>
+                <td style="font-weight:700;padding:6px 8px;color:#b45309;">⚠️ Mauvais candidat</td>
+                <td style="padding:6px 8px;"><strong>Traitement non opératoire</strong> : antibiotiques + <strong>drainage vésiculaire</strong> si septique ou non-réponse en 1–3 j</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="key-fact blue">💡 <strong>Algorithme Tokyo 2018 :</strong> Grade I → cholécystectomie immédiate · Grade II → cholécystectomie précoce si expérience chirurgicale suffisante · Grade III → drainage percutané urgent + cholécystectomie différée</div>
+        </div>
+
+        <div id="cctx3" style="display:none;">
+          <p style="font-size:13px;margin-bottom:8px;">Pour les patients où la chirurgie est trop risquée d'emblée :</p>
+          <table style="font-size:12px;width:100%;margin-bottom:10px;">
+            <tbody>
+              <tr><td style="width:30%;font-weight:700;padding:5px 8px;">Méthode préférée</td><td style="padding:5px 8px;"><strong>Cholécystostomie percutanée</strong> (transhépatique) — simple, sûre, peu coûteuse · Ou drainage endoscopique (transpapillaire/transmural)</td></tr>
+              <tr><td style="font-weight:700;padding:5px 8px;">Mécanisme</td><td style="padding:5px 8px;">Décomprime la bile infectée/le pus → régression de l'inflammation → <strong>« pont »</strong> vers cholécystectomie différée à moindre risque</td></tr>
+              <tr><td style="font-weight:700;padding:5px 8px;">⚠️ Non-réponse</td><td style="padding:5px 8px;">Pas d'amélioration après <strong>3 jours de drainage</strong> → suspecter une <strong>gangrène</strong> → <strong>cholécystectomie d'urgence obligatoire</strong> malgré le risque</td></tr>
+              <tr><td style="font-weight:700;padding:5px 8px;">Après résolution</td><td style="padding:5px 8px;">Réévaluer le risque chirurgical → cholécystectomie élective différée si opérable · Risque de récidive <strong>~20 % à 1 an</strong> sans cholécystectomie</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div id="cctx4" style="display:none;">
+          <table style="font-size:12px;width:100%;">
+            <tbody>
+              <tr><td style="width:35%;font-weight:700;padding:5px 8px;">Acide ursodéoxycholique</td><td style="padding:5px 8px;">Dissolution des calculs · Seulement petits calculs (&lt; 1,5 cm) non calcifiés, vésicule fonctionnelle, cystique perméable · <strong>50 % de récidive à 5 ans</strong> après arrêt</td></tr>
+              <tr><td style="font-weight:700;padding:5px 8px;">Extraction percutanée</td><td style="padding:5px 8px;">± lithotripsie · Pour haut risque chirurgical persistant</td></tr>
+              <tr><td style="font-weight:700;padding:5px 8px;">Entérolithotomie</td><td style="padding:5px 8px;">Si iléus biliaire</td></tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
 
