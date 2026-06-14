@@ -3882,6 +3882,7 @@ m
         </div>
 
         <script>
+function toglAcc(el){var i=el.closest('.accordion-item');if(i)i.classList.toggle('open');}
           
           function calculateMascc() {
             var form = document.getElementById('mascc-form');
@@ -13612,41 +13613,32 @@ function ircComplic(tab) {
 
       <div class="block clin">
         <div class="block-title" id="nrot-4"><span class="tag">🔬 DDx — Causes primaires & secondaires</span></div>
-        <div class="accordion">
-          <div class="accordion-item open">
-            <div class="accordion-header">LGM — Lésions Glomérulaires Minimes
-              <span class="acc-badge" style="background:var(--blue-lt);color:var(--blue);">#1 chez l'enfant</span>
-              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-            </div>
-            <div class="accordion-body">Enfant +++ / adulte jeune · Associé aux lymphomes Hodgkin · Cortico-sensible<br>MO normale · Effacement diffus pédicelles (ME uniquement) · Protéinurie sélective (albumine)</div>
+                  <div style="display:flex;gap:6px;flex-wrap:wrap;margin:8px 0 12px;">
+            <button onclick="showPanel('nrot','nrot0',5)" data-panel="nrot0" style="background:#6d28d9;color:#fff;border:1.5px solid #6d28d9;border-radius:20px;padding:5px 13px;cursor:pointer;font-size:11.5px;font-weight:600;transition:.15s;">LGM — Lésions Glomérulaires Minimes
+              #1 chez l'enfant</button>
+            <button onclick="showPanel('nrot','nrot1',5)" data-panel="nrot1" style="background:var(--cream2);color:var(--ink);border:1.5px solid #6d28d9;border-radius:20px;padding:5px 13px;cursor:pointer;font-size:11.5px;font-weight:600;transition:.15s;">GSFS — Hyalinose Segmentaire Focale</button>
+            <button onclick="showPanel('nrot','nrot2',5)" data-panel="nrot2" style="background:var(--cream2);color:var(--ink);border:1.5px solid #6d28d9;border-radius:20px;padding:5px 13px;cursor:pointer;font-size:11.5px;font-weight:600;transition:.15s;">Néphropathie Membraneuse (NM)
+              #1 chez l'adulte</button>
+            <button onclick="showPanel('nrot','nrot3',5)" data-panel="nrot3" style="background:var(--cream2);color:var(--ink);border:1.5px solid #6d28d9;border-radius:20px;padding:5px 13px;cursor:pointer;font-size:11.5px;font-weight:600;transition:.15s;">Néphropathie Diabétique
+              Cause 2aire #1</button>
+            <button onclick="showPanel('nrot','nrot4',5)" data-panel="nrot4" style="background:var(--cream2);color:var(--ink);border:1.5px solid #6d28d9;border-radius:20px;padding:5px 13px;cursor:pointer;font-size:11.5px;font-weight:600;transition:.15s;">Lupus Classe V</button>
           </div>
-          <div class="accordion-item">
-            <div class="accordion-header">GSFS — Hyalinose Segmentaire Focale
-              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-            </div>
-            <div class="accordion-body">Adulte jeune · VIH · Obésité · <strong>Cortico-résistant</strong> → IRC 1–20 ans<br>IgM, C3 mésangium (focale)</div>
+          <div id="nrot0" style="display:block;">
+Enfant +++ / adulte jeune · Associé aux lymphomes Hodgkin · Cortico-sensible<br>MO normale · Effacement diffus pédicelles (ME uniquement) · Protéinurie sélective (albumine)
           </div>
-          <div class="accordion-item">
-            <div class="accordion-header">Néphropathie Membraneuse (NM)
-              <span class="acc-badge" style="background:var(--blue-lt);color:var(--blue);">#1 chez l'adulte</span>
-              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-            </div>
-            <div class="accordion-body">Adulte 40–60 ans · Progression lente · <strong>Risque TVR élevé</strong><br>IgG4 granuleux sous-épithéliaux · Anti-PLA2R + (80 % primaire) · Risque TVR ↑↑ si protéinurie &gt; 10 g/j</div>
+          <div id="nrot1" style="display:none;">
+Adulte jeune · VIH · Obésité · <strong>Cortico-résistant</strong> → IRC 1–20 ans<br>IgM, C3 mésangium (focale)
           </div>
-          <div class="accordion-item">
-            <div class="accordion-header">Néphropathie Diabétique
-              <span class="acc-badge" style="background:var(--red-lt);color:var(--red);">Cause 2aire #1</span>
-              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-            </div>
-            <div class="accordion-body">HbA1c ↑ · Rétinopathie · Nodules Kimmelstiel-Wilson (biopsie) · IgG, albumine linéaire MBG</div>
+          <div id="nrot2" style="display:none;">
+Adulte 40–60 ans · Progression lente · <strong>Risque TVR élevé</strong><br>IgG4 granuleux sous-épithéliaux · Anti-PLA2R + (80 % primaire) · Risque TVR ↑↑ si protéinurie &gt; 10 g/j
           </div>
-          <div class="accordion-item">
-            <div class="accordion-header">Lupus Classe V
-              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-            </div>
-            <div class="accordion-body">ANA + · Anti-dsDNA + · C3/C4 ↓ · "Full house" IF (IgG, IgM, IgA, C1q, C3)</div>
+          <div id="nrot3" style="display:none;">
+HbA1c ↑ · Rétinopathie · Nodules Kimmelstiel-Wilson (biopsie) · IgG, albumine linéaire MBG
           </div>
-        </div>
+          <div id="nrot4" style="display:none;">
+ANA + · Anti-dsDNA + · C3/C4 ↓ · "Full house" IF (IgG, IgM, IgA, C1q, C3)
+          </div>
+
       </div>
 
       <div class="block para">
@@ -13745,29 +13737,29 @@ function ircComplic(tab) {
           <div>
             <label style="font-weight:600;font-size:0.85em;color:var(--text-secondary);">👤 Profil patient</label>
             <div style="margin-top:6px;display:flex;flex-direction:column;gap:4px;" id="nrot-profil">
-              <label><input type="checkbox" value="enfant"> Enfant (&lt;12 ans)</label>
-              <label><input type="checkbox" value="adulte_jeune"> Adulte jeune (18–40 ans)</label>
-              <label><input type="checkbox" value="adulte_50"> Adulte ≥50 ans</label>
-              <label><input type="checkbox" value="noir"> Origine africaine / AA</label>
-              <label><input type="checkbox" value="diabete"> Diabète (type 1 ou 2)</label>
-              <label><input type="checkbox" value="lupus"> LES connu</label>
-              <label><input type="checkbox" value="hiv"> VIH +</label>
-              <label><input type="checkbox" value="vhb_vhc"> VHB ou VHC +</label>
-              <label><input type="checkbox" value="cancer"> Cancer connu</label>
-              <label><input type="checkbox" value="drug"> Médicaments (AINS, lithium, D-pénicillamine, pamidronate)</label>
+              <label><input type="checkbox" onchange="calcNrotAlgo()" value="enfant"> Enfant (&lt;12 ans)</label>
+              <label><input type="checkbox" onchange="calcNrotAlgo()" value="adulte_jeune"> Adulte jeune (18–40 ans)</label>
+              <label><input type="checkbox" onchange="calcNrotAlgo()" value="adulte_50"> Adulte ≥50 ans</label>
+              <label><input type="checkbox" onchange="calcNrotAlgo()" value="noir"> Origine africaine / AA</label>
+              <label><input type="checkbox" onchange="calcNrotAlgo()" value="diabete"> Diabète (type 1 ou 2)</label>
+              <label><input type="checkbox" onchange="calcNrotAlgo()" value="lupus"> LES connu</label>
+              <label><input type="checkbox" onchange="calcNrotAlgo()" value="hiv"> VIH +</label>
+              <label><input type="checkbox" onchange="calcNrotAlgo()" value="vhb_vhc"> VHB ou VHC +</label>
+              <label><input type="checkbox" onchange="calcNrotAlgo()" value="cancer"> Cancer connu</label>
+              <label><input type="checkbox" onchange="calcNrotAlgo()" value="drug"> Médicaments (AINS, lithium, D-pénicillamine, pamidronate)</label>
             </div>
           </div>
           <div>
             <label style="font-weight:600;font-size:0.85em;color:var(--text-secondary);">🔬 Résultats paracliniques</label>
             <div style="margin-top:6px;display:flex;flex-direction:column;gap:4px;" id="nrot-para">
-              <label><input type="checkbox" value="hématurie"> Hématurie micro (SN impur)</label>
-              <label><input type="checkbox" value="c3c4_low"> C3/C4 ↓</label>
-              <label><input type="checkbox" value="ana_pos"> ANA / anti-dsDNA +</label>
-              <label><input type="checkbox" value="pla2r"> Anti-PLA2R +</label>
-              <label><input type="checkbox" value="kappa_lambda"> Pic M / kappa-lambda urinaire</label>
-              <label><input type="checkbox" value="echo_reins_petits"> Reins de petite taille</label>
-              <label><input type="checkbox" value="reponse_steroides"> Réponse aux stéroïdes</label>
-              <label><input type="checkbox" value="eosinophile"> Éosinophilie</label>
+              <label><input type="checkbox" onchange="calcNrotAlgo()" value="hématurie"> Hématurie micro (SN impur)</label>
+              <label><input type="checkbox" onchange="calcNrotAlgo()" value="c3c4_low"> C3/C4 ↓</label>
+              <label><input type="checkbox" onchange="calcNrotAlgo()" value="ana_pos"> ANA / anti-dsDNA +</label>
+              <label><input type="checkbox" onchange="calcNrotAlgo()" value="pla2r"> Anti-PLA2R +</label>
+              <label><input type="checkbox" onchange="calcNrotAlgo()" value="kappa_lambda"> Pic M / kappa-lambda urinaire</label>
+              <label><input type="checkbox" onchange="calcNrotAlgo()" value="echo_reins_petits"> Reins de petite taille</label>
+              <label><input type="checkbox" onchange="calcNrotAlgo()" value="reponse_steroides"> Réponse aux stéroïdes</label>
+              <label><input type="checkbox" onchange="calcNrotAlgo()" value="eosinophile"> Éosinophilie</label>
             </div>
           </div>
         </div>
@@ -13784,7 +13776,7 @@ function ircComplic(tab) {
             'gnmp': {label:'GN Membrano-Proliférative (GNMP)', color:'#0891b2', biopsie:'Biopsie + typage IF (C3G vs CI) + bilan complément + VHC + cryo obligatoire', desc:'C3/C4 ↓ · SN impur · VHC/cryo possible · Dédoublement MBG (train de rails)', traitement:'VHC: antiviraux directs · Cryo: rituximab · C3G: mycophénolate ± éculizumab'},
             'diabetique': {label:'Néphropathie Diabétique', color:'#b45309', biopsie:'Évitée si tableau typique (DM >10 ans, rétinopathie, évolution graduelle). Biopsie si atypique.', desc:'DM type 1 ou 2 · Progression Mogensen (microalb → macroalb → IR) · Épaississement MBG + nœuds de Kimmelstiel-Wilson', traitement:'IECA/ARA · iSGLT2 (protection rénale indépendante) · GLP-1 RA · HbA1c ≤7%'},
             'amylose': {label:'Amylose AL / AA', color:'#64748b', biopsie:'Biopsie graisse périombilicale (sensibilité 85%) ou biopsie rénale · Rouge Congo + bire-fringence verte', desc:'Adulte ≥50 ans · Pic M / kappa/lambda · Myélome possible · Atteinte multi-organe (cœur, foie)', traitement:'AL: chimiothérapie ± autogreffe · AA: traiter la maladie sous-jacente'},
-            'lgm_drug': {label:'LGM / GNFS Secondaire (médicaments)', color:'#dc2626', biopsie:'Biopsie si doute. Retrait médicament d'abord.', desc:'AINS (LGM + NIA), lithium (GNFS), D-pénicillamine (LGM/NM), pamidronate (GNFS collaposant)', traitement:'Arrêt médicament → rémission usuelle · Stéroïdes si persistance'},
+            'lgm_drug': {label:'LGM / GNFS Secondaire (médicaments)', color:'#dc2626', biopsie:'Biopsie si doute. Retrait médicament d\'abord.', desc:'AINS (LGM + NIA), lithium (GNFS), D-pénicillamine (LGM/NM), pamidronate (GNFS collaposant)', traitement:'Arrêt médicament → rémission usuelle · Stéroïdes si persistance'},
             'les_neph': {label:'Néphrite Lupique (LES)', color:'#9333ea', biopsie:'Biopsie obligatoire pour classification ISN/RPS (classse I-VI) → guide traitement', desc:'LES · ANA/anti-dsDNA + · C3/C4 ↓ · SN impur fréquent (classe IV)', traitement:'Hydroxychloroquine · Classe III/IV: mycophénolate + stéroïdes · Classe V: IECA + mycophénolate si protéinurie >3g'}
           };
           var scoring = {};
@@ -15785,361 +15777,38 @@ function dkRenal(view) {
       </div>
     </div>
 
-    <div class="section" id="sec-diabete">
+        <div class="section" id="sec-diabete">
       <div class="section-header">
-        <div class="section-accent" style="background:var(--yellow)">🦋</div>
-        <div class="section-title"><h1>Diabète & Hypoglycémiants</h1><div class="breadcrumb">Endocrinologie <span class="breadcrumb-sep">·</span> Section 25</div></div>
-      </div>
-      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
-        <button onclick="document.getElementById('diab-1').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📌 Critères Dx</button>
-        <button onclick="document.getElementById('diab-2').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🧬 Physiopath.</button>
-        <button onclick="document.getElementById('diab-3').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🩺 Évaluation</button>
-        <button onclick="document.getElementById('diab-4').scrollIntoView({behavior:'smooth'})" style="background:#0a7a4e;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">💊 Algorithme DT2</button>
-        <button onclick="document.getElementById('diab-5').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📅 Surveillance</button>
-        <button onclick="document.getElementById('diab-6').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">💊 Classes hypoglycémiants</button>
-        <button onclick="document.getElementById('diab-7').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🧪 Insulines</button>
-        <button onclick="document.getElementById('diab-8').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">💉 Insulines basales</button>
-        <button onclick="document.getElementById('diab-9').scrollIntoView({behavior:'smooth'})" style="background:#7b3fa0;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">💊 iDPP4</button>
-        <button onclick="document.getElementById('diab-10').scrollIntoView({behavior:'smooth'})" style="background:#7b3fa0;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">💊 AR-GLP1</button>
-        <button onclick="document.getElementById('diab-11').scrollIntoView({behavior:'smooth'})" style="background:#c0392b;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔴 DT1 & LADA</button>
-        <button onclick="document.getElementById('diab-12').scrollIntoView({behavior:'smooth'})" style="background:#c0392b;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🚨 Urgences métabo.</button>
-      </div>
-      <div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:20px;">
-        <div style="flex:1;min-width:100px;background:#FEE2E2;border-radius:10px;padding:12px;text-align:center;"><div style="font-size:16px;font-weight:800;color:#c0392b;">HbA1c ≥ 6,5 %</div><div style="font-size:11px;color:#555;margin-top:4px;">Critère diagnostique DT2</div></div>
-        <div style="flex:1;min-width:100px;background:#FEF9C3;border-radius:10px;padding:12px;text-align:center;"><div style="font-size:16px;font-weight:800;color:#92400e;">Glycémie ≥ 11,1</div><div style="font-size:11px;color:#555;margin-top:4px;">Au hasard (mmol/L) + sx</div></div>
-        <div style="flex:1;min-width:100px;background:#DCFCE7;border-radius:10px;padding:12px;text-align:center;"><div style="font-size:16px;font-weight:800;color:#0a7a4e;">Metformine</div><div style="font-size:11px;color:#555;margin-top:4px;">1re ligne DT2 (si tolérée)</div></div>
-        <div style="flex:1;min-width:100px;background:#EEF2FF;border-radius:10px;padding:12px;text-align:center;"><div style="font-size:16px;font-weight:800;color:#1C3F8F;">&lt; 7 %</div><div style="font-size:11px;color:#555;margin-top:4px;">Cible HbA1c standard</div></div>
-      </div>
-      <div class="block def">
-        <div class="block-title" id="diab-1"><span class="tag">📌 Critères diagnostiques — CDA 2018 (confirmer ×2 si asymptomatique)</span></div>
-        <table>
-          <thead><tr><th>Test</th><th>Diabète</th><th>Prédiabète</th></tr></thead>
-          <tbody>
-            <tr><td>Glycémie à jeun</td><td>≥ 7,0 mmol/L</td><td>6,1–6,9</td></tr>
-            <tr><td>HbA1c</td><td>≥ 6,5 %</td><td>6,0–6,4 %</td></tr>
-            <tr><td>Glycémie 2h HGPO</td><td>≥ 11,1 mmol/L</td><td>7,8–11,0</td></tr>
-            <tr><td>Aléatoire + Sx</td><td>≥ 11,1 mmol/L</td><td>—</td></tr>
-          </tbody>
-        </table>
-        <div class="stat-row" style="margin-top:10px;">
-          <div class="stat-card blue"><div class="stat-num">≤ 7 %</div><div class="stat-label">Cible HbA1c (plupart)</div></div>
-          <div class="stat-card ink"><div class="stat-num">≤ 8 %</div><div class="stat-label">Fragile/âgé/comorbidités</div></div>
-          <div class="stat-card yellow"><div class="stat-num">≤ 6,5 %</div><div class="stat-label">Grossesse DT1/DT2</div></div>
-        </div>
-        <div class="highlight cream" style="margin-top:8px;font-size:13px;"><strong>Cibles glycémiques :</strong> À jeun 4–7 mmol/L · Post-prandial 5–10 mmol/L (5–8 si HbA1c non atteint)</div>
-      </div>
-
-      <div class="block para" style="border-left-color:var(--blue);">
-        <div class="block-title" id="diab-2"><span class="tag">🧬 Physiopathologie brève</span></div>
-        <p class="content-text"><strong>DT1 — destruction auto-immune :</strong> destruction progressive des cellules β pancréatiques (auto-anticorps anti-GAD65, anti-IA2, anti-insuline, anti-ZnT8) → déficit <strong>absolu</strong> en insuline → les tissus insulino-dépendants (muscle, tissu adipeux) ne captent plus le glucose → hyperglycémie chronique et insulinodépendance d'emblée. Pic bimodal (enfance + adolescence) · concordance chez les jumeaux ≈ 50 %.</p>
-        <p class="content-text" style="margin-top:8px;"><strong>DT2 — continuum pathogénique :</strong> résistance insulinique (muscle, foie, tissu adipeux) → hyperinsulinémie compensatrice (cellules β en sursollicitation) → décompensation progressive des cellules β (glucotoxicité, lipotoxicité, stress du réticulum endoplasmique, inflammation locale) → hyperglycémie chronique → prédiabète → DT2 clinique, avec déficit <strong>relatif</strong> en insuline. Phase pré-diagnostique de <strong>4–7 ans</strong> en moyenne — environ <strong>⅓ des diabétiques</strong> sont non diagnostiqués et jusqu'à <strong>50 %</strong> présentent déjà des complications au moment du diagnostic.</p>
-        <p class="content-text" style="margin-top:8px;"><strong>Mécanisme des symptômes cardinaux :</strong> polyurie (glycosurie au-delà du seuil rénal ≈ 10 mmol/L → diurèse osmotique), polydipsie (déshydratation + ↑ osmolalité plasmatique → activation du centre de la soif), polyphagie (cellules en « famine » malgré l'hyperglycémie — glucose non capté) et perte de poids (catabolisme des graisses et des protéines).</p>
-      </div>
-
-      <div class="block clin">
-        <div class="block-title" id="diab-3"><span class="tag">🩺 Évaluation initiale — Anamnèse & examen physique</span></div>
-        <p class="content-text" style="margin-bottom:8px;"><strong>Anamnèse — surtout rechercher :</strong></p>
-        <div class="flag-list">
-          <div class="flag-item"><span class="flag-dot ink"></span><span>Symptômes cardinaux : polyurie, polydipsie, polyphagie, perte de poids, fatigue, vision floue — <strong>DT1</strong> : début brutal (acidocétose inaugurale possible) · <strong>DT2</strong> : insidieux, souvent découvert par une complication</span></div>
-          <div class="flag-item"><span class="flag-dot red"></span><span>🚨 Red flags DT1/LADA chez l'adulte : IMC normal, cétones positives, ATCD auto-immun personnel/familial, âge &lt; 50 ans</span></div>
-          <div class="flag-item"><span class="flag-dot blue"></span><span>Facteurs de risque DT2 : âge ≥ 40 ans, origine non blanche, statut socioéconomique faible, ATCD familial 1er degré, ATCD glycémiques (prédiabète, diabète gestationnel), comorbidités associées (acanthosis nigricans, stéatose hépatique non alcoolique, SAHOS, goutte)</span></div>
-          <div class="flag-item"><span class="flag-dot ink"></span><span>Médicaments à risque hyperglycémiant : corticostéroïdes, thiazidiques, antipsychotiques atypiques, statines</span></div>
-        </div>
-        <p class="content-text" style="margin:12px 0 8px;"><strong>Examen physique :</strong></p>
-        <div class="flag-list">
-          <div class="flag-item"><span class="flag-dot ink"></span><span>Poids, IMC, tour de taille · signes cutanés d'insulinorésistance (acanthosis nigricans)</span></div>
-          <div class="flag-item"><span class="flag-dot blue"></span><span>Dépistage des complications : fond d'œil (rétinopathie), monofilament + réflexes (neuropathie), indice tibio-brachial + examen des pieds (maladie artérielle périphérique), recherche d'albuminurie (néphropathie)</span></div>
-          <div class="flag-item"><span class="flag-dot red"></span><span>🚨 Signes d'urgence métabolique : respiration de Kussmaul + odeur fruitée (acidocétose), altération de l'état de conscience (état hyperosmolaire) → glycémie capillaire stat</span></div>
+        <div class="section-accent" style="background:linear-gradient(135deg,#1C3F8F,#2980b9);"></div>
+        <div>
+          <div class="section-tag">🦋 Endocrinologie</div>
+          <h1 class="section-title">Diabète Mellitus</h1>
+          <div class="breadcrumb">Endocrinologie <span class="breadcrumb-sep">·</span> Section 25</div>
         </div>
       </div>
 
-      <div class="block rx">
-        <div class="block-title" id="diab-4"><span class="tag">💊 Algorithme DT2 — CDA 2020 (centré sur comorbidités)</span></div>
-        <div class="key-fact blue" style="margin-bottom:8px;">Traiter les comorbidités EN PRIORITÉ — pas juste l'HbA1c</div>
-        <div class="accordion">
-          <div class="accordion-item open">
-            <div class="accordion-header">Sans comorbidité CV/rénale — HbA1c &lt; 8,5 %
-              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-            </div>
-            <div class="accordion-body"><span class="drug-badge line1">Metformine</span> + mode de vie · Titrer 500 mg/j → 2000 mg/j · Suspendre SADMAN si IRA<br><span class="drug-badge warn">Ajustement rénal : max 1000 mg/j si DFGe 30–44 · max 500 mg/j si DFGe 15–29</span> · <span class="drug-badge ci">CI : DFGe &lt; 15</span></div>
-          </div>
-          <div class="accordion-item">
-            <div class="accordion-header">MCVAS établie / Haut risque CV
-              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-            </div>
-            <div class="accordion-body">
-              <span class="drug-badge line1">iSGLT-2</span> (empagliflozine 10 mg / dapagliflozine 10 mg) — ↓ 14 % mortalité CV (EMPA-REG/CANVAS)<br>
-              <span class="drug-badge line1">AR-GLP1</span> (sémaglutide SC 0,25→0,5→1 mg/sem) — ↓ 26 % mortalité CV (LEADER/SUSTAIN-6)<br>
-              Ajouter à la Metformine · DFGe min : iSGLT-2 &gt; 20 · Sémaglutide &gt; 15
-            </div>
-          </div>
-          <div class="accordion-item">
-            <div class="accordion-header">Néphropathie diabétique (Albuminurie ≥ 30 mg/g)
-              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-            </div>
-            <div class="accordion-body">
-              <span class="drug-badge line1">IECA/ARA</span> (1re ligne neuroprotection) + <span class="drug-badge line1">iSGLT-2</span> + <span class="drug-badge warn">Finérénone</span> (DFGe ≥ 25 + albuminurie ≥ 300)<br>
-              Cible TA &lt; 130/80 · Suivi RAC + Créatinine q3–6 mois
-            </div>
-          </div>
-          <div class="accordion-item">
-            <div class="accordion-header">IC + DT2
-              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-            </div>
-            <div class="accordion-body">
-              <span class="drug-badge line1">iSGLT-2</span> en priorité — ↓ hospitalisations IC 30–35 %<br>
-              <span class="drug-badge warn">AR-GLP1 → neutres sur IC (pas de bénéfice IC démontrés)</span><br>
-              <span class="drug-badge ci">TZD (pioglitazone) — CI si IC classe III–IV</span>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <div class="accordion-header">Obésité + DT2 — Perte de poids prioritaire
-              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-            </div>
-            <div class="accordion-body">
-              <span class="drug-badge line1">Sémaglutide PO (Rybelsus) 3→7→14 mg DIE</span> ou SC (Ozempic) · ↓ 15 % poids<br>
-              <span class="drug-badge line1">Tirzepatide (Mounjaro)</span> GIP/GLP-1 — ↓ 22 % poids (SURMOUNT) · Indiqué DT2 + IMC &gt; 30<br>
-              <span class="drug-badge line2">Dulaglutide (Trulicity)</span> 0,75→1,5 mg SC q sem
-            </div>
-          </div>
-          <div class="accordion-item">
-            <div class="accordion-header">Si HbA1c non contrôlé — Autres agents
-              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-            </div>
-            <div class="accordion-body">
-              <span class="drug-badge line2">iDPP-4 (Sitagliptine 100 mg)</span> — Neutres sur IC · ↓ HbA1c 0,7 % · Pas de prise poids · Utilisables jusqu'à DFGe 15<br>
-              <span class="drug-badge line3">Sulfonylurées (Glyburide → éviter · Gliclazide/Glimpiride meilleurs)</span> — Hypoglycémie +++ · Prise de poids · Vieux médicaments<br>
-              <span class="drug-badge line3">Insuline</span> si HbA1c très élevé ou intolérance aux agents oraux
-            </div>
-          </div>
+      <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px;">
+        <button onclick="document.getElementById('nd-1').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🧬 Physiopath</button>
+        <button onclick="document.getElementById('nd-2').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📌 Critères Dx</button>
+        <button onclick="document.getElementById('nd-3').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🩺 Présentation</button>
+        <button onclick="document.getElementById('nd-4').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔬 Évaluation & Bilan</button>
+        <button onclick="document.getElementById('nd-5').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🧪 HbA1c</button>
+        <button onclick="document.getElementById('nd-6').scrollIntoView({behavior:'smooth'})" style="background:#0a7a4e;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🎯 Objectifs</button>
+        <button onclick="document.getElementById('nd-7').scrollIntoView({behavior:'smooth'})" style="background:#0a7a4e;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">💊 Traitement</button>
+        <button onclick="document.getElementById('nd-8').scrollIntoView({behavior:'smooth'})" style="background:#7b3fa0;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🗂️ Autres diabètes</button>
+        <button onclick="document.getElementById('nd-9').scrollIntoView({behavior:'smooth'})" style="background:#c0392b;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🚨 Complications</button>
+        <button onclick="document.getElementById('nd-10').scrollIntoView({behavior:'smooth'})" style="background:#7b3fa0;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🧠 Comorbidités</button>
+      </div>
+
+      <div class="block para" style="border-left-color:#1C3F8F;">
+        <div class="block-title" id="nd-1"><span class="tag">🧬 1. Physiopathologie DT1 & DT2</span></div>
+                <div style="display:flex;gap:6px;flex-wrap:wrap;margin:8px 0 12px;">
+          <button onclick="showPanel('pnd1a','pnd1a0',3)" data-panel="pnd1a0" style="background:#1C3F8F;color:#fff;border:1.5px solid #1C3F8F;border-radius:20px;padding:5px 13px;cursor:pointer;font-size:11.5px;font-weight:600;transition:.15s;">DT1 — Destruction Auto-immune & Stades 0–4</button>
+          <button onclick="showPanel('pnd1a','pnd1a1',3)" data-panel="pnd1a1" style="background:var(--cream2);color:var(--ink);border:1.5px solid #1C3F8F;border-radius:20px;padding:5px 13px;cursor:pointer;font-size:11.5px;font-weight:600;transition:.15s;">DT2 — Résistance Insulinique & Octet de DeFronzo</button>
+          <button onclick="showPanel('pnd1a','pnd1a2',3)" data-panel="pnd1a2" style="background:var(--cream2);color:var(--ink);border:1.5px solid #1C3F8F;border-radius:20px;padding:5px 13px;cursor:pointer;font-size:11.5px;font-weight:600;transition:.15s;">Physiopathologie comparative DT1 vs DT2</button>
         </div>
-      </div>
-
-      <div class="block clin">
-        <div class="block-title" id="diab-5"><span class="tag">📅 Dépistage & Surveillance des complications — Calendrier IPS</span></div>
-        <table>
-          <thead><tr><th>Examen / Test</th><th>Fréquence</th><th>Cible / Action si anormal</th></tr></thead>
-          <tbody>
-            <tr><td><strong>HbA1c</strong></td><td>q3 mois si non contrôlé · q6 mois si stable</td><td>≤ 7 % (≤ 6,5 % si grossesse · ≤ 8 % si fragile/âgé)</td></tr>
-            <tr><td><strong>Glycémie à jeun</strong></td><td>Selon suivi (ASG ou FreeStyle Libre)</td><td>4–7 mmol/L à jeun · 5–10 mmol/L 2h post-prandial</td></tr>
-            <tr><td><strong>RAC urinaire (UACR)</strong></td><td>Annuel</td><td>&lt; 2 mg/mmol N · 2–20 microalbuminurie · &gt; 20 macroalbuminurie → IECA/ARA + iSGLT2</td></tr>
-            <tr><td><strong>Créatinine + DFGe</strong></td><td>Annuel (ou q3–6 mois si IRC)</td><td>Détecter néphropathie progressive</td></tr>
-            <tr><td><strong>Bilan lipidique</strong></td><td>Au diagnostic · q1–2 ans si stable</td><td>Cible LDL &lt; 2,0 (ou &lt; 1,8 si MCVAS) · Statine si ≥ 40 ans ou risque élevé</td></tr>
-            <tr><td><strong>Fond d'œil / Rétinopathie</strong></td><td>DT1 : 5 ans post-Dx · DT2 : au diagnostic · puis annuel si facteurs de risque, q2 ans si stable</td><td>Référence ophtalmologie si rétinopathie</td></tr>
-            <tr><td><strong>Neuropathie — Monofilament + VPT</strong></td><td>Annuel</td><td>Monofilament 10g (5 points) · VPT (diapason) · Réflexes · ↓ perception → éducation soins des pieds</td></tr>
-            <tr><td><strong>Examen des pieds complet</strong></td><td>Annuel (+ chaque visite si haut risque)</td><td>Ulcère/plaie → référence podiatrie urgente</td></tr>
-            <tr><td><strong>TA</strong></td><td>Chaque visite</td><td>Cible &lt; 130/80 · IECA/ARA 1re ligne si albuminurie</td></tr>
-            <tr><td><strong>Poids / IMC / Tour de taille</strong></td><td>Chaque visite</td><td>Obésité abdominale → GLP-1/iSGLT2 en priorité</td></tr>
-            <tr><td><strong>Dépistage DT2 — INESSS/CDA</strong></td><td>q3 ans si ≥ 40 ans · q1 an si ≥ 1 FdR</td><td>FdR : obésité · ethnicité non-blanche · ATCD familial · prédiabète · DG · acanthosis nigricans · SOPK</td></tr>
-          </tbody>
-        </table>
-        <div class="note" style="margin-top:8px;">📲 <strong>CGM (FreeStyle Libre / Dexcom) :</strong> Remboursé RAMQ si DT1 ou DT2 sous insuline bolus · Cible TIR (Time in Range) &gt; 70 % entre 3,9–10 mmol/L · TAR &lt; 25 % · TBR &lt; 4 %</div>
-      </div>
-
-      <div class="block para">
-        <div class="block-title" id="diab-6"><span class="tag">💊 Classes d'hypoglycémiants — Mécanismes, EI & Surveillance</span></div>
-        <table style="font-size:12.5px;">
-          <thead><tr><th>Classe</th><th>Mécanisme</th><th>↓ HbA1c</th><th>EI clés</th><th>Surveillance / CI</th></tr></thead>
-          <tbody>
-            <tr><td><strong>Metformine</strong></td><td>↓ prod. hépatique glucose + ↑ sensibilité insulinique</td><td>1–1,5 %</td><td>GI (nausées, diarrhée · donner avec repas) · MALA (rare)</td><td>Créatinine/DFGe avant + annuel · Max 1000 mg/j si DFGe 30–44 · CI &lt; 15 · SADMAN</td></tr>
-            <tr><td><strong>iSGLT2</strong></td><td>↓ réabsorption glucose tubule prox. → glucosurie</td><td>0,5–1 %</td><td>Infections urogénitales · polyurie · ECDKA (eugly DKA) · jambes de Fournier (rare)</td><td>DFGe avant (CI &lt; 20 nephro, &lt; 30 glycémique) · Suspendre 3–5j péri-op · SADMAN</td></tr>
-            <tr><td><strong>AR-GLP1</strong></td><td>↑ sécrétion insuline glucose-dépendante + ↓ glucagon + ↓ appétit</td><td>1–1,5 %</td><td>Nausées/vomissements/diarrhée (↓ si titration lente) · Pancréatite (rare)</td><td>CI si ATCD de carcinome médullaire thyroïde / NEM2 · CI si ATCD pancréatite sévère</td></tr>
-            <tr><td><strong>iDPP4</strong></td><td>↓ dégradation GLP-1 et GIP endogènes</td><td>0,5–0,8 %</td><td>Nasopharyngite · arthralgie · Pancréatite (rare) · Neutres IC</td><td>Saxagliptin/alogliptin : CI si IC classe III–IV · Sitagliptin utilisable jusqu'à DFGe 15 (dose réduite)</td></tr>
-            <tr><td><strong>Sulfonylurées</strong></td><td>Stimule sécrétion insuline (fermeture canal K⁺-ATP β-cell)</td><td>1–1,5 %</td><td><strong>Hypoglycémie +++</strong> · Prise de poids</td><td>Éviter Glyburide (t½ long, hypoglycémie prolongée) · Préférer Gliclazide/Glimpiride · CI si DFGe &lt; 30</td></tr>
-            <tr><td><strong>TZD (Pioglitazone)</strong></td><td>↑ sensibilité insulinique (PPARγ)</td><td>0,5–1 %</td><td>Rétention hydrique · Prise de poids · Fractures osseuses · ↑ risque cancer vésicale</td><td><span class="drug-badge ci">CI si IC classe III–IV</span> · Oedèmes → évaluer IC</td></tr>
-            <tr><td><strong>Insuline basale</strong></td><td>Remplacement ou supplément du déficit insulinique</td><td>Variable</td><td><strong>Hypoglycémie</strong> · Prise de poids · Injection site reactions</td><td>Débuter 10 U SC coucher · ↑ 2 U q2j si glycémie à jeun &gt; 7 · Cible 4–7</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="block para">
-        <div class="block-title" id="diab-7"><span class="tag">🧪 Insulines — Tableau des types</span></div>
-        <table>
-          <thead><tr><th>Type</th><th>Début</th><th>Pic</th><th>Durée</th><th>Exemples</th></tr></thead>
-          <tbody>
-            <tr><td><span class="drug-badge line1">Ultra-rapide (Bolus)</span></td><td>5–10 min</td><td>30–60 min</td><td>2–4h</td><td>Fiasp · Lispro · Aspart · Glulisine</td></tr>
-            <tr><td><span class="drug-badge line2">Rapide (Bolus)</span></td><td>30 min</td><td>2–3h</td><td>5–8h</td><td>Humulin R · Novolin Toronto</td></tr>
-            <tr><td><span class="drug-badge line1">Longue durée (Basale)</span></td><td>1–2h</td><td>Pas de pic</td><td>24h (Glargine U-100/300) · 42h (Dégludec)</td><td>Lantus · Toujeo · Tresiba</td></tr>
-            <tr><td>Intermédiaire</td><td>1–2h</td><td>6–8h</td><td>12–18h</td><td>NPH · Humulin N</td></tr>
-          </tbody>
-        </table>
-        <div class="highlight cream" style="margin-top:8px;font-size:13px;"><strong>Titration insuline basale :</strong> Commencer 10 U SC au coucher → ↑ 2 U q2 jours si glycémie à jeun &gt; 7 · Hypoglycémie nocturne → ↓ 10–20 % · Cible 4–7 mmol/L</div>
-      </div>
-
-      <div class="block para">
-        <div class="block-title" id="diab-8"><span class="tag">💉 Insulines basales — Détail RAMQ & Propriétés</span></div>
-        <table style="font-size:12.5px;">
-          <thead><tr><th>Insuline (Marque)</th><th>Début</th><th>Pic</th><th>Durée</th><th>RAMQ</th></tr></thead>
-          <tbody>
-            <tr><td><strong>Glargine U-100 (Lantus®)</strong></td><td>90 min</td><td>Aucun</td><td>24 h</td><td><span class="drug-badge ci">❌ Non remboursée</span></td></tr>
-            <tr><td><strong>Glargine biosimilaire U-100 (Basaglar®)</strong></td><td>90 min</td><td>Aucun</td><td>24 h</td><td><span class="drug-badge line1">✅ Remboursée</span></td></tr>
-            <tr><td><strong>Détemir (Levemir®)</strong></td><td>90 min</td><td>Aucun</td><td>16–24 h</td><td><span class="drug-badge line1">✅</span></td></tr>
-            <tr><td><strong>Glargine U-300 (Toujeo®)</strong></td><td>90 min</td><td>Aucun</td><td>&gt; 30 h</td><td><span class="drug-badge line1">✅ RAMQ d'emblée</span></td></tr>
-            <tr><td><strong>Dégludec U-100/U-200 (Tresiba®)</strong></td><td>90 min</td><td>Aucun</td><td>~ 42 h</td><td><span class="drug-badge line1">✅</span></td></tr>
-            <tr><td><strong>Icodec (Awiqli®) — hebdomadaire</strong></td><td>15–18 h</td><td>2e–4e jour</td><td>~ 7 jours</td><td>Nouveau — vérifier couverture</td></tr>
-            <tr style="background:var(--cream2)"><td colspan="5"><em>Insulines bolus</em></td></tr>
-            <tr><td><strong>Ultra-rapides (Lispro U-200 Humalog®, Lispro biosim. Admelog®)</strong></td><td>5–10 min</td><td>30–60 min</td><td>2–4 h</td><td><span class="drug-badge line1">✅ Humalog U-200 · Admelog</span></td></tr>
-            <tr><td><strong>Rapides — Insuline régulière (Humulin®-R, Novolin® ge Toronto)</strong></td><td>30 min</td><td>2–3 h</td><td>6,5 h</td><td><span class="drug-badge line1">✅</span></td></tr>
-          </tbody>
-        </table>
-        <div class="accordion" style="margin-top:10px;">
-          <div class="accordion-item">
-            <div class="accordion-header">Conversion entre insulines basales
-              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-            </div>
-            <div class="accordion-body">
-              <table style="font-size:12px;">
-                <thead><tr><th>De → Vers</th><th>Dose</th><th>Note</th></tr></thead>
-                <tbody>
-                  <tr><td>NPH → Glargine/Détemir DIE</td><td>Dose totale NPH × <strong>0,8</strong> DIE</td><td>↓ 20 % pour éviter hypo</td></tr>
-                  <tr><td>Glargine U-100 → Basaglar U-100</td><td><strong>Même dose</strong></td><td>Biosimilaire — équivalence 1:1</td></tr>
-                  <tr><td>Glargine U-100 → Toujeo U-300</td><td><strong>Même dose</strong></td><td>Volume 1/3 → profil plus stable, ↓ hypo nocturnes</td></tr>
-                  <tr><td>Glargine U-100 DIE → Dégludec U-100/200</td><td>DT2 : même dose · DT1 : ↓ 3–20 %</td><td>Ne pas titrer &lt; q3–4j (stabilité progressive)</td></tr>
-                  <tr><td>Glargine U-100 BID → Dégludec DIE</td><td>Dose totale × <strong>0,80</strong> DIE</td><td>↓ 20 %</td></tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="block para">
-        <div class="block-title" id="diab-9"><span class="tag">💊 iDPP4 — Comparaison pharmacologique</span></div>
-        <table style="font-size:12px;">
-          <thead><tr><th>Caractéristique</th><th>Alogliptine (Nesina®)</th><th>Linagliptine (Trajenta®)</th><th>Saxagliptine (Onglyza®)</th><th>Sitagliptine (Januvia®)</th></tr></thead>
-          <tbody>
-            <tr><td>T½ (h)</td><td>12–21</td><td>10–40</td><td>2–4 (mère) / 3–7 (métabolite)</td><td>8–24</td></tr>
-            <tr><td>Posologie standard</td><td>25 mg die</td><td>5 mg die</td><td>5 mg die</td><td>100 mg die</td></tr>
-            <tr><td>Ajustement rénal</td><td>DFGe 30–60 : 12,5 mg · &lt;30 : 6,25 mg</td><td>Aucun (élim. biliaire)</td><td>DFGe &lt; 50 : 2,5 mg</td><td>DFGe 30–49 : 50 mg · &lt;30 : 25 mg</td></tr>
-            <tr><td>RAMQ</td><td>EN148/149/167</td><td>EN148/167</td><td>EN148/149</td><td>EN148/167</td></tr>
-            <tr><td>Particularité</td><td>CI si IC III–IV</td><td>Seul sans ajust. rénal</td><td><span class="drug-badge ci">↑ hospit. IC → éviter si IC</span></td><td>Jusqu'à DFGe 15 (25 mg)</td></tr>
-          </tbody>
-        </table>
-        <div class="highlight yellow" style="margin-top:6px;font-size:12.5px;"><strong>Combos Metformine :</strong> Janumet (Sitagliptine+MF) · Komboglyze (Saxagliptine+MF) · Jentadueto (Linagliptine+MF) · Kazano (Alogliptine+MF)</div>
-      </div>
-
-      <div class="block para">
-        <div class="block-title" id="diab-10"><span class="tag">💊 AR-GLP1 — Comparaison & Seuils rénaux RAMQ</span></div>
-        <table style="font-size:12px;">
-          <thead><tr><th>Médicament</th><th>Dose / Fréquence</th><th>Perte poids</th><th>DFGe min.</th><th>RAMQ</th></tr></thead>
-          <tbody>
-            <tr><td><strong>Liraglutide (Victoza®)</strong></td><td>0,6 → 1,2 → 1,8 mg SC die</td><td>~ 3–5 kg</td><td>≥ 15</td><td>Médicament d'exception</td></tr>
-            <tr><td><strong>Sémaglutide SC (Ozempic®)</strong></td><td>0,25 → 0,5 → 1 mg SC q sem</td><td>5–8 kg</td><td>≥ 15</td><td>Avec Metformine + sulfonylurée</td></tr>
-            <tr><td><strong>Dulaglutide (Trulicity®)</strong></td><td>0,75 → 1,5 mg SC q sem</td><td>~ 3 kg</td><td>≥ 15</td><td>✅</td></tr>
-            <tr><td><strong>Sémaglutide oral (Rybelsus®)</strong></td><td>3 → 7 → 14 mg PO die (à jeun)</td><td>4–6 kg</td><td>≥ 15</td><td>Peu d'exp. &lt;30</td></tr>
-            <tr><td><strong>Tirzepatide (Mounjaro®) — GLP-1+GIP</strong></td><td>2,5 → 5 → 7,5 → 10 → 15 mg q sem</td><td>25–27 lbs (15 mg)</td><td>≥ 15</td><td>Vérifier</td></tr>
-          </tbody>
-        </table>
-        <div class="key-fact yellow" style="margin-top:6px;"><strong>Rybelsus (sémaglutide oral) — administration :</strong> à jeun, avec 120 mL eau max · attendre 30 min avant manger/médicament · SNAC facilite absorption trans-muqueuse</div>
-      </div>
-
-      <div class="block para" style="border-left-color:var(--red);">
-        <div class="block-title" id="diab-11"><span class="tag">🔴 DT1 & LADA — Gestion spécifique</span></div>
-        <div class="accordion">
-          <div class="accordion-item open">
-            <div class="accordion-header">Diagnostic DT1 / LADA
-              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-            </div>
-            <div class="accordion-body">
-              <strong>Auto-anticorps (doser si DT2 atypique chez &lt; 50 ans) :</strong><br>
-              <span class="drug-badge line1">Anti-GAD65</span> <span class="drug-badge line1">Anti-IA2</span> <span class="drug-badge line1">Anti-insuline (IAA)</span> <span class="drug-badge line1">Anti-ZnT8</span><br>
-              <strong>LADA (Latent Autoimmune Diabetes in Adults) :</strong> &gt; 30 ans · anti-GAD+ · progression plus lente vers l'insulinodépendance (mois–années) · souvent diagnostiqué comme DT2 initialement<br>
-              <div class="highlight yellow" style="margin-top:6px;font-size:12.5px;">🚨 Suspecter DT1/LADA si : IMC normal + DM non contrôlé + cétones + ATCD auto-immun familial/personnel (thyroïdite, vitiligo, maladie cœliaque)</div>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <div class="accordion-header">Insulinothérapie Basal-Bolus (BB) — Principe & Calcul
-              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-            </div>
-            <div class="accordion-body">
-              <strong>Dose totale quotidienne (DTQ) :</strong> 0,5–0,7 U/kg/j (débutant) · 50 % Basale + 50 % Bolus (divisé en 3 repas)<br>
-              <strong>Correction bolus :</strong> 1 U insuline ↓ glycémie de ~ (100/DTQ) mmol/L · Factor de correction individuel<br>
-              <strong>Rapport insuline/glucide (RIG) :</strong> 1 U pour ~ (500/DTQ) g de glucides<br>
-              <div class="highlight cream" style="margin-top:6px;font-size:12.5px;">🎯 CGM (FreeStyle Libre/Dexcom) : objectif TIR &gt; 70 % · TAR (hyperglycémie) &lt; 25 % · TBR (hypo) &lt; 4 %</div>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <div class="accordion-header">Diabète Gestationnel (DG) — Dépistage & Gestion
-              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-            </div>
-            <div class="accordion-body">
-              <strong>Dépistage universel :</strong> HGPO 75g à 24–28 sem (sauf si DM connu ou glycémie anormale précoce)<br>
-              <strong>Critères diagnostiques DG (CDA) :</strong> Jeûn ≥ 5,3 · 1h ≥ 10,6 · 2h ≥ 9,0 mmol/L (≥ 1 valeur suffit)<br>
-              <strong>Gestion :</strong> Mode de vie 1re ligne → si non contrôlé : Metformine (si ≥ 13 sem) · Insuline (RAMQ couvre en priorité)<br>
-              <strong>Cibles glycémiques DG :</strong> Jeûn &lt; 5,3 · 1h post-prandial &lt; 7,8 · 2h &lt; 6,7 mmol/L<br>
-              <strong>Suivi post-partum :</strong> HGPO 75g à 6–12 sem post-partum (dépistage DT2) · risque DT2 à vie 50 %
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="block flag">
-        <div class="block-title" id="diab-12"><span class="tag">🚨 Urgences métaboliques</span></div>
-        <div class="accordion">
-          <div class="accordion-item open">
-            <div class="accordion-header">DKA — Acidocétose Diabétique (surtout DT1)
-              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-            </div>
-            <div class="accordion-body">
-              Glc &gt; 14 + pH &lt; 7,3 + HCO₃ &lt; 15 + Corps cétoniques ++ · Respiration de Kussmaul · Douleur abdo<br>
-              <span class="drug-badge line1">Protocole : NS 1L/h × 2h → ½ NS selon glycémie → Insuline IV 0,1 U/kg/h (débuter si K⁺ ≥ 3,5)</span><br>
-              <span class="drug-badge ci">⚠️ Potassium &lt; 3,5 → Corriger AVANT insuline</span> (risque arythmie) · Ajouter K⁺ dans les solutés<br>
-              Critères résolution : pH &gt; 7,3 + HCO₃ &gt; 15 + Cétonurie négative → Transition insuline SC + manger
-            </div>
-          </div>
-          <div class="accordion-item">
-            <div class="accordion-header">HHS — État hyperglycémique hyperosmolaire (surtout DT2)
-              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-            </div>
-            <div class="accordion-body">
-              Glc &gt; 33 + pH ≥ 7,3 + HCO₃ ≥ 15 + Osm &gt; 320 + Déshydratation sévère<br>
-              Mortalité 5–15 % · Personnes âgées · Confusion/AEM<br>
-              Tx : Réhydratation massive NS + Insuline basse dose · Corriger Na⁺ lentement (risque myélinolyse)
-            </div>
-          </div>
-          <div class="accordion-item">
-            <div class="accordion-header">Hypoglycémie — Protocole 15-15
-              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-            </div>
-            <div class="accordion-body">
-              &lt; 3,9 mmol/L chez DT traité · Niveaux : Légère (conscient) → 15 g glucides PO · Attendre 15 min · Répéter si encore &lt; 3,9<br>
-              Sévère (inconscient) → D50W 25–50 mL IV OU Glucagon 1 mg IM/SC<br>
-              Sulfonylurées → risque prolongé · surveillance 24h · D10W IV en continu
-            </div>
-          </div>
-        </div>
-        <div class="flag-list" style="margin-top:10px;">
-          <div class="flag-item"><span class="fi-icon">💊</span><span><span class="drug-badge ci">iSGLT-2 + jeûne/chirurgie → ECDKA (DKA eugly) → Suspendre 3–5j avant chirurgie</span></span></div>
-          <div class="flag-item"><span class="fi-icon">🤰</span><span>DG : Metformine SI ≥ 13 sem · RAMQ couvre insuline en priorité · Cibles : jeun &lt; 5,3 · 1h &lt; 7,8 · 2h &lt; 6,7</span></div>
-        </div>
-      </div>
-
-        <!-- ── BLOCS ENRICHIS ── -->
-
-        <!-- diab-13 : Classification -->
-        <div class="block def" style="border-left-color:#1C3F8F;">
-          <div class="block-title" id="diab-13"><span class="tag">🗂️ 13. Classification Complète du Diabète</span></div>
-          <table style="font-size:12px;width:100%;margin:8px 0;">
-            <thead><tr><th>Type</th><th>Physiopath</th><th>Marqueurs</th><th>Âge typique</th></tr></thead>
-            <tbody>
-              <tr><td><strong>DT1a (classique)</strong></td><td>Destruction auto-immune des cellules β</td><td>Anti-GAD65+, anti-IA-2+, IAA+, anti-ZnT8+</td><td>Enfant/Ado</td></tr>
-              <tr><td><strong>DT1b (idiopathique)</strong></td><td>Non auto-immune, carence absolue insuline</td><td>Auto-Ac négatifs</td><td>Variable</td></tr>
-              <tr><td><strong>LADA</strong></td><td>DT1 à évolution lente (latente auto-immune adulte)</td><td>Anti-GAD65+ · C-peptide bas</td><td>≥ 30 ans</td></tr>
-              <tr><td><strong>DT2</strong></td><td>Résistance insulinique + déficit sécrétion β progressive</td><td>Auto-Ac négatifs · C-peptide normal/bas</td><td>≥ 40 ans (↓↓)</td></tr>
-              <tr><td><strong>MODY</strong></td><td>Monogénique (AD) : HNF-1α (MODY3), glucokinase (MODY2), etc.</td><td>Histoire familiale forte · Jeune · Ac négatifs</td><td>&lt; 25 ans</td></tr>
-              <tr><td><strong>KPD</strong></td><td>Kétose-Prone Diabetes — DT2 variant (surtout Afro-Américains)</td><td>DKA sans DT1 classique · Rémission possible</td><td>Variable</td></tr>
-              <tr><td><strong>DG</strong></td><td>Insuffisance sécrétion β sur résistance insulinique grossesse</td><td>HGPO 75g : jeun ≥ 5,1 · 1h ≥ 10,0 · 2h ≥ 8,5</td><td>24–28 sem G.</td></tr>
-            </tbody>
-          </table>
-          <div class="key-fact yellow">🔑 <strong>Diabètes secondaires — mnémo PIGE-MED :</strong>
-            <strong>P</strong>ancréatite/Pancréatectomie · <strong>I</strong>nfections (CMV, Coxsackie B) · <strong>G</strong>lucocorticoïdes & autres médicaments · <strong>E</strong>ndocrinopathies (Cushing, acromégalie, phéochromocytome, glucagonome) · <strong>M</strong>aladies génétiques (hémochromatose, Prader-Willi) · <strong>E</strong>ndocrinopathies ovariennes (SOPK) · <strong>D</strong>iabète mitochondrial
-          </div>
-        </div>
-
-        <!-- diab-14 : Physiopath DT1 -->
-        <div class="block para" style="border-left-color:#c0392b;">
-          <div class="block-title" id="diab-14"><span class="tag">🧬 14. Physiopathologie DT1 — Stades & Auto-Anticorps</span></div>
-          <p class="content-text">Destruction auto-immune des cellules β par lymphocytes T CD8+ cytotoxiques (présentation antigénique par HLADR3/DR4). La masse des cellules β décline sur des années avant l'hyperglycémie clinique.</p>
+        <div id="pnd1a0" style="display:block;">
+<p class="content-text">Destruction auto-immune des cellules β par lymphocytes T CD8+ cytotoxiques (présentation antigénique par HLADR3/DR4). La masse des cellules β décline sur des années avant l'hyperglycémie clinique.</p>
           <table style="font-size:12px;width:100%;margin:8px 0;">
             <thead><tr><th>Stade</th><th>Description</th><th>Glycémie</th><th>Clinique</th></tr></thead>
             <tbody>
@@ -16158,11 +15827,8 @@ function dkRenal(view) {
           </div>
           <div class="key-fact yellow">💊 <strong>LADA vs DT1 classique :</strong> Auto-Ac (+) + âge ≥ 30 ans + début insidieux sans DKA + C-peptide bas mais résiduel + parfois contrôlé initialement avec ADO → LADA (DT1 latente adulte). Traitement ultime = insuline.</div>
         </div>
-
-        <!-- diab-15 : Physiopath DT2 -->
-        <div class="block para" style="border-left-color:#e67e22;">
-          <div class="block-title" id="diab-15"><span class="tag">🧬 15. Physiopathologie DT2 — Résistance Insulinique & Octet de DeFronzo</span></div>
-          <p class="content-text">Le DT2 résulte de l'<strong>interaction</strong> entre résistance à l'insuline (foie, muscle, tissu adipeux) et incapacité progressive des cellules β à compenser. Plusieurs organes contribuent à l'hyperglycémie.</p>
+        <div id="pnd1a1" style="display:none;">
+<p class="content-text">Le DT2 résulte de l'<strong>interaction</strong> entre résistance à l'insuline (foie, muscle, tissu adipeux) et incapacité progressive des cellules β à compenser. Plusieurs organes contribuent à l'hyperglycémie.</p>
           <table style="font-size:12px;width:100%;margin:8px 0;">
             <thead><tr><th>#</th><th>Organe/Mécanisme</th><th>Anomalie DT2</th><th>Cible thérapeutique</th></tr></thead>
             <tbody>
@@ -16178,11 +15844,133 @@ function dkRenal(view) {
           </table>
           <div class="key-fact blue">🔑 <strong>Stades de décompensation β :</strong> Insulinorésistance → hyperinsulinisme compensatoire → épuisement β progressif → ↓ sécrétion insuline → DT2 clinique. La résistance précède de 10–15 ans le diagnostic.</div>
         </div>
+        <div id="pnd1a2" style="display:none;">
+<p class="content-text"><strong>DT1 — destruction auto-immune :</strong> destruction progressive des cellules β pancréatiques (auto-anticorps anti-GAD65, anti-IA2, anti-insuline, anti-ZnT8) → déficit <strong>absolu</strong> en insuline → les tissus insulino-dépendants (muscle, tissu adipeux) ne captent plus le glucose → hyperglycémie chronique et insulinodépendance d'emblée. Pic bimodal (enfance + adolescence) · concordance chez les jumeaux ≈ 50 %.</p>
+        <p class="content-text" style="margin-top:8px;"><strong>DT2 — continuum pathogénique :</strong> résistance insulinique (muscle, foie, tissu adipeux) → hyperinsulinémie compensatrice (cellules β en sursollicitation) → décompensation progressive des cellules β (glucotoxicité, lipotoxicité, stress du réticulum endoplasmique, inflammation locale) → hyperglycémie chronique → prédiabète → DT2 clinique, avec déficit <strong>relatif</strong> en insuline. Phase pré-diagnostique de <strong>4–7 ans</strong> en moyenne — environ <strong>⅓ des diabétiques</strong> sont non diagnostiqués et jusqu'à <strong>50 %</strong> présentent déjà des complications au moment du diagnostic.</p>
+        <p class="content-text" style="margin-top:8px;"><strong>Mécanisme des symptômes cardinaux :</strong> polyurie (glycosurie au-delà du seuil rénal ≈ 10 mmol/L → diurèse osmotique), polydipsie (déshydratation + ↑ osmolalité plasmatique → activation du centre de la soif), polyphagie (cellules en « famine » malgré l'hyperglycémie — glucose non capté) et perte de poids (catabolisme des graisses et des protéines).</p>
+        </div>
 
-        <!-- diab-16 : HbA1c -->
-        <div class="block def" style="border-left-color:#1C3F8F;">
-          <div class="block-title" id="diab-16"><span class="tag">🧪 16. HbA1c — Principes & Facteurs Altérants</span></div>
-          <table style="font-size:12px;width:100%;margin:8px 0;">
+      </div>
+
+      <div class="block def" style="border-left-color:#1C3F8F;">
+        <div class="block-title" id="nd-2"><span class="tag">📌 2. Critères Diagnostiques & Classification</span></div>
+<table>
+          <thead><tr><th>Test</th><th>Diabète</th><th>Prédiabète</th></tr></thead>
+          <tbody>
+            <tr><td>Glycémie à jeun</td><td>≥ 7,0 mmol/L</td><td>6,1–6,9</td></tr>
+            <tr><td>HbA1c</td><td>≥ 6,5 %</td><td>6,0–6,4 %</td></tr>
+            <tr><td>Glycémie 2h HGPO</td><td>≥ 11,1 mmol/L</td><td>7,8–11,0</td></tr>
+            <tr><td>Aléatoire + Sx</td><td>≥ 11,1 mmol/L</td><td>—</td></tr>
+          </tbody>
+        </table>
+        <div class="stat-row" style="margin-top:10px;">
+          <div class="stat-card blue"><div class="stat-num">≤ 7 %</div><div class="stat-label">Cible HbA1c (plupart)</div></div>
+          <div class="stat-card ink"><div class="stat-num">≤ 8 %</div><div class="stat-label">Fragile/âgé/comorbidités</div></div>
+          <div class="stat-card yellow"><div class="stat-num">≤ 6,5 %</div><div class="stat-label">Grossesse DT1/DT2</div></div>
+        </div>
+        <div class="highlight cream" style="margin-top:8px;font-size:13px;"><strong>Cibles glycémiques :</strong> À jeun 4–7 mmol/L · Post-prandial 5–10 mmol/L (5–8 si HbA1c non atteint)</div>
+        <table style="font-size:12px;width:100%;margin:8px 0;">
+            <thead><tr><th>Type</th><th>Physiopath</th><th>Marqueurs</th><th>Âge typique</th></tr></thead>
+            <tbody>
+              <tr><td><strong>DT1a (classique)</strong></td><td>Destruction auto-immune des cellules β</td><td>Anti-GAD65+, anti-IA-2+, IAA+, anti-ZnT8+</td><td>Enfant/Ado</td></tr>
+              <tr><td><strong>DT1b (idiopathique)</strong></td><td>Non auto-immune, carence absolue insuline</td><td>Auto-Ac négatifs</td><td>Variable</td></tr>
+              <tr><td><strong>LADA</strong></td><td>DT1 à évolution lente (latente auto-immune adulte)</td><td>Anti-GAD65+ · C-peptide bas</td><td>≥ 30 ans</td></tr>
+              <tr><td><strong>DT2</strong></td><td>Résistance insulinique + déficit sécrétion β progressive</td><td>Auto-Ac négatifs · C-peptide normal/bas</td><td>≥ 40 ans (↓↓)</td></tr>
+              <tr><td><strong>MODY</strong></td><td>Monogénique (AD) : HNF-1α (MODY3), glucokinase (MODY2), etc.</td><td>Histoire familiale forte · Jeune · Ac négatifs</td><td>&lt; 25 ans</td></tr>
+              <tr><td><strong>KPD</strong></td><td>Kétose-Prone Diabetes — DT2 variant (surtout Afro-Américains)</td><td>DKA sans DT1 classique · Rémission possible</td><td>Variable</td></tr>
+              <tr><td><strong>DG</strong></td><td>Insuffisance sécrétion β sur résistance insulinique grossesse</td><td>HGPO 75g : jeun ≥ 5,1 · 1h ≥ 10,0 · 2h ≥ 8,5</td><td>24–28 sem G.</td></tr>
+            </tbody>
+          </table>
+<div class="key-fact yellow">🔑 <strong>Diabètes secondaires — mnémo PIGE-MED :</strong>
+            <strong>P</strong>ancréatite/Pancréatectomie · <strong>I</strong>nfections (CMV, Coxsackie B) · <strong>G</strong>lucocorticoïdes & autres médicaments · <strong>E</strong>ndocrinopathies (Cushing, acromégalie, phéochromocytome, glucagonome) · <strong>M</strong>aladies génétiques (hémochromatose, Prader-Willi) · <strong>E</strong>ndocrinopathies ovariennes (SOPK) · <strong>D</strong>iabète mitochondrial
+          </div>
+
+      </div>
+
+      <div class="block para" style="border-left-color:#2980b9;">
+        <div class="block-title" id="nd-3"><span class="tag">🩺 3. Présentation Clinique</span></div>
+        <table style="font-size:12px;width:100%;margin:6px 0;">
+          <thead><tr><th>Aspect</th><th>DT1</th><th>DT2</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Début</strong></td><td>Brutal (jours–semaines) · DKA inaugural possible</td><td>Insidieux (années) · découvert souvent par bilan ou complication</td></tr>
+            <tr><td><strong>Symptômes 3P</strong></td><td>Polyurie, polydipsie, polyphagie prononcés · perte de poids rapide · fatigue intense</td><td>Souvent asymptomatique ou léger (fatigue, infections génitales récurrentes)</td></tr>
+            <tr><td><strong>Morphologie</strong></td><td>IMC normal ou bas</td><td>Surpoids/obésité (80 %)</td></tr>
+            <tr><td><strong>Autres Sx</strong></td><td>Vision floue · cétones (haleine fruitée) · crampes</td><td>Acanthosis nigricans · cicatrisation lente · neuropathie asymptomatique</td></tr>
+            <tr><td><strong>Âge typique</strong></td><td>&lt; 30 ans (pic enfance/ado) mais possible à tout âge</td><td>≥ 40 ans (↓ avec obésité jeune)</td></tr>
+          </tbody>
+        </table>
+        <div class="flag-list" style="margin-top:8px;">
+          <div class="flag-item"><span class="fi-icon">🚨</span><span><strong>Red flags DT1/LADA chez adulte :</strong> IMC normal + DM mal contrôlé + cétones + ATCD auto-immun (thyroïdite, vitiligo, cœliaque) + âge &lt; 50 ans → doser auto-Ac (anti-GAD65)</span></div>
+          <div class="flag-item"><span class="fi-icon">💊</span><span><strong>Médicaments hyperglycémiants :</strong> Corticostéroïdes · Thiazidiques · Antipsychotiques atypiques (olanzapine, clozapine) · Statines (faible) · Tacrolimus · Pentamidine</span></div>
+        </div>
+      </div>
+
+      <div class="block def" style="border-left-color:#1C3F8F;">
+        <div class="block-title" id="nd-4"><span class="tag">🔬 4. Évaluation Initiale & Bilan au Nouveau Diagnostic</span></div>
+                <div style="display:flex;gap:6px;flex-wrap:wrap;margin:8px 0 12px;">
+          <button onclick="showPanel('pnd4a','pnd4a0',3)" data-panel="pnd4a0" style="background:#1C3F8F;color:#fff;border:1.5px solid #1C3F8F;border-radius:20px;padding:5px 13px;cursor:pointer;font-size:11.5px;font-weight:600;transition:.15s;">Anamnèse & Examen physique</button>
+          <button onclick="showPanel('pnd4a','pnd4a1',3)" data-panel="pnd4a1" style="background:var(--cream2);color:var(--ink);border:1.5px solid #1C3F8F;border-radius:20px;padding:5px 13px;cursor:pointer;font-size:11.5px;font-weight:600;transition:.15s;">Bilan de laboratoire au nouveau diagnostic</button>
+          <button onclick="showPanel('pnd4a','pnd4a2',3)" data-panel="pnd4a2" style="background:var(--cream2);color:var(--ink);border:1.5px solid #1C3F8F;border-radius:20px;padding:5px 13px;cursor:pointer;font-size:11.5px;font-weight:600;transition:.15s;">Calendrier de surveillance des complications — IPS</button>
+        </div>
+        <div id="pnd4a0" style="display:block;">
+<p class="content-text" style="margin-bottom:8px;"><strong>Anamnèse — surtout rechercher :</strong></p>
+        <div class="flag-list">
+          <div class="flag-item"><span class="flag-dot ink"></span><span>Symptômes cardinaux : polyurie, polydipsie, polyphagie, perte de poids, fatigue, vision floue — <strong>DT1</strong> : début brutal (acidocétose inaugurale possible) · <strong>DT2</strong> : insidieux, souvent découvert par une complication</span></div>
+          <div class="flag-item"><span class="flag-dot red"></span><span>🚨 Red flags DT1/LADA chez l'adulte : IMC normal, cétones positives, ATCD auto-immun personnel/familial, âge &lt; 50 ans</span></div>
+          <div class="flag-item"><span class="flag-dot blue"></span><span>Facteurs de risque DT2 : âge ≥ 40 ans, origine non blanche, statut socioéconomique faible, ATCD familial 1er degré, ATCD glycémiques (prédiabète, diabète gestationnel), comorbidités associées (acanthosis nigricans, stéatose hépatique non alcoolique, SAHOS, goutte)</span></div>
+          <div class="flag-item"><span class="flag-dot ink"></span><span>Médicaments à risque hyperglycémiant : corticostéroïdes, thiazidiques, antipsychotiques atypiques, statines</span></div>
+        </div>
+        <p class="content-text" style="margin:12px 0 8px;"><strong>Examen physique :</strong></p>
+        <div class="flag-list">
+          <div class="flag-item"><span class="flag-dot ink"></span><span>Poids, IMC, tour de taille · signes cutanés d'insulinorésistance (acanthosis nigricans)</span></div>
+          <div class="flag-item"><span class="flag-dot blue"></span><span>Dépistage des complications : fond d'œil (rétinopathie), monofilament + réflexes (neuropathie), indice tibio-brachial + examen des pieds (maladie artérielle périphérique), recherche d'albuminurie (néphropathie)</span></div>
+          <div class="flag-item"><span class="flag-dot red"></span><span>🚨 Signes d'urgence métabolique : respiration de Kussmaul + odeur fruitée (acidocétose), altération de l'état de conscience (état hyperosmolaire) → glycémie capillaire stat</span></div>
+        </div>
+        </div>
+        <div id="pnd4a1" style="display:none;">
+<table style="font-size:12px;width:100%;margin:8px 0;">
+            <thead><tr><th>Investigation</th><th>Raison</th><th>Fréquence suivi</th></tr></thead>
+            <tbody>
+              <tr><td>HbA1c</td><td>Référence baseline + contrôle glycémique</td><td>Aux 3 mois jusqu''à cible → puis 2×/an si stable</td></tr>
+              <tr><td>Glycémie à jeun</td><td>Dx + baseline</td><td>Variable selon traitement</td></tr>
+              <tr><td>RAC urinaire (spot)</td><td>Dépistage néphropathie</td><td>Annuel</td></tr>
+              <tr><td>DFGe (créatinine)</td><td>Fonction rénale baseline + ajustement médicaments</td><td>Annuel (plus fréquent si MRC)</td></tr>
+              <tr><td>Bilan lipidique (jeûne)</td><td>Risque CV baseline</td><td>Annuel si sur statine · q3 ans si bas risque sans statine</td></tr>
+              <tr><td>TSH</td><td>Association DT1-hypothyroïdie (6–30 %) · DT2 si symptômes</td><td>DT1 : annuel · DT2 : si symptômes</td></tr>
+              <tr><td>ECG</td><td>Baseline risque CV · Ischémie silencieuse</td><td>Annuel si FRCV élevés</td></tr>
+              <tr><td>Fond d''œil</td><td>Dépistage rétinopathie</td><td>DT2 : dès Dx puis annuel · DT1 : dès 5 ans de DM puis annuel</td></tr>
+              <tr><td>Exam pieds (monofilament)</td><td>Dépistage neuropathie + plaies</td><td>Annuel (ou à chaque visite si risque élevé)</td></tr>
+              <tr><td>PA</td><td>FRCV + néphropathie</td><td>À chaque visite</td></tr>
+              <tr><td>Anti-GAD65 ± autres Ac</td><td>Si DT2 atypique (jeune, mince, réponse ADO insuffisante) → LADA?</td><td>Au diagnostic si suspicion</td></tr>
+            </tbody>
+          </table>
+          <div class="key-fact blue">🔑 <strong>Dépistage populationnel Diabète Canada :</strong> Outil CANRISK (score facteurs de risque). Dépistage universel recommandé ≥ 40 ans aux <strong>3 ans</strong>. Plus fréquent si : DG passé · SOPK · DT1 ou DT2 1er degré · obésité · HTA · dyslipidémie.</div>
+        </div>
+        <div id="pnd4a2" style="display:none;">
+<table>
+          <thead><tr><th>Examen / Test</th><th>Fréquence</th><th>Cible / Action si anormal</th></tr></thead>
+          <tbody>
+            <tr><td><strong>HbA1c</strong></td><td>q3 mois si non contrôlé · q6 mois si stable</td><td>≤ 7 % (≤ 6,5 % si grossesse · ≤ 8 % si fragile/âgé)</td></tr>
+            <tr><td><strong>Glycémie à jeun</strong></td><td>Selon suivi (ASG ou FreeStyle Libre)</td><td>4–7 mmol/L à jeun · 5–10 mmol/L 2h post-prandial</td></tr>
+            <tr><td><strong>RAC urinaire (UACR)</strong></td><td>Annuel</td><td>&lt; 2 mg/mmol N · 2–20 microalbuminurie · &gt; 20 macroalbuminurie → IECA/ARA + iSGLT2</td></tr>
+            <tr><td><strong>Créatinine + DFGe</strong></td><td>Annuel (ou q3–6 mois si IRC)</td><td>Détecter néphropathie progressive</td></tr>
+            <tr><td><strong>Bilan lipidique</strong></td><td>Au diagnostic · q1–2 ans si stable</td><td>Cible LDL &lt; 2,0 (ou &lt; 1,8 si MCVAS) · Statine si ≥ 40 ans ou risque élevé</td></tr>
+            <tr><td><strong>Fond d'œil / Rétinopathie</strong></td><td>DT1 : 5 ans post-Dx · DT2 : au diagnostic · puis annuel si facteurs de risque, q2 ans si stable</td><td>Référence ophtalmologie si rétinopathie</td></tr>
+            <tr><td><strong>Neuropathie — Monofilament + VPT</strong></td><td>Annuel</td><td>Monofilament 10g (5 points) · VPT (diapason) · Réflexes · ↓ perception → éducation soins des pieds</td></tr>
+            <tr><td><strong>Examen des pieds complet</strong></td><td>Annuel (+ chaque visite si haut risque)</td><td>Ulcère/plaie → référence podiatrie urgente</td></tr>
+            <tr><td><strong>TA</strong></td><td>Chaque visite</td><td>Cible &lt; 130/80 · IECA/ARA 1re ligne si albuminurie</td></tr>
+            <tr><td><strong>Poids / IMC / Tour de taille</strong></td><td>Chaque visite</td><td>Obésité abdominale → GLP-1/iSGLT2 en priorité</td></tr>
+            <tr><td><strong>Dépistage DT2 — INESSS/CDA</strong></td><td>q3 ans si ≥ 40 ans · q1 an si ≥ 1 FdR</td><td>FdR : obésité · ethnicité non-blanche · ATCD familial · prédiabète · DG · acanthosis nigricans · SOPK</td></tr>
+          </tbody>
+        </table>
+        <div class="note" style="margin-top:8px;">📲 <strong>CGM (FreeStyle Libre / Dexcom) :</strong> Remboursé RAMQ si DT1 ou DT2 sous insuline bolus · Cible TIR (Time in Range) &gt; 70 % entre 3,9–10 mmol/L · TAR &lt; 25 % · TBR &lt; 4 %</div>
+        </div>
+
+      </div>
+
+      <div class="block def" style="border-left-color:#1C3F8F;">
+        <div class="block-title" id="nd-5"><span class="tag">🧪 5. HbA1c — Principes & Facteurs Altérants</span></div>
+<table style="font-size:12px;width:100%;margin:8px 0;">
             <thead><tr><th>Aspect</th><th>Détails</th></tr></thead>
             <tbody>
               <tr><td><strong>Principe</strong></td><td>Hémoglobine glyquée de façon non enzymatique, irréversible. Reflète la glycémie MOYENNE des 2–3 derniers mois (½ vie GR = 120 j)</td></tr>
@@ -16201,12 +15989,11 @@ function dkRenal(view) {
             </tbody>
           </table>
           <div class="key-fact red">⚠️ Dans ces situations, utiliser la glycémie capillaire / TIR (CGM) ou le fructosamine (reflète les 2–3 dernières semaines) pour évaluer le contrôle glycémique.</div>
-        </div>
+      </div>
 
-        <!-- diab-17 : Objectifs ABCDESSS + TIR -->
-        <div class="block flag" style="border-left-color:#0a7a4e;">
-          <div class="block-title" id="diab-17"><span class="tag">🎯 17. Objectifs Cliniques ABCDESSS + TIR</span></div>
-          <table style="font-size:12px;width:100%;margin:8px 0;">
+      <div class="block flag" style="border-left-color:#0a7a4e;">
+        <div class="block-title" id="nd-6"><span class="tag">🎯 6. Objectifs Cliniques ABCDESSS + TIR</span></div>
+<table style="font-size:12px;width:100%;margin:8px 0;">
             <thead><tr><th>Paramètre</th><th>Cible</th><th>Notes</th></tr></thead>
             <tbody>
               <tr><td><strong>A — HbA1c</strong></td><td>≤ 7,0 % (individualisé)</td><td>≤ 8,0 % si fragile/âgé · ≤ 6,5 % si GG, jeune, pas d''hypoglycémies</td></tr>
@@ -16225,12 +16012,194 @@ function dkRenal(view) {
             — Grossesse DT1 : TIR 3,5–7,8 mmol/L &gt; 70 % · &lt; 3,5 mmol/L &lt; 4 %<br>
             — Personnes âgées/fragiles : TIR 3,9–10,0 mmol/L &gt; 50 % acceptable
           </div>
+      </div>
+
+      <div class="block rx" style="border-left-color:#0a7a4e;">
+        <div class="block-title" id="nd-7"><span class="tag">💊 7. Traitement du Diabète — Algorithme & Classes</span></div>
+        <div style="background:var(--surface);border:1.5px solid var(--ink2);border-radius:10px;padding:14px;margin-bottom:14px;">
+          <p style="font-size:13px;font-weight:600;margin-bottom:10px;text-align:center;">Au moment du diagnostic de DT2 — Amorcer mode de vie (alimentation + AP) ± metformine</p>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px;">
+            <button onclick="ndDiabAlgo('low')" style="flex:1;min-width:110px;padding:8px 6px;background:#1C3F8F;color:#fff;border:none;border-radius:8px;cursor:pointer;font-size:11px;font-weight:600;">HbA1c &lt; 8,5 %</button>
+            <button onclick="ndDiabAlgo('high')" style="flex:1;min-width:110px;padding:8px 6px;background:#e67e22;color:#fff;border:none;border-radius:8px;cursor:pointer;font-size:11px;font-weight:600;">HbA1c ≥ 8,5 %</button>
+            <button onclick="ndDiabAlgo('symp')" style="flex:1;min-width:110px;padding:8px 6px;background:#c0392b;color:#fff;border:none;border-radius:8px;cursor:pointer;font-size:11px;font-weight:600;">Hyperglycémie symptomatique + décompensation</button>
+          </div>
+          <div id="ndalgo-low" style="display:none;background:#EEF2FF;border-radius:8px;padding:10px;font-size:12px;margin-bottom:8px;">
+            <strong>HbA1c &lt; 8,5 % :</strong><br>
+            1. Mode de vie + <strong>Metformine</strong> (titrer jusqu'à 2000 mg/j) pendant 2–3 mois<br>
+            2. Si cible non atteinte → <strong>Ajouter 2e agent selon profil :</strong><br>
+            &nbsp;&nbsp;— MCAS/IC établie : <strong>iSGLT2</strong> (empagliflozine) ou <strong>AR-GLP1</strong> (liraglutide, sémaglutide) ← bénéfice CV démontré<br>
+            &nbsp;&nbsp;— MRC + protéinurie : <strong>iSGLT2</strong> en priorité + finérénone<br>
+            &nbsp;&nbsp;— Éviter hypo : <strong>iDPP4</strong>, AR-GLP1 ou iSGLT2<br>
+            &nbsp;&nbsp;— Perte de poids souhaitée : <strong>AR-GLP1</strong> (sémaglutide SC ++)<br>
+            &nbsp;&nbsp;— Coût limité : Sulfonylurées (gliclazide) ou ↑ dose metformine<br>
+            3. Si cible non atteinte → 3e agent (mécanisme différent) ou initier insuline basale
+          </div>
+          <div id="ndalgo-high" style="display:none;background:#FFF3E0;border-radius:8px;padding:10px;font-size:12px;margin-bottom:8px;">
+            <strong>HbA1c ≥ 8,5 % :</strong><br>
+            1. Amorcer immédiatement <strong>Metformine</strong> + envisager association d'emblée avec 2e agent<br>
+            2. Si MCAS/IC/MRC → iSGLT2 ou AR-GLP1 d'emblée (bénéfice CV)<br>
+            3. Cible non atteinte malgré 2 agents → <strong>Insuline basale</strong> (NPH ou analogue long)
+          </div>
+          <div id="ndalgo-symp" style="display:none;background:#FFEBEE;border-radius:8px;padding:10px;font-size:12px;margin-bottom:8px;">
+            <strong>Hyperglycémie symptomatique + décompensation métabolique :</strong><br>
+            → Amorcer <strong>Insuline</strong> immédiatement ± Metformine<br>
+            → Dose initiale insuline basale : 0,1–0,2 U/kg/j · Ajuster selon glycémie à jeun<br>
+            → Réévaluer après stabilisation — possibilité de sevrage insuline dans DT2
+          </div>
+          <div style="background:#F0FDF4;border-radius:8px;padding:10px;font-size:12px;">
+            <strong>🫀 MCAS établie → Priorité cardioprotection :</strong><br>
+            — <strong>OUI :</strong> iSGLT2 ou AR-GLP1 (empagliflozine Grade A 1A · liraglutide Grade A 1A · canagliflozine Grade C 2)<br>
+            — <strong>NON :</strong> Agent selon profil individuel (hypo à éviter → iDPP4/AR-GLP1/iSGLT2 · poids → AR-GLP1 · coût → SU)
+          </div>
+        </div>
+                <div style="display:flex;gap:6px;flex-wrap:wrap;margin:10px 0 14px;">
+          <button onclick="showPanel('tx','tx0',6)" data-panel="tx0" style="background:#0a7a4e;color:#fff;border:1.5px solid #0a7a4e;border-radius:20px;padding:5px 13px;cursor:pointer;font-size:11.5px;font-weight:600;transition:.15s;">Classes d'hypoglycémiants — Mécanismes, EI & Surveillance</button>
+          <button onclick="showPanel('tx','tx1',6)" data-panel="tx1" style="background:var(--cream2);color:var(--ink);border:1.5px solid #0a7a4e;border-radius:20px;padding:5px 13px;cursor:pointer;font-size:11.5px;font-weight:600;transition:.15s;">iDPP4 — Comparaison pharmacologique</button>
+          <button onclick="showPanel('tx','tx2',6)" data-panel="tx2" style="background:var(--cream2);color:var(--ink);border:1.5px solid #0a7a4e;border-radius:20px;padding:5px 13px;cursor:pointer;font-size:11.5px;font-weight:600;transition:.15s;">AR-GLP1 — Comparaison & Seuils rénaux RAMQ</button>
+          <button onclick="showPanel('tx','tx3',6)" data-panel="tx3" style="background:var(--cream2);color:var(--ink);border:1.5px solid #0a7a4e;border-radius:20px;padding:5px 13px;cursor:pointer;font-size:11.5px;font-weight:600;transition:.15s;">Insulines — Types & Propriétés</button>
+          <button onclick="showPanel('tx','tx4',6)" data-panel="tx4" style="background:var(--cream2);color:var(--ink);border:1.5px solid #0a7a4e;border-radius:20px;padding:5px 13px;cursor:pointer;font-size:11.5px;font-weight:600;transition:.15s;">Insulines basales — Détail RAMQ & Propriétés</button>
+          <button onclick="showPanel('tx','tx5',6)" data-panel="tx5" style="background:var(--cream2);color:var(--ink);border:1.5px solid #0a7a4e;border-radius:20px;padding:5px 13px;cursor:pointer;font-size:11.5px;font-weight:600;transition:.15s;">Tableau décision DT2 par comorbidités (CDA 2020)</button>
+        </div>
+        <div id="tx0" style="display:block;">
+<table style="font-size:12px;">
+          <thead><tr><th>Classe</th><th>Mécanisme</th><th>↓ HbA1c</th><th>EI clés</th><th>Surveillance / CI</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Metformine</strong></td><td>↓ prod. hépatique glucose + ↑ sensibilité insulinique</td><td>1–1,5 %</td><td>GI (nausées, diarrhée · donner avec repas) · MALA (rare)</td><td>Créatinine/DFGe avant + annuel · Max 1000 mg/j si DFGe 30–44 · CI &lt; 15 · SADMAN</td></tr>
+            <tr><td><strong>iSGLT2</strong></td><td>↓ réabsorption glucose tubule prox. → glucosurie</td><td>0,5–1 %</td><td>Infections urogénitales · polyurie · ECDKA (eugly DKA) · jambes de Fournier (rare)</td><td>DFGe avant (CI &lt; 20 nephro, &lt; 30 glycémique) · Suspendre 3–5j péri-op · SADMAN</td></tr>
+            <tr><td><strong>AR-GLP1</strong></td><td>↑ sécrétion insuline glucose-dépendante + ↓ glucagon + ↓ appétit</td><td>1–1,5 %</td><td>Nausées/vomissements/diarrhée (↓ si titration lente) · Pancréatite (rare)</td><td>CI si ATCD de carcinome médullaire thyroïde / NEM2 · CI si ATCD pancréatite sévère</td></tr>
+            <tr><td><strong>iDPP4</strong></td><td>↓ dégradation GLP-1 et GIP endogènes</td><td>0,5–0,8 %</td><td>Nasopharyngite · arthralgie · Pancréatite (rare) · Neutres IC</td><td>Saxagliptin/alogliptin : CI si IC classe III–IV · Sitagliptin utilisable jusqu'à DFGe 15 (dose réduite)</td></tr>
+            <tr><td><strong>Sulfonylurées</strong></td><td>Stimule sécrétion insuline (fermeture canal K⁺-ATP β-cell)</td><td>1–1,5 %</td><td><strong>Hypoglycémie +++</strong> · Prise de poids</td><td>Éviter Glyburide (t½ long, hypoglycémie prolongée) · Préférer Gliclazide/Glimpiride · CI si DFGe &lt; 30</td></tr>
+            <tr><td><strong>TZD (Pioglitazone)</strong></td><td>↑ sensibilité insulinique (PPARγ)</td><td>0,5–1 %</td><td>Rétention hydrique · Prise de poids · Fractures osseuses · ↑ risque cancer vésicale</td><td><span class="drug-badge ci">CI si IC classe III–IV</span> · Oedèmes → évaluer IC</td></tr>
+            <tr><td><strong>Insuline basale</strong></td><td>Remplacement ou supplément du déficit insulinique</td><td>Variable</td><td><strong>Hypoglycémie</strong> · Prise de poids · Injection site reactions</td><td>Débuter 10 U SC coucher · ↑ 2 U q2j si glycémie à jeun &gt; 7 · Cible 4–7</td></tr>
+          </tbody>
+        </table>
+        </div>
+        <div id="tx1" style="display:none;">
+<table style="font-size:12px;">
+          <thead><tr><th>Caractéristique</th><th>Alogliptine (Nesina®)</th><th>Linagliptine (Trajenta®)</th><th>Saxagliptine (Onglyza®)</th><th>Sitagliptine (Januvia®)</th></tr></thead>
+          <tbody>
+            <tr><td>T½ (h)</td><td>12–21</td><td>10–40</td><td>2–4 (mère) / 3–7 (métabolite)</td><td>8–24</td></tr>
+            <tr><td>Posologie standard</td><td>25 mg die</td><td>5 mg die</td><td>5 mg die</td><td>100 mg die</td></tr>
+            <tr><td>Ajustement rénal</td><td>DFGe 30–60 : 12,5 mg · &lt;30 : 6,25 mg</td><td>Aucun (élim. biliaire)</td><td>DFGe &lt; 50 : 2,5 mg</td><td>DFGe 30–49 : 50 mg · &lt;30 : 25 mg</td></tr>
+            <tr><td>RAMQ</td><td>EN148/149/167</td><td>EN148/167</td><td>EN148/149</td><td>EN148/167</td></tr>
+            <tr><td>Particularité</td><td>CI si IC III–IV</td><td>Seul sans ajust. rénal</td><td><span class="drug-badge ci">↑ hospit. IC → éviter si IC</span></td><td>Jusqu'à DFGe 15 (25 mg)</td></tr>
+          </tbody>
+        </table>
+        <div class="highlight yellow" style="margin-top:6px;font-size:12.5px;"><strong>Combos Metformine :</strong> Janumet (Sitagliptine+MF) · Komboglyze (Saxagliptine+MF) · Jentadueto (Linagliptine+MF) · Kazano (Alogliptine+MF)</div>
+        </div>
+        <div id="tx2" style="display:none;">
+<table style="font-size:12px;">
+          <thead><tr><th>Médicament</th><th>Dose / Fréquence</th><th>Perte poids</th><th>DFGe min.</th><th>RAMQ</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Liraglutide (Victoza®)</strong></td><td>0,6 → 1,2 → 1,8 mg SC die</td><td>~ 3–5 kg</td><td>≥ 15</td><td>Médicament d'exception</td></tr>
+            <tr><td><strong>Sémaglutide SC (Ozempic®)</strong></td><td>0,25 → 0,5 → 1 mg SC q sem</td><td>5–8 kg</td><td>≥ 15</td><td>Avec Metformine + sulfonylurée</td></tr>
+            <tr><td><strong>Dulaglutide (Trulicity®)</strong></td><td>0,75 → 1,5 mg SC q sem</td><td>~ 3 kg</td><td>≥ 15</td><td>✅</td></tr>
+            <tr><td><strong>Sémaglutide oral (Rybelsus®)</strong></td><td>3 → 7 → 14 mg PO die (à jeun)</td><td>4–6 kg</td><td>≥ 15</td><td>Peu d'exp. &lt;30</td></tr>
+            <tr><td><strong>Tirzepatide (Mounjaro®) — GLP-1+GIP</strong></td><td>2,5 → 5 → 7,5 → 10 → 15 mg q sem</td><td>25–27 lbs (15 mg)</td><td>≥ 15</td><td>Vérifier</td></tr>
+          </tbody>
+        </table>
+        <div class="key-fact yellow" style="margin-top:6px;"><strong>Rybelsus (sémaglutide oral) — administration :</strong> à jeun, avec 120 mL eau max · attendre 30 min avant manger/médicament · SNAC facilite absorption trans-muqueuse</div>
+        </div>
+        <div id="tx3" style="display:none;">
+<table>
+          <thead><tr><th>Type</th><th>Début</th><th>Pic</th><th>Durée</th><th>Exemples</th></tr></thead>
+          <tbody>
+            <tr><td><span class="drug-badge line1">Ultra-rapide (Bolus)</span></td><td>5–10 min</td><td>30–60 min</td><td>2–4h</td><td>Fiasp · Lispro · Aspart · Glulisine</td></tr>
+            <tr><td><span class="drug-badge line2">Rapide (Bolus)</span></td><td>30 min</td><td>2–3h</td><td>5–8h</td><td>Humulin R · Novolin Toronto</td></tr>
+            <tr><td><span class="drug-badge line1">Longue durée (Basale)</span></td><td>1–2h</td><td>Pas de pic</td><td>24h (Glargine U-100/300) · 42h (Dégludec)</td><td>Lantus · Toujeo · Tresiba</td></tr>
+            <tr><td>Intermédiaire</td><td>1–2h</td><td>6–8h</td><td>12–18h</td><td>NPH · Humulin N</td></tr>
+          </tbody>
+        </table>
+        <div class="highlight cream" style="margin-top:8px;font-size:13px;"><strong>Titration insuline basale :</strong> Commencer 10 U SC au coucher → ↑ 2 U q2 jours si glycémie à jeun &gt; 7 · Hypoglycémie nocturne → ↓ 10–20 % · Cible 4–7 mmol/L</div>
+        </div>
+        <div id="tx4" style="display:none;">
+<table style="font-size:12px;">
+          <thead><tr><th>Insuline (Marque)</th><th>Début</th><th>Pic</th><th>Durée</th><th>RAMQ</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Glargine U-100 (Lantus®)</strong></td><td>90 min</td><td>Aucun</td><td>24 h</td><td><span class="drug-badge ci">❌ Non remboursée</span></td></tr>
+            <tr><td><strong>Glargine biosimilaire U-100 (Basaglar®)</strong></td><td>90 min</td><td>Aucun</td><td>24 h</td><td><span class="drug-badge line1">✅ Remboursée</span></td></tr>
+            <tr><td><strong>Détemir (Levemir®)</strong></td><td>90 min</td><td>Aucun</td><td>16–24 h</td><td><span class="drug-badge line1">✅</span></td></tr>
+            <tr><td><strong>Glargine U-300 (Toujeo®)</strong></td><td>90 min</td><td>Aucun</td><td>&gt; 30 h</td><td><span class="drug-badge line1">✅ RAMQ d'emblée</span></td></tr>
+            <tr><td><strong>Dégludec U-100/U-200 (Tresiba®)</strong></td><td>90 min</td><td>Aucun</td><td>~ 42 h</td><td><span class="drug-badge line1">✅</span></td></tr>
+            <tr><td><strong>Icodec (Awiqli®) — hebdomadaire</strong></td><td>15–18 h</td><td>2e–4e jour</td><td>~ 7 jours</td><td>Nouveau — vérifier couverture</td></tr>
+            <tr style="background:var(--cream2)"><td colspan="5"><em>Insulines bolus</em></td></tr>
+            <tr><td><strong>Ultra-rapides (Lispro U-200 Humalog®, Lispro biosim. Admelog®)</strong></td><td>5–10 min</td><td>30–60 min</td><td>2–4 h</td><td><span class="drug-badge line1">✅ Humalog U-200 · Admelog</span></td></tr>
+            <tr><td><strong>Rapides — Insuline régulière (Humulin®-R, Novolin® ge Toronto)</strong></td><td>30 min</td><td>2–3 h</td><td>6,5 h</td><td><span class="drug-badge line1">✅</span></td></tr>
+          </tbody>
+        </table>
+        <div class="accordion" style="margin-top:10px;">
+          <div class="accordion-item">
+            <div class="accordion-header" onclick="toglAcc(this)">Conversion entre insulines basales
+              <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+            </div>
+            <div class="accordion-body">
+              <table style="font-size:12px;">
+                <thead><tr><th>De → Vers</th><th>Dose</th><th>Note</th></tr></thead>
+                <tbody>
+                  <tr><td>NPH → Glargine/Détemir DIE</td><td>Dose totale NPH × <strong>0,8</strong> DIE</td><td>↓ 20 % pour éviter hypo</td></tr>
+                  <tr><td>Glargine U-100 → Basaglar U-100</td><td><strong>Même dose</strong></td><td>Biosimilaire — équivalence 1:1</td></tr>
+                  <tr><td>Glargine U-100 → Toujeo U-300</td><td><strong>Même dose</strong></td><td>Volume 1/3 → profil plus stable, ↓ hypo nocturnes</td></tr>
+                  <tr><td>Glargine U-100 DIE → Dégludec U-100/200</td><td>DT2 : même dose · DT1 : ↓ 3–20 %</td><td>Ne pas titrer &lt; q3–4j (stabilité progressive)</td></tr>
+                  <tr><td>Glargine U-100 BID → Dégludec DIE</td><td>Dose totale × <strong>0,80</strong> DIE</td><td>↓ 20 %</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        </div>
+                <div id="tx5" style="display:none;">
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <div style="border-left:3px solid #1C3F8F;background:var(--cream);border-radius:0 8px 8px 0;padding:10px 14px;">
+            <div style="font-weight:700;font-size:13px;color:#1C3F8F;margin-bottom:6px;">Sans comorbidité CV/rénale — HbA1c &lt; 8,5 %</div>
+            <div style="font-size:12.5px;line-height:1.6;color:var(--ink2);"><span class="drug-badge line1">Metformine</span> + mode de vie · Titrer 500 mg/j → 2000 mg/j · Suspendre SADMAN si IRA<br><span class="drug-badge warn">Ajustement rénal : max 1000 mg/j si DFGe 30–44 · max 500 mg/j si DFGe 15–29</span> · <span class="drug-badge ci">CI : DFGe &lt; 15</span></div>
+          </div>
+          <div style="border-left:3px solid #0a7a4e;background:var(--cream);border-radius:0 8px 8px 0;padding:10px 14px;">
+            <div style="font-weight:700;font-size:13px;color:#0a7a4e;margin-bottom:6px;">MCVAS établie / Haut risque CV</div>
+            <div style="font-size:12.5px;line-height:1.6;color:var(--ink2);"><span class="drug-badge line1">iSGLT-2</span> (empagliflozine 10 mg / dapagliflozine 10 mg) — ↓ 14 % mortalité CV (EMPA-REG/CANVAS)<br>
+              <span class="drug-badge line1">AR-GLP1</span> (sémaglutide SC 0,25→0,5→1 mg/sem) — ↓ 26 % mortalité CV (LEADER/SUSTAIN-6)<br>
+              Ajouter à la Metformine · DFGe min : iSGLT-2 &gt; 20 · Sémaglutide &gt; 15</div>
+          </div>
+          <div style="border-left:3px solid #0a7a4e;background:var(--cream);border-radius:0 8px 8px 0;padding:10px 14px;">
+            <div style="font-weight:700;font-size:13px;color:#0a7a4e;margin-bottom:6px;">Néphropathie diabétique (Albuminurie ≥ 30 mg/g)</div>
+            <div style="font-size:12.5px;line-height:1.6;color:var(--ink2);"><span class="drug-badge line1">IECA/ARA</span> (1re ligne neuroprotection) + <span class="drug-badge line1">iSGLT-2</span> + <span class="drug-badge warn">Finérénone</span> (DFGe ≥ 25 + albuminurie ≥ 300)<br>
+              Cible TA &lt; 130/80 · Suivi RAC + Créatinine q3–6 mois</div>
+          </div>
+          <div style="border-left:3px solid #c0392b;background:var(--cream);border-radius:0 8px 8px 0;padding:10px 14px;">
+            <div style="font-weight:700;font-size:13px;color:#c0392b;margin-bottom:6px;">IC + DT2</div>
+            <div style="font-size:12.5px;line-height:1.6;color:var(--ink2);"><span class="drug-badge line1">iSGLT-2</span> en priorité — ↓ hospitalisations IC 30–35 %<br>
+              <span class="drug-badge warn">AR-GLP1 → neutres sur IC (pas de bénéfice IC démontrés)</span><br>
+              <span class="drug-badge ci">TZD (pioglitazone) — CI si IC classe III–IV</span></div>
+          </div>
+          <div style="border-left:3px solid #e67e22;background:var(--cream);border-radius:0 8px 8px 0;padding:10px 14px;">
+            <div style="font-weight:700;font-size:13px;color:#e67e22;margin-bottom:6px;">Obésité + DT2 — Perte de poids prioritaire</div>
+            <div style="font-size:12.5px;line-height:1.6;color:var(--ink2);"><span class="drug-badge line1">Sémaglutide PO (Rybelsus) 3→7→14 mg DIE</span> ou SC (Ozempic) · ↓ 15 % poids<br>
+              <span class="drug-badge line1">Tirzepatide (Mounjaro)</span> GIP/GLP-1 — ↓ 22 % poids (SURMOUNT) · Indiqué DT2 + IMC &gt; 30<br>
+              <span class="drug-badge line2">Dulaglutide (Trulicity)</span> 0,75→1,5 mg SC q sem</div>
+          </div>
+          <div style="border-left:3px solid #7b3fa0;background:var(--cream);border-radius:0 8px 8px 0;padding:10px 14px;">
+            <div style="font-weight:700;font-size:13px;color:#7b3fa0;margin-bottom:6px;">Si HbA1c non contrôlé — Autres agents</div>
+            <div style="font-size:12.5px;line-height:1.6;color:var(--ink2);"><span class="drug-badge line2">iDPP-4 (Sitagliptine 100 mg)</span> — Neutres sur IC · ↓ HbA1c 0,7 % · Pas de prise poids · Utilisables jusqu'à DFGe 15<br>
+              <span class="drug-badge line3">Sulfonylurées (Glyburide → éviter · Gliclazide/Glimpiride meilleurs)</span> — Hypoglycémie +++ · Prise de poids · Vieux médicaments<br>
+              <span class="drug-badge line3">Insuline</span> si HbA1c très élevé ou intolérance aux agents oraux</div>
+          </div>
+        </div>
         </div>
 
-        <!-- diab-18 : ACD enrichie -->
-        <div class="block rx" style="border-left-color:#c0392b;">
-          <div class="block-title" id="diab-18"><span class="tag">🚨 18. Acidocétose Diabétique (ACD) — Version Enrichie</span></div>
-          <table style="font-size:12px;width:100%;margin:8px 0;">
+
+      </div>
+
+
+      <div class="block rx" style="border-left-color:#c0392b;">
+        <div class="block-title" id="nd-9"><span class="tag">🚨 9. Complications du Diabète</span></div>
+                <div style="display:flex;gap:6px;flex-wrap:wrap;margin:10px 0 14px;">
+          <button onclick="showPanel('cx','cx0',5)" data-panel="cx0" style="background:#c0392b;color:#fff;border:1.5px solid #c0392b;border-radius:20px;padding:5px 13px;cursor:pointer;font-size:11.5px;font-weight:600;transition:.15s;">ACD — Acidocétose Diabétique (sévérité, physiopath & PEC)</button>
+          <button onclick="showPanel('cx','cx1',5)" data-panel="cx1" style="background:var(--cream2);color:var(--ink);border:1.5px solid #c0392b;border-radius:20px;padding:5px 13px;cursor:pointer;font-size:11.5px;font-weight:600;transition:.15s;">EHH — État Hyperglycémique Hyperosmolaire</button>
+          <button onclick="showPanel('cx','cx2',5)" data-panel="cx2" style="background:var(--cream2);color:var(--ink);border:1.5px solid #c0392b;border-radius:20px;padding:5px 13px;cursor:pointer;font-size:11.5px;font-weight:600;transition:.15s;">Hypoglycémie — Niveaux 1-2-3 · Règle 15-15 · Glucagon</button>
+          <button onclick="showPanel('cx','cx3',5)" data-panel="cx3" style="background:var(--cream2);color:var(--ink);border:1.5px solid #c0392b;border-radius:20px;padding:5px 13px;cursor:pointer;font-size:11.5px;font-weight:600;transition:.15s;">Complications Macrovasculaires (MCAS, AVC, MAP, Pied)</button>
+          <button onclick="showPanel('cx','cx4',5)" data-panel="cx4" style="background:var(--cream2);color:var(--ink);border:1.5px solid #c0392b;border-radius:20px;padding:5px 13px;cursor:pointer;font-size:11.5px;font-weight:600;transition:.15s;">Complications Microvasculaires (Rétinopathie, Néphropathie, Neuropathie)</button>
+        </div>
+        <div id="cx0" style="display:block;">
+<table style="font-size:12px;width:100%;margin:8px 0;">
             <thead><tr><th>Critère</th><th>Légère</th><th>Modérée</th><th>Sévère</th></tr></thead>
             <tbody>
               <tr><td>pH artériel</td><td>7,25–7,30</td><td>7,00–7,24</td><td>&lt; 7,00</td></tr>
@@ -16239,24 +16208,18 @@ function dkRenal(view) {
               <tr><td>Trou anionique (TA)</td><td colspan="3">&gt; 12 mmol/L (Na - Cl - HCO₃) · Anion gap élevé = ACD</td></tr>
             </tbody>
           </table>
-          <div class="accordion">
-            <div class="accordion-item open">
-              <div class="accordion-header" onclick="this.closest('.accordion-item').classList.toggle('open')">Physiopathologie
-                <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-              </div>
-              <div class="accordion-body">
-                Carence absolue ou relative en insuline → ↑ Glucagon → ↑ Lipolyse → ↑ AGL → ↑ Bêta-oxydation hépatique → Corps cétoniques (acétoacétate, β-hydroxybutyrate, acétone).<br>
+                  <div style="display:flex;gap:6px;flex-wrap:wrap;margin:8px 0 12px;">
+          <button onclick="showPanel('pcx0a','pcx0a0',2)" data-panel="pcx0a0" style="background:#1C3F8F;color:#fff;border:1.5px solid #1C3F8F;border-radius:20px;padding:5px 13px;cursor:pointer;font-size:11.5px;font-weight:600;transition:.15s;">Physiopathologie</button>
+          <button onclick="showPanel('pcx0a','pcx0a1',2)" data-panel="pcx0a1" style="background:var(--cream2);color:var(--ink);border:1.5px solid #1C3F8F;border-radius:20px;padding:5px 13px;cursor:pointer;font-size:11.5px;font-weight:600;transition:.15s;">Prise en charge étape par étape</button>
+        </div>
+        <div id="pcx0a0" style="display:block;">
+Carence absolue ou relative en insuline → ↑ Glucagon → ↑ Lipolyse → ↑ AGL → ↑ Bêta-oxydation hépatique → Corps cétoniques (acétoacétate, β-hydroxybutyrate, acétone).<br>
                 Corps cétoniques = acides faibles → acidose métabolique à TA élevé.<br>
                 Diurèse osmotique → déshydratation + perte électrolytes.<br><br>
                 <strong>Facteurs précipitants (5I) :</strong> Infection (50 %) · Insuline oubliée · Infarctus · Iatrogène (cortico, iSGLT2) · Idiopathique
-              </div>
-            </div>
-            <div class="accordion-item open">
-              <div class="accordion-header" onclick="this.closest('.accordion-item').classList.toggle('open')">Prise en charge étape par étape
-                <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-              </div>
-              <div class="accordion-body">
-                <strong>1. Hydratation :</strong> NaCl 0,9 % 1 L/h × 2h → 0,5 L/h × 4h → Ajuster selon bilan<br>
+        </div>
+        <div id="pcx0a1" style="display:none;">
+<strong>1. Hydratation :</strong> NaCl 0,9 % 1 L/h × 2h → 0,5 L/h × 4h → Ajuster selon bilan<br>
                 <strong>2. Potassium :</strong><br>
                 — K⁺ &lt; 3,5 mmol/L → <span style="color:#c0392b;font-weight:bold;">Corriger AVANT insuline</span> (risque arrêt cardiaque) → KCl 20–40 mEq/h IV<br>
                 — K⁺ 3,5–5,0 → KCl 20–30 mEq/L dans les solutés<br>
@@ -16266,16 +16229,12 @@ function dkRenal(view) {
                 — Quand Glc &lt; 14 → Ajouter D5W pour maintenir Glc 10–14 et continuer insuline<br>
                 <strong>4. Bicarb :</strong> Uniquement si pH &lt; 6,9 (controverse) · 50–100 mEq sur 1h<br>
                 <strong>5. Résolution :</strong> pH &gt; 7,3 + HCO₃ &gt; 18 + TA normalisé + Alimentation tolérée → Transition insuline SC (attendre 2h avant arrêt IV)
-              </div>
-            </div>
-          </div>
-          <div class="key-fact red">⚠️ <strong>ACD euglycémique (ECDKA) :</strong> Glycémie parfois normale ou &lt; 14 sous iSGLT2 — Ne pas exclure ACD sur la glycémie seule. Cétonémie/cétonurie toujours obligatoire si suspicion.</div>
         </div>
 
-        <!-- diab-19 : EHH enrichi -->
-        <div class="block rx" style="border-left-color:#c0392b;">
-          <div class="block-title" id="diab-19"><span class="tag">🚨 19. État Hyperglycémique Hyperosmolaire (EHH) — Version Enrichie</span></div>
-          <table style="font-size:12px;width:100%;margin:8px 0;">
+          <div class="key-fact red">⚠️ <strong>ACD euglycémique (ECDKA) :</strong> Glycémie parfois normale ou &lt; 14 sous iSGLT2 — Ne pas exclure ACD sur la glycémie seule. Cétonémie/cétonurie toujours obligatoire si suspicion.</div>
+        </div>
+        <div id="cx1" style="display:none;">
+<table style="font-size:12px;width:100%;margin:8px 0;">
             <thead><tr><th>Critère diagnostique</th><th>Valeur</th></tr></thead>
             <tbody>
               <tr><td>Glycémie plasmatique</td><td>&gt; 33 mmol/L (&gt; 600 mg/dL)</td></tr>
@@ -16285,13 +16244,7 @@ function dkRenal(view) {
               <tr><td>Corps cétoniques</td><td>Négatifs ou traces (insuline résiduelle inhibe cétogenèse)</td></tr>
             </tbody>
           </table>
-          <div class="accordion">
-            <div class="accordion-item open">
-              <div class="accordion-header" onclick="this.closest('.accordion-item').classList.toggle('open')">PEC — Points clés
-                <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-              </div>
-              <div class="accordion-body">
-                <strong>1. Hydratation ++ :</strong> Déficit estimé 8–10 L → NaCl 0,9 % 1 L/h × 2–4h · Puis ½ NS si Na corrigé élevé<br>
+          <strong>1. Hydratation ++ :</strong> Déficit estimé 8–10 L → NaCl 0,9 % 1 L/h × 2–4h · Puis ½ NS si Na corrigé élevé<br>
                 — Na corrigé = Na mesuré + 2,4 × (Glc − 5) / 5 mmol/L<br>
                 <strong>2. Insuline :</strong> Débuter APRÈS 1–2h d''hydratation · Dose faible 0,05–0,1 U/kg/h IV<br>
                 — Objectif glycémique : ↓ 3–4 mmol/L/h max (correction trop rapide → œdème cérébral)<br>
@@ -16299,15 +16252,10 @@ function dkRenal(view) {
                 <strong>4. Anticoagulation :</strong> Héparine prophylactique (hypercoagulabilité ++ dans EHH)<br>
                 <strong>5. Résolution :</strong> Glycémie &lt; 15 + Osmolalité &lt; 315 + Conscient + Alimentation<br><br>
                 <div class="key-fact red">⚠️ Mortalité 5–15 % vs &lt; 1 % ACD. Personnes âgées + comorbidités. Facteurs précipitants : infection, AVC, IM, médicaments (cortico, diurétiques, antipsychotiques).</div>
-              </div>
-            </div>
-          </div>
-        </div>
 
-        <!-- diab-20 : Hypoglycémie enrichie -->
-        <div class="block flag" style="border-left-color:#e67e22;">
-          <div class="block-title" id="diab-20"><span class="tag">⚡ 20. Hypoglycémie — Niveaux 1-2-3 & Algorithme</span></div>
-          <table style="font-size:12px;width:100%;margin:8px 0;">
+        </div>
+        <div id="cx2" style="display:none;">
+<table style="font-size:12px;width:100%;margin:8px 0;">
             <thead><tr><th>Niveau</th><th>Glycémie</th><th>Définition</th><th>Action</th></tr></thead>
             <tbody>
               <tr><td><strong>1 (Alerte)</strong></td><td>&lt; 3,9 mmol/L</td><td>Suffisamment bas pour traiter. Peut être asymptomatique</td><td>Règle 15-15</td></tr>
@@ -16315,13 +16263,12 @@ function dkRenal(view) {
               <tr><td><strong>3 (Sévère)</strong></td><td>Toute glycémie</td><td>Assistance tierce nécessaire · Perte de conscience / convulsions</td><td>Glucagon IM/SC/IN ou D50W IV</td></tr>
             </tbody>
           </table>
-          <div class="accordion">
-            <div class="accordion-item open">
-              <div class="accordion-header" onclick="this.closest('.accordion-item').classList.toggle('open')">Règle 15-15 + Glucagon
-                <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-              </div>
-              <div class="accordion-body">
-                <strong>Règle 15-15 :</strong><br>
+                  <div style="display:flex;gap:6px;flex-wrap:wrap;margin:8px 0 12px;">
+          <button onclick="showPanel('pcx2a','pcx2a0',2)" data-panel="pcx2a0" style="background:#1C3F8F;color:#fff;border:1.5px solid #1C3F8F;border-radius:20px;padding:5px 13px;cursor:pointer;font-size:11.5px;font-weight:600;transition:.15s;">Règle 15-15 + Glucagon</button>
+          <button onclick="showPanel('pcx2a','pcx2a1',2)" data-panel="pcx2a1" style="background:var(--cream2);color:var(--ink);border:1.5px solid #1C3F8F;border-radius:20px;padding:5px 13px;cursor:pointer;font-size:11.5px;font-weight:600;transition:.15s;">Hormones contre-régulatrices & Hypoglycémie non ressentie</button>
+        </div>
+        <div id="pcx2a0" style="display:block;">
+<strong>Règle 15-15 :</strong><br>
                 1. Ingérer <strong>15 g de glucides rapides</strong> : 4 comprimés glucose · 125 mL jus · 3 sachets sucre<br>
                 2. Attendre <strong>15 minutes</strong><br>
                 3. Si Glc &lt; 3,9 → Répéter 15 g<br>
@@ -16331,25 +16278,16 @@ function dkRenal(view) {
                 — <strong>Nasal (Baqsimi®) :</strong> 3 mg dans une narine — très utile (pas besoin d''aiguille)<br>
                 — <strong>D50W IV :</strong> 25–50 mL IV push si accès veineux — milieu hospitalier<br><br>
                 <div class="key-fact yellow">⚠️ <strong>Sulfonylurées :</strong> Risque hypoglycémie prolongée — surveillance 24h minimum + D10W en continu si sévère car risque récidive.</div>
-              </div>
-            </div>
-            <div class="accordion-item open">
-              <div class="accordion-header" onclick="this.closest('.accordion-item').classList.toggle('open')">Hormones contre-régulatrices & Hypoglycémie non ressentie
-                <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-              </div>
-              <div class="accordion-body">
-                <strong>Séquence normale :</strong> Glc ↓ → 1) ↓ Insuline · 2) ↑ Glucagon · 3) ↑ Épinéphrine (signes adrénergiques : tremblement, sueurs, palpitations) · 4) Symptômes neuroglycopéniques (confusion, convulsions)<br><br>
+        </div>
+        <div id="pcx2a1" style="display:none;">
+<strong>Séquence normale :</strong> Glc ↓ → 1) ↓ Insuline · 2) ↑ Glucagon · 3) ↑ Épinéphrine (signes adrénergiques : tremblement, sueurs, palpitations) · 4) Symptômes neuroglycopéniques (confusion, convulsions)<br><br>
                 <strong>Hypoglycémie non ressentie (IAH) :</strong> DT1 longue durée → perte réponse glucagon puis perte réponse épinéphrine → Seuil perception abaissé → découverte lors d''hypoglycémie sévère<br>
                 <strong>Solution :</strong> Éviter hypoglycémies 2–3 sem → restaure partiellement la perception. CGM + alarmes recommandés.
-              </div>
-            </div>
-          </div>
         </div>
 
-        <!-- diab-21 : Complications macrovasculaires -->
-        <div class="block para" style="border-left-color:#7b3fa0;">
-          <div class="block-title" id="diab-21"><span class="tag">🫀 21. Complications Macrovasculaires</span></div>
-          <p class="content-text">Principal déterminant de la mortalité dans le DT2. Le diabète ↑ risque CV de 2–4× même après ajustement des autres facteurs.</p>
+        </div>
+        <div id="cx3" style="display:none;">
+<p class="content-text">Principal déterminant de la mortalité dans le DT2. Le diabète ↑ risque CV de 2–4× même après ajustement des autres facteurs.</p>
           <table style="font-size:12px;width:100%;margin:8px 0;">
             <thead><tr><th>Complication</th><th>Présentation</th><th>Dépistage</th><th>Particularités DM</th></tr></thead>
             <tbody>
@@ -16360,17 +16298,14 @@ function dkRenal(view) {
           </table>
           <div class="key-fact blue">🔑 <strong>Pied diabétique — Classification Wagner :</strong> 0 = pied à risque · 1 = ulcère superficiel · 2 = profond (tendon/capsule) · 3 = profond + ostéite/abcès · 4 = gangrène localisée · 5 = gangrène pied entier. Référence podologie/vasculaire dès grade ≥ 2.</div>
         </div>
-
-        <!-- diab-22 : Complications microvasculaires -->
-        <div class="block para" style="border-left-color:#7b3fa0;">
-          <div class="block-title" id="diab-22"><span class="tag">🔬 22. Complications Microvasculaires</span></div>
-          <div class="accordion">
-            <div class="accordion-item open">
-              <div class="accordion-header" onclick="this.closest('.accordion-item').classList.toggle('open')">Rétinopathie diabétique
-                <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-              </div>
-              <div class="accordion-body">
-                <table style="font-size:12px;">
+        <div id="cx4" style="display:none;">
+        <div style="display:flex;gap:6px;flex-wrap:wrap;margin:8px 0 12px;">
+          <button onclick="showPanel('pcx4a','pcx4a0',3)" data-panel="pcx4a0" style="background:#1C3F8F;color:#fff;border:1.5px solid #1C3F8F;border-radius:20px;padding:5px 13px;cursor:pointer;font-size:11.5px;font-weight:600;transition:.15s;">Rétinopathie diabétique</button>
+          <button onclick="showPanel('pcx4a','pcx4a1',3)" data-panel="pcx4a1" style="background:var(--cream2);color:var(--ink);border:1.5px solid #1C3F8F;border-radius:20px;padding:5px 13px;cursor:pointer;font-size:11.5px;font-weight:600;transition:.15s;">Néphropathie diabétique</button>
+          <button onclick="showPanel('pcx4a','pcx4a2',3)" data-panel="pcx4a2" style="background:var(--cream2);color:var(--ink);border:1.5px solid #1C3F8F;border-radius:20px;padding:5px 13px;cursor:pointer;font-size:11.5px;font-weight:600;transition:.15s;">Neuropathie diabétique</button>
+        </div>
+        <div id="pcx4a0" style="display:block;">
+<table style="font-size:12px;">
                   <thead><tr><th>Stade</th><th>Caractéristiques</th><th>Traitement</th></tr></thead>
                   <tbody>
                     <tr><td>RDNP légère</td><td>Microanévrismes seulement</td><td>Contrôle glycémique + PA + lipides</td></tr>
@@ -16381,14 +16316,9 @@ function dkRenal(view) {
                   </tbody>
                 </table>
                 Dépistage : DT1 → fond d''œil annuel dès 5 ans de DM · DT2 → fond d''œil dès diagnostic puis annuel
-              </div>
-            </div>
-            <div class="accordion-item open">
-              <div class="accordion-header" onclick="this.closest('.accordion-item').classList.toggle('open')">Néphropathie diabétique
-                <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-              </div>
-              <div class="accordion-body">
-                <table style="font-size:12px;">
+        </div>
+        <div id="pcx4a1" style="display:none;">
+<table style="font-size:12px;">
                   <thead><tr><th>Stade</th><th>RAC (mg/mmol)</th><th>DFG</th><th>Action</th></tr></thead>
                   <tbody>
                     <tr><td>Normoalbuminurie</td><td>&lt; 2</td><td>Variable</td><td>Dépistage annuel</td></tr>
@@ -16398,14 +16328,9 @@ function dkRenal(view) {
                 </table>
                 <strong>Finérénone</strong> (antagoniste récepteur minéralocorticoïde non-stéroïdien) : ↓ progression néphropathie + ↓ risque CV · Indication : DT2 + MRC + protéinurie persistante malgré IECA/ARA<br>
                 Dépistage : RAC urinaire (spot urine) + DFGe annuels dès diagnostic DT2 · DT1 après 5 ans
-              </div>
-            </div>
-            <div class="accordion-item open">
-              <div class="accordion-header" onclick="this.closest('.accordion-item').classList.toggle('open')">Neuropathie diabétique
-                <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-              </div>
-              <div class="accordion-body">
-                <table style="font-size:12px;">
+        </div>
+        <div id="pcx4a2" style="display:none;">
+<table style="font-size:12px;">
                   <thead><tr><th>Type</th><th>Présentation</th><th>Traitement</th></tr></thead>
                   <tbody>
                     <tr><td>Polyneuropathie distale symétrique (PDS) ⭐</td><td>Brûlures, paresthésies, perte de sensibilité "en chaussette" — pieds d''abord</td><td>Gabapentine/Prégabaline · Duloxétine · Amitriptyline · Tramadol</td></tr>
@@ -16414,37 +16339,24 @@ function dkRenal(view) {
                   </tbody>
                 </table>
                 Dépistage : Monofilament 10g + diapason 128 Hz + réflexes achilléens annuels
-              </div>
-            </div>
-          </div>
         </div>
 
-        <!-- diab-23 : Bilan nouveau diagnostic -->
-        <div class="block def" style="border-left-color:#1C3F8F;">
-          <div class="block-title" id="diab-23"><span class="tag">🩺 23. Bilan au Nouveau Diagnostic</span></div>
-          <table style="font-size:12px;width:100%;margin:8px 0;">
-            <thead><tr><th>Investigation</th><th>Raison</th><th>Fréquence suivi</th></tr></thead>
-            <tbody>
-              <tr><td>HbA1c</td><td>Référence baseline + contrôle glycémique</td><td>Aux 3 mois jusqu''à cible → puis 2×/an si stable</td></tr>
-              <tr><td>Glycémie à jeun</td><td>Dx + baseline</td><td>Variable selon traitement</td></tr>
-              <tr><td>RAC urinaire (spot)</td><td>Dépistage néphropathie</td><td>Annuel</td></tr>
-              <tr><td>DFGe (créatinine)</td><td>Fonction rénale baseline + ajustement médicaments</td><td>Annuel (plus fréquent si MRC)</td></tr>
-              <tr><td>Bilan lipidique (jeûne)</td><td>Risque CV baseline</td><td>Annuel si sur statine · q3 ans si bas risque sans statine</td></tr>
-              <tr><td>TSH</td><td>Association DT1-hypothyroïdie (6–30 %) · DT2 si symptômes</td><td>DT1 : annuel · DT2 : si symptômes</td></tr>
-              <tr><td>ECG</td><td>Baseline risque CV · Ischémie silencieuse</td><td>Annuel si FRCV élevés</td></tr>
-              <tr><td>Fond d''œil</td><td>Dépistage rétinopathie</td><td>DT2 : dès Dx puis annuel · DT1 : dès 5 ans de DM puis annuel</td></tr>
-              <tr><td>Exam pieds (monofilament)</td><td>Dépistage neuropathie + plaies</td><td>Annuel (ou à chaque visite si risque élevé)</td></tr>
-              <tr><td>PA</td><td>FRCV + néphropathie</td><td>À chaque visite</td></tr>
-              <tr><td>Anti-GAD65 ± autres Ac</td><td>Si DT2 atypique (jeune, mince, réponse ADO insuffisante) → LADA?</td><td>Au diagnostic si suspicion</td></tr>
-            </tbody>
-          </table>
-          <div class="key-fact blue">🔑 <strong>Dépistage populationnel Diabète Canada :</strong> Outil CANRISK (score facteurs de risque). Dépistage universel recommandé ≥ 40 ans aux <strong>3 ans</strong>. Plus fréquent si : DG passé · SOPK · DT1 ou DT2 1er degré · obésité · HTA · dyslipidémie.</div>
         </div>
 
-        <!-- diab-24 : Comorbidités -->
-        <div class="block flag" style="border-left-color:#7b3fa0;">
-          <div class="block-title" id="diab-24"><span class="tag">🧠 24. Comorbidités Associées au Diabète</span></div>
-          <table style="font-size:12px;width:100%;margin:8px 0;">
+        <div class="flag-list" style="margin-top:10px;">
+          <div class="flag-item"><span class="fi-icon">💊</span><span><span class="drug-badge ci">iSGLT-2 + jeûne/chirurgie → ECDKA (DKA euglycémique) → Suspendre 3–5j avant chirurgie</span></span></div>
+          <div class="flag-item"><span class="fi-icon">🤰</span><span>DG : Metformine SI ≥ 13 sem · RAMQ couvre insuline en priorité · Cibles : jeun &lt; 5,3 · 1h &lt; 7,8 · 2h &lt; 6,7</span></div>
+        </div>
+      </div>
+
+      <div class="block flag" style="border-left-color:#7b3fa0;">
+        <div class="block-title" id="nd-10"><span class="tag">🧠 10. Comorbidités & Cardioprotection</span></div>
+                <div style="display:flex;gap:6px;flex-wrap:wrap;margin:8px 0 12px;">
+          <button onclick="showPanel('pnd10a','pnd10a0',2)" data-panel="pnd10a0" style="background:#7b3fa0;color:#fff;border:1.5px solid #7b3fa0;border-radius:20px;padding:5px 13px;cursor:pointer;font-size:11.5px;font-weight:600;transition:.15s;">Comorbidités associées (Dépression, SAOS, Parodontite, Ostéoporose, NAFLD)</button>
+          <button onclick="showPanel('pnd10a','pnd10a1',2)" data-panel="pnd10a1" style="background:var(--cream2);color:var(--ink);border:1.5px solid #7b3fa0;border-radius:20px;padding:5px 13px;cursor:pointer;font-size:11.5px;font-weight:600;transition:.15s;">Cardioprotection & Prévention CV (Statines, IECA, iSGLT2, AR-GLP1, ASA, Finérénone)</button>
+        </div>
+        <div id="pnd10a0" style="display:block;">
+<table style="font-size:12px;width:100%;margin:8px 0;">
             <thead><tr><th>Comorbidité</th><th>Fréquence/Lien</th><th>Dépistage</th><th>Intervention</th></tr></thead>
             <tbody>
               <tr>
@@ -16480,11 +16392,8 @@ function dkRenal(view) {
             </tbody>
           </table>
         </div>
-
-        <!-- diab-25 : Cardioprotection -->
-        <div class="block rx" style="border-left-color:#0a7a4e;">
-          <div class="block-title" id="diab-25"><span class="tag">❤️ 25. Cardioprotection & Prévention CV dans le DM</span></div>
-          <table style="font-size:12px;width:100%;margin:8px 0;">
+        <div id="pnd10a1" style="display:none;">
+<table style="font-size:12px;width:100%;margin:8px 0;">
             <thead><tr><th>Traitement</th><th>Indication dans DM</th><th>Bénéfice CV</th><th>Notes</th></tr></thead>
             <tbody>
               <tr>
@@ -16531,7 +16440,11 @@ function dkRenal(view) {
           </div>
         </div>
 
+      </div>
+
     </div>
+    <!-- fin sec-diabete -->
+
     <div class="section" id="sec-dermato">
       <div class="section-header"><div class="section-accent">🔬</div><div class="section-title"><h1>Dermatologie</h1><div class="breadcrumb">Spécialités <span class="breadcrumb-sep">·</span> Section</div></div></div>
 
@@ -21433,7 +21346,7 @@ function dkRenal(view) {
   <!-- CASCADE INTERACTIVE SVG -->
   <div id="hemo-svg" class="block def" style="border-left:4px solid #7b3fa0;margin-top:16px;">
     <div class="block-title"><span class="tag">🗺 Cascade de coagulation — Interactive</span></div>
-    <p style="font-size:12px;color:#666;margin-bottom:8px;">Cliquez sur un nœud pour voir les détails.</p>
+    <p style="font-size:13px;color:#666;margin-bottom:8px;">Cliquez sur un nœud pour voir les détails.</p>
 
     <div style="position:relative;width:100%;overflow-x:auto;">
       <svg id="cascadeSVG" viewBox="0 0 760 460" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:760px;font-family:sans-serif;">
@@ -23382,7 +23295,7 @@ function dkRenal(view) {
             </tbody>
           </table>
           <div class="key-fact red" style="margin-top:6px;">⚠️ <strong>Risque principal : Hyponatrémie</strong> — Limiter les apports liquidiens le soir · Attention personnes âgées &gt; 65 ans et femmes · Précaution si IC ou diabète · <strong>Monitoring :</strong> Na⁺ pré-traitement, puis électrolytes à 3–7 j post-initiation/dose, puis à 1 mois</div>
-          <p style="font-size:12px;margin-top:6px;"><strong>À prendre 2h avant le sommeil</strong></p>
+          <p style="font-size:13px;margin-top:6px;"><strong>À prendre 2h avant le sommeil</strong></p>
         </div>
       </div>
     </div>
@@ -23671,7 +23584,7 @@ function dkRenal(view) {
         <div class="block-title"><span class="tag">🔍 8.3 Facteurs prédisposants</span></div>
         <div style="display:flex;gap:16px;flex-wrap:wrap;">
           <div style="flex:1;min-width:200px;">
-            <p style="font-size:12px;font-weight:700;margin-bottom:6px;color:var(--red);">Femme</p>
+            <p style="font-size:13px;font-weight:700;margin-bottom:6px;color:var(--red);">Femme</p>
             <div class="flag-list">
               <div class="flag-item"><span class="fi-icon">⚠</span><span>Ménopause (syndrome génito-urinaire / atrophie vaginale)</span></div>
               <div class="flag-item"><span class="fi-icon">⚠</span><span>ATCD familiaux d'IU récidivantes</span></div>
@@ -23681,7 +23594,7 @@ function dkRenal(view) {
             </div>
           </div>
           <div style="flex:1;min-width:200px;">
-            <p style="font-size:12px;font-weight:700;margin-bottom:6px;color:var(--red);">Généraux</p>
+            <p style="font-size:13px;font-weight:700;margin-bottom:6px;color:var(--red);">Généraux</p>
             <div class="flag-list">
               <div class="flag-item"><span class="fi-icon">⚠</span><span>Diabète (glycosurie, neuropathie autonome, immunosuppression)</span></div>
               <div class="flag-item"><span class="fi-icon">⚠</span><span>Résidu vésical post-mictionnel significatif (HBP, neurogène)</span></div>
@@ -24541,7 +24454,7 @@ function dkRenal(view) {
       <!-- Diagram 1: Segments de Couinaud -->
       <div class="block def" style="margin-top:14px;">
         <div class="block-title"><span class="tag">🫀 Segments de Couinaud — Vue antérieure (interactif)</span></div>
-        <p style="font-size:12px;color:var(--ink2);margin-bottom:10px;">Cliquez sur un segment pour afficher ses caractéristiques cliniques.</p>
+        <p style="font-size:13px;color:var(--ink2);margin-bottom:10px;">Cliquez sur un segment pour afficher ses caractéristiques cliniques.</p>
         <div style="display:flex;gap:16px;flex-wrap:wrap;align-items:flex-start;">
 
           <div style="flex:1;min-width:260px;">
@@ -24641,7 +24554,7 @@ function dkRenal(view) {
       <!-- Diagram 2: Vascularisation hépatique — double apport -->
       <div class="block para" style="margin-top:14px;">
         <div class="block-title"><span class="tag">🔬 Double vascularisation hépatique — Schéma (interactif)</span></div>
-        <p style="font-size:12px;color:var(--ink2);margin-bottom:10px;">Cliquez sur un vaisseau pour voir ses caractéristiques.</p>
+        <p style="font-size:13px;color:var(--ink2);margin-bottom:10px;">Cliquez sur un vaisseau pour voir ses caractéristiques.</p>
         <div style="display:flex;gap:16px;flex-wrap:wrap;align-items:flex-start;">
 
           <div style="flex:1;min-width:260px;">
@@ -24740,7 +24653,7 @@ function dkRenal(view) {
       <!-- Diagram 3: Voies biliaires & vésicule -->
       <div class="block clin" style="margin-top:14px;">
         <div class="block-title"><span class="tag">🔍 Voies biliaires & vésicule biliaire — Schéma (interactif)</span></div>
-        <p style="font-size:12px;color:var(--ink2);margin-bottom:10px;">Cliquez sur une structure pour afficher ses caractéristiques.</p>
+        <p style="font-size:13px;color:var(--ink2);margin-bottom:10px;">Cliquez sur une structure pour afficher ses caractéristiques.</p>
         <div style="display:flex;gap:16px;flex-wrap:wrap;align-items:flex-start;">
 
           <div style="flex:1;min-width:260px;">
@@ -25119,7 +25032,7 @@ function dkRenal(view) {
         <div class="block-title" id="cc-5"><span class="tag">📌 5.5 Facteurs de risque & protecteurs</span></div>
         <div style="display:flex;gap:16px;flex-wrap:wrap;">
           <div style="flex:1;min-width:200px;">
-            <p style="font-size:12px;font-weight:700;margin-bottom:6px;color:var(--red);">Facteurs de risque — 5 F + autres</p>
+            <p style="font-size:13px;font-weight:700;margin-bottom:6px;color:var(--red);">Facteurs de risque — 5 F + autres</p>
             <div class="flag-list">
               <div class="flag-item"><span class="fi-icon">⚠</span><span><strong>Female</strong> — femmes 2–3× plus atteintes (œstrogènes ↑ cholestérol biliaire + ↓ motilité)</span></div>
               <div class="flag-item"><span class="fi-icon">⚠</span><span><strong>Fat</strong> — obésité (IMC ≥ 30) · syndrome métabolique</span></div>
@@ -25130,7 +25043,7 @@ function dkRenal(view) {
             </div>
           </div>
           <div style="flex:1;min-width:200px;">
-            <p style="font-size:12px;font-weight:700;margin-bottom:6px;color:var(--teal);">Facteurs protecteurs</p>
+            <p style="font-size:13px;font-weight:700;margin-bottom:6px;color:var(--teal);">Facteurs protecteurs</p>
             <div class="flag-list">
               <div class="flag-item"><span class="fi-icon">✅</span><span>Activité physique régulière</span></div>
               <div class="flag-item"><span class="fi-icon">✅</span><span>Consommation modérée de café (↑ motilité vésiculaire)</span></div>
@@ -25224,7 +25137,7 @@ function dkRenal(view) {
         <div class="block-title" id="cd-3"><span class="tag">🔍 6.3 Facteurs de risque & prévention</span></div>
         <div style="display:flex;gap:16px;flex-wrap:wrap;">
           <div style="flex:1;min-width:180px;">
-            <p style="font-size:12px;font-weight:700;margin-bottom:4px;color:var(--red);">Facteurs de risque</p>
+            <p style="font-size:13px;font-weight:700;margin-bottom:4px;color:var(--red);">Facteurs de risque</p>
             <div class="flag-list">
               <div class="flag-item"><span class="fi-icon">⚠</span><span><strong>Antibiotiques</strong> (clindamycine, FQ, amoxicilline, céphalosporines 3e-4e) — le FdR #1</span></div>
               <div class="flag-item"><span class="fi-icon">⚠</span><span>Âge ≥ 65 ans · Hospitalisation / SLD</span></div>
@@ -25234,7 +25147,7 @@ function dkRenal(view) {
             </div>
           </div>
           <div style="flex:1;min-width:180px;">
-            <p style="font-size:12px;font-weight:700;margin-bottom:4px;color:var(--teal);">Prévention</p>
+            <p style="font-size:13px;font-weight:700;margin-bottom:4px;color:var(--teal);">Prévention</p>
             <div class="flag-list">
               <div class="flag-item"><span class="fi-icon">✅</span><span>Antibiothérapie ciblée + courte durée (stewardship)</span></div>
               <div class="flag-item"><span class="fi-icon">✅</span><span>Hygiène des mains au savon et eau (alcool inefficace sur spores)</span></div>
@@ -25364,7 +25277,7 @@ function dkRenal(view) {
 
       <div class="block def">
         <div class="block-title" id="st-4"><span class="tag">📌 7.4 MASLD vs MASH — Tableau différentiel</span></div>
-        <table style="font-size:12.5px;">
+        <table style="font-size:12px;">
           <thead><tr><th>Critère</th><th>MASLD</th><th>MASH</th></tr></thead>
           <tbody>
             <tr><td><strong>Ancien nom</strong></td><td>NAFLD (Non-Alcoholic Fatty Liver Disease)</td><td>NASH (Non-Alcoholic SteatoHepatitis)</td></tr>
@@ -25530,7 +25443,7 @@ function dkRenal(view) {
         <div class="block-title" id="cir-4"><span class="tag">🚨 8.4 Facteurs de risque — Cirrhose métabolique & alcoolique</span></div>
         <div style="display:flex;gap:16px;flex-wrap:wrap;">
           <div style="flex:1;min-width:200px;">
-            <p style="font-size:12px;font-weight:700;margin-bottom:4px;">MASLD / Cirrhose métabolique</p>
+            <p style="font-size:13px;font-weight:700;margin-bottom:4px;">MASLD / Cirrhose métabolique</p>
             <div class="flag-list">
               <div class="flag-item"><span class="fi-icon">⚠</span><span>Surpoids/obésité — surtout abdominale (tour de taille plus prédictif que IMC)</span></div>
               <div class="flag-item"><span class="fi-icon">⚠</span><span>Diabète de type 2 / prédiabète / résistance à l'insuline</span></div>
@@ -25541,7 +25454,7 @@ function dkRenal(view) {
             </div>
           </div>
           <div style="flex:1;min-width:200px;">
-            <p style="font-size:12px;font-weight:700;margin-bottom:4px;">Cirrhose alcoolique</p>
+            <p style="font-size:13px;font-weight:700;margin-bottom:4px;">Cirrhose alcoolique</p>
             <div class="flag-list">
               <div class="flag-item"><span class="fi-icon">⚠</span><span>Dose cumulée : &gt; 80 g/j × &gt; 15 ans (1 verre = 10 g alcool)</span></div>
               <div class="flag-item"><span class="fi-icon">⚠</span><span>Femme ⭐ : atteinte plus rapide à dose égale (↓ alcool déshydrogénase gastrique, effet œstrogènes)</span></div>
@@ -25826,7 +25739,7 @@ function dkRenal(view) {
         <div class="highlight cream" style="margin:6px 0;">
           <strong>Étape 3 — Test à l'effort</strong><br>
           <strong>3a. VO₂max (privilégié) :</strong>
-          <table style="margin-top:6px;font-size:12.5px;">
+          <table style="margin-top:6px;font-size:12px;">
             <thead><tr><th>Risque</th><th>VO₂max absolu</th><th>VO₂max prédit</th></tr></thead>
             <tbody>
               <tr><td><span class="drug-badge ok">Faible</span></td><td>&gt; 20 ml/kg/min</td><td>&gt; 75 %</td></tr>
@@ -25834,12 +25747,12 @@ function dkRenal(view) {
               <tr><td><span class="drug-badge ci">Élevé</span></td><td>&lt; 10 ml/kg/min</td><td>&lt; 35 %</td></tr>
             </tbody>
           </table>
-          <p style="margin-top:8px;font-size:12.5px;"><strong>3b. Alternatif (ACCP)</strong> — si VEMS et DLCO POP toutes deux &gt; 30 % mais l'une &lt; 60 % :<br>
+          <p style="margin-top:8px;font-size:13px;"><strong>3b. Alternatif (ACCP)</strong> — si VEMS et DLCO POP toutes deux &gt; 30 % mais l'une &lt; 60 % :<br>
           Test de montée en escalier <strong>&gt; 22 m</strong> <em>ou</em> test de marche <strong>&gt; 400 m</strong> → risque faible.<br>
           Échec ou VEMS/DLCO POP &lt; 30 % → procéder au test VO₂max (étape 3a).</p>
         </div>
 
-        <table style="margin-top:10px;font-size:12.5px;">
+        <table style="margin-top:10px;font-size:12px;">
           <thead><tr><th>Niveau de risque</th><th>Interprétation</th></tr></thead>
           <tbody>
             <tr><td><span class="drug-badge ok">Faible</span></td><td>Mortalité attendue &lt; 1 % · Résection majeure possible</td></tr>
@@ -28298,7 +28211,7 @@ function dkRenal(view) {
               <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="pointer-events:none"><path d="m9 18 6-6-6-6"/></svg>
             </div>
             <div class="accordion-body">
-              <table style="font-size:12.5px">
+              <table style="font-size:12px">
                 <thead><tr><th>Examen</th><th>Indication</th><th>Ce qu'il montre</th></tr></thead>
                 <tbody>
                   <tr><td><span class="drug-badge line1">Échographie TVS</span></td><td>1re intention — toujours</td><td>Épaisseur endomètre (N préménopause : variable selon phase; postménopause : &lt; 4-5 mm) · Fibromes (localisation, taille) · Polypes (masse hyperéchogène) · Adénomyose (utérus hétérogène, kystes myométriaux, bandes linéaires)</td></tr>
@@ -28315,7 +28228,7 @@ function dkRenal(view) {
       <!-- Outil interactif -->
       <div class="block para" style="border-left-color:var(--teal,#0d9488)">
         <div class="block-title" id="sua-4"><span class="tag">🎯 Outil — Sélection du traitement pharmacologique SUA</span></div>
-        <p style="font-size:12.5px;color:#555;margin-bottom:10px">Sélectionnez les caractéristiques de votre patiente pour voir les options thérapeutiques recommandées.</p>
+        <p style="font-size:13px;color:#555;margin-bottom:10px">Sélectionnez les caractéristiques de votre patiente pour voir les options thérapeutiques recommandées.</p>
         <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px" id="sua-opts">
           <button class="algo-opt" onclick="suaTx(this,'désir-grossesse')">Désir de grossesse</button>
           <button class="algo-opt" onclick="suaTx(this,'contraception')">Désir de contraception</button>
@@ -28686,7 +28599,7 @@ function dkRenal(view) {
               <svg class="accordion-chevron" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="pointer-events:none"><path d="m9 18 6-6-6-6"/></svg>
             </div>
             <div class="accordion-body">
-              <table style="font-size:12.5px">
+              <table style="font-size:12px">
                 <thead><tr><th>Catégorie</th><th>Agent</th><th>Indication principale</th></tr></thead>
                 <tbody>
                   <tr><td rowspan="3"><strong>Locale<br>(SGUM isolée)</strong></td><td>Estrogènes vaginaux (crème Estrace, anneau Estring, ovule Vagifem)</td><td>Sécheresse, dyspareunie · Pas de progestatif requis même si utérus intact</td></tr>
@@ -28710,7 +28623,7 @@ function dkRenal(view) {
             <div class="accordion-body">
               <strong>Indications :</strong> SVM modérés-graves (↓ 75 % fréquence, ↓ 85 % intensité) · SGUM · prévention ostéoporose · amélioration sommeil, humeur, anxiété<br>
               <div class="highlight red" style="margin:6px 0"><strong>CI absolues :</strong> Cancer du sein ou endomètre actif · Cardiopathie ischémique · AVC/ICT récents · TVP/EP active · Maladie hépatique active · Saignement vaginal non diagnostiqué · ATCD TEV si progestatifs (sauf si transdermique + progésterone micronisée) · Hypertriglycéridémie sévère (oral CI) · Porphyrie</div>
-              <table style="font-size:12.5px;margin-top:4px">
+              <table style="font-size:12px;margin-top:4px">
                 <thead><tr><th>Situation</th><th>Approche INESSS 2024</th></tr></thead>
                 <tbody>
                   <tr><td><strong>&lt; 60 ans ou &lt; 10 ans post-FMP</strong></td><td>Fenêtre d'opportunité → bénéfices &gt; risques si pas de CI · Démarrer si symptômes significatifs</td></tr>
@@ -30431,5 +30344,27 @@ function calcResec() {
                 }
 </script>
 
+<script>
+function ndDiabAlgo(type) {
+  ['low','high','symp'].forEach(function(t) {
+    var el = document.getElementById('ndalgo-' + t);
+    if (el) el.style.display = (t === type) ? 'block' : 'none';
+  });
+}
+function showPanel(prefix,activeId,count){
+  for(var i=0;i<count;i++){
+    var el=document.getElementById(prefix+i);
+    if(el) el.style.display=(prefix+i===activeId)?'block':'none';
+  }
+  document.querySelectorAll('[data-panel]').forEach(function(b){
+    if(b.getAttribute('data-panel').startsWith(prefix)){
+      var on=b.getAttribute('data-panel')===activeId;
+      var col=prefix==='tx'?'#0a7a4e':'#c0392b';
+      b.style.background=on?col:'var(--cream2)';
+      b.style.color=on?'#fff':'var(--ink)';
+    }
+  });
+}
+</script>
 </body>
 </html>
