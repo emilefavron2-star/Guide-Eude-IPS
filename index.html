@@ -910,7 +910,9 @@
     .resec-step { background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:8px;padding:10px 14px;margin:8px 0; }
     .resec-step h4 { font-size:12px;font-weight:800;color:#1e40af;margin:0 0 6px; }
     .resec-dd { width:100%;padding:5px 8px;font-size:12px;border:1.5px solid #93c5fd;border-radius:6px;background:#fff;cursor:pointer; }
-    .resec-result { margin-top:8px;padding:8px 12px;border-radius:6px;font-size:12px;display:none; }
+
+    .rs-btn { background:var(--cream2);color:var(--ink);border:1.5px solid #93c5fd;border-radius:16px;padding:5px 12px;cursor:pointer;font-size:12px;transition:.15s; }
+    .rs-btn:hover { border-color:#1C3F8F; }    .resec-result { margin-top:8px;padding:8px 12px;border-radius:6px;font-size:12px;display:none; }
     .resec-result.show { display:block; }
     .resec-ok { background:#dcfce7;border-left:3px solid #16a34a;color:#14532d; }
     .resec-mod { background:#fef9c3;border-left:3px solid #ca8a04;color:#713f12; }
@@ -18620,6 +18622,7 @@ SLA · Dystrophie myotonique · Cyphoscoliose sévère · Paralysie diaphragmati
         <button onclick="document.getElementById('tfr-3').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔍 Mécanique ventilatoire</button>
         <button onclick="document.getElementById('tfr-4').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📈 DEP & Spirométrie</button>
         <button onclick="document.getElementById('tfr-5').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🩸 V/Q & Hb-O₂</button>
+              <button onclick="document.getElementById('tfr-bilan').scrollIntoView({behavior:'smooth'})" style="background:#7c3aed;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🫁 Bilan resp. préop.</button>
       </div>
       <div class="block def">
         <div class="block-title" id="tfr-1"><span class="tag">📌 Anatomie — Lobes, Segments & Plèvres</span></div>
@@ -18651,7 +18654,7 @@ SLA · Dystrophie myotonique · Cyphoscoliose sévère · Paralysie diaphragmati
           </tbody>
         </table>
         <div class="highlight cream" style="margin-top:8px;font-size:13px;"><strong>Pattern obstructif :</strong> VEMS/CVF &lt; 0,70 (MPOC, asthme, bronchiectasies) — sévérité selon VEMS %<br><strong>Pattern restrictif :</strong> VEMS/CVF normal + CPT ↓ (fibrose, épanchement, cyphoscoliose, obésité, SLA)<br><strong>Pattern mixte :</strong> VEMS/CVF &lt; 0,70 ET CPT ↓ (sarcoïdose sévère, asthme + obésité)<br><strong>Réversibilité :</strong> ↑ VEMS ≥ 12 % et ≥ 200 mL post-BD → suggère asthme (nouvelle déf. ATS 2022 : &gt; 10 % du prédit)<br><strong>Seuil préop résection :</strong> VEMS ET DLCO post-op prédits &gt; 40 % — sinon CPET (VO₂ max &gt; 10 mL/kg/min)</div>
-        <div class="key-fact black" style="margin-top:8px;"><strong>Méthacholine PC20 :</strong> &lt; 4 mg/mL = hyperréactivité bronchique (asthme très probable) · 4-16 = borderline · &gt; 16 = négatif · CI : VEMS &lt; 60 % ou &lt; 1,5 L, IM/AVC &lt; 3 mois, HTA non contrôlée</div>
+        
       </div>
 
       <div class="block clin">
@@ -18670,38 +18673,148 @@ SLA · Dystrophie myotonique · Cyphoscoliose sévère · Paralysie diaphragmati
 
       <div class="block para" style="border-left-color:var(--blue);">
         <div class="block-title" id="tfr-4"><span class="tag">📈 DEP, Spirométrie & Courbes Débit-Volume</span></div>
-        <p style="font-size:13px;"><strong>Débit expiratoire de pointe (DEP / Peak Expiratory Flow — PEF)</strong></p>
-        <table style="font-size:12px;">
+
+        <!-- DEP Section -->
+        <p style="font-size:13px;font-weight:700;margin:0 0 6px;">Débit Expiratoire de Pointe (DEP / PEF)</p>
+        <table style="font-size:12px;margin-bottom:8px;">
           <thead><tr><th>Paramètre</th><th>Détail</th></tr></thead>
           <tbody>
-            <tr><td><strong>Définition</strong></td><td>Débit maximal instantané lors d'une expiration forcée depuis la CPT — mesure effort-dépendant (nécessite coopération)</td></tr>
-            <tr><td><strong>Valeurs normales</strong></td><td>Femme adulte : 350–500 L/min · Homme adulte : 500–700 L/min (varie avec âge, taille, sexe)</td></tr>
-            <tr><td><strong>Appareils</strong></td><td>Mini-Wright (mécanique) · électronique numérique — portables, simple à domicile</td></tr>
-            <tr><td><strong>Zone verte</strong></td><td>≥ 80 % du meilleur DEP personnel → asthme bien maîtrisé</td></tr>
-            <tr><td><strong>Zone jaune</strong></td><td>60–79 % → réponse partielle, ajuster traitement</td></tr>
-            <tr><td><strong>Zone rouge</strong></td><td>&lt; 60 % → urgence, bronchodilatateur immédiat, consulter</td></tr>
-            <tr><td><strong>Variabilité diurne</strong></td><td>Variabilité ≥ 20 % sur 2 semaines = argument fort pour asthme (DEP matin vs soir)</td></tr>
+            <tr><td><strong>Définition</strong></td><td>Débit maximal instantané lors d'une expiration forcée depuis la CPT — mesure effort-dépendant</td></tr>
+            <tr><td><strong>Valeurs normales</strong></td><td>♀ adulte : 350–500 L/min · ♂ adulte : 500–700 L/min (selon âge, taille, sexe)</td></tr>
+            <tr><td><strong>Variabilité diurne</strong></td><td>≥ 20 % sur 2 semaines = argument fort pour asthme (DEP matin vs soir)</td></tr>
           </tbody>
         </table>
-        <div style="margin-top:12px;"><p style="font-size:13px;margin-bottom:6px;"><strong>Spirométrie — Courbe débit-volume : patterns visuels</strong></p>
-        <table style="font-size:12px;">
-          <thead><tr><th>Pattern</th><th>Courbe débit-volume</th><th>VEMS/CVF</th><th>CPT</th><th>Exemple</th></tr></thead>
+
+        <!-- DEP Color Zones Visual -->
+        <div style="margin:8px 0 12px;">
+          <div style="font-size:11px;color:#555;margin-bottom:4px;font-weight:600;">Zones DEP — % du meilleur DEP personnel</div>
+          <div style="display:flex;border-radius:8px;overflow:hidden;height:48px;box-shadow:0 1px 4px rgba(0,0,0,.15);">
+            <div style="background:linear-gradient(135deg,#16a34a,#22c55e);flex:2;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:11px;line-height:1.3;padding:4px;">
+              <div>🟢 Zone VERTE</div><div>≥ 80 % — Asthme contrôlé</div>
+            </div>
+            <div style="background:linear-gradient(135deg,#ca8a04,#eab308);flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:11px;line-height:1.3;padding:4px;">
+              <div>🟡 Zone JAUNE</div><div>60–79 % → Ajuster Tx</div>
+            </div>
+            <div style="background:linear-gradient(135deg,#dc2626,#ef4444);flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:11px;line-height:1.3;padding:4px;">
+              <div>🔴 Zone ROUGE</div><div>&lt; 60 % → URGENCE</div>
+            </div>
+          </div>
+          <div style="display:flex;font-size:10px;color:#888;margin-top:2px;padding:0 2px;">
+            <div style="flex:2;text-align:center;">Continuer traitement habituel</div>
+            <div style="flex:1;text-align:center;">BD immédiat · corticostéroïde</div>
+            <div style="flex:1;text-align:center;">BD immédiat · urgence</div>
+          </div>
+        </div>
+
+        <!-- Flow-Volume Curves SVG -->
+        <p style="font-size:13px;font-weight:700;margin:10px 0 6px;">Courbes Débit-Volume — Patterns spirométriques</p>
+        <div style="background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:8px;padding:8px;margin-bottom:8px;">
+          <svg viewBox="0 0 440 210" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:520px;display:block;margin:0 auto;">
+            <!-- Grid lines -->
+            <line x1="50" y1="30" x2="50" y2="170" stroke="#cbd5e1" stroke-width="1"/>
+            <line x1="50" y1="130" x2="420" y2="130" stroke="#cbd5e1" stroke-width="1"/>
+            <!-- Tick marks X -->
+            <line x1="110" y1="126" x2="110" y2="134" stroke="#94a3b8" stroke-width="1"/>
+            <line x1="170" y1="126" x2="170" y2="134" stroke="#94a3b8" stroke-width="1"/>
+            <line x1="230" y1="126" x2="230" y2="134" stroke="#94a3b8" stroke-width="1"/>
+            <line x1="290" y1="126" x2="290" y2="134" stroke="#94a3b8" stroke-width="1"/>
+            <line x1="350" y1="126" x2="350" y2="134" stroke="#94a3b8" stroke-width="1"/>
+            <line x1="410" y1="126" x2="410" y2="134" stroke="#94a3b8" stroke-width="1"/>
+            <!-- Tick marks Y -->
+            <line x1="46" y1="34" x2="54" y2="34" stroke="#94a3b8" stroke-width="1"/>
+            <line x1="46" y1="58" x2="54" y2="58" stroke="#94a3b8" stroke-width="1"/>
+            <line x1="46" y1="82" x2="54" y2="82" stroke="#94a3b8" stroke-width="1"/>
+            <line x1="46" y1="106" x2="54" y2="106" stroke="#94a3b8" stroke-width="1"/>
+            <!-- Axis labels X -->
+            <text x="110" y="145" text-anchor="middle" font-size="9" fill="#64748b">1</text>
+            <text x="170" y="145" text-anchor="middle" font-size="9" fill="#64748b">2</text>
+            <text x="230" y="145" text-anchor="middle" font-size="9" fill="#64748b">3</text>
+            <text x="290" y="145" text-anchor="middle" font-size="9" fill="#64748b">4</text>
+            <text x="350" y="145" text-anchor="middle" font-size="9" fill="#64748b">5</text>
+            <text x="410" y="145" text-anchor="middle" font-size="9" fill="#64748b">6</text>
+            <text x="230" y="160" text-anchor="middle" font-size="10" fill="#475569" font-weight="600">Volume expiré (L)</text>
+            <!-- Axis labels Y -->
+            <text x="44" y="37" text-anchor="end" font-size="9" fill="#64748b">8</text>
+            <text x="44" y="61" text-anchor="end" font-size="9" fill="#64748b">6</text>
+            <text x="44" y="85" text-anchor="end" font-size="9" fill="#64748b">4</text>
+            <text x="44" y="109" text-anchor="end" font-size="9" fill="#64748b">2</text>
+            <text x="8" y="90" text-anchor="middle" font-size="10" fill="#475569" font-weight="600" transform="rotate(-90,8,90)">Débit (L/s)</text>
+            <!-- Axis arrow heads -->
+            <polygon points="50,26 46,36 54,36" fill="#94a3b8"/>
+            <polygon points="424,130 414,126 414,134" fill="#94a3b8"/>
+
+            <!-- ── NORMAL (blue) ── CVF=6L, Pic=8 L/s -->
+            <!-- x = 50 + v*60, y = 130 - f*12 -->
+            <!-- v=0,f=0 → 50,130 ; v=0.3,f=8 → 68,34 ; v=6,f=0 → 410,130 -->
+            <path d="M 50,130 C 52,75 60,34 68,34 C 90,34 150,58 200,76 C 260,97 330,116 410,130"
+                  fill="none" stroke="#2563eb" stroke-width="2.5" stroke-linecap="round"/>
+
+            <!-- ── OBSTRUCTIF (orange/red) — CVF=3.5L, Pic=5.5, concave -->
+            <!-- v=0.35,f=5.5 → 71,64 ; end v=3.5 → 260,130 -->
+            <path d="M 50,130 C 52,90 64,64 74,64 C 84,64 96,104 124,116 C 155,126 210,130 260,130"
+                  fill="none" stroke="#ea580c" stroke-width="2.5" stroke-linecap="round"/>
+            <!-- Concave shading -->
+            <path d="M 74,64 C 84,64 96,104 124,116 C 155,126 210,130 260,130 L 260,130 C 190,115 140,94 95,80 C 84,74 78,68 74,64"
+                  fill="#ea580c" fill-opacity="0.07" stroke="none"/>
+
+            <!-- ── RESTRICTIF (purple) — CVF=3L, Pic=5, même forme normale -->
+            <!-- v=0.3,f=5 → 68,70 ; end v=3 → 230,130 -->
+            <path d="M 50,130 C 52,88 60,70 68,70 C 84,70 140,88 175,105 C 200,116 215,124 230,130"
+                  fill="none" stroke="#7c3aed" stroke-width="2.5" stroke-linecap="round"/>
+
+            <!-- ── MIXTE (green) — CVF=2.8L, Pic=4, concave -->
+            <!-- v=0.3,f=4 → 68,82 ; end v=2.8 → 218,130 -->
+            <path d="M 50,130 C 52,95 62,82 70,82 C 80,82 92,110 115,120 C 145,128 190,130 218,130"
+                  fill="none" stroke="#059669" stroke-width="2.5" stroke-linecap="round"/>
+
+            <!-- Peak flow reference line (dashed) -->
+            <line x1="50" y1="34" x2="75" y2="34" stroke="#2563eb" stroke-width="1" stroke-dasharray="3,2" opacity="0.5"/>
+
+                      </svg>
+          <div style="display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:6px;padding:6px 8px;background:#f1f5f9;border-radius:6px;border:1px solid #e2e8f0;">
+            <span style="display:flex;align-items:center;gap:5px;font-size:11px;"><svg width="22" height="4"><line x1="0" y1="2" x2="22" y2="2" stroke="#2563eb" stroke-width="2.5"/></svg><strong style="color:#1d4ed8;">Normal</strong> — CVF normale, pic élevé, descente linéaire</span>
+            <span style="display:flex;align-items:center;gap:5px;font-size:11px;"><svg width="22" height="4"><line x1="0" y1="2" x2="22" y2="2" stroke="#ea580c" stroke-width="2.5"/></svg><strong style="color:#c2410c;">Obstructif</strong> — CVF ↓, pic ↓, concavité expiratoire («cuillère»)</span>
+            <span style="display:flex;align-items:center;gap:5px;font-size:11px;"><svg width="22" height="4"><line x1="0" y1="2" x2="22" y2="2" stroke="#7c3aed" stroke-width="2.5"/></svg><strong style="color:#6d28d9;">Restrictif</strong> — CVF ↓, forme normale, courbe miniaturisée</span>
+            <span style="display:flex;align-items:center;gap:5px;font-size:11px;"><svg width="22" height="4"><line x1="0" y1="2" x2="22" y2="2" stroke="#059669" stroke-width="2.5"/></svg><strong style="color:#065f46;">Mixte</strong> — CVF ↓ + concavité expiratoire</span>
+          </div>
+        </div>
+
+        <!-- Pattern table -->
+        <table style="font-size:12px;margin-bottom:8px;">
+          <thead><tr><th>Pattern</th><th>VEMS/CVF</th><th>CPT</th><th>Courbe débit-volume</th><th>Exemples</th></tr></thead>
           <tbody>
-            <tr><td><strong>Normal</strong></td><td>Pic élevé, bras descendant presque linéaire, large base</td><td>≥ 0,70</td><td>Normal</td><td>Sujet sain</td></tr>
-            <tr><td><strong>Obstructif</strong></td><td>Pic précoce puis concave (creusé vers l'intérieur) — aspect de «sablier» ou cuillère</td><td>&lt; 0,70</td><td>Normal ou ↑ (hyperinflation)</td><td>MPOC, asthme, bronchiectasies</td></tr>
-            <tr><td><strong>Restrictif</strong></td><td>Courbe étroite, miniaturisée mais forme normale — pic proportionnellement bas</td><td>≥ 0,70</td><td>↓ (< 80 %)</td><td>Fibrose, cyphoscoliose, obésité</td></tr>
-            <tr><td><strong>Mixte</strong></td><td>Petit volume + concavité expiratoire</td><td>&lt; 0,70</td><td>↓</td><td>Sarcoïdose sévère</td></tr>
-            <tr><td><strong>Variable extra-thoracique</strong></td><td>Plateau inspiratoire tronqué (trachée, cordes vocales)</td><td>Normal</td><td>Normal</td><td>Obstruction des cordes vocales (PCVS)</td></tr>
-            <tr><td><strong>Variable intra-thoracique</strong></td><td>Plateau expiratoire tronqué</td><td>Normal ou ↓</td><td>Normal</td><td>Trachéomalacie</td></tr>
+            <tr style="background:#dbeafe;">
+              <td><strong style="color:#1d4ed8;">Normal</strong></td><td>≥ 0,70</td><td>Normal</td>
+              <td>Pic élevé · bras descendant presque linéaire · large base</td><td>Sujet sain</td>
+            </tr>
+            <tr style="background:#fed7aa;">
+              <td><strong style="color:#c2410c;">Obstructif</strong></td><td>&lt; 0,70</td><td>Normal ou ↑ (hyperinflation)</td>
+              <td>Pic ↓ · concavité expiratoire (creusé «cuillère»)</td><td>MPOC · asthme · bronchiectasies</td>
+            </tr>
+            <tr style="background:#ede9fe;">
+              <td><strong style="color:#6d28d9;">Restrictif</strong></td><td>≥ 0,70</td><td>↓ (&lt; 80 %)</td>
+              <td>Courbe miniaturisée · même forme que normal</td><td>Fibrose · épanchement · obésité · SLA</td>
+            </tr>
+            <tr style="background:#d1fae5;">
+              <td><strong style="color:#065f46;">Mixte</strong></td><td>&lt; 0,70</td><td>↓</td>
+              <td>Petit volume + concavité expiratoire</td><td>Sarcoïdose sévère · asthme+obésité</td>
+            </tr>
+            <tr>
+              <td><strong>Variable extra-thoracique</strong></td><td>Normal</td><td>Normal</td>
+              <td>Plateau inspiratoire tronqué (bras inférieur aplati)</td><td>Paralysie cordes vocales · PCVS</td>
+            </tr>
+            <tr>
+              <td><strong>Variable intra-thoracique</strong></td><td>Normal ou ↓</td><td>Normal</td>
+              <td>Plateau expiratoire tronqué (bras supérieur aplati)</td><td>Trachéomalacie</td>
+            </tr>
           </tbody>
         </table>
-        </div>
+
         <div class="key-fact blue" style="margin-top:8px;">
-          <strong>Bronchodilatateur (BD) post-test :</strong> ↑ VEMS ≥ 12 % ET ≥ 200 mL = réversibilité significative (suggère asthme) — nouveau seuil ATS 2022 : &gt; 10 % du prédit. Absence de réversibilité N'exclut PAS l'asthme (variabilité). MPOC : réversibilité partielle possible mais VEMS/CVF reste &lt; 0,70.<br>
-          <strong>Test de Provocation Bronchique (TPB) à la méthacholine :</strong> PC₂₀ &lt; 4 mg/mL = hyperréactivité sévère (asthme très probable) · 4–16 = modérée · &gt; 16 = négatif. Sensibilité 90 % pour asthme (bonne pour exclure). CI : VEMS &lt; 60 %, HTA non contrôlée, IM/AVC récent.
+          <strong>Bronchodilatateur post-test :</strong> ↑ VEMS ≥ 12 % ET ≥ 200 mL = réversibilité significative (suggère asthme). Nouveau seuil ATS 2022 : &gt; 10 % du prédit. Absence de réversibilité N'exclut PAS l'asthme. MPOC : réversibilité partielle possible mais VEMS/CVF reste &lt; 0,70.
         </div>
-        <div class="key-fact yellow" style="margin-top:6px;">
-          <strong>Volumes pulmonaires clés :</strong> VT (volume courant, ~500 mL au repos) · VRI (volume de réserve inspiratoire) · VRE (volume de réserve expiratoire) · VR (volume résiduel, non mesurable par spirométrie — nécessite pléthysmographie ou dilution hélium) · CI = VT + VRI · CV = VT + VRI + VRE · CPT = CV + VR
+        <div class="key-fact black" style="margin-top:6px;">
+          <strong>Test de Provocation Bronchique (méthacholine) :</strong> PC₂₀ &lt; 4 mg/mL = hyperréactivité sévère (asthme très probable) · 4–16 = modérée · &gt; 16 = négatif. Sensibilité ~90 % (bonne pour exclure). CI : VEMS &lt; 60 %, HTA non contrôlée, IM/AVC récent.
         </div>
       </div>
 
@@ -19411,7 +19524,70 @@ SLA · Dystrophie myotonique · Cyphoscoliose sévère · Paralysie diaphragmati
         </div>
 
         <div class="key-fact red" style="margin-top:8px;"><strong>Pancoast-Tobias :</strong> tumeur apex (sulcus supérieur) → ① Douleur épaule→bras→doigts (C8-T1-T2) ② Horner (ptosis + myosis + énophtalmie + anhidrose) ③ Destruction costale/vertébrale ④ Atrophie main (plexus brachial). IRM &gt; TDM pour extension vasculo-nerveuse.</div>
-      </div>
+      
+
+              <!-- Modalités diagnostiques TEP-CT et nodule -->
+              <div class="key-fact blue" style="margin-top:10px;">
+                <strong>🔬 TEP-CT au ¹⁸F-FDG</strong>
+              </div>
+              <table style="font-size:12px;margin-bottom:8px;">
+                <thead><tr><th>Paramètre</th><th>Détail</th></tr></thead>
+                <tbody>
+                  <tr><td><strong>Indication</strong></td><td>✅ Nodule ≥ 8 mm · caractérisation de malignité (avidité métabolique) · staging ganglionnaire + métastatique simultané</td></tr>
+                  <tr><td><strong>SUV max &gt; 2,5</strong></td><td>⚠️ Suspect — valeur variable selon institution</td></tr>
+                  <tr><td><strong>Sensibilité / Spécificité</strong></td><td>Se ~95 % · Sp ~80 % pour nodules ≥ 8 mm</td></tr>
+                  <tr><td><strong>Faux négatifs</strong></td><td>Carcinoïde (faible avidité) · Adénocarcinome BAC/lépidique · Nodule sub-solide · Nodule &lt; 8 mm</td></tr>
+                  <tr><td><strong>Faux positifs</strong></td><td>Infection (TB, histoplasmose, sarcoïdose) · Inflammation · Cicatrice récente</td></tr>
+                </tbody>
+              </table>
+
+              <!-- Conduite selon taille / risque -->
+              <div class="key-fact yellow" style="margin-bottom:6px;">
+                <strong>Conduite selon taille du nodule (Fleischner / INESSS)</strong>
+              </div>
+              <table style="font-size:12px;margin-bottom:10px;">
+                <thead><tr><th>Scénario</th><th>Conduite</th></tr></thead>
+                <tbody>
+                  <tr><td><strong>Nodule très petit + risque faible</strong></td><td>Surveillance TDM en série (intervalles selon <a href="https://www.mdcalc.com/calc/10062/fleischner-society-guidelines-incidental-pulmonary-nodules" target="_blank" style="color:#1d4ed8;">Fleischner Society</a> / programme local)</td></tr>
+                  <tr><td><strong>Taille intermédiaire ou caractéristiques suspectes</strong></td><td>TDM de suivi à intervalle court ± TEP-CT</td></tr>
+                  <tr><td><strong>Grande taille ou très suspect</strong></td><td>Biopsie ou résection chirurgicale selon localisation et risque opératoire</td></tr>
+                </tbody>
+              </table>
+
+              <!-- Tableau modalités diagnostiques -->
+              <div class="key-fact blue" style="margin-bottom:6px;">
+                <strong>🏥 Modalités diagnostiques invasives</strong>
+              </div>
+              <table style="font-size:12px;">
+                <thead><tr><th>Modalité</th><th>Indication & Performance</th><th>Complications</th></tr></thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Biopsie transthoracique (BTT)</strong><br><span style="color:#555;font-size:11px;">Guidage TDM/écho</span></td>
+                    <td>✅ Nodule unique périphérique<br>Se ~85–95 % · Sp ~95 % · VPP ~95 %<br>❌ CI rel. : INR &gt; 1,5 · PLQ &lt; 50 · bulle emphysème adjacente · HTP sévère</td>
+                    <td>⚠️ Pneumothorax ~25 % (drain 5–15 %)<br>Hémoptysie ~5 %<br>Embolie gazeuse (rare)</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Bronchoscopie</strong><br><span style="color:#555;font-size:11px;">± EBUS radial · ENB · Cryobiopsie</span></td>
+                    <td>✅ Nodule <strong>central</strong> · atélectasie · hémoptysie · suspicion CPPC<br>Performance : &lt;15mm=10% · 15–20mm=30% · &gt;20mm=40–60% · centraux/visibles &gt;70%<br>EBUS radial (périph. visible) ~70 % · ENB ↑ accès périph.</td>
+                    <td>🚩 Complications &lt; 1 %</td>
+                  </tr>
+                  <tr>
+                    <td><strong>EBUS standard</strong><br><span style="color:#555;font-size:11px;">Écho endobronchique</span></td>
+                    <td>✅ Dx + staging ganglionnaire médiastinal (PAAF stations 2, 4, 7, 10, 11)<br>⚠️ Indiqué sauf nodule ≤ 3 cm périphérique sans adénopathie au TEP<br>Se 85–90 % staging médiastinal · Sp ~100 %</td>
+                    <td>🚩 Complications minimes</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Médiastinoscopie</strong></td>
+                    <td>✅ 2e choix si EBUS non disponible/non concluant<br>Stations 2R/L, 4R/L, 7<br>❌ N'accède PAS stations 5/6 (fenêtre aortopulmonaire) → médiastinotomie Chamberlain ou VATS</td>
+                    <td>Anesthésie générale · incision cervicale</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Thoracoscopie / VATS / Thoracotomie</strong></td>
+                    <td>✅ Si modalités moins invasives non Dx <strong>OU</strong> nodule très suspect d'emblée<br>Résection Dx-thérapeutique simultanée (lobectomie/wedge)<br>VATS ou robotique privilégiée</td>
+                    <td>Mortalité 0,5–1 %</td>
+                  </tr>
+                </tbody>
+              </table></div>
 
       <!-- 2.5 Histologie -->
       <div class="block def">
@@ -19842,12 +20018,12 @@ SLA · Dystrophie myotonique · Cyphoscoliose sévère · Paralysie diaphragmati
       <div class="block rx">
         <div class="block-title" id="neo-10"><span class="tag">🏥 2.7b Traitement — Approches Thérapeutiques Détaillées</span></div>
                 <div style="display:flex;gap:6px;flex-wrap:wrap;margin:8px 0 12px;">
-          <button onclick="showPanel('ap42','ap420',4)" data-panel="ap420" style="background:#6d28d9;color:#fff;border:1.5px solid #6d28d9;border-radius:20px;padding:5px 13px;cursor:pointer;font-size:12px;font-weight:600;transition:.15s;">Thérapies locales — Chirurgie</button>
-          <button onclick="showPanel('ap42','ap421',4)" data-panel="ap421" style="background:var(--cream2);color:var(--ink);border:1.5px solid #6d28d9;border-radius:20px;padding:5px 13px;cursor:pointer;font-size:12px;font-weight:600;transition:.15s;">Thérapies locales — Radiothérapie</button>
-          <button onclick="showPanel('ap42','ap422',4)" data-panel="ap422" style="background:var(--cream2);color:var(--ink);border:1.5px solid #6d28d9;border-radius:20px;padding:5px 13px;cursor:pointer;font-size:12px;font-weight:600;transition:.15s;">Chimiothérapie — Régimes standards</button>
-          <button onclick="showPanel('ap42','ap423',4)" data-panel="ap423" style="background:var(--cream2);color:var(--ink);border:1.5px solid #6d28d9;border-radius:20px;padding:5px 13px;cursor:pointer;font-size:12px;font-weight:600;transition:.15s;">Immunothérapie — Anti-PD-1/PD-L1</button>
+          <button onclick="showPanel('lct','lct0',4)" data-panel="lct0" style="background:#6d28d9;color:#fff;border:1.5px solid #6d28d9;border-radius:20px;padding:5px 13px;cursor:pointer;font-size:12px;font-weight:600;transition:.15s;">Thérapies locales — Chirurgie</button>
+          <button onclick="showPanel('lct','lct1',4)" data-panel="lct1" style="background:var(--cream2);color:var(--ink);border:1.5px solid #6d28d9;border-radius:20px;padding:5px 13px;cursor:pointer;font-size:12px;font-weight:600;transition:.15s;">Thérapies locales — Radiothérapie</button>
+          <button onclick="showPanel('lct','lct2',4)" data-panel="lct2" style="background:var(--cream2);color:var(--ink);border:1.5px solid #6d28d9;border-radius:20px;padding:5px 13px;cursor:pointer;font-size:12px;font-weight:600;transition:.15s;">Chimiothérapie — Régimes standards</button>
+          <button onclick="showPanel('lct','lct3',4)" data-panel="lct3" style="background:var(--cream2);color:var(--ink);border:1.5px solid #6d28d9;border-radius:20px;padding:5px 13px;cursor:pointer;font-size:12px;font-weight:600;transition:.15s;">Immunothérapie — Anti-PD-1/PD-L1</button>
         </div>
-        <div id="ap420" style="display:block;">
+        <div id="lct0" style="display:block;">
 
               <strong>Types de résection :</strong><br>
               — <span class="drug-badge line1">Lobectomie</span> : résection d'un lobe pulmonaire — gold standard CPNPC résécable stade I-II · préserve plus de parenchyme que pneumonectomie<br>
@@ -19856,60 +20032,60 @@ SLA · Dystrophie myotonique · Cyphoscoliose sévère · Paralysie diaphragmati
               — <strong>Résection ganglionnaire médiastinale systématique (MLND)</strong> : obligatoire pour stadification correcte N2<br><br>
               <strong>Critères de résécabilité — Bilan préopératoire (INESSS) :</strong>
 
-              
               <div style="background:#e0f2fe;border-left:4px solid #0284c7;border-radius:8px;padding:10px 14px;margin:8px 0 12px;font-size:12px;">
-                <strong>Principe :</strong> Évaluation séquentielle en 3 étapes. Si les 2 premières valeurs (&gt; 80 % ou &gt; 60 %) sont atteintes → risque faible confirmé, arrêt de l'évaluation. Sinon → passer à l'étape suivante.
+                <strong>Principe :</strong> Évaluation séquentielle. Si les valeurs des étapes 1 ou 2 sont suffisantes → risque faible confirmé, arrêt. Sinon → étape suivante.
               </div>
 
-              <div class="resec-step">
+              <!-- ÉTAPE 1 -->
+              <div class="resec-step" id="rs-step1">
                 <h4>Étape 1 — VEMS et DLCO préopératoires</h4>
-                <label style="font-size:12px;display:block;margin-bottom:4px;">VEMS prédit (%) :</label>
-                <select class="resec-dd" id="r-vems1" onchange="calcResec()">
-                  <option value="">-- Sélectionner --</option>
-                  <option value="ok">&gt; 80 % du prédit</option>
-                  <option value="low">≤ 80 % du prédit</option>
-                </select>
-                <label style="font-size:12px;display:block;margin:6px 0 4px;">DLCO prédit (%) :</label>
-                <select class="resec-dd" id="r-dlco1" onchange="calcResec()">
-                  <option value="">-- Sélectionner --</option>
-                  <option value="ok">&gt; 80 % du prédit</option>
-                  <option value="low">≤ 80 % du prédit</option>
-                </select>
+                <div style="margin-bottom:6px;font-size:12px;"><strong>VEMS prédit (%)</strong></div>
+                <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px;">
+                  <button onclick="rsSet('v1','ok',this)" class="rs-btn">&#62; 80 %</button>
+                  <button onclick="rsSet('v1','low',this)" class="rs-btn">≤ 80 %</button>
+                </div>
+                <div style="margin-bottom:6px;font-size:12px;"><strong>DLCO prédit (%)</strong></div>
+                <div style="display:flex;gap:6px;flex-wrap:wrap;">
+                  <button onclick="rsSet('d1','ok',this)" class="rs-btn">&#62; 80 %</button>
+                  <button onclick="rsSet('d1','low',this)" class="rs-btn">≤ 80 %</button>
+                </div>
               </div>
 
-              <div class="resec-step" id="resec-step2" style="display:none;">
-                <h4>Étape 2 — VEMS et DLCO post-opératoires prédits (POP)</h4>
-                <p style="font-size:12px;color:#555;margin:0 0 6px;">Calculé selon le nombre de segments à réséquer. Formule : VEMS POP = VEMS préop × (1 - segments résèqués/19).</p>
-                <label style="font-size:12px;display:block;margin-bottom:4px;">VEMS POP (%) :</label>
-                <select class="resec-dd" id="r-vems2" onchange="calcResec()">
-                  <option value="">-- Sélectionner --</option>
-                  <option value="ok">&gt; 60 % du prédit</option>
-                  <option value="low30">30–60 % du prédit</option>
-                  <option value="very_low">&lt; 30 % du prédit</option>
-                </select>
-                <label style="font-size:12px;display:block;margin:6px 0 4px;">DLCO POP (%) :</label>
-                <select class="resec-dd" id="r-dlco2" onchange="calcResec()">
-                  <option value="">-- Sélectionner --</option>
-                  <option value="ok">&gt; 60 % du prédit</option>
-                  <option value="low30">30–60 % du prédit</option>
-                  <option value="very_low">&lt; 30 % du prédit</option>
-                </select>
+              <!-- ÉTAPE 2 (cachée initialement) -->
+              <div class="resec-step" id="rs-step2" style="display:none;">
+                <h4>Étape 2 — VEMS et DLCO post-op prédits (POP)</h4>
+                <p style="font-size:12px;color:#555;margin:0 0 6px;">Formule : VEMS POP = VEMS préop × (1 − segments résèqués / 19)</p>
+                <div style="margin-bottom:6px;font-size:12px;"><strong>VEMS POP (%)</strong></div>
+                <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px;">
+                  <button onclick="rsSet('v2','ok',this)" class="rs-btn">&#62; 60 %</button>
+                  <button onclick="rsSet('v2','mid',this)" class="rs-btn">30–60 %</button>
+                  <button onclick="rsSet('v2','low',this)" class="rs-btn">&#60; 30 %</button>
+                </div>
+                <div style="margin-bottom:6px;font-size:12px;"><strong>DLCO POP (%)</strong></div>
+                <div style="display:flex;gap:6px;flex-wrap:wrap;">
+                  <button onclick="rsSet('d2','ok',this)" class="rs-btn">&#62; 60 %</button>
+                  <button onclick="rsSet('d2','mid',this)" class="rs-btn">30–60 %</button>
+                  <button onclick="rsSet('d2','low',this)" class="rs-btn">&#60; 30 %</button>
+                </div>
               </div>
 
-              <div class="resec-step" id="resec-step3" style="display:none;">
-                <h4>Étape 3 — Test à l'effort</h4>
-                <label style="font-size:12px;display:block;margin-bottom:4px;">Test privilégié — VO₂max :</label>
-                <select class="resec-dd" id="r-vo2" onchange="calcResec()">
-                  <option value="">-- Sélectionner --</option>
-                  <option value="ok">&gt; 20 mL/kg/min ou &gt; 75 % prédit (faible risque)</option>
-                  <option value="mod">10–20 mL/kg/min ou 35–75 % prédit (risque modéré)</option>
-                  <option value="high">&lt; 10 mL/kg/min ou &lt; 35 % prédit (risque élevé)</option>
-                  <option value="stairs">Alternative (escalier/marche) — Montée &gt; 22 m ET/OU marche &gt; 400 m</option>
-                  <option value="stairs_fail">Alternative (escalier/marche) — Seuils NON atteints</option>
-                </select>
+              <!-- ÉTAPE 3 (cachée initialement) -->
+              <div class="resec-step" id="rs-step3" style="display:none;">
+                <h4>Étape 3 — Test à l'effort (CPET / VO₂max)</h4>
+                <div style="display:flex;gap:6px;flex-wrap:wrap;">
+                  <button onclick="rsSet('vo2','ok',this)" class="rs-btn">VO₂max &#62; 20 mL/kg/min ou &#62; 75 %</button>
+                  <button onclick="rsSet('vo2','mod',this)" class="rs-btn">VO₂max 10–20 mL/kg/min</button>
+                  <button onclick="rsSet('vo2','high',this)" class="rs-btn">VO₂max &#60; 10 mL/kg/min</button>
+                  <button onclick="rsSet('vo2','stairs',this)" class="rs-btn">Escalier &#62; 22 m ET/OU marche &#62; 400 m</button>
+                  <button onclick="rsSet('vo2','fail',this)" class="rs-btn">Seuils NON atteints</button>
+                </div>
               </div>
 
-              <div id="resec-result" class="resec-result"></div>
+              <div id="rs-result" style="display:none;margin-top:10px;padding:10px 14px;border-radius:8px;font-size:12px;font-weight:600;"></div>
+
+              <button onclick="rsReset()" style="margin-top:8px;background:#f1f5f9;border:1.5px solid #cbd5e1;border-radius:16px;padding:4px 12px;font-size:11px;cursor:pointer;color:#475569;">↺ Recommencer</button>
+
+
 
               
 
@@ -19918,7 +20094,7 @@ SLA · Dystrophie myotonique · Cyphoscoliose sévère · Paralysie diaphragmati
               <strong>Approche mini-invasive :</strong> VATS (thoracoscopie assistée) et chirurgie robotique → ↓ morbidité, ↓ durée d'hospitalisation, équivalent oncologique à la thoracotomie ouverte
             
         </div>
-        <div id="ap421" style="display:none;">
+        <div id="lct1" style="display:none;">
 
               <strong>RT stéréotaxique ablative (SBRT/SABR) :</strong><br>
               — Stade I-II inopérable (ou refus chirurgie) · 3-5 fractions (48-60 Gy biologiquement équivalent) · ≥ 10 Gy/fraction<br>
@@ -19937,7 +20113,7 @@ SLA · Dystrophie myotonique · Cyphoscoliose sévère · Paralysie diaphragmati
               — Métastases cérébrales symptomatiques : WBRT 20-30 Gy/5-10 fractions ou SRS si ≤ 4 lésions
             
         </div>
-        <div id="ap422" style="display:none;">
+        <div id="lct2" style="display:none;">
 
               <strong>CPNPC :</strong>
               <table style="font-size:12px;margin-top:4px;margin-bottom:8px;">
@@ -19961,7 +20137,7 @@ SLA · Dystrophie myotonique · Cyphoscoliose sévère · Paralysie diaphragmati
               </table>
             
         </div>
-        <div id="ap423" style="display:none;">
+        <div id="lct3" style="display:none;">
 
               <table style="font-size:12px;">
                 <thead><tr><th>Médicament</th><th>Cible</th><th>Indication principale CPNPC</th></tr></thead>
@@ -20741,6 +20917,51 @@ SLA · Dystrophie myotonique · Cyphoscoliose sévère · Paralysie diaphragmati
           <div class="flag-item"><span class="fi-icon">🚨</span><span>Fièvre + bactériémie <em>S. aureus</em> sans source évidente → ETT/ETO systématique (10–20 % EI)</span></div>
         </div>
       </div>
+
+
+      <div class="block def">
+        <div class="block-title" id="tfr-bilan"><span class="tag">🫁 Bilan respiratoire préopératoire</span> <a href="https://inesss.algorithmes-onco.info/fr/algorithmes-d-investigation-de-traitement-et-de-suivi-du-cancer-du-poumon#signet900" target="_blank" style="font-size:12px;color:var(--accent);margin-left:8px;">[détails INESSS]</a></div>
+        <p class="content-text">L'évaluation respiratoire préopératoire consiste à soumettre le patient à différents tests de façon séquentielle afin d'évaluer son risque chirurgical. Elle se divise en <strong>3 étapes</strong> :</p>
+
+        <div class="highlight cream" style="margin:10px 0 6px;">
+          <strong>Étape 1 — VEMS et DLCO</strong><br>
+          Si VEMS <em>et</em> DLCO <strong>&gt; 80 %</strong> → risque faible, aucun autre test requis.<br>
+          Sinon → estimer VEMS et DLCO postopératoires prédits (POP) → étape 2.
+        </div>
+
+        <div class="highlight cream" style="margin:6px 0;">
+          <strong>Étape 2 — VEMS et DLCO POP</strong><br>
+          Si VEMS <em>et</em> DLCO POP <strong>&gt; 60 %</strong> → risque faible, aucun autre test requis.<br>
+          Si l'une des valeurs <strong>&lt; 60 %</strong> → test à l'effort → étape 3.
+        </div>
+
+        <div class="highlight cream" style="margin:6px 0;">
+          <strong>Étape 3 — Test à l'effort</strong><br>
+          <strong>3a. VO₂max (privilégié) :</strong>
+          <table style="margin-top:6px;font-size:12px;">
+            <thead><tr><th>Risque</th><th>VO₂max absolu</th><th>VO₂max prédit</th></tr></thead>
+            <tbody>
+              <tr><td><span class="drug-badge ok">Faible</span></td><td>&gt; 20 ml/kg/min</td><td>&gt; 75 %</td></tr>
+              <tr><td><span class="drug-badge warn">Modéré</span></td><td>10–20 ml/kg/min</td><td>35–75 %</td></tr>
+              <tr><td><span class="drug-badge ci">Élevé</span></td><td>&lt; 10 ml/kg/min</td><td>&lt; 35 %</td></tr>
+            </tbody>
+          </table>
+          <p style="margin-top:8px;font-size:13px;"><strong>3b. Alternatif (ACCP)</strong> — si VEMS et DLCO POP toutes deux &gt; 30 % mais l'une &lt; 60 % :<br>
+          Test de montée en escalier <strong>&gt; 22 m</strong> <em>ou</em> test de marche <strong>&gt; 400 m</strong> → risque faible.<br>
+          Échec ou VEMS/DLCO POP &lt; 30 % → procéder au test VO₂max (étape 3a).</p>
+        </div>
+
+        <table style="margin-top:10px;font-size:12px;">
+          <thead><tr><th>Niveau de risque</th><th>Interprétation</th></tr></thead>
+          <tbody>
+            <tr><td><span class="drug-badge ok">Faible</span></td><td>Mortalité attendue &lt; 1 % · Résection majeure possible</td></tr>
+            <tr><td><span class="drug-badge warn">Modéré</span></td><td>Morbidité/mortalité variable selon valeurs POP et tolérance à l'effort · Discussion risques/bénéfices requise</td></tr>
+            <tr><td><span class="drug-badge ci">Élevé</span></td><td>Mortalité après résection majeure &gt; 10 % · Risque morbidité cardiopulmonaire sévère considérable · Perte de fonction résiduelle attendue</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      
     </div>
 
     <!-- ═══════════════════════════════════════════════════════════════
@@ -25302,164 +25523,142 @@ SLA · Dystrophie myotonique · Cyphoscoliose sévère · Paralysie diaphragmati
         <div class="section-accent" style="background:#065f46">🏥</div>
         <div class="section-title"><h1>Évaluation préopératoire & risque cardiovasculaire</h1><div class="breadcrumb">Hépato-biliaire <span class="breadcrumb-sep">·</span> Section 10</div></div>
       </div>
-      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
-        <button onclick="document.getElementById('preo-1').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📌 10.1 Qui évaluer</button>
-        <button onclick="document.getElementById('preo-2').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔍 10.2 Anamnèse</button>
-        <button onclick="document.getElementById('preo-3').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔬 RCRI</button>
-        <button onclick="document.getElementById('preo-4').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📌 10.4 Paraclinique</button>
-        <button onclick="document.getElementById('preo-5').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">💊 10.5 Médications</button>
-        <button onclick="document.getElementById('preo-6').scrollIntoView({behavior:'smooth'})" style="background:#c0392b;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🚨 10.6 Surveillance</button>
-        <button onclick="document.getElementById('preo-7').scrollIntoView({behavior:'smooth'})" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🫁 Bilan respiratoire</button>
-      </div>
+      
       <div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:20px;">
         <div style="flex:1;min-width:100px;background:#FEE2E2;border-radius:10px;padding:12px;text-align:center;"><div style="font-size:13px;font-weight:800;color:#c0392b;">RCRI ≥ 3</div><div style="font-size:11px;color:#555;margin-top:4px;">Risque cardiaque élevé</div></div>
         <div style="flex:1;min-width:100px;background:#FEF9C3;border-radius:10px;padding:12px;text-align:center;"><div style="font-size:13px;font-weight:800;color:#92400e;">HbA1c &lt; 8,5 %</div><div style="font-size:11px;color:#555;margin-top:4px;">Objectif périopératoire</div></div>
         <div style="flex:1;min-width:100px;background:#EEF2FF;border-radius:10px;padding:12px;text-align:center;"><div style="font-size:13px;font-weight:800;color:#1C3F8F;">SCC 2017</div><div style="font-size:11px;color:#555;margin-top:4px;">Lignes directrices clés</div></div>
       </div>
-      <div class="block def">
-        <div class="block-title" id="preo-1"><span class="tag">📌 10.1 Qui évaluer ? (SCC 2017)</span></div>
-        <p class="content-text">Évaluation cardiaque préopératoire indiquée pour tout patient :<br>
-        &nbsp; · <strong>≥ 45 ans</strong>, OU <strong>18–44 ans avec maladie cardiovasculaire significative</strong><br>
-        &nbsp; · Subissant une <strong>chirurgie non cardiaque</strong> nécessitant une hospitalisation &gt; 24 h</p>
-        <div class="highlight cream" style="margin-top:8px;font-size:13px;"><strong>MCV significative :</strong> coronaropathie connue · AVC/ICT · maladie artérielle périphérique · insuffisance cardiaque · HTAP sévère · anomalie obstructive intracardiaque sévère (sténose aortique sévère, sténose mitrale sévère, cardiomyopathie hypertrophique obstructive sévère)</div>
-      </div>
+            <div class="block def">
+        <div class="block-title" id="preo-8"><span class="tag">🗺️ Algorithme SCC 2017 — Évaluation cardiaque préopératoire étape par étape</span></div>
+        <div class="key-fact blue" style="margin-bottom:10px;font-size:12px;">Ce guide synthétise les 7 étapes de l'évaluation cardiaque préopératoire (SCC 2017) dans l'ordre clinique à suivre. Utilisez les onglets ci-dessous pour naviguer étape par étape.</div>
 
-      <div class="block clin">
-        <div class="block-title" id="preo-2"><span class="tag">🔍 10.2 Anamnèse & examen physique</span></div>
-        <div class="criteria-list">
-          <div class="criteria-item"><div class="criteria-num blue">→</div><span><strong>ATCD :</strong> coronaropathie, IM, AVC/ICT, IC, MAP, FA, diabète (insulinodépendant), IRC</span></div>
-          <div class="criteria-item"><div class="criteria-num blue">→</div><span><strong>Symptômes actuels :</strong> angine, dyspnée d'effort, orthopnée, DPN, palpitations, syncope</span></div>
-          <div class="criteria-item"><div class="criteria-num blue">→</div><span><strong>Capacité fonctionnelle (METs) :</strong> ≥ 4 METs = monter 1 étage / marcher en côte / jardinage léger. ⚠️ Selon SCC 2017 — ne plus utiliser comme outil principal seul (peu prédictif)</span></div>
-          <div class="criteria-item"><div class="criteria-num blue">→</div><span><strong>Médicaments :</strong> antiplaquettaires, anticoagulants, β-bloquants, IECA/ARA, statines, hypoglycémiants</span></div>
-          <div class="criteria-item"><div class="criteria-num blue">→</div><span><strong>EP :</strong> souffle cardiaque (sténose aortique?), B3, râles pulmonaires, œdème, pouls périphériques, signes vitaux</span></div>
-        </div>
-      </div>
-
-      <div class="block para">
-        <div class="block-title" id="preo-3"><span class="tag">🔬 10.3 Score RCRI (Revised Cardiac Risk Index — Lee)</span></div>
-        <p class="content-text"><strong>1 point par variable :</strong></p>
-        <table>
-          <thead><tr><th>Variable</th><th>Point</th></tr></thead>
-          <tbody>
-            <tr><td>Antécédent de cardiopathie ischémique (IM, ECG onde Q, angine, ETT effort +, nitrates)</td><td>1</td></tr>
-            <tr><td>Antécédent d'insuffisance cardiaque congestive (œdème pulmonaire, DPN, B3, râles, ICT à la RXP)</td><td>1</td></tr>
-            <tr><td>Antécédent de maladie cérébrovasculaire (AVC, ICT)</td><td>1</td></tr>
-            <tr><td>Insulinothérapie pour diabète</td><td>1</td></tr>
-            <tr><td>Créatinine préopératoire &gt; 177 µmol/L (&gt; 2,0 mg/dL)</td><td>1</td></tr>
-            <tr><td>Chirurgie à <strong>haut risque</strong> (intra-péritonéale, intra-thoracique, vasculaire suprainguinale)</td><td>1</td></tr>
-          </tbody>
-        </table>
-        <div class="key-fact blue" style="margin-top:8px;">
-          <strong>Risque d'événement cardiaque majeur à 30 j :</strong><br>
-          0 pt → 0,4 % · 1 pt → 1 % · 2 pts → 2,4 % · ≥ 3 pts → 5,4 % et +<br>
-          <a href="https://www.mdcalc.com/calc/1739/revised-cardiac-risk-index-pre-operative-risk" target="_blank" style="color:var(--blue);font-size:11px;">MDCalc — RCRI</a>
-        </div>
-      </div>
-
-      <div class="block def">
-        <div class="block-title" id="preo-4"><span class="tag">📌 10.4 Examens paracliniques</span></div>
-                <div style="display:flex;gap:6px;flex-wrap:wrap;margin:8px 0 12px;">
-          <button onclick="showPanel('ap72','ap720',2)" data-panel="ap720" style="background:#475569;color:#fff;border:1.5px solid #475569;border-radius:20px;padding:5px 13px;cursor:pointer;font-size:12px;font-weight:600;transition:.15s;">Biomarqueurs cardiaques ⭐ (recommandation FORTE — SCC 2017)</button>
-          <button onclick="showPanel('ap72','ap721',2)" data-panel="ap721" style="background:var(--cream2);color:var(--ink);border:1.5px solid #475569;border-radius:20px;padding:5px 13px;cursor:pointer;font-size:12px;font-weight:600;transition:.15s;">Examens NON recommandés en routine</button>
-        </div>
-        <div id="ap720" style="display:block;">
-
-              <strong>Doser NT-proBNP ou BNP en préopératoire si :</strong><br>
-              &nbsp; · Patient ≥ 65 ans, OU<br>
-              &nbsp; · 45–64 ans avec MCV significative, OU<br>
-              &nbsp; · RCRI ≥ 1<br><br>
-              <strong>Seuils à risque :</strong> NT-proBNP ≥ 300 ng/L OU BNP ≥ 92 µg/L<br>
-              <div class="key-fact red" style="margin-top:6px;">Impact : risque IM ou décès à 30 j passe de ~4,9 % (sous seuil) à ~21,8 % (au-dessus) → modifier la prise en charge périopératoire</div>
-            
-        </div>
-        <div id="ap721" style="display:none;">
-
-              <span class="drug-badge ci">CONTRE-INDIQUÉS en routine (recommandations FORTES contre) :</span><br>
-              ❌ Échocardiographie de repos<br>
-              ❌ Angio-TDM coronarienne<br>
-              ❌ Épreuve d'effort ou épreuve d'effort cardiorespiratoire<br>
-              ❌ Échocardiographie de stress pharmacologique ou imagerie isotopique<br><br>
-              <span class="drug-badge line1">Exception :</span> faire l'écho si examen physique suggère une valvulopathie obstructive sévère méconnue ou HTAP sévère<br>
-              <em>ECG :</em> non systématique selon SCC mais souvent fait en pratique
-            
+        <div style="display:flex;gap:6px;flex-wrap:wrap;margin:8px 0 12px;">
+          <button onclick="showPanel('preoa','preoa0',7)" data-panel="preoa0" style="background:#1C3F8F;color:#fff;border:1.5px solid #1C3F8F;border-radius:20px;padding:5px 13px;cursor:pointer;font-size:12px;font-weight:600;">① Urgence?</button>
+          <button onclick="showPanel('preoa','preoa1',7)" data-panel="preoa1" style="background:#1C3F8F;color:#fff;border:1.5px solid #1C3F8F;border-radius:20px;padding:5px 13px;cursor:pointer;font-size:12px;font-weight:600;">② Critères</button>
+          <button onclick="showPanel('preoa','preoa2',7)" data-panel="preoa2" style="background:#1C3F8F;color:#fff;border:1.5px solid #1C3F8F;border-radius:20px;padding:5px 13px;cursor:pointer;font-size:12px;font-weight:600;">③ Anamnèse & EP</button>
+          <button onclick="showPanel('preoa','preoa3',7)" data-panel="preoa3" style="background:#1C3F8F;color:#fff;border:1.5px solid #1C3F8F;border-radius:20px;padding:5px 13px;cursor:pointer;font-size:12px;font-weight:600;">④ RCRI</button>
+          <button onclick="showPanel('preoa','preoa4',7)" data-panel="preoa4" style="background:#1C3F8F;color:#fff;border:1.5px solid #1C3F8F;border-radius:20px;padding:5px 13px;cursor:pointer;font-size:12px;font-weight:600;">⑤ NT-proBNP/BNP</button>
+          <button onclick="showPanel('preoa','preoa5',7)" data-panel="preoa5" style="background:#1C3F8F;color:#fff;border:1.5px solid #1C3F8F;border-radius:20px;padding:5px 13px;cursor:pointer;font-size:12px;font-weight:600;">⑥ Médications</button>
+          <button onclick="showPanel('preoa','preoa6',7)" data-panel="preoa6" style="background:#c0392b;color:#fff;border:1.5px solid #c0392b;border-radius:20px;padding:5px 13px;cursor:pointer;font-size:12px;font-weight:600;">⑦ Postop</button>
         </div>
 
-      </div>
-
-      <div class="block rx">
-        <div class="block-title" id="preo-5"><span class="tag">💊 10.5 Gestion des médicaments en périopératoire (SCC 2017)</span></div>
-        <table>
-          <thead><tr><th>Médicament</th><th>Conduite</th></tr></thead>
-          <tbody>
-            <tr><td><strong>AAS (aspirine)</strong></td><td>Ne pas débuter ni continuer en prévention périopératoire · <em>Exceptions :</em> endoprothèse coronarienne récente, endartériectomie carotidienne</td></tr>
-            <tr><td><strong>β-bloquants / α2-agonistes</strong></td><td><span class="drug-badge ci">Ne PAS débuter dans les 24 h précédant la chirurgie</span> (↑ AVC et mortalité) · Continuer si déjà en cours et bien toléré</td></tr>
-            <tr><td><strong>IECA / ARA</strong></td><td>Suspendre 24 h avant la chirurgie (risque hypotension peropératoire)</td></tr>
-            <tr><td><strong>Statines</strong></td><td>À débuter si lésion myocardique périopératoire (avec AAS)</td></tr>
-            <tr><td><strong>Tabac</strong></td><td>Faciliter l'abandon avant la chirurgie (recommandation forte)</td></tr>
-            <tr><td><strong>Anticoagulants / antiplaquettaires P2Y12</strong></td><td>Gestion spécifique selon indication et risque hémorragique → avis spécialisé</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="block flag">
-        <div class="block-title" id="preo-6"><span class="tag">🚨 10.6 Surveillance postopératoire & 10.7 Quand reporter</span></div>
-        <div class="flag-list">
-          <div class="flag-item"><span class="fi-icon">📊</span><span><strong>Troponine quotidienne × 48–72 h</strong> si : NT-proBNP/BNP préopératoire élevé OU (si non mesuré) RCRI ≥ 1 ou 45–64 ans avec MCV ou ≥ 65 ans</span></div>
-          <div class="flag-item"><span class="fi-icon">📈</span><span>ECG à la salle de réveil</span></div>
-          <div class="flag-item"><span class="fi-icon">💊</span><span>Si lésion myocardique ou IM postop → débuter AAS + statine + prise en charge partagée (médecine interne/cardiologie)</span></div>
-          <div class="flag-item"><span class="fi-icon">⚠</span><span>Sans dépistage par troponine : &gt; 50 % des IM périopératoires passent inaperçus (silencieux)</span></div>
-        </div>
-        <table style="margin-top:10px;font-size:12px;">
-          <thead><tr><th>Urgence chirurgicale</th><th>Conduite</th></tr></thead>
-          <tbody>
-            <tr><td>Urgence vraie (rupture AAA, trauma)</td><td>Opérer SANS évaluation cardiaque additionnelle</td></tr>
-            <tr><td>Urgente/semi-urgente (# hanche, occlusion, cancer métastatique)</td><td>Opérer · Évaluation cardiaque seulement si instabilité ou suspicion valvulopathie/HTAP non diagnostiquée</td></tr>
-            <tr><td>Élective + condition instable (angine instable, IC décompensée, arythmie significative, valvulopathie sévère symptomatique)</td><td><span class="drug-badge warn">Reporter</span> → Stabiliser avant chirurgie</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="block def">
-        <div class="block-title" id="preo-7"><span class="tag">🫁 Bilan respiratoire préopératoire</span> <a href="https://inesss.algorithmes-onco.info/fr/algorithmes-d-investigation-de-traitement-et-de-suivi-du-cancer-du-poumon#signet900" target="_blank" style="font-size:12px;color:var(--accent);margin-left:8px;">[détails INESSS]</a></div>
-        <p class="content-text">L'évaluation respiratoire préopératoire consiste à soumettre le patient à différents tests de façon séquentielle afin d'évaluer son risque chirurgical. Elle se divise en <strong>3 étapes</strong> :</p>
-
-        <div class="highlight cream" style="margin:10px 0 6px;">
-          <strong>Étape 1 — VEMS et DLCO</strong><br>
-          Si VEMS <em>et</em> DLCO <strong>&gt; 80 %</strong> → risque faible, aucun autre test requis.<br>
-          Sinon → estimer VEMS et DLCO postopératoires prédits (POP) → étape 2.
-        </div>
-
-        <div class="highlight cream" style="margin:6px 0;">
-          <strong>Étape 2 — VEMS et DLCO POP</strong><br>
-          Si VEMS <em>et</em> DLCO POP <strong>&gt; 60 %</strong> → risque faible, aucun autre test requis.<br>
-          Si l'une des valeurs <strong>&lt; 60 %</strong> → test à l'effort → étape 3.
-        </div>
-
-        <div class="highlight cream" style="margin:6px 0;">
-          <strong>Étape 3 — Test à l'effort</strong><br>
-          <strong>3a. VO₂max (privilégié) :</strong>
-          <table style="margin-top:6px;font-size:12px;">
-            <thead><tr><th>Risque</th><th>VO₂max absolu</th><th>VO₂max prédit</th></tr></thead>
+        <div id="preoa0" style="display:block;">
+          <div class="highlight cream" style="margin-bottom:8px;font-size:12px;"><strong>Question 1 — La chirurgie est-elle urgente ou semi-urgente ?</strong></div>
+          <table style="font-size:12px;">
+            <thead><tr><th>Niveau d'urgence</th><th>Exemples</th><th>Conduite</th></tr></thead>
             <tbody>
-              <tr><td><span class="drug-badge ok">Faible</span></td><td>&gt; 20 ml/kg/min</td><td>&gt; 75 %</td></tr>
-              <tr><td><span class="drug-badge warn">Modéré</span></td><td>10–20 ml/kg/min</td><td>35–75 %</td></tr>
-              <tr><td><span class="drug-badge ci">Élevé</span></td><td>&lt; 10 ml/kg/min</td><td>&lt; 35 %</td></tr>
+              <tr><td><strong>🚨 Urgence absolue</strong></td><td>Rupture d'anévrisme, trauma sévère, ischémie aiguë</td><td><span class="drug-badge warn">Opérer SANS évaluation cardiaque additionnelle</span></td></tr>
+              <tr><td><strong>⚡ Urgente / semi-urgente</strong></td><td>Fracture de hanche, occlusion intestinale, cancer à potentiel métastatique</td><td>Opérer; évaluation cardiaque <strong>uniquement</strong> si condition instable connue ou suspicion valvulopathie sévère/HTAP non diagnostiquée</td></tr>
+              <tr><td><strong>📅 Élective + condition instable</strong></td><td>Angine instable, IC décompensée, arythmie significative, valvulopathie sévère symptomatique</td><td><span class="drug-badge red">Stabiliser AVANT l'opération</span></td></tr>
+              <tr><td><strong>✅ Élective + patient stable</strong></td><td>Toute chirurgie élective chez patient stable</td><td>→ <strong>Passer à l'étape ②</strong> : vérifier les critères d'évaluation</td></tr>
             </tbody>
           </table>
-          <p style="margin-top:8px;font-size:13px;"><strong>3b. Alternatif (ACCP)</strong> — si VEMS et DLCO POP toutes deux &gt; 30 % mais l'une &lt; 60 % :<br>
-          Test de montée en escalier <strong>&gt; 22 m</strong> <em>ou</em> test de marche <strong>&gt; 400 m</strong> → risque faible.<br>
-          Échec ou VEMS/DLCO POP &lt; 30 % → procéder au test VO₂max (étape 3a).</p>
         </div>
 
-        <table style="margin-top:10px;font-size:12px;">
-          <thead><tr><th>Niveau de risque</th><th>Interprétation</th></tr></thead>
-          <tbody>
-            <tr><td><span class="drug-badge ok">Faible</span></td><td>Mortalité attendue &lt; 1 % · Résection majeure possible</td></tr>
-            <tr><td><span class="drug-badge warn">Modéré</span></td><td>Morbidité/mortalité variable selon valeurs POP et tolérance à l'effort · Discussion risques/bénéfices requise</td></tr>
-            <tr><td><span class="drug-badge ci">Élevé</span></td><td>Mortalité après résection majeure &gt; 10 % · Risque morbidité cardiopulmonaire sévère considérable · Perte de fonction résiduelle attendue</td></tr>
-          </tbody>
-        </table>
+        <div id="preoa1" style="display:none;">
+          <div class="highlight cream" style="margin-bottom:8px;font-size:12px;"><strong>Question 2 — Ce patient nécessite-t-il une évaluation cardiaque formelle ?</strong></div>
+          <table style="font-size:12px;">
+            <thead><tr><th>Critère</th><th>Inclus?</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Âge ≥ 45 ans</strong></td><td>✅ Inclus → évaluer</td></tr>
+              <tr><td><strong>18–44 ans + maladie cardiovasculaire significative</strong><br><span style="font-size:11px;color:#666;">Coronaropathie · MCV · MAP · IC · HTAP sévère · Sténose aortique ou mitrale sévère · Cardiomyopathie obstructive sévère</span></td><td>✅ Inclus → évaluer</td></tr>
+              <tr><td><strong>Chirurgie nécessitant hospitalisation &gt; 24 h</strong></td><td>✅ Critère supplémentaire requis</td></tr>
+              <tr><td><strong>&lt; 45 ans sans MCV significative</strong></td><td>❌ <strong>Pas d'indication formelle</strong> → évaluation de routine (signes vitaux, examen, médication)</td></tr>
+            </tbody>
+          </table>
+          <div class="key-fact blue" style="margin-top:8px;font-size:12px;">Si inclus → <strong>Passer à l'étape ③</strong> : anamnèse complète et examen physique</div>
+        </div>
+
+        <div id="preoa2" style="display:none;">
+          <div class="highlight cream" style="margin-bottom:8px;font-size:12px;"><strong>Étape 3 — Anamnèse ciblée + examen physique</strong></div>
+          <table style="font-size:12px;">
+            <thead><tr><th>Composante</th><th>Éléments clés à rechercher</th></tr></thead>
+            <tbody>
+              <tr><td><strong>ATCD cardiovasculaires</strong></td><td>IM · AVC/ICT · IC · MAP · FA · Diabète <strong>insulinodépendant</strong> · IRC</td></tr>
+              <tr><td><strong>Symptômes actuels</strong></td><td>Angine · Dyspnée · Orthopnée · DPN · Palpitations · Syncope</td></tr>
+              <tr><td><strong>Capacité fonctionnelle (METs)</strong></td><td>⚠️ <strong>Pas un outil principal (SCC 2017)</strong> — auto-déclaré, peu prédictif seul<br>Repère : ≥ 4 METs = monter 1 étage / marcher en côte / jardinage léger</td></tr>
+              <tr><td><strong>Examen physique</strong></td><td>Signes vitaux · Souffle (sténose aortique?) · B3 · Râles pulmonaires · Œdème · Pouls périphériques</td></tr>
+              <tr><td><strong>Médicaments à noter</strong></td><td>Antiplaquettaires · Anticoagulants · β-bloquants · IECA/ARA · Statines · Hypoglycémiants</td></tr>
+            </tbody>
+          </table>
+          <div class="key-fact blue" style="margin-top:8px;font-size:12px;">→ <strong>Passer à l'étape ④</strong> : calculer le score RCRI</div>
+        </div>
+
+        <div id="preoa3" style="display:none;">
+          <div class="highlight cream" style="margin-bottom:8px;font-size:12px;"><strong>Étape 4 — Calculer le score RCRI (1 point par critère)</strong></div>
+          <div style="background:#fff;border:1px solid #d1d5db;border-radius:8px;padding:10px;font-size:12px;">
+            <div style="display:grid;gap:5px;">
+              <label style="display:flex;align-items:center;gap:8px;cursor:pointer;"><input type="checkbox" id="rcri1" onchange="calcRCRI()" style="width:14px;height:14px;"> Antécédent de <strong>cardiopathie ischémique</strong> (IM, ondes Q, angine, test effort +, nitrates)</label>
+              <label style="display:flex;align-items:center;gap:8px;cursor:pointer;"><input type="checkbox" id="rcri2" onchange="calcRCRI()" style="width:14px;height:14px;"> Antécédent d'<strong>insuffisance cardiaque congestive</strong> (œdème pulm., DPN, B3, râles, ICT RXP)</label>
+              <label style="display:flex;align-items:center;gap:8px;cursor:pointer;"><input type="checkbox" id="rcri3" onchange="calcRCRI()" style="width:14px;height:14px;"> Antécédent de <strong>maladie cérébrovasculaire</strong> (AVC, ICT)</label>
+              <label style="display:flex;align-items:center;gap:8px;cursor:pointer;"><input type="checkbox" id="rcri4" onchange="calcRCRI()" style="width:14px;height:14px;"> <strong>Insulinothérapie</strong> pour le diabète</label>
+              <label style="display:flex;align-items:center;gap:8px;cursor:pointer;"><input type="checkbox" id="rcri5" onchange="calcRCRI()" style="width:14px;height:14px;"> <strong>Créatinine préopératoire &gt; 177 µmol/L</strong> (&gt; 2,0 mg/dL)</label>
+              <label style="display:flex;align-items:center;gap:8px;cursor:pointer;"><input type="checkbox" id="rcri6" onchange="calcRCRI()" style="width:14px;height:14px;"> <strong>Chirurgie à haut risque</strong> (intra-péritonéale lourde, intra-thoracique, vasculaire suprainguinale)</label>
+            </div>
+            <div id="rcri-result" style="margin-top:10px;padding:8px 12px;border-radius:6px;background:#EEF2FF;font-weight:700;text-align:center;">RCRI = 0 &nbsp;→&nbsp; Risque ~0,4 %</div>
+          </div>
+          <div class="key-fact blue" style="margin-top:8px;font-size:12px;">→ <strong>Passer à l'étape ⑤</strong> : faut-il doser le NT-proBNP/BNP ?</div>
+        </div>
+
+        <div id="preoa4" style="display:none;">
+          <div class="highlight cream" style="margin-bottom:8px;font-size:12px;"><strong>Étape 5 — NT-proBNP / BNP préopératoire (recommandation FORTE SCC 2017)</strong></div>
+          <table style="font-size:12px;">
+            <thead><tr><th>Indication</th><th>Conduite</th></tr></thead>
+            <tbody>
+              <tr><td>Âge ≥ 65 ans</td><td rowspan="3" style="vertical-align:middle;"><strong>✅ Doser NT-proBNP ou BNP</strong></td></tr>
+              <tr><td>45–64 ans + MCV significative</td></tr>
+              <tr><td>RCRI ≥ 1 (peu importe l'âge)</td></tr>
+              <tr><td>&lt; 45 ans, pas de MCV, RCRI = 0</td><td>❌ Pas d'indication systématique</td></tr>
+            </tbody>
+          </table>
+          <table style="font-size:12px;margin-top:8px;">
+            <thead><tr><th>Résultat</th><th>Interprétation</th><th>Risque IM/décès à 30 j</th></tr></thead>
+            <tbody>
+              <tr><td>NT-proBNP <strong>&lt; 300 ng/L</strong> · BNP <strong>&lt; 92 µg/L</strong></td><td style="color:#16a34a;">✅ Risque faible</td><td>~4,9 %</td></tr>
+              <tr><td>NT-proBNP <strong>≥ 300 ng/L</strong> · BNP <strong>≥ 92 µg/L</strong></td><td style="color:#dc2626;">🔴 Risque élevé</td><td><strong>~21,8 %</strong> → troponine postop obligatoire</td></tr>
+            </tbody>
+          </table>
+          <div class="highlight cream" style="margin-top:8px;font-size:12px;">❌ <strong>NON recommandés en routine</strong> : écho de repos · angio-TDM coronarienne · épreuve d'effort · écho de stress / isotopique<br>✅ <strong>Exception écho</strong> : suspicion valvulopathie obstructive sévère méconnue ou HTAP sévère à l'examen physique</div>
+          <div class="key-fact blue" style="margin-top:8px;font-size:12px;">→ <strong>Passer à l'étape ⑥</strong> : ajuster les médicaments</div>
+        </div>
+
+        <div id="preoa5" style="display:none;">
+          <div class="highlight cream" style="margin-bottom:8px;font-size:12px;"><strong>Étape 6 — Gestion des médicaments en périopératoire (SCC 2017)</strong></div>
+          <table style="font-size:12px;">
+            <thead><tr><th>Médicament</th><th>Conduite</th></tr></thead>
+            <tbody>
+              <tr><td><strong>AAS (Aspirine)</strong></td><td>❌ <strong>Ne pas débuter ni continuer</strong> en prévention périopératoire<br>✅ Exceptions : endoprothèse coronarienne récente, endartériectomie carotidienne</td></tr>
+              <tr><td><strong>β-bloquants</strong></td><td>❌ <strong>Ne PAS débuter dans les 24 h avant</strong> la chirurgie (↑ AVC et mortalité)<br>✅ Continuer si déjà en cours et bien toléré</td></tr>
+              <tr><td><strong>IECA / ARA</strong></td><td>⏸️ <strong>Suspendre 24 h avant</strong> la chirurgie (↓ risque hypotension peropératoire)</td></tr>
+              <tr><td><strong>Statines</strong></td><td>→ Débuter si lésion myocardique périopératoire détectée (avec AAS)</td></tr>
+              <tr><td><strong>Tabac</strong></td><td>💬 <strong>Faciliter l'abandon avant la chirurgie</strong> (recommandation forte SCC 2017)</td></tr>
+              <tr><td><strong>Anticoagulants / P2Y12</strong></td><td>⚠️ Gestion individualisée selon indication et risque hémorragique → avis spécialisé</td></tr>
+            </tbody>
+          </table>
+          <div class="key-fact blue" style="margin-top:8px;font-size:12px;">→ <strong>Passer à l'étape ⑦</strong> : planifier la surveillance postopératoire</div>
+        </div>
+
+        <div id="preoa6" style="display:none;">
+          <div class="highlight cream" style="margin-bottom:8px;font-size:12px;"><strong>Étape 7 — Surveillance postopératoire</strong></div>
+          <table style="font-size:12px;">
+            <thead><tr><th>Quand surveiller la troponine?</th><th>Conduite</th></tr></thead>
+            <tbody>
+              <tr><td>NT-proBNP/BNP préop <strong>élevé</strong></td><td rowspan="3" style="vertical-align:middle;"><strong>Troponine quotidienne × 48–72 h postop</strong> + ECG à la salle de réveil</td></tr>
+              <tr><td>BNP non mesuré + <strong>RCRI ≥ 1</strong></td></tr>
+              <tr><td>BNP non mesuré + <strong>45–64 ans avec MCV</strong> ou <strong>≥ 65 ans</strong></td></tr>
+            </tbody>
+          </table>
+          <table style="font-size:12px;margin-top:8px;">
+            <thead><tr><th>Si lésion myocardique / IM postopératoire détecté</th></tr></thead>
+            <tbody>
+              <tr><td>→ Débuter <strong>AAS + statine</strong><br>→ Envisager prise en charge partagée (médecine interne / cardiologie)<br>→ ⚠️ <strong>Sans troponine, &gt; 50 % des IM périopératoires passent inaperçus</strong> (silencieux)</td></tr>
+            </tbody>
+          </table>
+          <div class="key-fact blue" style="margin-top:10px;font-size:12px;">✅ <strong>Résumé clinique IPS :</strong> Évaluer urgence → Vérifier critères (âge/MCV) → Anamnèse + EP → RCRI → NT-proBNP si indiqué → Ajuster médicaments → Troponine postop si facteurs de risque</div>
+        </div>
       </div>
+
     </div>
 
 <div class="section" id="sec-antidepresseurs">
@@ -29883,52 +30082,58 @@ function tdcTab(tab) {
 
 
 // ─── RÉSÉCABILITÉ PULMONAIRE ───
-function calcResec() {
-                  var v1 = document.getElementById('r-vems1').value;
-                  var d1 = document.getElementById('r-dlco1').value;
-                  var v2 = (document.getElementById('r-vems2') || {}).value || '';
-                  var d2 = (document.getElementById('r-dlco2') || {}).value || '';
-                  var vo2 = (document.getElementById('r-vo2') || {}).value || '';
-                  var step2 = document.getElementById('resec-step2');
-                  var step3 = document.getElementById('resec-step3');
-                  var res = document.getElementById('resec-result');
-                  if (!v1 || !d1) { res.className='resec-result'; return; }
-                  // Step 1: both > 80 %
-                  if (v1==='ok' && d1==='ok') {
-                    step2.style.display='none'; step3.style.display='none';
-                    res.className='resec-result show resec-ok';
-                    res.innerHTML='<strong>✅ RISQUE FAIBLE — Étape 1</strong><br>VEMS &gt; 80 % ET DLCO &gt; 80 % → Risque chirurgical faible. Aucun autre test requis. Résection majeure réalisable. Mortalité attendue &lt; 1 %.';
-                    return;
-                  }
-                  step2.style.display='block';
-                  if (!v2 || !d2) { res.className='resec-result'; return; }
-                  // Step 2: both POP > 60 %
-                  if (v2==='ok' && d2==='ok') {
-                    step3.style.display='none';
-                    res.className='resec-result show resec-ok';
-                    res.innerHTML='<strong>✅ RISQUE FAIBLE — Étape 2</strong><br>VEMS POP &gt; 60 % ET DLCO POP &gt; 60 % → Risque chirurgical faible. Aucun autre test requis.';
-                    return;
-                  }
-                  // Either value < 30 % POP → high risk directly
-                  if (v2==='very_low' || d2==='very_low') {
-                    step3.style.display='block';
-                    if (!vo2) { res.className='resec-result'; return; }
-                  } else {
-                    step3.style.display='block';
-                    if (!vo2) { res.className='resec-result'; return; }
-                  }
-                  // Step 3: VO2max
-                  if (vo2==='ok' || vo2==='stairs') {
-                    res.className='resec-result show resec-ok';
-                    res.innerHTML='<strong>✅ RISQUE FAIBLE — Étape 3</strong><br>VO₂max &gt; 20 mL/kg/min (ou test de marche/escalier positif) → Résection majeure réalisable.';
-                  } else if (vo2==='mod') {
-                    res.className='resec-result show resec-mod';
-                    res.innerHTML='<strong>⚠️ RISQUE MODÉRÉ — Étape 3</strong><br>VO₂max 10–20 mL/kg/min → Morbidité et mortalité variables selon étendue résection. Risques/bénéfices à discuter avec le patient et l'équipe chirurgicale.';
-                  } else if (vo2==='high' || vo2==='stairs_fail') {
-                    res.className='resec-result show resec-ci';
-                    res.innerHTML='<strong>🔴 RISQUE ÉLEVÉ — Étape 3</strong><br>VO₂max &lt; 10 mL/kg/min (ou test escalier/marche négatif) → Mortalité après résection majeure &gt; 10 %. Risque de morbidité cardiopulmonaire sévère considérable. Résection standard contre-indiquée → envisager SBRT/SABR ou alternative non chirurgicale.';
-                  }
-                }
+function rsSet(key, val, btn) {
+  if (!window._rs) window._rs = {};
+  window._rs[key] = val;
+  // Highlight active button
+  var parent = btn.parentElement;
+  parent.querySelectorAll('.rs-btn').forEach(function(b){ b.style.background=''; b.style.color=''; b.style.borderColor=''; });
+  btn.style.background='#1C3F8F'; btn.style.color='#fff'; btn.style.borderColor='#1C3F8F';
+  rsEval();
+}
+function rsEval() {
+  var r = window._rs || {};
+  var s2 = document.getElementById('rs-step2');
+  var s3 = document.getElementById('rs-step3');
+  var res = document.getElementById('rs-result');
+  // Step 1: need both v1 and d1
+  if (!r.v1 || !r.d1) { res.style.display='none'; return; }
+  if (r.v1==='ok' && r.d1==='ok') {
+    if(s2) s2.style.display='none'; if(s3) s3.style.display='none';
+    rsShow(res,'ok','✅ RISQUE FAIBLE — Étape 1','VEMS > 80 % ET DLCO > 80 % → Résection majeure réalisable. Mortalité attendue < 1 %. Aucun test supplémentaire requis.');
+    return;
+  }
+  // Need step 2
+  if(s2) s2.style.display='block';
+  if (!r.v2 || !r.d2) { res.style.display='none'; return; }
+  if (r.v2==='ok' && r.d2==='ok') {
+    if(s3) s3.style.display='none';
+    rsShow(res,'ok','✅ RISQUE FAIBLE — Étape 2','VEMS POP > 60 % ET DLCO POP > 60 % → Résection majeure réalisable. Aucun test supplémentaire requis.');
+    return;
+  }
+  // Need step 3
+  if(s3) s3.style.display='block';
+  if (!r.vo2) { res.style.display='none'; return; }
+  if (r.vo2==='ok' || r.vo2==='stairs') {
+    rsShow(res,'ok','✅ RISQUE FAIBLE — Étape 3','VO₂max > 20 mL/kg/min (ou test escalier/marche positif) → Résection majeure réalisable.');
+  } else if (r.vo2==='mod') {
+    rsShow(res,'mod','⚠️ RISQUE MODÉRÉ — Étape 3','VO₂max 10–20 mL/kg/min → Morbidité et mortalité variables. Discussion risques/bénéfices avec patient et équipe chirurgicale requise.');
+  } else {
+    rsShow(res,'ci','🔴 RISQUE ÉLEVÉ — Étape 3','VO₂max < 10 mL/kg/min (ou seuils non atteints) → Mortalité > 10 %. Résection standard contre-indiquée → SBRT/SABR ou alternative non chirurgicale.');
+  }
+}
+function rsShow(el, type, title, msg) {
+  var colors = {ok:{bg:'#dcfce7',border:'#16a34a',color:'#14532d'}, mod:{bg:'#fef9c3',border:'#ca8a04',color:'#713f12'}, ci:{bg:'#fee2e2',border:'#dc2626',color:'#7f1d1d'}};
+  var c = colors[type];
+  el.style.display='block'; el.style.background=c.bg; el.style.borderLeft='4px solid '+c.border; el.style.color=c.color;
+  el.innerHTML='<strong>'+title+'</strong><br>'+msg;
+}
+function rsReset() {
+  window._rs = {};
+  document.querySelectorAll('.rs-btn').forEach(function(b){ b.style.background=''; b.style.color=''; b.style.borderColor=''; });
+  var s2=document.getElementById('rs-step2'); var s3=document.getElementById('rs-step3'); var res=document.getElementById('rs-result');
+  if(s2) s2.style.display='none'; if(s3) s3.style.display='none'; if(res) res.style.display='none';
+}
 </script>
 
 <script>
@@ -30035,6 +30240,23 @@ function fib4Step3() {
     fin.style.display = 'block';
     fin.style.background = '#FEE2E2'; fin.style.border = '1.5px solid #dc2626';
     fin.innerHTML = '<strong style="color:#991b1b;">🔴 Cirrhose probable — FibroScan &gt; 12 kPa (F4)</strong><br><span style="font-size:12px;">→ <strong>Référer en hépatologie URGENT</strong><br>→ Dépistage CHC : échographie ± α-FP aux <strong>6 mois</strong><br>→ Dépistage varices œsophagiennes (OGD)<br>→ Évaluation greffe si Child B-C ou MELD ≥ 15<br>→ Vaccins : VHA, VHB, pneumocoque, influenza</span>';
+  }
+}
+
+
+// ── RCRI Calculator ────────────────────────────────────────────────────────
+function calcRCRI() {
+  var ids = ['rcri1','rcri2','rcri3','rcri4','rcri5','rcri6'];
+  var score = ids.filter(function(id){ var el=document.getElementById(id); return el&&el.checked; }).length;
+  var risks = ['~0,4 %','~1,0 %','~2,4 %','~5,4 %','~5,4 %+','~5,4 %++','~5,4 %+++'];
+  var colors = ['#D1FAE5','#FEF9C3','#FEF3C7','#FEE2E2','#FEE2E2','#FEE2E2','#FEE2E2'];
+  var tcolors = ['#065f46','#92400e','#92400e','#991b1b','#991b1b','#991b1b','#991b1b'];
+  var msgs = ['Faible','Faible-modéré','Modéré','Élevé','Élevé','Élevé','Élevé'];
+  var box = document.getElementById('rcri-result');
+  if (box) {
+    box.style.background = colors[score] || '#FEE2E2';
+    box.style.color = tcolors[score] || '#991b1b';
+    box.innerHTML = 'RCRI = ' + score + ' &nbsp;&rarr;&nbsp; Risque ' + msgs[Math.min(score,6)] + ' (' + (risks[score]||'~5,4 %+') + ')';
   }
 }
 
