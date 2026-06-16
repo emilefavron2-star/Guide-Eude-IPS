@@ -148,6 +148,8 @@
     .search-result-item .title { font-size:13px; font-weight: 600; color: #fff; }
     .search-result-item .meta { font-size: 11px; color: #888; font-family: var(--mono); text-transform: uppercase; letter-spacing: .06em; }
     .search-result-item mark { background: var(--yellow); color: var(--ink); border-radius: 1px; padding: 0 2px; }
+    .search-result-item .search-snippet { font-size: 11px; color: #aaa; line-height: 1.45; margin-top: 1px; font-style: italic; }
+    .search-result-item .search-snippet mark { font-style: normal; }
     .no-results { padding: 16px; color: #888; font-size: 13px; text-align: center; }
 
     /* ─── LAYOUT ─── */
@@ -27521,14 +27523,30 @@ function toggleSidebar() {
 const searchInput = document.getElementById('search');
 const searchResults = document.getElementById('searchResults');
 
+// Full-text content index — built lazily on first search
+let _contentIndex = null;
+function getContentIndex() {
+  if (_contentIndex) return _contentIndex;
+  _contentIndex = {};
+  SEARCH_INDEX.forEach(item => {
+    const el = document.getElementById('sec-' + item.id);
+    if (el) _contentIndex[item.id] = el.textContent.replace(/\s+/g, ' ').trim().toLowerCase();
+  });
+  return _contentIndex;
+}
+
 searchInput.addEventListener('input', () => {
   const q = searchInput.value.trim().toLowerCase();
-  if (!q) { closeSearch(); return; }
+  if (q.length < 2) { closeSearch(); return; }
 
-  const results = SEARCH_INDEX.filter(item =>
-    item.title.toLowerCase().includes(q) ||
-    item.keywords.some(k => k.includes(q))
-  ).slice(0, 8);
+  const contentIdx = getContentIndex();
+
+  const results = SEARCH_INDEX.filter(item => {
+    if (item.title.toLowerCase().includes(q)) return true;
+    if (item.keywords.some(k => k.includes(q))) return true;
+    if (contentIdx[item.id] && contentIdx[item.id].includes(q)) return true;
+    return false;
+  }).slice(0, 12);
 
   if (!results.length) {
     searchResults.innerHTML = '<div class="no-results">Aucun résultat pour « ' + esc(q) + ' »</div>';
@@ -27536,9 +27554,23 @@ searchInput.addEventListener('input', () => {
     searchResults.innerHTML = results.map(r => {
       const hl = r.title.replace(new RegExp('(' + escRx(q) + ')', 'gi'), '<mark>$1</mark>');
       const action = r.calc ? `goToCalc('${r.calc}')` : (r.tool ? `goToTool('${r.id}','${r.tool}')` : `showSection('${r.id}')`);
+      const titleMatch = r.title.toLowerCase().includes(q);
+      const kwMatch = r.keywords.some(k => k.includes(q));
+      let snippet = '';
+      if (!titleMatch && !kwMatch && contentIdx[r.id]) {
+        const ci = contentIdx[r.id];
+        const pos = ci.indexOf(q);
+        if (pos >= 0) {
+          const s = Math.max(0, pos - 45);
+          const e = Math.min(ci.length, pos + q.length + 45);
+          const raw = esc((s > 0 ? '…' : '') + ci.slice(s, e) + (e < ci.length ? '…' : ''));
+          snippet = '<span class="search-snippet">' + raw.replace(new RegExp('(' + escRx(q) + ')', 'gi'), '<mark>$1</mark>') + '</span>';
+        }
+      }
       return `<div class="search-result-item" onclick="${action}">
         <span class="title">${hl}</span>
         ${r.specialty ? '<span class="meta">' + esc(r.specialty) + '</span>' : ''}
+        ${snippet}
       </div>`;
     }).join('');
   }
