@@ -25829,6 +25829,7 @@ SLA · Dystrophie myotonique · Cyphoscoliose sévère · Paralysie diaphragmati
         <button onclick="goToBlock('ce-2')" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🧬 Stadification FIGO</button>
         <button onclick="goToBlock('ce-3')" style="background:#0a7a4e;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">💊 Traitement NCCN</button>
         <button onclick="goToBlock('ce-4')" style="background:#1C3F8F;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🧪 CA-125</button>
+        <button onclick="goToBlock('ce-5')" style="background:#7b3fa0;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📋 Traitement par stade</button>
       </div>
       <div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:20px;">
         <div style="flex:1;min-width:95px;background:#EEF2FF;border-radius:10px;padding:12px;text-align:center;"><div style="font-size:13px;font-weight:800;color:#1C3F8F;">FIGO 2023</div><div style="font-size:11px;color:#555;margin-top:4px;">Stadification actuelle</div></div>
@@ -25976,6 +25977,121 @@ SLA · Dystrophie myotonique · Cyphoscoliose sévère · Paralysie diaphragmati
         <div class="key-fact red" style="margin-top:8px;"><strong>Tests obligatoires chez TOUTES les patientes :</strong> MMR/MSI (dépistage Lynch + valeur prédictive immuno) · p53 (pronostic) · ER/PR (hormonothérapie) · HER2 (si séreux/carcinosarcome) · CA-125 si stade avancé</div>
       </div>
     </div>
+
+      <div class="block rx" id="ce-5">
+        <div class="block-title"><span class="tag">📋 5.4 Traitement par Stade (NCCN / FIGO 2023)</span></div>
+        <div class="key-fact blue" style="margin-bottom:10px">La décision thérapeutique intègre le <strong>stade FIGO 2023</strong>, le <strong>profil moléculaire</strong> (POLEmut · MMRd · NSMP · p53abn), l'<strong>histologie</strong> (endométrioïde vs agressif) et le <strong>statut chirurgical</strong> de la patiente.</div>
+        <table style="font-size:12px">
+          <thead>
+            <tr>
+              <th style="width:12%">Stade</th>
+              <th style="width:25%">Description</th>
+              <th style="width:30%">Traitement standard</th>
+              <th style="width:33%">Notes cliniques IPS</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="background:#f0fdf4">
+              <td><strong>IA<br><span style="font-weight:400;font-size:11px">Grade 1-2<br>endométrioïde</span></strong></td>
+              <td>Tumeur ≤ ½ myomètre · sans LVSI</td>
+              <td>
+                <span class="drug-badge line1">Chirurgie seule</span> — Hystérectomie totale + SOB ± ganglion sentinelle<br>
+                <span class="drug-badge line1">Curiethérapie vaginale</span> si facteurs de risque intermédiaires (âge &gt; 60, grade 2, LVSI focale)
+              </td>
+              <td>Bas risque → surveillance post-chirurgie suffisante · POLEmut = désescalade possible (suivi sans adjuvant) · Discuter préservation fertilité si &lt; 45 ans, grade 1, désir de grossesse</td>
+            </tr>
+            <tr>
+              <td><strong>IB<br><span style="font-weight:400;font-size:11px">Grade 1-2<br>endométrioïde</span></strong></td>
+              <td>Tumeur ≥ ½ myomètre · sans LVSI substantielle</td>
+              <td>
+                <span class="drug-badge line1">Chirurgie</span> + <span class="drug-badge line1">Curiethérapie vaginale</span><br>
+                Si grade 3 ou MMRd : ajouter <span class="drug-badge line2">RT externe pelvienne</span>
+              </td>
+              <td>Risque intermédiaire-haut → curiethérapie standard · Ganglion sentinelle permet d'éviter lymphadénectomie systématique · MMRd → ajouter pembrolizumab si stade avancé</td>
+            </tr>
+            <tr style="background:#fff7ed">
+              <td><strong>IC / IB<br><span style="font-weight:400;font-size:11px">Types agressifs</span></strong></td>
+              <td>Séreux · cellules claires · carcinosarcome · p53abn · limité à utérus</td>
+              <td>
+                <span class="drug-badge line1">Chirurgie</span> + <span class="drug-badge line2">Carboplatine AUC5 + Paclitaxel 175 mg/m²</span> × 6 cycles<br>
+                ± <span class="drug-badge line2">Curiethérapie vaginale</span>
+              </td>
+              <td>Types agressifs toujours traités comme haut risque même si stade précoce · HER2+ séreux → ajouter trastuzumab · Surveillance rapprochée (CA-125 + imagerie q3-6 mois × 2 ans)</td>
+            </tr>
+            <tr>
+              <td><strong>IIA–IIB</strong></td>
+              <td>Invasion stroma cervical ou LVSI substantielle</td>
+              <td>
+                <span class="drug-badge line1">Chirurgie</span> (si opérable) + <span class="drug-badge line2">RT externe pelvienne</span> + <span class="drug-badge line1">Curiethérapie</span><br>
+                Si inopérable : <span class="drug-badge line2">Chimioradiation</span> (cisplatine hebdomadaire + RT)
+              </td>
+              <td>LVSI substantielle = facteur pronostique péjoratif → RT externe même si grade 1 · Chimioradiation si col très envahi ou patiente non chirurgicale</td>
+            </tr>
+            <tr style="background:#fff7ed">
+              <td><strong>IIC</strong></td>
+              <td>Type agressif + invasion myométriale significative</td>
+              <td>
+                <span class="drug-badge line1">Chirurgie</span> + <span class="drug-badge line2">Carboplatine + Paclitaxel</span> × 6 + <span class="drug-badge line2">RT externe</span>
+              </td>
+              <td>Approche multidisciplinaire obligatoire · Séquençage moléculaire systématique · HER2 (séreux) + MMR (immunothérapie)</td>
+            </tr>
+            <tr>
+              <td><strong>IIIA–IIIB</strong></td>
+              <td>Extension séreuse/annexes/vagin/paramètres</td>
+              <td>
+                <span class="drug-badge line1">Chirurgie de cytoréduction maximale</span> + <span class="drug-badge line2">Carboplatine + Paclitaxel</span> × 6 cycles<br>
+                + <span class="drug-badge line2">RT externe pelvienne</span> ± séquentielle avec chimio (« sandwich »)
+              </td>
+              <td>Objectif chirurgical : maladie résiduelle &lt; 1 cm (idéalement R0) · Chimio en sandwich (3 cycles chimio → RT → 3 cycles chimio) = option validée</td>
+            </tr>
+            <tr style="background:#fff7ed">
+              <td><strong>IIIC1–IIIC2</strong></td>
+              <td>Ganglions pelviens (C1) ou para-aortiques (C2) positifs</td>
+              <td>
+                <span class="drug-badge line1">Chirurgie</span> + <span class="drug-badge line2">Carboplatine + Paclitaxel</span> × 6<br>
+                + <span class="drug-badge line2">RT champ étendu</span> (para-aortique si N+ para-aortique)<br>
+                Si MMRd : + <span class="drug-badge line3">Pembrolizumab</span>
+              </td>
+              <td>N+ para-aortique → champ RT étendu jusqu'à L1-L2 · MMRd/MSI-H → pembrolizumab ou dostarlimab adjuvant · Suivi CA-125 + TDM thoraco-abdomino-pelvien</td>
+            </tr>
+            <tr>
+              <td><strong>IVA–IVB</strong></td>
+              <td>Muqueuse vésicale/intestinale · péritoine</td>
+              <td>
+                <span class="drug-badge line1">Cytoréduction maximale</span> si possible<br>
+                + <span class="drug-badge line2">Carboplatine + Paclitaxel</span> × 6 cycles<br>
+                MMRd : <span class="drug-badge line3">Pembrolizumab ou Dostarlimab</span> ± chimio<br>
+                pMMR NSMP : <span class="drug-badge line3">Lenvatinib + Pembrolizumab</span> (2e ligne)
+              </td>
+              <td>Chirurgie de cytoréduction améliore survie si R0 atteignable · Biomarqueurs obligatoires avant systémique : MMR/MSI · p53 · ER/PR · HER2 (si séreux)</td>
+            </tr>
+            <tr style="background:#fee2e2">
+              <td><strong>IVC<br><span style="font-weight:400;font-size:11px">Métastases<br>à distance</span></strong></td>
+              <td>Foie · poumon · os · ganglions inguinaux à distance</td>
+              <td>
+                <span class="drug-badge ci">Palliatif</span> — Chimio systémique (carboplatine + paclitaxel) ou hormonothérapie si grade 1 ER/PR+<br>
+                MMRd : immunothérapie pembrolizumab/dostarlimab<br>
+                HER2+ séreux : + trastuzumab<br>
+                Hormonothérapie : mégestrol · létrozole · anastrozole (grade 1, ER/PR+)
+              </td>
+              <td>But : contrôle de la maladie + qualité de vie · Hormonothérapie seule acceptable si grade 1 endométrioïde ER/PR+ métastatique à croissance lente · Soins palliatifs précoces · Essais cliniques à considérer</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="highlight cream" style="margin-top:10px">
+          <strong>🔬 Modificateurs moléculaires du traitement :</strong>
+          <table style="font-size:12px;margin-top:6px">
+            <thead><tr><th>Profil moléculaire</th><th>Impact thérapeutique</th></tr></thead>
+            <tbody>
+              <tr><td><span class="drug-badge line1">POLEmut</span></td><td>Excellent pronostic → désescalade adjuvante possible (surveillance après chirurgie, même stade III) · Pas de chimio adjuvante systématique si POLEmut isolé</td></tr>
+              <tr><td><span class="drug-badge line2">MMRd / MSI-H</span></td><td>Dépistage Lynch obligatoire · Pembrolizumab ou dostarlimab efficaces (stade III-IV) · Immunothérapie adjuvante après chirurgie (stade III)</td></tr>
+              <tr><td><span class="drug-badge line2">NSMP</span></td><td>Pronostic intermédiaire · Traitement selon stade et histologie · Lenvatinib + pembrolizumab si récidive pMMR</td></tr>
+              <tr><td><span class="drug-badge ci">p53abn</span></td><td>Traitement agressif même si stade précoce · Chimio adjuvante systématique (carboplatine + paclitaxel) · Mauvais pronostic</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="key-fact red" style="margin-top:8px">🚨 <strong>Récidive :</strong> Vaginale isolée → curiethérapie ± RT externe (survie ~70 % à 5 ans) · Pelvienne → RT ± chimio · À distance → chimio systémique ± immunothérapie (MMRd) · CA-125 + TDM/PET-scan pour confirmation avant traitement</div>
+      </div>
 
     <!-- Gynécologie — SUA -->
     <div class="section" id="sec-sua">
@@ -27281,7 +27397,7 @@ const SEARCH_INDEX = [
   { id:'gyneco-anatomie', title:'Anatomie de l\'Appareil Reproducteur', specialty:'Gynécologie', keywords:['ovaires','trompes','utérus','col','vagin','vulve','zone de transformation','amh','inhibine','réserve ovarienne'] },
   { id:'cycles-hormonaux', title:'Cycles Menstruels & Hormones Reproductrices', specialty:'Gynécologie', keywords:['cycle menstruel','œstrogène','progestérone','FSH','LH','axe hypothalamo-hypophyso-ovarien','ovulation','follicule','corps jaune','SOPC'] },
   { id:'cancer-col',    title:'Cancer du Col de l\'Utérus — VPH & Prévention', specialty:'Gynécologie', keywords:['cancer col utérus','VPH','HPV','gardasil','CIN','dysplasie','colposcopie','dépistage','PQDCCU','cytologie','E6','E7','p53'] },
-  { id:'cancer-endo',   title:'Cancer de l\'Endomètre — Stadification & Traitement', specialty:'Gynécologie', keywords:['cancer endomètre','hyperplasie','FIGO','type 1','type 2','carcinome endométrioïde','carcinosarcome','progestatifs','hystérectomie','MMRd','TCGA','POLEmut'] },
+  { id:'cancer-endo',   title:'Cancer de l\'Endomètre — Stadification & Traitement', specialty:'Gynécologie', keywords:['cancer endomètre','hyperplasie','FIGO','type 1','type 2','carcinome endométrioïde','carcinosarcome','progestatifs','hystérectomie','MMRd','TCGA','POLEmut','traitement par stade','stade I','stade II','stade III','stade IV','curiethérapie vaginale','carboplatine','paclitaxel','pembrolizumab','dostarlimab','lenvatinib','trastuzumab','chimioradiation','cytoréduction','p53abn','NSMP','MSI-H','hormonothérapie endomètre','récidive endomètre','ganglion sentinelle','brachythérapie'] },
   { id:'survivance',    title:'Survivance au Cancer & Rôle IPS',        specialty:'Gynécologie', keywords:['survivance','effets tardifs','plan soins survivance','CIPN','cardiotoxicité','IPS','santé sexuelle','atrophie vaginale','fatigue cancéreuse','inhibiteur aromatase','immunothérapie','irAE'] },
   { id:'depistage',    title:'Dépistage & Prévention',                  specialty:'Prévention',  keywords:['dépistage','prévention','mammographie','colonoscopie','pap test','hpv','rsosi','psa','ldct','poumon','choisir avec soins','choisir','ostéoporose','dexa','frax','vitamine d','bactériurie asymptomatique','choosing wisely','inesss','ihv','vih','vhc','chlamydia','gonorrhée'] },
   { id:'ottawa-knee',  title:"Règle d'Ottawa — Genou",                  specialty:'Calculateur', calc:'ottawa-knee',  keywords:['ottawa','genou','fracture','imagerie'] },
