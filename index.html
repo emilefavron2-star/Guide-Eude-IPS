@@ -958,6 +958,20 @@
     .para-neo-result { background:var(--red-lt); border-left:4px solid var(--red); border-radius:8px; padding:12px 14px; margin-top:10px; display:none; font-size:13px; line-height:1.65; }
     .para-neo-result.show { display:block; }
 m
+
+  /* ── Antibio top scrollbar ── */
+  .ab-scroll-mirror {
+    overflow-x: auto;
+    overflow-y: hidden;
+    height: 14px;
+    border-radius: 4px;
+    margin-bottom: 2px;
+    background: #f1f5f9;
+  }
+  .ab-scroll-mirror::-webkit-scrollbar { height: 8px; }
+  .ab-scroll-mirror::-webkit-scrollbar-track { background: #e2e8f0; border-radius:4px; }
+  .ab-scroll-mirror::-webkit-scrollbar-thumb { background: #94a3b8; border-radius:4px; }
+  .ab-scroll-mirror-inner { height: 1px; }
 </style>
 </head>
 <body>
@@ -2299,12 +2313,22 @@ m
                 <tr style="background:#fff8e1;"><td><strong>Diurétique thiazide-like</strong></td><td>Chlorthalidone 12.5–25 mg<br>Indapamide 1.25–2.5 mg</td><td>HTA isolée, personnes âgées, HTA réfractaire (composante)</td><td>Hyponatrémie, hypokaliémie, hyperuricémie, hyperglycémie</td></tr>
                 <tr><td><strong>Bêta-bloquants</strong></td><td>Métoprolol (succinate), bisoprolol, nébivolol, labétalol</td><td>IC avec FEr, post-IM, arythmies, grossesse (labétalol), migraine, hyperthyroïdie</td><td>Asthme/BPCO sévère, BAV 2e–3e, Raynaud, DFM (relatif)</td></tr>
                 <tr><td><strong>ARM</strong></td><td>Spironolactone 25–50 mg</td><td>HTA réfractaire 4e ligne, IC avec FEr, hyperaldo primaire</td><td>Insuffisance rénale (DFGe &lt;30), hyperkaliémie, hommes (gynécomastie)</td></tr>
+                <tr style="background:#fef9c3;"><td><strong>Alpha-2 agonistes</strong><br><em style="color:#dc2626;font-size:11px;">⚠️ À éviter</em></td><td>Méthyldopa, Clonidine</td><td>Méthyldopa : HTA en grossesse (seul agent approuvé 1re ligne)</td><td>Clonidine : effet rebond sevrage; sédation, bouche sèche. Méthyldopa : hépatotoxicité, dépression. <strong>Ne pas utiliser en routine</strong></td></tr>
+                <tr style="background:#fef3f2;"><td><strong>Vasodilatateurs directs</strong><br><em style="color:#d97706;font-size:11px;">3e–4e ligne seulement</em></td><td>Hydralazine 10–50 mg BID/TID<br>Minoxidil 2.5–10 mg DIE</td><td>HTA réfractaire multi-agent; hydralazine IV/PO en grossesse</td><td>Tachycardie réflexe (combiner BB obligatoire), rétention sodique (combiner diurétique obligatoire). Minoxidil : hirsutisme. Hydralazine : lupus drug-induced si &gt;200 mg/j</td></tr>
               </tbody>
             </table>
           </div>
 
           <div class="key-fact blue" style="margin-top:12px;">
             💊 <strong>Chronothérapie :</strong> Prendre au moins un antihypertenseur <em>le soir</em> améliore le profil dipping nocturne et réduit les événements CV. Particulièrement utile si non-dipping à la MAPA.
+          </div>
+
+          <div class="key-fact yellow" style="margin-top:10px;">
+            🔄 <strong>Conversion HCTZ → Thiazide-like :</strong> HCTZ est <strong>inférieur</strong> à chlorthalidone et indapamide (durée d'action plus courte, moins de preuve CV). Équivalences approximatives : HCTZ 25 mg → Chlorthalidone 12.5 mg DIE ou Indapamide 1.25 mg DIE. Chlorthalidone préféré si DFGe &gt; 30; indapamide si DFGe &gt; 15. <em>Note : surveiller hyponatrémie et hypokaliémie — chlorthalidone déplétion K+ > HCTZ.</em>
+          </div>
+
+          <div class="key-fact red" style="margin-top:10px;">
+            🧪 <strong>Hyperkaliémie sous IECA/ARA :</strong> NE PAS cesser l'IECA/ARA automatiquement (perte du bénéfice rénoprotecteur). Stratégie KDIGO : (1) optimiser régime alimentation (réduire apport K+ : bananes, oranges, légumineuses), (2) ajuster diurétique (chlorthalidone/indapamide), (3) liant K+ si K+ ≥ 5.5 : <strong>Patiromer (Veltassa)</strong> ou <strong>CZS (Lokelma)</strong> — permettent de maintenir les IECA/ARA. Cesser IECA/ARA seulement si K+ ≥ 6.0 mmHg mmol/L ou symptômes ECG.
           </div>
         </div>
 
@@ -2424,17 +2448,69 @@ m
         <div style="overflow-x:auto;margin-top:8px;">
           <table>
             <thead>
-              <tr><th>Comorbidité</th><th>Agent(s) de 1re ligne</th><th>À éviter / Précautions</th></tr>
+              <tr><th>Comorbidité</th><th>1er choix</th><th>2e choix</th><th>À éviter / Précautions</th></tr>
             </thead>
             <tbody>
-              <tr style="background:#fce4ec;"><td><strong>🫀 MCAS / Post-IM</strong></td><td>BB + IECA/ARA</td><td>BCC non-DHP si BB CI; éviter BCC DHP en monothérapie si angine instable</td></tr>
-              <tr style="background:#e8f4ff;"><td><strong>💔 IC avec FEr</strong></td><td>IECA/ARA + BB + ARM (spironolactone) + INRA (sacubitril/valsartan)</td><td>BCC non-DHP (vérapamil/diltiazem) CI; amlodipine OK</td></tr>
-              <tr style="background:#fff8e1;"><td><strong>🩸 Diabète type 2</strong></td><td>iSGLT2 + aGLP-1 (bénéfice CV indépendant de HbA1c) + IECA/ARA si micro-albuminurie</td><td>BB peut masquer hypoglycémie (prudence chez insulinodépendants)</td></tr>
-              <tr style="background:#e8f8f5;"><td><strong>🫘 IRC</strong></td><td>IECA/ARA (1re ligne — néphroprotection) + BCC</td><td>Éviter AINS; surveiller K+, créatinine; ne pas combiner IECA + ARA</td></tr>
-              <tr style="background:#f5eef8;"><td><strong>🧠 AVC/AIT prévention 2ndaire</strong></td><td>IECA + thiazide-like (PROGRESS) ou ARA</td><td>Débuter progressivement; éviter hypotension</td></tr>
-              <tr style="background:#fce4ec;"><td><strong>👶 Grossesse</strong></td><td>Labétalol, méthyldopa, BCC (nifédipine XL)</td><td>IECA/ARA CI absolue (tératogènes); HCTZ (relatif); clonidine</td></tr>
-              <tr style="background:#fff8e1;"><td><strong>💛 FA</strong></td><td>BB ou BCC non-DHP (contrôle FC) + IECA/ARA</td><td>Éviter vérapamil + BB ensemble (bloc AV)</td></tr>
-              <tr style="background:#e8f4ff;"><td><strong>🧪 Hyperaldostéronisme primaire</strong></td><td>Spironolactone (antagoniste de l'aldostérone) — curatif</td><td>IECA/ARA et diurétiques moins efficaces</td></tr>
+              <tr style="background:#fce4ec;">
+                <td><strong>🫀 MCAS / MVAS / ASO</strong></td>
+                <td>IECA ou ARA</td>
+                <td>BB</td>
+                <td>BCC non-DHP si BB CI · éviter BCC DHP en monothérapie si angine instable</td>
+              </tr>
+              <tr style="background:#e8f4ff;">
+                <td><strong>💔 Insuffisance cardiaque</strong></td>
+                <td>IECA ou ARA (Entresto/sacubitril-valsartan)</td>
+                <td>BB, ARM (spironolactone ou éplérénone)</td>
+                <td>BCC non-DHP (vérapamil/diltiazem) CI si IC FEr · amlodipine acceptable</td>
+              </tr>
+              <tr style="background:#fff8e1;">
+                <td><strong>🩸 Diabète</strong></td>
+                <td>IECA ou ARA · ARM (finérénone si néphropathie diabétique)</td>
+                <td>iSGLT2, aGLP-1</td>
+                <td>BB prudence (masque hypoglycémie chez insulinodépendants)</td>
+              </tr>
+              <tr style="background:#e8f8f5;">
+                <td><strong>🫘 IRC</strong></td>
+                <td>IECA ou ARA <em>(néphroprotection)</em></td>
+                <td>BCC (amlodipine) · thiazide-like si DFGe ≥ 30</td>
+                <td>Ne jamais combiner IECA + ARA · surveiller K⁺ et créatinine · AINS CI</td>
+              </tr>
+              <tr style="background:#e8f4ff;">
+                <td><strong>🩺 Protéinurie</strong></td>
+                <td>IECA ou ARA</td>
+                <td>ARM (finérénone ou spironolactone)</td>
+                <td>Ne pas combiner IECA + ARA · éviter AINS</td>
+              </tr>
+              <tr style="background:#fce4ec;">
+                <td><strong>👶 Grossesse</strong></td>
+                <td>Nifédipine XL (amlodipine) ou labétalol ou méthyldopa</td>
+                <td>Hydralazine IV (urgence)</td>
+                <td>IECA/ARA/INRA : CI absolue (tératogènes) · HCTZ : relatif · clonidine : éviter</td>
+              </tr>
+              <tr style="background:#f5eef8;">
+                <td><strong>🌍 Afro-américains</strong></td>
+                <td>Diurétiques pseudo-thiazidiques (chlorthalidone ou indapamide) · BCC</td>
+                <td>IECA/ARA si DM, IRC ou protéinurie — combiner avec BCC d'emblée</td>
+                <td>Moins bonne réponse aux IECA/ARA seuls (profil rénine basse)</td>
+              </tr>
+              <tr style="background:#fff8e1;">
+                <td><strong>🧠 AVC/AIT — prévention 2ndaire</strong></td>
+                <td>IECA + thiazide-like <em>(étude PROGRESS)</em></td>
+                <td>ARA (candésartan) ou BCC si intolérance</td>
+                <td>Débuter progressivement · éviter hypotension</td>
+              </tr>
+              <tr style="background:#e8f8f5;">
+                <td><strong>💛 FA (contrôle FC)</strong></td>
+                <td>BB ou BCC non-DHP (diltiazem ou vérapamil)</td>
+                <td>IECA/ARA (remodelage/récidive FA) · digoxine si sédentaire</td>
+                <td>Ne jamais combiner BB + BCC non-DHP (bloc AV) · BCC non-DHP CI si IC FEr</td>
+              </tr>
+              <tr style="background:#e8f4ff;">
+                <td><strong>🧪 Hyperaldostéronisme primaire</strong></td>
+                <td>Spironolactone (antagoniste aldostérone)</td>
+                <td>Éplérénone (si gynécomastie) · chirurgie si adénome unilatéral</td>
+                <td>IECA/ARA et diurétiques seuls insuffisants</td>
+              </tr>
             </tbody>
           </table>
         </div>
@@ -14224,29 +14300,30 @@ Carence absolue ou relative en insuline → ↑ Glucagon → ↑ Lipolyse → �
   </div>
 <div id="ab0">
   <div style="background:#1C3F8F;color:#fff;padding:7px 12px;border-radius:6px 6px 0 0;font-size:12px;font-weight:700;">🔵 β-Lactamines — <span style="font-weight:400;font-style:italic;">Inhibition paroi cellulaire (fixation PBP → bactéricide)</span></div>
-  <div style="overflow-x:auto;">
-    <table style="font-size:11.5px;min-width:960px;border-collapse:collapse;width:100%;">
+  <div class="ab-scroll-mirror" data-for="ab-main-ab0" style="border:1px solid #1C3F8F33;"><div class="ab-scroll-mirror-inner" style="min-width:1160px;height:1px;"></div></div>
+  <div style="overflow-x:auto;" id="ab-main-ab0">
+    <table style="font-size:11.5px;min-width:1160px;border-collapse:collapse;width:100%;table-layout:fixed;">
       <thead>
     <tr style="background:#1C3F8F;color:#fff;">
       <th style="width:110px;padding:6px 8px;position:sticky;left:0;z-index:3;">Grande classe</th>
-      <th style="width:120px;padding:6px 8px;">Sous-catégorie</th>
-      <th style="width:140px;padding:6px 8px;">Molécule(s)</th>
-      <th style="padding:6px 8px;">Mécanisme</th>
+      <th style="width:120px;padding:6px 8px;position:sticky;left:110px;z-index:10;background:#1C3F8F;color:#fff;">Sous-catégorie</th>
+      <th style="width:140px;padding:6px 8px;position:sticky;left:230px;z-index:10;background:#1C3F8F;color:#fff;border-right:2px solid rgba(255,255,255,0.4);">Molécule(s)</th>
+      <th style="width:180px;padding:6px 8px;">Mécanisme</th>
       <th style="text-align:center;width:36px;padding:6px 4px;">G+</th>
       <th style="text-align:center;width:36px;padding:6px 4px;">G−</th>
       <th style="text-align:center;width:36px;padding:6px 4px;">Ana</th>
       <th style="text-align:center;width:36px;padding:6px 4px;">Aty</th>
-      <th style="padding:6px 8px;">Spectre clé notable</th>
-      <th style="padding:6px 8px;">CI / Mises en garde</th>
-      <th style="padding:6px 8px;">Usage clinique typique</th>
+      <th style="width:150px;padding:6px 8px;">Spectre clé notable</th>
+      <th style="width:150px;padding:6px 8px;">CI / Mises en garde</th>
+      <th style="width:160px;padding:6px 8px;">Usage clinique typique</th>
     </tr>
   </thead>
       <tbody>
         <!-- Pénicillines naturelles -->
     <tr style="background:#f0f4ff;">
       <td rowspan="3" style="font-weight:700;color:#1C3F8F;background:#dbeafe;border-right:3px solid #1C3F8F;vertical-align:top;padding:8px 6px;position:sticky;left:0;z-index:1;">Pénicillines</td>
-      <td rowspan="2" style="font-style:italic;color:#374151;vertical-align:top;padding:6px;background:#f0f4ff;">Naturelles</td>
-      <td><strong>Pénicilline G</strong><br><span style="font-size:10px;color:#666;">IV / IM</span></td>
+      <td rowspan="2" style="position:sticky;left:110px;z-index:5;font-style:italic;color:#374151;vertical-align:top;padding:6px;background:#f0f4ff;">Naturelles</td>
+      <td style="position:sticky;left:230px;z-index:5;background:#f0f4ff;max-width:140px;overflow:hidden;border-right:2px solid #d1d5db;"><strong>Pénicilline G</strong><br><span style="font-size:10px;color:#666;">IV / IM</span></td>
       <td>Paroi (PBP) — bactéricide</td>
       <td style="text-align:center;">✅✅</td><td style="text-align:center;">❌</td><td style="text-align:center;">✅ ORL</td><td style="text-align:center;">❌</td>
       <td>SBH, <em>S. pneumoniae</em>, <em>Neisseria</em>, anaérobies ORL, <em>T. pallidum</em></td>
@@ -14254,7 +14331,7 @@ Carence absolue ou relative en insuline → ↑ Glucagon → ↑ Lipolyse → �
       <td>Méningite à pneumocoque, Strep A, endocardite SBH</td>
     </tr>
     <tr style="background:#f0f4ff;">
-      <td><strong>Pénicilline V</strong><br><span style="font-size:10px;color:#666;">PO</span><br><strong>Benzathine péni</strong><br><span style="font-size:10px;color:#666;">IM retard</span></td>
+      <td style="position:sticky;left:230px;z-index:5;background:#f0f4ff;max-width:140px;overflow:hidden;border-right:2px solid #d1d5db;"><strong>Pénicilline V</strong><br><span style="font-size:10px;color:#666;">PO</span><br><strong>Benzathine péni</strong><br><span style="font-size:10px;color:#666;">IM retard</span></td>
       <td>Paroi (PBP)</td>
       <td style="text-align:center;">✅✅</td><td style="text-align:center;">❌</td><td style="text-align:center;">✅ ORL</td><td style="text-align:center;">❌</td>
       <td>SBH, <em>S. pneumoniae</em>, <em>T. pallidum</em></td>
@@ -14262,8 +14339,8 @@ Carence absolue ou relative en insuline → ↑ Glucagon → ↑ Lipolyse → �
       <td>Pharyngite SBHGA (V PO), syphilis (benzathine IM)</td>
     </tr>
     <tr style="background:#e8f0fe;">
-      <td style="font-style:italic;color:#374151;vertical-align:top;padding:6px;background:#e8f0fe;">Aminopénicillines</td>
-      <td><strong>Amoxicilline</strong><br><span style="font-size:10px;color:#666;">PO</span><br><strong>Ampicilline</strong><br><span style="font-size:10px;color:#666;">IV</span></td>
+      <td style="position:sticky;left:110px;z-index:5;font-style:italic;color:#374151;vertical-align:top;padding:6px;background:#e8f0fe;">Aminopénicillines</td>
+      <td style="position:sticky;left:230px;z-index:5;background:#e8f0fe;max-width:140px;overflow:hidden;border-right:2px solid #d1d5db;"><strong>Amoxicilline</strong><br><span style="font-size:10px;color:#666;">PO</span><br><strong>Ampicilline</strong><br><span style="font-size:10px;color:#666;">IV</span></td>
       <td>Paroi (PBP) — spectre élargi</td>
       <td style="text-align:center;">✅</td><td style="text-align:center;">Limité</td><td style="text-align:center;">ORL</td><td style="text-align:center;">❌</td>
       <td>+ entérocoques, <em>H. influenzae</em> (~70 %) · <span class="drug-badge ci">❌ S. aureus productr β-lactamase</span></td>
@@ -14273,8 +14350,8 @@ Carence absolue ou relative en insuline → ↑ Glucagon → ↑ Lipolyse → �
     <!-- Pénicillines protégées -->
     <tr style="background:#f0f4ff;">
       <td rowspan="2" style="font-weight:700;color:#1C3F8F;background:#dbeafe;border-right:3px solid #1C3F8F;vertical-align:top;padding:8px 6px;position:sticky;left:0;z-index:1;">Péni. protégées<br><span style="font-size:10px;font-weight:400;">(+ inh. β-lactamase)</span></td>
-      <td style="font-style:italic;color:#374151;vertical-align:top;padding:6px;">Inhibiteur β-lact. PO</td>
-      <td><strong>Amox-clavulanate</strong><br><span style="font-size:10px;color:#666;">Clavulin PO</span></td>
+      <td style="background:#f0f4ff;position:sticky;left:110px;z-index:5;font-style:italic;color:#374151;vertical-align:top;padding:6px;">Inhibiteur β-lact. PO</td>
+      <td style="position:sticky;left:230px;z-index:5;background:#f0f4ff;max-width:140px;overflow:hidden;border-right:2px solid #d1d5db;"><strong>Amox-clavulanate</strong><br><span style="font-size:10px;color:#666;">Clavulin PO</span></td>
       <td>Paroi (PBP) + protection anti-β-lactamase</td>
       <td style="text-align:center;">✅</td><td style="text-align:center;">✅</td><td style="text-align:center;">✅</td><td style="text-align:center;">❌</td>
       <td><em>Moraxella</em>, <em>H. influenzae</em> &gt;95 %, anaérobies · <span class="drug-badge ci">❌ Pseudomonas</span></td>
@@ -14282,8 +14359,8 @@ Carence absolue ou relative en insuline → ↑ Glucagon → ↑ Lipolyse → �
       <td>Morsures, sinusite résistante, otite à Moraxella, infections mixtes</td>
     </tr>
     <tr style="background:#e8f0fe;">
-      <td style="font-style:italic;color:#374151;vertical-align:top;padding:6px;">Uréidopéni. + inh. IV</td>
-      <td><strong>Pipéracilline-tazobactam</strong><br><span style="font-size:10px;color:#666;">Tazocin IV</span></td>
+      <td style="background:#e8f0fe;position:sticky;left:110px;z-index:5;font-style:italic;color:#374151;vertical-align:top;padding:6px;">Uréidopéni. + inh. IV</td>
+      <td style="position:sticky;left:230px;z-index:5;background:#e8f0fe;max-width:140px;overflow:hidden;border-right:2px solid #d1d5db;"><strong>Pipéracilline-tazobactam</strong><br><span style="font-size:10px;color:#666;">Tazocin IV</span></td>
       <td>Paroi (PBP) — large spectre + anti-Pseudo</td>
       <td style="text-align:center;">✅</td><td style="text-align:center;">✅✅</td><td style="text-align:center;">✅✅</td><td style="text-align:center;">❌</td>
       <td>Large spectre BGN + anaérobies · <span class="drug-badge warn">✅ <em>P. aeruginosa</em></span></td>
@@ -14293,8 +14370,8 @@ Carence absolue ou relative en insuline → ↑ Glucagon → ↑ Lipolyse → �
     <!-- Céphalosporines -->
     <tr style="background:#f0f4ff;">
       <td rowspan="4" style="font-weight:700;color:#1C3F8F;background:#dbeafe;border-right:3px solid #1C3F8F;vertical-align:top;padding:8px 6px;position:sticky;left:0;z-index:1;">Céphalosporines</td>
-      <td style="font-style:italic;color:#374151;vertical-align:top;padding:6px;background:#f0f4ff;">1<sup>re</sup> génération</td>
-      <td><strong>Céfazoline</strong><br><span style="font-size:10px;color:#666;">IV</span><br><strong>Céphalexine</strong><br><span style="font-size:10px;color:#666;">PO</span></td>
+      <td style="position:sticky;left:110px;z-index:5;font-style:italic;color:#374151;vertical-align:top;padding:6px;background:#f0f4ff;">1<sup>re</sup> génération</td>
+      <td style="position:sticky;left:230px;z-index:5;background:#f0f4ff;max-width:140px;overflow:hidden;border-right:2px solid #d1d5db;"><strong>Céfazoline</strong><br><span style="font-size:10px;color:#666;">IV</span><br><strong>Céphalexine</strong><br><span style="font-size:10px;color:#666;">PO</span></td>
       <td>Paroi — forte activité Gram+</td>
       <td style="text-align:center;">✅✅</td><td style="text-align:center;">Limité</td><td style="text-align:center;">❌</td><td style="text-align:center;">❌</td>
       <td>SASO, SBH · ± entérobactéries simples</td>
@@ -14302,8 +14379,8 @@ Carence absolue ou relative en insuline → ↑ Glucagon → ↑ Lipolyse → �
       <td>Cellulite, prophylaxie chirurgicale, plaies superficielles</td>
     </tr>
     <tr style="background:#e8f0fe;">
-      <td style="font-style:italic;color:#374151;vertical-align:top;padding:6px;">2<sup>e</sup> génération</td>
-      <td><strong>Céfuroxime</strong><br><span style="font-size:10px;color:#666;">PO/IV</span><br><strong>Céfoxitine</strong><br><span style="font-size:10px;color:#666;">IV (+ anaérobies)</span></td>
+      <td style="background:#e8f0fe;position:sticky;left:110px;z-index:5;font-style:italic;color:#374151;vertical-align:top;padding:6px;">2<sup>e</sup> génération</td>
+      <td style="position:sticky;left:230px;z-index:5;background:#e8f0fe;max-width:140px;overflow:hidden;border-right:2px solid #d1d5db;"><strong>Céfuroxime</strong><br><span style="font-size:10px;color:#666;">PO/IV</span><br><strong>Céfoxitine</strong><br><span style="font-size:10px;color:#666;">IV (+ anaérobies)</span></td>
       <td>Paroi — spectre élargi Gram−</td>
       <td style="text-align:center;">✅</td><td style="text-align:center;">✅</td><td style="text-align:center;">Céfoxitine</td><td style="text-align:center;">❌</td>
       <td>Meilleure couverture <em>H. influenzae</em> · Céfoxitine = seule cépha avec couverture anaérobies</td>
@@ -14311,8 +14388,8 @@ Carence absolue ou relative en insuline → ↑ Glucagon → ↑ Lipolyse → �
       <td>Sinusite/OMA résistant, chirurgie gynécologique (céfoxitine)</td>
     </tr>
     <tr style="background:#f0f4ff;">
-      <td style="font-style:italic;color:#374151;vertical-align:top;padding:6px;">3<sup>e</sup> génération</td>
-      <td><strong>Ceftriaxone</strong><br><span style="font-size:10px;color:#666;">IV/IM (1–2 g/j)</span><br><strong>Ceftazidime</strong><br><span style="font-size:10px;color:#666;">IV (anti-Pseudo)</span></td>
+      <td style="background:#f0f4ff;position:sticky;left:110px;z-index:5;font-style:italic;color:#374151;vertical-align:top;padding:6px;">3<sup>e</sup> génération</td>
+      <td style="position:sticky;left:230px;z-index:5;background:#f0f4ff;max-width:140px;overflow:hidden;border-right:2px solid #d1d5db;"><strong>Ceftriaxone</strong><br><span style="font-size:10px;color:#666;">IV/IM (1–2 g/j)</span><br><strong>Ceftazidime</strong><br><span style="font-size:10px;color:#666;">IV (anti-Pseudo)</span></td>
       <td>Paroi — pénétration LCR excellente</td>
       <td style="text-align:center;">✅</td><td style="text-align:center;">✅✅</td><td style="text-align:center;">❌</td><td style="text-align:center;">❌</td>
       <td>Entérobactéries, <em>N. meningitidis</em>, <em>H. influenzae</em> · Ceftazidime = <span class="drug-badge warn">✅ Pseudo</span> · <span class="drug-badge ci">❌ SARM</span></td>
@@ -14320,8 +14397,8 @@ Carence absolue ou relative en insuline → ↑ Glucagon → ↑ Lipolyse → �
       <td>PAC hospitalisée, méningite bactérienne, PNA, gonorrhée</td>
     </tr>
     <tr style="background:#e8f0fe;">
-      <td style="font-style:italic;color:#374151;vertical-align:top;padding:6px;">4<sup>e</sup> génération</td>
-      <td><strong>Céfépime</strong><br><span style="font-size:10px;color:#666;">IV</span></td>
+      <td style="background:#e8f0fe;position:sticky;left:110px;z-index:5;font-style:italic;color:#374151;vertical-align:top;padding:6px;">4<sup>e</sup> génération</td>
+      <td style="position:sticky;left:230px;z-index:5;background:#e8f0fe;max-width:140px;overflow:hidden;border-right:2px solid #d1d5db;"><strong>Céfépime</strong><br><span style="font-size:10px;color:#666;">IV</span></td>
       <td>Paroi — double spectre Gram+/Gram−</td>
       <td style="text-align:center;">✅✅</td><td style="text-align:center;">✅✅</td><td style="text-align:center;">❌</td><td style="text-align:center;">❌</td>
       <td>Large spectre + <span class="drug-badge warn">✅ P. aeruginosa</span> + SASO · <span class="drug-badge ci">❌ SARM, anaérobies</span></td>
@@ -14331,8 +14408,8 @@ Carence absolue ou relative en insuline → ↑ Glucagon → ↑ Lipolyse → �
     <!-- Carbapénèmes -->
     <tr style="background:#f0f4ff;">
       <td rowspan="2" style="font-weight:700;color:#1C3F8F;background:#dbeafe;border-right:3px solid #1C3F8F;vertical-align:top;padding:8px 6px;position:sticky;left:0;z-index:1;">Carbapénèmes</td>
-      <td style="font-style:italic;color:#374151;vertical-align:top;padding:6px;">Sans activité <em>Pseudo</em></td>
-      <td><strong>Ertapénem</strong><br><span style="font-size:10px;color:#666;">IV/IM 1 g/j</span></td>
+      <td style="background:#f0f4ff;position:sticky;left:110px;z-index:5;font-style:italic;color:#374151;vertical-align:top;padding:6px;">Sans activité <em>Pseudo</em></td>
+      <td style="position:sticky;left:230px;z-index:5;background:#f0f4ff;max-width:140px;overflow:hidden;border-right:2px solid #d1d5db;"><strong>Ertapénem</strong><br><span style="font-size:10px;color:#666;">IV/IM 1 g/j</span></td>
       <td>Paroi (PBP) — spectre très large</td>
       <td style="text-align:center;">✅</td><td style="text-align:center;">✅✅</td><td style="text-align:center;">✅✅</td><td style="text-align:center;">❌</td>
       <td>Entérobactéries résistantes (BLSE) · <span class="drug-badge ci">❌ Pseudo, Entérocoque, SARM</span></td>
@@ -14340,8 +14417,8 @@ Carence absolue ou relative en insuline → ↑ Glucagon → ↑ Lipolyse → �
       <td>Infections communautaires sévères, BLSE extra-hospitalier</td>
     </tr>
     <tr style="background:#e8f0fe;">
-      <td style="font-style:italic;color:#374151;vertical-align:top;padding:6px;">Anti-<em>Pseudomonas</em></td>
-      <td><strong>Méropénem</strong><br><span style="font-size:10px;color:#666;">IV 1–2 g q8h</span><br><strong>Imipénem-cilast.</strong><br><span style="font-size:10px;color:#666;">IV</span></td>
+      <td style="background:#e8f0fe;position:sticky;left:110px;z-index:5;font-style:italic;color:#374151;vertical-align:top;padding:6px;">Anti-<em>Pseudomonas</em></td>
+      <td style="position:sticky;left:230px;z-index:5;background:#e8f0fe;max-width:140px;overflow:hidden;border-right:2px solid #d1d5db;"><strong>Méropénem</strong><br><span style="font-size:10px;color:#666;">IV 1–2 g q8h</span><br><strong>Imipénem-cilast.</strong><br><span style="font-size:10px;color:#666;">IV</span></td>
       <td>Paroi (PBP) — spectre maximal</td>
       <td style="text-align:center;">✅</td><td style="text-align:center;">✅✅✅</td><td style="text-align:center;">✅✅</td><td style="text-align:center;">❌</td>
       <td>Tout sauf SARM · <span class="drug-badge warn">✅ P. aeruginosa</span> · <em>Acinetobacter</em> · Imipénem: risque convulsions (↓ seuil)</td>
@@ -14354,28 +14431,29 @@ Carence absolue ou relative en insuline → ↑ Glucagon → ↑ Lipolyse → �
 </div>
 <div id="ab1" style="display:none;">
   <div style="background:#9d174d;color:#fff;padding:7px 12px;border-radius:6px 6px 0 0;font-size:12px;font-weight:700;">🟣 Glycopeptides — <span style="font-weight:400;font-style:italic;">Inhibition synthèse paroi (liaison précurseurs NAM/NAG)</span></div>
-  <div style="overflow-x:auto;">
-    <table style="font-size:11.5px;min-width:960px;border-collapse:collapse;width:100%;">
+  <div class="ab-scroll-mirror" data-for="ab-main-ab1" style="border:1px solid #9d174d33;"><div class="ab-scroll-mirror-inner" style="min-width:1160px;height:1px;"></div></div>
+  <div style="overflow-x:auto;" id="ab-main-ab1">
+    <table style="font-size:11.5px;min-width:1160px;border-collapse:collapse;width:100%;table-layout:fixed;">
       <thead>
     <tr style="background:#1C3F8F;color:#fff;">
       <th style="width:110px;padding:6px 8px;position:sticky;left:0;z-index:3;">Grande classe</th>
-      <th style="width:120px;padding:6px 8px;">Sous-catégorie</th>
-      <th style="width:140px;padding:6px 8px;">Molécule(s)</th>
-      <th style="padding:6px 8px;">Mécanisme</th>
+      <th style="width:120px;padding:6px 8px;position:sticky;left:110px;z-index:10;background:#1C3F8F;color:#fff;">Sous-catégorie</th>
+      <th style="width:140px;padding:6px 8px;position:sticky;left:230px;z-index:10;background:#1C3F8F;color:#fff;border-right:2px solid rgba(255,255,255,0.4);">Molécule(s)</th>
+      <th style="width:180px;padding:6px 8px;">Mécanisme</th>
       <th style="text-align:center;width:36px;padding:6px 4px;">G+</th>
       <th style="text-align:center;width:36px;padding:6px 4px;">G−</th>
       <th style="text-align:center;width:36px;padding:6px 4px;">Ana</th>
       <th style="text-align:center;width:36px;padding:6px 4px;">Aty</th>
-      <th style="padding:6px 8px;">Spectre clé notable</th>
-      <th style="padding:6px 8px;">CI / Mises en garde</th>
-      <th style="padding:6px 8px;">Usage clinique typique</th>
+      <th style="width:150px;padding:6px 8px;">Spectre clé notable</th>
+      <th style="width:150px;padding:6px 8px;">CI / Mises en garde</th>
+      <th style="width:160px;padding:6px 8px;">Usage clinique typique</th>
     </tr>
   </thead>
       <tbody>
         <tr style="background:#fdf2f8;">
       <td style="font-weight:700;color:#9d174d;background:#f9d8e8;border-right:3px solid #9d174d;position:sticky;left:0;z-index:1;">Glycopeptides</td>
-      <td style="font-style:italic;color:#374151;padding:6px;">Glycopeptide classique</td>
-      <td><strong>Vancomycine</strong><br><span style="font-size:10px;color:#666;">IV (systémique)<br>PO (C. diff uniquement)</span></td>
+      <td style="background:#fdf2f8;position:sticky;left:110px;z-index:5;font-style:italic;color:#374151;padding:6px;">Glycopeptide classique</td>
+      <td style="position:sticky;left:230px;z-index:5;background:#fdf2f8;max-width:140px;overflow:hidden;border-right:2px solid #d1d5db;"><strong>Vancomycine</strong><br><span style="font-size:10px;color:#666;">IV (systémique)<br>PO (C. diff uniquement)</span></td>
       <td>Inhibe synthèse paroi (liaison D-Ala-D-Ala des précurseurs) — bactéricide Gram+</td>
       <td style="text-align:center;">✅✅</td><td style="text-align:center;">❌</td><td style="text-align:center;">❌</td><td style="text-align:center;">❌</td>
       <td><strong>Gram+ SEULEMENT</strong> : SARM, SASO, entérocoques · PO = <em>C. difficile</em> uniquement (pas absorbée)</td>
@@ -14388,28 +14466,29 @@ Carence absolue ou relative en insuline → ↑ Glucagon → ↑ Lipolyse → �
 </div>
 <div id="ab2" style="display:none;">
   <div style="background:#15803d;color:#fff;padding:7px 12px;border-radius:6px 6px 0 0;font-size:12px;font-weight:700;">🟢 Inhibiteurs synthèse protéique — <span style="font-weight:400;font-style:italic;">Macrolides · Aminoglycosides · Lincosamides</span></div>
-  <div style="overflow-x:auto;">
-    <table style="font-size:11.5px;min-width:960px;border-collapse:collapse;width:100%;">
+  <div class="ab-scroll-mirror" data-for="ab-main-ab2" style="border:1px solid #15803d33;"><div class="ab-scroll-mirror-inner" style="min-width:1160px;height:1px;"></div></div>
+  <div style="overflow-x:auto;" id="ab-main-ab2">
+    <table style="font-size:11.5px;min-width:1160px;border-collapse:collapse;width:100%;table-layout:fixed;">
       <thead>
     <tr style="background:#1C3F8F;color:#fff;">
       <th style="width:110px;padding:6px 8px;position:sticky;left:0;z-index:3;">Grande classe</th>
-      <th style="width:120px;padding:6px 8px;">Sous-catégorie</th>
-      <th style="width:140px;padding:6px 8px;">Molécule(s)</th>
-      <th style="padding:6px 8px;">Mécanisme</th>
+      <th style="width:120px;padding:6px 8px;position:sticky;left:110px;z-index:10;background:#1C3F8F;color:#fff;">Sous-catégorie</th>
+      <th style="width:140px;padding:6px 8px;position:sticky;left:230px;z-index:10;background:#1C3F8F;color:#fff;border-right:2px solid rgba(255,255,255,0.4);">Molécule(s)</th>
+      <th style="width:180px;padding:6px 8px;">Mécanisme</th>
       <th style="text-align:center;width:36px;padding:6px 4px;">G+</th>
       <th style="text-align:center;width:36px;padding:6px 4px;">G−</th>
       <th style="text-align:center;width:36px;padding:6px 4px;">Ana</th>
       <th style="text-align:center;width:36px;padding:6px 4px;">Aty</th>
-      <th style="padding:6px 8px;">Spectre clé notable</th>
-      <th style="padding:6px 8px;">CI / Mises en garde</th>
-      <th style="padding:6px 8px;">Usage clinique typique</th>
+      <th style="width:150px;padding:6px 8px;">Spectre clé notable</th>
+      <th style="width:150px;padding:6px 8px;">CI / Mises en garde</th>
+      <th style="width:160px;padding:6px 8px;">Usage clinique typique</th>
     </tr>
   </thead>
       <tbody>
         <tr style="background:#f0fdf4;">
       <td rowspan="2" style="font-weight:700;color:#15803d;background:#bbf7d0;border-right:3px solid #15803d;vertical-align:top;padding:8px 6px;position:sticky;left:0;z-index:1;">Macrolides<br><span style="font-size:10px;font-weight:400;">(50S)</span></td>
-      <td style="font-style:italic;color:#374151;padding:6px;">Macrolide de 1re ligne</td>
-      <td><strong>Azithromycine</strong><br><span style="font-size:10px;color:#666;">Zithromax PO/IV<br>250–500 mg/j</span></td>
+      <td style="background:#f0fdf4;position:sticky;left:110px;z-index:5;font-style:italic;color:#374151;padding:6px;">Macrolide de 1re ligne</td>
+      <td style="position:sticky;left:230px;z-index:5;background:#f0fdf4;max-width:140px;overflow:hidden;border-right:2px solid #d1d5db;"><strong>Azithromycine</strong><br><span style="font-size:10px;color:#666;">Zithromax PO/IV<br>250–500 mg/j</span></td>
       <td>Inhibe sous-unité 50S ribosome → bactériostatique</td>
       <td style="text-align:center;">✅</td><td style="text-align:center;">Limité</td><td style="text-align:center;">❌</td><td style="text-align:center;">✅✅</td>
       <td>Atypiques (<em>Mycoplasma, Chlamydia, Legionella</em>) · Streptocoques · <span class="drug-badge ci">❌ urine · résistance pneumocoque croissante</span></td>
@@ -14417,8 +14496,8 @@ Carence absolue ou relative en insuline → ↑ Glucagon → ↑ Lipolyse → �
       <td>PAC ambulatoire, MST (<em>Chlamydia</em>), <em>Mycoplasma</em>, coqueluche</td>
     </tr>
     <tr style="background:#f0fdf4;">
-      <td style="font-style:italic;color:#374151;padding:6px;">Macrolide Helicobacter</td>
-      <td><strong>Clarithromycine</strong><br><span style="font-size:10px;color:#666;">Biaxin PO 500 mg BID</span></td>
+      <td style="background:#f0fdf4;position:sticky;left:110px;z-index:5;font-style:italic;color:#374151;padding:6px;">Macrolide Helicobacter</td>
+      <td style="position:sticky;left:230px;z-index:5;background:#f0fdf4;max-width:140px;overflow:hidden;border-right:2px solid #d1d5db;"><strong>Clarithromycine</strong><br><span style="font-size:10px;color:#666;">Biaxin PO 500 mg BID</span></td>
       <td>Inhibe 50S — bactériostatique</td>
       <td style="text-align:center;">✅</td><td style="text-align:center;">Limité</td><td style="text-align:center;">❌</td><td style="text-align:center;">✅✅</td>
       <td>Idem azithromycine + <em>H. pylori</em> (trithérapie)</td>
@@ -14427,8 +14506,8 @@ Carence absolue ou relative en insuline → ↑ Glucagon → ↑ Lipolyse → �
     </tr>
     <tr style="background:#f0fdf4;">
       <td rowspan="3" style="font-weight:700;color:#15803d;background:#bbf7d0;border-right:3px solid #15803d;vertical-align:top;padding:8px 6px;position:sticky;left:0;z-index:1;">Aminoglycosides<br><span style="font-size:10px;font-weight:400;">(30S)</span></td>
-      <td style="font-style:italic;color:#374151;padding:6px;">Standard</td>
-      <td><strong>Gentamicine</strong><br><span style="font-size:10px;color:#666;">IV/IM — dose unique/j</span><br><strong>Tobramycine</strong><br><span style="font-size:10px;color:#666;">IV/IM · inhalé (<em>Pseudo</em>)</span></td>
+      <td style="background:#f0fdf4;position:sticky;left:110px;z-index:5;font-style:italic;color:#374151;padding:6px;">Standard</td>
+      <td style="position:sticky;left:230px;z-index:5;background:#f0fdf4;max-width:140px;overflow:hidden;border-right:2px solid #d1d5db;"><strong>Gentamicine</strong><br><span style="font-size:10px;color:#666;">IV/IM — dose unique/j</span><br><strong>Tobramycine</strong><br><span style="font-size:10px;color:#666;">IV/IM · inhalé (<em>Pseudo</em>)</span></td>
       <td>Inhibe 30S → erreurs traduction → bactéricide concentration-dépendant</td>
       <td style="text-align:center;">❌</td><td style="text-align:center;">✅✅</td><td style="text-align:center;">❌</td><td style="text-align:center;">❌</td>
       <td>BGN aérobies SEULEMENT : entérobactéries, <em>P. aeruginosa</em> · Synergique avec β-lactamines · <span class="drug-badge ci">❌ Gram+, anaérobies</span></td>
@@ -14436,8 +14515,8 @@ Carence absolue ou relative en insuline → ↑ Glucagon → ↑ Lipolyse → �
       <td>Sepsis à BGN (synergisme), endocardite (synergisme), infections à Pseudo</td>
     </tr>
     <tr style="background:#f0fdf4;">
-      <td style="font-style:italic;color:#374151;padding:6px;">Large spectre</td>
-      <td><strong>Amikacine</strong><br><span style="font-size:10px;color:#666;">IV/IM</span></td>
+      <td style="background:#f0fdf4;position:sticky;left:110px;z-index:5;font-style:italic;color:#374151;padding:6px;">Large spectre</td>
+      <td style="position:sticky;left:230px;z-index:5;background:#f0fdf4;max-width:140px;overflow:hidden;border-right:2px solid #d1d5db;"><strong>Amikacine</strong><br><span style="font-size:10px;color:#666;">IV/IM</span></td>
       <td>Inhibe 30S — résiste aux enzymes d'inactivation</td>
       <td style="text-align:center;">❌</td><td style="text-align:center;">✅✅</td><td style="text-align:center;">❌</td><td style="text-align:center;">❌</td>
       <td>BGN résistants aux autres aminoglycosides · Entérobactéries BLSE · <em>Mycobacterium</em></td>
@@ -14445,8 +14524,8 @@ Carence absolue ou relative en insuline → ↑ Glucagon → ↑ Lipolyse → �
       <td>Infections à BGN résistants, tuberculose (complément)</td>
     </tr>
     <tr style="background:#f0fdf4;">
-      <td style="font-style:italic;color:#374151;padding:6px;">Lincosamide</td>
-      <td><strong>Clindamycine</strong><br><span style="font-size:10px;color:#666;">PO/IV 300–600 mg q6–8h</span></td>
+      <td style="background:#f0fdf4;position:sticky;left:110px;z-index:5;font-style:italic;color:#374151;padding:6px;">Lincosamide</td>
+      <td style="position:sticky;left:230px;z-index:5;background:#f0fdf4;max-width:140px;overflow:hidden;border-right:2px solid #d1d5db;"><strong>Clindamycine</strong><br><span style="font-size:10px;color:#666;">PO/IV 300–600 mg q6–8h</span></td>
       <td>Inhibe 50S — bactériostatique · excellente pénétration tissulaire/osseuse</td>
       <td style="text-align:center;">✅</td><td style="text-align:center;">❌</td><td style="text-align:center;">✅</td><td style="text-align:center;">❌</td>
       <td>Streptocoque, SASO · Anaérobies (sauf <em>C. difficile</em>) · SARM si CMI sensible · <span class="drug-badge ci">❌ Gram−, urine</span></td>
@@ -14459,28 +14538,29 @@ Carence absolue ou relative en insuline → ↑ Glucagon → ↑ Lipolyse → �
 </div>
 <div id="ab3" style="display:none;">
   <div style="background:#854d0e;color:#fff;padding:7px 12px;border-radius:6px 6px 0 0;font-size:12px;font-weight:700;">🟡 Inhibiteurs réplication ADN — <span style="font-weight:400;font-style:italic;">Fluoroquinolones · Nitro-imidazolés</span></div>
-  <div style="overflow-x:auto;">
-    <table style="font-size:11.5px;min-width:960px;border-collapse:collapse;width:100%;">
+  <div class="ab-scroll-mirror" data-for="ab-main-ab3" style="border:1px solid #854d0e33;"><div class="ab-scroll-mirror-inner" style="min-width:1160px;height:1px;"></div></div>
+  <div style="overflow-x:auto;" id="ab-main-ab3">
+    <table style="font-size:11.5px;min-width:1160px;border-collapse:collapse;width:100%;table-layout:fixed;">
       <thead>
     <tr style="background:#1C3F8F;color:#fff;">
       <th style="width:110px;padding:6px 8px;position:sticky;left:0;z-index:3;">Grande classe</th>
-      <th style="width:120px;padding:6px 8px;">Sous-catégorie</th>
-      <th style="width:140px;padding:6px 8px;">Molécule(s)</th>
-      <th style="padding:6px 8px;">Mécanisme</th>
+      <th style="width:120px;padding:6px 8px;position:sticky;left:110px;z-index:10;background:#1C3F8F;color:#fff;">Sous-catégorie</th>
+      <th style="width:140px;padding:6px 8px;position:sticky;left:230px;z-index:10;background:#1C3F8F;color:#fff;border-right:2px solid rgba(255,255,255,0.4);">Molécule(s)</th>
+      <th style="width:180px;padding:6px 8px;">Mécanisme</th>
       <th style="text-align:center;width:36px;padding:6px 4px;">G+</th>
       <th style="text-align:center;width:36px;padding:6px 4px;">G−</th>
       <th style="text-align:center;width:36px;padding:6px 4px;">Ana</th>
       <th style="text-align:center;width:36px;padding:6px 4px;">Aty</th>
-      <th style="padding:6px 8px;">Spectre clé notable</th>
-      <th style="padding:6px 8px;">CI / Mises en garde</th>
-      <th style="padding:6px 8px;">Usage clinique typique</th>
+      <th style="width:150px;padding:6px 8px;">Spectre clé notable</th>
+      <th style="width:150px;padding:6px 8px;">CI / Mises en garde</th>
+      <th style="width:160px;padding:6px 8px;">Usage clinique typique</th>
     </tr>
   </thead>
       <tbody>
         <tr style="background:#fffbeb;">
       <td rowspan="3" style="font-weight:700;color:#854d0e;background:#fef08a;border-right:3px solid #854d0e;vertical-align:top;padding:8px 6px;position:sticky;left:0;z-index:1;">Fluoroquinolones</td>
-      <td style="font-style:italic;color:#374151;padding:6px;">Spectre BGN + Pseudo</td>
-      <td><strong>Ciprofloxacine</strong><br><span style="font-size:10px;color:#666;">PO/IV 500 mg BID PO</span></td>
+      <td style="background:#fffbeb;position:sticky;left:110px;z-index:5;font-style:italic;color:#374151;padding:6px;">Spectre BGN + Pseudo</td>
+      <td style="position:sticky;left:230px;z-index:5;background:#fffbeb;max-width:140px;overflow:hidden;border-right:2px solid #d1d5db;"><strong>Ciprofloxacine</strong><br><span style="font-size:10px;color:#666;">PO/IV 500 mg BID PO</span></td>
       <td>Inhibe ADN gyrase (Gram−) + topo-isomérase IV → bactéricide</td>
       <td style="text-align:center;">Faible</td><td style="text-align:center;">✅✅</td><td style="text-align:center;">❌</td><td style="text-align:center;">✅</td>
       <td>Entérobactéries, <span class="drug-badge warn">✅ P. aeruginosa (seul PO)</span> · <span class="drug-badge ci">❌ pneumocoque, SARM, anaérobies</span></td>
@@ -14488,8 +14568,8 @@ Carence absolue ou relative en insuline → ↑ Glucagon → ↑ Lipolyse → �
       <td>PNA, IU compliquée, diarrhée à <em>Salmonella</em> sévère, infection à <em>Pseudo</em> PO</td>
     </tr>
     <tr style="background:#fffbeb;">
-      <td style="font-style:italic;color:#374151;padding:6px;">Spectre respiratoire + urinaire</td>
-      <td><strong>Lévofloxacine</strong><br><span style="font-size:10px;color:#666;">PO/IV 500–750 mg/j</span></td>
+      <td style="background:#fffbeb;position:sticky;left:110px;z-index:5;font-style:italic;color:#374151;padding:6px;">Spectre respiratoire + urinaire</td>
+      <td style="position:sticky;left:230px;z-index:5;background:#fffbeb;max-width:140px;overflow:hidden;border-right:2px solid #d1d5db;"><strong>Lévofloxacine</strong><br><span style="font-size:10px;color:#666;">PO/IV 500–750 mg/j</span></td>
       <td>Inhibe ADN gyrase + topo-IV — bactéricide</td>
       <td style="text-align:center;">✅</td><td style="text-align:center;">✅✅</td><td style="text-align:center;">❌</td><td style="text-align:center;">✅✅</td>
       <td>Pneumocoque ++ · BGN urinaires · <em>Legionella, Mycoplasma, Chlamydia</em> · ± <em>Pseudo</em></td>
@@ -14497,8 +14577,8 @@ Carence absolue ou relative en insuline → ↑ Glucagon → ↑ Lipolyse → �
       <td>PAC sévère hospitalisée, PNA, prostatite chronique</td>
     </tr>
     <tr style="background:#fffbeb;">
-      <td style="font-style:italic;color:#374151;padding:6px;">Spectre respiratoire + anaérobies</td>
-      <td><strong>Moxifloxacine</strong><br><span style="font-size:10px;color:#666;">PO/IV 400 mg/j</span></td>
+      <td style="background:#fffbeb;position:sticky;left:110px;z-index:5;font-style:italic;color:#374151;padding:6px;">Spectre respiratoire + anaérobies</td>
+      <td style="position:sticky;left:230px;z-index:5;background:#fffbeb;max-width:140px;overflow:hidden;border-right:2px solid #d1d5db;"><strong>Moxifloxacine</strong><br><span style="font-size:10px;color:#666;">PO/IV 400 mg/j</span></td>
       <td>Inhibe ADN gyrase + topo-IV — spectre anaérobies</td>
       <td style="text-align:center;">✅✅</td><td style="text-align:center;">✅</td><td style="text-align:center;">✅</td><td style="text-align:center;">✅✅</td>
       <td>Pneumocoque excellent · Anaérobies · Atypiques · <span class="drug-badge ci">❌ Pseudo, inefficace dans l'urine</span></td>
@@ -14507,8 +14587,8 @@ Carence absolue ou relative en insuline → ↑ Glucagon → ↑ Lipolyse → �
     </tr>
     <tr style="background:#fffbeb;">
       <td style="font-weight:700;color:#854d0e;background:#fef08a;border-right:3px solid #854d0e;position:sticky;left:0;z-index:1;">Nitro-imidazolés</td>
-      <td style="font-style:italic;color:#374151;padding:6px;">Anaérobies + protozoaires</td>
-      <td><strong>Métronidazole</strong><br><span style="font-size:10px;color:#666;">Flagyl PO/IV 500 mg TID</span></td>
+      <td style="background:#fffbeb;position:sticky;left:110px;z-index:5;font-style:italic;color:#374151;padding:6px;">Anaérobies + protozoaires</td>
+      <td style="position:sticky;left:230px;z-index:5;background:#fffbeb;max-width:140px;overflow:hidden;border-right:2px solid #d1d5db;"><strong>Métronidazole</strong><br><span style="font-size:10px;color:#666;">Flagyl PO/IV 500 mg TID</span></td>
       <td>Lésion ADN par radicaux nitro réduits (UNIQUEMENT anaérobies + protozoaires)</td>
       <td style="text-align:center;">❌</td><td style="text-align:center;">Limité</td><td style="text-align:center;">✅✅</td><td style="text-align:center;">❌</td>
       <td>Anaérobies strictes · <em>C. difficile</em> · <em>Giardia</em> · <em>Trichomonas vaginalis</em> · <em>Entamoeba</em></td>
@@ -14521,28 +14601,29 @@ Carence absolue ou relative en insuline → ↑ Glucagon → ↑ Lipolyse → �
 </div>
 <div id="ab4" style="display:none;">
   <div style="background:#0369a1;color:#fff;padding:7px 12px;border-radius:6px 6px 0 0;font-size:12px;font-weight:700;">🔷 Inhibiteurs synthèse folates — <span style="font-weight:400;font-style:italic;">Double blocage DHFR + DHPS</span></div>
-  <div style="overflow-x:auto;">
-    <table style="font-size:11.5px;min-width:960px;border-collapse:collapse;width:100%;">
+  <div class="ab-scroll-mirror" data-for="ab-main-ab4" style="border:1px solid #0369a133;"><div class="ab-scroll-mirror-inner" style="min-width:1160px;height:1px;"></div></div>
+  <div style="overflow-x:auto;" id="ab-main-ab4">
+    <table style="font-size:11.5px;min-width:1160px;border-collapse:collapse;width:100%;table-layout:fixed;">
       <thead>
     <tr style="background:#1C3F8F;color:#fff;">
       <th style="width:110px;padding:6px 8px;position:sticky;left:0;z-index:3;">Grande classe</th>
-      <th style="width:120px;padding:6px 8px;">Sous-catégorie</th>
-      <th style="width:140px;padding:6px 8px;">Molécule(s)</th>
-      <th style="padding:6px 8px;">Mécanisme</th>
+      <th style="width:120px;padding:6px 8px;position:sticky;left:110px;z-index:10;background:#1C3F8F;color:#fff;">Sous-catégorie</th>
+      <th style="width:140px;padding:6px 8px;position:sticky;left:230px;z-index:10;background:#1C3F8F;color:#fff;border-right:2px solid rgba(255,255,255,0.4);">Molécule(s)</th>
+      <th style="width:180px;padding:6px 8px;">Mécanisme</th>
       <th style="text-align:center;width:36px;padding:6px 4px;">G+</th>
       <th style="text-align:center;width:36px;padding:6px 4px;">G−</th>
       <th style="text-align:center;width:36px;padding:6px 4px;">Ana</th>
       <th style="text-align:center;width:36px;padding:6px 4px;">Aty</th>
-      <th style="padding:6px 8px;">Spectre clé notable</th>
-      <th style="padding:6px 8px;">CI / Mises en garde</th>
-      <th style="padding:6px 8px;">Usage clinique typique</th>
+      <th style="width:150px;padding:6px 8px;">Spectre clé notable</th>
+      <th style="width:150px;padding:6px 8px;">CI / Mises en garde</th>
+      <th style="width:160px;padding:6px 8px;">Usage clinique typique</th>
     </tr>
   </thead>
       <tbody>
         <tr style="background:#f0f9ff;">
       <td style="font-weight:700;color:#0369a1;background:#bae6fd;border-right:3px solid #0369a1;position:sticky;left:0;z-index:1;">Sulfonamides</td>
-      <td style="font-style:italic;color:#374151;padding:6px;">Double blocage folate</td>
-      <td><strong>TMP-SMX (Septra)</strong><br><span style="font-size:10px;color:#666;">Triméthoprime +<br>Sulfaméthoxazole<br>PO/IV</span></td>
+      <td style="background:#f0f9ff;position:sticky;left:110px;z-index:5;font-style:italic;color:#374151;padding:6px;">Double blocage folate</td>
+      <td style="position:sticky;left:230px;z-index:5;background:#f0f9ff;max-width:140px;overflow:hidden;border-right:2px solid #d1d5db;"><strong>TMP-SMX (Septra)</strong><br><span style="font-size:10px;color:#666;">Triméthoprime +<br>Sulfaméthoxazole<br>PO/IV</span></td>
       <td>Double blocage synthèse acide folique (TMP → DHFR, SMX → DHPS)</td>
       <td style="text-align:center;">✅ SARM</td><td style="text-align:center;">✅</td><td style="text-align:center;">❌</td><td style="text-align:center;">❌</td>
       <td>SARM communautaire · <em>S. pneumoniae</em> · entérobactéries · <em>Pneumocystis jirovecii</em> (PCP)</td>
@@ -14555,28 +14636,29 @@ Carence absolue ou relative en insuline → ↑ Glucagon → ↑ Lipolyse → �
 </div>
 <div id="ab5" style="display:none;">
   <div style="background:#6b21a8;color:#fff;padding:7px 12px;border-radius:6px 6px 0 0;font-size:12px;font-weight:700;">⚫ Agents spéciaux — <span style="font-weight:400;font-style:italic;">Nitrofurantoïne · Daptomycine · Linézolide</span></div>
-  <div style="overflow-x:auto;">
-    <table style="font-size:11.5px;min-width:960px;border-collapse:collapse;width:100%;">
+  <div class="ab-scroll-mirror" data-for="ab-main-ab5" style="border:1px solid #6b21a833;"><div class="ab-scroll-mirror-inner" style="min-width:1160px;height:1px;"></div></div>
+  <div style="overflow-x:auto;" id="ab-main-ab5">
+    <table style="font-size:11.5px;min-width:1160px;border-collapse:collapse;width:100%;table-layout:fixed;">
       <thead>
     <tr style="background:#1C3F8F;color:#fff;">
       <th style="width:110px;padding:6px 8px;position:sticky;left:0;z-index:3;">Grande classe</th>
-      <th style="width:120px;padding:6px 8px;">Sous-catégorie</th>
-      <th style="width:140px;padding:6px 8px;">Molécule(s)</th>
-      <th style="padding:6px 8px;">Mécanisme</th>
+      <th style="width:120px;padding:6px 8px;position:sticky;left:110px;z-index:10;background:#1C3F8F;color:#fff;">Sous-catégorie</th>
+      <th style="width:140px;padding:6px 8px;position:sticky;left:230px;z-index:10;background:#1C3F8F;color:#fff;border-right:2px solid rgba(255,255,255,0.4);">Molécule(s)</th>
+      <th style="width:180px;padding:6px 8px;">Mécanisme</th>
       <th style="text-align:center;width:36px;padding:6px 4px;">G+</th>
       <th style="text-align:center;width:36px;padding:6px 4px;">G−</th>
       <th style="text-align:center;width:36px;padding:6px 4px;">Ana</th>
       <th style="text-align:center;width:36px;padding:6px 4px;">Aty</th>
-      <th style="padding:6px 8px;">Spectre clé notable</th>
-      <th style="padding:6px 8px;">CI / Mises en garde</th>
-      <th style="padding:6px 8px;">Usage clinique typique</th>
+      <th style="width:150px;padding:6px 8px;">Spectre clé notable</th>
+      <th style="width:150px;padding:6px 8px;">CI / Mises en garde</th>
+      <th style="width:160px;padding:6px 8px;">Usage clinique typique</th>
     </tr>
   </thead>
       <tbody>
         <tr style="background:#faf5ff;">
       <td style="font-weight:700;color:#6b21a8;background:#e9d5ff;border-right:3px solid #6b21a8;vertical-align:top;position:sticky;left:0;z-index:1;">Agents urinaires</td>
-      <td style="font-style:italic;color:#374151;padding:6px;">Concentr. urinaire exclusive</td>
-      <td><strong>Nitrofurantoïne</strong><br><span style="font-size:10px;color:#666;">Macrobid LP 100 mg BID × 5j</span></td>
+      <td style="background:#faf5ff;position:sticky;left:110px;z-index:5;font-style:italic;color:#374151;padding:6px;">Concentr. urinaire exclusive</td>
+      <td style="position:sticky;left:230px;z-index:5;background:#faf5ff;max-width:140px;overflow:hidden;border-right:2px solid #d1d5db;"><strong>Nitrofurantoïne</strong><br><span style="font-size:10px;color:#666;">Macrobid LP 100 mg BID × 5j</span></td>
       <td>Radicaux réactifs → lésion ADN/protéines/ribosomes — UNIQUEMENT dans l'urine</td>
       <td style="text-align:center;">✅</td><td style="text-align:center;">✅ <em>E. coli</em></td><td style="text-align:center;">❌</td><td style="text-align:center;">❌</td>
       <td>Efficace pour cystite non compliquée · <span class="drug-badge ci">❌ CI absolue si DFG &lt; 45 · ❌ CI pyélonéphrite</span></td>
@@ -14585,8 +14667,8 @@ Carence absolue ou relative en insuline → ↑ Glucagon → ↑ Lipolyse → �
     </tr>
     <tr style="background:#faf5ff;">
       <td style="font-weight:700;color:#6b21a8;background:#e9d5ff;border-right:3px solid #6b21a8;vertical-align:top;position:sticky;left:0;z-index:1;">Anti-SARM réservés</td>
-      <td style="font-style:italic;color:#374151;padding:6px;">Lipopeptide</td>
-      <td><strong>Daptomycine</strong><br><span style="font-size:10px;color:#666;">IV 4–6 mg/kg/j</span></td>
+      <td style="background:#faf5ff;position:sticky;left:110px;z-index:5;font-style:italic;color:#374151;padding:6px;">Lipopeptide</td>
+      <td style="position:sticky;left:230px;z-index:5;background:#faf5ff;max-width:140px;overflow:hidden;border-right:2px solid #d1d5db;"><strong>Daptomycine</strong><br><span style="font-size:10px;color:#666;">IV 4–6 mg/kg/j</span></td>
       <td>Dépolarisation membrane cellulaire Gram+ → bactéricide</td>
       <td style="text-align:center;">✅✅ SARM</td><td style="text-align:center;">❌</td><td style="text-align:center;">❌</td><td style="text-align:center;">❌</td>
       <td>SARM · SASO résistant · Entérocoques résistants (ERV) · <span class="drug-badge ci">❌ Inactivée par surfactant pulmonaire → jamais pour pneumonie</span></td>
@@ -14595,8 +14677,8 @@ Carence absolue ou relative en insuline → ↑ Glucagon → ↑ Lipolyse → �
     </tr>
     <tr style="background:#faf5ff;">
       <td style="font-weight:700;color:#6b21a8;background:#e9d5ff;border-right:3px solid #6b21a8;vertical-align:top;position:sticky;left:0;z-index:1;"></td>
-      <td style="font-style:italic;color:#374151;padding:6px;">Oxazolidinone</td>
-      <td><strong>Linézolide</strong><br><span style="font-size:10px;color:#666;">PO/IV 600 mg BID</span></td>
+      <td style="background:#faf5ff;position:sticky;left:110px;z-index:5;font-style:italic;color:#374151;padding:6px;">Oxazolidinone</td>
+      <td style="position:sticky;left:230px;z-index:5;background:#faf5ff;max-width:140px;overflow:hidden;border-right:2px solid #d1d5db;"><strong>Linézolide</strong><br><span style="font-size:10px;color:#666;">PO/IV 600 mg BID</span></td>
       <td>Inhibe 50S (liaison unique 23S ARNr) → bactériostatique</td>
       <td style="text-align:center;">✅✅</td><td style="text-align:center;">❌</td><td style="text-align:center;">✅</td><td style="text-align:center;">❌</td>
       <td>SARM · ERV · Streptocoque · Excellente biodisponibilité PO (=IV) · Pénètre bien le LCR</td>
@@ -14631,6 +14713,706 @@ Carence absolue ou relative en insuline → ↑ Glucagon → ↑ Lipolyse → �
         </div>
       </div>
 
+
+      <div class="block rx">
+        <div class="block-title"><span class="tag">🧰 Outil interactif — Aide à la décision : Antibiothérapie Empirique</span></div>
+        <p class="content-text" style="margin-bottom:14px;">Sélectionnez le profil allergique, le système atteint, puis la condition clinique pour générer une recommandation empirique de première ligne. <em>Outil d'aide à la décision — ne remplace pas le jugement clinique, les cultures ni les directives locales.</em></p>
+
+        <style>
+          .abx-tool { font-family: var(--font); color: var(--ink); font-size: 14px; }
+          .abx-tool .abx-step { background: var(--cream2); border: 1px solid var(--cream3); padding: 16px 18px; margin-bottom: 14px; border-radius: var(--radius); }
+          .abx-tool h4 { font-size: 13px; text-transform: uppercase; letter-spacing: .04em; color: var(--ink); margin-bottom: 10px; font-weight: 700; }
+          .abx-tool label { font-weight: 600; display: block; margin-bottom: 6px; font-size: 13px; }
+          .abx-tool select { width: 100%; max-width: 520px; padding: 9px 10px; margin-top: 4px; margin-bottom: 4px; border: 1px solid var(--cream3); border-radius: var(--radius); font-size: 14px; font-family: var(--font); background: #fff; color: var(--ink); }
+          .abx-tool select:focus { border-color: var(--blue); outline: none; }
+          .abx-tool input[type="text"] { width: 100%; max-width: 520px; padding: 9px 10px; margin-bottom: 8px; border: 1px solid var(--cream3); border-radius: var(--radius); font-size: 14px; font-family: var(--font); background: #fff; color: var(--ink); box-sizing: border-box; }
+          .abx-tool input[type="text"]:focus { border-color: var(--blue); outline: none; }
+          .abx-tool .abx-radio-group { margin: 4px 0 6px; }
+          .abx-tool .abx-radio-group label { display: inline-block; font-weight: 400; margin-right: 20px; cursor: pointer; font-size: 14px; }
+          .abx-tool .abx-alert { padding: 12px 14px; margin: 10px 0; border-radius: var(--radius); font-weight: 600; font-size: 13px; }
+          .abx-tool .abx-alert-danger { background: var(--red-lt); color: var(--red); border: 1px solid var(--red); }
+          .abx-tool .abx-critical { color: var(--red); font-size: 13px; font-weight: 700; border: 2px solid var(--red); padding: 12px 14px; background: var(--red-lt); margin-top: 10px; border-radius: var(--radius); text-transform: uppercase; letter-spacing: .03em; }
+          .abx-tool #abx-result-box { background: var(--blue-lt); border-left: 6px solid var(--blue); padding: 18px; margin-top: 16px; border-radius: var(--radius); }
+          .abx-tool .abx-result-section { margin-bottom: 12px; padding-bottom: 10px; border-bottom: 1px dashed var(--cream3); font-size: 13px; line-height: 1.55; }
+          .abx-tool .abx-result-section:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+          .abx-tool .abx-result-title { font-weight: 700; color: var(--blue); text-transform: uppercase; font-size: 11px; letter-spacing: .04em; margin-bottom: 4px; }
+          /* System pills */
+          .abx-sys-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+          .abx-sys-btn { background: #f1f5f9; border: 2px solid #cbd5e1; border-radius: 20px; padding: 7px 14px; cursor: pointer; font-size: 13px; font-family: var(--font); color: #374151; font-weight: 500; transition: all .15s; }
+          .abx-sys-btn:hover { background: #e0e7ff; border-color: var(--blue); color: var(--blue); }
+          .abx-sys-btn.active { background: var(--blue); border-color: var(--blue); color: #fff; font-weight: 700; }
+          .abx-search-wrap { position: relative; max-width: 520px; margin-bottom: 6px; }
+          .abx-search-wrap input { padding-left: 34px !important; }
+          .abx-search-icon { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); color: #94a3b8; font-size: 15px; pointer-events: none; }
+        </style>
+
+        <div class="abx-tool" id="abx-tool">
+
+          <!-- MODE SELECTOR -->
+          <div style="display:flex;gap:10px;margin-bottom:16px;flex-wrap:wrap;">
+            <button id="abx-mode-btn-empirique" onclick="abxSetMode('empirique')"
+              style="background:#1C3F8F;color:#fff;border:none;border-radius:24px;padding:9px 20px;cursor:pointer;font-weight:700;font-size:13px;transition:all 0.2s;">
+              🔬 Empirique (par syndrome)
+            </button>
+            <button id="abx-mode-btn-pathogene" onclick="abxSetMode('pathogene')"
+              style="background:#e0e0e0;color:#333;border:none;border-radius:24px;padding:9px 20px;cursor:pointer;font-weight:700;font-size:13px;transition:all 0.2s;">
+              🧫 Pathog&egrave;ne identifi&eacute; (culture / suspicion)
+            </button>
+          </div>
+
+          <!-- ============================================================ -->
+          <!-- MODE 1 : EMPIRIQUE                                           -->
+          <!-- ============================================================ -->
+          <div id="abx-panel-empirique">
+
+            <!-- Info card -->
+            <div class="abx-step" style="background:var(--cream3);">
+              <h4>&#8505;&#65039; Antibiogouvernance &mdash; 4 moments cl&eacute;s (AHRQ 2018)</h4>
+              <p style="font-size:13px;font-weight:400;line-height:1.65;margin:0;">
+                1&#65039;&#8419; <strong>Bon diagnostic</strong> &mdash; est-ce vraiment bact&eacute;rien? (bilan septique : FSC, cr&eacute;at., E+, imagerie/culture PRN &mdash; id&eacute;alement avant l&apos;ATB)<br>
+                2&#65039;&#8419; <strong>Cultures + traitement empirique</strong> &mdash; pr&eacute;lever AVANT l&apos;antibiotique, puis d&eacute;buter selon les lignes directrices locales<br>
+                3&#65039;&#8419; <strong>Traitement dirig&eacute;</strong> &mdash; cesser si non infectieux, r&eacute;duire le spectre selon l&apos;antibiogramme, IV &rarr; PO d&egrave;s que possible<br>
+                4&#65039;&#8419; <strong>Dur&eacute;e minimale</strong> &mdash; campagne <em>Shorter is Better</em> : un traitement plus court est souvent aussi efficace et mieux tol&eacute;r&eacute;
+              </p>
+            </div>
+
+            <!-- Step 1: Allergies -->
+            <div class="abx-step">
+              <h4>&#9312; &Eacute;valuation des allergies</h4>
+              <p style="font-size:13px;margin-bottom:10px;font-weight:400;">Le patient pr&eacute;sente-t-il une allergie connue aux antibiotiques?</p>
+              <div class="abx-radio-group">
+                <label><input type="radio" name="abx-allergie" value="non" checked onchange="abxOnAllergieChange(this.value)"> &#128994; NON</label>
+                <label><input type="radio" name="abx-allergie" value="oui" onchange="abxOnAllergieChange(this.value)"> &#128308; OUI</label>
+              </div>
+              <div id="abx-msg-alerte-rouge" style="display:none;" class="abx-critical">
+                &#9888;&#65039; V&eacute;rifier imm&eacute;diatement le type de r&eacute;action et l&apos;historique avant toute prescription!
+              </div>
+              <div id="abx-anaphylaxie-box" style="display:none;margin-top:12px;">
+                <label for="abx-anaphylaxie">Type de r&eacute;action suspecté ou confirm&eacute; :</label>
+                <select id="abx-anaphylaxie" onchange="abxOnAllergieChange(document.querySelector('input[name=abx-allergie]:checked').value)">
+                  <option value="non">R&eacute;action l&eacute;g&egrave;re / non-anaphylactique (ex. : &eacute;ruption cutan&eacute;e tardive)</option>
+                  <option value="oui">Risque de r&eacute;action anaphylactique majeure (choc, angio-&oelig;d&egrave;me, bronchospasme)</option>
+                </select>
+                <div id="abx-anaphylaxie-danger-banner" style="display:none;" class="abx-alert abx-alert-danger">
+                  &#9888;&#65039; Contre-indication absolue : &eacute;viter p&eacute;nicillines ET c&eacute;phalosporines &agrave; structure similaire!
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 2: Syst&egrave;me -->
+            <div class="abx-step" id="abx-step-systeme" style="display:none;">
+              <h4>&#9313; Syst&egrave;me atteint</h4>
+              <p style="font-size:13px;margin-bottom:8px;font-weight:400;">S&eacute;lectionnez le syst&egrave;me concern&eacute; par l&apos;infection :</p>
+              <div class="abx-sys-pills">
+                <button class="abx-sys-btn" data-system="respiratoire" onclick="abxSelectSystem('respiratoire')">&#129753; Respiratoire</button>
+                <button class="abx-sys-btn" data-system="orl" onclick="abxSelectSystem('orl')">&#128066; ORL / T&ecirc;te-cou</button>
+                <button class="abx-sys-btn" data-system="urinaire" onclick="abxSelectSystem('urinaire')">&#129752; Urinaire</button>
+                <button class="abx-sys-btn" data-system="cutane" onclick="abxSelectSystem('cutane')">&#129657; Cutan&eacute; / T&eacute;guments</button>
+                <button class="abx-sys-btn" data-system="digestif" onclick="abxSelectSystem('digestif')">&#129440; Digestif</button>
+                <button class="abx-sys-btn" data-system="osteo" onclick="abxSelectSystem('osteo')">&#129460; Ost&eacute;o-articulaire</button>
+                <button class="abx-sys-btn" data-system="gyneco" onclick="abxSelectSystem('gyneco')">&#9792; Gyn&eacute;cologique</button>
+                <button class="abx-sys-btn" data-system="snc" onclick="abxSelectSystem('snc')">&#129504; SNC</button>
+              </div>
+            </div>
+
+            <!-- Step 3: Pathologie -->
+            <div class="abx-step" id="abx-step-pathologie" style="display:none;">
+              <h4>&#9314; Condition clinique suspect&eacute;e</h4>
+              <div class="abx-search-wrap">
+                <span class="abx-search-icon">&#128269;</span>
+                <input type="text" id="abx-search" placeholder="Rechercher une pathologie..." oninput="abxFilterOptions()">
+              </div>
+              <select id="abx-pathologie" onchange="abxProcessSelection()">
+                <option value="">&mdash; Choisir une pathologie &mdash;</option>
+              </select>
+            </div>
+
+            <!-- Result Empirique -->
+            <div id="abx-result-box" style="display:none;">
+              <div style="font-weight:700;color:var(--blue);margin-bottom:10px;font-size:15px;">&#127919; Recommandation d&apos;antibioth&eacute;rapie empirique</div>
+              <div id="abx-recommandation-text"></div>
+            </div>
+
+          </div><!-- end abx-panel-empirique -->
+
+          <!-- ============================================================ -->
+          <!-- MODE 2 : PATHOG&Egrave;NE IDENTIFI&Eacute;                  -->
+          <!-- ============================================================ -->
+          <div id="abx-panel-pathogene" style="display:none;">
+
+            <div class="abx-step" style="background:#f0f4ff;">
+              <h4>&#129440; Antibioth&eacute;rapie cibl&eacute;e &mdash; Pathog&egrave;ne connu ou fortement suspect&eacute;</h4>
+              <p style="font-size:13px;font-weight:400;margin:0;">S&eacute;lectionnez d&apos;abord le groupe, puis le micro-organisme.</p>
+            </div>
+
+            <!-- Groupe pills -->
+            <div class="abx-step">
+              <h4>&#9312; Groupe de pathog&egrave;nes</h4>
+              <div class="abx-sys-pills">
+                <button class="abx-sys-btn" data-pg="gpos" onclick="abxPathoSelectGroup('gpos')">&#128308; Gram positif</button>
+                <button class="abx-sys-btn" data-pg="gneg" onclick="abxPathoSelectGroup('gneg')">&#128994; Gram n&eacute;gatif</button>
+                <button class="abx-sys-btn" data-pg="ana" onclick="abxPathoSelectGroup('ana')">&#11035; Ana&eacute;robies</button>
+                <button class="abx-sys-btn" data-pg="atyp" onclick="abxPathoSelectGroup('atyp')">&#128165; Atypiques / Autres</button>
+              </div>
+            </div>
+
+            <!-- Pathog&egrave;ne dropdown -->
+            <div class="abx-step" id="abx-pg-step2" style="display:none;">
+              <h4>&#9313; Micro-organisme</h4>
+              <div class="abx-search-wrap">
+                <span class="abx-search-icon">&#128269;</span>
+                <input type="text" id="abx-pg-search" placeholder="Rechercher un pathog&egrave;ne..." oninput="abxPathoFilter()">
+              </div>
+              <select id="abx-pg-select" onchange="abxPathoShow()">
+                <option value="">&mdash; Choisir un micro-organisme &mdash;</option>
+              </select>
+            </div>
+
+            <!-- R&eacute;sultat Pathog&egrave;ne -->
+            <div id="abx-pg-result" style="display:none;">
+              <div style="font-weight:700;color:var(--blue);margin-bottom:10px;font-size:15px;">&#127919; Antibioth&eacute;rapie cibl&eacute;e</div>
+              <div id="abx-pg-text"></div>
+            </div>
+
+          </div><!-- end abx-panel-pathogene -->
+
+        <script>
+          /* =========================================================
+             SHARED STATE
+          ========================================================= */
+          var abxCurrentSystem = null;
+          var abxIsAnaph = false;
+          var abxIsAllergie = false;
+          var abxCurrentPgGroup = null;
+
+          /* =========================================================
+             MODE SWITCHING
+          ========================================================= */
+          function abxSetMode(mode) {
+            var emp = document.getElementById('abx-panel-empirique');
+            var pth = document.getElementById('abx-panel-pathogene');
+            var btnE = document.getElementById('abx-mode-btn-empirique');
+            var btnP = document.getElementById('abx-mode-btn-pathogene');
+            if (mode === 'empirique') {
+              emp.style.display = '';
+              pth.style.display = 'none';
+              btnE.style.background = '#1C3F8F'; btnE.style.color = '#fff';
+              btnP.style.background = '#e0e0e0'; btnP.style.color = '#333';
+            } else {
+              emp.style.display = 'none';
+              pth.style.display = '';
+              btnP.style.background = '#0a7a4e'; btnP.style.color = '#fff';
+              btnE.style.background = '#e0e0e0'; btnE.style.color = '#333';
+            }
+          }
+
+          /* =========================================================
+             EMPIRIQUE MODE — DISEASES DATABASE
+          ========================================================= */
+          var ABX_DISEASES = {
+            respiratoire: [
+              {v:'pac', l:'Pneumonie acquise en communauté (PAC)'},
+              {v:'bronchite', l:'Bronchite aiguë (non-PAC)'},
+              {v:'eampoc', l:'Exacerbation aiguë de MPOC (EAMPOC)'}
+            ],
+            orl: [
+              {v:'sinusite', l:'Sinusite bactérienne aiguë'},
+              {v:'pharyngite', l:'Pharyngite à Streptococcus pyogenes (Strep A)'},
+              {v:'oma', l:'Otite moyenne aiguë (OMA)'}
+            ],
+            urinaire: [
+              {v:'cystite', l:'Cystite non compliquée'},
+              {v:'pna', l:'Pyélonéphrite aiguë (PNA) non compliquée'},
+              {v:'prostatite', l:'Prostatite bactérienne aiguë'}
+            ],
+            cutane: [
+              {v:'cellulite', l:'Cellulite non purulente (infection de la peau)'},
+              {v:'abces', l:'Abcès purulent (modéré à sévère)'},
+              {v:'morsure', l:'Infection par morsure (chien / chat)'}
+            ],
+            digestif: [
+              {v:'cdiff', l:'Clostridioides difficile (C. diff)'},
+              {v:'diverticulite', l:'Diverticulite aiguë non compliquée'},
+              {v:'hpylori', l:'Helicobacter pylori (H. pylori)'}
+            ],
+            osteo: [
+              {v:'arthrite-septique', l:'Arthrite septique'},
+              {v:'osteomyelite', l:'Ostéomyélite'}
+            ],
+            gyneco: [
+              {v:'eip', l:'Endométrite / Infection Pelvienne Inflammatoire (EIP)'},
+              {v:'vaginose', l:'Vaginose bactérienne'}
+            ],
+            snc: [
+              {v:'meningite', l:'Méningite bactérienne (adulte)'}
+            ]
+          };
+
+          function abxOnAllergieChange(val) {
+            abxIsAllergie = (val === 'oui');
+            var anaBox = document.getElementById('abx-anaphylaxie-box');
+            var alerte = document.getElementById('abx-msg-alerte-rouge');
+            var banner = document.getElementById('abx-anaphylaxie-danger-banner');
+            if (abxIsAllergie) {
+              alerte.style.display = '';
+              anaBox.style.display = '';
+            } else {
+              alerte.style.display = 'none';
+              anaBox.style.display = 'none';
+              document.getElementById('abx-anaphylaxie').value = 'non';
+            }
+            abxIsAnaph = abxIsAllergie && document.getElementById('abx-anaphylaxie').value === 'oui';
+            banner.style.display = abxIsAnaph ? '' : 'none';
+            document.getElementById('abx-step-systeme').style.display = '';
+            document.getElementById('abx-result-box').style.display = 'none';
+          }
+
+          function abxSelectSystem(sys) {
+            abxCurrentSystem = sys;
+            document.querySelectorAll('.abx-sys-btn[data-system]').forEach(function(b) {
+              b.classList.toggle('active', b.dataset.system === sys);
+            });
+            var diseases = ABX_DISEASES[sys] || [];
+            var sel = document.getElementById('abx-pathologie');
+            sel.innerHTML = '<option value="">— Choisir une pathologie —</option>';
+            diseases.forEach(function(d) {
+              var o = document.createElement('option');
+              o.value = d.v; o.textContent = d.l;
+              sel.appendChild(o);
+            });
+            document.getElementById('abx-search').value = '';
+            document.getElementById('abx-step-pathologie').style.display = '';
+            document.getElementById('abx-result-box').style.display = 'none';
+          }
+
+          function abxFilterOptions() {
+            var q = document.getElementById('abx-search').value.toLowerCase();
+            var diseases = ABX_DISEASES[abxCurrentSystem] || [];
+            var sel = document.getElementById('abx-pathologie');
+            var filtered = q ? diseases.filter(function(d){ return d.l.toLowerCase().indexOf(q) >= 0; }) : diseases;
+            sel.innerHTML = '<option value="">— Choisir une pathologie —</option>';
+            filtered.forEach(function(d) {
+              var o = document.createElement('option');
+              o.value = d.v; o.textContent = d.l;
+              sel.appendChild(o);
+            });
+            if (filtered.length === 1) { sel.selectedIndex = 1; abxProcessSelection(); }
+          }
+
+          function abxProcessSelection() {
+            abxIsAnaph = abxIsAllergie && document.getElementById('abx-anaphylaxie').value === 'oui';
+            var pathologie = document.getElementById('abx-pathologie').value;
+            var resultBox = document.getElementById('abx-result-box');
+            var textDiv = document.getElementById('abx-recommandation-text');
+            if (!pathologie) { resultBox.style.display = 'none'; return; }
+            resultBox.style.display = '';
+            var h = '';
+            switch (pathologie) {
+              case 'cystite':
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#129440; Pathogènes visés</div><em>E. coli</em>, <em>K. pneumoniae</em>, <em>Enterococcus</em> spp., <em>S. saprophyticus</em>, <em>Proteus mirabilis</em>.</div>";
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#128138; 1er choix (INESSS 2023)</div><strong>Nitrofurantoïne PO</strong> &mdash; concentre uniquement dans l&apos;urine (jamais si DFG &lt; 45 ou suspicion PNA).</div>";
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#128260; Alternatives</div>&bull; <strong>Fosfomycine PO</strong> &bull; <strong>TMP-SMX</strong> selon sensibilités locales</div>";
+                h += "<div class='abx-result-section'>&#9200; Durée : 3&ndash;5 jours. &#9940; Éviter macrolides, clindamycine, moxifloxacine (pas d&apos;excrétion urinaire).</div>";
+                break;
+              case 'pna':
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#129440; Pathogènes</div>Entérobactéries (<em>E. coli</em>, <em>K. pneumoniae</em>).</div>";
+                if (abxIsAnaph) {
+                  h += "<div class='abx-result-section'><div class='abx-result-title'>&#128138; Ajusté (allergie anaphylactique)</div><strong>Ciprofloxacine PO</strong> ou <strong>lévofloxacine PO</strong>.</div>";
+                } else {
+                  h += "<div class='abx-result-section'><div class='abx-result-title'>&#128138; 1er choix</div><strong>Ceftriaxone IV/IM</strong> (si hospitalisation) ou <strong>ciprofloxacine PO</strong> selon profil clinique et antibiogramme local.</div>";
+                }
+                h += "<div class='abx-result-section'>&#9200; Durée : 5&ndash;7 jours. <span style='color:var(--red);font-weight:600;'>&#9940; Nitrofurantoïne et fosfomycine inefficaces dans le tissu rénal!</span></div>";
+                break;
+              case 'prostatite':
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#129440; Pathogènes</div>BGN (<em>E. coli</em> ≥ 80 %), <em>Enterococcus</em> spp., parfois <em>Pseudomonas</em>.</div>";
+                if (abxIsAnaph) {
+                  h += "<div class='abx-result-section'><div class='abx-result-title'>&#128138; Ajusté</div><strong>Ciprofloxacine PO</strong> 500 mg BID (pénètre bien la prostate).</div>";
+                } else {
+                  h += "<div class='abx-result-section'><div class='abx-result-title'>&#128138; 1er choix</div><strong>Ciprofloxacine PO</strong> 500 mg BID (excellente pénétration prostatique) ou <strong>TMP-SMX PO</strong> BID selon antibiogramme.</div>";
+                }
+                h += "<div class='abx-result-section'>&#9200; Durée : 4&ndash;6 semaines (aiguë). Culture des urines obligatoire avant de débuter. &#128680; Si fébrile/sepsis &rarr; hospitalisation + ceftriaxone IV.</div>";
+                break;
+              case 'cellulite':
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#129440; Pathogène</div>Streptocoque β-hémolytique (SBH) &mdash; aucune résistance connue aux β-lactamines.</div>";
+                if (abxIsAnaph) {
+                  h += "<div class='abx-result-section'><div class='abx-result-title'>&#128138; Ajusté</div><strong>Clindamycine PO</strong> ou macrolide. Éviter toute β-lactamine.</div>";
+                } else {
+                  h += "<div class='abx-result-section'><div class='abx-result-title'>&#128138; 1er choix</div>Céphalosporine 1re gén. : <strong>céfadroxil PO</strong> (léger) ou <strong>céfazoline IV</strong> (modéré-sévère).</div>";
+                }
+                h += "<div class='abx-result-section'>&#9200; Durée : 5&ndash;7 jours + élévation du membre. &#9888;&#65039; L&apos;érythème résiduel peut persister après la fin du Tx &mdash; ne pas redémarrer sur cette seule base.</div>";
+                break;
+              case 'abces':
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#129440; Pathogènes</div><em>S. aureus</em> (incluant SARM); flore polymicrobienne si site péri-rectal.</div>";
+                h += "<div class='abx-result-section' style='color:#b45309;font-weight:600;'>&#10071; Priorité absolue : drainage chirurgical &mdash; l&apos;ATB n&apos;est pas toujours essentielle après drainage complet.</div>";
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#128138; Si ATB requis</div>&bull; Modéré : <strong>TMP-SMX (Septra) PO</strong><br>&bull; Sévère : <strong>vancomycine IV</strong></div>";
+                h += "<div class='abx-result-section'>&#128269; Culture du pus obligatoire pour guider le traitement définitif.</div>";
+                break;
+              case 'morsure':
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#129440; Pathogènes</div>Flore polymicrobienne (<em>Pasteurella</em> spp., anaérobies, <em>Capnocytophaga</em>).</div>";
+                if (abxIsAnaph) {
+                  h += "<div class='abx-result-section'><div class='abx-result-title'>&#128138; Ajusté</div>Association : <strong>fluoroquinolone + métronidazole</strong> (couverture BGN + anaérobies).</div>";
+                } else {
+                  h += "<div class='abx-result-section'><div class='abx-result-title'>&#128138; 1er choix</div><strong>Amoxicilline-acide clavulanique PO</strong> &mdash; nécessaire pour neutraliser les β-lactamases de la flore buccale.</div>";
+                }
+                h += "<div class='abx-result-section'>&#9200; Durée : 3&ndash;5 jours (prophylaxie) ou 5&ndash;7 jours (infection établie). Vérifier statut vaccinal tétanos + rage selon exposition.</div>";
+                break;
+              case 'pharyngite':
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#129440; Pathogène</div><em>S. pyogenes</em> (Strep A) &mdash; 15&ndash;30% chez enfant, 10&ndash;15% chez adulte; majorité des pharyngites = virale.</div>";
+                h += "<div class='abx-result-section' style='color:var(--blue);font-weight:600;'>&#128269; Score de Centor modifié : 0&ndash;2 &rarr; pas de test ni Tx; 3&ndash;5 &rarr; TDAR obligatoire avant ATB.</div>";
+                if (abxIsAnaph) {
+                  h += "<div class='abx-result-section'><div class='abx-result-title'>&#128138; Ajusté</div><strong>Azithromycine PO</strong> (macrolide).</div>";
+                } else if (abxIsAllergie) {
+                  h += "<div class='abx-result-section'><div class='abx-result-title'>&#128138; Allergie légère (non-anaph.)</div><strong>Céfadroxil PO</strong> (céphalosporine 1re gén. &mdash; sécuritaire).</div>";
+                } else {
+                  h += "<div class='abx-result-section'><div class='abx-result-title'>&#128138; 1er choix</div><strong>Pénicilline V PO</strong> ou pénicilline benzathine IM (Strep A jamais résistant à la pénicilline).</div>";
+                }
+                h += "<div class='abx-result-section'>&#127919; But : prévenir complications suppuratives (abcès périamygdalien, mastoïdite) ET non-suppuratives (RAA, myocardite). <span style='color:var(--red);font-weight:600;'>Sauf: glomérulonéphrite post-streptococcique NON prévenu par l&apos;ATB.</span></div>";
+                break;
+              case 'oma':
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#129440; Pathogènes</div><em>S. pneumoniae</em>, <em>H. influenzae</em>, <em>M. catarrhalis</em>, <em>S. pyogenes</em>.</div>";
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#128203; Critères de traitement (INESSS)</div>Majorité guérit sans ATB. <strong>Traiter si</strong> : otalgie modérée&ndash;sévère &gt; 48h, fièvre &gt; 39&deg;C, perforation tympanique, ou &lt; 6 mois.</div>";
+                if (abxIsAnaph) {
+                  h += "<div class='abx-result-section'><div class='abx-result-title'>&#128138; Ajusté</div><strong>Azithromycine PO</strong>.</div>";
+                } else {
+                  h += "<div class='abx-result-section'><div class='abx-result-title'>&#128138; 1er choix</div><strong>Amoxicilline PO</strong> haute dose. Si facteur de risque de résistance &rarr; amoxicilline-clavulanate.</div>";
+                }
+                h += "<div class='abx-result-section'>&#9200; Durée : 5&ndash;10 jours.</div>";
+                break;
+              case 'sinusite':
+                h += "<div class='abx-result-section' style='color:var(--ink3);'>&#128161; Étiologie majoritairement virale (60% résolution sous placebo) &rarr; résolution spontanée 10&ndash;14 jours.</div>";
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#128203; Traiter si</div>Sx &ge; 10&ndash;14 jours sans amélioration OU début sévère + fièvre &ge; 39&deg;C + rhinorrhée purulente &ge; 3&ndash;4 jours OU détérioration après amélioration initiale.</div>";
+                if (abxIsAnaph) {
+                  h += "<div class='abx-result-section'><div class='abx-result-title'>&#128138; Ajusté</div><strong>Lévofloxacine</strong> ou <strong>moxifloxacine</strong> (quinolones respiratoires).</div>";
+                } else {
+                  h += "<div class='abx-result-section'><div class='abx-result-title'>&#128138; 1er choix</div><strong>Amoxicilline PO</strong>. Avec facteurs de risque de résistance &rarr; amoxicilline-clavulanate.</div>";
+                }
+                h += "<div class='abx-result-section'>&#9200; Durée : 5&ndash;7 jours.</div>";
+                break;
+              case 'pac':
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#129440; Pathogènes</div><em>S. pneumoniae</em>, <em>H. influenzae</em>, germes atypiques (<em>Mycoplasma</em>, <em>Chlamydia</em>, <em>Legionella</em>).</div>";
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#128202; Score CRB65</div>Confusion &middot; Rythme &gt; 30/min &middot; PA basse &middot; Âge &ge; 65 ans. Score 1&ndash;2 = hospitalisation à envisager; <strong>3&ndash;4 = obligatoire.</strong></div>";
+                if (abxIsAnaph) {
+                  h += "<div class='abx-result-section'><div class='abx-result-title'>&#128138; Ajusté</div><strong>Lévofloxacine IV/PO</strong> ou <strong>moxifloxacine IV/PO</strong> (quinolones respiratoires, monothérapie).</div>";
+                } else {
+                  h += "<div class='abx-result-section'><div class='abx-result-title'>&#128138; 1er choix</div><strong>Ceftriaxone + azithromycine</strong> &mdash; synergie, couvre les germes atypiques. Éviter quinolone en 1re intention.</div>";
+                }
+                h += "<div class='abx-result-section'>&#9200; Durée : 3&ndash;5 jours. &#128680; Penser TB si cavité lobe sup., Sx &gt; 3 sem. ou contexte épidémiologique compatible.</div>";
+                break;
+              case 'bronchite':
+                h += "<div class='abx-result-section' style='color:var(--red);font-weight:600;'>&#9940; Rarement bactérienne &mdash; source importante de mauvaise utilisation des ATB (cible #1 antibiogouvernance).</div>";
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#128138; Recommandation</div>Aucun ATB en 1re intention. Traitement symptomatique (hydratation, antitussif PRN). <strong>ATB si</strong> : &gt; 3 sem OU ≥ 75 ans OU comorbidités majeures (diabète, IC, IRC). Réévaluer si infiltrat radiologique + signes systémiques &rarr; PAC.</div>";
+                break;
+              case 'eampoc':
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#129440; Pathogènes</div><em>H. influenzae</em>, <em>M. catarrhalis</em>, <em>S. pneumoniae</em>. Souvent viral ou environnemental.</div>";
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#128203; Indication ATB (triade de Winnipeg)</div>ATB indiqué si ≥ 2 des 3 : ↑ dyspnée + ↑ volume expectorations + ↑ purulence expectorations.</div>";
+                if (abxIsAnaph) {
+                  h += "<div class='abx-result-section'><div class='abx-result-title'>&#128138; Ajusté</div><strong>Lévofloxacine PO</strong> ou <strong>moxifloxacine PO</strong>.</div>";
+                } else {
+                  h += "<div class='abx-result-section'><div class='abx-result-title'>&#128138; 1er choix</div><strong>Amoxicilline-clavulanate PO</strong> ou <strong>azithromycine PO</strong>.</div>";
+                }
+                h += "<div class='abx-result-section'>&#9200; Durée : 5 jours + prednisone 40 mg PO 5 jours (INESSS). Spirométrie hors exacerbation pour confirmer le diagnostic.</div>";
+                break;
+              case 'cdiff':
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#129440; Pathogène</div><em>Clostridioides difficile</em> &mdash; ≥ 3 selles liquides/jour sans autre cause.</div>";
+                h += "<div class='abx-result-section' style='color:var(--red);font-weight:600;'>&#128680; Sévérité : leucocytose &gt; 15 &times; 10⁹/L, IRA (créat. &gt; 50% baseline), fièvre &gt; 38.5&deg;C, choc/lactate &gt; 2,2 mmol/L &rarr; urgence.</div>";
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#128138; Traitement (INESSS 2025)</div>0&#65039;&#8419; Cesser antipéristaltiques, réévaluer IPP et autres ATB.<br>&bull; <strong>Ép. initial</strong> : vancomycine PO (1er choix) ou fidaxomicine<br>&bull; <strong>Forme sévère</strong> : vancomycine + métronidazole<br>&bull; <strong>1re récidive</strong> : fidaxomicine (1er) ou vancomycine<br>&bull; <strong>&gt; 2 récidives</strong> : avis infectiologie</div>";
+                h += "<div class='abx-result-section'>&#128260; Récidive 20&ndash;30% des cas. FR : âge avancé, ATB pendant l&apos;épisode, souche NAP-1.</div>";
+                break;
+              case 'diverticulite':
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#129440; Pathogènes</div>Flore colónique polymicrobienne (BGN + anaérobies).</div>";
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#128203; Diverticulite non compliquée (Hinchey I)</div>Possible traitement ambulatoire sans ATB si patient immunocompétent + stable. Léger-modéré &rarr; ATB PO 5&ndash;7 jours. Sévère/compliqué &rarr; hospitalisation + ATB IV.</div>";
+                if (abxIsAnaph) {
+                  h += "<div class='abx-result-section'><div class='abx-result-title'>&#128138; Ajusté</div><strong>Ciprofloxacine PO + métronidazole PO</strong>.</div>";
+                } else {
+                  h += "<div class='abx-result-section'><div class='abx-result-title'>&#128138; 1er choix (ambulatoire)</div><strong>Amoxicilline-clavulanate PO</strong> (couvre BGN + anaérobies) OU <strong>cipro + métronidazole PO</strong>. IV : pipéracilline-tazobactam ou céfoxitine.</div>";
+                }
+                h += "<div class='abx-result-section'>&#9200; Durée : 5&ndash;7 jours. &#128680; Urgence si péritonite, perforation, abcès non drainé. Coloscopie à planifier 6&ndash;8 sem après pour exclure néoplasie.</div>";
+                break;
+              case 'hpylori':
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#129440; Pathogène</div><em>Helicobacter pylori</em> &mdash; prévalence &asymp; 30% au Canada.</div>";
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#128138; Thérapie quadruple (INESSS / CAG 2022 &mdash; 1re ligne)</div><strong>Bismuth quadruple (OBMT)</strong> : oméprazole + bismuth + métronidazole + tétracycline, 10&ndash;14 jours. OU <strong>Thérapie concomitante</strong> : IPP + amoxicilline + clarithromycine + métronidazole, 14 jours.</div>";
+                h += "<div class='abx-result-section'>&#9888;&#65039; Éradication confirmée obligatoire (test respiratoire à l&apos;urée ou copro-Ag) 4 sem après fin Tx. <span style='color:var(--red);'>Clarithromycine seule : résistance croissante &mdash; ne plus utiliser la trithérapie standard.</span></div>";
+                break;
+              case 'arthrite-septique':
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#129440; Pathogènes</div><em>S. aureus</em> (50&ndash;70 %), Streptocoques, BGN (si elderly / imm.), <em>N. gonorrhoeae</em> (jeune adulte sexuellement actif).</div>";
+                h += "<div class='abx-result-section' style='color:var(--red);font-weight:600;'>&#128680; URGENCE ARTICULAIRE : ponction + drainage immédiat obligatoire &mdash; liquide synovial GB &gt; 50 000 &rarr; suspect jusqu&apos;à preuve du contraire.</div>";
+                if (abxIsAnaph) {
+                  h += "<div class='abx-result-section'><div class='abx-result-title'>&#128138; Ajusté</div><strong>Vancomycine IV</strong> + ciprofloxacine IV si suspicion BGN.</div>";
+                } else {
+                  h += "<div class='abx-result-section'><div class='abx-result-title'>&#128138; 1er choix empirique</div><strong>Céfazoline IV</strong> ou <strong>cloxacilline IV</strong> (couverture SASM) ± ajouter BGN si immunosupprimé. Gonococcique : ceftriaxone IV.</div>";
+                }
+                h += "<div class='abx-result-section'>&#9200; Durée : 3&ndash;4 sem (IV puis PO selon réponse clinique + antibiogramme). Avis orthopédie.</div>";
+                break;
+              case 'osteomyelite':
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#129440; Pathogènes</div><em>S. aureus</em> dominant; BGN si pié diabétique.</div>";
+                if (abxIsAnaph) {
+                  h += "<div class='abx-result-section'><div class='abx-result-title'>&#128138; Ajusté</div><strong>Vancomycine IV</strong> + ciprofloxacine si BGN suspecte.</div>";
+                } else {
+                  h += "<div class='abx-result-section'><div class='abx-result-title'>&#128138; 1er choix</div><strong>Céfazoline IV</strong> ou <strong>cloxacilline IV</strong>. Pié diabétique : pipéracilline-tazobactam IV (couverture élargie).</div>";
+                }
+                h += "<div class='abx-result-section'>&#9200; Durée : 4&ndash;6 sem (souvent IV &rarr; PO selon biodisponibilité). IRM = imagerie de référence. Biopsie osseuse pour antibiogramme avant ATB si possible.</div>";
+                break;
+              case 'eip':
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#129440; Pathogènes</div><em>N. gonorrhoeae</em>, <em>Chlamydia trachomatis</em>, flore vaginale (BGN, anaérobies).</div>";
+                if (abxIsAnaph) {
+                  h += "<div class='abx-result-section'><div class='abx-result-title'>&#128138; Ajusté</div><strong>Gentamicine IV + clindamycine IV</strong> (si hospitalisation) ou <strong>azithromycine + métronidazole PO</strong> (ambulatoire).</div>";
+                } else {
+                  h += "<div class='abx-result-section'><div class='abx-result-title'>&#128138; 1er choix (ambulatoire) &mdash; INESSS</div><strong>Ceftriaxone IM 500 mg dose unique</strong> + <strong>doxycycline PO 100 mg BID 14 jours</strong> + <strong>métronidazole PO 500 mg BID 14 jours</strong>.</div>";
+                }
+                h += "<div class='abx-result-section'>&#9200; Hospitalisation si : grossesse, abcès tubo-ovarien, péritonite, échec ambulatoire. Dépister et traiter le/les partenaire(s) (ITSS).</div>";
+                break;
+              case 'vaginose':
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#129440; Pathogène</div>Déséquilibre de la flore vaginale (<em>Gardnerella vaginalis</em>, anaérobies) &mdash; critères d&apos;Amsel.</div>";
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#128138; 1er choix</div><strong>Métronidazole PO</strong> 500 mg BID &times; 7 jours OU <strong>métronidazole gel vaginal</strong> 0.75% 1 applicateur HS &times; 5 jours.</div>";
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#128260; Alternative</div><strong>Clindamycine crème vaginale</strong> 2% 1 applicateur HS &times; 7 jours. &#9888;&#65039; Clindamycine crème : atténue le latex (condoms, diaphragmes). Alcool &rarr; éviter pendant métronidazole + 24h après.</div>";
+                break;
+              case 'meningite':
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#129440; Pathogènes (adulte)</div><em>S. pneumoniae</em> (+ fréquent), <em>N. meningitidis</em>, <em>L. monocytogenes</em> (&gt; 50 ans / immunosupprimé).</div>";
+                h += "<div class='abx-result-section' style='color:var(--red);font-weight:600;'>&#128680; URGENCE ABSOLUE : ATB empirique IMMÉDIAT (avant Résultats PL si hémoculture pos. ou risque délai) + transfert UIN/soins intensifs.</div>";
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#128138; 1er choix empirique</div><strong>Ceftriaxone IV</strong> 2g q12h + <strong>déxaméthasone IV</strong> 0.15 mg/kg q6h &times; 4 jours (donner avant ou simultanément au 1er ATB, &darr; mortalité). Si &gt; 50 ans ou immunosuppr. : ajouter <strong>ampicilline IV</strong> (Listeria).</div>";
+                h += "<div class='abx-result-section'>&#9200; ATB ajusté selon résultat PL + Gram + culture. Isolé en chambre à pression négative si méningocoque suspecté. Prophylaxie contacts proches si N. meningitidis.</div>";
+                break;
+              default:
+                h += "<div class='abx-result-section'>Pathologie non reconnue.</div>";
+            }
+            textDiv.innerHTML = h;
+          }
+
+          /* =========================================================
+             PATHOGÈNE MODE
+          ========================================================= */
+          var ABX_PATHOGENS = {
+            gpos: [
+              {v:'sasm',   l:'S. aureus sensible à la méticilline (SASM)'},
+              {v:'sarm',   l:'S. aureus résistant à la méticilline (SARM)'},
+              {v:'strepa', l:'Streptococcus pyogenes (Strep A / GAS)'},
+              {v:'pneumo', l:'Streptococcus pneumoniae'},
+              {v:'efaec',  l:'Enterococcus faecalis'},
+              {v:'efaem',  l:'Enterococcus faecium (ERV / VRE)'},
+              {v:'lister', l:'Listeria monocytogenes'}
+            ],
+            gneg: [
+              {v:'ecoli',   l:'Escherichia coli (sensible)'},
+              {v:'ecolir',  l:'E. coli BLSE+ (résistante aux céphalo.)'},
+              {v:'kpneu',   l:'Klebsiella pneumoniae'},
+              {v:'pseudo',  l:'Pseudomonas aeruginosa'},
+              {v:'hinfl',   l:'Haemophilus influenzae'},
+              {v:'mcatar',  l:'Moraxella catarrhalis'},
+              {v:'ngono',   l:'Neisseria gonorrhoeae'},
+              {v:'nmenin',  l:'Neisseria meningitidis'},
+              {v:'proteus', l:'Proteus mirabilis'},
+              {v:'entero',  l:'Enterobacter / Serratia spp.'}
+            ],
+            ana: [
+              {v:'bfrag',  l:'Bacteroides fragilis (anaérobie Gram-)'},
+              {v:'cdiff2', l:'Clostridioides difficile'},
+              {v:'clperf', l:'Clostridium perfringens (gangrène gazeuse)'}
+            ],
+            atyp: [
+              {v:'myco',   l:'Mycoplasma pneumoniae'},
+              {v:'chlam',  l:'Chlamydia trachomatis (ITSS)'},
+              {v:'chlamp', l:'Chlamydophila pneumoniae (pneumonie atypique)'},
+              {v:'legion', l:'Legionella pneumophila'},
+              {v:'hpyl2',  l:'Helicobacter pylori'},
+              {v:'borrel', l:'Borrelia burgdorferi (Lyme)'},
+              {v:'trepo',  l:'Treponema pallidum (syphilis)'}
+            ]
+          };
+
+          function abxPathoSelectGroup(grp) {
+            abxCurrentPgGroup = grp;
+            document.querySelectorAll('.abx-sys-btn[data-pg]').forEach(function(b) {
+              b.classList.toggle('active', b.dataset.pg === grp);
+            });
+            var pathos = ABX_PATHOGENS[grp] || [];
+            var sel = document.getElementById('abx-pg-select');
+            sel.innerHTML = '<option value="">— Choisir un micro-organisme —</option>';
+            pathos.forEach(function(p) {
+              var o = document.createElement('option');
+              o.value = p.v; o.textContent = p.l;
+              sel.appendChild(o);
+            });
+            document.getElementById('abx-pg-search').value = '';
+            document.getElementById('abx-pg-step2').style.display = '';
+            document.getElementById('abx-pg-result').style.display = 'none';
+          }
+
+          function abxPathoFilter() {
+            var q = document.getElementById('abx-pg-search').value.toLowerCase();
+            var pathos = ABX_PATHOGENS[abxCurrentPgGroup] || [];
+            var filtered = q ? pathos.filter(function(p){ return p.l.toLowerCase().indexOf(q) >= 0; }) : pathos;
+            var sel = document.getElementById('abx-pg-select');
+            sel.innerHTML = '<option value="">— Choisir un micro-organisme —</option>';
+            filtered.forEach(function(p) {
+              var o = document.createElement('option');
+              o.value = p.v; o.textContent = p.l;
+              sel.appendChild(o);
+            });
+            if (filtered.length === 1) { sel.selectedIndex = 1; abxPathoShow(); }
+          }
+
+          function abxPathoShow() {
+            var val = document.getElementById('abx-pg-select').value;
+            var res = document.getElementById('abx-pg-result');
+            var txt = document.getElementById('abx-pg-text');
+            if (!val) { res.style.display = 'none'; return; }
+            res.style.display = '';
+            var h = '';
+            switch(val) {
+              case 'sasm':
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#128308; S. aureus SASM &mdash; profil</div>Gram + en amas. Infection de peau/tissus mous, ostéoartic., endocardite, bactériémie. Sécrète coagulase.</div>";
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#128138; Choix de prédilection</div><strong>Cloxacilline IV</strong> (infection sévère/bactériémie) &bull; <strong>Céfazoline IV</strong> (alternative) &bull; <strong>Céfadroxil PO</strong> (infection légère-modérée)</div>";
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#128260; Alternatives orales</div>TMP-SMX &bull; Clindamycine (vérifier sensibilité D-test)</div>";
+                h += "<div class='abx-result-section' style='color:var(--red);'>&#9940; NE PAS utiliser vancomycine si SASM confirmé (inférieur à β-lactamines). Éviter fluoroquinolones (sélection de résistance).</div>";
+                break;
+              case 'sarm':
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#128308; S. aureus SARM &mdash; profil</div>Résistant à toutes les β-lactamines (sauf ceftaroline). Communautaire (SARM-C) vs nosocomial (SARM-N).</div>";
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#128138; Infection sévère (IV)</div><strong>Vancomycine IV</strong> (cible AUC/CMI 400&ndash;600) &bull; <strong>Daptomycine IV</strong> (infection cutanée/bactériémie; pas pneumonie) &bull; <strong>Linezolide IV/PO</strong> (pneumonie, IPTM)</div>";
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#128138; Infection légère-modérée (PO)</div><strong>TMP-SMX PO</strong> (SARM-C principalement) &bull; <strong>Doxycycline PO</strong> si CI à TMP-SMX &bull; <strong>Clindamycine PO</strong> si D-test négatif</div>";
+                h += "<div class='abx-result-section' style='color:#b45309;'>&#9888;&#65039; Abcès : drainage d&apos;abord. Bactériémie SARM : avis infectiologie obligatoire. Rifampicine = jamais en monothérapie.</div>";
+                break;
+              case 'strepa':
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#128308; Strep A / GAS</div>Gram + en chaînes. Pharyngite, cellulite/fasciite nécrosante, bactériémie, impetigo. JAMAIS de résistance acquise aux pénicillines.</div>";
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#128138; Traitement de choix</div><strong>Pénicilline V PO</strong> (pharyngite) &bull; <strong>Céfazoline/cloxacilline IV</strong> (infection invasive) &bull; <strong>Pénicilline G IV</strong> (fasciite)</div>";
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#128260; Allergie pénicilline</div><strong>Céfadroxil PO</strong> (allergie non-anaph.) &bull; <strong>Clindamycine PO/IV</strong> (allergie anaph. confirmed)</div>";
+                h += "<div class='abx-result-section' style='color:#0a7a4e;'>&#128161; Fasciite nécrosante : débridement chirurgical URGENT + pénicilline G + clindamycine IV (inhibe les toxines). Mortalité élevée si délai.</div>";
+                break;
+              case 'pneumo':
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#128308; S. pneumoniae</div>Gram + dip. Pneumonie, méningite, OMA, sinusite. Résistance à pénicilline par mutation PBP (selon CMI).</div>";
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#128138; Pneumonie (PO)</div><strong>Amoxicilline haute dose</strong> (1g TID) si sensible &bull; <strong>Lévofloxacine / moxifloxacine</strong> si allergie ou résistance</div>";
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#128138; Méningite (IV)</div><strong>Ceftriaxone IV</strong> 2g q12h + <strong>déxaméthasone IV</strong> (avant ou avec 1re dose ATB). Ajuster selon CMI sur culture.</div>";
+                h += "<div class='abx-result-section' style='color:var(--red);'>&#9940; Éviter macrolides (résistance 20&ndash;40% QC). Fluoroquinolones non résistants en communautaire.</div>";
+                break;
+              case 'efaec':
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#128308; Enterococcus faecalis</div>IU, endocardite, bactériémie, infection abdominale. Naturellement résistant aux céphalosporines.</div>";
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#128138; Traitement</div><strong>Amoxicilline PO</strong> (IU) &bull; <strong>Ampicilline IV</strong> (infection sévère) &bull; <strong>Vancomycine IV</strong> si allergie pénicilline. Endocardite : ampicilline + ceftriaxone (synergie, évite aminoglycoside)</div>";
+                h += "<div class='abx-result-section' style='color:var(--red);'>&#9940; Nitrofurantoïne INEFFICACE contre <em>E. faecalis</em> dans les IU. Céphalosporines toutes classes : inefficaces.</div>";
+                break;
+              case 'efaem':
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#128308; Enterococcus faecium (VRE)</div>Résistant à vancomycine et β-lactamines. Contexte nosocomial/soins de longue durée.</div>";
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#128138; Options (avis infectiologie FORTEMENT recommandé)</div><strong>Linezolide PO/IV</strong> &bull; <strong>Daptomycine IV</strong> &bull; Tigecycline IV (infections graves)</div>";
+                h += "<div class='abx-result-section' style='color:var(--red);'>&#128680; Précautions de contact obligatoires. Isolement. Prélever antibiogramme avant ATB.</div>";
+                break;
+              case 'lister':
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#128308; Listeria monocytogenes</div>Gram + coccobacille. Méningite (&gt;50 ans, grossesse, immunosuppr.), bactériémie. Aliment contaminé.</div>";
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#128138; Traitement</div><strong>Ampicilline IV</strong> (1er choix) &bull; <strong>TMP-SMX IV</strong> si allergie pénicilline. Associer gentamicine IV (synergie) en cas d&apos;infection sévère.</div>";
+                h += "<div class='abx-result-section' style='color:var(--red);'>&#9940; Ceftriaxone INEFFICACE contre Listeria (naturellement résistant). Toujours ajouter ampicilline IV dans méningite adulte &gt;50 ans pour cette raison.</div>";
+                break;
+              case 'ecoli':
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#128994; E. coli sensible</div>BGN bac. Entérobactérie la plus fréquente. IU, inf. abdominales, bactériémie.</div>";
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#128138; IU non compliquée</div><strong>Nitrofurantoïne PO</strong> (cystite uniquement) &bull; <strong>TMP-SMX PO</strong> selon sensibilités locales &bull; <strong>Fosfomycine PO</strong></div>";
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#128138; Infection systémique</div><strong>Céphalosporines 3e gén. IV</strong> (ceftriaxone) &bull; <strong>Céfoxitine IV</strong> si source digestive &bull; <strong>Pip-tazo IV</strong> si sepsis</div>";
+                break;
+              case 'ecolir':
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#128994; E. coli BLSE+</div>Produit une β-lactamase à spectre élargi. Résistant à céphalosporines 1-3e gén., souvent aminopénicillines, parfois FQ.</div>";
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#128138; Infection sévère (IV)</div><strong>Ertapénème IV</strong> (1er choix) &bull; <strong>Méropénème IV</strong> &bull; Imipénème-cilastatine IV</div>";
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#128138; IU non compliquée (si sensible)</div><strong>Nitrofurantoïne PO</strong> &bull; <strong>Fosfomycine PO</strong> &bull; TMP-SMX si sensible (vérifier antibiogramme)</div>";
+                h += "<div class='abx-result-section' style='color:var(--red);'>&#9940; Éviter pip-tazo (résultats inoculum-dépendants). Céphalosporines toutes classes : INACTIVES.</div>";
+                break;
+              case 'kpneu':
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#128994; Klebsiella pneumoniae</div>BGN encapsulé. IU compliquées, pneumonie hospitalière, sepsis. Risque BLSE+ ou KPC (productrice de carbapénémase).</div>";
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#128138; Si sensible</div><strong>Céphalosporines 3e gén. IV</strong> &bull; TMP-SMX PO (IU) selon antibiogramme</div>";
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#128138; Si BLSE+</div>Carbapénème IV (cf. E. coli BLSE+)</div>";
+                h += "<div class='abx-result-section' style='color:var(--red);'>&#128680; KPC : avis infectiologie URGENT. Options limitées : ceftazidime-avibactam, méropenem-vaborbactam.</div>";
+                break;
+              case 'pseudo':
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#128994; Pseudomonas aeruginosa</div>BGN non fermentant. Pneumonie nosocomiale, IU compliquée, infection plaie brûlé. Naturellement résistant à de nombreux ATB.</div>";
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#128138; Infection sévère (IV)</div><strong>Pipéracilline-tazobactam IV</strong> &bull; <strong>Ceftazidime IV</strong> &bull; <strong>Méropénème IV</strong> &bull; <strong>Cefépipime IV</strong></div>";
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#128138; Option orale (IU)</div><strong>Ciprofloxacine PO</strong> 750 mg BID (seule fluoroquinolone avec bonne couverture anti-Pseudo PO)</div>";
+                h += "<div class='abx-result-section' style='color:var(--red);'>&#9940; Résistance intrinsèque : amoxicilline, amoxicilline-clavulanate, TMP-SMX, céftriaxone, céfoxitine. Toujours antibiogramme. Double couverture en sepsis sévère.</div>";
+                break;
+              case 'hinfl':
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#128994; Haemophilus influenzae</div>BGN coccobacille. EAMPOC, OMA, sinusite, pneumonie. 20&ndash;30% produisent une β-lactamase.</div>";
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#128138; Si sensible (β-lact.-)</div><strong>Amoxicilline PO</strong></div>";
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#128138; Si β-lactamase + (50% des cas)</div><strong>Amoxicilline-clavulanate PO</strong> &bull; <strong>Céftriaxone IV</strong> (infection sévère) &bull; <strong>Azithromycine PO</strong></div>";
+                break;
+              case 'mcatar':
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#128994; Moraxella catarrhalis</div>BGN dip. OMA, sinusite, EAMPOC. 100% produisent une β-lactamase (naturelle).</div>";
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#128138; Traitement</div><strong>Amoxicilline-clavulanate PO</strong> (obligatoire) &bull; <strong>Azithromycine PO</strong> &bull; <strong>TMP-SMX PO</strong> &bull; <strong>Céftriaxone IV</strong> (sévère)</div>";
+                h += "<div class='abx-result-section' style='color:var(--red);'>&#9940; Amoxicilline seule : inefficace (TOUJOURS β-lactamase positive).</div>";
+                break;
+              case 'ngono':
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#128994; Neisseria gonorrhoeae</div>BGN dip. Urétrite, cervicite, EIP, arthrite gonococcique. Résistance aux fluoroquinolones &gt; 25% au Canada.</div>";
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#128138; 1er choix (INESSS/ASPC 2023)</div><strong>Ceftriaxone IM 500 mg dose unique</strong> (systématique, sans possibilité de résistance clinique actuelle)</div>";
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#128260; Toujours co-traiter Chlamydia</div><strong>Doxycycline PO</strong> 100 mg BID &times; 7 jours OU <strong>Azithromycine 1g PO</strong> dose unique si non-disponible</div>";
+                h += "<div class='abx-result-section' style='color:var(--red);'>&#9940; Fluoroquinolones (ciprofloxacine) : NE PLUS UTILISER (résistance élevée). Déclaration ITSS obligatoire INSPQ.</div>";
+                break;
+              case 'nmenin':
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#128994; Neisseria meningitidis</div>BGN dip. Méningite, méningococémie, purpura fulminans.</div>";
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#128138; Urgence IV</div><strong>Ceftriaxone IV</strong> 2g q12h &bull; <strong>Pénicilline G IV</strong> si sensible (CMI confirmée)</div>";
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#128138; Prophylaxie contacts proches</div><strong>Rifampicine PO</strong> 600 mg BID &times; 2 jours OU <strong>Ciprofloxacine PO</strong> 500 mg dose unique OU <strong>Ceftriaxone IM</strong> 250 mg dose unique</div>";
+                h += "<div class='abx-result-section' style='color:var(--red);'>&#128680; Cas déclarable à la DPJ/Santé publique immédiatement. Isolement gouttelettes jusqu&apos;à 24h post-ATB.</div>";
+                break;
+              case 'proteus':
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#128994; Proteus mirabilis</div>BGN. IU, infection urinaire compliquée, lithiase infectieuse (struvite). Urase+.</div>";
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#128138; Traitement</div><strong>Amoxicilline PO</strong> si sensible &bull; <strong>TMP-SMX PO</strong> &bull; <strong>Céphalosporines PO/IV</strong> &bull; Ciprofloxacine si résistance confirmée</div>";
+                h += "<div class='abx-result-section'>&#128161; Lithiase struvite : ATB ne suffit pas, traitement urologique (chirurgie/lithotritie) nécessaire pour éradiquer le foyer réservoir.</div>";
+                break;
+              case 'entero':
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#128994; Enterobacter / Serratia spp.</div>BGN. Infection nosocomiale, IU compliquée, pneumonie hospitalière. BLSE et AmpC chromosomique possible.</div>";
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#128138; Options (selon antibiogramme)</div><strong>Céfépipime IV</strong> &bull; <strong>Pipéracilline-tazobactam IV</strong> &bull; <strong>Ertapénème IV</strong> si BLSE/AmpC+ &bull; Ciprofloxacine si sensible</div>";
+                h += "<div class='abx-result-section' style='color:var(--red);'>&#9940; Céphalosporines 3e gén. (ceftriaxone) : risque élévation de résistance induite (AmpC) &mdash; éviter même si CMI sensible en infection sévère.</div>";
+                break;
+              case 'bfrag':
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#11035; Bacteroides fragilis</div>Anaérobie strict Gram-. Flore colique. Péritonite, abcès intra-abdominal, infection plaie mésenter.</div>";
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#128138; Traitement</div><strong>Métronidazole IV/PO</strong> (1er choix) &bull; <strong>Pipéracilline-tazobactam IV</strong> &bull; <strong>Méropénème IV</strong> (sévère) &bull; <strong>Céfoxitine IV</strong></div>";
+                h += "<div class='abx-result-section' style='color:var(--red);'>&#9940; Clindamycine : résistance croissante B. fragilis → ne plus utiliser en 1re intention. Pénicillines seules : inefficaces (β-lactamase).</div>";
+                break;
+              case 'cdiff2':
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#11035; Clostridioides difficile</div>Anaérobie sporulant. Diarrhée post-ATB. Colite pseudo-membraneuse. Associé aux IPP, hospitalisations, âge.</div>";
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#128138; Traitement (INESSS 2025)</div>&bull; <strong>Ép. initial léger-modéré</strong> : <strong>Vancomycine PO</strong> 125 mg QID &times; 10j (1er) ou <strong>Fidaxomicine PO</strong> 200 mg BID &times; 10j<br>&bull; <strong>Forme sévère</strong> : Vancomycine PO + Métronidazole IV<br>&bull; <strong>Récidive 1</strong> : Fidaxomicine (puls/taper) &bull; <strong>Récidives multiples</strong> : TMF ou réf. infectiologie</div>";
+                h += "<div class='abx-result-section' style='color:var(--red);'>&#9940; Métronidazole PO seul : ne plus recommander en 1re ligne. Cesser ATB déclencheur si possible. Antipéristaltiques: CI. Précautions de contact.</div>";
+                break;
+              case 'clperf':
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#11035; Clostridium perfringens</div>Anaérobie sporulant Gram+. Gangrène gazeuse (myonécrose), cellulite clostridale. Infection d'urgence.</div>";
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#128138; Traitement</div><strong>Pénicilline G IV</strong> haute dose + <strong>Clindamycine IV</strong> (inhibe synthèse des toxines) &bull; + <strong>Débridement chirurgical URGENT</strong></div>";
+                h += "<div class='abx-result-section' style='color:var(--red);'>&#128680; URGENCE CHIRURGICALE absolue &mdash; la chirurgie prend précédence sur tout. Pronostic vital engagé.</div>";
+                break;
+              case 'myco':
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#128165; Mycoplasma pneumoniae</div>Pas de paroi cellulaire (intrinsequement résistant aux β-lactamines). Pneumonie atypique, bronchite. Jeune adulte.</div>";
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#128138; Traitement</div><strong>Azithromycine PO</strong> (1er choix, durée 5j) &bull; <strong>Doxycycline PO</strong> &bull; <strong>Lévofloxacine / moxifloxacine PO</strong></div>";
+                h += "<div class='abx-result-section' style='color:var(--red);'>&#9940; Toutes les β-lactamines : INEFFICACES (absence de paroi cible).</div>";
+                break;
+              case 'chlam':
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#128165; Chlamydia trachomatis (ITSS)</div>Intracellulaire obligatoire. Urétrite, cervicite, EIP, lymphogranulome vénérien.</div>";
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#128138; Traitement</div><strong>Doxycycline PO</strong> 100 mg BID &times; 7 jours (1er choix &mdash; supérieur à azithromycine dose unique pour récidive)</div>";
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#128260; Alternative (si CI doxycycline)</div><strong>Azithromycine PO</strong> 1g dose unique (mais taux récidive plus élevé)</div>";
+                h += "<div class='abx-result-section'>Déclaration obligatoire INSPQ. Dépister et traiter partenaire(s). Rétester à 3 mois.</div>";
+                break;
+              case 'chlamp':
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#128165; Chlamydophila pneumoniae</div>Intracellulaire. Pneumonie atypique, bronchite persistante. Tableau clinique similaire à Mycoplasma.</div>";
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#128138; Traitement</div><strong>Doxycycline PO</strong> (1er choix, 14j) &bull; <strong>Azithromycine PO</strong> &bull; <strong>Lévofloxacine PO</strong></div>";
+                break;
+              case 'legion':
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#128165; Legionella pneumophila</div>Intracellulaire. Pneumonie sévère (15% des PAC sévères). Voyageurs, systèmes d&apos;eau. Ag urinaire = test rapide.</div>";
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#128138; Traitement</div><strong>Lévofloxacine IV/PO</strong> 750 mg DIE &times; 5&ndash;7j (1er choix &mdash; réponse plus rapide) &bull; <strong>Azithromycine IV/PO</strong> si CI FQ</div>";
+                h += "<div class='abx-result-section' style='color:var(--red);'>&#9940; β-lactamines seules : INSUFFISANTES (bacteria intracellulaire). TOUJOURS inclure lévofloxacine ou azithromycine dans PAC sévère.</div>";
+                break;
+              case 'hpyl2':
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#128165; Helicobacter pylori</div>BGN spiralé, intragastrique. Ulcère, gastrite, adénocarcinome gastrique, lymphome MALT.</div>";
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#128138; 1re ligne (CAG / INESSS 2022)</div><strong>OBMT 14j</strong> : IPP BID + Bismuth QID + Métronidazole TID/QID + Tétracycline QID<br>OU <strong>Quadruple concomitante 14j</strong> : IPP + Amoxicilline + Clarithromycine + Métronidazole</div>";
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#128138; 2e ligne (si échec)</div><strong>OBMT</strong> si non utilisé en 1re ligne &bull; <strong>Lévofloxacine quadruple</strong> &bull; Rifabutine-basée si 2 échecs</div>";
+                h += "<div class='abx-result-section' style='color:var(--red);'>&#9940; Trithérapie standard (IPP + Amox + Clarithromy seuls) : ABAND0NNÉE au Canada (résistance &gt; 20% à clarithromycine). Vérifier éradication 4 sem post-Tx.</div>";
+                break;
+              case 'borrel':
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#128165; Borrelia burgdorferi (Maladie de Lyme)</div>Spérochète. Transmitted by tique Ixodes. Stades : érythème migrant &rarr; disséminé précoce (neuro, cardio) &rarr; tardif (arthrite).</div>";
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#128138; Traitement selon stade</div>&bull; <strong>Peau / Érythème migrant</strong> : <strong>Doxycycline PO</strong> 100 mg BID &times; 10&ndash;14j (1er) ou amoxicilline/céfuroxime<br>&bull; <strong>Atteinte neuro / cardiaque</strong> : <strong>Ceftriaxone IV</strong> 2g DIE &times; 14&ndash;21j<br>&bull; <strong>Arthrite Lyme</strong> : Doxycycline PO &times; 28j</div>";
+                h += "<div class='abx-result-section'>&#9888;&#65039; Sérologie Lyme: ELISA puis Western Blot (si ELISA+). Syndrome post-Lyme: ne pas re-traiter sans évidence d&apos;infection active.</div>";
+                break;
+              case 'trepo':
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#128165; Treponema pallidum (Syphilis)</div>Spérochète. Syphilis primaire (chanc.), secondaire (rash), tertiaire. Déclaration obligatoire INSPQ.</div>";
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#128138; Traitement</div>&bull; <strong>Primaire / Secondaire</strong> : <strong>Pénicilline G benzathine IM</strong> 2.4 MU dose unique<br>&bull; <strong>Tertiaire / Latente tardive</strong> : Pénicilline G benzathine IM 2.4 MU &times; 3 (semaines 1, 2, 4)<br>&bull; <strong>Neurosyphilis</strong> : Pénicilline G IV 18&ndash;24 MU/j &times; 10&ndash;14j</div>";
+                h += "<div class='abx-result-section'><div class='abx-result-title'>&#128260; Si allergie pénicilline</div><strong>Doxycycline PO</strong> 100 mg BID &times; 14j (non-neurosyphilis) &bull; Désensibilisation si neurosyphilis (péni toujours préférée)</div>";
+                h += "<div class='abx-result-section'>Réaction de Jarisch-Herxheimer possible dans les 24h post-1re dose. Sérologie de contrôle à 3, 6, 12 mois. Dépister et traiter partenaires.</div>";
+                break;
+              default:
+                h += "<div class='abx-result-section'>Pathogène non trouvé.</div>";
+            }
+            txt.innerHTML = h;
+          }
+        </script>
+      </div>
+    </div>
       <div class="block para" style="border-left-color:var(--red);">
         <div class="block-title" id="abt-5"><span class="tag">⚠️ Résistance bactérienne — Mécanismes & Implications cliniques</span></div>
         <table>
@@ -14715,230 +15497,6 @@ Carence absolue ou relative en insuline → ↑ Glucagon → ↑ Lipolyse → �
 
       <!-- Traitements empiriques par syndrome -->
 
-      <div class="block rx">
-        <div class="block-title"><span class="tag">🧰 Outil interactif — Aide à la décision : Antibiothérapie Empirique</span></div>
-        <p class="content-text" style="margin-bottom:14px;">Sélectionnez le profil allergique du patient, puis la pathologie suspectée, pour générer une recommandation empirique de première ligne. <em>Outil d'aide à la décision — ne remplace pas le jugement clinique, les cultures microbiologiques, ni les directives locales en vigueur.</em></p>
-
-        <style>
-          .abx-tool { font-family: var(--font); color: var(--ink); font-size: 14px; }
-          .abx-tool .abx-step { background: var(--cream2); border: 1px solid var(--cream3); padding: 16px 18px; margin-bottom: 14px; border-radius: var(--radius); }
-          .abx-tool h4 { font-size: 13px; text-transform: uppercase; letter-spacing: .04em; color: var(--ink); margin-bottom: 10px; font-weight: 700; }
-          .abx-tool label { font-weight: 600; display: block; margin-bottom: 6px; font-size: 13px; }
-          .abx-tool select { width: 100%; max-width: 520px; padding: 9px 10px; margin-top: 4px; margin-bottom: 4px; border: 1px solid var(--cream3); border-radius: var(--radius); font-size: 14px; font-family: var(--font); background: #fff; color: var(--ink); }
-          .abx-tool select:focus { border-color: var(--blue); outline: none; }
-          .abx-tool .abx-radio-group { margin: 4px 0 6px; }
-          .abx-tool .abx-radio-group label { display: inline-block; font-weight: 400; margin-right: 20px; cursor: pointer; font-size: 14px; }
-          .abx-tool .abx-hidden { display: none; }
-          .abx-tool .abx-alert { padding: 12px 14px; margin: 10px 0; border-radius: var(--radius); font-weight: 600; font-size: 13px; }
-          .abx-tool .abx-alert-danger { background: var(--red-lt); color: var(--red); border: 1px solid var(--red); }
-          .abx-tool .abx-critical { color: var(--red); font-size: 13px; font-weight: 700; border: 2px solid var(--red); padding: 12px 14px; background: var(--red-lt); margin-top: 10px; border-radius: var(--radius); text-transform: uppercase; letter-spacing: .03em; }
-          .abx-tool #abx-result-box { background: var(--blue-lt); border-left: 6px solid var(--blue); padding: 18px; margin-top: 16px; border-radius: var(--radius); }
-          .abx-tool .abx-result-section { margin-bottom: 12px; padding-bottom: 10px; border-bottom: 1px dashed var(--cream3); font-size: 13px; line-height: 1.55; }
-          .abx-tool .abx-result-section:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-          .abx-tool .abx-result-title { font-weight: 700; color: var(--blue); text-transform: uppercase; font-size: 11px; letter-spacing: .04em; margin-bottom: 4px; }
-        </style>
-
-        <div class="abx-tool" id="abx-tool">
-          <div class="abx-step" style="background:var(--cream3);">
-            <h4>ℹ️ Antibiogouvernance — 4 moments clés (AHRQ 2018)</h4>
-            <p style="font-size:13px;font-weight:400;line-height:1.65;margin:0;">
-              1️⃣ <strong>Bon diagnostic</strong> — est-ce vraiment bactérien? (bilan septique : FSC, créat., E+, imagerie/culture PRN — idéalement avant de débuter l'ATB)<br>
-              2️⃣ <strong>Cultures + traitement empirique</strong> — prélever AVANT l'antibiotique, puis débuter selon les lignes directrices locales<br>
-              3️⃣ <strong>Traitement dirigé</strong> — cesser si non infectieux, réduire le spectre selon l'antibiogramme, passer de IV → PO dès que possible<br>
-              4️⃣ <strong>Durée minimale</strong> — campagne <em>Shorter is Better</em> : un traitement plus court est souvent aussi efficace et mieux toléré
-            </p>
-          </div>
-          <div class="abx-step">
-            <h4>① Évaluation des allergies</h4>
-            <p style="font-size:13px;margin-bottom:10px;font-weight:400;">Le patient présente-t-il une allergie connue aux antibiotiques (notamment à la pénicilline)?</p>
-            <div class="abx-radio-group">
-              <label><input type="radio" name="abx-allergie" value="non" checked onchange="abxToggleAllergie(this.value)"> 🟢 NON</label>
-              <label><input type="radio" name="abx-allergie" value="oui" onchange="abxToggleAllergie(this.value)"> 🔴 OUI</label>
-            </div>
-            <div id="abx-msg-alerte-rouge" class="abx-hidden abx-critical">
-              ⚠️ Attention : vérifier immédiatement le risque d'allergie et l'historique des réactions du patient avant toute prescription!
-            </div>
-            <div id="abx-anaphylaxie-box" class="abx-hidden" style="margin-top:12px;">
-              <label for="abx-anaphylaxie">Quel est le type de réaction suspecté ou confirmé?</label>
-              <select id="abx-anaphylaxie" onchange="abxProcessSelection()">
-                <option value="non">Réaction légère / non-anaphylactique (ex. : éruption cutanée tardive isolée)</option>
-                <option value="oui">Risque de réaction anaphylactique majeure (ex. : choc, angio-œdème, bronchospasme)</option>
-              </select>
-              <div id="abx-anaphylaxie-danger-banner" class="abx-alert abx-alert-danger abx-hidden">
-                ⚠️ Contre-indication absolue : risque de réaction croisée majeure! Ne pas administrer de pénicillines ni de céphalosporines à structure similaire.
-              </div>
-            </div>
-          </div>
-
-          <div class="abx-step">
-            <h4>② Choix de la pathologie suspectée</h4>
-            <label for="abx-pathologie">Sélectionnez la condition clinique pour générer le traitement :</label>
-            <select id="abx-pathologie" onchange="abxProcessSelection()">
-              <option value="">— Choisir une pathologie pour voir l'antibiotique —</option>
-              <option value="cystite">Cystite non compliquée</option>
-              <option value="pna">Pyélonéphrite aiguë (PNA) non compliquée</option>
-              <option value="cellulite">Cellulite non purulente (infection de la peau)</option>
-              <option value="abces">Abcès purulent (modéré à sévère)</option>
-              <option value="morsure">Infection par morsure (chien/chat)</option>
-              <option value="pharyngite">Pharyngite à Streptococcus pyogenes (Strep A)</option>
-              <option value="oma">Otite moyenne aiguë (OMA)</option>
-              <option value="sinusite">Sinusite bactérienne</option>
-              <option value="bronchite">Bronchite aiguë (non-PAC)</option>
-              <option value="pac">Pneumonie acquise en communauté (PAC) — hospitalisé</option>
-              <option value="cdiff">Diarrhée à Clostridioides difficile (1ʳᵉ récidive)</option>
-            </select>
-          </div>
-
-          <div id="abx-result-box" class="abx-hidden">
-            <div style="font-weight:700;color:var(--blue);margin-bottom:10px;font-size:15px;">🎯 Recommandation d'antibiothérapie empirique</div>
-            <div id="abx-recommandation-text"></div>
-          </div>
-        </div>
-
-        <script>
-          function abxToggleAllergie(value) {
-            var msgAlerte = document.getElementById('abx-msg-alerte-rouge');
-            var anaphylaxieBox = document.getElementById('abx-anaphylaxie-box');
-            if (value === 'oui') {
-              msgAlerte.classList.remove('abx-hidden');
-              anaphylaxieBox.classList.remove('abx-hidden');
-            } else {
-              msgAlerte.classList.add('abx-hidden');
-              anaphylaxieBox.classList.add('abx-hidden');
-              document.getElementById('abx-anaphylaxie').value = 'non';
-            }
-            abxProcessSelection();
-          }
-
-          function abxProcessSelection() {
-            var allergieInput = document.querySelector('input[name="abx-allergie"]:checked').value;
-            var anaphylaxieInput = document.getElementById('abx-anaphylaxie').value;
-            var pathologie = document.getElementById('abx-pathologie').value;
-            var resultBox = document.getElementById('abx-result-box');
-            var textDiv = document.getElementById('abx-recommandation-text');
-            var dangerBanner = document.getElementById('abx-anaphylaxie-danger-banner');
-
-            var isAnaphylactique = (allergieInput === 'oui' && anaphylaxieInput === 'oui');
-
-            if (isAnaphylactique) { dangerBanner.classList.remove('abx-hidden'); }
-            else { dangerBanner.classList.add('abx-hidden'); }
-
-            if (!pathologie) { resultBox.classList.add('abx-hidden'); return; }
-            resultBox.classList.remove('abx-hidden');
-            var html = "";
-
-            switch (pathologie) {
-              case "cystite":
-                html += "<div class='abx-result-section'><div class='abx-result-title'>🦠 Pathogènes visés</div><em>E. coli</em>, <em>K. pneumoniae</em>, <em>Enterococcus</em> spp., <em>S. saprophyticus</em>, <em>Proteus mirabilis</em>.</div>";
-                html += "<div class='abx-result-section'><div class='abx-result-title'>💊 Antibiotique de premier choix (INESSS 2023)</div><strong>Nitrofurantoïne PO</strong> — efficace seulement contre la cystite (concentre uniquement dans l'urine).<br><i>⚠️ Contre-indication stricte si DFG &lt; 45 ou suspicion de pyélonéphrite.</i></div>";
-                html += "<div class='abx-result-section'><div class='abx-result-title'>🔄 Alternatives</div>• <strong>Fosfomycine PO</strong> — attaque la paroi bactérienne; bonne sensibilité, sécuritaire en grossesse et en IRC, mais ❌ aucune activité contre <em>Pseudomonas</em> (risque de résistance à surveiller)<br>• <strong>TMP-SMX (Septra)</strong> — selon antibiogramme/sensibilités locales</div>";
-                html += "<div class='abx-result-section'>⏰ Durée : 3-5 jours · choisir l'antibiotique selon la sensibilité locale la plus élevée.</div>";
-                html += "<div class='abx-result-section' style='color:var(--red);font-weight:600;'>⛔ Éviter absolument les macrolides, la clindamycine et la moxifloxacine — ils ne s'excrètent pas dans l'urine.</div>";
-                break;
-
-              case "pna":
-                html += "<div class='abx-result-section'><div class='abx-result-title'>🦠 Pathogènes visés</div>Entérobactéries uropathogènes (ex. : <em>E. coli</em>, <em>K. pneumoniae</em>).</div>";
-                if (isAnaphylactique) {
-                  html += "<div class='abx-result-section'><div class='abx-result-title'>💊 Antibiotique (ajusté — allergie anaphylactique)</div><strong>Ciprofloxacine PO</strong> ou lévofloxacine PO. La ciprofloxacine est le seul traitement oral actif contre <em>Pseudomonas aeruginosa</em>.</div>";
-                } else {
-                  html += "<div class='abx-result-section'><div class='abx-result-title'>💊 Antibiotique de premier choix (INESSS 2023)</div>Traitement empirique par <strong>ceftriaxone IV/IM</strong> (si hospitalisation) ou <strong>ciprofloxacine PO</strong> / <strong>TMP-SMX PO</strong> selon le profil clinique et l'antibiogramme local.</div>";
-                }
-                html += "<div class='abx-result-section'>⏰ Durée : 5-7 jours.</div>";
-                html += "<div class='abx-result-section' style='color:var(--red);font-weight:600;'>⛔ Contre-indication critique : la nitrofurantoïne et la fosfomycine sont inefficaces dans le tissu rénal — jamais pour une PNA!</div>";
-                break;
-
-              case "cellulite":
-                html += "<div class='abx-result-section'><div class='abx-result-title'>🦠 Pathogène visé</div>Streptocoque β-hémolytique (SBH) — pas de résistance connue aux β-lactamines; culture superficielle peu fiable si non purulent.</div>";
-                if (isAnaphylactique) {
-                  html += "<div class='abx-result-section'><div class='abx-result-title'>💊 Antibiotique (ajusté — allergie anaphylactique)</div><strong>Clindamycine PO</strong> ou macrolide. Éviter toute forme de bêta-lactamine.</div>";
-                } else {
-                  html += "<div class='abx-result-section'><div class='abx-result-title'>💊 Antibiotique de premier choix</div>Céphalosporine de 1ʳᵉ génération : <strong>céfadroxil PO</strong> (léger) ou <strong>céfazoline IV</strong> (modéré-sévère).</div>";
-                }
-                html += "<div class='abx-result-section'>⏰ Durée : 5-7 jours + élévation du membre atteint.</div>";
-                html += "<div class='abx-result-section' style='color:var(--ink3);'>💡 Si autre exposition identifiée — morsure chien/chat → amoxicilline-clavulanate; contact eau douce/salée → ciprofloxacine.</div>";
-                html += "<div class='abx-result-section' style='color:var(--red);font-weight:600;'>⚠️ L'érythème résiduel peut persister plusieurs jours après la fin du traitement (objectif initial = tuer la bactérie) — ne pas redémarrer l'antibiothérapie sur cette seule base.</div>";
-                break;
-
-              case "abces":
-                html += "<div class='abx-result-section'><div class='abx-result-title'>🦠 Pathogènes visés</div><em>Staphylococcus aureus</em> (incluant le SARM); flore polymicrobienne si site péri-rectal ou vulvo-vaginal.</div>";
-                html += "<div class='abx-result-section' style='color:#b45309;font-weight:600;'>❗ Priorité absolue : drainage chirurgical — l'antibiothérapie n'est pas toujours essentielle après un drainage complet.</div>";
-                html += "<div class='abx-result-section'><div class='abx-result-title'>💊 Si traitement antibiotique requis (selon sévérité)</div>• Modéré : <strong>TMP-SMX (Septra) PO</strong><br>• Sévère : <strong>vancomycine IV</strong></div>";
-                html += "<div class='abx-result-section'>🔍 Culture microbiologique du pus obligatoire pour guider le traitement définitif — l'importance de la culture prime sur le choix empirique initial.</div>";
-                break;
-
-              case "morsure":
-                html += "<div class='abx-result-section'><div class='abx-result-title'>🦠 Pathogènes visés</div>Flore polymicrobienne agressive de la gueule de l'animal (ex. : <em>Pasteurella</em> spp., anaérobies).</div>";
-                if (isAnaphylactique) {
-                  html += "<div class='abx-result-section'><div class='abx-result-title'>💊 Antibiotique (ajusté — allergie anaphylactique)</div>Association double requise : <strong>fluoroquinolone + métronidazole</strong> ou <strong>clindamycine</strong>, pour couvrir simultanément Gram négatifs et anaérobies.</div>";
-                } else {
-                  html += "<div class='abx-result-section'><div class='abx-result-title'>💊 Antibiotique de premier choix</div><strong>Amoxicilline-acide clavulanique PO</strong> — nécessaire pour neutraliser les bêta-lactamases de la flore buccale.</div>";
-                }
-                break;
-
-              case "pharyngite":
-                html += "<div class='abx-result-section'><div class='abx-result-title'>🦠 Pathogène visé</div><em>Streptococcus pyogenes</em> (Strep A — 15-30 % chez l'enfant, 10-15 % chez l'adulte; majorité des pharyngites demeure virale).</div>";
-                html += "<div class='abx-result-section' style='color:var(--blue);font-weight:600;'>🔍 Diagnostic = test obligatoire (jamais sur base syndromique). Score de Centor modifié : 0-2 → pas de test ni traitement; 3-5 → test requis (TDAR; culture de gorge en confirmation si TDAR négatif mais suspicion élevée).</div>";
-                if (isAnaphylactique) {
-                  html += "<div class='abx-result-section'><div class='abx-result-title'>💊 Antibiotique (ajusté — allergie anaphylactique)</div><strong>Azithromycine PO</strong> (macrolide), sous réserve de la sensibilité des souches locales.</div>";
-                } else if (allergieInput === 'oui' && anaphylaxieInput === 'non') {
-                  html += "<div class='abx-result-section'><div class='abx-result-title'>💊 Antibiotique (allergie légère, non anaphylactique)</div>Une céphalosporine de 1ʳᵉ génération (ex. : <strong>céfadroxil</strong>) peut être introduite en toute sécurité.</div>";
-                } else {
-                  html += "<div class='abx-result-section'><div class='abx-result-title'>💊 Antibiotique de premier choix</div>1️⃣ <strong>Pénicilline V PO</strong> ou pénicilline benzathine IM (le Strep A n'est jamais résistant à la pénicilline) · 2️⃣ céphalosporine 1ʳᵉ génération si allergie · 3️⃣ azithromycine si souche sensible.</div>";
-                }
-                html += "<div class='abx-result-section'>🎯 But du traitement : prévenir les complications suppuratives (abcès périamygdalien, otite, sinusite, fasciite nécrosante/choc toxique) <strong>et</strong> non suppuratives (RAA, glomérulonéphrite, myocardite, chorée, érythème marginatum) — <span style='color:var(--red);font-weight:600;'>sauf la glomérulonéphrite post-streptococcique, seule complication NON prévenue par l'antibiothérapie</span>.</div>";
-                break;
-
-              case "oma":
-                html += "<div class='abx-result-section'><div class='abx-result-title'>🦠 Pathogènes visés</div><em>S. pneumoniae</em>, <em>H. influenzae</em>, <em>Moraxella catarrhalis</em>, <em>S. pyogenes</em>.</div>";
-                html += "<div class='abx-result-section'><div class='abx-result-title'>📋 Critères de traitement (INESSS)</div>La majorité guérit sans ATB. <strong>Symptômes sévères</strong> (otalgie modérée-sévère &gt; 48 h, fièvre &gt; 39 °C, perforation tympanique) → traiter d'emblée. <strong>Symptômes non sévères</strong> : 3-6 mois → traiter; &gt; 6 mois → observation possible vs traitement.</div>";
-                if (isAnaphylactique) {
-                  html += "<div class='abx-result-section'><div class='abx-result-title'>💊 Antibiotique (ajusté — allergie anaphylactique)</div><strong>Azithromycine PO</strong> ou autre option macrolide pédiatrique.</div>";
-                } else {
-                  html += "<div class='abx-result-section'><div class='abx-result-title'>💊 Antibiotique de premier choix</div><strong>Amoxicilline PO</strong> à haute dose (sauf critères de sévérité initiaux imposant l'amox-clav).</div>";
-                }
-                html += "<div class='abx-result-section' style='color:var(--ink3);'>🩺 Otoscopie : rechercher signes de complication (méningite, paralysie faciale, mastoïdite).</div>";
-                break;
-
-              case "sinusite":
-                html += "<div class='abx-result-section' style='color:var(--ink3);'>💡 Étiologie majoritairement virale (60 % de succès sous placebo) — résolution spontanée en 10-14 jours.</div>";
-                html += "<div class='abx-result-section'><div class='abx-result-title'>📋 Traiter si</div>Sx ≥ 10-14 jours sans amélioration <strong>OU</strong> début avec symptômes sévères / fièvre ≥ 39 °C + rhinorrhée purulente ≥ 3-4 jours consécutifs <strong>OU</strong> détérioration après amélioration initiale.</div>";
-                if (isAnaphylactique) {
-                  html += "<div class='abx-result-section'><div class='abx-result-title'>💊 Antibiotique (ajusté — allergie anaphylactique)</div><strong>Lévofloxacine</strong> ou <strong>moxifloxacine</strong> (quinolones respiratoires, excellente couverture du pneumocoque).</div>";
-                } else {
-                  html += "<div class='abx-result-section'><div class='abx-result-title'>💊 Antibiotique de premier choix</div><strong>Amoxicilline PO</strong> (1ᵉʳ choix) ou <strong>amoxicilline-clavulanate</strong> si facteurs de risque de résistance (prévalence régionale élevée).</div>";
-                }
-                html += "<div class='abx-result-section'>⏰ Durée : 5-7 jours.</div>";
-                break;
-
-              case "bronchite":
-                html += "<div class='abx-result-section' style='color:var(--red);font-weight:600;'>⛔ Rarement bactérienne — l'antibiothérapie y est généralement peu utile et représente une <strong>source importante de mauvaise utilisation des antibiotiques</strong> (cible prioritaire d'antibiogouvernance, AHRQ 2018).</div>";
-                html += "<div class='abx-result-section'><div class='abx-result-title'>💊 Recommandation</div>Aucun antibiotique recommandé d'emblée. Privilégier le traitement symptomatique (hydratation, antitussif PRN, cessation tabagique) et réévaluer si évolution vers une PAC (nouvel infiltrat radiologique + signes systémiques d'infection).</div>";
-                break;
-
-              case "pac":
-                html += "<div class='abx-result-section'><div class='abx-result-title'>🦠 Pathogènes visés</div><em>S. pneumoniae</em>, <em>H. influenzae</em>, germes atypiques (<em>Mycoplasma</em>, <em>Chlamydia</em>, <em>Legionella</em>) — &gt; 50 % sans étiologie identifiée.</div>";
-                html += "<div class='abx-result-section'><div class='abx-result-title'>📊 Score de gravité CRB65</div>Confusion · Rythme respiratoire &gt; 30/min · PA basse · Âge ≥ 65 ans — score 1-2 = hospitalisation à envisager; <strong>3-4 = hospitalisation obligatoire</strong>.</div>";
-                if (isAnaphylactique) {
-                  html += "<div class='abx-result-section'><div class='abx-result-title'>💊 Antibiotique (ajusté — allergie anaphylactique)</div><strong>Lévofloxacine IV/PO</strong> ou <strong>moxifloxacine IV/PO</strong> en monothérapie (quinolones respiratoires).</div>";
-                } else {
-                  html += "<div class='abx-result-section'><div class='abx-result-title'>💊 Antibiotique de premier choix (patient hospitalisé)</div>Association synergique <strong>ceftriaxone + azithromycine</strong> — la combinaison limite le développement de résistances et couvre les germes atypiques. Éviter la quinolone en 1ʳᵉ intention (plus d'effets indésirables).</div>";
-                }
-                html += "<div class='abx-result-section'>⏰ Durée : 3-7 jours. 🚨 Penser à la tuberculose si cavité au lobe supérieur, symptômes &gt; 3 semaines ou contexte épidémiologique compatible.</div>";
-                break;
-
-              case "cdiff":
-                html += "<div class='abx-result-section'><div class='abx-result-title'>🦠 Pathogène visé</div><em>Clostridioides difficile</em> — présentation typique : ≥ 3 selles liquides/jour sans autre cause.</div>";
-                html += "<div class='abx-result-section' style='color:var(--red);font-weight:600;'>🚨 Signes de sévérité/complication : leucocytose &gt; 15 ×10⁹/L (&gt; 20 = r/o C. diff, peut précéder la diarrhée), IRA (créat. &gt; 50 % de la base), fièvre &gt; 38,5 °C · choc/lactate &gt; 2,2 mmol/L, iléus, perforation, mégacôlon toxique → urgence.</div>";
-                html += "<div class='abx-result-section'><div class='abx-result-title'>💊 Traitement (INESSS 2025) — seulement si symptomatique</div>0️⃣ Cesser les antipéristaltiques/laxatifs, réévaluer les IPP et les autres antibiotiques en cours.<br>• <strong>Épisode initial</strong> : vancomycine PO (1ᵉʳ choix) ou fidaxomicine (si ≥ 65 ans ou immunosuppression sévère)<br>• <strong>Forme sévère</strong> : vancomycine ou fidaxomicine + métronidazole<br>• <strong>1ʳᵉ récidive</strong> : fidaxomicine (1ᵉʳ choix) ou vancomycine (2ᵉ choix)<br>• <strong>2ᵉ récidive</strong> : vancomycine ou fidaxomicine<br>• <strong>&gt; 2 récidives</strong> : avis spécialisé (infectiologie/microbiologie)</div>";
-                html += "<div class='abx-result-section' style='color:var(--ink3);'>🔁 Récidive dans 20-30 % des cas traités. Facteurs de risque : âge avancé, autres ATB pendant l'épisode, infection sévère, souche NAP-1.</div>";
-                break;
-            }
-            textDiv.innerHTML = html;
-          }
-        </script>
-      </div>
-
-
     </div>
 
     <div class="section" id="sec-aso">
@@ -14962,8 +15520,7 @@ Carence absolue ou relative en insuline → ↑ Glucagon → ↑ Lipolyse → �
         <div style="flex:1;min-width:100px;background:#DCFCE7;border-radius:10px;padding:12px;text-align:center;"><div style="font-size:15px;font-weight:800;color:#0a7a4e;">CPAP</div><div style="font-size:11px;color:#555;margin-top:4px;">Tx 1re ligne SAOS</div></div>
       </div>
 
-      <!-- 1. DÉFINITION -->
-      <div class="block def">
+      <!-- 1. DÉFINITION -->      <div class="block def">
         <div class="block-title" id="aso-1"><span class="tag">📌 1. Définition & Classification par sévérité</span></div>
         <p class="content-text">Obstruction répétée des voies aériennes supérieures (VAS) pendant le sommeil → <strong>apnées</strong> (arrêt flux ≥ 10 sec) ou <strong>hypopnées</strong> (↓ flux ≥ 30 % + désaturation 3–4 % ou micro-éveil), entraînant des conséquences sur la santé.</p>
         <table style="margin-top:10px;">
@@ -15926,6 +16483,39 @@ SLA · Dystrophie myotonique · Cyphoscoliose sévère · Paralysie diaphragmati
         </div>
         <div class="key-fact black" style="margin-top:6px;">
           <strong>Cessation tabagique dans MPOC/Asthme :</strong> Seule intervention qui ↓ le déclin de VEMS dans la MPOC et améliore la réponse aux CSI dans l'asthme. Considérer à CHAQUE visite — même si patient non prêt, planter une graine.
+        </div>
+      </div>
+
+      <!-- TRINITÉ OBSTRUCTIVE — tableau comparatif rapide -->
+      <div class="block def" style="border-left:4px solid #7c3aed;margin-top:16px;">
+        <div class="block-title"><span class="tag">&#128202; La Trinité Obstructive &mdash; Tableau comparatif rapide (Asthme / MPOC / ACO)</span></div>
+        <div style="overflow-x:auto;">
+          <table style="font-size:12.5px;">
+            <thead>
+              <tr>
+                <th style="min-width:140px;">Caractéristique</th>
+                <th style="background:#dbeafe;color:#1e3a8a;">&#129756; Asthme</th>
+                <th style="background:#d1fae5;color:#065f46;">&#128168; MPOC</th>
+                <th style="background:#ede9fe;color:#5b21b6;">&#128256; ACO</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>&#129535; Âge typique</strong></td><td>Enfance / jeune adulte (tout âge)</td><td>&gt; 40 ans, tabagique</td><td>&gt; 40 ans + histoire d&apos;asthme</td></tr>
+              <tr style="background:#f8fafc;"><td><strong>&#128167; Type d&apos;inflammation</strong></td><td>&Eacute;osinophiles + mastocytes (Th2)</td><td>Neutrophiles + macrophages (Th1/17)</td><td>Mixte : éosinophiles + neutrophiles</td></tr>
+              <tr><td><strong>&#128202; Spirométrie</strong></td><td>VEMS/CVF variable; normalise entre Sx</td><td>VEMS/CVF &lt; 0,70 fixe post-bronchodilatateur</td><td>VEMS/CVF &lt; 0,70 persistant, variabilité partielle</td></tr>
+              <tr style="background:#f8fafc;"><td><strong>&#128260; Réversibilité</strong></td><td>Complète (&#8805;12% &amp; 200 mL)</td><td>Partielle (&lt;12%) ou nulle</td><td>Partielle mais significative</td></tr>
+              <tr><td><strong>&#127773; Déclencheurs</strong></td><td>Allergènes, effort, froid, AINS</td><td>Effort, infections, fumée</td><td>Allergènes + tabac + infections</td></tr>
+              <tr style="background:#f8fafc;"><td><strong>&#128138; CSI seul</strong></td><td>&#9989; Efficace &mdash; traitement de base</td><td>&#10060; Contre-indiqué en monothérapie (GOLD 2026)</td><td>&#9989; Obligatoire (ICS toujours inclus)</td></tr>
+              <tr><td><strong>&#128138; BDLA (LABA/LAMA)</strong></td><td>Ajout si non contrôlé sous CSI</td><td>&#9989; Pilier du traitement &mdash; LAMA ± LABA</td><td>&#9989; Triple thérapie fréquente</td></tr>
+              <tr style="background:#f8fafc;"><td><strong>&#128202; Marqueur clé</strong></td><td>&Eacute;osinophiles sanguins · FeNO &gt;25 ppb</td><td>Score GOLD A/B/E · Tabagisme paquets-années</td><td>&Eacute;osinophiles &#8805;300 + obstruction fixe</td></tr>
+              <tr><td><strong>&#9889; SABA PRN</strong></td><td>Palier 1 : SABA + ICS (GINA 2026). Éviter SABA seul</td><td>SABA pour exacerbations seulement</td><td>SABA pour exacerbations</td></tr>
+              <tr style="background:#f8fafc;"><td><strong>&#127919; Biothérapies</strong></td><td>Mépolizumab, dupilumab (asthme sévère éosinophilique)</td><td>Non indiqués actuellement</td><td>Mépolizumab si éosinophile élevé</td></tr>
+              <tr><td><strong>&#128203; Pronostic</strong></td><td>Réversible si bien contrôlé</td><td>Progressif, irréversible</td><td>Progression plus rapide qu&apos;asthme seul</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="key-fact purple" style="margin-top:12px;">
+          &#128161; <strong>Règle pratique IPS :</strong> Si obstruction fixe (VEMS/CVF &lt;0,70 post-BD) + histoire tabagique &#8594; MPOC. Si éosinophiles &gt;300 + Sx variables + atopie &#8594; asthme. Si les deux &#8594; ACO. <strong>Ne jamais prescrire CSI seul dans la MPOC</strong> (risque pneumonie &#8593; sans bénéfice prouvé en monothérapie).
         </div>
       </div>
     </div>
@@ -21322,14 +21912,30 @@ SLA · Dystrophie myotonique · Cyphoscoliose sévère · Paralysie diaphragmati
   <div class="block tx">
     <div class="block-title" id="sep-4"><span class="tag">💊 DMT — Traitements immuno-modulateurs</span></div>
     <p class="content-text"><strong>Effets :</strong> ↓ fréquence des poussées 30–60% · ↓ activité IRM · Moins d'effet sur progression secondaire.</p>
-    <table style="margin-top:8px;">
-      <thead><tr><th>Voie</th><th>Agents</th><th>Notes</th></tr></thead>
+    <div style="overflow-x:auto;margin-top:8px;">
+    <table style="font-size:12.5px;">
+      <thead>
+        <tr>
+          <th>Voie</th><th>Agent</th><th style="text-align:center;">&#128200; &#8595; Poussées</th><th>Notes cliniques</th>
+        </tr>
+      </thead>
       <tbody>
-        <tr><td><strong>Injectables</strong></td><td>Interféron β-1a (Avonex, Rebif) · β-1b (Betaseron) · Glatiramère (Copaxone)</td><td>1re intention · profil sécurité établi</td></tr>
-        <tr><td><strong>Infusion</strong></td><td>Natalizumab (Tysabri) · Ocrelizumab (Ocrevus) · Alemtuzumab (Lemtrada)</td><td>Natalizumab : risque LEMP → dépister Ac JC. 300mg IV q4sem</td></tr>
-        <tr><td><strong>Oraux</strong></td><td>Tériflunomide (Aubagio) · Diméthyl fumarate (Tecfidera) · Fingolimod (Gilenya)</td><td>Options 1re intention de plus en plus utilisées</td></tr>
+        <tr style="background:#e8f4ff;"><td rowspan="3"><strong>Injectables</strong><br><em style="font-size:11px;">1re ligne</em></td><td>Interféron &beta;-1a/b (Avonex, Rebif, Betaseron)</td><td style="text-align:center;font-weight:700;color:#0a7a4e;">&#8595;30&ndash;34%</td><td>SCQ 1&times;/sem&ndash;3&times;/sem selon form. S/E : sx pseudo-grippaux, transaminases &uarr;</td></tr>
+        <tr style="background:#e8f4ff;"><td>Glatiram&egrave;re (Copaxone)</td><td style="text-align:center;font-weight:700;color:#0a7a4e;">&#8595;29%</td><td>SC DIE · Bien toler&eacute; · Grossesse relat. s&eacute;curitaire</td></tr>
+        <tr style="background:#e8f4ff;"><td>P&eacute;ginterferon &beta;-1a (Plegridy)</td><td style="text-align:center;font-weight:700;color:#0a7a4e;">&#8595;36%</td><td>SC q2sem</td></tr>
+        <tr><td rowspan="2"><strong>Oraux</strong><br><em style="font-size:11px;">Efficacité modérée</em></td><td>T&eacute;riflunomide (Aubagio)</td><td style="text-align:center;font-weight:700;color:#d97706;">&#8595;31&ndash;36%</td><td>1 co/j · Surveiller TA, bilan h&eacute;patique · T&eacute;ratog&egrave;ne : contraception oblig.</td></tr>
+        <tr><td>Dim&eacute;thyl fumarate (Tecfidera)</td><td style="text-align:center;font-weight:700;color:#d97706;">&#8595;44&ndash;53%</td><td>2 caps BID · Bouff&eacute;es chaleur, troubles GI initiaux · Surveiller NFS (lymphop&eacute;nie)</td></tr>
+        <tr style="background:#f0fdf4;"><td rowspan="2"><strong>Oraux haute efficacité</strong></td><td>Fingolimod (Gilenya)</td><td style="text-align:center;font-weight:700;color:#0a7a4e;">&#8595;54%</td><td>1 co/j · 1re dose en clinique (bradycardie transitoire). Risque infections fongiques.</td></tr>
+        <tr style="background:#f0fdf4;"><td>Cladribine (Mavenclad)</td><td style="text-align:center;font-weight:700;color:#0a7a4e;">&#8595;58%</td><td>Cours courts sur 2 ans. Surveiller lymphocytes. Long terme s&eacute;curitaire.</td></tr>
+        <tr style="background:#fef3f2;"><td rowspan="3"><strong>Perfusion</strong><br><em style="font-size:11px;color:#dc2626;">Haute efficacité</em></td><td>Natalizumab (Tysabri)</td><td style="text-align:center;font-weight:700;color:#0a7a4e;">&#8595;68%</td><td>IV q4sem · D&eacute;pister Ac JC avant (risque LEMP) · Anticorps JC+ &rarr; réévaluer rapport B/R</td></tr>
+        <tr style="background:#fef3f2;"><td>Ocrelizumab (Ocrevus)</td><td style="text-align:center;font-weight:700;color:#0a7a4e;">&#8595;47%</td><td>IV q6mois · Seul DMT approuvé SEP progressive primaire (PPMS). Surveillance infections.</td></tr>
+        <tr style="background:#fef3f2;"><td>Alemtuzumab (Lemtrada)</td><td style="text-align:center;font-weight:700;color:#0a7a4e;">&#8595;49%</td><td>vs IFN&beta;. Cours IV/an &times; 2 ans. Monitoring mensuel FSC/thyro&iuml;de/créatinine pendant 4 ans (autoimmunit&eacute; tardive).</td></tr>
       </tbody>
     </table>
+    </div>
+    <div class="key-fact blue" style="margin-top:10px;">
+      &#128200; <strong>Strat&eacute;gie d&apos;escalade (CAN-ECTRIMS 2023) :</strong> Option 1 &mdash; Traitement <em>escalade progressive</em> : 1re ligne (IFN&beta;/glatiram&egrave;re/t&eacute;riflunomide) &rarr; si &eacute;chec haute efficacit&eacute;. Option 2 &mdash; <em>Haute efficacit&eacute; d&apos;embl&eacute;e</em> (natalizumab/ocrelizumab) si facteurs pronostiques d&eacute;favorables (nombreuses lésions T2, lésions medullaires, handicap initial &eacute;lev&eacute;, poussées fr&eacute;quentes).
+    </div>
   </div>
   <div class="block def">
     <div class="block-title" id="sep-5"><span class="tag">⚠ Traitement des symptômes</span></div>
@@ -23847,6 +24453,49 @@ SLA · Dystrophie myotonique · Cyphoscoliose sévère · Paralysie diaphragmati
       · Grossesse : MTX cesser ≥6 sem avant conception · Biologiques : cesser idéalement au 3e trimestre (passage placentaire) · Allaitement : tous OK sauf MTX
     </div>
     <div class="highlight green" style="margin-top:8px;font-size:13px;"><strong>Objectifs de traitement :</strong> Rémission clinique (sx maîtrisés) ET endoscopique (absence lésions actives) → ↓ hospitalisation, ↓ chirurgie, ↓ risque néoplasie secondaire à la colite</div>
+  </div>
+
+  <div class="block def" style="border-left:4px solid #7c3aed;">
+    <div class="block-title"><span class="tag">&#128203; Bilan pré-biologique complet &mdash; Avant tout immunosuppresseur ou biologique</span></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px;">
+      <div style="background:#fef3f2;border-radius:10px;padding:14px;">
+        <div style="font-weight:700;color:#dc2626;margin-bottom:8px;font-size:13px;">&#9888;&#65039; Infectieux — Dépistage obligatoire</div>
+        <table style="font-size:12px;">
+          <thead><tr><th>Pathogène</th><th>Tests demandés</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Tuberculose</strong></td><td>Quantiféron Gold (IGRA) — préféré<br>OU PPD si IGRA non disponible</td><td>Rx thorax si IGRA+ ou ATCD TB. Si TB latente → isoniazide 9 mois avant de débuter biologique</td></tr>
+            <tr><td><strong>Hépatite B</strong></td><td>Ag HBs · Ac anti-HBs · Ac anti-HBc total</td><td>Si Ag HBs+ → avis hépatologue + prophylaxie anti-HBV (entécavir). Si anti-HBc+ isolé → surveiller</td></tr>
+            <tr><td><strong>Hépatite C</strong></td><td>Ac anti-VHC</td><td>Si positif → ARN VHC. Traiter avant immunosuppression si possible (DAA)</td></tr>
+            <tr><td><strong>VIH</strong></td><td>Ag/Ac VIH (4e génération)</td><td>CV VIH indétectable avant biologique. Suivi en co-gestion avec infectiologie</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div style="background:#f0fdf4;border-radius:10px;padding:14px;">
+        <div style="font-weight:700;color:#065f46;margin-bottom:8px;font-size:13px;">&#128137; Bilan de base + Vaccinations</div>
+        <table style="font-size:12px;">
+          <thead><tr><th>Examen</th><th>Raison</th></tr></thead>
+          <tbody>
+            <tr><td>FSC + différentielle</td><td>Valeur de base; Leucopénie, lymphopénie pré-existante</td></tr>
+            <tr><td>Bilan hépatique (ALT, AST, bilirubine)</td><td>Référence; hépatotoxicité sous MTX/azathioprine</td></tr>
+            <tr><td>Créatinine + DFGe</td><td>Dosage et surveillance (MTX, cyclosporine)</td></tr>
+            <tr><td>Radiographie thoracique</td><td>Exclure TB active ou autres anomalies pulmonaires</td></tr>
+            <tr><td>Grossesse (béta-HCG)</td><td>Avant MTX (tératogène) ou JAK inhibiteur</td></tr>
+          </tbody>
+        </table>
+        <div style="margin-top:10px;font-size:12px;">
+          <strong style="color:#065f46;">&#128137; Vaccinations à mettre à jour AVANT immunosuppression :</strong>
+          <ul style="margin:4px 0;padding-left:14px;line-height:1.8;">
+            <li><strong>Pneumocoque :</strong> PCV-15/20 puis PPSV-23 (si non immunodéprimé)</li>
+            <li><strong>Grippe :</strong> Vaccin inactivé annuellement (vivant CI)</li>
+            <li><strong>Hépatite A + B :</strong> Si non immunisé</li>
+            <li><strong>VPH :</strong> Si éligible selon l&apos;âge</li>
+            <li><strong>Zona :</strong> Shingrix (inactivé) &#8594; CI Zostavax (vivant)</li>
+            <li><strong>COVID-19 :</strong> À jour selon calendrier provincial</li>
+          </ul>
+          <div class="key-fact red" style="margin-top:8px;font-size:12px;">&#9940; <strong>Vaccins vivants atténués CONTRE-INDIQUÉS</strong> sous tout immunosuppresseur ou biologique : RRO, varicelle, Zostavax, BCG, fièvre jaune.</div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div class="block def">
@@ -33508,6 +34157,22 @@ function algoDouleur() {
   html += '</div>';
   out.innerHTML = html;
 }
+
+  // Sync top mirror scrollbars with table scrollers
+  (function(){
+    document.addEventListener('DOMContentLoaded', function(){
+      document.querySelectorAll('.ab-scroll-mirror').forEach(function(mirror){
+        var id = mirror.dataset.for;
+        var main = document.getElementById(id);
+        if (!main) return;
+        // Set mirror inner width to match table
+        var tbl = main.querySelector('table');
+        if (tbl) mirror.querySelector('.ab-scroll-mirror-inner').style.width = tbl.scrollWidth + 'px';
+        mirror.addEventListener('scroll', function(){ main.scrollLeft = mirror.scrollLeft; });
+        main.addEventListener('scroll', function(){ mirror.scrollLeft = main.scrollLeft; });
+      });
+    });
+  })();
 </script>
 
 </body>
