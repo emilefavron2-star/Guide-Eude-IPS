@@ -14744,6 +14744,16 @@ Carence absolue ou relative en insuline → ↑ Glucagon → ↑ Lipolyse → �
           .abx-search-wrap { position: relative; max-width: 520px; margin-bottom: 6px; }
           .abx-search-wrap input { padding-left: 34px !important; }
           .abx-search-icon { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); color: #94a3b8; font-size: 15px; pointer-events: none; }
+          .abx-sys-search-wrap { position: relative; max-width: 520px; margin-bottom: 10px; }
+          .abx-sys-search-wrap input { width: 100%; padding: 9px 10px 9px 34px; border: 1px solid var(--cream3); border-radius: var(--radius); font-size: 14px; font-family: var(--font); background: #fff; color: var(--ink); box-sizing: border-box; }
+          .abx-sys-search-wrap input:focus { border-color: var(--blue); outline: none; }
+          .abx-sys-search-icon { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); color: #94a3b8; font-size: 15px; pointer-events: none; }
+          .abx-sys-ac-list { position: absolute; top: 100%; left: 0; right: 0; background: #fff; border: 1.5px solid var(--blue); border-radius: var(--radius); z-index: 99; box-shadow: 0 4px 18px rgba(0,0,0,.12); display: none; max-height: 240px; overflow-y: auto; }
+          .abx-sys-ac-list.open { display: block; }
+          .abx-sys-ac-item { padding: 9px 14px; cursor: pointer; font-size: 14px; font-family: var(--font); color: var(--ink); border-bottom: 1px solid #f1f5f9; transition: background .1s; }
+          .abx-sys-ac-item:last-child { border-bottom: none; }
+          .abx-sys-ac-item:hover, .abx-sys-ac-item.focused { background: #e0e7ff; color: var(--blue); font-weight: 600; }
+          .abx-sys-ac-empty { padding: 9px 14px; font-size: 13px; color: #94a3b8; font-style: italic; }
         </style>
 
         <div class="abx-tool" id="abx-tool">
@@ -14800,9 +14810,14 @@ Carence absolue ou relative en insuline → ↑ Glucagon → ↑ Lipolyse → �
             </div>
 
             <!-- Step 2: Syst&egrave;me -->
-            <div class="abx-step" id="abx-step-systeme" style="display:none;">
-              <h4>&#9313; Syst&egrave;me atteint</h4>
-              <p style="font-size:13px;margin-bottom:8px;font-weight:400;">S&eacute;lectionnez le syst&egrave;me concern&eacute; par l&apos;infection :</p>
+            <div class="abx-step" id="abx-step-systeme">
+              <h4>&#9313; Syst&egrave;me atteint &amp; condition clinique</h4>
+              <p style="font-size:13px;margin-bottom:8px;font-weight:400;">Recherchez la pathologie directement <em>ou</em> s&eacute;lectionnez un syst&egrave;me ci-dessous :</p>
+              <div class="abx-sys-search-wrap">
+                <span class="abx-sys-search-icon">&#128269;</span>
+                <input type="text" id="abx-sys-search" placeholder="Ex: pneumonie, cystite, C. diff, méningite..." oninput="abxSysSearch()" onkeydown="abxSysKeyNav(event)" autocomplete="off">
+                <div class="abx-sys-ac-list" id="abx-sys-ac-list"></div>
+              </div>
               <div class="abx-sys-pills">
                 <button class="abx-sys-btn" data-system="respiratoire" onclick="abxSelectSystem('respiratoire')">&#129753; Respiratoire</button>
                 <button class="abx-sys-btn" data-system="orl" onclick="abxSelectSystem('orl')">&#128066; ORL / T&ecirc;te-cou</button>
@@ -14966,6 +14981,84 @@ Carence absolue ou relative en insuline → ↑ Glucagon → ↑ Lipolyse → �
             document.getElementById('abx-step-systeme').style.display = '';
             document.getElementById('abx-result-box').style.display = 'none';
           }
+
+          var abxSysAcIndex = -1;
+          var ABX_SYS_LABELS = {
+            respiratoire: '&#129753; Respiratoire',
+            orl: '&#128066; ORL / T&ecirc;te-cou',
+            urinaire: '&#129752; Urinaire',
+            cutane: '&#129657; Cutan&eacute; / T&eacute;guments',
+            digestif: '&#129440; Digestif',
+            osteo: '&#129460; Ost&eacute;o-articulaire',
+            gyneco: '&#9792; Gyn&eacute;cologique',
+            snc: '&#129504; SNC'
+          };
+          function abxGetAllPatho() {
+            var results = [];
+            Object.keys(ABX_DISEASES).forEach(function(sys) {
+              (ABX_DISEASES[sys] || []).forEach(function(d) {
+                results.push({ sys: sys, v: d.v, l: d.l });
+              });
+            });
+            return results;
+          }
+          function abxSysSearch() {
+            var q = document.getElementById('abx-sys-search').value.trim().toLowerCase();
+            var list = document.getElementById('abx-sys-ac-list');
+            abxSysAcIndex = -1;
+            if (!q) { list.classList.remove('open'); list.innerHTML = ''; return; }
+            var all = abxGetAllPatho();
+            var matches = all.filter(function(p) { return p.l.toLowerCase().includes(q) || p.v.toLowerCase().includes(q); });
+            if (matches.length === 0) {
+              list.innerHTML = '<div class="abx-sys-ac-empty">Aucune pathologie trouv&eacute;e</div>';
+            } else {
+              list.innerHTML = matches.map(function(p) {
+                return '<div class="abx-sys-ac-item" data-sys="' + p.sys + '" data-v="' + p.v + '" onmousedown="abxPathoPickFromAc(\'' + p.sys + '\',\'' + p.v + '\')">'
+                  + '<span style="font-weight:600;">' + p.l + '</span>'
+                  + '<span style="font-size:11px;opacity:.65;margin-left:8px;">' + ABX_SYS_LABELS[p.sys] + '</span>'
+                  + '</div>';
+              }).join('');
+            }
+            list.classList.add('open');
+          }
+          function abxPathoPickFromAc(sys, v) {
+            document.getElementById('abx-sys-search').value = '';
+            document.getElementById('abx-sys-ac-list').classList.remove('open');
+            document.getElementById('abx-sys-ac-list').innerHTML = '';
+            abxSelectSystem(sys);
+            var sel = document.getElementById('abx-pathologie');
+            sel.value = v;
+            abxProcessSelection();
+          }
+          function abxSysKeyNav(e) {
+            var list = document.getElementById('abx-sys-ac-list');
+            var items = list.querySelectorAll('.abx-sys-ac-item');
+            if (!list.classList.contains('open') || items.length === 0) return;
+            if (e.key === 'ArrowDown') {
+              e.preventDefault();
+              abxSysAcIndex = Math.min(abxSysAcIndex + 1, items.length - 1);
+              items.forEach(function(el, i){ el.classList.toggle('focused', i === abxSysAcIndex); });
+            } else if (e.key === 'ArrowUp') {
+              e.preventDefault();
+              abxSysAcIndex = Math.max(abxSysAcIndex - 1, 0);
+              items.forEach(function(el, i){ el.classList.toggle('focused', i === abxSysAcIndex); });
+            } else if (e.key === 'Enter') {
+              e.preventDefault();
+              if (abxSysAcIndex >= 0 && items[abxSysAcIndex]) {
+                var it = items[abxSysAcIndex];
+                abxPathoPickFromAc(it.dataset.sys, it.dataset.v);
+              }
+            } else if (e.key === 'Escape') {
+              list.classList.remove('open'); list.innerHTML = '';
+            }
+          }
+          document.addEventListener('click', function(e) {
+            var wrap = document.getElementById('abx-sys-search');
+            var list = document.getElementById('abx-sys-ac-list');
+            if (wrap && list && !wrap.contains(e.target) && !list.contains(e.target)) {
+              list.classList.remove('open');
+            }
+          });
 
           function abxSelectSystem(sys) {
             abxCurrentSystem = sys;
