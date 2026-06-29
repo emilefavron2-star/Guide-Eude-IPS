@@ -1167,10 +1167,10 @@ m
         <div class="nav-item" onclick="showSection('uro-physio')">Physiologie de la miction</div>
         <div class="nav-item" onclick="showSection('uro-sbau')">SBAU</div>
         <div class="nav-item" onclick="showSection('uro-hbp')">HBP</div>
+        <div class="nav-item" onclick="showSection('uro-cancer-prostate')">Cancer de la prostate</div>
         <div class="nav-item" onclick="showSection('uro-vha')">Vessie hyperactive</div>
         <div class="nav-item" onclick="showSection('uro-incontinence')">Incontinence urinaire</div>
         <div class="nav-item" onclick="showSection('uro-pna')">Pyélonéphrite aiguë</div>
-        <div class="nav-item" onclick="showSection('uro-cancer-prostate')">Cancer de la prostate</div>
         <div class="nav-item" onclick="showSection('uro-iu-recidivante')">IU récidivantes</div>
         <div class="nav-item" onclick="showSection('uro-sgu')">SGU ménopause</div>
         <div class="nav-item" onclick="showSection('uro-orchi')">Orchi-épididymite</div>
@@ -25596,9 +25596,9 @@ TEV &lt; 3 mois</div>
     <div class="section-title"><h1>Sclérose en plaques (SEP)</h1><div class="breadcrumb">Neurologie · Immuno-modulateurs &amp; Suivi</div></div>
   </div>
   <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
-    <button onclick="goToBlock('sep-1')" style="background:#374151;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📌 Dx McDonald 2017</button>
+    <button onclick="goToBlock('sep-1')" style="background:#0a7a4e;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔬 Physiopath.</button>
+    <button onclick="goToBlock('sep-2')" style="background:#374151;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📌 Dx McDonald 2017</button>
     <button onclick="goToBlock('sep-ppms')" style="background:#0369a1;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔵 PPMS</button>
-    <button onclick="goToBlock('sep-2')" style="background:#0a7a4e;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔬 Physiopath.</button>
     <button onclick="goToBlock('sep-3')" style="background:#7c3aed;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">💊 Phase aiguë</button>
     <button onclick="goToBlock('sep-4')" style="background:#b45309;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">💊 DMT</button>
     <button onclick="goToBlock('sep-5')" style="background:#c0392b;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">⚠ Symptômes</button>
@@ -25617,7 +25617,21 @@ TEV &lt; 3 mois</div>
     <div style="background:#ede9fe;border-radius:10px;padding:11px;text-align:center;border-left:4px solid #7c3aed;"><div style="font-size:12px;font-weight:800;color:#7c3aed;">Rituximab</div><div style="font-size:11px;color:#555;margin-top:3px;">Off-label Qc · très utilisé</div></div>
   </div>
   <div class="block def" style="margin-top:14px;">
-    <div class="block-title" id="sep-1"><span class="tag">📌 Critères McDonald 2017</span></div>
+    <div class="block-title" id="sep-1"><span class="tag">🔬 Physiopath. &amp; Présentation</span></div>
+    <div class="content-text"><strong>Physiopathologie :</strong> Maladie auto-immune du SNC → démyélinisation et axonopathie → activation lymphocytes T CD4+ contre myéline → plaques sclérose (périventriculaire, corps calleux, moelle, nerf optique).</div>
+    <table style="margin-top:8px;">
+      <thead><tr><th>Syndrome</th><th>Manifestations</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Névrite optique</strong></td><td>Perte visuelle unilatérale, douleur oculaire, DPAR</td></tr>
+        <tr><td><strong>Tronc cérébral</strong></td><td>Diplopie, dysarthrie, dysphagie, nystagmus, ataxie</td></tr>
+        <tr><td><strong>Médullaire</strong></td><td>Hyperréflexie, Babinski +, parésie, spasticité, troubles sensitifs</td></tr>
+        <tr><td><strong>Signe de Lhermitte</strong></td><td>Décharges électriques descendantes à la flexion du cou</td></tr>
+        <tr><td><strong>Non-moteurs</strong></td><td>Fatigue invalidante, troubles cognitifs, dépression, dysfonction sphinctérienne</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="block def" style="margin-top:14px;">
+    <div class="block-title" id="sep-2"><span class="tag">📌 Critères McDonald 2017</span></div>
     <table>
       <thead><tr><th>Présentation clinique</th><th>Données supplémentaires nécessaires</th></tr></thead>
       <tbody>
@@ -25666,20 +25680,6 @@ TEV &lt; 3 mois</div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="block def" style="margin-top:14px;">
-    <div class="block-title" id="sep-2"><span class="tag">🔬 Physiopath. &amp; Présentation</span></div>
-    <div class="content-text"><strong>Physiopathologie :</strong> Maladie auto-immune du SNC → démyélinisation et axonopathie → activation lymphocytes T CD4+ contre myéline → plaques sclérose (périventriculaire, corps calleux, moelle, nerf optique).</div>
-    <table style="margin-top:8px;">
-      <thead><tr><th>Syndrome</th><th>Manifestations</th></tr></thead>
-      <tbody>
-        <tr><td><strong>Névrite optique</strong></td><td>Perte visuelle unilatérale, douleur oculaire, DPAR</td></tr>
-        <tr><td><strong>Tronc cérébral</strong></td><td>Diplopie, dysarthrie, dysphagie, nystagmus, ataxie</td></tr>
-        <tr><td><strong>Médullaire</strong></td><td>Hyperréflexie, Babinski +, parésie, spasticité, troubles sensitifs</td></tr>
-        <tr><td><strong>Signe de Lhermitte</strong></td><td>Décharges électriques descendantes à la flexion du cou</td></tr>
-        <tr><td><strong>Non-moteurs</strong></td><td>Fatigue invalidante, troubles cognitifs, dépression, dysfonction sphinctérienne</td></tr>
-      </tbody>
-    </table>
   </div>
   <div class="block tx">
     <div class="block-title" id="sep-3"><span class="tag">💊 Phase aiguë — Traitement poussée</span></div>
@@ -25830,7 +25830,7 @@ TEV &lt; 3 mois</div>
   </div>
   <div class="block def" style="margin-top:14px;">
     <div class="block-title" id="mig-1"><span class="tag">📌 Physiopath. &amp; Types</span></div>
-    <div class="content-text"><strong>Physiopath. :</strong> Activation système trigémino-vasculaire → libération CGRP + substance P → inflammation neurogène et vasodilatation méningée → sensibilisation centrale et périphérique.</div>
+    <div class="content-text"><strong>Physiopath. :</strong> Activation syst&egrave;me trig&eacute;mino-vasculaire &rarr; lib&eacute;ration CGRP + substance P &rarr; inflammation neurog&egrave;ne et vasodilatation m&eacute;ning&eacute;e &rarr; sensibilisation centrale et p&eacute;riph&eacute;rique.<br><br><strong>D&eacute;pression corticale envahissante (DCE) &mdash; m&eacute;canisme de l&apos;aura :</strong> Vague d&apos;hypereactivit&eacute; neuronale auto-propag&eacute;e &agrave; travers le cortex c&eacute;r&eacute;bral (&asymp; 3 mm/min), suivie d&apos;une phase d&apos;inhibition prolong&eacute;e &rarr; g&eacute;n&egrave;re les sympt&ocirc;mes d&apos;aura (visuels, sensitifs, aphasie). La DCE active ensuite le nerf trijumeau (V) qui innerve les vaisseaux m&eacute;ning&eacute;s &rarr; lib&eacute;ration CGRP &rarr; douleur pulsatile.<br><br><strong>Sensibilisation centrale :</strong> Stimulation persistante du V &rarr; sensibilisation p&eacute;riph&eacute;rique, puis centrale (tronc c&eacute;r&eacute;bral + thalamus) &rarr; photophobie, phonophobie, allodynie cutanée.</div>
     <table style="margin-top:8px;">
       <thead><tr><th>Type</th><th>Définition</th></tr></thead>
       <tbody>
@@ -25849,9 +25849,30 @@ TEV &lt; 3 mois</div>
         <tr><td><strong>Douleur</strong></td><td>Fronto-temporale, unilatérale, pulsatile, modérée à sévère, durée 4–72h</td></tr>
         <tr><td><strong>Sx associés</strong></td><td>Nausées/vomissements · Photophobie ET phonophobie · Aggravation à l'effort</td></tr>
         <tr><td><strong>Aura (30%)</strong></td><td>Scotome scintillant, paresthésies, aphasie transitoire · Précède la douleur 20–60 min</td></tr>
-        <tr><td><strong>Déclenchants</strong></td><td>Stress, perturbations sommeil, menstruations, jeûne, alcool, lumière vive</td></tr>
+        <tr><td><strong>D&eacute;clenchants</strong></td><td>Stress, perturbations sommeil, menstruations, je&ucirc;ne, alcool, lumi&egrave;re vive</td></tr>
       </tbody>
     </table>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px;">
+      <div style="background:#ede9fe;border-radius:10px;padding:12px;border-left:4px solid #7c3aed;">
+        <div style="font-weight:700;color:#5b21b6;font-size:12px;margin-bottom:8px;">ICHD-3 &mdash; Migraine <em>sans aura</em> (1.1)</div>
+        <div style="font-size:12px;line-height:1.7;color:#374151;">
+          <strong>A.</strong> &ge;5 crises r&eacute;pondant aux crit&egrave;res B&ndash;D<br>
+          <strong>B.</strong> Dur&eacute;e 4&ndash;72h (non trait&eacute;e)<br>
+          <strong>C.</strong> &ge;2 parmi : unilatérale &middot; pulsatile &middot; mod&eacute;r&eacute;e &agrave; s&eacute;v&egrave;re &middot; aggrav&eacute;e activit&eacute;<br>
+          <strong>D.</strong> &ge;1 parmi : naus&eacute;es/vo OU photo + phonophobie<br>
+          <strong>E.</strong> Non mieux expliqu&eacute;e par autre Dx ICHD-3
+        </div>
+      </div>
+      <div style="background:#f0fdf4;border-radius:10px;padding:12px;border-left:4px solid #16a34a;">
+        <div style="font-weight:700;color:#15803d;font-size:12px;margin-bottom:8px;">ICHD-3 &mdash; Migraine <em>avec aura</em> (1.2)</div>
+        <div style="font-size:12px;line-height:1.7;color:#374151;">
+          <strong>A.</strong> &ge;2 crises r&eacute;pondant aux crit&egrave;res B&ndash;C<br>
+          <strong>B.</strong> &ge;1 sx d&apos;aura r&eacute;versible : visuel, sensitif, langage, moteur, tronc c&eacute;r&eacute;bral<br>
+          <strong>C.</strong> &ge;3 des 6 : (1) d&eacute;but progressif &ge;5 min &middot; (2) &ge;2 sx successifs &middot; (3) dur&eacute;e 5&ndash;60 min &middot; (4) unilat&eacute;ral &middot; (5) sx positif (scotome, paresthésies) &middot; (6) aura suivie d&apos;une c&eacute;phal&eacute;e (&le;60 min)<br>
+          <strong>Migraine chronique :</strong> &ge;15 j/mois &times; &gt;3 mois dont &ge;8 j migraineux
+        </div>
+      </div>
+    </div>
   </div>
   <div class="block tx">
     <div class="block-title" id="mig-3"><span class="tag">💊 Traitement abortif — 4 lignes</span></div>
@@ -26459,6 +26480,7 @@ Journal des céphalées : fréquence, intensité, facteurs déclenchants</div>
 
       <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
         <button onclick="goToBlock('ver-def')" style="background:#4c1d95;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📌 Définitions</button>
+        <button onclick="goToBlock('ver-class')" style="background:#0369a1;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🎯 Classification</button>
         <button onclick="goToBlock('ver-1')" style="background:#374151;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔬 HINTS</button>
         <button onclick="goToBlock('ver-2')" style="background:#6d28d9;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔍 DDx Périphérique</button>
         <button onclick="goToBlock('ver-3')" style="background:#c0392b;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">⚠️ DDx Central</button>
@@ -26488,6 +26510,37 @@ Journal des céphalées : fréquence, intensité, facteurs déclenchants</div>
         <div class="key-fact blue" style="margin-top:10px;"><strong>Question clé :</strong> «Avez-vous l&apos;impression que la pièce tourne autour de vous / que vous tournez ?» &rarr; Oui = vertige vrai vestibulaire &rarr; distinguer périphérique vs central. Non &rarr; étourdissement / présyncope / déséquilibre.</div>
       </div>
 
+      <div class="block def" style="margin-top:14px;" id="ver-class">
+        <div class="block-title"><span class="tag">🎯 Classification syndromique &amp; Approche TiTrATE</span></div>
+        <div class="key-fact blue" style="margin-bottom:10px;">L&apos;approche moderne du vertige classe les syndromes vestibulaires selon leur <strong>timing</strong> (aigu continu vs &eacute;pisodique vs chronique) plut&ocirc;t que l&apos;anatomie (p&eacute;riph&eacute;rique vs central). La m&eacute;thode TiTrATE structure l&apos;&eacute;valuation.</div>
+        <table style="margin-top:8px;">
+          <thead><tr><th>Syndrome</th><th>Timing</th><th>Dur&eacute;e</th><th>Causes p&eacute;riph&eacute;riques</th><th>Causes centrales</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Vestibulaire aigu</strong></td><td>Apparition soudaine, continu</td><td>Jours &agrave; semaines</td><td>N&eacute;vrite vestibulaire, labyrinthite</td><td>AVC (PICA/AICA), toxicit&eacute; m&eacute;dicamenteuse, Wernicke</td></tr>
+            <tr style="background:#f8f9fa;"><td><strong>Vestibulaire &eacute;pisodique</strong></td><td>R&eacute;current, interm&ittent</td><td>Secondes &agrave; heures</td><td>VPPB (&lt;1 min), M&eacute;ni&egrave;re (30 min&ndash;12h), migraine vestibulaire</td><td>AIT vert&eacute;brobasilaire, paroxysmie vestibulaire, arythmie</td></tr>
+            <tr><td><strong>Vestibulaire chronique</strong></td><td>Persistant (&gt;3 mois)</td><td>Semaines &agrave; ann&eacute;es</td><td>&Eacute;tourdi. postural perceptuel persistant (3P), vestibulopathie bilat., mal de d&eacute;barquement</td><td>N&eacute;oplasme fosse post., ataxie c&eacute;r&eacute;belleuse, effets tardifs AVC</td></tr>
+          </tbody>
+        </table>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-top:14px;">
+          <div style="background:#ede9fe;border-radius:10px;padding:12px;border-left:4px solid #7c3aed;">
+            <div style="font-weight:700;color:#5b21b6;margin-bottom:6px;font-size:12px;">⏱ <strong>T</strong>iming</div>
+            <div style="font-size:12px;color:#374151;line-height:1.6;">D&eacute;but, dur&eacute;e, &eacute;volution. Continu vs par crises vs permanent. Aigu soudain &rarr; AVC ou n&eacute;vrite.</div>
+          </div>
+          <div style="background:#e8f4fd;border-radius:10px;padding:12px;border-left:4px solid #0369a1;">
+            <div style="font-weight:700;color:#0369a1;margin-bottom:6px;font-size:12px;">⚡ <strong>Ti</strong>gger</div>
+            <div style="font-size:12px;color:#374151;line-height:1.6;">Ce qui d&eacute;clenche ou aggrave. Changement de position (VPPB), mouvement t&ecirc;te (n&eacute;vrite), céphalée (migraine vest.).</div>
+          </div>
+          <div style="background:#f0fdf4;border-radius:10px;padding:12px;border-left:4px solid #16a34a;">
+            <div style="font-weight:700;color:#15803d;margin-bottom:6px;font-size:12px;">🔗 <strong>A</strong>ssociated Sx</div>
+            <div style="font-size:12px;color:#374151;line-height:1.6;">N/V, nystagmus, perte auditive, acouph&egrave;nes, c&eacute;phal&eacute;e, photo/phonophobie, sx focaux neurologiques.</div>
+          </div>
+          <div style="background:#fff3cd;border-radius:10px;padding:12px;border-left:4px solid #d97706;">
+            <div style="font-weight:700;color:#92400e;margin-bottom:6px;font-size:12px;">🩺 <strong>T</strong>argeted Exam</div>
+            <div style="font-size:12px;color:#374151;line-height:1.6;">HINTS si aigu continu. Dix-Hallpike si positionnel. Chercher sch&eacute;mas r&eacute;p&eacute;titifs. Examen neuro cibl&eacute;.</div>
+          </div>
+        </div>
+      </div>
+
       <div class="block clin" style="margin-top:14px;">
         <div class="block-title" id="ver-1"><span class="tag">🔬 Examen HINTS — Vertige aigu continu (central vs périphérique)</span></div>
         <div class="key-fact green" style="margin-bottom:8px;"><strong>HINTS</strong> (Head Impulse &middot; Nystagmus &middot; Test of Skew) &mdash; Supérieur au TDM pour AVC ischémique cérébelleux dans les premières 48h. S&apos;applique au <em>vertige aigu continu</em> (pas au VPPB positionnel).</div>
@@ -26513,10 +26566,11 @@ Journal des céphalées : fréquence, intensité, facteurs déclenchants</div>
       <div class="block clin" style="margin-top:14px;">
         <div class="block-title" id="ver-2"><span class="tag">🔍 DDx — Vertiges périphériques</span></div>
         <div style="display:flex;gap:6px;flex-wrap:wrap;margin:8px 0 12px;">
-          <button onclick="showPanel('vp','vp0',4)" data-panel="vp0" style="background:#1e7a6b;color:#fff;border:1.5px solid #1e7a6b;border-radius:20px;padding:5px 13px;cursor:pointer;font-size:12px;font-weight:600;">VPPB</button>
-          <button onclick="showPanel('vp','vp1',4)" data-panel="vp1" style="background:var(--cream2);color:var(--ink);border:1.5px solid #1e7a6b;border-radius:20px;padding:5px 13px;cursor:pointer;font-size:12px;font-weight:600;">Névrite vestibulaire</button>
-          <button onclick="showPanel('vp','vp2',4)" data-panel="vp2" style="background:var(--cream2);color:var(--ink);border:1.5px solid #1e7a6b;border-radius:20px;padding:5px 13px;cursor:pointer;font-size:12px;font-weight:600;">Maladie de Ménière</button>
-          <button onclick="showPanel('vp','vp3',4)" data-panel="vp3" style="background:var(--cream2);color:var(--ink);border:1.5px solid #1e7a6b;border-radius:20px;padding:5px 13px;cursor:pointer;font-size:12px;font-weight:600;">Migraine vestibulaire</button>
+          <button onclick="showPanel('vp','vp0',5)" data-panel="vp0" style="background:#1e7a6b;color:#fff;border:1.5px solid #1e7a6b;border-radius:20px;padding:5px 13px;cursor:pointer;font-size:12px;font-weight:600;">VPPB</button>
+          <button onclick="showPanel('vp','vp1',5)" data-panel="vp1" style="background:var(--cream2);color:var(--ink);border:1.5px solid #1e7a6b;border-radius:20px;padding:5px 13px;cursor:pointer;font-size:12px;font-weight:600;">Névrite vestibulaire</button>
+          <button onclick="showPanel('vp','vp2',5)" data-panel="vp2" style="background:var(--cream2);color:var(--ink);border:1.5px solid #1e7a6b;border-radius:20px;padding:5px 13px;cursor:pointer;font-size:12px;font-weight:600;">Maladie de Ménière</button>
+          <button onclick="showPanel('vp','vp3',5)" data-panel="vp3" style="background:var(--cream2);color:var(--ink);border:1.5px solid #1e7a6b;border-radius:20px;padding:5px 13px;cursor:pointer;font-size:12px;font-weight:600;">Migraine vestibulaire</button>
+          <button onclick="showPanel('vp','vp4',5)" data-panel="vp4" style="background:var(--cream2);color:var(--ink);border:1.5px solid #1e7a6b;border-radius:20px;padding:5px 13px;cursor:pointer;font-size:12px;font-weight:600;">Labyrinthite</button>
         </div>
         <div id="vp0">
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:8px;">
@@ -26566,6 +26620,18 @@ Journal des céphalées : fréquence, intensité, facteurs déclenchants</div>
             </div>
           </div>
         </div>
+        <div id="vp4" style="display:none;">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:8px;">
+            <div style="background:#e8f4fd;border-radius:10px;padding:14px;">
+              <div style="font-weight:700;font-size:13px;color:#0369a1;margin-bottom:8px;">Physiopathologie &amp; Clinique</div>
+              <div style="font-size:12px;line-height:1.7;color:#374151;"><strong>M&eacute;canisme :</strong> Inflammation virale (rhinovirus, grippe) du labyrinthe membraneux &mdash; ATCD IVRS dans 15% des cas<br><strong>Dur&eacute;e :</strong> Jours &agrave; semaines (syndrome vestibulaire aigu)<br><strong>Clinique :</strong> Vertige soudain + N/V + <strong>perte auditive unilatérale aiguë</strong> (distingue de la névrite vestibulaire) &plusmn; acouph&egrave;nes<br><strong>Exam :</strong> HINTS p&eacute;riph&eacute;rique (HIT +, nystagmus unidirectionnel vers c&ocirc;t&eacute; sain, skew absent)<br><strong>Audiogramme :</strong> Surdité de perception unilatérale (requis pour confirmer)</div>
+            </div>
+            <div style="background:#f0fdf4;border-radius:10px;padding:14px;">
+              <div style="font-weight:700;font-size:13px;color:#15803d;margin-bottom:8px;">Traitement &amp; Diff&eacute;rence cl&eacute;</div>
+              <div style="font-size:12px;line-height:1.7;color:#374151;"><strong>Phase aiguë (&lt;72h) :</strong><br>&rarr; M&eacute;thylprednisolone 100 mg d&eacute;gressif &times; 21j<br>&rarr; Antivertigineux max 72h : dim&eacute;nhydrinate 50mg q4&ndash;6h PRN<br>&rarr; Ond ans&eacute;tron si N/V sévère<br><strong>Distinction n&eacute;vrite vestibulaire :</strong><br>&rarr; N&eacute;vrite = PAS de perte auditive<br>&rarr; Labyrinthite = perte auditive + vertige<br><strong>R&eacute;f&eacute;rence ORL :</strong> Si perte auditive persistante &gt; 2 semaines</div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="block para" style="margin-top:14px;">
@@ -26581,7 +26647,9 @@ Journal des céphalées : fréquence, intensité, facteurs déclenchants</div>
           </tbody>
         </table>
         <div class="flag-list" style="margin-top:10px;">
-          <div class="flag-item"><span class="fi-icon">🚨</span><span><strong>Red flags (AVC) :</strong> HINTS central · Céphalée subite intense · Diplopie · Dysphagie · Déficit moteur/sensitif · Ataxie sévère · ATCD FA/FDR cardiovasculaires &rarr; IRM urgente</span></div>
+          <div class="flag-item"><span class="fi-icon">🚨</span><span><strong>Red flags (AVC) :</strong> HINTS central &middot; C&eacute;phal&eacute;e subite intense &middot; Diplopie &middot; Dysphagie &middot; D&eacute;ficit moteur/sensitif &middot; Ataxie s&eacute;v&egrave;re &middot; ATCD FA/FDR cardiovasculaires &rarr; IRM urgente</span></div>
+          <div class="flag-item"><span class="fi-icon">👁</span><span><strong>Syndrome de Horner ipsilat&eacute;ral :</strong> Triade &mdash; ptosis (chute paupi&egrave;re sup.) + myosis (r&eacute;tr&eacute;cissement pupille) + anhidrose (dim. sudation) du m&ecirc;me c&ocirc;t&eacute; &rarr; Interruption voie sympathique oculaire &rarr; Infarctus bulbe lat&eacute;ral (PICA) &rarr; IRM urgente</span></div>
+          <div class="flag-item"><span class="fi-icon">🔊</span><span><strong>Nystagmus central :</strong> Multidirectionnel OU vertical pur OU change de direction avec le regard &rarr; contrairement au nystagmus p&eacute;riph&eacute;rique (unidirectionnel, horizontal, dim. &agrave; la fixation)</span></div>
         </div>
       </div>
 
@@ -27788,14 +27856,14 @@ Journal des céphalées : fréquence, intensité, facteurs déclenchants</div>
             <thead><tr><th>Mol&eacute;cule</th><th>Nom comm.</th><th>Couverture RAMQ</th><th>P&eacute;n&eacute;tration SNC</th><th>Particularit&eacute;s cliniques</th></tr></thead>
             <tbody>
               <tr style="background:#f0fdf4;">
-                <td><strong>Solifeénaciine</strong></td><td>Vesicare 5-10 mg die</td>
+                <td><strong>Solifénacine</strong></td><td>Vesicare 5-10 mg die</td>
                 <td><span style="background:#15803d;color:#fff;border-radius:10px;padding:2px 7px;font-size:10px;">RAMQ 1re intention</span></td>
                 <td>Mod&eacute;r&eacute;e</td><td>Bien tol&eacute;r&eacute;e · 1 comprim&eacute;/j · Titration facile</td>
               </tr>
               <tr>
                 <td><strong>Tolt&eacute;rodine LP</strong></td><td>Detrol LA 4 mg die</td>
                 <td><span style="background:#15803d;color:#fff;border-radius:10px;padding:2px 7px;font-size:10px;">RAMQ 1re intention</span></td>
-                <td>Mod&eacute;r&eacute;e</td><td>Efficacit&eacute; &eacute;quivalente &agrave; solifeénaciine</td>
+                <td>Mod&eacute;r&eacute;e</td><td>Efficacit&eacute; &eacute;quivalente &agrave; solifénacine</td>
               </tr>
               <tr style="background:#f8f9fa;">
                 <td><strong>Darifénacine</strong></td><td>Enablex 7,5-15 mg die</td>
@@ -27810,7 +27878,7 @@ Journal des céphalées : fréquence, intensité, facteurs déclenchants</div>
               <tr style="background:#f8f9fa;">
                 <td><strong>F&eacute;sot&eacute;rodine</strong></td><td>Toviaz 4-8 mg die</td>
                 <td>RAMQ si antimusc. mal tol&eacute;r&eacute;</td>
-                <td>Mod&eacute;r&eacute;e</td><td>Si solifeénaciine/tolt&eacute;rodine mal tol&eacute;r&eacute;s</td>
+                <td>Mod&eacute;r&eacute;e</td><td>Si solifénacine/tolt&eacute;rodine mal tol&eacute;r&eacute;s</td>
               </tr>
               <tr>
                 <td><strong>Oxybutynine IR</strong></td><td>Ditropan 5 mg BID-TID</td>
@@ -27819,7 +27887,7 @@ Journal des céphalées : fréquence, intensité, facteurs déclenchants</div>
               </tr>
             </tbody>
           </table>
-          <div class="key-fact orange" style="margin-top:8px;">⚠️ <strong>Effets secondaires antimuscariniques :</strong> S&eacute;cheresse buccale · Vision trouble · Constipation · R&eacute;tention urinaire · <strong>D&eacute;ficit cognitif (EVITER oxybutynine chez &acirc;g&eacute;s!)</strong><br>P&eacute;n&eacute;tration SNC (du moins au plus) : Trospium &lt; Darifénacine &lt; Solifeénaciine &lt; Tolt&eacute;rodine &lt; Oxybutynine</div>
+          <div class="key-fact orange" style="margin-top:8px;">⚠️ <strong>Effets secondaires antimuscariniques :</strong> S&eacute;cheresse buccale · Vision trouble · Constipation · R&eacute;tention urinaire · <strong>D&eacute;ficit cognitif (EVITER oxybutynine chez &acirc;g&eacute;s!)</strong><br>P&eacute;n&eacute;tration SNC (du moins au plus) : Trospium &lt; Darifénacine &lt; Solifénacine &lt; Tolt&eacute;rodine &lt; Oxybutynine</div>
         </div>
 
         <div id="ap552" style="display:none;">
@@ -27889,6 +27957,7 @@ Journal des céphalées : fréquence, intensité, facteurs déclenchants</div>
     <button onclick="goToBlock('inc-1')" style="background:#374151;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📌 Types</button>
     <button onclick="goToBlock('inc-2')" style="background:#6d28d9;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🩺 Évaluation</button>
     <button onclick="goToBlock('inc-3')" style="background:#0a7a4e;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">💊 Traitement</button>
+    <button onclick="goToBlock('inc-nycturie')" style="background:#0369a1;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🌙 Nycturie</button>
     <button onclick="goToBlock('inc-4')" style="background:#c0392b;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🚨 Red Flags</button>
   </div>
 
@@ -27975,6 +28044,87 @@ Journal des céphalées : fréquence, intensité, facteurs déclenchants</div>
       </table>
     </div>
     <div class="key-fact orange" style="margin-top:10px;">⚠️ <strong>Critères STOPP :</strong> Éviter oxybutynine, tolterodine, fesoterodine chez personne âgée (risque chutes, confusion, rétention urinaire).</div>
+  </div>
+
+  
+  <div class="block para" id="inc-nycturie" style="margin-top:14px;">
+    <div class="block-title"><span class="tag">🌙 Nycturie</span></div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px;margin-top:10px;">
+      <div style="background:#e8f4fd;border-radius:10px;padding:14px;">
+        <h4 style="margin:0 0 8px;color:#1e40af;">Définition</h4>
+        <p style="margin:0;">Toute miction <strong>après le coucher et avant le réveil</strong>. Cliniquement significative à partir de <strong>≥ 2 mictions/nuit</strong> (surtout ≥ 3 = incommodant).</p>
+      </div>
+      <div style="background:#f0fdf4;border-radius:10px;padding:14px;">
+        <h4 style="margin:0 0 8px;color:#166534;">Outil diagnostic</h4>
+        <ul style="margin:0;padding-left:18px;">
+          <li><strong>Calendrier mictionnel</strong> — volume et horaire de chaque miction sur 3 jours</li>
+          <li>Polyurie nocturne = &gt; 25% du volume urinaire quotidien la nuit</li>
+          <li>Analyse d'urine + culture si suspicion IU</li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="margin-top:12px;">
+      <h4 style="margin:0 0 8px;color:#374151;">Diagnostic différentiel — Causes</h4>
+      <table style="width:100%;border-collapse:collapse;font-size:13px;">
+        <thead>
+          <tr style="background:#f8f9fa;">
+            <th style="padding:8px 10px;text-align:left;border-bottom:2px solid #dee2e6;">Cause</th>
+            <th style="padding:8px 10px;text-align:left;border-bottom:2px solid #dee2e6;">Indices diagnostiques</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td style="padding:7px 10px;border-bottom:1px solid #eee;">VHA</td><td style="padding:7px 10px;border-bottom:1px solid #eee;">Sx irritatifs de jour identiques (urgences, pollakiurie)</td></tr>
+          <tr style="background:#f8f9fa;"><td style="padding:7px 10px;border-bottom:1px solid #eee;">HBP</td><td style="padding:7px 10px;border-bottom:1px solid #eee;">Sx obstructifs de jour (jet faible, hésitation, résidu)</td></tr>
+          <tr><td style="padding:7px 10px;border-bottom:1px solid #eee;">Infection urinaire</td><td style="padding:7px 10px;border-bottom:1px solid #eee;">Analyse et culture d'urine positive</td></tr>
+          <tr style="background:#f8f9fa;"><td style="padding:7px 10px;border-bottom:1px solid #eee;">Petite capacité vésicale</td><td style="padding:7px 10px;border-bottom:1px solid #eee;">Volumes mictionnels &lt; 150 mL au calendrier</td></tr>
+          <tr><td style="padding:7px 10px;border-bottom:1px solid #eee;">Polyurie nocturne (&gt;25% vol./j)</td><td style="padding:7px 10px;border-bottom:1px solid #eee;">Insensibilité ADH, IRC, œdème périphérique, IC, DB mal contrôlé</td></tr>
+          <tr style="background:#f8f9fa;"><td style="padding:7px 10px;border-bottom:1px solid #eee;">Trouble du sommeil</td><td style="padding:7px 10px;border-bottom:1px solid #eee;">Fatigue, ronflements, apnée (se réveille puis urine, non l'inverse)</td></tr>
+          <tr><td style="padding:7px 10px;">Diurétiques</td><td style="padding:7px 10px;">Revue médicamenteuse — heure de prise (diurétique le soir ?)</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div style="margin-top:14px;">
+      <h4 style="margin:0 0 10px;color:#374151;">Traitement — Polyurie nocturne : Desmopressine (DDAVP)</h4>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;">
+        <div style="background:#ede9fe;border-radius:10px;padding:14px;">
+          <h4 style="margin:0 0 8px;color:#5b21b6;">Mécanisme &amp; indication</h4>
+          <ul style="margin:0;padding-left:18px;">
+            <li>Analogue de l'ADH (vasopressine) → ↓ diurèse nocturne → ↑ diurèse diurne</li>
+            <li><strong>Indication stricte</strong> : polyurie nocturne (&gt;25% du volume quotidien)</li>
+            <li>Prendre <strong>2h avant le sommeil</strong></li>
+            <li>Limiter les apports liquidiens le soir</li>
+          </ul>
+        </div>
+        <div style="background:#fff3cd;border-radius:10px;padding:14px;">
+          <h4 style="margin:0 0 8px;color:#856404;">⚠️ Risques &amp; surveillance</h4>
+          <ul style="margin:0;padding-left:18px;">
+            <li><strong>Risque principal : Hyponatrémie</strong></li>
+            <li>Attention ≥ 65 ans et femmes (risque ↑)</li>
+            <li>Précaution : IC, diabète</li>
+            <li>Na⁺ pré-traitement; électrolytes à 3–7 j post-initiation/augmentation dose</li>
+            <li>Contrôle à 1 mois, puis périodique</li>
+          </ul>
+        </div>
+      </div>
+      <table style="width:100%;border-collapse:collapse;font-size:13px;margin-top:10px;">
+        <thead>
+          <tr style="background:#f8f9fa;">
+            <th style="padding:8px 10px;text-align:left;border-bottom:2px solid #dee2e6;">Formulation</th>
+            <th style="padding:8px 10px;text-align:left;border-bottom:2px solid #dee2e6;">Dose</th>
+            <th style="padding:8px 10px;text-align:left;border-bottom:2px solid #dee2e6;">Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td style="padding:7px 10px;border-bottom:1px solid #eee;">DDAVP PO</td><td style="padding:7px 10px;border-bottom:1px solid #eee;">0,1 / 0,2 / 0,4 mg</td><td style="padding:7px 10px;border-bottom:1px solid #eee;">Effet de premier passage — moins biodisponible</td></tr>
+          <tr style="background:#f8f9fa;"><td style="padding:7px 10px;border-bottom:1px solid #eee;">DDAVP-melt (sublinguale)</td><td style="padding:7px 10px;border-bottom:1px solid #eee;">Dose initiale 0,6 mcg</td><td style="padding:7px 10px;border-bottom:1px solid #eee;">Moins de risque d'hyponatrémie; NPS-C — <strong>préférée</strong></td></tr>
+          <tr><td style="padding:7px 10px;">DDAVP intranasale</td><td style="padding:7px 10px;">0,83 / 1,66 mcg</td><td style="padding:7px 10px;">Moins d'hyponatrémie; NPS-C</td></tr>
+        </tbody>
+      </table>
+      <div class="key-fact blue" style="margin-top:10px;">💡 <strong>Rappel</strong> : La nycturie due à VHA ou HBP se traite en traitant la cause sous-jacente — la desmopressine est réservée à la polyurie nocturne vraie (ADH insuffisant/insensibilité).</div>
+    </div>
   </div>
 
   <div class="block flag" style="margin-top:14px;">
@@ -28096,18 +28246,53 @@ Journal des céphalées : fréquence, intensité, facteurs déclenchants</div>
             
         </div>
         <div id="ap562" style="display:none;">
-
-              <table style="font-size:12px;">
-                <thead><tr><th>Situation</th><th>Antibiotique de 1re intention</th><th>Durée</th></tr></thead>
-                <tbody>
-                  <tr><td><strong>PNA non compliquée (femme)</strong></td><td><span class="drug-badge line1">Ciprofloxacine 500 mg PO BID</span> ou TMP-SMX PO (si sensibilité connue)</td><td>7 jours (cipro) / 14 jours (TMP-SMX)</td></tr>
-                  <tr><td><strong>PNA non compliquée (alternative PO)</strong></td><td><span class="drug-badge line2">Céfixime 400 mg PO die</span> ou amoxicilline-clavulanate</td><td>10–14 jours</td></tr>
-                  <tr><td><strong>PNA compliquée / hospitalisation IV</strong></td><td><span class="drug-badge warn">Céfazoline 2g IV q8h</span> ou ceftriaxone 2g IV die</td><td>10–14 jours (PO relais dès possible)</td></tr>
-                  <tr><td><strong>Sepsis / choc</strong></td><td>Pipéracilline-tazobactam ou carbapénème selon résistances locales</td><td>Jusqu'à stabilisation + relais PO guidé par culture</td></tr>
-                </tbody>
-              </table>
-              <div class="key-fact blue" style="margin-top:8px;">💡 Toujours ajuster selon les sensibilités locales (antibiogramme) · Bilan urinaire (culture + sensibilité) avant ATB · Hémocultures si sepsis · Réévaluer à 48–72 h</div>
-            
+          <div style="background:#e8f4fd;border-radius:8px;padding:10px 14px;border-left:4px solid #0369a1;margin-bottom:12px;">
+            <strong style="color:#0369a1;">📌 PROCESSUS DÉCISIONNEL — CHOIX DE L'ANTIBIOTIQUE (INESS)</strong>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:8px;margin-top:8px;font-size:12px;">
+              <div>🏠 <strong>Communautaire vs nosocomiale</strong></div>
+              <div>🌍 <strong>Géographie</strong> (voyage Asie / hospitalisation récente → germes résistants)</div>
+              <div>🩺 <strong>Comorbidités</strong> (diabète, IRC, immunosuppression)</div>
+              <div>🔬 <strong>Infections antérieures</strong> (sensibilités connues)</div>
+              <div>💊 <strong>ATB récents</strong> (favorise résistance)</div>
+              <div>🚨 <strong>Sévérité</strong> de l'infection</div>
+            </div>
+          </div>
+          <div style="background:#fff3cd;border-radius:8px;padding:10px;margin-bottom:12px;font-size:12px;">
+            <strong>Données de résistance d'<em>E. coli</em> au Québec :</strong>
+            <table style="width:100%;margin-top:6px;font-size:11px;border-collapse:collapse;">
+              <thead><tr style="background:#f59e0b;color:#fff;"><th style="padding:5px 8px;text-align:left;">Antibiotique</th><th style="padding:5px 8px;text-align:center;">Résistance</th></tr></thead>
+              <tbody>
+                <tr><td style="padding:5px 8px;">Fosfomycine (trométhamine)</td><td style="padding:5px 8px;text-align:center;">&lt;5 %</td></tr>
+                <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">Nitrofurantoïne</td><td style="padding:5px 8px;text-align:center;">5–10 %</td></tr>
+                <tr><td style="padding:5px 8px;">Ciprofloxacine</td><td style="padding:5px 8px;text-align:center;">10–15 %</td></tr>
+                <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">TMP-SMX</td><td style="padding:5px 8px;text-align:center;">15–20 %</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <table style="font-size:12px;width:100%;border-collapse:collapse;">
+            <thead>
+              <tr style="background:#1e293b;color:#fff;"><th colspan="4" style="padding:8px 10px;text-align:center;">ANTIBIOTHÉRAPIE DE LA PNA NON COMPLIQUÉE ET DES IU COMPLIQUÉES OU À RISQUE</th></tr>
+              <tr style="background:#374151;color:#fff;"><th style="padding:7px 10px;text-align:left;">Antibiotique</th><th style="padding:7px 10px;text-align:left;">Posologie</th><th style="padding:7px 10px;text-align:center;">Cystite</th><th style="padding:7px 10px;text-align:center;">PNA</th></tr>
+              <tr style="background:#0369a1;color:#fff;"><td colspan="4" style="padding:5px 10px;font-weight:700;font-size:11px;">🟢 1RE INTENTION — Fluoroquinolones</td></tr>
+            </thead>
+            <tbody>
+              <tr style="background:#f0fdf4;"><td style="padding:7px 10px;border-bottom:1px solid #eee;"><strong>Ciprofloxacine</strong></td><td style="padding:7px 10px;border-bottom:1px solid #eee;">500 mg PO BID</td><td style="padding:7px 10px;border-bottom:1px solid #eee;text-align:center;" rowspan="3">—</td><td style="padding:7px 10px;border-bottom:1px solid #eee;text-align:center;" rowspan="3">Femme : 7 j<br>Homme : 10–14 j</td></tr>
+              <tr style="background:#f0fdf4;"><td style="padding:7px 10px;border-bottom:1px solid #eee;"><strong>Ciprofloxacine XL</strong></td><td style="padding:7px 10px;border-bottom:1px solid #eee;">1 000 mg PO DIE</td></tr>
+              <tr style="background:#f0fdf4;"><td style="padding:7px 10px;border-bottom:2px solid #94a3b8;"><strong>Lévofloxacine</strong></td><td style="padding:7px 10px;border-bottom:2px solid #94a3b8;">500 mg PO DIE</td></tr>
+              <tr style="background:#fef3c7;"><td colspan="4" style="padding:5px 10px;font-weight:700;font-size:11px;color:#92400e;">🟡 APRÈS OBTENTION DE L'ANTIBIOGRAMME UNIQUEMENT</td></tr>
+              <tr><td style="padding:7px 10px;border-bottom:1px solid #eee;"><strong>TMP-SMX</strong></td><td style="padding:7px 10px;border-bottom:1px solid #eee;">160/800 mg PO BID</td><td style="padding:7px 10px;border-bottom:1px solid #eee;text-align:center;">7–10 j</td><td style="padding:7px 10px;border-bottom:1px solid #eee;text-align:center;">10–14 j</td></tr>
+              <tr style="background:#f8f9fa;"><td colspan="4" style="padding:5px 10px;font-size:11px;color:#374151;font-style:italic;">Bêta-lactamines (après antibiogramme seulement)</td></tr>
+              <tr><td style="padding:7px 10px;border-bottom:1px solid #eee;"><strong>Amoxicilline-clavulanate</strong></td><td style="padding:7px 10px;border-bottom:1px solid #eee;">875/125 mg PO BID</td><td colspan="2" style="padding:7px 10px;border-bottom:1px solid #eee;text-align:center;" rowspan="4">10–14 j</td></tr>
+              <tr style="background:#f8f9fa;"><td style="padding:7px 10px;border-bottom:1px solid #eee;"><strong>Céfadroxil</strong></td><td style="padding:7px 10px;border-bottom:1px solid #eee;">500 mg PO BID</td></tr>
+              <tr><td style="padding:7px 10px;border-bottom:1px solid #eee;"><strong>Céfixime</strong></td><td style="padding:7px 10px;border-bottom:1px solid #eee;">400 mg PO DIE</td></tr>
+              <tr style="background:#f8f9fa;"><td style="padding:7px 10px;"><strong>Céphalexine</strong></td><td style="padding:7px 10px;">500 mg PO QID</td></tr>
+              <tr style="background:#fce4ec;"><td colspan="4" style="padding:5px 10px;font-weight:700;font-size:11px;color:#991b1b;">🔴 PNA COMPLIQUÉE / HOSPITALISATION (IV)</td></tr>
+              <tr><td style="padding:7px 10px;border-bottom:1px solid #eee;"><strong>Céfazoline</strong></td><td style="padding:7px 10px;border-bottom:1px solid #eee;">2 g IV q8h</td><td colspan="2" style="padding:7px 10px;border-bottom:1px solid #eee;text-align:center;">10–14 j (relais PO dès possible)</td></tr>
+              <tr style="background:#f8f9fa;"><td style="padding:7px 10px;border-bottom:1px solid #eee;"><strong>Ceftriaxone</strong></td><td style="padding:7px 10px;border-bottom:1px solid #eee;">2 g IV DIE</td><td colspan="2" style="padding:7px 10px;border-bottom:1px solid #eee;text-align:center;">10–14 j</td></tr>
+              <tr><td style="padding:7px 10px;"><strong>Pip-Tazo / Carbapénème</strong></td><td style="padding:7px 10px;">Selon résistances locales</td><td colspan="2" style="padding:7px 10px;text-align:center;">Jusqu'à stabilisation + relais PO guidé par culture</td></tr>
+            </tbody>
+          </table>
+          <div class="key-fact blue" style="margin-top:8px;">💡 Culture + sensibilité avant ATB · Hémocultures si sepsis · Réévaluer à 48–72 h · Ajuster selon antibiogramme dès disponible</div>
         </div>
 
       </div>
@@ -28402,41 +28587,108 @@ Journal des céphalées : fréquence, intensité, facteurs déclenchants</div>
         </div>
 
         <div id="ap583" style="display:none;">
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+          <!-- COMPLICATIONS OSSEUSES SOUS TPA -->
+          <div style="background:#fce4ec;border-radius:8px;padding:14px;border-left:4px solid #dc2626;margin-bottom:12px;">
+            <strong style="color:#dc2626;font-size:13px;">🦴 SANTÉ OSSEUSE SOUS TPA — Prévention et traitement de l'ostéoporose</strong>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px;font-size:12px;">
+              <div style="background:#fff;border-radius:6px;padding:10px;border-left:3px solid #b91c1c;">
+                <strong style="color:#b91c1c;">Prévention — Hommes castrés (TPA)</strong>
+                <ul style="margin:6px 0 0;padding-left:16px;line-height:1.8;">
+                  <li>Arrêt tabac/alcool + exercice régulier</li>
+                  <li>Vitamine D 800–2 000 UI/j + Calcium 1 200 mg total/j</li>
+                  <li>Monitoring DMO au départ, puis q1–3 ans selon risque</li>
+                  <li><strong>Si risque élevé fractures :</strong>
+                    <ul style="margin-top:4px;padding-left:14px;">
+                      <li>Alendronate 70 mg PO q 1 semaine</li>
+                      <li>Risédronate 5 mg PO die ou 35 mg q 1 sem ou 150 mg q 1 mois</li>
+                      <li>Dénosumab 60 mg SC q 6 mois</li>
+                      <li>Acide zolédronique 5 mg IV q 1 an</li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              <div style="background:#fff;border-radius:6px;padding:10px;border-left:3px solid #dc2626;">
+                <strong style="color:#dc2626;">CPRC métastatique — Prévention événements osseux</strong>
+                <ul style="margin:6px 0 0;padding-left:16px;line-height:1.8;">
+                  <li>Vitamine D 800–2 000 UI/j + Calcium 1 200 mg/j</li>
+                  <li><strong>RANK-ligand :</strong> Dénosumab 120 mg SC q 4 semaines</li>
+                  <li><strong>Bisphosphonate :</strong> Acide zolédronique 4 mg IV q 4 semaines (DFG &gt; 30)</li>
+                </ul>
+                <div style="margin-top:10px;background:#fce4ec;border-radius:6px;padding:8px;">
+                  <strong>⚠️ Surveillance obligatoire :</strong>
+                  <ul style="margin:4px 0 0;padding-left:14px;line-height:1.8;">
+                    <li>Calcémie (hypocalcémie) avant et pendant traitement</li>
+                    <li>Ostéonécrose de la mâchoire (ONM) — hygiène dentaire ++ avant initiation</li>
+                    <li>Créatinine (acide zolédronique — CI si DFG &lt; 30)</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- FRACTURES PATHOLOGIQUES ET COMPRESSION MÉDULLAIRE -->
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px;">
             <div style="background:#fce4ec;border-radius:8px;padding:12px;border-left:4px solid #dc2626;">
-              <strong style="color:#dc2626;font-size:12px;">🦴 COMPLICATIONS OSSEUSES</strong>
-              <div style="font-size:13px;line-height:1.7;margin-top:6px;">
-                <b>Fractures pathologiques</b> (m&eacute;tastases osseuses)<br>
-                <b>Compression m&eacute;dullaire</b> &rarr; IRM rachis URGENT + d&eacute;xameth. 10 mg IV + radio palliative<br>
-                <b>Pr&eacute;vention os sous TPA :</b> bisphosphonates (alendronate, ac. zol&eacute;dronique) ou d&eacute;nosumab 60 mg q6 mois<br>
-                <b>CPRC m&eacute;tastatique :</b> d&eacute;nosumab 120 mg SC q4 sem ou ac. zol&eacute;dronique 4 mg IV q4 sem (DFG &gt;30)
+              <strong style="color:#dc2626;font-size:12px;">🚨 COMPRESSION MÉDULLAIRE</strong>
+              <div style="font-size:12px;line-height:1.7;margin-top:6px;">
+                IRM rachis <strong>URGENT</strong> + dexaméthasone 10 mg IV + radio palliative · Urgence neurochirurgicale si déficit moteur progressif
               </div>
             </div>
             <div style="background:#fff3cd;border-radius:8px;padding:12px;border-left:4px solid #b45309;">
               <strong style="color:#b45309;font-size:12px;">🩺 COMPLICATIONS LOCALES</strong>
-              <div style="font-size:13px;line-height:1.7;margin-top:6px;">
-                <b>R&eacute;tention urinaire</b> &rarr; sonde Foley + &alpha;1-bloqueur + &eacute;valuation urol.<br>
-                <b>Obstruction ur&eacute;t&eacute;rale bilat.</b> &rarr; n&eacute;phrostomie perc. ou double-J<br>
-                <b>H&eacute;maturie</b> (radiation ou invasion) &rarr; fulguration / formolisation<br>
-                <b>Envahissement rectal</b> &rarr; colostomie palliative
+              <div style="font-size:12px;line-height:1.7;margin-top:6px;">
+                <b>Rétention urinaire</b> → sonde Foley + &alpha;1-bloqueur · <b>Obstruction urétérale</b> → néphrostomie / double-J · <b>Hématurie</b> → fulguration/formolisation
               </div>
             </div>
-            <div style="background:#ede9fe;border-radius:8px;padding:12px;border-left:4px solid #6d28d9;">
-              <strong style="color:#6d28d9;font-size:12px;">🧬 CPRC — CANCER R&Eacute;SISTANT CASTRATION</strong>
-              <div style="font-size:13px;line-height:1.7;margin-top:6px;">
-                D&eacute;finition : progression malgr&eacute; testost&eacute;rone &lt;50 ng/dL<br>
-                Options : enzalutamide/apalutamide · abirat&eacute;rone + prednisone · docetaxel · cabazitaxel<br>
-                Si dMMR/MSI-H : pembrolizumab · Si BRCA : olaparib (PARP inhibiteur)
+          </div>
+
+          <!-- CPRC — DIFFÉRENCIATION DES PRÉSENTATIONS -->
+          <div style="background:#ede9fe;border-radius:8px;padding:14px;border-left:4px solid #6d28d9;margin-bottom:12px;">
+            <strong style="color:#6d28d9;font-size:13px;">🧬 CPRC — Cancer résistant à la castration (testostérone &lt; 50 ng/dL + progression)</strong>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin-top:10px;font-size:12px;">
+
+              <div style="background:#fff;border-radius:6px;padding:10px;border-left:3px solid #0369a1;">
+                <strong style="color:#0369a1;">🌐 CaP métastatique hormono-sensible<br><small>(naïf à la castration / mCSPC)</small></strong>
+                <ul style="margin:6px 0 0;padding-left:14px;line-height:1.7;">
+                  <li>TPA + <strong>Docétaxel</strong> (si volume élevé, maladie agressive)</li>
+                  <li>TPA + <strong>Enzalutamide</strong> (ARCHES) ou <strong>Apalutamide</strong> (TITAN)</li>
+                  <li>TPA + <strong>Abiratérone</strong> + prednisone (LATITUDE, STAMPEDE)</li>
+                  <li>TPA + Darolutamide (ARASENS — volume élevé)</li>
+                </ul>
               </div>
+
+              <div style="background:#fff;border-radius:6px;padding:10px;border-left:3px solid #7c3aed;">
+                <strong style="color:#7c3aed;">nmCRPC<br><small>(non-métastatique)</small></strong>
+                <ul style="margin:6px 0 0;padding-left:14px;line-height:1.7;">
+                  <li>Continuer TPA (castration maintenue)</li>
+                  <li>+ <strong>Apalutamide</strong> (SPARTAN) — 1re ligne</li>
+                  <li>+ <strong>Enzalutamide</strong> (PROSPER) — 1re ligne</li>
+                  <li>+ <strong>Darolutamide</strong> (ARAMIS) — moins d'ES SNC</li>
+                  <li>Critère: PSA-DT &lt; 10 mois sans métastases visibles</li>
+                </ul>
+              </div>
+
+              <div style="background:#fff;border-radius:6px;padding:10px;border-left:3px solid #dc2626;">
+                <strong style="color:#dc2626;">mCRPC<br><small>(métastatique)</small></strong>
+                <ul style="margin:6px 0 0;padding-left:14px;line-height:1.7;">
+                  <li><strong>Enzalutamide</strong> (AFFIRM, PREVAIL)</li>
+                  <li><strong>Abiratérone</strong> + prednisone (COU-AA-301/302)</li>
+                  <li><strong>Docétaxel</strong> 75 mg/m² q3sem (si symptomatique)</li>
+                  <li><strong>Cabazitaxel</strong> (après docétaxel)</li>
+                  <li>Si <strong>BRCA1/2</strong> muté : Olaparib (PARP inhibiteur)</li>
+                  <li>Si <strong>MSI-H / dMMR</strong> : Pembrolizumab</li>
+                  <li>Radium-223 si méta osseuses symptomatiques (pas viscérales)</li>
+                </ul>
+              </div>
+
             </div>
-            <div style="background:#f0fdf4;border-radius:8px;padding:12px;border-left:4px solid #15803d;">
-              <strong style="color:#15803d;font-size:12px;">📋 SUIVI POST-TRAITEMENT CURATIF</strong>
-              <div style="font-size:13px;line-height:1.7;margin-top:6px;">
-                PSA q3-6 mois &times;3 ans, puis q6 mois &times;2 ans<br>
-                PSA indosable post-chir = crit&egrave;re gu&eacute;rison<br>
-                R&eacute;cidive biochimique : PSA &gt;0,2 post-chir ou &gt;nadir+2 post-RTE<br>
-                Radio de rattrapage si r&eacute;cidive biochimique post-chir
-              </div>
+          </div>
+
+          <!-- SUIVI POST-TRAITEMENT CURATIF -->
+          <div style="background:#f0fdf4;border-radius:8px;padding:12px;border-left:4px solid #15803d;">
+            <strong style="color:#15803d;font-size:12px;">📋 SUIVI POST-TRAITEMENT CURATIF</strong>
+            <div style="font-size:12px;line-height:1.7;margin-top:6px;">
+              PSA q3-6 mois &times;3 ans, puis q6 mois &times;2 ans · PSA indosable post-chir = critère guérison · <strong>Récidive biochimique :</strong> PSA &gt;0,2 post-chir ou &gt;nadir+2 post-RTE → radio de rattrapage si post-chir
             </div>
           </div>
         </div>
@@ -29234,6 +29486,7 @@ Journal des céphalées : fréquence, intensité, facteurs déclenchants</div>
         <button onclick="goToBlock('cyst-2')" style="background:#7c3aed;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🧪 Paraclinique</button>
         <button onclick="goToBlock('cyst-3')" style="background:#0a7a4e;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">💊 Traitement</button>
         <button onclick="goToBlock('cyst-4')" style="background:#92400e;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">⚠️ Cas particuliers</button>
+        <button onclick="goToBlock('cyst-proph')" style="background:#6d28d9;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🛡️ Prophylaxie IU récidivante</button>
         <button onclick="goToBlock('cyst-5')" style="background:#c0392b;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🚨 Red Flags</button>
       </div>
 
@@ -29334,7 +29587,61 @@ Journal des céphalées : fréquence, intensité, facteurs déclenchants</div>
         </div>
       </div>
 
-      <div class="block flag" style="margin-top:14px;">
+      
+  <div class="block rx" id="cyst-proph" style="margin-top:14px;">
+    <div class="block-title"><span class="tag">🛡️ Traitement préventif — Cystite récidivante</span></div>
+    <div class="key-fact blue" style="margin-bottom:12px;">💡 Indiquée si ≥ 2 IU en 6 mois OU ≥ 3 IU en 12 mois · Durée standard 3–6 mois · Toujours associer aux mesures non pharmacologiques (hydratation, miction post-coïtale, acidification urinaire)</div>
+    <table style="width:100%;border-collapse:collapse;font-size:12px;">
+      <thead>
+        <tr style="background:#6d28d9;color:#fff;">
+          <th style="padding:8px 10px;text-align:left;">Antibiotique</th>
+          <th style="padding:8px 10px;text-align:center;">Prophylaxie postcoïtale<br><small>(3–6 mois)</small></th>
+          <th style="padding:8px 10px;text-align:center;">Prophylaxie continue<br><small>(3–6 mois)</small></th>
+        </tr>
+        <tr style="background:#5b21b6;color:#fff;">
+          <td colspan="3" style="padding:5px 10px;font-size:11px;font-weight:700;">🟢 ANTIBIOTHÉRAPIE DE 1RE INTENTION</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="padding:7px 10px;border-bottom:1px solid #eee;"><strong>Nitrofurantoïne</strong><br><small>monohydrate/macrocristaux</small></td>
+          <td style="padding:7px 10px;border-bottom:1px solid #eee;text-align:center;">100 mg PO dans les 2h postcoïtales</td>
+          <td style="padding:7px 10px;border-bottom:1px solid #eee;text-align:center;">100 mg PO DIE<br>ou 3 fois/semaine</td>
+        </tr>
+        <tr style="background:#f8f9fa;">
+          <td style="padding:7px 10px;border-bottom:1px solid #eee;"><strong>Nitrofurantoïne</strong><br><small>macrocristaux seuls</small></td>
+          <td style="padding:7px 10px;border-bottom:1px solid #eee;text-align:center;">50–100 mg PO dans les 2h postcoïtales</td>
+          <td style="padding:7px 10px;border-bottom:1px solid #eee;text-align:center;">50–100 mg PO DIE<br>ou 3 fois/semaine</td>
+        </tr>
+        <tr>
+          <td style="padding:7px 10px;border-bottom:2px solid #94a3b8;"><strong>TMP-SMX</strong></td>
+          <td style="padding:7px 10px;border-bottom:2px solid #94a3b8;text-align:center;">40/200 mg ou 80/400 mg PO dans les 2h postcoïtales</td>
+          <td style="padding:7px 10px;border-bottom:2px solid #94a3b8;text-align:center;">40/200 mg ou 80/400 mg PO DIE ou 3 fois/semaine</td>
+        </tr>
+        <tr style="background:#fef3c7;">
+          <td colspan="3" style="padding:5px 10px;font-size:11px;font-weight:700;color:#92400e;">🟡 TRAITEMENT ALTERNATIF — SI CI aux ATB 1re intention ou résistance locale</td>
+        </tr>
+        <tr>
+          <td style="padding:7px 10px;border-bottom:1px solid #eee;"><strong>Triméthoprime</strong></td>
+          <td style="padding:7px 10px;border-bottom:1px solid #eee;text-align:center;">100 mg PO dans les 2h postcoïtales</td>
+          <td style="padding:7px 10px;border-bottom:1px solid #eee;text-align:center;">100 mg PO DIE</td>
+        </tr>
+        <tr style="background:#f8f9fa;">
+          <td style="padding:7px 10px;border-bottom:1px solid #eee;"><strong>Céphalexine</strong></td>
+          <td style="padding:7px 10px;border-bottom:1px solid #eee;text-align:center;">125–250 mg PO dans les 2h postcoïtales</td>
+          <td style="padding:7px 10px;border-bottom:1px solid #eee;text-align:center;">125–250 mg PO DIE</td>
+        </tr>
+        <tr>
+          <td style="padding:7px 10px;"><strong>Fosfomycine</strong><br><small>(trométhamine)</small></td>
+          <td style="padding:7px 10px;text-align:center;">3 g PO dans les 2h postcoïtales<br><small>(max 3 g/7 jours)</small></td>
+          <td style="padding:7px 10px;text-align:center;">3 g PO tous les 7–10 jours</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="key-fact orange" style="margin-top:10px;">⚠️ Réévaluer à 6 mois — si récidive sous prophylaxie → culture + urologue. Proscrire nitrofurantoïne si CrCl &lt; 30 mL/min. TMP-SMX à éviter si résistance locale &gt; 20%.</div>
+  </div>
+
+  <div class="block flag" style="margin-top:14px;">
         <div class="block-title" id="cyst-5"><span class="tag">🚨 RED FLAGS — Quand suspecter PNA (≠ cystite)</span></div>
         <div class="flag-list">
           <div class="flag-item"><span class="fi-icon">🌡️</span><span><strong>Fièvre ≥ 38°C + frissons</strong> → Ne plus traiter comme cystite simple · Bilan PNA (C&S + FSC + créat) · Voir sec-uro-pna</span></div>
