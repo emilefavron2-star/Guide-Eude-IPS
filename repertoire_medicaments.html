@@ -230,9 +230,11 @@ td.pk-label { font-weight: 600; color: var(--ink3); width: 200px; white-space: n
 <button class="sidebar-btn" onclick="goTo('rivaroxaban')">Rivaroxaban (Xarelto®)</button>
 <button class="sidebar-btn" onclick="goTo('apixaban')">Apixaban (Eliquis®)</button>
 <button class="sidebar-btn" onclick="goTo('dabigatran')">Dabigatran (Pradaxa®)</button>
+<button class="sidebar-btn" onclick="goTo('edoxaban')">Édoxaban (Lixiana®)</button>
 <button class="sidebar-btn" onclick="goTo('warfarine')">Warfarine (Coumadin®)</button></div>
 
 <div class="sidebar-section"><div class="sidebar-cat">💉 Anticoagulants parentéraux</div>
+<button class="sidebar-btn" onclick="goTo('dalteparine')">Daltéparine (Fragmin®)</button>
 <button class="sidebar-btn" onclick="goTo('enoxaparine')">Énoxaparine (Lovenox®)</button>
 <button class="sidebar-btn" onclick="goTo('tinzaparine')">Tinzaparine (HBPM)</button>
 <button class="sidebar-btn" onclick="goTo('fondaparinux')">Fondaparinux</button>
@@ -242,7 +244,8 @@ td.pk-label { font-weight: 600; color: var(--ink3); width: 200px; white-space: n
 <div class="sidebar-section"><div class="sidebar-cat">🔴 Antiplaquettaires</div>
 <button class="sidebar-btn" onclick="goTo('aspirine')">Aspirine (AAS)</button>
 <button class="sidebar-btn" onclick="goTo('clopidogrel')">Clopidogrel (Plavix®)</button>
-<button class="sidebar-btn" onclick="goTo('ticagrelor')">Ticagrélor (Brilinta®)</button></div>
+<button class="sidebar-btn" onclick="goTo('ticagrelor')">Ticagrélor (Brilinta®)</button>
+<button class="sidebar-btn" onclick="goTo('prasugrel')">Prasugrel (Effient®)</button></div>
 
 <!-- ═══ ANTIDIABÉTIQUES ═══ -->
 <div class="sidebar-section"><div class="sidebar-cat">🍬 Antidiabétiques</div>
@@ -497,10 +500,25 @@ td.pk-label { font-weight: 600; color: var(--ink3); width: 200px; white-space: n
 <button class="sidebar-btn" onclick="goTo('denosumab')">Dénosumab (Prolia® / Xgeva®)</button></div>
 
 <!-- ═══ HÉMATOLOGIE ═══ -->
-<div class="sidebar-section"><div class="sidebar-cat">🩺 Hématologie</div>
+<div class="sidebar-section"><div class="sidebar-cat">🩸 Anémie — Supplémentation</div>
+<button class="sidebar-btn" onclick="goTo('fer-iv')">Fer IV (Ferinject® / Venofer®)</button>
+<button class="sidebar-btn" onclick="goTo('vitb12')">Vitamine B12 (Cyanocobalamine)</button>
+<button class="sidebar-btn" onclick="goTo('acide-folique')">Acide folique (B9)</button>
+<button class="sidebar-btn" onclick="goTo('darbepoetine')">Darbépoétine alfa (Aranesp®)</button></div>
+
+<div class="sidebar-section"><div class="sidebar-cat">🩸 Antidotes anticoagulants</div>
+<button class="sidebar-btn" onclick="goTo('vitk')">Vitamine K₁ (Phytoménadione)</button>
+<button class="sidebar-btn" onclick="goTo('idarucizumab')">Idarucizumab (Praxbind®)</button>
+<button class="sidebar-btn" onclick="goTo('andexanet')">Andexanet alfa (Ondexxya®)</button></div>
+
+<div class="sidebar-section"><div class="sidebar-cat">🩸 Thrombolytiques</div>
+<button class="sidebar-btn" onclick="goTo('thrombolyse-agents')">Altéplase / Ténectéplase</button></div>
+
+<div class="sidebar-section"><div class="sidebar-cat">🩸 Hémato-oncologie / Divers</div>
 <button class="sidebar-btn" onclick="goTo('hydroxyurea')">Hydroxyurée (Hydrea®)</button>
 <button class="sidebar-btn" onclick="goTo('rituximab')">Rituximab (Rituxan®)</button>
-<button class="sidebar-btn" onclick="goTo('darbepoetine')">Darbépoétine alfa (Aranesp®)</button></div>
+<button class="sidebar-btn" onclick="goTo('filgrastim')">Filgrastim / Pegfilgrastim (G-CSF)</button>
+<button class="sidebar-btn" onclick="goTo('eltrombopag')">Eltrombopag / Romiplostim (TPO-RA)</button></div>
 
 <!-- ═══ NÉPHROLOGIE ═══ -->
 <div class="sidebar-section"><div class="sidebar-cat">🩺 Chélateurs / Correcteurs — IRC</div>
@@ -1252,6 +1270,103 @@ td.pk-label { font-weight: 600; color: var(--ink3); width: 200px; white-space: n
 <div class="tab-panel " id="warfarine-ai">
 <div class="info-grid"><div class="info-box "><h4>Interactions (nombreuses)</h4><ul><li>AINS → ↑ saignement + ↑ INR (inhibent CYP2C9)</li><li>Antibiotiques → ↓ flore vit. K → ↑ INR</li><li>Fluconazole/métronidzole → ↑↑ INR (CYP2C9 inhibiteur)</li><li>Aliments vit. K → ↓ INR</li><li>Amiodarone → ↑↑↑ INR (inhibiteur CYP2C9+CYP3A4)</li></ul></div><div class="info-box red"><h4>Reversal</h4><ul><li>INR supra-thérapeutique sans saignement : ↓ dose ± vit. K 1–2,5 mg PO</li><li>Saignement majeur : CCP 4 facteurs 25–50 U/kg IV + vit. K 10 mg IV (lente)</li><li>Avant chirurgie : arrêt 5j + contrôle INR / ou CCP si urgent</li></ul></div></div>
 </div></div>
+</div>
+
+<div class="drug-card" id="card-dalteparine" data-search="daltéparine fragmin hbpm héparine bas poids moléculaire tev cancer etev prophylaxie">
+  <div class="drug-header" style="background:#7c2d12;">
+    <div><div class="drug-name">Daltéparine (Fragmin®)</div><div style="font-size:12px;opacity:.75;margin-top:2px;">Daltéparine sodique</div></div>
+    <div class="drug-pharmacol">HBPM — 1re ligne TEV + cancer actif</div>
+  </div>
+  <div class="drug-tabs">
+    <button class="tab-btn active" onclick="showTab('dalteparine','ov',this)">Vue d’ensemble</button>
+    <button class="tab-btn" onclick="showTab('dalteparine','pk',this)">Pharmacocinétique</button>
+    <button class="tab-btn" onclick="showTab('dalteparine','doses',this)">Posologie</button>
+    <button class="tab-btn" onclick="showTab('dalteparine','es',this)">Effets secondaires</button>
+    <button class="tab-btn" onclick="showTab('dalteparine','ci',this)">CI / Précautions</button>
+    <button class="tab-btn" onclick="showTab('dalteparine','suivi',this)">Suivi</button>
+    <button class="tab-btn" onclick="showTab('dalteparine','ai',this)">Interactions</button>
+  </div>
+  <div class="drug-panels">
+    <div class="tab-panel active" id="dalteparine-ov">
+      <p><strong>Indications :</strong></p>
+      <ul>
+        <li>Traitement TEV (TVP/EP) associé au <strong>cancer actif — 1re ligne ⭐</strong> (CLOT trial)</li>
+        <li>Prophylaxie TEV en chirurgie abdominale, orthopédique, patient médical hospitalisé</li>
+        <li>SCA (NSTEMI/AI) — alternative à l’énoxaparine</li>
+        <li>Hémodialyse (circuit extracorporel)</li>
+      </ul>
+      <p><strong>Avantage clé — Cancer :</strong> Supériorité sur warfarine pour prévenir les récidives de TEV chez le patient oncologique (↓ 52% récidive — CLOT). AOD maintenant aussi acceptés mais daltéparine reste solide si risque GI élevé (ex: cancer GI).</p>
+    </div>
+    <div class="tab-panel" id="dalteparine-pk">
+      <ul>
+        <li>Anti-Xa sélectif (ratio anti-Xa/anti-IIa ~2,5:1)</li>
+        <li>Biodisponibilité SC : ~87%</li>
+        <li>t½ : 3–5h après dose SC thérapeutique</li>
+        <li>Élimination rénale — accumulation si DFGe &lt; 30</li>
+        <li>Pas de monitoring anti-Xa en routine (réponse prévisible)</li>
+        <li>Monitoring anti-Xa si : DFGe 20–30, grossesse, poids extrêmes (&lt;45 ou &gt;100 kg)</li>
+      </ul>
+    </div>
+    <div class="tab-panel" id="dalteparine-doses">
+      <p><strong>TEV + cancer (traitement) :</strong></p>
+      <ul>
+        <li>200 UI/kg SC DIE × 1 mois (max 18 000 UI/j)</li>
+        <li>Puis 150 UI/kg SC DIE × mois 2–6</li>
+        <li>Au-delà 6 mois : réévaluer (basculer vers AOD possible si risque GI faible)</li>
+      </ul>
+      <p><strong>TEV sans cancer :</strong></p>
+      <ul>
+        <li>200 UI/kg SC DIE ou 100 UI/kg SC BID</li>
+      </ul>
+      <p><strong>Prophylaxie — Chirurgie abdominale majeure :</strong></p>
+      <ul>
+        <li>5000 UI SC DIE (commencer 2–12h pré-op)</li>
+      </ul>
+      <p><strong>Prophylaxie — Patient médical hospitalisé :</strong></p>
+      <ul>
+        <li>5000 UI SC DIE</li>
+      </ul>
+      <p><strong>SCA (NSTEMI/AI) :</strong></p>
+      <ul>
+        <li>120 UI/kg SC BID (max 10 000 UI BID) × 5–8j</li>
+      </ul>
+    </div>
+    <div class="tab-panel" id="dalteparine-es">
+      <ul>
+        <li>Saignement (hématome site injection, saignement GI, hémorragie majeure)</li>
+        <li>TIH (thrombopénie induite par héparine) — risque &lt;1%</li>
+        <li>Douleur / ecchymose au site SC</li>
+        <li>Ostéoporose (usage prolongé &gt; 3–6 mois — rare)</li>
+        <li>Hyperkaliémie (hypoaldostéronisme — rare)</li>
+      </ul>
+    </div>
+    <div class="tab-panel" id="dalteparine-ci">
+      <ul>
+        <li>Hypersensibilité à la daltéparine ou aux héparines</li>
+        <li>TIH active ou ATCD TIH confirmée</li>
+        <li>Saignement actif non contrôlé</li>
+        <li>DFGe &lt; 20–30 : utiliser HNF IV à la place</li>
+        <li>Anesthésie rachidienne / épidurale : arrêter 12–24h avant (dose thérapeutique)</li>
+      </ul>
+    </div>
+    <div class="tab-panel" id="dalteparine-suivi">
+      <ul>
+        <li>FSC baseline + J5–J14 (dépistage TIH)</li>
+        <li>Anti-Xa pic (4h post-dose) si DFGe 20–30, grossesse, poids extrêmes</li>
+        <li>Cible anti-Xa thérapeutique : 0,5–1,0 UI/mL (DIE) ou 0,5–1,2 UI/mL (BID)</li>
+        <li>Fonction rénale Q3–6 mois si IRC</li>
+        <li>⚠️ TIH : chute plaquettes &gt;50% entre J5–J14 → arrêt immédiat + anti-PF4/héparine</li>
+      </ul>
+    </div>
+    <div class="tab-panel" id="dalteparine-ai">
+      <ul>
+        <li>Antiplaquettaires (AAS, P2Y12) : ↑ risque hémorragique</li>
+        <li>AINS : ↑ risque saignement GI</li>
+        <li>Autres anticoagulants : éviter association</li>
+        <li>Protamine : reversal partiel (~60% de l’effet anti-Xa neutralisé)</li>
+      </ul>
+    </div>
+  </div>
 </div>
 
 <div class="drug-card" id="card-enoxaparine" data-search="enoxaparine énoxaparine (lovenox®) énoxaparine sodique héparine de bas poids moléculaire (hbpm)">
@@ -7156,6 +7271,919 @@ td.pk-label { font-weight: 600; color: var(--ink3); width: 200px; white-space: n
     </div>
   </div>
 </div>
+<!-- ═══ HÉMATOLOGIE — NOUVELLES FICHES ═══ -->
+
+<div class="drug-card" id="card-fer-iv" data-search="fer iv ferinject venofer monofer ferric carboxymaltose fer sucrose carence martiale anémie">
+  <div class="drug-header" style="background:#7c2d12;">
+    <div><div class="drug-name">Fer IV (Ferinject® / Venofer®)</div><div style="font-size:12px;opacity:.75;margin-top:2px;">Carboxymaltose ferrique · Fer sucrose</div></div>
+    <div class="drug-pharmacol">Supplément en fer — Anémie ferriprive</div>
+  </div>
+  <div class="drug-tabs">
+    <button class="tab-btn active" onclick="showTab('fer-iv','ov',this)">Vue d'ensemble</button>
+    <button class="tab-btn" onclick="showTab('fer-iv','pk',this)">Pharmacocinétique</button>
+    <button class="tab-btn" onclick="showTab('fer-iv','doses',this)">Posologie</button>
+    <button class="tab-btn" onclick="showTab('fer-iv','es',this)">Effets secondaires</button>
+    <button class="tab-btn" onclick="showTab('fer-iv','ci',this)">CI / Précautions</button>
+    <button class="tab-btn" onclick="showTab('fer-iv','suivi',this)">Suivi</button>
+    <button class="tab-btn" onclick="showTab('fer-iv','ai',this)">Interactions</button>
+  </div>
+  <div class="drug-panels">
+    <div class="tab-panel active" id="fer-iv-ov">
+      <p><strong>Indications :</strong> Anémie ferriprive lorsque le fer PO est insuffisant, intoléré ou inadéquat (IRC, MICI, post-bariatrique, grossesse, saignement chronique).</p>
+      <p><strong>Produits disponibles :</strong></p>
+      <ul>
+        <li><strong>Ferinject® (carboxymaltose ferrique)</strong> — 1 seule dose jusqu'à 1000 mg en 15 min ⭐ le plus pratique</li>
+        <li><strong>Venofer® (fer sucrose)</strong> — doses de 100–200 mg à répéter</li>
+        <li><strong>Monofer® (dérisomaltose)</strong> — 1 dose jusqu'à 20 mg/kg</li>
+      </ul>
+      <p><strong>Mécanisme :</strong> Apport direct de fer élémentaire → incorporation dans l'hémoglobine et reconstitution des réserves (ferritine).</p>
+    </div>
+    <div class="tab-panel" id="fer-iv-pk">
+      <ul>
+        <li>Distribution rapide vers foie, rate, moelle osseuse après injection IV</li>
+        <li>Libération contrôlée → faible fer libre circulant (moins de stress oxydatif)</li>
+        <li>Ferinject : t½ ~16h · Élimination urinaire minimale</li>
+        <li>Correction Hb attendue : +10–20 g/L en 4 semaines</li>
+        <li>Reconstitution ferritine complète : 8–12 semaines</li>
+      </ul>
+    </div>
+    <div class="tab-panel" id="fer-iv-doses">
+      <p><strong>Ferinject® (carboxymaltose ferrique) :</strong></p>
+      <ul>
+        <li>≥ 70 kg : 1000 mg IV en 1 dose (diluer dans 250 mL NS, perfuser sur 15 min)</li>
+        <li>&lt; 70 kg : 500 mg IV — répéter à J7 si déficit persiste</li>
+        <li>Max 1000 mg/semaine</li>
+      </ul>
+      <p><strong>Venofer® (fer sucrose) :</strong></p>
+      <ul>
+        <li>100–200 mg IV lente (15–30 min), répéter 2–3× par semaine</li>
+        <li>Dose cumulative selon déficit = Poids (kg) × [Hb cible - Hb actuelle] × 0,24 + 500 mg</li>
+      </ul>
+      <p><strong>Formule de déficit en fer :</strong><br>
+      mg fer = Poids (kg) × (Hb cible [g/dL] − Hb actuelle [g/dL]) × 2,4 + stock (500 mg)</p>
+    </div>
+    <div class="tab-panel" id="fer-iv-es">
+      <ul>
+        <li>⚠️ <strong>Réaction d'hypersensibilité</strong> (rare &lt;1%) — observer le patient 30 min post-injection</li>
+        <li><strong>Hypophosphatémie</strong> (surtout Ferinject) — transitoire, rarement symptomatique; surveiller si doses répétées</li>
+        <li>Nausées, céphalées, arthralgie, rougeur au site d'injection</li>
+        <li>Coloration brunâtre de l'urine possible</li>
+        <li>Extravasation IV → tatouage cutané (injection strictement IV)</li>
+      </ul>
+    </div>
+    <div class="tab-panel" id="fer-iv-ci">
+      <ul>
+        <li>Hypersensibilité au produit ou aux préparations à base de fer IV</li>
+        <li>Anémie non ferriprive (hémolytique, thalassémie, aplasique)</li>
+        <li>Surcharge en fer (hémochromatose, hémosidérose)</li>
+        <li>Infections bactériennes actives (le fer nourrit les bactéries)</li>
+        <li>Trimestre 1 de grossesse (prudence — utiliser si bénéfice &gt; risque)</li>
+      </ul>
+    </div>
+    <div class="tab-panel" id="fer-iv-suivi">
+      <ul>
+        <li>FSC + ferritine + saturation transferrine à 4–8 semaines post-injection</li>
+        <li>Cibles : Ferritine 100–800 µg/L · Sat. transferrine 20–50%</li>
+        <li>Phosphatémie si Ferinject doses répétées (risque hypophosphatémie)</li>
+        <li>Éviter répétition inutile : surcharge possible si ferritine &gt; 800 µg/L</li>
+        <li>Répéter si carence récidive (source de perte à identifier)</li>
+      </ul>
+    </div>
+    <div class="tab-panel" id="fer-iv-ai">
+      <ul>
+        <li>Ne pas administrer en même temps que du fer PO (réduction d'absorption)</li>
+        <li>Peut fausser certains examens biologiques (ferritine, TIBC) pendant 48–72h</li>
+        <li>Pas d'interactions médicamenteuses cliniquement significatives connues</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="drug-card" id="card-vitb12" data-search="vitamine b12 cyanocobalamine hydroxocobalamine b12 cobalamine anémie mégaloblastique carence">
+  <div class="drug-header" style="background:#166534;">
+    <div><div class="drug-name">Vitamine B12 (Cyanocobalamine)</div><div style="font-size:12px;opacity:.75;margin-top:2px;">Cyanocobalamine · Hydroxocobalamine</div></div>
+    <div class="drug-pharmacol">Vitamine — Anémie mégaloblastique · Neuropathie</div>
+  </div>
+  <div class="drug-tabs">
+    <button class="tab-btn active" onclick="showTab('vitb12','ov',this)">Vue d'ensemble</button>
+    <button class="tab-btn" onclick="showTab('vitb12','pk',this)">Pharmacocinétique</button>
+    <button class="tab-btn" onclick="showTab('vitb12','doses',this)">Posologie</button>
+    <button class="tab-btn" onclick="showTab('vitb12','es',this)">Effets secondaires</button>
+    <button class="tab-btn" onclick="showTab('vitb12','ci',this)">CI / Précautions</button>
+    <button class="tab-btn" onclick="showTab('vitb12','suivi',this)">Suivi</button>
+    <button class="tab-btn" onclick="showTab('vitb12','ai',this)">Interactions</button>
+  </div>
+  <div class="drug-panels">
+    <div class="tab-panel active" id="vitb12-ov">
+      <p><strong>Indications :</strong> Anémie mégaloblastique par carence en B12 · Neuropathie subacuë combinée · Gastrite atrophique · Végétalisme · Malabsorption (gastrectomie, iléon terminal, Biermer) · Metformine (carence iatrogène).</p>
+      <p><strong>Mécanisme :</strong> Cofacteur essentiel à la synthèse d'ADN (via méthyl-folate) et au métabolisme myéline. Absence → macrocytose + hypersegmentation neutrophiles + démyélinisation.</p>
+      <p><strong>Voies disponibles :</strong> IM (recommandée si malabsorption) · PO haute dose (cyanocobalamine 1000 µg) · Sublinguale · Nasale.</p>
+    </div>
+    <div class="tab-panel" id="vitb12-pk">
+      <ul>
+        <li>Absorption gastro-intestinale : requiert facteur intrinsèque (cellules pariétales)</li>
+        <li>Carence en FI (Biermer, gastrectomie) → absorption PO impossible → IM obligatoire</li>
+        <li>Stocks hépatiques : 2–5 mg → épuisement en 3–5 ans après arrêt apport</li>
+        <li>Élimination : biliaire + rénale</li>
+        <li>Correction hématologique : 4–8 semaines · Neurologique : peut être incomplète si retard</li>
+      </ul>
+    </div>
+    <div class="tab-panel" id="vitb12-doses">
+      <p><strong>Voie IM (malabsorption / Biermer) :</strong></p>
+      <ul>
+        <li>Phase d'induction : 1000 µg IM DIE × 7 jours, puis 1000 µg/semaine × 4 semaines</li>
+        <li>Entretien : 1000 µg IM tous les 1–3 mois à vie</li>
+      </ul>
+      <p><strong>Voie PO (carence alimentaire — végétaliens) :</strong></p>
+      <ul>
+        <li>1000–2000 µg PO DIE (permet absorption passive même sans FI à hautes doses)</li>
+      </ul>
+      <p><strong>Carence à la Metformine :</strong></p>
+      <ul>
+        <li>1000 µg PO DIE ou IM mensuel selon sévérité</li>
+      </ul>
+    </div>
+    <div class="tab-panel" id="vitb12-es">
+      <ul>
+        <li>Excellente tolérance — très peu d'effets indésirables</li>
+        <li>Douleur au site IM (injection)</li>
+        <li>Très rarement : réaction allergique cutanée (urticaire)</li>
+        <li>Hypokaliémie possible en début de traitement (régénération GR rapide → captation K+)</li>
+        <li>Acné (rare, rapportée avec B12 haute dose PO)</li>
+      </ul>
+    </div>
+    <div class="tab-panel" id="vitb12-ci">
+      <ul>
+        <li>Hypersensibilité à la cobalamine ou au cobalt</li>
+        <li>Maladie de Leber (atrophie optique héréditaire) — cyanocobalamine CI ; utiliser hydroxocobalamine</li>
+        <li>Précaution : corriger aussi l'acide folique si double carence (risque d'aggraver la neuropathie)</li>
+      </ul>
+    </div>
+    <div class="tab-panel" id="vitb12-suivi">
+      <ul>
+        <li>FSC à 4–8 semaines : correction macrocytose + Hb attendue</li>
+        <li>Dosage B12 sérique : &gt; 200 pmol/L cible (normal 150–700)</li>
+        <li>Acide méthylmalonique (AMM) + homocystéine : normalisation confirme correction fonctionnelle</li>
+        <li>Surveillance clinique neurologique : amélioration attend 3–6 mois</li>
+        <li>Biermer : traitement à vie — ne jamais arrêter</li>
+      </ul>
+    </div>
+    <div class="tab-panel" id="vitb12-ai">
+      <ul>
+        <li>Metformine : réduction absorption B12 — surveiller taux annuellement chez diabétiques</li>
+        <li>IPP / Anti-H2 : diminuent acidité → ↓ libération B12 alimentaire</li>
+        <li>Chloramphénicol : peut antagoniser l'effet hématologique</li>
+        <li>Colchicine, néomycine : réduction absorption PO</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="drug-card" id="card-acide-folique" data-search="acide folique folate b9 vitamine b9 anémie mégaloblastique grossesse">
+  <div class="drug-header" style="background:#0f766e;">
+    <div><div class="drug-name">Acide folique (Folate / Vit. B9)</div><div style="font-size:12px;opacity:.75;margin-top:2px;">Acide ptéroylglutamique</div></div>
+    <div class="drug-pharmacol">Vitamine — Anémie mégaloblastique · Prévention DTN</div>
+  </div>
+  <div class="drug-tabs">
+    <button class="tab-btn active" onclick="showTab('ac-fol','ov',this)">Vue d'ensemble</button>
+    <button class="tab-btn" onclick="showTab('ac-fol','pk',this)">Pharmacocinétique</button>
+    <button class="tab-btn" onclick="showTab('ac-fol','doses',this)">Posologie</button>
+    <button class="tab-btn" onclick="showTab('ac-fol','es',this)">Effets secondaires</button>
+    <button class="tab-btn" onclick="showTab('ac-fol','ci',this)">CI / Précautions</button>
+    <button class="tab-btn" onclick="showTab('ac-fol','suivi',this)">Suivi</button>
+    <button class="tab-btn" onclick="showTab('ac-fol','ai',this)">Interactions</button>
+  </div>
+  <div class="drug-panels">
+    <div class="tab-panel active" id="ac-fol-ov">
+      <p><strong>Indications :</strong></p>
+      <ul>
+        <li>Prévention défauts du tube neural (DTN) — péri-conceptionnelle</li>
+        <li>Anémie mégaloblastique par carence en folates (alcool, malnutrition, malabsorption)</li>
+        <li>Carence iatrogène (methotrexate, triméthoprime, phénytoïne)</li>
+        <li>Grossesse (besoin ↑ 400 → 600 µg/j)</li>
+      </ul>
+      <p><strong>Mécanisme :</strong> Cofacteur synthèse ADN/ARN → division cellulaire. Carence → macrocytose + hypersegmentation neutrophiles (comme B12, mais sans atteinte neurologique).</p>
+      <p><strong>⚠️ Important :</strong> Toujours exclure carence B12 avant traitement folate pur — risque d'aggraver la neuropathie sous-jacente si double carence.</p>
+    </div>
+    <div class="tab-panel" id="ac-fol-pk">
+      <ul>
+        <li>Absorption intestinale efficace (jéjunum)</li>
+        <li>Stocks hépatiques : 5–10 mg → épuisement en 3–4 mois si arrêt apport</li>
+        <li>Métabolisme hépatique → polyglutamate actif</li>
+        <li>Élimination rénale</li>
+      </ul>
+    </div>
+    <div class="tab-panel" id="ac-fol-doses">
+      <p><strong>Supplémentation préventive :</strong></p>
+      <ul>
+        <li>Femme en âge de procréer : 0,4 mg PO DIE (à commencer 3 mois avant conception)</li>
+        <li>Risque élevé (ATCD DTN, épilepsie, obésité, diabète) : 4–5 mg PO DIE</li>
+      </ul>
+      <p><strong>Traitement anémie par carence :</strong></p>
+      <ul>
+        <li>1–5 mg PO DIE × 4 mois (ou à vie si cause non corrigible)</li>
+      </ul>
+      <p><strong>Carence iatrogène (Methotrexate) :</strong></p>
+      <ul>
+        <li>5 mg PO 1×/semaine (lendemain ou surlendemain de MTX)</li>
+      </ul>
+    </div>
+    <div class="tab-panel" id="ac-fol-es">
+      <ul>
+        <li>Excellente tolérance — pratiquement aucun effet indésirable aux doses thérapeutiques</li>
+        <li>Très haute doses (> 5 mg) : irritabilité, insomnie (rare)</li>
+        <li>⚠️ Masque la carence en B12 si non dosée — peut aggraver la neuropathie</li>
+      </ul>
+    </div>
+    <div class="tab-panel" id="ac-fol-ci">
+      <ul>
+        <li>Néoplasie folate-dépendante (certaines leucémies) — relatif</li>
+        <li>Carence B12 non diagnostiquée — corriger B12 en premier</li>
+        <li>Hypersensibilité (très rare)</li>
+      </ul>
+    </div>
+    <div class="tab-panel" id="ac-fol-suivi">
+      <ul>
+        <li>FSC à 4–8 semaines : normalisation VGM + Hb attendue</li>
+        <li>Folate sérique ou érythrocytaire si doute diagnostique</li>
+        <li>B12 sérique à doser simultanément (exclure double carence)</li>
+        <li>Homocystéine se normalise si traitement efficace</li>
+      </ul>
+    </div>
+    <div class="tab-panel" id="ac-fol-ai">
+      <ul>
+        <li>Methotrexate : antagoniste du folate (mécanisme) — supplémenter systématiquement</li>
+        <li>Triméthoprime (TMP-SMX) : inhibiteur dihydrofolate réductase → carence relative</li>
+        <li>Phénytoïne : accélère métabolisme du folate</li>
+        <li>Sulfasalazine : inhibe absorption intestinale folate</li>
+        <li>Alcool : réduit absorption et augmente excrétion</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="drug-card" id="card-vitk" data-search="vitamine k phytoménadione mephyton antidote warfarine coumarine inr saignement">
+  <div class="drug-header" style="background:#b45309;">
+    <div><div class="drug-name">Vitamine K₁ (Phytoménadione)</div><div style="font-size:12px;opacity:.75;margin-top:2px;">Mephyton® · Konakion®</div></div>
+    <div class="drug-pharmacol">Antidote AVK — Reversal warfarine</div>
+  </div>
+  <div class="drug-tabs">
+    <button class="tab-btn active" onclick="showTab('vitk','ov',this)">Vue d'ensemble</button>
+    <button class="tab-btn" onclick="showTab('vitk','pk',this)">Pharmacocinétique</button>
+    <button class="tab-btn" onclick="showTab('vitk','doses',this)">Posologie</button>
+    <button class="tab-btn" onclick="showTab('vitk','es',this)">Effets secondaires</button>
+    <button class="tab-btn" onclick="showTab('vitk','ci',this)">CI / Précautions</button>
+    <button class="tab-btn" onclick="showTab('vitk','suivi',this)">Suivi</button>
+    <button class="tab-btn" onclick="showTab('vitk','ai',this)">Interactions</button>
+  </div>
+  <div class="drug-panels">
+    <div class="tab-panel active" id="vitk-ov">
+      <p><strong>Indications :</strong></p>
+      <ul>
+        <li>Reversal warfarine (INR suprathérapeutique ± saignement)</li>
+        <li>Déficit en vitamine K (malabsorption, malnutrition, cholestase)</li>
+        <li>Prophylaxie hémorragique néonatale (IM à la naissance)</li>
+      </ul>
+      <p><strong>Mécanisme :</strong> Cofacteur carboxylation hépatique des facteurs II, VII, IX, X + protéines C et S. La warfarine bloque la récupération (cycle époxyde) → vitamine K exogène contourne ce blocage.</p>
+      <p><strong>Délai d'action :</strong> PO ~6–12h · IV ~2–4h · ⚠️ Ne corrige pas l'INR immédiatement — associer PFC ou concentré de complexe prothrombinique (CCP) si saignement actif.</p>
+    </div>
+    <div class="tab-panel" id="vitk-pk">
+      <ul>
+        <li>Liposoluble — absorption PO requiert bile (malabsorption lipidique → IV)</li>
+        <li>Délai action : PO 6–12h · IV lente 2–4h</li>
+        <li>Durée action : 12–24h (souvent suffisant pour 1 dose)</li>
+        <li>Stockage hépatique</li>
+        <li>⚠️ Résistance à la re-warfarinisation possible pendant 5–7j après fortes doses</li>
+      </ul>
+    </div>
+    <div class="tab-panel" id="vitk-doses">
+      <p><strong>INR suprathérapeutique sans saignement :</strong></p>
+      <ul>
+        <li>INR 4–10 : 1–2,5 mg PO (éviter IV sauf urgence)</li>
+        <li>INR &gt; 10 : 2,5–5 mg PO · Répéter si INR reste élevé à 24h</li>
+      </ul>
+      <p><strong>Saignement actif (avec PFC ou CCP) :</strong></p>
+      <ul>
+        <li>5–10 mg IV lente (30 min) — jamais en bolus rapide (anaphylaxie)</li>
+        <li>Associer systématiquement CCP 25 UI/kg IV ou PFC 10–15 mL/kg</li>
+      </ul>
+      <p><strong>Déficit vitamine K sans anticoagulant :</strong></p>
+      <ul>
+        <li>1–10 mg PO/SC/IV selon sévérité</li>
+      </ul>
+    </div>
+    <div class="tab-panel" id="vitk-es">
+      <ul>
+        <li>⚠️ Voie IV rapide : anaphylaxie rare mais grave — toujours administrer lentement (sur 30 min) et dilué</li>
+        <li>Douleur, rougeur au site d'injection SC</li>
+        <li>Résistance à la re-anticoagulation pendant 5–7j si doses élevées (problème si prothèse valvulaire)</li>
+        <li>Nausées, céphalées (rare)</li>
+      </ul>
+    </div>
+    <div class="tab-panel" id="vitk-ci">
+      <ul>
+        <li>Hypersensibilité connue</li>
+        <li>Bolus IV rapide (risque anaphylaxie) — toujours perfusion lente</li>
+        <li>Prudence si patient nécessitera re-anticoagulation imminente (prothèse, FA, TEV) — utiliser faible dose (1–2,5 mg PO) pour conserver la possibilité de re-warfarinisation</li>
+      </ul>
+    </div>
+    <div class="tab-panel" id="vitk-suivi">
+      <ul>
+        <li>INR à contrôler 6–12h post-dose PO · 2–4h post-dose IV</li>
+        <li>Répéter dose si INR insuffisamment corrigé</li>
+        <li>Si saignement actif : INR cible &lt; 1,5 (avec CCP)</li>
+        <li>Reprendre warfarine à dose réduite une fois INR normalisé et saignement contrôlé</li>
+      </ul>
+    </div>
+    <div class="tab-panel" id="vitk-ai">
+      <ul>
+        <li>Antagonise directement la warfarine (effet souhaité)</li>
+        <li>Peut affecter d'autres AVK (acenocoumarol, phenprocoumone)</li>
+        <li>Orlistat : réduit absorption VitK alimentaire → potentialise warfarine</li>
+        <li>Cholestyramine : réduit absorption PO vitamine K</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="drug-card" id="card-idarucizumab" data-search="idarucizumab praxbind antidote dabigatran pradaxa reversal anticoagulant">
+  <div class="drug-header" style="background:#1e3a8a;">
+    <div><div class="drug-name">Idarucizumab (Praxbind®)</div><div style="font-size:12px;opacity:.75;margin-top:2px;">Idarucizumab</div></div>
+    <div class="drug-pharmacol">Antidote dabigatran (anti-IIa)</div>
+  </div>
+  <div class="drug-tabs">
+    <button class="tab-btn active" onclick="showTab('idarucizumab','ov',this)">Vue d'ensemble</button>
+    <button class="tab-btn" onclick="showTab('idarucizumab','pk',this)">Pharmacocinétique</button>
+    <button class="tab-btn" onclick="showTab('idarucizumab','doses',this)">Posologie</button>
+    <button class="tab-btn" onclick="showTab('idarucizumab','es',this)">Effets secondaires</button>
+    <button class="tab-btn" onclick="showTab('idarucizumab','ci',this)">CI / Précautions</button>
+    <button class="tab-btn" onclick="showTab('idarucizumab','suivi',this)">Suivi</button>
+    <button class="tab-btn" onclick="showTab('idarucizumab','ai',this)">Interactions</button>
+  </div>
+  <div class="drug-panels">
+    <div class="tab-panel active" id="idarucizumab-ov">
+      <p><strong>Indications :</strong></p>
+      <ul>
+        <li>Reversal <strong>urgent</strong> du dabigatran (Pradaxa®) dans :</li>
+        <li>Saignement actif grave menaçant le pronostic vital</li>
+        <li>Chirurgie/procédure urgente ne pouvant attendre (≤ 8h)</li>
+      </ul>
+      <p><strong>Mécanisme :</strong> Fragment d'anticorps monoclonal humanisé (Fab) qui se lie au dabigatran avec affinité ~350× supérieure à celle de la thrombine → neutralisation immédiate et complète.</p>
+      <p><strong>Délai d'action :</strong> Quelques minutes après injection IV.</p>
+      <p><strong>Disponibilité :</strong> Remboursé RAMQ ✅ — disponible dans la plupart des urgences québécoises.</p>
+    </div>
+    <div class="tab-panel" id="idarucizumab-pk">
+      <ul>
+        <li>Liaison immédiate et quasi-irréversible au dabigatran</li>
+        <li>Élimination rénale du complexe idarucizumab-dabigatran</li>
+        <li>t½ idarucizumab : ~45 min · t½ complexe : ~10h</li>
+        <li>Effet de reversal : immédiat et maintenu 24h</li>
+        <li>⚠️ Rebond : niveau dabigatran peut ré-augmenter légèrement à 12–24h si dose résiduelle importante → surveiller TT/ECT</li>
+      </ul>
+    </div>
+    <div class="tab-panel" id="idarucizumab-doses">
+      <p><strong>Dose unique :</strong></p>
+      <ul>
+        <li><strong>5 g IV</strong> en 2 flacons de 2,5 g (50 mL chacun), administrés consécutivement</li>
+        <li>Chaque flacon en bolus IV sur 5–10 min (ou perfusion sur 15 min)</li>
+        <li>Dose unique — pas de répétition sauf rebond documenté (rare)</li>
+      </ul>
+      <p><em>Note : Peut reprendre dabigatran 24h après si indication clinique persistante et hémostase assurée.</em></p>
+    </div>
+    <div class="tab-panel" id="idarucizumab-es">
+      <ul>
+        <li>Bonne tolérance — très peu d'effets documentés</li>
+        <li>Hypokaliémie légère (transitoire)</li>
+        <li>Céphalées, réaction au site d'injection (rare)</li>
+        <li>Événements thromboemboliques post-reversal (liés à la pathologie sous-jacente et à la reprise du risque)</li>
+      </ul>
+    </div>
+    <div class="tab-panel" id="idarucizumab-ci">
+      <ul>
+        <li>Hypersensibilité connue à l'idarucizumab ou aux protéines murines</li>
+        <li>Prudence chez patient avec déficit héréditaire en protéines C/S ou ATIII (risque rebond thrombotique)</li>
+        <li>Ne pas oublier de reprendre l'anticoagulation dès que possible après contrôle du saignement</li>
+      </ul>
+    </div>
+    <div class="tab-panel" id="idarucizumab-suivi">
+      <ul>
+        <li>Temps de thrombine (TT) ou temps de coagulation à l'écarine (ECT) — si disponibles → confirment reversal</li>
+        <li>aPTT normal ne garantit pas reversal complet de dabigatran</li>
+        <li>Surveillance clinique du saignement</li>
+        <li>Reprendre anticoagulation dès que possible (24h) si indication persistante</li>
+        <li>Dabigatran non dialysable efficacement après idarucizumab</li>
+      </ul>
+    </div>
+    <div class="tab-panel" id="idarucizumab-ai">
+      <ul>
+        <li>Spécifique au dabigatran uniquement — n'inverse pas les AOD anti-Xa (rivaroxaban, apixaban)</li>
+        <li>Pas d'interactions médicamenteuses significatives connues</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="drug-card" id="card-andexanet" data-search="andexanet alfa ondexxya antidote rivaroxaban apixaban anti-xa reversal aod">
+  <div class="drug-header" style="background:#7c3aed;">
+    <div><div class="drug-name">Andexanet alfa (Ondexxya®)</div><div style="font-size:12px;opacity:.75;margin-top:2px;">Andexanet alfa</div></div>
+    <div class="drug-pharmacol">Antidote AOD anti-Xa (rivaroxaban · apixaban)</div>
+  </div>
+  <div class="drug-tabs">
+    <button class="tab-btn active" onclick="showTab('andexanet','ov',this)">Vue d'ensemble</button>
+    <button class="tab-btn" onclick="showTab('andexanet','pk',this)">Pharmacocinétique</button>
+    <button class="tab-btn" onclick="showTab('andexanet','doses',this)">Posologie</button>
+    <button class="tab-btn" onclick="showTab('andexanet','es',this)">Effets secondaires</button>
+    <button class="tab-btn" onclick="showTab('andexanet','ci',this)">CI / Précautions</button>
+    <button class="tab-btn" onclick="showTab('andexanet','suivi',this)">Suivi</button>
+    <button class="tab-btn" onclick="showTab('andexanet','ai',this)">Interactions</button>
+  </div>
+  <div class="drug-panels">
+    <div class="tab-panel active" id="andexanet-ov">
+      <p><strong>Indications :</strong> Reversal urgent de rivaroxaban et apixaban lors de saignement grave menaçant le pronostic vital ou intracrânien.</p>
+      <p><strong>Mécanisme :</strong> Facteur Xa recombinant catalytiquement inactif (leurre) → séquestre les AOD anti-Xa en compétition → ↑ activité anti-Xa disponible pour hémostase.</p>
+      <p><strong>Disponibilité :</strong> ⚠️ Non remboursé RAMQ (2026) — coût très élevé (~10 000–15 000 $). Disponible dans certains centres tertiaires. Alternative : CCP 4 facteurs 50 UI/kg si andexanet non disponible.</p>
+      <p><strong>Édoxaban :</strong> Non approuvé pour l'édoxaban (manque de données).</p>
+    </div>
+    <div class="tab-panel" id="andexanet-pk">
+      <ul>
+        <li>Début d'action : &lt; 2 min après bolus IV</li>
+        <li>Durée d'effet anticoagulation neutralisée : ~2h (bolus) ou ~8h (bolus + perfusion)</li>
+        <li>⚠️ Rebond anti-Xa possible après fin de perfusion si élimination AOD incomplète</li>
+        <li>Élimination protéique (voie endosomale)</li>
+      </ul>
+    </div>
+    <div class="tab-panel" id="andexanet-doses">
+      <p><strong>Schéma selon le médicament et la dose :</strong></p>
+      <table>
+        <thead><tr><th>AOD</th><th>Dernière dose</th><th>Délai</th><th>Schéma andexanet</th></tr></thead>
+        <tbody>
+          <tr><td>Rivaroxaban ≤ 10 mg</td><td>Toute dose</td><td>&lt;8h</td><td>Bolus 400 mg + perf 4 mg/min × 120 min</td></tr>
+          <tr><td>Rivaroxaban &gt; 10 mg</td><td>Toute dose</td><td>&lt;8h</td><td>Bolus 800 mg + perf 8 mg/min × 120 min</td></tr>
+          <tr><td>Apixaban ≤ 5 mg</td><td>Toute dose</td><td>&lt;8h</td><td>Bolus 400 mg + perf 4 mg/min × 120 min</td></tr>
+          <tr><td>Apixaban &gt; 5 mg</td><td>Toute dose</td><td>&lt;8h</td><td>Bolus 800 mg + perf 8 mg/min × 120 min</td></tr>
+        </tbody>
+      </table>
+      <p><em>Si délai &gt; 8h ou dose inconnue : utiliser le schéma haute dose.</em></p>
+    </div>
+    <div class="tab-panel" id="andexanet-es">
+      <ul>
+        <li>⚠️ <strong>Risque thromboembolique élevé</strong> (AVC, IDM, TEV) — pathologie sous-jacente + rebond pro-thrombotique</li>
+        <li>Flush, toux, sensation de chaleur pendant la perfusion</li>
+        <li>Rebond d'anti-Xa après 2–8h</li>
+        <li>Événements cardiaques ischémiques (dans les 30 jours post-administration)</li>
+      </ul>
+    </div>
+    <div class="tab-panel" id="andexanet-ci">
+      <ul>
+        <li>Hypersensibilité connue</li>
+        <li>Ne pas utiliser comme reversal de routine (uniquement saignement grave)</li>
+        <li>Non indiqué pour fondaparinux, dabigatran, édoxaban (manque de données)</li>
+        <li>Reprendre anticoagulation dès que possible (risque thrombotique)</li>
+      </ul>
+    </div>
+    <div class="tab-panel" id="andexanet-suivi">
+      <ul>
+        <li>Activité anti-Xa chromogénique : confirme reversal si disponible</li>
+        <li>Surveillance clinique du saignement</li>
+        <li>Reprendre anticoagulation dans les 24–72h selon risque hémorragique</li>
+        <li>Si andexanet non disponible : CCP 4 facteurs (Octaplex®) 50 UI/kg IV en alternative</li>
+      </ul>
+    </div>
+    <div class="tab-panel" id="andexanet-ai">
+      <ul>
+        <li>Spécifique aux AOD anti-Xa — n'inverse pas dabigatran ni warfarine</li>
+        <li>Séquestre toute molécule anti-Xa présente (incluant fondaparinux — hors indication)</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="drug-card" id="card-thrombolyse-agents" data-search="altéplase tenectéplase tnkase activase rtpa tpa thrombolyse fibrinolytique avc ep stemi">
+  <div class="drug-header" style="background:#991b1b;">
+    <div><div class="drug-name">Thrombolytiques (Altéplase / Ténectéplase)</div><div style="font-size:12px;opacity:.75;margin-top:2px;">Activase® (rt-PA) · TNKase®</div></div>
+    <div class="drug-pharmacol">Fibrinolytiques — AVC · EP massive · STEMI</div>
+  </div>
+  <div class="drug-tabs">
+    <button class="tab-btn active" onclick="showTab('thrombo-ag','ov',this)">Vue d'ensemble</button>
+    <button class="tab-btn" onclick="showTab('thrombo-ag','pk',this)">Pharmacocinétique</button>
+    <button class="tab-btn" onclick="showTab('thrombo-ag','doses',this)">Posologie</button>
+    <button class="tab-btn" onclick="showTab('thrombo-ag','es',this)">Effets secondaires</button>
+    <button class="tab-btn" onclick="showTab('thrombo-ag','ci',this)">CI / Précautions</button>
+    <button class="tab-btn" onclick="showTab('thrombo-ag','suivi',this)">Suivi</button>
+    <button class="tab-btn" onclick="showTab('thrombo-ag','ai',this)">Interactions</button>
+  </div>
+  <div class="drug-panels">
+    <div class="tab-panel active" id="thrombo-ag-ov">
+      <p><strong>Mécanisme :</strong> Activent le plasminogène → plasmine → lyse du caillot de fibrine. Agents plasminogène-sélectifs de 3e génération (tPA, TNK) : plus spécifiques, moins d'effets systémiques.</p>
+      <table>
+        <thead><tr><th>Agent</th><th>Nom commercial</th><th>Administration</th><th>Indications principales</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Altéplase (rt-PA)</strong></td><td>Activase®</td><td>Perf. IV 60–100 mg / 60–90 min</td><td>AVC ischémique (&lt;4,5h) · EP massive · STEMI (régions éloignées)</td></tr>
+          <tr><td><strong>Ténectéplase</strong></td><td>TNKase®</td><td>1 bolus IV (poids-dépendant)</td><td>STEMI (si ICP impossible) · EP massive · TVP proximale massive</td></tr>
+          <tr><td>Rétéplase</td><td>Retavase®</td><td>2 bolus IV séquentiels</td><td>STEMI</td></tr>
+        </tbody>
+      </table>
+      <p>⚠️ <em>L'IPS ne prescrit généralement pas ces agents — urgence médicale/réa. Connaître les indications, CI et schémas pour la gestion interdisciplinaire.</em></p>
+    </div>
+    <div class="tab-panel" id="thrombo-ag-pk">
+      <ul>
+        <li>Altéplase : t½ ~5 min · Élimination hépatique rapide</li>
+        <li>Ténectéplase : t½ biexponentielle (20 min initial, 130 min terminal) — permet bolus unique</li>
+        <li>Effet fibrinolytique systémique : 1–4h après administration</li>
+        <li>Fibrinogène ↓, aPTT ↑ pendant 2–4h (monitoring coagulation requis)</li>
+      </ul>
+    </div>
+    <div class="tab-panel" id="thrombo-ag-doses">
+      <p><strong>AVC ischémique (Altéplase) :</strong></p>
+      <ul>
+        <li>0,9 mg/kg IV (max 90 mg) : 10% en bolus sur 1 min, reste sur 60 min</li>
+        <li>Fenêtre : &lt; 4,5h après début des symptômes</li>
+      </ul>
+      <p><strong>STEMI (Ténectéplase — TNKase) :</strong></p>
+      <ul>
+        <li>&lt; 60 kg : 30 mg IV bolus</li>
+        <li>60–70 kg : 35 mg · 70–80 kg : 40 mg · 80–90 kg : 45 mg · &gt; 90 kg : 50 mg</li>
+        <li>Associer: AAS + Clopidogrel 300 mg (≥75 ans : 75 mg) + Énoxaparine</li>
+      </ul>
+      <p><strong>EP massive (Altéplase) :</strong></p>
+      <ul>
+        <li>100 mg IV sur 2h (ou 0,6 mg/kg sur 15 min si arrêt cardiaque)</li>
+      </ul>
+    </div>
+    <div class="tab-panel" id="thrombo-ag-es">
+      <ul>
+        <li>⚠️ <strong>Hémorragie</strong> — risque majeur : intracrânienne (1–2% AVC), digestive, ponctions</li>
+        <li>Angioœdème oro-lingual (altéplase, ~1–5% — surtout si IEC concomitant)</li>
+        <li>Hypotension transitoire</li>
+        <li>Réaction allergique (streptokinase &gt;&gt; tPA)</li>
+        <li>Reperfusion arythmies (STEMI) — bénignes habituellement</li>
+      </ul>
+    </div>
+    <div class="tab-panel" id="thrombo-ag-ci">
+      <p><strong>Contre-indications absolues :</strong></p>
+      <ul>
+        <li>Hémorragie intracrânienne active ou récente (&lt; 3 mois)</li>
+        <li>AVC ischémique &lt; 3 mois (sauf dans la fenêtre thérapeutique AVC aiguë)</li>
+        <li>Néoplasie intracrânienne / MAV</li>
+        <li>Chirurgie majeure / traumatisme crânien &lt; 3 semaines</li>
+        <li>Saignement interne actif (sauf règles)</li>
+        <li>Dissection aortique suspectée</li>
+      </ul>
+      <p><strong>Contre-indications relatives :</strong></p>
+      <ul>
+        <li>HTA sévère non contrôlée (&gt; 185/110 pour AVC)</li>
+        <li>Anticoagulation en cours (INR &gt; 1,7)</li>
+        <li>Grossesse · Ponction vasculaire non compressible récente</li>
+      </ul>
+    </div>
+    <div class="tab-panel" id="thrombo-ag-suivi">
+      <ul>
+        <li>Post-altéplase AVC : TDM crâne à 24h (avant héparine ou anticoagulants)</li>
+        <li>Monitoring FC, PA, SaO₂ en continu pendant et après la perfusion</li>
+        <li>aPTT, fibrinogène, FSC à 1–2h post-thrombolyse</li>
+        <li>Post-STEMI TNK : coronarographie dans 3–24h (rescue ICP si non-reperfusion)</li>
+        <li>Ne pas administrer antiplaquettaires/anticoagulants pendant perfusion altéplase AVC</li>
+      </ul>
+    </div>
+    <div class="tab-panel" id="thrombo-ag-ai">
+      <ul>
+        <li>Anticoagulants (héparine, AOD, warfarine) : ↑ risque hémorragique — éviter co-administration</li>
+        <li>Antiplaquettaires : ↑ risque hémorragique — attendre 24h post-thrombolyse avant AAS/P2Y12</li>
+        <li>IEC : ↑ risque angioœdème avec altéplase</li>
+        <li>Acide tranexamique : antagoniste direct — ne jamais combiner</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="drug-card" id="card-edoxaban" data-search="édoxaban edoxaban lixiana anti-xa aod anticoagulant tev fa">
+  <div class="drug-header" style="background:#1d4ed8;">
+    <div><div class="drug-name">Édoxaban (Lixiana®)</div><div style="font-size:12px;opacity:.75;margin-top:2px;">Édoxaban</div></div>
+    <div class="drug-pharmacol">AOD — Inhibiteur direct du facteur Xa</div>
+  </div>
+  <div class="drug-tabs">
+    <button class="tab-btn active" onclick="showTab('edoxaban','ov',this)">Vue d'ensemble</button>
+    <button class="tab-btn" onclick="showTab('edoxaban','pk',this)">Pharmacocinétique</button>
+    <button class="tab-btn" onclick="showTab('edoxaban','doses',this)">Posologie</button>
+    <button class="tab-btn" onclick="showTab('edoxaban','es',this)">Effets secondaires</button>
+    <button class="tab-btn" onclick="showTab('edoxaban','ci',this)">CI / Précautions</button>
+    <button class="tab-btn" onclick="showTab('edoxaban','suivi',this)">Suivi</button>
+    <button class="tab-btn" onclick="showTab('edoxaban','ai',this)">Interactions</button>
+  </div>
+  <div class="drug-panels">
+    <div class="tab-panel active" id="edoxaban-ov">
+      <p><strong>Indications :</strong> Prévention AVC/embolie systémique dans la FA non valvulaire · Traitement et prévention TEV (TVP/EP) après HBPM × 5–10j.</p>
+      <p><strong>Particularité :</strong> Seul AOD nécessitant une initiation par HBPM (5–10 jours) avant de débuter — similaire à dabigatran mais différent d'apixaban/rivaroxaban.</p>
+      <p><strong>Antidote :</strong> Aucun antidote approuvé spécifiquement (andexanet alfa non approuvé pour édoxaban). Alternative : CCP 4F 50 UI/kg.</p>
+    </div>
+    <div class="tab-panel" id="edoxaban-pk">
+      <ul>
+        <li>Biodisponibilité : ~62%</li>
+        <li>Clairance rénale : ~50% → ajustement si DFGe &lt; 50</li>
+        <li>t½ : 10–14h · 1× par jour</li>
+        <li>Substrat P-gp — interactions avec inhibiteurs/inducteurs</li>
+        <li>Pas de métabolisme CYP significatif</li>
+      </ul>
+    </div>
+    <div class="tab-panel" id="edoxaban-doses">
+      <p><strong>FA non valvulaire :</strong></p>
+      <ul>
+        <li>60 mg PO DIE (30 mg DIE si DFGe 15–50 ou poids ≤ 60 kg ou inhibiteur P-gp puissant)</li>
+      </ul>
+      <p><strong>TVP/EP (après HBPM × 5–10j) :</strong></p>
+      <ul>
+        <li>60 mg PO DIE · Réduire à 30 mg si DFGe 15–50 ou poids ≤ 60 kg</li>
+      </ul>
+      <p><strong>CI si DFGe &lt; 15.</strong></p>
+    </div>
+    <div class="tab-panel" id="edoxaban-es">
+      <ul>
+        <li>Saignements (GI, ecchymoses, épistaxis) — classe d'effet</li>
+        <li>Anémie</li>
+        <li>Rash cutané (rare)</li>
+        <li>Moins de saignements GI que rivaroxaban</li>
+        <li>↓ AVC hémorragique vs warfarine (comme les autres AOD)</li>
+      </ul>
+    </div>
+    <div class="tab-panel" id="edoxaban-ci">
+      <ul>
+        <li>DFGe &lt; 15 mL/min</li>
+        <li>Saignement actif cliniquement significatif</li>
+        <li>Valve cardiaque mécanique (CI tous les AOD)</li>
+        <li>Grossesse / allaitement</li>
+        <li>⚠️ FA avec DFGe très élevé (&gt; 95) : risque AVC ↑ avec édoxaban vs warfarine (non recommandé)</li>
+      </ul>
+    </div>
+    <div class="tab-panel" id="edoxaban-suivi">
+      <ul>
+        <li>DFGe à 6–12 mois (ou plus fréquent si IRC)</li>
+        <li>FSC annuelle (risque anémie)</li>
+        <li>Pas de monitoring INR/anti-Xa en routine</li>
+        <li>Observance DIE + rappel de ne pas cesser sans consulter</li>
+      </ul>
+    </div>
+    <div class="tab-panel" id="edoxaban-ai">
+      <ul>
+        <li>Inhibiteurs P-gp puissants (vérapamil, quinidine, érythromycine) : ↑ édoxaban → réduire dose 30 mg</li>
+        <li>Inducteurs P-gp (rifampicine, phénytoïne, millepertuis) : ↓ efficacité — éviter ou choisir autre AOD</li>
+        <li>AINS : ↑ risque saignement GI</li>
+        <li>Antiplaquettaires : ↑ risque saignement</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="drug-card" id="card-prasugrel" data-search="prasugrel effient anti-p2y12 antiplaquettaire stemi ica coronarographie">
+  <div class="drug-header" style="background:#c2410c;">
+    <div><div class="drug-name">Prasugrel (Effient®)</div><div style="font-size:12px;opacity:.75;margin-top:2px;">Prasugrel</div></div>
+    <div class="drug-pharmacol">Antiplaquettaire — Anti-P2Y12 irréversible (prodrogue)</div>
+  </div>
+  <div class="drug-tabs">
+    <button class="tab-btn active" onclick="showTab('prasugrel','ov',this)">Vue d'ensemble</button>
+    <button class="tab-btn" onclick="showTab('prasugrel','pk',this)">Pharmacocinétique</button>
+    <button class="tab-btn" onclick="showTab('prasugrel','doses',this)">Posologie</button>
+    <button class="tab-btn" onclick="showTab('prasugrel','es',this)">Effets secondaires</button>
+    <button class="tab-btn" onclick="showTab('prasugrel','ci',this)">CI / Précautions</button>
+    <button class="tab-btn" onclick="showTab('prasugrel','suivi',this)">Suivi</button>
+    <button class="tab-btn" onclick="showTab('prasugrel','ai',this)">Interactions</button>
+  </div>
+  <div class="drug-panels">
+    <div class="tab-panel active" id="prasugrel-ov">
+      <p><strong>Indications :</strong> SCA (STEMI ou NSTEMI) traité par ICP — alternative au ticagrélor avec efficacité similaire mais CI plus importantes.</p>
+      <p><strong>Mécanisme :</strong> Prodrogue → métabolite actif via CYP (hydrolyse plasmatique puis CYP3A4/2B6) → liaison irréversible au récepteur P2Y12 plaquettaire → inhibition agrégation.</p>
+      <p><strong>Avantage vs Clopidogrel :</strong> Moins de variabilité (pas de polymorphisme CYP2C19) → inhibition plaquettaire plus puissante et prévisible.</p>
+      <p><strong>⚠️ CI absolu AVC/AIT :</strong> Augmentation du risque hémorragique intracrânien (TRITON-TIMI 38).</p>
+    </div>
+    <div class="tab-panel" id="prasugrel-pk">
+      <ul>
+        <li>Prodrogue → hydrolyse intestinale → CYP (3A4, 2B6) → métabolite actif</li>
+        <li>Délai action : ~30 min (dose de charge) — plus rapide que clopidogrel</li>
+        <li>Liaison irréversible P2Y12 → durée vie plaquette (7–10j)</li>
+        <li>Pas de polymorphisme CYP2C19 → réponse prévisible</li>
+        <li>t½ actif : ~7h</li>
+      </ul>
+    </div>
+    <div class="tab-panel" id="prasugrel-doses">
+      <p><strong>SCA avec ICP :</strong></p>
+      <ul>
+        <li>Dose de charge : <strong>60 mg PO</strong> dès que diagnostic confirmé (post-coronarographie ou avant)</li>
+        <li>Entretien : <strong>10 mg PO DIE × 12 mois</strong></li>
+        <li>Si ≥ 75 ans ou &lt; 60 kg : 5 mg DIE (bénéfice/risque moins favorable)</li>
+        <li>Associer à AAS 81 mg DIE (DAPT)</li>
+      </ul>
+      <p><em>Arrêter 7 jours avant CABG électif.</em></p>
+    </div>
+    <div class="tab-panel" id="prasugrel-es">
+      <ul>
+        <li>⚠️ <strong>Saignements majeurs</strong> plus fréquents que clopidogrel (TRITON-TIMI 38)</li>
+        <li>Hémorragie intracrânienne plus fréquente chez ≥ 75 ans, &lt; 60 kg, ATCD AVC/AIT</li>
+        <li>Ecchymoses, épistaxis, saignement GI</li>
+        <li>Thrombocytopénie thrombotique (TTP) — rarissime</li>
+      </ul>
+    </div>
+    <div class="tab-panel" id="prasugrel-ci">
+      <ul>
+        <li>⛔ <strong>ATCD AVC ou AIT</strong> (CI absolue — augmentation hémorragique intracrânienne)</li>
+        <li>Saignement actif pathologique</li>
+        <li>Hypersensibilité connue</li>
+        <li>Prudence : ≥ 75 ans (bénéfice incertain, ↑ saignement) · &lt; 60 kg (dose réduite)</li>
+        <li>CABG prévu : arrêter 7j avant</li>
+      </ul>
+    </div>
+    <div class="tab-panel" id="prasugrel-suivi">
+      <ul>
+        <li>FSC à 1 mois (dépistage thrombopénie)</li>
+        <li>Évaluation signes saignement (selles noires, ecchymoses inhabituelles)</li>
+        <li>DAPT 12 mois minimum post-SCA + ICP</li>
+        <li>Pont héparine si chirurgie urgente sous prasugrel</li>
+      </ul>
+    </div>
+    <div class="tab-panel" id="prasugrel-ai">
+      <ul>
+        <li>AINS + anticoagulants : ↑ risque saignement</li>
+        <li>IPP (oméprazole, ésoméprazole) : interaction moindre vs clopidogrel</li>
+        <li>Warfarine/AOD : ↑ risque hémorragique en triple thérapie (éviter si possible)</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="drug-card" id="card-filgrastim" data-search="filgrastim pegfilgrastim neupogen neulasta gcsf g-csf neutropénie chimiothérapie granulocyte">
+  <div class="drug-header" style="background:#0369a1;">
+    <div><div class="drug-name">Filgrastim / Pegfilgrastim</div><div style="font-size:12px;opacity:.75;margin-top:2px;">Neupogen® · Neulasta® · G-CSF</div></div>
+    <div class="drug-pharmacol">Facteur de croissance granulocytaire — Neutropénie</div>
+  </div>
+  <div class="drug-tabs">
+    <button class="tab-btn active" onclick="showTab('filgrastim','ov',this)">Vue d'ensemble</button>
+    <button class="tab-btn" onclick="showTab('filgrastim','pk',this)">Pharmacocinétique</button>
+    <button class="tab-btn" onclick="showTab('filgrastim','doses',this)">Posologie</button>
+    <button class="tab-btn" onclick="showTab('filgrastim','es',this)">Effets secondaires</button>
+    <button class="tab-btn" onclick="showTab('filgrastim','ci',this)">CI / Précautions</button>
+    <button class="tab-btn" onclick="showTab('filgrastim','suivi',this)">Suivi</button>
+    <button class="tab-btn" onclick="showTab('filgrastim','ai',this)">Interactions</button>
+  </div>
+  <div class="drug-panels">
+    <div class="tab-panel active" id="filgrastim-ov">
+      <p><strong>Indications :</strong></p>
+      <ul>
+        <li>Neutropénie fébrile post-chimiothérapie (prophylaxie primaire ou secondaire)</li>
+        <li>Neutropénie sévère chronique (congénitale, idiopathique, cyclique)</li>
+        <li>Mobilisation de cellules souches hématopoïétiques (greffes)</li>
+        <li>Neutropénie HIV sous traitement</li>
+      </ul>
+      <p><strong>Mécanisme :</strong> G-CSF recombinant → stimule production, maturation et libération des neutrophiles par la moelle osseuse.</p>
+      <p><strong>Pegfilgrastim (Neulasta®) :</strong> Forme PEGylée de filgrastim → t½ prolongé → 1 seule injection par cycle de chimio (J+1 ou J+2 après chimio).</p>
+    </div>
+    <div class="tab-panel" id="filgrastim-pk">
+      <ul>
+        <li>Filgrastim : t½ ~3,5h SC · Clearance par récepteurs G-CSFR neutrophiles (saturable)</li>
+        <li>Pegfilgrastim : t½ 15–80h (auto-régulé par nombre neutrophiles)</li>
+        <li>Pic neutrophiles : 24–48h après dose</li>
+        <li>Nadir neutrophiles post-chimio : J10–J14 → injecter J1–J5 post-chimio</li>
+      </ul>
+    </div>
+    <div class="tab-panel" id="filgrastim-doses">
+      <p><strong>Filgrastim (Neupogen®) :</strong></p>
+      <ul>
+        <li>5 µg/kg/j SC (ou IV) dès J1 post-chimio jusqu'à neutrophiles &gt; 10 G/L × 1–2j</li>
+        <li>Max : 10 µg/kg/j en mobilisation cellules souches</li>
+      </ul>
+      <p><strong>Pegfilgrastim (Neulasta®) :</strong></p>
+      <ul>
+        <li>6 mg SC × 1 dose par cycle (≥ 24h après fin chimio)</li>
+        <li>Ne pas administrer entre J-14 et J+1 de chimio myélosuppressive</li>
+      </ul>
+    </div>
+    <div class="tab-panel" id="filgrastim-es">
+      <ul>
+        <li>⚠️ <strong>Douleurs osseuses</strong> (myalgies, ossalgie) — fréquent (20–30%) · Soulager avec acétaminophène ou loratadine</li>
+        <li>Rate : splénomégalie, rupture splénique (rare mais grave — douleur flanc gauche → écho urgente)</li>
+        <li>SDRA (rare, surtout si sepsis concomitant)</li>
+        <li>Syndrome de fuite capillaire (rare)</li>
+        <li>Leucocytose transitoire (&gt; 50 G/L) — généralement bénigne</li>
+        <li>Douleur au site d'injection SC</li>
+      </ul>
+    </div>
+    <div class="tab-panel" id="filgrastim-ci">
+      <ul>
+        <li>Hypersensibilité connue</li>
+        <li>Leucémie myéloïde aiguë / SMD (risque de stimulation des cellules leucémiques)</li>
+        <li>Ne pas administrer simultanément à la chimio ou radiothérapie (sensibilisation cellules myéloïdes)</li>
+        <li>Précaution : splénomégalie existante</li>
+      </ul>
+    </div>
+    <div class="tab-panel" id="filgrastim-suivi">
+      <ul>
+        <li>FSC 2× par semaine pendant traitement (surveiller leucocytose excessive &gt; 50 G/L → réduire dose)</li>
+        <li>Palpation rate / douleur flanc gauche → écho si suspicion splénomégalie</li>
+        <li>Surveiller plaquettes (thrombopénie possible)</li>
+        <li>Surveillance nadir neutrophiles (objectif &gt; 1,0 G/L entre les cycles)</li>
+      </ul>
+    </div>
+    <div class="tab-panel" id="filgrastim-ai">
+      <ul>
+        <li>Chimiothérapie : éviter co-administration (risque ↑ toxicité myéloïde)</li>
+        <li>Lithium : potentialise effet G-CSF (↑ neutrophiles) — non cliniquement problématique</li>
+        <li>Pas d'interactions médicamenteuses majeures connues</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="drug-card" id="card-eltrombopag" data-search="eltrombopag revolade romiplostim nplate tpo tpo-ra thrombopénie immunologique pti itp plaquettes">
+  <div class="drug-header" style="background:#6d28d9;">
+    <div><div class="drug-name">Eltrombopag / Romiplostim</div><div style="font-size:12px;opacity:.75;margin-top:2px;">Revolade® · Nplate® — Agonistes récepteur TPO</div></div>
+    <div class="drug-pharmacol">TPO-RA — Thrombopénie immune (PTI)</div>
+  </div>
+  <div class="drug-tabs">
+    <button class="tab-btn active" onclick="showTab('eltrombopag','ov',this)">Vue d'ensemble</button>
+    <button class="tab-btn" onclick="showTab('eltrombopag','pk',this)">Pharmacocinétique</button>
+    <button class="tab-btn" onclick="showTab('eltrombopag','doses',this)">Posologie</button>
+    <button class="tab-btn" onclick="showTab('eltrombopag','es',this)">Effets secondaires</button>
+    <button class="tab-btn" onclick="showTab('eltrombopag','ci',this)">CI / Précautions</button>
+    <button class="tab-btn" onclick="showTab('eltrombopag','suivi',this)">Suivi</button>
+    <button class="tab-btn" onclick="showTab('eltrombopag','ai',this)">Interactions</button>
+  </div>
+  <div class="drug-panels">
+    <div class="tab-panel active" id="eltrombopag-ov">
+      <p><strong>Indications :</strong></p>
+      <ul>
+        <li>Thrombopénie immune primaire (PTI) chronique (&gt; 12 mois) réfractaire aux corticoïdes/IVIG</li>
+        <li>Aplasie médullaire sévère (eltrombopag — en combinaison)</li>
+        <li>Thrombopénie associée à l'hépatite C (eltrombopag)</li>
+      </ul>
+      <p><strong>Mécanisme :</strong> Agonistes du récepteur à la thrombopoïétine (MPL/c-Mpl) → stimulent la mégacaryopoïèse → ↑ production plaquettes.</p>
+      <table>
+        <thead><tr><th></th><th>Eltrombopag (Revolade®)</th><th>Romiplostim (Nplate®)</th></tr></thead>
+        <tbody>
+          <tr><td>Voie</td><td>PO (comprimé)</td><td>SC (injection hebdomadaire)</td></tr>
+          <tr><td>Avantage</td><td>Pratique (PO)</td><td>Pas d'interaction alimentaire</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="tab-panel" id="eltrombopag-pk">
+      <ul>
+        <li>Eltrombopag : biodisponibilité ~52% · t½ ~26–35h · Métabolisme CYP1A2/2C8</li>
+        <li>⚠️ Alimentation réduit absorption eltrombopag 65% — à prendre à jeun (2h avant / 4h après repas, produits laitiers, antiacides)</li>
+        <li>Romiplostim : SC · t½ 1–34h (variable) · Élimination par récepteurs TPO</li>
+        <li>Pic plaquettes : J7–J14 après début traitement</li>
+      </ul>
+    </div>
+    <div class="tab-panel" id="eltrombopag-doses">
+      <p><strong>Eltrombopag (PTI adulte) :</strong></p>
+      <ul>
+        <li>50 mg PO DIE (réduire à 25 mg si origine asiatique ou insuffisance hépatique)</li>
+        <li>Titration : ± 25 mg/2 semaines selon plaquettes</li>
+        <li>Cible : plaquettes 50–200 G/L (pas &gt; 200 → ↑ risque thrombose)</li>
+        <li>Max : 75 mg/j</li>
+      </ul>
+      <p><strong>Romiplostim (PTI) :</strong></p>
+      <ul>
+        <li>1 µg/kg SC 1×/semaine · Ajuster par 1 µg/kg selon réponse plaquettaire</li>
+        <li>Max : 10 µg/kg/semaine</li>
+      </ul>
+    </div>
+    <div class="tab-panel" id="eltrombopag-es">
+      <ul>
+        <li>⚠️ <strong>Thrombose</strong> si plaquettes &gt; 200 G/L (↑ risque TVP/EP/SCA)</li>
+        <li>Hépatotoxicité (eltrombopag) — surveiller bilan hépatique</li>
+        <li>Fibrose médullaire (réversible à l'arrêt)</li>
+        <li>Progression vers SMD/LAM (possible si thrombopénie sous-jacente maligne)</li>
+        <li>Rebond thrombopénie à l'arrêt (graduel)</li>
+        <li>Cataracte (eltrombopag, long terme)</li>
+      </ul>
+    </div>
+    <div class="tab-panel" id="eltrombopag-ci">
+      <ul>
+        <li>Hypersensibilité connue</li>
+        <li>Grossesse (risque tératogène — eltrombopag catégorie C)</li>
+        <li>Insuffisance hépatique sévère (Child-Pugh C)</li>
+        <li>Thrombose active (cible plaquettes &lt; 200 G/L)</li>
+        <li>SMD sous-jacent ou LAM (stimulation cellules anormales)</li>
+      </ul>
+    </div>
+    <div class="tab-panel" id="eltrombopag-suivi">
+      <ul>
+        <li>FSC hebdomadaire × 1 mois, puis mensuelle si stable</li>
+        <li>Plaquettes cible 50–200 G/L (adapter dose)</li>
+        <li>Bilan hépatique (ALT/AST/bilirubine) mensuel — eltrombopag</li>
+        <li>Frottis sanguin périphérique périodique (dépistage fibrose médullaire)</li>
+        <li>Œil (slit lamp) annuel si traitement prolongé (cataracte)</li>
+        <li>Réduction progressive à l'arrêt (rebond)</li>
+      </ul>
+    </div>
+    <div class="tab-panel" id="eltrombopag-ai">
+      <ul>
+        <li>Eltrombopag : chélateur bivalents (Ca²⁺, Mg²⁺, Al³⁺, Fe²⁺) → séparer de 4h (antiacides, fer, produits laitiers)</li>
+        <li>Inhibiteurs CYP1A2 (fluvoxamine, ciprofloxacine) : ↑ eltrombopag → réduire dose</li>
+        <li>Statines (rosuvastatine) : ↑ exposition (inhibition OATP1B1)</li>
+        <li>Romiplostim : peu d'interactions médicamenteuses connues</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
 
 <div class="drug-card" id="card-pioglitazone" data-search="pioglitazone actos thiazolidinedione glitazone diabète dm2">
   <div class="drug-header" style="background:#16a34a;">
