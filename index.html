@@ -1023,6 +1023,7 @@ m
         <div class="nav-item" onclick="showSection('mcas')">MCAS & Angine Stable</div>
         <div class="nav-item" onclick="showSection('sca')">SCA</div>
         <div class="nav-item" onclick="showSection('fa')">FA & Arythmies</div>
+        <div class="nav-item" onclick="showSection('arythmies')">Flutter &amp; TSVP</div>
         <div class="nav-item" onclick="showSection('ic')">Insuffisance Cardiaque</div>
         <div class="nav-item" onclick="showSection('stenose-aortique')">Sténose Aortique</div>
         <div class="nav-item" onclick="showSection('pericardite')">Péricardite & Endocardite</div>
@@ -1104,6 +1105,7 @@ m
         <div class="nav-item" onclick="showSection('pneumo-o2')">O₂ Domicile & Conduite</div>
         <div class="nav-item" onclick="showSection('pneumo-pneumonie')">Pneumonie</div>
         <div class="nav-item" onclick="showSection('epanchement-pleural')">Épanchement Pleural</div>
+        <div class="nav-item" onclick="showSection('pneumo-autres-patho')">Autres Patho. Pulmonaires</div>
         <div class="nav-item" onclick="showSection('pneumo-ira')">Insuffisance Respiratoire</div>
         <div class="nav-item" onclick="showSection('pneumo-htp')">HTP & Cor Pulmonale</div>
         <div class="nav-item" onclick="showSection('neo-poumon')">Néo. Poumon</div>
@@ -1170,8 +1172,8 @@ m
         <div class="nav-item" onclick="showSection('uro-cancer-prostate')">Cancer de la prostate</div>
         <div class="nav-item" onclick="showSection('uro-vha')">Vessie hyperactive</div>
         <div class="nav-item" onclick="showSection('uro-incontinence')">Incontinence urinaire</div>
-        <div class="nav-item" onclick="showSection('uro-pna')">Pyélonéphrite aiguë</div>
         <div class="nav-item" onclick="showSection('uro-iu-recidivante')">IU récidivantes</div>
+        <div class="nav-item" onclick="showSection('uro-pna')">Pyélonéphrite aiguë</div>
         <div class="nav-item" onclick="showSection('uro-sgu')">SGU ménopause</div>
         <div class="nav-item" onclick="showSection('uro-orchi')">Orchi-épididymite</div>
         <div class="nav-item" onclick="showSection('uro-prostatite')">Prostatite aiguë</div>
@@ -2602,7 +2604,7 @@ Pseudo-urgence (sans atteinte organe) : traitement oral; éviter réduction trop
             <div style="font-size:13px;line-height:1.9;"><strong>Cible TAS &lt; 120 mmHg</strong> (si toléré)<br>
 <strong>IECA ou ARA</strong> (sauf si SAR bilatérale/rein unique — CI relative: surveiller créatinine)<br>
 <strong>Clopidogrel</strong> (prévention thrombose / anti-agrégant)<br>
-<strong>Statine haute intensité + ézétimibe</strong> (cible LDL &lt; 1.4 mmol/L si ASCVD)</div>
+<strong>Statine haute intensité + ézétimibe</strong> (cible LDL &lt; 1,8 mmol/L si ASCVD — CCS 2021)</div>
           </div>
         </div>
 
@@ -2835,7 +2837,7 @@ Recheck lipides, HbA1c, ACR annuellement</div>
         <div>
       <div style="background:#fff3cd;border-radius:8px;padding:10px;margin-bottom:8px;border-left:3px solid #b45309;">
         <strong style="color:#b45309;font-size:11px;">💊 PRISE EN CHARGE</strong>
-        <div style="font-size:12px;margin-top:5px;line-height:1.65;"><b>Non-pharmaco :</b> Arr&ecirc;t tabac (PRIORIT&Eacute;) &middot; Alimentation m&eacute;diterran&eacute;enne &middot; Activit&eacute; 150 min/sem &middot; Poids<br><b>Pharmaco :</b> Statine haute intensit&eacute; (LDL &lt;2,0) &middot; IECA si DFG&lt;60 ou DB ou HTA &middot; AAS 81 mg si maladie &eacute;tablie<br>&Eacute;z&eacute;timibe ou iPCSK9 si LDL non contr&ocirc;l&eacute;</div>
+        <div style="font-size:12px;margin-top:5px;line-height:1.65;"><b>Non-pharmaco :</b> Arr&ecirc;t tabac (PRIORIT&Eacute;) &middot; Alimentation m&eacute;diterran&eacute;enne &middot; Activit&eacute; 150 min/sem &middot; Poids<br><b>Pharmaco :</b> Statine haute intensit&eacute; (LDL &lt;1,8 si ASCVD &eacute;tablie &middot; &lt;2,0 en pr&eacute;vention primaire haut risque) &middot; IECA si DFG&lt;60 ou DB ou HTA &middot; AAS 81 mg si maladie &eacute;tablie<br>&Eacute;z&eacute;timibe ou iPCSK9 si LDL non contr&ocirc;l&eacute;</div>
       </div>
       <div style="background:#fce4ec;border-radius:8px;padding:10px;margin-bottom:8px;border-left:3px solid #dc2626;">
         <strong style="color:#dc2626;font-size:11px;">🚨 RED FLAGS</strong>
@@ -2843,7 +2845,7 @@ Recheck lipides, HbA1c, ACR annuellement</div>
       </div>
       <div style="background:#f1f5f9;border-radius:8px;padding:10px;margin-bottom:8px;border-left:3px solid #475569;">
         <strong style="color:#475569;font-size:11px;">📅 SUIVI</strong>
-        <div style="font-size:12px;margin-top:5px;line-height:1.65;">Q3-6 mois si instable, Q12 mois si stable &middot; Lipides, HbA1c, cr&eacute;at annuel<br>IPB et Doppler selon &eacute;volution &middot; Objectif LDL &lt;2,0 (risque &eacute;lev&eacute;)</div>
+        <div style="font-size:12px;margin-top:5px;line-height:1.65;">Q3-6 mois si instable, Q12 mois si stable &middot; Lipides, HbA1c, cr&eacute;at annuel<br>IPB et Doppler selon &eacute;volution &middot; Objectif LDL &lt;1,8 si ASCVD &eacute;tablie &middot; &lt;2,0 si pr&eacute;vention primaire haut risque</div>
       </div>
         </div>
       </div>
@@ -3988,7 +3990,80 @@ INOCA plus fréquente (dysfonction microvasculaire)<br>
           <button onclick="showPanel('ap3','ap30',1)" data-panel="ap30" style="background:#1a56a0;color:#fff;border:1.5px solid #1a56a0;border-radius:20px;padding:5px 13px;cursor:pointer;font-size:12px;font-weight:600;transition:.15s;">📋 Tableau complet — Médicaments de l'angine stable</button>
         </div>
         <div id="ap30" style="display:block;">
-
+<div style="overflow-x:auto;margin-top:10px;">
+<table style="width:100%;border-collapse:collapse;font-size:13px;">
+  <thead><tr style="background:#0a7a4e;color:#fff;"><th style="padding:8px 10px;text-align:left;">Classe</th><th style="padding:8px 10px;text-align:left;">Posologie usuelle</th><th style="padding:8px 10px;text-align:left;">Mécanisme</th><th style="padding:8px 10px;text-align:left;">Place en thérapie</th><th style="padding:8px 10px;text-align:left;">CI / Précautions</th></tr></thead>
+  <tbody>
+    <tr style="background:#e8f5e9;"><td colspan="5" style="padding:7px 10px;font-weight:800;color:#0a7a4e;">🩺 CONTRÔLE DES SYMPTÔMES (anti-angineux)</td></tr>
+      <tr style="background:#fff;">
+        <td style="padding:7px 10px;border-bottom:1px solid #e5e7eb;font-weight:600;">Bêta-bloquants<br><span style='font-weight:400;font-size:11px;color:#6b7280;'>Métoprolol · Bisoprolol · Aténolol</span></td>
+        <td style="padding:7px 10px;border-bottom:1px solid #e5e7eb;">Métoprolol 25–200 mg BID<br>Bisoprolol 2,5–10 mg DIE</td>
+        <td style="padding:7px 10px;border-bottom:1px solid #e5e7eb;">↓ FC, ↓ contractilité → ↓ demande en O₂</td>
+        <td style="padding:7px 10px;border-bottom:1px solid #e5e7eb;">⭐ 1<sup>re</sup> ligne. Seuls anti-angineux à ↓ mortalité post-IM. Privilégier si FEVG ↓, post-IM, FA</td>
+        <td style="padding:7px 10px;border-bottom:1px solid #e5e7eb;">Asthme sévère, BAV 2–3°, FC &lt;50, TAS &lt;90, décompensation IC aiguë</td>
+      </tr>
+      <tr style="background:#f8f9fa;">
+        <td style="padding:7px 10px;border-bottom:1px solid #e5e7eb;font-weight:600;">Antagonistes calciques — DHP<br><span style='font-weight:400;font-size:11px;color:#6b7280;'>Amlodipine · Félodipine</span></td>
+        <td style="padding:7px 10px;border-bottom:1px solid #e5e7eb;">Amlodipine 5–10 mg DIE<br>Félodipine 2,5–10 mg DIE</td>
+        <td style="padding:7px 10px;border-bottom:1px solid #e5e7eb;">Vasodilatation artérielle → ↓ postcharge</td>
+        <td style="padding:7px 10px;border-bottom:1px solid #e5e7eb;">1<sup>re</sup> ligne si BB contre-indiqué. Sûr en asthme/MPOC. Combinable avec BB</td>
+        <td style="padding:7px 10px;border-bottom:1px solid #e5e7eb;">Sténose aortique serrée, hypotension. Œdème des MI fréquent (dose-dépendant)</td>
+      </tr>
+      <tr style="background:#fff;">
+        <td style="padding:7px 10px;border-bottom:1px solid #e5e7eb;font-weight:600;">Antagonistes calciques — non-DHP<br><span style='font-weight:400;font-size:11px;color:#6b7280;'>Diltiazem · Vérapamil</span></td>
+        <td style="padding:7px 10px;border-bottom:1px solid #e5e7eb;">Diltiazem LA 120–360 mg DIE<br>Vérapamil 180–480 mg DIE</td>
+        <td style="padding:7px 10px;border-bottom:1px solid #e5e7eb;">↓ FC + vasodilatation</td>
+        <td style="padding:7px 10px;border-bottom:1px solid #e5e7eb;">Alternative au BB si asthme. Utile si FA concomitante</td>
+        <td style="padding:7px 10px;border-bottom:1px solid #e5e7eb;">⛔ <b>Ne jamais combiner avec BB</b> (bradycardie/BAV). CI si FEVG &lt;40 %</td>
+      </tr>
+      <tr style="background:#f8f9fa;">
+        <td style="padding:7px 10px;border-bottom:1px solid #e5e7eb;font-weight:600;">Nitrates longue action<br><span style='font-weight:400;font-size:11px;color:#6b7280;'>Isosorbide mononitrate</span></td>
+        <td style="padding:7px 10px;border-bottom:1px solid #e5e7eb;">ISMN 30–120 mg DIE<br>Timbre nitro 0,2–0,8 mg/h</td>
+        <td style="padding:7px 10px;border-bottom:1px solid #e5e7eb;">Veinodilatation → ↓ précharge</td>
+        <td style="padding:7px 10px;border-bottom:1px solid #e5e7eb;">2<sup>e</sup> ligne (add-on). Aucun bénéfice sur la mortalité</td>
+        <td style="padding:7px 10px;border-bottom:1px solid #e5e7eb;">⚠️ <b>Intervalle libre 8–12 h/jour</b> requis (tolérance). CI avec iPDE5</td>
+      </tr>
+      <tr style="background:#fff;">
+        <td style="padding:7px 10px;border-bottom:1px solid #e5e7eb;font-weight:600;">Nitroglycérine SL<br><span style='font-weight:400;font-size:11px;color:#6b7280;'>Vaporisateur · comprimé</span></td>
+        <td style="padding:7px 10px;border-bottom:1px solid #e5e7eb;">0,3–0,4 mg SL q5 min × 3</td>
+        <td style="padding:7px 10px;border-bottom:1px solid #e5e7eb;">Vasodilatation rapide</td>
+        <td style="padding:7px 10px;border-bottom:1px solid #e5e7eb;">🔴 <b>Tous les patients</b> — traitement de la crise + prophylaxie avant effort</td>
+        <td style="padding:7px 10px;border-bottom:1px solid #e5e7eb;">Consulter si douleur persiste après 3 doses / 15 min → 911</td>
+      </tr>
+      <tr style="background:#f8f9fa;">
+        <td style="padding:7px 10px;border-bottom:1px solid #e5e7eb;font-weight:600;">Ivabradine<br><span style='font-weight:400;font-size:11px;color:#6b7280;'>Lancora®</span></td>
+        <td style="padding:7px 10px;border-bottom:1px solid #e5e7eb;">5–7,5 mg BID</td>
+        <td style="padding:7px 10px;border-bottom:1px solid #e5e7eb;">Inhibition courant I<sub>f</sub> (nœud sinusal) → ↓ FC pure</td>
+        <td style="padding:7px 10px;border-bottom:1px solid #e5e7eb;">Add-on si FC &gt;70 bpm malgré BB, ou si BB non toléré</td>
+        <td style="padding:7px 10px;border-bottom:1px solid #e5e7eb;">Requiert <b>rythme sinusal</b> (inefficace en FA). Phosphènes ~15 %</td>
+      </tr>
+    <tr style="background:#e3f2fd;"><td colspan="5" style="padding:7px 10px;font-weight:800;color:#1a56a0;">📈 AMÉLIORATION DU PRONOSTIC (↓ mortalité / événements)</td></tr>
+      <tr style="background:#fff;">
+        <td style="padding:7px 10px;border-bottom:1px solid #e5e7eb;font-weight:600;">AAS</td>
+        <td style="padding:7px 10px;border-bottom:1px solid #e5e7eb;">81 mg DIE à vie</td>
+        <td style="padding:7px 10px;border-bottom:1px solid #e5e7eb;">Antiplaquettaire</td>
+        <td style="padding:7px 10px;border-bottom:1px solid #e5e7eb;">🔴 Tous, sauf CI. ↓ événements CV</td>
+        <td style="padding:7px 10px;border-bottom:1px solid #e5e7eb;">Clopidogrel 75 mg DIE si intolérance/allergie à l'AAS</td>
+      </tr>
+      <tr style="background:#f8f9fa;">
+        <td style="padding:7px 10px;border-bottom:1px solid #e5e7eb;font-weight:600;">Statine haute intensité</td>
+        <td style="padding:7px 10px;border-bottom:1px solid #e5e7eb;">Atorvastatine 40–80 mg<br>Rosuvastatine 20–40 mg</td>
+        <td style="padding:7px 10px;border-bottom:1px solid #e5e7eb;">↓ LDL, stabilisation de plaque</td>
+        <td style="padding:7px 10px;border-bottom:1px solid #e5e7eb;">🔴 Tous. <b>Cible LDL &lt;1,8 mmol/L</b> ou ↓ ≥50 % (CCS 2021)</td>
+        <td style="padding:7px 10px;border-bottom:1px solid #e5e7eb;">Ajouter ézétimibe puis iPCSK9 si cible non atteinte</td>
+      </tr>
+      <tr style="background:#fff;">
+        <td style="padding:7px 10px;border-bottom:1px solid #e5e7eb;font-weight:600;">IECA / ARA</td>
+        <td style="padding:7px 10px;border-bottom:1px solid #e5e7eb;">Ramipril 2,5–10 mg DIE<br>Périndopril 4–8 mg DIE</td>
+        <td style="padding:7px 10px;border-bottom:1px solid #e5e7eb;">Blocage SRAA, ↓ remodelage</td>
+        <td style="padding:7px 10px;border-bottom:1px solid #e5e7eb;">Si FEVG &lt;40 %, HTA, diabète, IRC ou post-IM</td>
+        <td style="padding:7px 10px;border-bottom:1px solid #e5e7eb;">CI : grossesse, angio-œdème, K⁺ &gt;5,5, sténose bilatérale des artères rénales</td>
+      </tr>
+  </tbody>
+</table>
+</div>
+<div style="background:#f0fdf4;border-left:4px solid #0a7a4e;border-radius:8px;padding:12px 16px;margin-top:12px;font-size:12.5px;"><strong>📌 Séquence thérapeutique (CCS) :</strong> Débuter par un <b>bêta-bloquant</b> (ou un AC si BB contre-indiqué). Si angine persistante à dose optimale → <b>ajouter</b> un AC dihydropyridine ou un nitrate longue action. Si toujours symptomatique → ajouter l'ivabradine (si FC &gt;70 et rythme sinusal) ou envisager la revascularisation. <b>AAS + statine + NTG SL</b> chez tous, dès le diagnostic.</div>
+<div style="background:#fff3cd;border-left:4px solid #f59e0b;border-radius:8px;padding:10px 14px;margin-top:10px;font-size:12.5px;">⚠️ <b>Associations à éviter :</b> BB + non-DHP (diltiazem/vérapamil) → bradycardie sévère, BAV. &nbsp;·&nbsp; Nitrates + iPDE5 (sildénafil 24 h, tadalafil 48 h) → hypotension profonde.</div>
         </div>
 
 
@@ -4008,38 +4083,20 @@ INOCA plus fréquente (dysfonction microvasculaire)<br>
             html += '<p style="font-weight:700;color:#166534;margin:0 0 8px;">🩺 Traitement des SYMPTÔMES</p>';
             if (ctx === 'asthme') {
               html += '<div style="background:#FEF9C3;border-radius:6px;padding:8px;margin-bottom:6px;">⚠️ Asthme/BPCO : <strong>&#201;viter les BB non-s&eacute;lectifs</strong> → Utiliser BCC DHP (amlodipine) + nitrate long-action</div>';
-              html += '<div style="font-size:13px;line-height:1.7;">Amlodipine 5&ndash;10 mg DIE (1&egrave;re ligne)<br>
-Nitrate long-action (ISMN) en 2&egrave; ligne<br>
-Ivabradine si FC &ge; 70 bpm en rythme sinusal</div>';
+              html += '<div style="font-size:13px;line-height:1.7;">Amlodipine 5&ndash;10 mg DIE (1&egrave;re ligne)<br>Nitrate long-action (ISMN) en 2&egrave; ligne<br>Ivabradine si FC &ge; 70 bpm en rythme sinusal</div>';
             } else if (ctx === 'fa') {
-              html += '<div style="font-size:13px;line-height:1.7;">BB (r&acirc;le nodal) pour contr&ocirc;le de la FC angine + FA<br>
-Si BB intoler&eacute; : BCC non-DHP (diltiazem / v&eacute;rapamil)<br>
-⚠️ Ivabradine CI si FA</div>';
+              html += '<div style="font-size:13px;line-height:1.7;">BB (r&acirc;le nodal) pour contr&ocirc;le de la FC angine + FA<br>Si BB intoler&eacute; : BCC non-DHP (diltiazem / v&eacute;rapamil)<br>⚠️ Ivabradine CI si FA</div>';
             } else if (ctx === 'ic') {
-              html += '<div style="font-size:13px;line-height:1.7;">BB (bisoprolol / carvédilol / métoprolol succ.) — b&eacute;n&eacute;fice symptomatique ET pronostic<br>
-Ivabradine si FC &ge; 70 bpm malgr&eacute; BB<br>
-⚠️ BCC non-DHP CI si FEVG &lt; 40%<br>
-Nitrates si congestifs (↓ pr&eacute;charge)</div>';
+              html += '<div style="font-size:13px;line-height:1.7;">BB (bisoprolol / carvédilol / métoprolol succ.) — b&eacute;n&eacute;fice symptomatique ET pronostic<br>Ivabradine si FC &ge; 70 bpm malgr&eacute; BB<br>⚠️ BCC non-DHP CI si FEVG &lt; 40%<br>Nitrates si congestifs (↓ pr&eacute;charge)</div>';
             } else if (ctx === 'hypot') {
-              html += '<div style="font-size:13px;line-height:1.7;">Prudence avec nitrates et BB (risque hypotension)<br>
-BCC DHP en 1&egrave;re ligne si TA basse syst&egrave;me<br>
-Ivabradine si FC &ge; 70 bpm sans bradycardie</div>';
+              html += '<div style="font-size:13px;line-height:1.7;">Prudence avec nitrates et BB (risque hypotension)<br>BCC DHP en 1&egrave;re ligne si TA basse syst&egrave;me<br>Ivabradine si FC &ge; 70 bpm sans bradycardie</div>';
             } else {
-              html += '<div style="font-size:13px;line-height:1.7;"><strong>1&egrave;re ligne</strong> : BB (m&eacute;toprolol / bisoprolol) — cible FC 55&ndash;60 bpm<br>
-<strong>Alternative</strong> : BCC DHP (amlodipine) si BB CI ou intoler&eacute;<br>
-<strong>Crise aig&uuml;e</strong> : NTG SL 0,3&ndash;0,4 mg q5 min &times; 3 &mdash; si &gt; 3 doses sans soulagement &rarr; SCA<br>
-<strong>Entretien</strong> : Nitrate long-action si sympt&ocirc;mes persistants malgr&eacute; BB ou BCC<br>
-<strong>3&egrave;me ligne</strong> : Ivabradine (FC &ge; 70 bpm, rythme sinusal) ou combinaison BB + BCC DHP</div>';
+              html += '<div style="font-size:13px;line-height:1.7;"><strong>1&egrave;re ligne</strong> : BB (m&eacute;toprolol / bisoprolol) — cible FC 55&ndash;60 bpm<br><strong>Alternative</strong> : BCC DHP (amlodipine) si BB CI ou intoler&eacute;<br><strong>Crise aig&uuml;e</strong> : NTG SL 0,3&ndash;0,4 mg q5 min &times; 3 &mdash; si &gt; 3 doses sans soulagement &rarr; SCA<br><strong>Entretien</strong> : Nitrate long-action si sympt&ocirc;mes persistants malgr&eacute; BB ou BCC<br><strong>3&egrave;me ligne</strong> : Ivabradine (FC &ge; 70 bpm, rythme sinusal) ou combinaison BB + BCC DHP</div>';
             }
           }
           if (obj === 'prog' || obj === 'both') {
             html += '<p style="font-weight:700;color:#1C3F8F;margin:' + (obj === 'both' ? '12px' : '0') + ' 0 8px;">📈 Am&eacute;lioration du PRONOSTIC</p>';
-            html += '<div style="font-size:13px;line-height:1.7;"><strong>AAS 81 mg DIE</strong> — toujours (pr&eacute;vention secondaire) &pm; IPP si risque GI<br>
-<strong>Statine haute intensit&eacute;</strong> — cible LDL &le; 1,8 mmol/L (atorvastatine 40&ndash;80 mg)<br>
-<strong>iSGLT2</strong> (empagliflozine 10 mg) &mdash; b&eacute;n&eacute;fice CV d&eacute;montr&eacute; si DM2 + MCAS<br>
-<strong>GLP-1</strong> (s&eacute;maglutide) &mdash; si ob&eacute;sit&eacute; ou HbA1c non contr&ocirc;l&eacute;e malgr&eacute; iSGLT2<br>
-<strong>IECA</strong> (ramipril 10 mg) &mdash; si HTA, diab&egrave;te, IC ou FEVG &lt; 40%<br>
-Modifications HDV : arr&ecirc;t tabac &bull; exercice 150 min/sem &bull; diète m&eacute;diterran&eacute;enne</div>';
+            html += '<div style="font-size:13px;line-height:1.7;"><strong>AAS 81 mg DIE</strong> — toujours (pr&eacute;vention secondaire) &pm; IPP si risque GI<br><strong>Statine haute intensit&eacute;</strong> — cible LDL &le; 1,8 mmol/L (atorvastatine 40&ndash;80 mg)<br><strong>iSGLT2</strong> (empagliflozine 10 mg) &mdash; b&eacute;n&eacute;fice CV d&eacute;montr&eacute; si DM2 + MCAS<br><strong>GLP-1</strong> (s&eacute;maglutide) &mdash; si ob&eacute;sit&eacute; ou HbA1c non contr&ocirc;l&eacute;e malgr&eacute; iSGLT2<br><strong>IECA</strong> (ramipril 10 mg) &mdash; si HTA, diab&egrave;te, IC ou FEVG &lt; 40%<br>Modifications HDV : arr&ecirc;t tabac &bull; exercice 150 min/sem &bull; diète m&eacute;diterran&eacute;enne</div>';
           }
           html += '</div>';
           res.innerHTML = html;
@@ -4808,71 +4865,7 @@ Plus fréquent chez la <strong>femme jeune</strong></div>
         </div>
 
 
-        <script>
-        function runScaAlgo() {
-          var type = document.getElementById('sca-type-sel').value;
-          var ctx = document.getElementById('sca-ctx-sel').value;
-          var res = document.getElementById('sca-result');
-          if (!type) { res.style.display = 'none'; return; }
-          res.style.display = 'block';
-
-          var html = '';
-          if (type === 'ai-nstemi') {
-            var bg = '#FFFBEB'; var border = '#d97706';
-            html += '<div style="border-left:4px solid ' + border + ';background:' + bg + ';border-radius:8px;padding:14px;">';
-            html += '<p style="font-weight:700;color:#92400e;margin:0 0 10px;">🟡 Prise en charge AI / NSTEMI</p>';
-            html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;font-size:12px;">';
-            html += '<div><strong>Mesures imm&eacute;diates</strong><div style="font-size:13px;line-height:1.8;">O&sup2; si SpO&sup2; &lt; 90%<br>
-NTG SL (si TA OK &amp; pas IM VD)<br>
-Monitoring ECG continu &bull; acc&egrave;s IV<br>
-NTG IV si douleur persist. / HTA</div></div>';
-            html += '<div><strong>Antiagr&eacute;gation</strong><div style="font-size:13px;line-height:1.8;">AAS 160&ndash;325 mg (mast.) d&egrave;s arriv&eacute;e<br>
-Ticagr&eacute;lor 180 mg charge (pr&eacute;f&eacute;r&eacute;)<br>
-HBPM / HNF selon DFG<br>
-IPP si double antiplaquettaire<br>
-Colchicine 0,5 mg &times; 3 mois</div></div>';
-            html += '</div>';
-            if (ctx === 'choc') {
-              html += '<div style="background:#FEE2E2;border-radius:6px;padding:8px;margin-top:8px;">⚡ Choc cardiogénique : coronarographie <strong>imm&eacute;diate</strong> (m&ecirc;me si NSTEMI) · support h&eacute;modynamique (IABP / ECMO)</div>';
-            } else if (ctx === 'irc') {
-              html += '<div style="background:#EEF2FF;border-radius:6px;padding:8px;margin-top:8px;">🔵 IRC : pr&eacute;f&eacute;rer HNF plut&ocirc;t qu&apos;HBPM si DFG &lt; 30 · r&eacute;duire dose fondaparinux · hydratation post-PCI</div>';
-            } else if (ctx === 'hemo') {
-              html += '<div style="background:#FEF9C3;border-radius:6px;padding:8px;margin-top:8px;">🩸 Risque h&eacute;morragique &eacute;lev&eacute; : privil&eacute;gier monoth&eacute;rapie antiplaquettaire apr&egrave;s 3&ndash;6 mois · &eacute;valuer score HAS-BLED</div>';
-            }
-            html += '<div style="background:#DCFCE7;border-radius:6px;padding:8px;margin-top:8px;font-size:12px;"><strong>Coronarographie :</strong> 24&ndash;48h si stable &bull; &lt; 2h si haut risque (instabilit&eacute; h&eacute;mo · sus-ST aVR &bull; Killip &ge; III · FV/TV)</div>';
-            html += '</div>';
-          } else if (type === 'stemi') {
-            var bg2 = '#FEF2F2'; var border2 = '#c0392b';
-            html += '<div style="border-left:4px solid ' + border2 + ';background:' + bg2 + ';border-radius:8px;padding:14px;">';
-            html += '<p style="font-weight:700;color:#c0392b;margin:0 0 10px;">🔴 Prise en charge STEMI — urgence absolue</p>';
-            html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;font-size:12px;">';
-            html += '<div><strong>Mesures imm&eacute;diates</strong><div style="font-size:13px;line-height:1.8;">Appel STEMI alert (cath lab)<br>
-O&sup2; si SpO&sup2; &lt; 90%<br>
-NTG SL (si TA OK &amp; pas IM VD)<br>
-AAS 160&ndash;325 mg d&egrave;s ECG diagnostic<br>
-Ticagr&eacute;lor 180 mg charge (ou clopidogrel 600 mg)<br>
-HNF 5000 UI IV bolus</div></div>';
-            if (ctx === 'nopci') {
-              html += '<div><strong>Fibrinolyse (si PCI &gt; 120 min)</strong><div style="font-size:13px;line-height:1.8;">Tn&eacute;ct&eacute;plase IV dose unique selon poids<br>
-HNF ou HBPM apr&egrave;s lyse<br>
-Transf&eacute;rer vers centre PCI d&egrave;s possible<br>
-ECG 60&ndash;90 min : si &eacute;chec → PCI de sauvetage</div></div>';
-            } else {
-              html += '<div><strong>PCI Primaire (&lt; 120 min)</strong><div style="font-size:13px;line-height:1.8;">Door-to-Balloon &lt; 120 min (cible)<br>
-Aspirine + Ticagr&eacute;lor avant cath<br>
-HNF / bivalirudine en salle<br>
-Stent actif (DES) pr&eacute;f&eacute;r&eacute;</div></div>';
-            }
-            html += '</div>';
-            if (ctx === 'choc') {
-              html += '<div style="background:#FFF0F5;border-radius:6px;padding:8px;margin-top:8px;font-size:12px;">💥 Choc : PCI <strong>imm&eacute;diate</strong> · vasopresseurs (nor&eacute;pin&eacute;phrine) · support IABP / Impella / ECMO · int&eacute;ger en soins intensifs</div>';
-            }
-            html += '<div style="background:#EEF2FF;border-radius:6px;padding:8px;margin-top:8px;font-size:12px;"><strong>Post-STEMI :</strong> IECA + BB + statine haute intensit&eacute; + double antiplaquettaire × 12 mois · &eacute;cho &agrave; 4&ndash;6 semaines · DAI si FEVG &le; 35%</div>';
-            html += '</div>';
-          }
-          res.innerHTML = html;
-        }
-        </script>
+        
       </div>
 
       <!-- PRISE EN CHARGE IPS SCA -->
@@ -7880,15 +7873,13 @@ Idéal = supervisé (peu accessible Québec) → viser 30 min/jour ou 2×15–20
         <div style="background:#e8f8f5;border-radius:10px;padding:14px;margin-bottom:10px;">
           <div style="font-weight:700;color:#0a7a4e;margin-bottom:6px;">👟 « Nouveau 10 000 pas » = 7 000 pas</div>
           <div style="font-size:13px;line-height:1.8;">10 000 pas = marketing japonais des années 1960 (vente de podomètres), sans base scientifique<br>
-<strong>Ding, Lancet 2023 :</strong> bénéfice plafonne vers ~7 000 pas ; l'essentiel est acquis à ~5 000 pas<br>
-Dr Roussin → « viser &gt;5 000 pas » comme objectif réaliste</div>
+<strong>Ding, Lancet 2023 :</strong> bénéfice plafonne vers ~7 000 pas ; l'essentiel est acquis à ~5 000 pas</div>
         </div>
         <div style="background:#e8f4ff;border-radius:10px;padding:14px;">
           <div style="font-weight:700;color:#1C3F8F;margin-bottom:6px;">🏥 Quand référer en intervention endovasculaire?</div>
           <div style="font-size:13px;line-height:1.8;">Claudication invalidante malgré TMO + programme de marche ≥3 mois<br>
 Ischémie critique (douleur de repos, ulcère ischémique, gangrène)<br>
 ITH ≤ 0,4 avec symptômes sévères</div>
-          <div style="font-size:12px;color:#555;margin-top:6px;font-style:italic;">Un patient satisfait de sa marche n'aura souvent pas besoin d'angioplastie/stent — Dr Roussin</div>
         </div>
       </div>
     </div>
@@ -7927,7 +7918,7 @@ ITH ≤ 0,4 avec symptômes sévères</div>
         <div>
       <div style="background:#fff3cd;border-radius:8px;padding:10px;margin-bottom:8px;border-left:3px solid #b45309;">
         <strong style="color:#b45309;font-size:11px;">💊 PRISE EN CHARGE</strong>
-        <div style="font-size:12px;margin-top:5px;line-height:1.65;"><b>Non-pharmaco :</b> Arr&ecirc;t tabac (PRIORIT&Eacute; absolue) &middot; Programme marche progressive supervis&eacute;e &middot; Soins podologiques &middot; Chaussures adapt&eacute;es<br><b>Pharmaco :</b> Statine (LDL &lt;2,0) &middot; IECA &middot; AAS 81 mg DIE ou clopidogrel &middot; Contr&ocirc;le DB et TA (&lt;130/80)<br>Revascularisation (ICP ou pontage) si isch&eacute;mie critique ou claudication invalidante</div>
+        <div style="font-size:12px;margin-top:5px;line-height:1.65;"><b>Non-pharmaco :</b> Arr&ecirc;t tabac (PRIORIT&Eacute; absolue) &middot; Programme marche progressive supervis&eacute;e &middot; Soins podologiques &middot; Chaussures adapt&eacute;es<br><b>Pharmaco :</b> Statine haute intensit&eacute; (LDL &lt;1,8 &mdash; ASCVD &eacute;tablie, CCS 2021) &middot; IECA &middot; AAS 81 mg DIE ou clopidogrel &middot; Contr&ocirc;le DB et TA (&lt;130/80)<br>Revascularisation (ICP ou pontage) si isch&eacute;mie critique ou claudication invalidante</div>
       </div>
       <div style="background:#fce4ec;border-radius:8px;padding:10px;margin-bottom:8px;border-left:3px solid #dc2626;">
         <strong style="color:#dc2626;font-size:11px;">🚨 RED FLAGS</strong>
@@ -13267,10 +13258,10 @@ Thyroïdectomie totale + curage ganglionnaire central + Iode 131 (RAI) · Suivi 
                 <text x="545" y="96" text-anchor="middle" font-size="10" font-weight="600" fill="#475569">Urine finale</text>
                 <text x="545" y="110" text-anchor="middle" font-size="9" fill="#64748b">Excrétion K+</text>
                 <!-- arrows -->
-                <line x1="130" y1="100" x2="148" y2="100" stroke="#94a3b8" stroke-width="2" marker-end="url(#arr)"/>
-                <line x1="270" y1="100" x2="288" y2="100" stroke="#94a3b8" stroke-width="2" marker-end="url(#arr)"/>
-                <line x1="470" y1="100" x2="488" y2="100" stroke="#94a3b8" stroke-width="2" marker-end="url(#arr)"/>
-                <defs><marker id="arr" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#94a3b8"/></marker></defs>
+                <line x1="130" y1="100" x2="148" y2="100" stroke="#94a3b8" stroke-width="2" marker-end="url(#arr-kali)"/>
+                <line x1="270" y1="100" x2="288" y2="100" stroke="#94a3b8" stroke-width="2" marker-end="url(#arr-kali)"/>
+                <line x1="470" y1="100" x2="488" y2="100" stroke="#94a3b8" stroke-width="2" marker-end="url(#arr-kali)"/>
+                <defs><marker id="arr-kali" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#94a3b8"/></marker></defs>
                 <!-- Label 90% reabsorbed before distal -->
                 <text x="200" y="155" text-anchor="middle" font-size="10" fill="#64748b" font-style="italic">90 % du K+ filtré réabsorbé AVANT le néphron distal</text>
                 <text x="200" y="168" text-anchor="middle" font-size="10" fill="#64748b" font-style="italic">→ aucun rôle dans la régulation de l&apos;équilibre</text>
@@ -17845,7 +17836,7 @@ Carence absolue ou relative en insuline → ↑ Glucagon → ↑ Lipolyse → �
         <button onclick="goToBlock('asthme-6')" style="background:#0a7a4e;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔬 Sévérité</button>
         <button onclick="goToBlock('asthme-7')" style="background:#0a7a4e;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">💊 Traitement</button>
         <button onclick="goToBlock('asthme-8')" style="background:#7b3fa0;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🤰 Grossesse</button>
-        <button onclick="goToBlock('asthme-11')" style="background:#c0392b;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🚨 Urgence</button>
+        <button onclick="goToBlock('asthme-7')" style="background:#c0392b;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🚨 Urgence</button>
       </div>
       <div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:20px;">
         <div style="flex:1;min-width:110px;background:#EEF2FF;border-radius:10px;padding:12px;text-align:center;"><div style="font-size:18px;font-weight:800;color:#1C3F8F;">≥ 12 %</div><div style="font-size:11px;color:#555;margin-top:4px;">Réversibilité VEMS (≥200 mL)</div></div>
@@ -19988,9 +19979,9 @@ Carence absolue ou relative en insuline → ↑ Glucagon → ↑ Lipolyse → �
                 <text x="85" y="178" font-size="8" fill="#0f766e" font-weight="700">INSPIRATION</text>
                 <text x="85" y="188" font-size="8" fill="#0f766e">(en-dessous de 0)</text>
                 <!-- CVF arrow -->
-                <line x1="40" y1="108" x2="240" y2="108" stroke="#dc2626" stroke-width="1.5" marker-end="url(#arr)"/>
+                <line x1="40" y1="108" x2="240" y2="108" stroke="#dc2626" stroke-width="1.5" marker-end="url(#arr-tfr)"/>
                 <text x="140" y="120" text-anchor="middle" font-size="9" fill="#dc2626" font-weight="700">← CVF →</text>
-                <defs><marker id="arr" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#dc2626"/></marker></defs>
+                <defs><marker id="arr-tfr" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#dc2626"/></marker></defs>
               </svg>
             </div>
           </div>
@@ -22601,196 +22592,7 @@ Carence absolue ou relative en insuline → ↑ Glucagon → ↑ Lipolyse → �
   </div>
 </div>
 
-    <div class="section" id="sec-endocardite">
-      <div class="section-header">
-        <div class="section-accent">🫀</div>
-        <div class="section-title"><h1>Endocardite Infectieuse</h1><div class="breadcrumb">Cardiologie <span class="breadcrumb-sep">·</span> Section 9b</div></div>
-      </div>
-
-      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
-        <button onclick="goToBlock('ei-1')" style="background:#374151;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📌 Définition & FdR</button>
-        <button onclick="goToBlock('ei-2')" style="background:#0369a1;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔍 FROM JANE</button>
-        <button onclick="goToBlock('ei-3')" style="background:#b45309;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🧪 Critères Duke</button>
-        <button onclick="goToBlock('ei-4')" style="background:#0a7a4e;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">💊 ATB</button>
-        <button onclick="goToBlock('ei-5')" style="background:#c0392b;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🚨 Red Flags</button>
-      </div>
-      <div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:20px;">
-        <div style="flex:1;min-width:120px;background:#FEF9C3;border-radius:10px;padding:12px;text-align:center;"><div style="font-size:14px;font-weight:800;color:#92400e;">FROM JANE</div><div style="font-size:11px;color:#555;margin-top:4px;">Signes cliniques</div></div>
-        <div style="flex:1;min-width:120px;background:#EEF2FF;border-radius:10px;padding:12px;text-align:center;"><div style="font-size:14px;font-weight:800;color:#1C3F8F;">2M ou 1M+3m</div><div style="font-size:11px;color:#555;margin-top:4px;">Critères Duke</div></div>
-        <div style="flex:1;min-width:120px;background:#DCFCE7;border-radius:10px;padding:12px;text-align:center;"><div style="font-size:14px;font-weight:800;color:#0a7a4e;">4–6 sem IV</div><div style="font-size:11px;color:#555;margin-top:4px;">ATB durée</div></div>
-        <div style="flex:1;min-width:120px;background:#FEE2E2;border-radius:10px;padding:12px;text-align:center;"><div style="font-size:14px;font-weight:800;color:#c0392b;">3 HC avant ATB</div><div style="font-size:11px;color:#555;margin-top:4px;">Hémocultures urgentes</div></div>
-      </div>
-
-      <div class="sec-divider" style="margin-top:32px;">
-        <div class="sd-shape sq"></div>
-        <div class="sd-label">Endocardite Infectieuse</div>
-        <div class="sd-line"></div>
-      </div>
-      <!-- Stat-cards -->
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin-bottom:16px;">
-        <div style="background:#fce4ec;border-radius:10px;padding:11px;text-align:center;border-left:4px solid #dc2626;"><div style="font-size:12px;font-weight:800;color:#dc2626;">Duke modifié</div><div style="font-size:11px;color:#555;margin-top:3px;">Critères diagnostic — 2 majeurs = EI</div></div>
-        <div style="background:#e8f4fd;border-radius:10px;padding:11px;text-align:center;border-left:4px solid #0369a1;"><div style="font-size:12px;font-weight:800;color:#0369a1;">Écho trans-oeso</div><div style="font-size:11px;color:#555;margin-top:3px;">Sensibilité supérieure valve prothétique</div></div>
-        <div style="background:#fff3cd;border-radius:10px;padding:11px;text-align:center;border-left:4px solid #f59e0b;"><div style="font-size:12px;font-weight:800;color:#f59e0b;">Strepto viridans</div><div style="font-size:11px;color:#555;margin-top:3px;">EI sous-aiguë · valves naturelles</div></div>
-        <div style="background:#f0fdf4;border-radius:10px;padding:11px;text-align:center;border-left:4px solid #16a34a;"><div style="font-size:12px;font-weight:800;color:#16a34a;">Pénicilline G</div><div style="font-size:11px;color:#555;margin-top:3px;">4–6 sem. IV si strepto sensible</div></div>
-      </div>
-      <div class="block def" id="ei-1" style="margin-top:14px;">
-        <div class="block-title"><span class="tag">📌 Définition & Facteurs de risque</span></div>
-        <p>Infection bactérienne (ou fongique) de l'endocarde → végétations sur les valves. EI aiguë (virulente) vs subaiguë (indolente).</p>
-        <div style="font-size:13px;line-height:1.8;">Valvulopathie dégénérative (SA, IM), prolapsus mitral, cardiopathie congénitale, valve prothétique (risque ×5–10)<br>
-UDIV → valve tricuspide #1 +++<br>
-Accès vasculaires : CVC, cathéter HD, pacemaker/DCI<br>
-Hémodialysés, immunosupprimés, VIH, DM mal contrôlé</div>
-      </div>
-
-      <div class="block clin" id="ei-2" style="margin-top:14px;">
-        <div class="block-title"><span class="tag">🔍 Clinique — Mnémo FROM JANE</span></div>
-        <table>
-          <thead><tr><th>Lettre</th><th>Signe</th><th>Détail</th></tr></thead>
-          <tbody>
-            <tr><td>F</td><td>Fièvre (90 %)</td><td>Parfois unique manifestation initiale</td></tr>
-            <tr><td>R</td><td>Rhumatismes</td><td>Arthralgies, myalgies</td></tr>
-            <tr><td>O</td><td>Osler</td><td>Nodules érythémateux douloureux pulpe des doigts/orteils (immuns)</td></tr>
-            <tr><td>M</td><td>Murmur</td><td>Nouveau souffle ou modification souffle préexistant</td></tr>
-            <tr><td>J</td><td>Janeway</td><td>Lésions hémorragiques indolores paumes/plantes (emboles septiques)</td></tr>
-            <tr><td>A</td><td>Anémie</td><td>Normochrome normocytaire (anémie inflammatoire)</td></tr>
-            <tr><td>N</td><td>Nails</td><td>Hémorragies en éclat de bois sous-unguéales</td></tr>
-            <tr><td>E</td><td>Emboles septiques</td><td>AVC/AIT, abcès splénique/rénal, EP septique (EI droite/UDIV)</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="block para" id="ei-3" style="margin-top:14px;">
-        <div class="block-title"><span class="tag">🧪 Critères de Duke modifiés (ESC 2023)</span></div>
-        <div class="alert alert-blue" style="margin-bottom:8px;font-size:13px;"><strong>EI certaine</strong> = 2 majeurs OU 1 majeur + 3 mineurs OU 5 mineurs</div>
-        <table>
-          <thead><tr><th>Majeurs</th></tr></thead>
-          <tbody>
-            <tr><td>≥ 2 hémocultures + avec germe typique d'EI OU persistamment + ≥ 12h</td></tr>
-            <tr><td>Imagerie + : végétation / abcès / déhiscence valve prothétique à l'ETT/ETO OU PET-scan/SPECT si valve prothétique</td></tr>
-          </tbody>
-        </table>
-        <table style="margin-top:6px;">
-          <thead><tr><th>Mineurs</th></tr></thead>
-          <tbody>
-            <tr><td>Cardiopathie prédisposante · Fièvre ≥ 38 °C · Phénomène vasculaire (embolie, Janeway) · Phénomène immunologique (Osler, Roth, FR +) · Hémoculture + non majeure</td></tr>
-          </tbody>
-        </table>
-        <p style="margin-top:8px;font-size:13px;"><strong>Hémocultures × 3 paires AVANT ATB</strong> (sites différents, espacées 1–2h) — priorité absolue<br>ÉTT → ÉTO si ÉTT négatif + forte suspicion, valve prothétique, complication suspectée<br>ECG : surveiller bloc AV (→ abcès périannulaire = urgence chirurgicale)</p>
-      </div>
-
-      <div class="block rx" id="ei-4" style="margin-top:14px;">
-        <div class="block-title"><span class="tag">💊 Traitement ATB (4–6 semaines IV)</span></div>
-        <table>
-          <thead><tr><th>Organisme</th><th>ATB</th></tr></thead>
-          <tbody>
-            <tr><td>Streptocoque sensible (CMI ≤ 0,125)</td><td>Pénicilline G ou Ceftriaxone 2 g DIE × 4 sem (ambulatoire possible)</td></tr>
-            <tr><td>SASM</td><td>Cloxacilline/Nafcilline × 4–6 sem (Ceftriaxone si intolérance Péni)</td></tr>
-            <tr><td>SARM</td><td>Vancomycine × 6 sem ± Rifampicine (valve prothétique)</td></tr>
-            <tr><td>Entérocoque</td><td>Ampicilline + Ceftriaxone × 4–6 sem</td></tr>
-          </tbody>
-        </table>
-        <div class="alert alert-yellow" style="margin-top:8px;font-size:13px;"><strong>Chirurgie urgente si :</strong> IC sévère non contrôlée · Abcès périannulaire ou fistule · Végétations > 10 mm + emboles récidivants · EI fongique · Déhiscence valve prothétique + IC</div>
-        <p style="margin-top:8px;font-size:13px;"><strong>Prophylaxie EI (ESC 2023) :</strong> Amoxicilline 2 g PO 30–60 min avant procédures dentaires invasives (Clindamycine 600 mg si allergie PCN) — indiquée si valve prothétique, ATCD EI, cardiopathie congénitale cyanogène</p>
-      </div>
-
-      <div class="block flag" id="ei-5" style="margin-top:14px;">
-        <div class="block-title"><span class="tag">🚨 RED FLAGS</span></div>
-        <div class="flag-list">
-          <div class="flag-item"><span class="fi-icon">🚨</span><span>Nouveau bloc AV de haut degré → abcès périannulaire → chirurgie urgente</span></div>
-          <div class="flag-item"><span class="fi-icon">🚨</span><span>AVC + EI + végétation persistante → chirurgie précoce (&lt; 72h si pas d'hémorragie cérébrale)</span></div>
-          <div class="flag-item"><span class="fi-icon">🚨</span><span>Hémocultures persistamment négatives → HACEK, Coxiella, Bartonella → sérologies + PET-scan</span></div>
-          <div class="flag-item"><span class="fi-icon">🚨</span><span><em>S. bovis/gallolyticus</em> + EI → cancer colorectal jusqu'à preuve du contraire → coloscopie après Tx</span></div>
-          <div class="flag-item"><span class="fi-icon">🚨</span><span>Fièvre + bactériémie <em>S. aureus</em> sans source évidente → ETT/ETO systématique (10–20 % EI)</span></div>
-        </div>
-      </div>
-
-
-      <div class="block def" style="margin-top:14px;">
-        <div class="block-title" id="tfr-bilan"><span class="tag">🫁 Bilan respiratoire préopératoire</span> <a href="https://inesss.algorithmes-onco.info/fr/algorithmes-d-investigation-de-traitement-et-de-suivi-du-cancer-du-poumon#signet900" target="_blank" style="font-size:12px;color:var(--accent);margin-left:8px;">[détails INESSS]</a></div>
-        <div class="content-text">L'évaluation respiratoire préopératoire consiste à soumettre le patient à différents tests de façon séquentielle afin d'évaluer son risque chirurgical. Elle se divise en <strong>3 étapes</strong> :</div>
-
-        <div class="key-fact green" style="margin:10px 0 6px;">
-          <strong>Étape 1 — VEMS et DLCO</strong><br>
-          Si VEMS <em>et</em> DLCO <strong>&gt; 80 %</strong> → risque faible, aucun autre test requis.<br>
-          Sinon → estimer VEMS et DLCO postopératoires prédits (POP) → étape 2.
-        </div>
-
-        <div class="key-fact green" style="margin:6px 0;">
-          <strong>Étape 2 — VEMS et DLCO POP</strong><br>
-          Si VEMS <em>et</em> DLCO POP <strong>&gt; 60 %</strong> → risque faible, aucun autre test requis.<br>
-          Si l'une des valeurs <strong>&lt; 60 %</strong> → test à l'effort → étape 3.
-        </div>
-
-        <div class="key-fact green" style="margin:6px 0;">
-          <strong>Étape 3 — Test à l'effort</strong><br>
-          <strong>3a. VO₂max (privilégié) :</strong>
-          <table style="margin-top:6px;font-size:12px;">
-            <thead><tr><th>Risque</th><th>VO₂max absolu</th><th>VO₂max prédit</th></tr></thead>
-            <tbody>
-              <tr><td><span class="drug-badge ok">Faible</span></td><td>&gt; 20 ml/kg/min</td><td>&gt; 75 %</td></tr>
-              <tr><td><span class="drug-badge warn">Modéré</span></td><td>10–20 ml/kg/min</td><td>35–75 %</td></tr>
-              <tr><td><span class="drug-badge ci">Élevé</span></td><td>&lt; 10 ml/kg/min</td><td>&lt; 35 %</td></tr>
-            </tbody>
-          </table>
-          <p style="margin-top:8px;font-size:13px;"><strong>3b. Alternatif (ACCP)</strong> — si VEMS et DLCO POP toutes deux &gt; 30 % mais l'une &lt; 60 % :<br>
-          Test de montée en escalier <strong>&gt; 22 m</strong> <em>ou</em> test de marche <strong>&gt; 400 m</strong> → risque faible.<br>
-          Échec ou VEMS/DLCO POP &lt; 30 % → procéder au test VO₂max (étape 3a).</p>
-        </div>
-
-        <table style="margin-top:10px;font-size:12px;">
-          <thead><tr><th>Niveau de risque</th><th>Interprétation</th></tr></thead>
-          <tbody>
-            <tr><td><span class="drug-badge ok">Faible</span></td><td>Mortalité attendue &lt; 1 % · Résection majeure possible</td></tr>
-            <tr><td><span class="drug-badge warn">Modéré</span></td><td>Morbidité/mortalité variable selon valeurs POP et tolérance à l'effort · Discussion risques/bénéfices requise</td></tr>
-            <tr><td><span class="drug-badge ci">Élevé</span></td><td>Mortalité après résection majeure &gt; 10 % · Risque morbidité cardiopulmonaire sévère considérable · Perte de fonction résiduelle attendue</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      
-    
-  <!-- Résumé PEC -->
-  <div class="block rx" style="margin-top:14px;">
-    <div class="block-title" style="background:#1e293b;color:#fff;"><span class="tag" style="color:#f1f5f9;">📋 RÉSUMÉ PEC — Endocardite Infectieuse</span></div>
-    <div style="padding:12px;background:#f8fafc;border-radius:0 0 6px 6px;border:1px solid #e2e8f0;">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
-        <div>
-      <div style="background:#e8f4fd;border-radius:8px;padding:10px;margin-bottom:8px;border-left:3px solid #0369a1;">
-        <strong style="color:#0369a1;font-size:11px;">🔍 CRITÈRES DIAGNOSTIQUES</strong>
-        <div style="font-size:12px;margin-top:5px;line-height:1.65;">Critères Duke modifiés : 2 majeurs OU 1 majeur + 3 mineurs OU 5 mineurs<br>Majeurs : hémocultures (organismes typiques 2/2 ou ≥3/4) + &Eacute;TT/&Eacute;TO (végétation, abcès, prothèse oscillante)<br>Mineurs : fièvre, ATCD cardiopathie, phénomènes vasculaires, Osler/Janeway/Roth</div>
-      </div>
-      <div style="background:#f0fdf4;border-radius:8px;padding:10px;margin-bottom:8px;border-left:3px solid #15803d;">
-        <strong style="color:#15803d;font-size:11px;">🩺 PRÉSENTATION CLINIQUE</strong>
-        <div style="font-size:12px;margin-top:5px;line-height:1.65;">Fièvre + frissons + souffle cardiaque nouveau/changeant + splénomégalie<br>Pétéchies · Osler (doigts douloureux) · Janeway (paumes/plantes indolores) · Roth (fond d'&oelig;il)<br>Hémorragies en flammèche ongulaires</div>
-      </div>
-      <div style="background:#ede9fe;border-radius:8px;padding:10px;margin-bottom:8px;border-left:3px solid #6d28d9;">
-        <strong style="color:#6d28d9;font-size:11px;">📋 ÉVALUATION INITIALE</strong>
-        <div style="font-size:12px;margin-top:5px;line-height:1.65;"><b>Anamnèse :</b> Chirurgie dentaire récente, FIV, cardiopathie prédisposante (valvulopathie, prothèse), ATCD endocardite, immunosuppression, CVC<br><b>Physique :</b> Auscultation cardiaque (souffle nouveau ou changeant), T°, splénomégalie, examen cutané et ongulaire, fond d'&oelig;il<br><b>Para :</b> Hémocultures &times;3 avant ATB! (espacées 30 min) · FSC, CRP, créat, urée · &Eacute;TT &rarr; &Eacute;TO (sensibilité 90% vs 65%) · UA (hématurie) · RxP (emboles septiques si EID)</div>
-      </div>
-        </div>
-        <div>
-      <div style="background:#fff3cd;border-radius:8px;padding:10px;margin-bottom:8px;border-left:3px solid #b45309;">
-        <strong style="color:#b45309;font-size:11px;">💊 PRISE EN CHARGE</strong>
-        <div style="font-size:12px;margin-top:5px;line-height:1.65;"><b>Non-pharmaco :</b> Attendre hémocultures &times;3 avant ATB · Prophylaxie dentaire future (amoxicilline 2g PO 1h avant)<br><b>Pharmaco :</b> ATB IV &times;4-6 sem (selon germe et sensibilité) :<br>Strepto : péni G/amox ± gentamicine &times;2 sem · Staph. aureus : oxacilline ou vancomycine (SARM) &times;4-6 sem<br>Entérocoque : ampi + gentamicine · Chirurgie si IC réfractaire/abcès/végétation &gt;10mm</div>
-      </div>
-      <div style="background:#fce4ec;border-radius:8px;padding:10px;margin-bottom:8px;border-left:3px solid #dc2626;">
-        <strong style="color:#dc2626;font-size:11px;">🚨 RED FLAGS</strong>
-        <div style="font-size:12px;margin-top:5px;line-height:1.65;">IC décompensée par valve détruite &rarr; chirurgie urgente<br>AVC embolique septique · Abcès annulaire · Choc septique<br>Endocardite fongique (mortalité très élevée) &rarr; SOINS INTENSIFS</div>
-      </div>
-      <div style="background:#f1f5f9;border-radius:8px;padding:10px;margin-bottom:8px;border-left:3px solid #475569;">
-        <strong style="color:#475569;font-size:11px;">📅 SUIVI</strong>
-        <div style="font-size:12px;margin-top:5px;line-height:1.65;">ATB IV 4-6 sem (hospit. ou ambulatoire CVAD) · &Eacute;TT de fin de traitement · FSC, créat, ALAT q2 sem<br>Rhumatologie si ATCD cardiopathie · Prophylaxie dentaire obligatoire à vie · Pas de sport intense &times;6 mois</div>
-      </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-    <!-- ═══════════════════════════════════════════════════════════════
-     1. HÉMOSTASE — Primaire / Secondaire / Fibrinolyse
-═══════════════════════════════════════════════════════════════ -->
-<div class="section" id="sec-hemostase">
+    <div class="section" id="sec-hemostase">
   <div class="section-header">
     <div class="section-accent" style="background:#7c2d12">🩸</div>
     <div class="section-title">
@@ -22929,7 +22731,7 @@ Hémodialysés, immunosupprimés, VIH, DM mal contrôlé</div>
 
         <!-- Arrows -->
         <defs>
-          <marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+          <marker id="arr-hemo" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
             <path d="M0,0 L0,6 L8,3 z" fill="#555"/>
           </marker>
           <marker id="arrB" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
@@ -22946,11 +22748,11 @@ Hémodialysés, immunosupprimés, VIH, DM mal contrôlé</div>
         <line x1="130" y1="215" x2="130" y2="245" stroke="#1d4ed8" stroke-width="2" marker-end="url(#arrB)"/>
 
         <!-- Extrinsèque: facteur tissulaire → VII -->
-        <line x1="380" y1="75" x2="380" y2="105" stroke="#92400e" stroke-width="2" marker-end="url(#arr)"/>
+        <line x1="380" y1="75" x2="380" y2="105" stroke="#92400e" stroke-width="2" marker-end="url(#arr-hemo)"/>
 
         <!-- Both converge on Xa -->
-        <line x1="170" y1="275" x2="500" y2="330" stroke="#555" stroke-width="2" marker-end="url(#arr)"/>
-        <line x1="380" y1="145" x2="540" y2="330" stroke="#555" stroke-width="2" marker-end="url(#arr)"/>
+        <line x1="170" y1="275" x2="500" y2="330" stroke="#555" stroke-width="2" marker-end="url(#arr-hemo)"/>
+        <line x1="380" y1="145" x2="540" y2="330" stroke="#555" stroke-width="2" marker-end="url(#arr-hemo)"/>
 
         <!-- Common pathway -->
         <line x1="630" y1="365" x2="630" y2="390" stroke="#065f46" stroke-width="2" marker-end="url(#arrG)"/>
@@ -24656,12 +24458,12 @@ Ancien traitement phlébites superficielles (remplacé par rivaroxaban)</div>
   </div>
 
   <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
-    <button onclick="goToBlock('peri-1')" style="background:#374151;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">Risque thrombo.</button>
-    <button onclick="goToBlock('peri-2')" style="background:#6d28d9;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">Risque hémo.</button>
-    <button onclick="goToBlock('peri-3')" style="background:#c0392b;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">Règle 1-2-4</button>
-    <button onclick="goToBlock('peri-4')" style="background:#0f766e;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">Antiplaquettaires</button>
-    <button onclick="goToBlock('peri-5')" style="background:#0a7a4e;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">Reprise postop</button>
-    <button onclick="goToBlock('peri-6')" style="background:#7b3fa0;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">Messages clés</button>
+    <button onclick="goToBlock('periop-1')" style="background:#374151;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">Risque thrombo.</button>
+    <button onclick="goToBlock('periop-2')" style="background:#6d28d9;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">Risque hémo.</button>
+    <button onclick="goToBlock('periop-3')" style="background:#c0392b;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">Règle 1-2-4</button>
+    <button onclick="goToBlock('periop-4')" style="background:#0f766e;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">Antiplaquettaires</button>
+    <button onclick="goToBlock('periop-5')" style="background:#0a7a4e;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">Reprise postop</button>
+    <button onclick="goToBlock('periop-6')" style="background:#7b3fa0;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">Messages clés</button>
   </div>
 
   <div class="key-fact blue" style="margin-bottom:14px;">
@@ -24677,7 +24479,7 @@ Ancien traitement phlébites superficielles (remplacé par rivaroxaban)</div>
     <div style="background:#f0fdf4;border-radius:10px;padding:11px;text-align:center;border-left:4px solid #16a34a;"><div style="font-size:12px;font-weight:800;color:#16a34a;">Reprise anticoag</div><div style="font-size:11px;color:#555;margin-top:3px;">J1–2 post-op si hémostase stable</div></div>
   </div>
   <div class="block def" style="margin-top:14px;border-left:4px solid #c0392b;">
-    <div class="block-title" id="peri-1"><span class="tag">10.1 — Risque thrombotique (Maladie)</span></div>
+    <div class="block-title" id="periop-1"><span class="tag">10.1 — Risque thrombotique (Maladie)</span></div>
     <div style="overflow-x:auto;margin-top:8px;">
       <table>
         <thead><tr><th>Risque</th><th>Valve mécanique</th><th>FA</th><th>TEV</th></tr></thead>
@@ -24710,7 +24512,7 @@ Ancien traitement phlébites superficielles (remplacé par rivaroxaban)</div>
 
   <!-- 10.2 Risque de saignement procédure -->
   <div class="block para" style="border-left:4px solid #1d4ed8;margin-top:14px;">
-    <div class="block-title" id="peri-2"><span class="tag">10.2 — Risque hémorragique de la procédure</span></div>
+    <div class="block-title" id="periop-2"><span class="tag">10.2 — Risque hémorragique de la procédure</span></div>
     <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:8px;font-size:13px;">
       <div style="background:#e8f8f5;border-radius:8px;padding:12px;">
         <strong style="color:#0a7a4e;">🟢 Faible / Très faible<br>(souvent pas d'arrêt)</strong>
@@ -24742,7 +24544,7 @@ Polypectomie colique</div>
 
   <!-- Règle 1-2-4 AOD -->
   <div class="block def" style="border-left:4px solid #7b3fa0;margin-top:14px;">
-    <div class="block-title" id="peri-3"><span class="tag">10.3 — ⚡ Règle 1–2–4 (arrêt préopératoire des AOD)</span></div>
+    <div class="block-title" id="periop-3"><span class="tag">10.3 — ⚡ Règle 1–2–4 (arrêt préopératoire des AOD)</span></div>
     <div class="content-text">Combinaison fonction rénale + risque de saignement. Applicable à tous les AOD (dabigatran le plus sensible à l'IR — clairance rénale 85%).</div>
     <div style="overflow-x:auto;margin-top:8px;">
       <table>
@@ -24761,7 +24563,7 @@ Polypectomie colique</div>
 
   <!-- Antiplaquettaires préop -->
   <div class="block para" style="margin-top:14px;">
-    <div class="block-title" id="peri-4"><span class="tag">Arrêt préopératoire des antiplaquettaires</span></div>
+    <div class="block-title" id="periop-4"><span class="tag">Arrêt préopératoire des antiplaquettaires</span></div>
     <div style="overflow-x:auto;margin-top:8px;">
       <table>
         <thead><tr><th>Médicament</th><th>Arrêt avant chirurgie</th><th>Raison</th></tr></thead>
@@ -24777,7 +24579,7 @@ Polypectomie colique</div>
 
   <!-- Reprise postopératoire -->
   <div class="block def" style="margin-top:14px;background:#e8f8f5;">
-    <div class="block-title" id="peri-5"><span class="tag">10.4 — Reprise postopératoire</span></div>
+    <div class="block-title" id="periop-5"><span class="tag">10.4 — Reprise postopératoire</span></div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:8px;font-size:13px;">
       <div>
         <strong style="color:#0a7a4e;">⏱️ Délai de reprise AOD :</strong>
@@ -24804,7 +24606,7 @@ TEV &lt; 3 mois</div>
 
   <!-- Messages clés -->
   <div class="block def" style="margin-top:14px;border-left:4px solid #7b3fa0;">
-    <div class="block-title" id="peri-6"><span class="tag">⭐ Messages clés — Anticoagulation périopératoire</span></div>
+    <div class="block-title" id="periop-6"><span class="tag">⭐ Messages clés — Anticoagulation périopératoire</span></div>
     <div style="display:flex;flex-direction:column;gap:8px;margin-top:8px;font-size:13px;">
       <div style="background:#e8f4ff;border-radius:8px;padding:10px;"><strong>1.</strong> Les AOD sont la priorité : aussi efficaces que la warfarine et <strong>≥2× moins d'hémorragies intracrâniennes</strong></div>
       <div style="background:#e8f4ff;border-radius:8px;padding:10px;"><strong>2.</strong> Apixaban et rivaroxaban se donnent d'emblée (TVP/EP) ; dabigatran et édoxaban nécessitent HBPM 5–10j</div>
@@ -25489,9 +25291,8 @@ TEV &lt; 3 mois</div>
         <button onclick="goToBlock('avc-aspects')" style="background:#7c3aed;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🧠 ASPECTS</button>
         <button onclick="goToBlock('avc-thrombect')" style="background:#b45309;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔬 Thrombectomie</button>
         <button onclick="goToBlock('avc-support')" style="background:#065f46;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🏥 Soins aigus</button>
-        <button onclick="goToBlock('avc-prevention')" style="background:#4f46e5;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🛡 Prévention 2°</button>
-        <button onclick="goToBlock('avc-anticoag')" style="background:#0a7a4e;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">💊 Anticoag FA</button>
-        <button onclick="goToBlock('avc-anticoag-timing')" style="background:#0a7a4e;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">⏱ Délai anticoag FA</button>
+        <button onclick="goToBlock('avc-moyen-terme')" style="background:#4f46e5;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🛡 Prévention 2°</button>
+        <button onclick="goToBlock('avc-traitement')" style="background:#0a7a4e;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">💊 Anticoag FA</button>
         <button onclick="goToBlock('avc-complications')" style="background:#c0392b;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">⚠ Complications</button>
       </div>
       <div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:20px;">
@@ -32291,7 +32092,7 @@ Difficulté à maintenir l'hydratation<br>
               <text x="250" y="14" text-anchor="middle" font-size="11" fill="#1e3a8a" font-weight="700" pointer-events="none">VCI</text>
 
               <!-- Veines sus-hépatiques (drainage) -->
-              <line id="vsh-d" x1="195" y1="15" x2="195" y2="9" stroke="#1e40af" stroke-width="3" marker-end="url(#arrow-up)" style="cursor:pointer" onclick="showVascu('vsh')"/>
+              <line id="vsh-d" x1="195" y1="15" x2="195" y2="9" stroke="#1e40af" stroke-width="3" marker-end="url(#arrow-up-b)" style="cursor:pointer" onclick="showVascu('vsh')"/>
               <line id="vsh-m" x1="250" y1="15" x2="250" y2="9" stroke="#1e40af" stroke-width="3" style="cursor:pointer" onclick="showVascu('vsh')"/>
               <line id="vsh-g" x1="305" y1="15" x2="305" y2="9" stroke="#1e40af" stroke-width="3" style="cursor:pointer" onclick="showVascu('vsh')"/>
               <text x="170" y="9" font-size="11" fill="#1e40af" font-weight="600" style="cursor:pointer" onclick="showVascu('vsh')">VSH ×3</text>
@@ -34093,10 +33894,10 @@ Revoir rapidement si nouvelle Sx ou changement de dose<br>
         <div class="section-title"><h1>Hypertension portale</h1><div class="breadcrumb">Hépato-biliaire <span class="breadcrumb-sep">·</span> Section 9</div></div>
       </div>
       <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
-        <button onclick="goToBlock('htp-1')" style="background:#374151;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔬 Définition</button>
-        <button onclick="goToBlock('htp-2')" style="background:#6d28d9;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📌 Classification</button>
-        <button onclick="goToBlock('htp-3')" style="background:#b45309;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔍 Dérivations</button>
-        <button onclick="goToBlock('htp-4')" style="background:#c0392b;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🚨 Complications</button>
+        <button onclick="goToBlock('htport-1')" style="background:#374151;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔬 Définition</button>
+        <button onclick="goToBlock('htport-2')" style="background:#6d28d9;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">📌 Classification</button>
+        <button onclick="goToBlock('htport-3')" style="background:#b45309;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🔍 Dérivations</button>
+        <button onclick="goToBlock('htport-4')" style="background:#c0392b;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🚨 Complications</button>
       </div>
       <div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:20px;">
         <div style="flex:1;min-width:100px;background:#FEF9C3;border-radius:10px;padding:12px;text-align:center;"><div style="font-size:16px;font-weight:800;color:#92400e;">GPVH &gt; 5</div><div style="font-size:11px;color:#555;margin-top:4px;">Seuil HTP (mmHg)</div></div>
@@ -34111,7 +33912,7 @@ Revoir rapidement si nouvelle Sx ou changement de dose<br>
     <div style="background:#fce4ec;border-radius:10px;padding:11px;text-align:center;border-left:4px solid #dc2626;"><div style="font-size:12px;font-weight:800;color:#b91c1c;">HTAP signes</div><div style="font-size:11px;color:#555;margin-top:3px;">Dyspnée effort · syncope · HPD</div></div>
   </div>
       <div class="block para" style="margin-top:14px;">
-        <div class="block-title" id="htp-1"><span class="tag">🔬 9.1 Définition & physiopathologie</span></div>
+        <div class="block-title" id="htport-1"><span class="tag">🔬 9.1 Définition & physiopathologie</span></div>
         <div class="content-text"><strong>Définition :</strong> Gradient de pression porto-hépatique (GPPH) &gt; 5 mmHg. HTP cliniquement significative ≥ 10 mmHg (risque varices). HTP sévère ≥ 12 mmHg (risque hémorragie).</div>
         <div class="content-text" style="margin-top:6px;"><strong>Au repos :</strong> le foie reçoit ~25 % du débit cardiaque. Le sang traverse les sinusoïdes → veines centrolobulaires → veines sus-hépatiques → VCI.</div>
         <div class="key-fact green" style="margin-top:8px;font-size:13px;">
@@ -34124,7 +33925,7 @@ Revoir rapidement si nouvelle Sx ou changement de dose<br>
       </div>
 
       <div class="block def" style="margin-top:14px;">
-        <div class="block-title" id="htp-2"><span class="tag">📌 9.2 Classification topographique des obstacles</span></div>
+        <div class="block-title" id="htport-2"><span class="tag">📌 9.2 Classification topographique des obstacles</span></div>
         <table>
           <thead><tr><th>Niveau</th><th>Exemples</th></tr></thead>
           <tbody>
@@ -34136,7 +33937,7 @@ Revoir rapidement si nouvelle Sx ou changement de dose<br>
       </div>
 
       <div class="block clin" style="margin-top:14px;">
-        <div class="block-title" id="htp-3"><span class="tag">🔍 9.3 Voies de dérivation (circulation collatérale)</span></div>
+        <div class="block-title" id="htport-3"><span class="tag">🔍 9.3 Voies de dérivation (circulation collatérale)</span></div>
         <table>
           <thead><tr><th>Voie</th><th>Localisation</th><th>Manifestation clinique</th></tr></thead>
           <tbody>
@@ -34150,7 +33951,7 @@ Revoir rapidement si nouvelle Sx ou changement de dose<br>
       </div>
 
       <div class="block flag" style="margin-top:14px;">
-        <div class="block-title" id="htp-4"><span class="tag">🚨 9.4 Complications de l'HTP et de la cirrhose décompensée</span></div>
+        <div class="block-title" id="htport-4"><span class="tag">🚨 9.4 Complications de l'HTP et de la cirrhose décompensée</span></div>
                 <div style="display:flex;gap:6px;flex-wrap:wrap;margin:8px 0 12px;">
           <button onclick="showPanel('ap71','ap710',3)" data-panel="ap710" style="background:#6b7280;color:#fff;border:1.5px solid #6b7280;border-radius:20px;padding:5px 13px;cursor:pointer;font-size:12px;font-weight:600;transition:.15s;">Complications liées directement à l'HTP</button>
           <button onclick="showPanel('ap71','ap711',3)" data-panel="ap711" style="background:var(--cream2);color:var(--ink);border:1.5px solid #6b7280;border-radius:20px;padding:5px 13px;cursor:pointer;font-size:12px;font-weight:600;transition:.15s;">Complications de l'insuffisance hépatocellulaire + HTP</button>
@@ -34243,7 +34044,12 @@ Revoir rapidement si nouvelle Sx ou changement de dose<br>
         <div class="section-accent" style="background:#065f46">🏥</div>
         <div class="section-title"><h1>Évaluation préopératoire & risque cardiovasculaire</h1><div class="breadcrumb">Hépato-biliaire <span class="breadcrumb-sep">·</span> Section 10</div></div>
       </div>
-      
+
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
+        <button onclick="goToBlock('preo-8')" style="background:#065f46;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🫀 Risque cardiaque</button>
+        <button onclick="goToBlock('preop-resp')" style="background:#0369a1;color:#fff;border:none;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:12px;">🫁 Risque respiratoire</button>
+      </div>
+
       <div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:20px;">
         <div style="flex:1;min-width:100px;background:#FEE2E2;border-radius:10px;padding:12px;text-align:center;"><div style="font-size:13px;font-weight:800;color:#c0392b;">RCRI ≥ 3</div><div style="font-size:11px;color:#555;margin-top:4px;">Risque cardiaque élevé</div></div>
         <div style="flex:1;min-width:100px;background:#FEF9C3;border-radius:10px;padding:12px;text-align:center;"><div style="font-size:13px;font-weight:800;color:#92400e;">HbA1c &lt; 8,5 %</div><div style="font-size:11px;color:#555;margin-top:4px;">Objectif périopératoire</div></div>
@@ -34386,6 +34192,48 @@ Revoir rapidement si nouvelle Sx ou changement de dose<br>
         </div>
       </div>
 
+
+      <div class="block para" style="margin-top:14px;">
+        <div class="block-title" id="preop-resp"><span class="tag">🫁 Bilan respiratoire préopératoire</span> <a href="https://inesss.algorithmes-onco.info/fr/algorithmes-d-investigation-de-traitement-et-de-suivi-du-cancer-du-poumon#signet900" target="_blank" style="font-size:12px;color:var(--accent);margin-left:8px;">[détails INESSS]</a></div>
+        <div class="content-text">L'évaluation respiratoire préopératoire consiste à soumettre le patient à différents tests de façon séquentielle afin d'évaluer son risque chirurgical. Elle se divise en <strong>3 étapes</strong> :</div>
+
+        <div class="key-fact green" style="margin:10px 0 6px;">
+          <strong>Étape 1 — VEMS et DLCO</strong><br>
+          Si VEMS <em>et</em> DLCO <strong>&gt; 80 %</strong> → risque faible, aucun autre test requis.<br>
+          Sinon → estimer VEMS et DLCO postopératoires prédits (POP) → étape 2.
+        </div>
+
+        <div class="key-fact green" style="margin:6px 0;">
+          <strong>Étape 2 — VEMS et DLCO POP</strong><br>
+          Si VEMS <em>et</em> DLCO POP <strong>&gt; 60 %</strong> → risque faible, aucun autre test requis.<br>
+          Si l'une des valeurs <strong>&lt; 60 %</strong> → test à l'effort → étape 3.
+        </div>
+
+        <div class="key-fact green" style="margin:6px 0;">
+          <strong>Étape 3 — Test à l'effort</strong><br>
+          <strong>3a. VO₂max (privilégié) :</strong>
+          <table style="margin-top:6px;font-size:12px;">
+            <thead><tr><th>Risque</th><th>VO₂max absolu</th><th>VO₂max prédit</th></tr></thead>
+            <tbody>
+              <tr><td><span class="drug-badge ok">Faible</span></td><td>&gt; 20 ml/kg/min</td><td>&gt; 75 %</td></tr>
+              <tr><td><span class="drug-badge warn">Modéré</span></td><td>10–20 ml/kg/min</td><td>35–75 %</td></tr>
+              <tr><td><span class="drug-badge ci">Élevé</span></td><td>&lt; 10 ml/kg/min</td><td>&lt; 35 %</td></tr>
+            </tbody>
+          </table>
+          <p style="margin-top:8px;font-size:13px;"><strong>3b. Alternatif (ACCP)</strong> — si VEMS et DLCO POP toutes deux &gt; 30 % mais l'une &lt; 60 % :<br>
+          Test de montée en escalier <strong>&gt; 22 m</strong> <em>ou</em> test de marche <strong>&gt; 400 m</strong> → risque faible.<br>
+          Échec ou VEMS/DLCO POP &lt; 30 % → procéder au test VO₂max (étape 3a).</p>
+        </div>
+
+        <table style="margin-top:10px;font-size:12px;">
+          <thead><tr><th>Niveau de risque</th><th>Interprétation</th></tr></thead>
+          <tbody>
+            <tr><td><span class="drug-badge ok">Faible</span></td><td>Mortalité attendue &lt; 1 % · Résection majeure possible</td></tr>
+            <tr><td><span class="drug-badge warn">Modéré</span></td><td>Morbidité/mortalité variable selon valeurs POP et tolérance à l'effort · Discussion risques/bénéfices requise</td></tr>
+            <tr><td><span class="drug-badge ci">Élevé</span></td><td>Mortalité après résection majeure &gt; 10 % · Risque morbidité cardiopulmonaire sévère considérable · Perte de fonction résiduelle attendue</td></tr>
+          </tbody>
+        </table>
+      </div>
     </div>
 
 <div class="section" id="sec-antidepresseurs">
@@ -37263,7 +37111,8 @@ Revoir rapidement si nouvelle Sx ou changement de dose<br>
             <text x="14" y="268" font-size="8.5" fill="#6b7280">ovarien</text>
 
             <!-- Ovulation arrow -->
-            <line x1="348" y1="50" x2="348" y2="62" stroke="#ca8a04" stroke-width="1.5" marker-end="url(#arr)"/>
+            <line x1="348" y1="50" x2="348" y2="62" stroke="#ca8a04" stroke-width="1.5" marker-end="url(#arr-cycle)"/>
+            <defs><marker id="arr-cycle" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#ca8a04"/></marker></defs>
           </svg>        </div>
         <div id="cycle-info" style="background:#f0fdf4;border:2px solid #bbf7d0;border-radius:8px;padding:12px;font-size:13px;margin-top:10px">
           <div style="color:#94a3b8;font-style:italic">👆 Cliquez une zone du diagramme pour les détails de cette phase du cycle.</div>
@@ -39367,7 +39216,7 @@ Fer &rarr; constipation · interactions chélation nombreuses</div>
       <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px">
         <button onclick="goToBlock('msk-regles')" style="background:#78350f;color:#fff;border:none;padding:6px 14px;border-radius:20px;cursor:pointer;font-size:0.82rem;font-weight:600">📋 Règles d&apos;or</button>
         <button onclick="goToBlock('msk-histoire')" style="background:#92400e;color:#fff;border:none;padding:6px 14px;border-radius:20px;cursor:pointer;font-size:0.82rem;font-weight:600">📝 Histoire MSK</button>
-        <button onclick="goToBlock('msk-douleur')" style="background:#b45309;color:#fff;border:none;padding:6px 14px;border-radius:20px;cursor:pointer;font-size:0.82rem;font-weight:600">🩺 Types douleur</button>
+        <button onclick="goToBlock('msk-approche')" style="background:#b45309;color:#fff;border:none;padding:6px 14px;border-radius:20px;cursor:pointer;font-size:0.82rem;font-weight:600">🩺 Types douleur</button>
         <button onclick="goToBlock('msk-approche')" style="background:#0a7a4e;color:#fff;border:none;padding:6px 14px;border-radius:20px;cursor:pointer;font-size:0.82rem;font-weight:600">🔍 Approche universelle</button>
         <button onclick="goToBlock('msk-imagerie')" style="background:#1e40af;color:#fff;border:none;padding:6px 14px;border-radius:20px;cursor:pointer;font-size:0.82rem;font-weight:600">🖼️ Imagerie</button>
         <button onclick="goToBlock('msk-epaule')" style="background:#7c3aed;color:#fff;border:none;padding:6px 14px;border-radius:20px;cursor:pointer;font-size:0.82rem;font-weight:600">💪 Épaule</button>
@@ -39964,12 +39813,12 @@ Fer &rarr; constipation · interactions chélation nombreuses</div>
     <div class="section" id="sec-pharmacoguide">
       <div class="section-header" style="background:linear-gradient(135deg,#1e40af,#1d4ed8);">
         <div class="section-accent" style="background:#3b82f6;font-size:22px;">💊</div>
-        <div class="section-title" style="color:#fff;"><h1 style="color:#fff;">Répertoire des médicaments</h1><div class="breadcrumb" style="color:#bfdbfe;">Guide pharmacologique complet · 114 molécules</div></div>
+        <div class="section-title" style="color:#fff;"><h1 style="color:#fff;">Répertoire des médicaments</h1><div class="breadcrumb" style="color:#bfdbfe;">Guide pharmacologique complet · 265 molécules</div></div>
       </div>
 
       <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding:60px 20px;text-align:center;gap:20px;">
         <div style="font-size:64px;">💊</div>
-        <p style="font-size:16px;color:var(--ink2);max-width:480px;line-height:1.6;">Le répertoire des médicaments est disponible dans un fichier dédié incluant <strong>114 molécules</strong> avec fiches complètes, pharmacocinétique, doses, effets indésirables et interactions.</p>
+        <p style="font-size:16px;color:var(--ink2);max-width:480px;line-height:1.6;">Le répertoire des médicaments est disponible dans un fichier dédié incluant <strong>265 molécules</strong> avec fiches complètes, pharmacocinétique, doses, effets indésirables et interactions.</p>
         <a href="repertoire_medicaments.html" target="_blank" style="display:inline-flex;align-items:center;gap:10px;background:#1e40af;color:#fff;text-decoration:none;padding:14px 30px;border-radius:10px;font-weight:600;font-size:15px;">
           Ouvrir le répertoire des médicaments →
         </a>
@@ -40310,7 +40159,6 @@ const SEARCH_INDEX = [
   { id:'ic',                  title:'Insuffisance Cardiaque',         specialty:'Cardiologie',    keywords:['ic','insuffisance cardiaque','hfref','hfpef','bnp','sacubitril','entresto'] },
   { id:'stenose-aortique',    title:'Sténose Aortique',               specialty:'Cardiologie',    keywords:['sténose aortique','sa','rva','tavi'] },
   { id:'pericardite',         title:'Péricardite & Myocardite',       specialty:'Cardiologie',    keywords:['péricardite','myocardite','colchicine'] },
-  { id:'endocardite',         title:'Endocardite Infectieuse',        specialty:'Cardiologie',    keywords:['endocardite','ei','végétations','duke'] },
   { id:'map',                 title:'MAP — Maladie Artérielle Périphérique',specialty:'Cardiologie',keywords:['map','artérielle','abi','claudication'] },
   { id:'ira',                 title:'IRA — Insuffisance Rénale Aiguë',specialty:'Néphrologie',    keywords:['ira','insuffisance rénale aiguë','créatinine','oligurie'] },
   { id:'irc',                 title:'IRC / MRC',                      specialty:'Néphrologie',    keywords:['irc','mrc','insuffisance rénale chronique','dfge','dialyse'] },
@@ -40664,7 +40512,7 @@ document.addEventListener('click', e => {
 const SECTION_ORDER = [
   'home','calculateurs',
   // Cardiologie
-  'hta','dyslipidémie','mcas','sca','fa','arythmies','ic','stenose-aortique','pericardite','endocardite','map',
+  'hta','dyslipidémie','mcas','sca','fa','arythmies','ic','stenose-aortique','pericardite','map',
   // Néphrologie
   'ira','irc','proteinurie','nephritique','nephrotique','biopsie-renale','diuretiques','acidose',
   // Endocrinologie
@@ -40703,7 +40551,7 @@ const SECTION_TITLES = {
   'hta':'HTA (Primaire & Secondaire)','dyslipidémie':'Dyslipidémie',
   'mcas':'MCAS & Angine','sca':'SCA','fa':'Fibrillation Auriculaire','arythmies':'Flutter & Arythmies',
   'ic':'Insuffisance Cardiaque','stenose-aortique':'Sténose Aortique','pericardite':'Péricardite & Myocardite',
-  'endocardite':'Endocardite','map':'MAP',
+  'map':'MAP',
   'ira':'IRA','irc':'IRC / MRC','proteinurie':'Protéinurie & Hématurie','nephritique':'Sy. Néphritique',
   'nephrotique':'Sy. Néphrotique','biopsie-renale':'Biopsie Rénale','diuretiques':'Diurétiques','acidose':'Acidose Métabolique',
   'hypothyroidie':'Hypothyroïdie','hyperthyroidie':'Hyperthyroïdie','nodule-thyroidien':'Nodule Thyroïdien',
@@ -41556,6 +41404,7 @@ function goToBlock(id) {
     'mcas',
     'sca',
     'fa',
+    'arythmies',
     'ic',
     'stenose-aortique',
     'pericardite',
@@ -41596,8 +41445,6 @@ function goToBlock(id) {
     'neo-poumon',
     'amiante',
     'niveau-soins',
-    'arythmies',
-    'endocardite',
     'hemostase',
     'thrombolyse',
     'antiplaquettaires',
