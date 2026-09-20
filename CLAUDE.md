@@ -121,7 +121,7 @@ Avant TOUTE modification de index.html (remplacement de blocs, insertion de sect
     counts = {}
     for s, name in grps:
         j = c.find('</div>\n    </div>', s)
-        counts[name] = len(re.findall(r"showSection\('([a-zA-Z0-9\-]+)'\)", c[s:j]))
+        counts[name] = len(re.findall(r"showSection\('([^']+)'\)", c[s:j]))  # [^'] : les id accentués comptent aussi
     hg = c.find('class="home-grid"'); seg = c[hg:hg+16000]
     cards = re.findall(r'openGroup\(\'grp-([a-z0-9\-]+)\'\)"(.*?)home-card-icon" style="([^"]*)">([^<]*)<.*?home-card-name">(.*?)</div>\s*<div class="home-card-count">(.*?)</div>', seg, re.S)
     for grp, _, style, emo, name, cnt in cards:
@@ -248,6 +248,33 @@ Avant TOUTE modification de index.html (remplacement de blocs, insertion de sect
     **(c) L'INTERPRÉTATION — la règle de décision, en chiffres.** 🚩 **C'est la partie la plus souvent oubliée, et c'est celle qui sert.** Écrire noir sur blanc **combien de critères, et de quel type, font basculer dans chaque catégorie** — par exemple « **1 seul critère majeur OU 2 critères mineurs** = risque élevé » — puis **ce que chaque niveau déclenche** comme conduite. Terminer par un `criteria-num red` « ! » portant cette règle, ou par une `key-fact` dédiée.
 
     **Vérification** — après avoir écrit une échelle, se poser les trois questions dans l'ordre : « **à quoi ça sert ?** », « **qu'est-ce que je coche ?** », « **à partir de combien est-ce positif, et qu'est-ce que je fais alors ?** ». Si la troisième reste sans réponse dans le texte, l'échelle est décorative : la compléter ou la retirer.
+
+
+26. ⚠️ TOUTE NOUVELLE SECTION DOIT ÊTRE AJOUTÉE À `SEARCH_INDEX` — SINON ELLE EST INTROUVABLE : la barre de recherche du guide **ne balaie pas le DOM** pour découvrir les sections. Elle part d'un tableau JS statique, `const SEARCH_INDEX = [...]`, et ne construit son index de contenu (`getContentIndex()`) **que pour les `id` qui y figurent**. Une section absente de ce tableau existe, s'affiche, se navigue par le menu latéral — mais **aucun de ses mots ne sera jamais trouvé par la recherche**. C'est une panne silencieuse : rien ne casse, le contenu est simplement invisible.
+
+    **Le constat qui a motivé cette règle** : deux sections créées lors de sessions antérieures — `bases-endo` et `pharmaco-onco` — étaient introuvables par la recherche depuis leur création, sans que personne ne s'en aperçoive.
+
+    **Ce qu'il faut ajouter**, juste après l'entrée de la section voisine, dans l'ordre du tableau :
+    ```js
+    { id:'<id-sans-le-prefixe-sec->', title:'<Titre affiché>', specialty:'<Spécialité>', keywords:[ ... ] },
+    ```
+
+    **Les `keywords` décident de ce qui sera trouvé.** Y mettre, au minimum : le nom de la pathologie **avec et sans accents** (`hémoptysie` et `hemoptysie`), les **synonymes et sigles** (`TLIG`, `IGRA`, `MADO`), les **éponymes** (`ganglion de Virchow`, `foyer de Ghon`, `score de Fartoukh`), les **molécules** citées, et les **signes ou manifestations** que l'utilisateur cherchera au chevet (`orteils COVID`, `arbre en bourgeons`, `signe du croissant`). Un mot-clé coûte quelques octets ; son absence coûte une recherche infructueuse en pleine consultation.
+
+    **Vérification obligatoire avant de conclure** — la sortie doit être vide :
+    ```python
+    import re
+    c = open('index.html', encoding='utf-8').read()
+    i = c.find('const SEARCH_INDEX'); j = c.find('\n];', i)
+    ids = re.findall(r"\{ id:'([^']+)'", c[i:j])
+    phys = [m.group(1) for m in re.finditer(r'<div class="section" id="sec-([^"]+)"', c)]
+    print('sections sans entrée :', [s for s in phys if s not in ids] or 'aucune')
+    ```
+    ⚠️ Utiliser `[^']+` et non `[a-z0-9\-]+` dans les deux expressions : certains `id` sont **accentués** (`sec-dyslipidémie`), et une classe de caractères restrictive les fait disparaître silencieusement des deux listes — donc concorder à tort.
+
+    **Les entrées orphelines sont normales** : les `id` de `SEARCH_INDEX` qui ne correspondent à aucune section (`wells-pe`, `curb65`, `has-bled`…) sont les **calculateurs**, qui pointent vers une ancre de `sec-calculateurs`. Ne pas les supprimer.
+
+    **Test fonctionnel** : après l'ajout, ouvrir le guide avec jsdom, écrire un terme propre à la nouvelle section dans `#search`, déclencher un événement `input`, et vérifier que `#searchResults` ne contient pas « Aucun résultat ».
 
 La première étape du document est faite avec la structure et l'insertion des thèmes + information de base. 
 2e étape: il faut que je mette plus d'informations dans chaque encadrés parce que l'information est maigre. Voici le plan:
