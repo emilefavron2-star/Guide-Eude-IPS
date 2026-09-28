@@ -151,6 +151,14 @@
     .search-result-item .search-snippet { font-size: 11px; color: #aaa; line-height: 1.45; margin-top: 1px; font-style: italic; }
     .search-result-item .search-snippet mark { font-style: normal; }
     .no-results { padding: 16px; color: #888; font-size: 13px; text-align: center; }
+    .search-results { max-height: min(70vh, 560px); }
+    .search-result-item.active { background: #2a2a2a; }
+    .search-result-item.sr-hit { padding: 7px 16px 8px 30px; background: #151515; border-bottom-color: #222; }
+    .search-result-item.sr-hit:hover, .search-result-item.sr-hit.active { background: #262626; }
+    .search-result-item .sr-path { font-size: 10.5px; color: var(--yellow); font-weight: 600; letter-spacing: .02em; }
+    .search-result-item.sr-hit .search-snippet { font-style: normal; color: #bbb; font-size: 11.5px; }
+    .search-flash { outline: 2px solid #f59e0b !important; outline-offset: 3px; border-radius: 6px; }
+    mark.search-hit { background: #fde68a; color: inherit; padding: 0 1px; border-radius: 2px; }
 
     /* ─── LAYOUT ─── */
     .layout {
@@ -1016,9 +1024,6 @@ m
       <div class="sidebar-top-item active" id="nav-home" onclick="showSection('home')">
         <div class="dot" style="background:var(--blue)"></div> Accueil
       </div>
-      <div class="sidebar-top-item" id="nav-calculateurs" onclick="showSection('calculateurs')">
-        <div class="dot" style="background:var(--yellow)"></div> Calculateurs & Outils
-      </div>
     </div>
     <div style="height:2px;background:var(--cream3);margin:4px 0 8px;"></div>
     <!-- Méthode clinique -->
@@ -1609,13 +1614,6 @@ m
             <div class="home-card-count">3 sections</div>
           </div>
         </div>
-        <div class="home-card" onclick="showSection('calculateurs')">
-          <div class="home-card-icon" style="background:#fefce8;color:#ca8a04">🧮</div>
-          <div class="home-card-body">
-            <div class="home-card-name">Calculateurs & Outils</div>
-            <div class="home-card-count">Scores cliniques — MDCalc</div>
-          </div>
-        </div>
         <div class="home-card" onclick="showSection('quiz'); openGroup('grp-quiz')">
           <div class="home-card-icon" style="background:#fff7ed;color:#c2410c">❓</div>
           <div class="home-card-body">
@@ -1626,7 +1624,6 @@ m
       </div>
     </div>
 
-    <!-- CALCULATEURS -->
     <div class="section" id="sec-entrevue">
       <div class="section-header">
         <div class="section-accent" style="background:#0369a1">💬</div>
@@ -3103,468 +3100,6 @@ m
 
         <div class="key-fact green" style="margin-top:12px;">✅ <strong>En résumé :</strong> ① <strong>générer tôt et largement</strong> — courants, rares mais graves, et le bon · ② <strong>raffiner par un questionnaire ciblé</strong> vers 2 ou 3 hypothèses · ③ <strong>chercher activement le dangereux</strong> · ④ <strong>se relire avant de conclure</strong> : « qu'est-ce que ça pourrait être d'autre? »</div>
       </div>
-    </div>
-
-    <div class="section" id="sec-calculateurs">
-      <div class="section-header">
-        <div class="section-accent" style="background:var(--yellow)">🧮</div>
-        <div class="section-title">
-          <h1>Calculateurs & Outils</h1>
-          <div class="breadcrumb">Scores de décision · Évaluation du risque</div>
-        </div>
-      </div>
-      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px;">
-        <button onclick="goToBlock('calc-mdcalc')" style="background:#dbeafe;color:#1e40af;border:none;padding:6px 14px;border-radius:20px;font-size:12px;font-weight:600;cursor:pointer;">🔗 Liens MDCalc</button>
-      </div>
-      <div class="block rx" id="calc-mdcalc" style="margin-top:14px;">
-        <div class="content-text" style="margin-bottom:4px;">Liens directs vers <strong>MDCalc</strong> — référence clinique validée. Ouvrez dans un nouvel onglet pour utilisation en pratique.</div>
-        <p style="font-size:13px;color:#64748b;margin-bottom:16px;">Les calculateurs CAROC, CHADS-65 et CANRISK ne sont pas disponibles sur MDCalc — liens alternatifs fournis.</p>
-
-        <style>
-          .mdcalc-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:10px; margin-bottom:20px; }
-          .mdcalc-group { font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:.06em; color:#64748b; margin:18px 0 8px; padding-bottom:6px; border-bottom:2px solid var(--cream3); grid-column:1/-1; }
-          .mdcalc-card { display:flex; align-items:flex-start; gap:10px; background:var(--surface); border:1.5px solid var(--cream3); border-radius:10px; padding:10px 12px; text-decoration:none; color:var(--ink); transition:.15s; }
-          .mdcalc-card:hover { border-color:var(--blue); background:#f0f7ff; transform:translateY(-1px); }
-          .mdcalc-card-icon { font-size:18px; flex-shrink:0; margin-top:1px; }
-          .mdcalc-card-body { min-width:0; }
-          .mdcalc-card-name { font-size:13px; font-weight:700; color:var(--ink); }
-          .mdcalc-card-desc { font-size:11px; color:var(--ink2); margin-top:2px; }
-          .mdcalc-card-source { font-size:10px; color:var(--blue); margin-top:4px; font-weight:600; }
-        </style>
-
-        <div class="mdcalc-grid">
-
-          <div class="mdcalc-group">🫀 Cardiologie</div>
-
-          <a class="mdcalc-card" href="https://www.mdcalc.com/calc/807/has-bled-score-major-bleeding-risk" target="_blank" rel="noopener">
-            <div class="mdcalc-card-icon">🩸</div>
-            <div class="mdcalc-card-body">
-              <div class="mdcalc-card-name">HAS-BLED</div>
-              <div class="mdcalc-card-desc">Risque de saignement sous anticoag. (FA)</div>
-              <div class="mdcalc-card-source">→ MDCalc</div>
-            </div>
-          </a>
-
-          <a class="mdcalc-card" href="https://www.mdcalc.com/calc/1099/grace-acs-risk-calculator" target="_blank" rel="noopener">
-            <div class="mdcalc-card-icon">💔</div>
-            <div class="mdcalc-card-body">
-              <div class="mdcalc-card-name">GRACE Score</div>
-              <div class="mdcalc-card-desc">Risque mortalité SCA (hospitalier + 6 mois)</div>
-              <div class="mdcalc-card-source">→ MDCalc</div>
-            </div>
-          </a>
-
-          <a class="mdcalc-card" href="https://www.mdcalc.com/calc/111/timi-score-ua-nstemi" target="_blank" rel="noopener">
-            <div class="mdcalc-card-icon">💔</div>
-            <div class="mdcalc-card-body">
-              <div class="mdcalc-card-name">TIMI — NSTEMI</div>
-              <div class="mdcalc-card-desc">Risque à 14j UA/NSTEMI</div>
-              <div class="mdcalc-card-source">→ MDCalc</div>
-            </div>
-          </a>
-
-          <a class="mdcalc-card" href="https://www.mdcalc.com/calc/1467/timi-score-stemi" target="_blank" rel="noopener">
-            <div class="mdcalc-card-icon">💔</div>
-            <div class="mdcalc-card-body">
-              <div class="mdcalc-card-name">TIMI — STEMI</div>
-              <div class="mdcalc-card-desc">Mortalité à 30j STEMI</div>
-              <div class="mdcalc-card-source">→ MDCalc</div>
-            </div>
-          </a>
-
-          <a class="mdcalc-card" href="https://www.mdcalc.com/calc/38/framingham-risk-score-hard-coronary-heart-disease" target="_blank" rel="noopener">
-            <div class="mdcalc-card-icon">📊</div>
-            <div class="mdcalc-card-body">
-              <div class="mdcalc-card-name">Framingham</div>
-              <div class="mdcalc-card-desc">Risque cardiovasculaire à 10 ans</div>
-              <div class="mdcalc-card-source">→ MDCalc</div>
-            </div>
-          </a>
-
-          <a class="mdcalc-card" href="https://www.mdcalc.com/calc/10076/h2fpef-score-heart-failure-preserved-ejection-fraction" target="_blank" rel="noopener">
-            <div class="mdcalc-card-icon">🫀</div>
-            <div class="mdcalc-card-body">
-              <div class="mdcalc-card-name">H2FPEF</div>
-              <div class="mdcalc-card-desc">Insuffisance cardiaque FE préservée</div>
-              <div class="mdcalc-card-source">→ MDCalc</div>
-            </div>
-          </a>
-
-          <a class="mdcalc-card" href="https://www.mdcalc.com/calc/3987/new-york-heart-association-nyha-functional-classification-heart-failure" target="_blank" rel="noopener">
-            <div class="mdcalc-card-icon">🫀</div>
-            <div class="mdcalc-card-body">
-              <div class="mdcalc-card-name">NYHA</div>
-              <div class="mdcalc-card-desc">Classification fonctionnelle IC</div>
-              <div class="mdcalc-card-source">→ MDCalc</div>
-            </div>
-          </a>
-
-          <a class="mdcalc-card" href="https://www.mdcalc.com/calc/1842/canadian-cardiovascular-society-ccs-angina-grade" target="_blank" rel="noopener">
-            <div class="mdcalc-card-icon">💢</div>
-            <div class="mdcalc-card-body">
-              <div class="mdcalc-card-name">CCS Angine</div>
-              <div class="mdcalc-card-desc">Classification de l'angine (SCC)</div>
-              <div class="mdcalc-card-source">→ MDCalc</div>
-            </div>
-          </a>
-
-          <a class="mdcalc-card" href="https://www.mdcalc.com/calc/2597/cha2ds2-vasc-score-atrial-fibrillation-stroke-risk" target="_blank" rel="noopener">
-            <div class="mdcalc-card-icon">🧠</div>
-            <div class="mdcalc-card-body">
-              <div class="mdcalc-card-name">CHA₂DS₂-VASc</div>
-              <div class="mdcalc-card-desc">Risque AVC / FA (CHADS-65 canadien)</div>
-              <div class="mdcalc-card-source">→ MDCalc</div>
-            </div>
-          </a>
-
-          <div class="mdcalc-group">🫁 Pneumologie</div>
-
-          <a class="mdcalc-card" href="https://www.mdcalc.com/calc/347/perc-rule-pulmonary-embolism" target="_blank" rel="noopener">
-            <div class="mdcalc-card-icon">🫁</div>
-            <div class="mdcalc-card-body">
-              <div class="mdcalc-card-name">PERC Rule</div>
-              <div class="mdcalc-card-desc">Exclusion EP sans imagerie</div>
-              <div class="mdcalc-card-source">→ MDCalc</div>
-            </div>
-          </a>
-
-          <a class="mdcalc-card" href="https://www.mdcalc.com/calc/115/wells-criteria-pulmonary-embolism" target="_blank" rel="noopener">
-            <div class="mdcalc-card-icon">🫁</div>
-            <div class="mdcalc-card-body">
-              <div class="mdcalc-card-name">Wells — EP</div>
-              <div class="mdcalc-card-desc">Probabilité pré-test embolie pulmonaire</div>
-              <div class="mdcalc-card-source">→ MDCalc</div>
-            </div>
-          </a>
-
-          <a class="mdcalc-card" href="https://www.mdcalc.com/calc/1177/lights-criteria-exudative-effusions" target="_blank" rel="noopener">
-            <div class="mdcalc-card-icon">💧</div>
-            <div class="mdcalc-card-body">
-              <div class="mdcalc-card-name">Critères de Light</div>
-              <div class="mdcalc-card-desc">Exsudat vs transsudat (épanchement pleural)</div>
-              <div class="mdcalc-card-source">→ MDCalc</div>
-            </div>
-          </a>
-
-          <a class="mdcalc-card" href="https://www.mdcalc.com/calc/10020/crb-65-score-pneumonia-severity" target="_blank" rel="noopener">
-            <div class="mdcalc-card-icon">🦠</div>
-            <div class="mdcalc-card-body">
-              <div class="mdcalc-card-name">CRB-65</div>
-              <div class="mdcalc-card-desc">Sévérité pneumonie communautaire</div>
-              <div class="mdcalc-card-source">→ MDCalc</div>
-            </div>
-          </a>
-
-          <a class="mdcalc-card" href="https://www.mdcalc.com/calc/3992/stop-bang-score-obstructive-sleep-apnea" target="_blank" rel="noopener">
-            <div class="mdcalc-card-icon">😴</div>
-            <div class="mdcalc-card-body">
-              <div class="mdcalc-card-name">STOP-BANG</div>
-              <div class="mdcalc-card-desc">Dépistage apnée obstructive du sommeil</div>
-              <div class="mdcalc-card-source">→ MDCalc</div>
-            </div>
-          </a>
-
-          <a class="mdcalc-card" href="https://www.mdcalc.com/calc/10083/copd-assessment-test-cat" target="_blank" rel="noopener">
-            <div class="mdcalc-card-icon">🌬️</div>
-            <div class="mdcalc-card-body">
-              <div class="mdcalc-card-name">CAT Score</div>
-              <div class="mdcalc-card-desc">Impact MPOC sur qualité de vie</div>
-              <div class="mdcalc-card-source">→ MDCalc</div>
-            </div>
-          </a>
-
-          <a class="mdcalc-card" href="https://www.mdcalc.com/calc/4028/mmrc-modified-medical-research-council-dyspnea-scale" target="_blank" rel="noopener">
-            <div class="mdcalc-card-icon">💨</div>
-            <div class="mdcalc-card-body">
-              <div class="mdcalc-card-name">mMRC Dyspnée</div>
-              <div class="mdcalc-card-desc">Échelle de dyspnée MPOC</div>
-              <div class="mdcalc-card-source">→ MDCalc</div>
-            </div>
-          </a>
-
-          <a class="mdcalc-card" href="https://www.mdcalc.com/calc/10089/pack-year-calculator" target="_blank" rel="noopener">
-            <div class="mdcalc-card-icon">🚬</div>
-            <div class="mdcalc-card-body">
-              <div class="mdcalc-card-name">Paquet-années</div>
-              <div class="mdcalc-card-desc">Calcul tabagisme cumulatif</div>
-              <div class="mdcalc-card-source">→ MDCalc</div>
-            </div>
-          </a>
-
-          <div class="mdcalc-group">🫘 Néphrologie</div>
-
-          <a class="mdcalc-card" href="https://www.mdcalc.com/calc/3939/ckd-epi-equations-glomerular-filtration-rate-gfr" target="_blank" rel="noopener">
-            <div class="mdcalc-card-icon">🫘</div>
-            <div class="mdcalc-card-body">
-              <div class="mdcalc-card-name">CKD-EPI (DFGe)</div>
-              <div class="mdcalc-card-desc">Débit de filtration glomérulaire estimé</div>
-              <div class="mdcalc-card-source">→ MDCalc</div>
-            </div>
-          </a>
-
-          <a class="mdcalc-card" href="https://www.mdcalc.com/calc/4064/cockcroft-gault-equation-creatinine-clearance" target="_blank" rel="noopener">
-            <div class="mdcalc-card-icon">🫘</div>
-            <div class="mdcalc-card-body">
-              <div class="mdcalc-card-name">Cockroft-Gault</div>
-              <div class="mdcalc-card-desc">Clairance créatinine (dosage médicamenteux)</div>
-              <div class="mdcalc-card-source">→ MDCalc</div>
-            </div>
-          </a>
-
-          <a class="mdcalc-card" href="https://www.mdcalc.com/calc/2550/akin-criteria-acute-kidney-injury-aki" target="_blank" rel="noopener">
-            <div class="mdcalc-card-icon">⚡</div>
-            <div class="mdcalc-card-body">
-              <div class="mdcalc-card-name">AKIN / KDIGO</div>
-              <div class="mdcalc-card-desc">Classification IRA (stade 1–3)</div>
-              <div class="mdcalc-card-source">→ MDCalc</div>
-            </div>
-          </a>
-
-          <a class="mdcalc-card" href="https://www.mdcalc.com/calc/1477/calcium-correction-hypoalbuminemia" target="_blank" rel="noopener">
-            <div class="mdcalc-card-icon">🧪</div>
-            <div class="mdcalc-card-body">
-              <div class="mdcalc-card-name">Calcium corrigé</div>
-              <div class="mdcalc-card-desc">Correction pour hypoalbuminémie</div>
-              <div class="mdcalc-card-source">→ MDCalc</div>
-            </div>
-          </a>
-
-          <div class="mdcalc-group">🧠 Neurologie</div>
-
-          <a class="mdcalc-card" href="https://www.mdcalc.com/calc/715/nih-stroke-scale-score-nihss" target="_blank" rel="noopener">
-            <div class="mdcalc-card-icon">🧠</div>
-            <div class="mdcalc-card-body">
-              <div class="mdcalc-card-name">NIHSS</div>
-              <div class="mdcalc-card-desc">Sévérité AVC ischémique</div>
-              <div class="mdcalc-card-source">→ MDCalc</div>
-            </div>
-          </a>
-
-          <a class="mdcalc-card" href="https://www.mdcalc.com/calc/1869/alberta-stroke-program-early-ct-score-aspects" target="_blank" rel="noopener">
-            <div class="mdcalc-card-icon">🧠</div>
-            <div class="mdcalc-card-body">
-              <div class="mdcalc-card-name">ASPECTS</div>
-              <div class="mdcalc-card-desc">Score CT précoce AVC ischémique</div>
-              <div class="mdcalc-card-source">→ MDCalc</div>
-            </div>
-          </a>
-
-          <a class="mdcalc-card" href="https://www.mdcalc.com/calc/4084/montreal-cognitive-assessment-moca" target="_blank" rel="noopener">
-            <div class="mdcalc-card-icon">🧩</div>
-            <div class="mdcalc-card-body">
-              <div class="mdcalc-card-name">MoCA</div>
-              <div class="mdcalc-card-desc">Dépistage déclin cognitif</div>
-              <div class="mdcalc-card-source">→ MDCalc</div>
-            </div>
-          </a>
-
-          <div class="mdcalc-group">🫃 Gastro-entérologie</div>
-
-          <a class="mdcalc-card" href="https://www.mdcalc.com/calc/2200/fibrosis-4-fib-4-index-liver-fibrosis" target="_blank" rel="noopener">
-            <div class="mdcalc-card-icon">🫁</div>
-            <div class="mdcalc-card-body">
-              <div class="mdcalc-card-name">FIB-4</div>
-              <div class="mdcalc-card-desc">Fibrose hépatique (sans biopsie)</div>
-              <div class="mdcalc-card-source">→ MDCalc</div>
-            </div>
-          </a>
-
-          <a class="mdcalc-card" href="https://www.mdcalc.com/calc/10268/tokyo-guidelines-2018-tg18-severity-acute-cholecystitis" target="_blank" rel="noopener">
-            <div class="mdcalc-card-icon">🫒</div>
-            <div class="mdcalc-card-body">
-              <div class="mdcalc-card-name">Tokyo 2018</div>
-              <div class="mdcalc-card-desc">Sévérité cholécystite aiguë</div>
-              <div class="mdcalc-card-source">→ MDCalc</div>
-            </div>
-          </a>
-
-          <a class="mdcalc-card" href="https://www.mdcalc.com/calc/10135/los-angeles-la-classification-esophagitis" target="_blank" rel="noopener">
-            <div class="mdcalc-card-icon">🔥</div>
-            <div class="mdcalc-card-body">
-              <div class="mdcalc-card-name">LA Classification</div>
-              <div class="mdcalc-card-desc">Sévérité œsophagite (RGO)</div>
-              <div class="mdcalc-card-source">→ MDCalc</div>
-            </div>
-          </a>
-
-          <a class="mdcalc-card" href="https://www.mdcalc.com/calc/1701/bisap-score-pancreatitis-mortality" target="_blank" rel="noopener">
-            <div class="mdcalc-card-icon">🫃</div>
-            <div class="mdcalc-card-body">
-              <div class="mdcalc-card-name">BISAP</div>
-              <div class="mdcalc-card-desc">Mortalité pancréatite aiguë</div>
-              <div class="mdcalc-card-source">→ MDCalc</div>
-            </div>
-          </a>
-
-          <a class="mdcalc-card" href="https://www.mdcalc.com/calc/89/ransons-criteria-pancreatitis-mortality" target="_blank" rel="noopener">
-            <div class="mdcalc-card-icon">📊</div>
-            <div class="mdcalc-card-body">
-              <div class="mdcalc-card-name">Ranson</div>
-              <div class="mdcalc-card-desc">Mortalité pancréatite (admission + 48h) — interactif ↓</div>
-              <div class="mdcalc-card-source">→ MDCalc</div>
-            </div>
-          </a>
-
-          <a class="mdcalc-card" href="https://www.mdcalc.com/calc/2654/glasgow-coma-scale-score-gcs" target="_blank" rel="noopener">
-            <div class="mdcalc-card-icon">😶</div>
-            <div class="mdcalc-card-body">
-              <div class="mdcalc-card-name">Glasgow (GCS)</div>
-              <div class="mdcalc-card-desc">Niveau de conscience</div>
-              <div class="mdcalc-card-source">→ MDCalc</div>
-            </div>
-          </a>
-
-          <a class="mdcalc-card" href="https://www.mdcalc.com/calc/3996/alvarado-score-acute-appendicitis" target="_blank" rel="noopener">
-            <div class="mdcalc-card-icon">🫃</div>
-            <div class="mdcalc-card-body">
-              <div class="mdcalc-card-name">Alvarado</div>
-              <div class="mdcalc-card-desc">Probabilité appendicite aiguë</div>
-              <div class="mdcalc-card-source">→ MDCalc</div>
-            </div>
-          </a>
-
-          <div class="mdcalc-group">🩺 Infectiologie</div>
-
-          <a class="mdcalc-card" href="https://www.mdcalc.com/calc/104/centor-score-modified-mcisaac-strep-pharyngitis" target="_blank" rel="noopener">
-            <div class="mdcalc-card-icon">🦠</div>
-            <div class="mdcalc-card-body">
-              <div class="mdcalc-card-name">Centor / McIsaac</div>
-              <div class="mdcalc-card-desc">Pharyngite streptococcique</div>
-              <div class="mdcalc-card-source">→ MDCalc</div>
-            </div>
-          </a>
-
-          <div class="mdcalc-group">💊 Anticoagulation / Thrombose</div>
-
-          <a class="mdcalc-card" href="https://www.mdcalc.com/calc/362/wells-criteria-dvt" target="_blank" rel="noopener">
-            <div class="mdcalc-card-icon">🦵</div>
-            <div class="mdcalc-card-body">
-              <div class="mdcalc-card-name">Wells — TVP</div>
-              <div class="mdcalc-card-desc">Probabilité pré-test thrombose veineuse profonde</div>
-              <div class="mdcalc-card-source">→ MDCalc</div>
-            </div>
-          </a>
-
-          <div class="mdcalc-group">🧬 Oncologie</div>
-
-          <a class="mdcalc-card" href="https://www.mdcalc.com/calc/3995/mascc-risk-index-febrile-neutropenia" target="_blank" rel="noopener">
-            <div class="mdcalc-card-icon">🧬</div>
-            <div class="mdcalc-card-body">
-              <div class="mdcalc-card-name">MASCC — Neutropénie fébrile</div>
-              <div class="mdcalc-card-desc">Stratification du risque · ≥ 21 = bas risque (ambulatoire possible) · &lt; 21 = haut risque (hospitalisation)</div>
-              <div class="mdcalc-card-source">→ MDCalc</div>
-            </div>
-          </a>
-
-          <a class="mdcalc-card" href="https://www.mdcalc.com/calc/10003/cisne-score-solid-tumor-febrile-neutropenia" target="_blank" rel="noopener">
-            <div class="mdcalc-card-icon">🧬</div>
-            <div class="mdcalc-card-body">
-              <div class="mdcalc-card-name">CISNE</div>
-              <div class="mdcalc-card-desc">Neutropénie fébrile — tumeurs solides</div>
-              <div class="mdcalc-card-source">→ MDCalc</div>
-            </div>
-          </a>
-
-          <div class="mdcalc-group">🧠 Psychiatrie / Médecine générale</div>
-
-          <a class="mdcalc-card" href="https://www.mdcalc.com/calc/1725/phq-9-patient-health-questionnaire-9" target="_blank" rel="noopener">
-            <div class="mdcalc-card-icon">💭</div>
-            <div class="mdcalc-card-body">
-              <div class="mdcalc-card-name">PHQ-9</div>
-              <div class="mdcalc-card-desc">Dépistage et sévérité dépression</div>
-              <div class="mdcalc-card-source">→ MDCalc</div>
-            </div>
-          </a>
-
-          <a class="mdcalc-card" href="https://www.mdcalc.com/calc/1727/gad-7-general-anxiety-disorder-7" target="_blank" rel="noopener">
-            <div class="mdcalc-card-icon">😰</div>
-            <div class="mdcalc-card-body">
-              <div class="mdcalc-card-name">GAD-7</div>
-              <div class="mdcalc-card-desc">Dépistage trouble anxieux généralisé</div>
-              <div class="mdcalc-card-source">→ MDCalc</div>
-            </div>
-          </a>
-
-          <a class="mdcalc-card" href="https://www.mdcalc.com/calc/1736/ciwa-ar-alcohol-withdrawal" target="_blank" rel="noopener">
-            <div class="mdcalc-card-icon">🍺</div>
-            <div class="mdcalc-card-body">
-              <div class="mdcalc-card-name">CIWA-Ar</div>
-              <div class="mdcalc-card-desc">Sévérité sevrage alcool</div>
-              <div class="mdcalc-card-source">→ MDCalc</div>
-            </div>
-          </a>
-
-          <a class="mdcalc-card" href="https://www.mdcalc.com/calc/1079/cage-questions-alcohol-use" target="_blank" rel="noopener">
-            <div class="mdcalc-card-icon">🍺</div>
-            <div class="mdcalc-card-body">
-              <div class="mdcalc-card-name">CAGE</div>
-              <div class="mdcalc-card-desc">Dépistage abus d'alcool</div>
-              <div class="mdcalc-card-source">→ MDCalc</div>
-            </div>
-          </a>
-
-          <a class="mdcalc-card" href="https://www.mdcalc.com/calc/29/body-mass-index-bmi-body-surface-area-bsa" target="_blank" rel="noopener">
-            <div class="mdcalc-card-icon">⚖️</div>
-            <div class="mdcalc-card-body">
-              <div class="mdcalc-card-name">IMC / BSA</div>
-              <div class="mdcalc-card-desc">Indice de masse corporelle</div>
-              <div class="mdcalc-card-source">→ MDCalc</div>
-            </div>
-          </a>
-
-          <div class="mdcalc-group">🦴 Orthopédie / Urgences</div>
-
-          <a class="mdcalc-card" href="https://www.mdcalc.com/calc/4035/ottawa-knee-rule" target="_blank" rel="noopener">
-            <div class="mdcalc-card-icon">🦴</div>
-            <div class="mdcalc-card-body">
-              <div class="mdcalc-card-name">Ottawa — Genou</div>
-              <div class="mdcalc-card-desc">Indication Rx genou post-trauma</div>
-              <div class="mdcalc-card-source">→ MDCalc</div>
-            </div>
-          </a>
-
-          <a class="mdcalc-card" href="https://www.mdcalc.com/calc/4036/ottawa-ankle-rule" target="_blank" rel="noopener">
-            <div class="mdcalc-card-icon">🦴</div>
-            <div class="mdcalc-card-body">
-              <div class="mdcalc-card-name">Ottawa — Cheville</div>
-              <div class="mdcalc-card-desc">Indication Rx cheville post-trauma</div>
-              <div class="mdcalc-card-source">→ MDCalc</div>
-            </div>
-          </a>
-
-          <div class="mdcalc-group">🇨🇦 Outils canadiens (hors MDCalc)</div>
-
-          <a class="mdcalc-card" href="https://www.osteoporosecanada.ca/professionnels-de-la-sante/outil-caroc/" target="_blank" rel="noopener">
-            <div class="mdcalc-card-icon">🦴</div>
-            <div class="mdcalc-card-body">
-              <div class="mdcalc-card-name">CAROC</div>
-              <div class="mdcalc-card-desc">Risque fracture ostéoporotique à 10 ans</div>
-              <div class="mdcalc-card-source">→ Ostéoporose Canada</div>
-            </div>
-          </a>
-
-          <a class="mdcalc-card" href="https://chads65.ca" target="_blank" rel="noopener">
-            <div class="mdcalc-card-icon">🫀</div>
-            <div class="mdcalc-card-body">
-              <div class="mdcalc-card-name">CHADS-65</div>
-              <div class="mdcalc-card-desc">Anticoagulation FA — recommandation SCC</div>
-              <div class="mdcalc-card-source">→ chads65.ca</div>
-            </div>
-          </a>
-
-          <a class="mdcalc-card" href="https://canrisk.ca" target="_blank" rel="noopener">
-            <div class="mdcalc-card-icon">🎗️</div>
-            <div class="mdcalc-card-body">
-              <div class="mdcalc-card-name">CANRISK</div>
-              <div class="mdcalc-card-desc">Risque diabète type 2 (Santé Canada)</div>
-              <div class="mdcalc-card-source">→ canrisk.ca</div>
-            </div>
-          </a>
-
-        </div>
-      </div>
-
-     
     </div>
 
 <div class="section" id="sec-ecg">
@@ -46387,10 +45922,12 @@ IPP au long cours si ulcère idiopathique ou si maintien AINS/AAS obligatoire</d
         <div id="dalg2" style="display:none;margin-top:14px;">
           <div style="background:#f0fdf4;border-left:5px solid #15803d;border-radius:10px;padding:12px 14px;"><strong style="color:#15803d;">💊 Antidiarrhéiques par contexte</strong><span style="font-size:12px;color:#64748b;"> — le tableau de choix par situation clinique</span><div style="font-size:13px;line-height:1.7;margin-top:6px;">Quelle molécule, dans quel contexte — et surtout <strong>dans quels cas aucun antidiarrhéique n&#39;est acceptable</strong>.</div></div>
 
+        <div class="key-fact orange" style="margin-top:10px;">🚨 <strong>SII-D ≠ MICI — ce tableau NE traite PAS la MICI.</strong> Les étapes 2 à 4 ci-dessous (FODMAP, lopéramide, amitriptyline, rifaximine…) s&#39;appliquent au <strong>syndrome de l&#39;intestin irritable</strong> — un diagnostic <strong>FONCTIONNEL</strong>, posé par les <strong>critères de Rome IV</strong> une fois le bilan organique <strong>négatif</strong> (calprotectine normale, pas de signal d&#39;alarme, coloscopie ± biopsies non contributive). La <strong>maladie de Crohn</strong> et la <strong>colite ulcéreuse</strong> sont des maladies <strong>inflammatoires ORGANIQUES</strong> (calprotectine élevée, coloscopie et biopsies positives) qui exigent un <strong>traitement immunosuppresseur ou biologique DISTINCT</strong> — <button onclick="showSection('mii')" style="background:#c2410c;color:#fff;border:none;padding:4px 12px;border-radius:6px;cursor:pointer;font-weight:600;font-size:11px;margin-left:4px;">→ Section MICI (traitement à mii-4)</button></div>
+
         <div style="display:flex;flex-direction:column;gap:8px;">
           <div style="background:#f0fdf4;border-left:4px solid #065f46;border-radius:0 8px 8px 0;padding:10px 14px;">
             <div style="font-weight:700;font-size:12px;color:#065f46;margin-bottom:5px;">ÉTAPE 1 — Identifier le contexte clinique</div>
-            <div style="font-size:12px;line-height:1.8;"><strong>Diarrhée aiguë (&lt;4 sem) :</strong> SRO (1re ligne universelle) → Lopéramide si pas de fièvre/sang · Bismuth si aiguë légère<br><strong>C. difficile :</strong> Vanco PO ou FDX · Éviter Imodium si sévère/fulminante<br><strong>SII-D (chronique) :</strong> → Étape 2<br><strong>Diarrhée sécrétoire (tumeur neuroendocrine) :</strong> → Octréotide<br><strong>Malabsorption acides biliaires (MAB / post-cholécystectomie) :</strong> → Chélateurs AB</div>
+            <div style="font-size:12px;line-height:1.8;"><strong>Diarrhée aiguë (&lt;4 sem) :</strong> SRO (1re ligne universelle) → Lopéramide si pas de fièvre/sang · Bismuth si aiguë légère<br><strong>C. difficile :</strong> Vanco PO ou FDX · Éviter Imodium si sévère/fulminante<br><strong>SII-D (chronique, diagnostic FONCTIONNEL d&#39;exclusion) :</strong> → Étape 2<br>🚨 <strong>MICI — Crohn / colite ulcéreuse (diarrhée chronique INFLAMMATOIRE) :</strong> NE PAS traiter avec ce protocole → voir <strong>Traitement — Pyramide thérapeutique MII</strong> (section MICI, mii-4)<br><strong>Diarrhée sécrétoire (tumeur neuroendocrine) :</strong> → Octréotide<br><strong>Malabsorption acides biliaires (MAB / post-cholécystectomie) :</strong> → Chélateurs AB</div>
           </div>
           <div style="background:#EEF2FF;border-left:4px solid #1C3F8F;border-radius:0 8px 8px 0;padding:10px 14px;">
             <div style="font-weight:700;font-size:12px;color:#1C3F8F;margin-bottom:5px;">ÉTAPE 2 — SII-D : 1re ligne (ACG 2021 / AGA 2022)</div>
@@ -57300,10 +56837,11 @@ Revoir rapidement si nouvelle Sx ou changement de dose<br>
     <div class="section" id="sec-imagerie-thorax">
       <div class="section-header">
         <div class="section-accent" style="background:#475569">🩻</div>
-        <div class="section-title"><h1>Imagerie du thorax</h1><div class="breadcrumb">Imagerie <span class="breadcrumb-sep">·</span> Lecture systématique <span class="breadcrumb-sep">·</span> Signes radiologiques <span class="breadcrumb-sep">·</span> Patrons</div></div>
+        <div class="section-title"><h1>Imagerie du thorax</h1><div class="breadcrumb">Imagerie <span class="breadcrumb-sep">·</span> Anatomie <span class="breadcrumb-sep">·</span> Technique <span class="breadcrumb-sep">·</span> Lecture systématique <span class="breadcrumb-sep">·</span> Sémiologie <span class="breadcrumb-sep">·</span> Pathologies <span class="breadcrumb-sep">·</span> Tubulures</div></div>
       </div>
       <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
         <button onclick="goToBlock('img-1')" style="background:#374151;color:#fff;border:none;border-radius:8px;padding:8px 18px;cursor:pointer;font-size:12px;font-weight:600;">📐 Les bases physiques</button>
+        <button onclick="goToBlock('img-anat')" style="background:#1d4ed8;color:#fff;border:none;border-radius:8px;padding:8px 18px;cursor:pointer;font-size:12px;font-weight:600;">🫀 Repères anatomiques</button>
         <button onclick="goToBlock('img-2')" style="background:#0369a1;color:#fff;border:none;border-radius:8px;padding:8px 18px;cursor:pointer;font-size:12px;font-weight:600;">✅ Qualité du cliché</button>
         <button onclick="goToBlock('img-3')" style="background:#0a7a4e;color:#fff;border:none;border-radius:8px;padding:8px 18px;cursor:pointer;font-size:12px;font-weight:600;">🔍 Lecture systématique</button>
         <button onclick="goToBlock('img-4')" style="background:#6d28d9;color:#fff;border:none;border-radius:8px;padding:8px 18px;cursor:pointer;font-size:12px;font-weight:600;">🎯 Les signes classiques</button>
@@ -57349,6 +56887,52 @@ Revoir rapidement si nouvelle Sx ou changement de dose<br>
         </div>
 
         <div class="key-fact orange" style="margin-top:12px;">🎯 <strong>La conséquence pratique la plus importante :</strong> deux structures de <strong>densité identique</strong> qui se touchent <strong>perdent leur frontière visible</strong>. C'est le fondement du <strong>signe de la silhouette</strong> — le signe le plus utile de toute la radiographie thoracique, expliqué plus bas.</div>
+
+        <div style="font-size:12px;font-weight:800;color:#374151;letter-spacing:.4px;margin:16px 0 6px;">🔦 Comment l'image se forme — et comment la regarder</div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px;margin-top:10px;"><div style="background:#f1f5f9;border-radius:10px;padding:14px;"><strong style="color:#334155;">① Émission → atténuation → détection</strong><div style="font-size:13px;line-height:1.7;margin-top:8px;">Le tube émet des rayons X · le patient les <strong>atténue (bloque) à des degrés différents selon sa composition</strong> · les rayons qui ne sont pas complètement bloqués atteignent le <strong>détecteur</strong> · l'image est reconstruite à partir des données du détecteur.<br>🎯 Blanc = beaucoup de rayons bloqués · noir = rayons passés.</div></div><div style="background:#e8f4fd;border-radius:10px;padding:14px;"><strong style="color:#1d4ed8;">② De quel côté est la lésion ?</strong><div style="font-size:13px;line-height:1.7;margin-top:8px;">On regarde une radiographie <strong>comme si le patient nous faisait face</strong> : <strong>sa droite est à notre gauche</strong>.<br>🎯 Toujours repérer le marqueur de latéralité (<strong>G</strong> / <strong>D</strong>) avant de nommer un côté — c'est ainsi qu'on répond à la question du cours « de quel côté est la pneumonie ? ».</div></div></div><div style="margin-top:8px;"><span style="font-size:11px;color:#64748b;">📚 <em>MMD 6412 — Radiologie thoracique, Dr P. Bourgouin, CHUM/UdeM 2026</em></span></div>
+      </div>
+
+      <div class="block def" style="margin-top:14px;border-left-color:#1d4ed8;">
+        <div class="block-title" id="img-anat"><span class="tag">🫀 Repères anatomiques — ce que la radiographie permet de voir</span></div>
+<div style="font-size:12px;font-weight:800;color:#1d4ed8;letter-spacing:.4px;margin:16px 0 6px;">👁️ Les structures visibles sur une radiographie pulmonaire</div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:10px;"><div style="background:#e8f4fd;border-radius:10px;padding:14px;"><strong style="color:#1d4ed8;">🫁 Poumons &amp; médiastin</strong><div style="font-size:13px;line-height:1.7;margin-top:8px;">Les deux poumons, le <strong>médiastin</strong> entre eux (cœur, gros vaisseaux, trachée).</div></div><div style="background:#f1f5f9;border-radius:10px;padding:14px;"><strong style="color:#334155;">🦴 Os</strong><div style="font-size:13px;line-height:1.7;margin-top:8px;">Colonne dorsale · côtes · sternum/manubrium · clavicules · scapulas · têtes humérales.</div></div><div style="background:#fff3cd;border-radius:10px;padding:14px;"><strong style="color:#d35400;">🫃 Abdomen supérieur</strong><div style="font-size:13px;line-height:1.7;margin-top:8px;">Foie · rate · estomac (poche à air gastrique sous la coupole gauche).</div></div><div style="background:#f0fdf4;border-radius:10px;padding:14px;"><strong style="color:#15803d;">🧍 « Tissus mous »</strong><div style="font-size:13px;line-height:1.7;margin-top:8px;">Parties molles de la paroi thoracique — seins, muscles, peau et ses plis.</div></div></div><div style="font-size:12px;font-weight:800;color:#6d28d9;letter-spacing:.4px;margin:16px 0 6px;">🧩 Où sont les lobes — de face, ils se superposent</div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:10px;"><div style="background:#e8f4fd;border-radius:10px;padding:14px;"><strong style="color:#1d4ed8;">Lobes supérieurs</strong><div style="font-size:13px;line-height:1.7;margin-top:8px;">Occupent le haut <strong>et l'avant</strong> du thorax. De profil, ils descendent loin en avant.</div></div><div style="background:#fff3cd;border-radius:10px;padding:14px;"><strong style="color:#d35400;">Lobe moyen (droit seulement)</strong><div style="font-size:13px;line-height:1.7;margin-top:8px;">Petite zone <strong>antérieure et basse</strong> à droite, contre le bord droit du cœur.</div></div><div style="background:#f0fdf4;border-radius:10px;padding:14px;"><strong style="color:#15803d;">Lobes inférieurs</strong><div style="font-size:13px;line-height:1.7;margin-top:8px;">Occupent l'arrière et le bas, mais <strong>remontent haut en arrière</strong> — de face, ils se projettent derrière les lobes supérieurs et moyen.</div></div></div><div class="key-fact blue" style="margin-top:12px;">🎯 <strong>La conséquence pratique :</strong> de face, une opacité de la base droite peut appartenir au <strong>lobe moyen</strong> (en avant) <em>ou</em> au <strong>lobe inférieur</strong> (en arrière). C'est le <strong>profil</strong> — ou le signe de la silhouette (bord du cœur effacé → lobe moyen; coupole effacée → lobe inférieur) — qui tranche.</div><div style="font-size:12px;font-weight:800;color:#b45309;letter-spacing:.4px;margin:16px 0 6px;">🏛️ Les trois compartiments du médiastin</div><div style="overflow-x:auto;margin-top:12px;"><table style="font-size:12px;"><thead><tr><th style="width:24%;">Compartiment</th><th style="width:40%;">Contenu</th><th>Exemple vu au cours</th></tr></thead><tbody><tr style="background:#fff3cd;"><td><strong>Antérieur</strong> (prévasculaire)</td><td>Thymus · ganglions · graisse</td><td>Lymphome (masse médiastinale)</td></tr><tr style="background:#f8f9fa;"><td><strong>Moyen</strong> (viscéral)</td><td>Cœur et vaisseaux · œsophage · trachée · ganglions</td><td>Métastases ganglionnaires</td></tr><tr style="background:#f1f5f9;"><td><strong>Postérieur</strong> (paravertébral)</td><td>Colonne et tissus paravertébraux</td><td>—</td></tr></tbody></table></div><div class="key-fact orange" style="margin-top:12px;">⚠️ <strong>Limite de la radiographie :</strong> ces structures ont des <strong>densités semblables</strong> — elles ne peuvent <strong>pas être individualisées</strong> les unes des autres. Une anomalie médiastinale ne se voit que lorsqu'elle <strong>déforme les contours</strong> du médiastin. ➜ <strong>TDM ou IRM</strong> nécessaire pour une évaluation précise.</div><div style="background:#0f172a;border-radius:10px;padding:14px;margin-top:12px;">
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#94a3b8;margin-bottom:8px;">Sch&eacute;ma &mdash; les contours du c&oelig;ur, de face et de profil</div>
+          <svg viewBox="0 0 660 290" style="width:100%;height:auto;" role="img" aria-label="Contours cardiaques de face et de profil">
+            <title>Contours cardiaques de face et de profil</title>
+            <text x="170" y="20" text-anchor="middle" fill="#4ade80" font-size="12.5" font-weight="700">FACE (PA)</text>
+            <rect x="20" y="30" width="320" height="230" rx="8" fill="#0b0f17"/>
+            <path d="M 150,44 C 92,48 58,92 52,150 C 48,196 60,228 78,238 L 150,238 Z" fill="#1e293b" stroke="#475569" stroke-width="1.2"/>
+            <path d="M 190,44 C 248,48 282,92 288,150 C 292,196 280,228 262,238 L 190,238 Z" fill="#1e293b" stroke="#475569" stroke-width="1.2"/>
+            <line x1="170" y1="36" x2="170" y2="98" stroke="#64748b" stroke-width="5"/>
+            <path d="M 152,98 L 152,150 C 132,160 126,192 134,212 C 150,234 208,238 236,218 C 254,202 250,166 228,148 C 220,140 212,136 206,132 L 204,120 C 214,114 214,98 200,94 L 184,98 Z" fill="#e2e8f0" stroke="#f8fafc" stroke-width="1"/>
+            <circle cx="204" cy="106" r="3" fill="#fbbf24"/><line x1="207" y1="104" x2="250" y2="74" stroke="#fbbf24" stroke-width="1"/>
+            <text x="252" y="72" fill="#fbbf24" font-size="10.5" font-weight="700">Crosse aortique</text>
+            <circle cx="210" cy="134" r="3" fill="#60a5fa"/><line x1="213" y1="134" x2="250" y2="124" stroke="#60a5fa" stroke-width="1"/>
+            <text x="252" y="122" fill="#60a5fa" font-size="10.5" font-weight="700">Tronc</text><text x="252" y="134" fill="#60a5fa" font-size="10.5" font-weight="700">pulmonaire</text>
+            <circle cx="244" cy="192" r="3" fill="#f87171"/><line x1="247" y1="192" x2="266" y2="192" stroke="#f87171" stroke-width="1"/>
+            <text x="270" y="188" fill="#f87171" font-size="10.5" font-weight="700">Ventricule</text><text x="270" y="200" fill="#f87171" font-size="10.5" font-weight="700">gauche</text>
+            <circle cx="134" cy="192" r="3" fill="#c4b5fd"/><line x1="131" y1="192" x2="96" y2="192" stroke="#c4b5fd" stroke-width="1"/>
+            <text x="92" y="188" text-anchor="end" fill="#c4b5fd" font-size="10.5" font-weight="700">Oreillette</text><text x="92" y="200" text-anchor="end" fill="#c4b5fd" font-size="10.5" font-weight="700">droite</text>
+            <text x="318" y="50" fill="#cbd5e1" font-size="13" font-weight="800">G</text>
+            <text x="170" y="278" text-anchor="middle" fill="#cbd5e1" font-size="10.5">bord droit = OD · bord gauche = crosse, tronc pulmonaire, VG</text>
+
+            <text x="510" y="20" text-anchor="middle" fill="#4ade80" font-size="12.5" font-weight="700">PROFIL</text>
+            <rect x="370" y="30" width="270" height="230" rx="8" fill="#0b0f17"/>
+            <line x1="396" y1="44" x2="396" y2="246" stroke="#94a3b8" stroke-width="2"/>
+            <line x1="622" y1="44" x2="622" y2="246" stroke="#94a3b8" stroke-width="2" stroke-dasharray="6 5"/>
+            <path d="M 470,112 C 432,122 414,168 422,206 C 432,238 498,244 536,226 C 562,210 566,170 552,140 C 542,120 514,106 490,108 Z" fill="#e2e8f0" stroke="#f8fafc" stroke-width="1"/>
+            <path d="M 476,110 C 480,72 530,62 548,96" fill="none" stroke="#e2e8f0" stroke-width="9" stroke-linecap="round"/>
+            <circle cx="512" cy="68" r="3" fill="#fbbf24"/><text x="512" y="56" text-anchor="middle" fill="#fbbf24" font-size="10.5" font-weight="700">Crosse aortique</text>
+            <circle cx="428" cy="180" r="3" fill="#c4b5fd"/><line x1="425" y1="178" x2="410" y2="140" stroke="#c4b5fd" stroke-width="1"/>
+            <text x="402" y="120" fill="#c4b5fd" font-size="10.5" font-weight="700">Ventricule</text><text x="402" y="132" fill="#c4b5fd" font-size="10.5" font-weight="700">droit</text>
+            <circle cx="552" cy="146" r="3" fill="#60a5fa"/><line x1="555" y1="146" x2="568" y2="146" stroke="#60a5fa" stroke-width="1"/>
+            <text x="572" y="142" fill="#60a5fa" font-size="10.5" font-weight="700">Oreillette</text><text x="572" y="154" fill="#60a5fa" font-size="10.5" font-weight="700">gauche</text>
+            <circle cx="546" cy="212" r="3" fill="#f87171"/><line x1="549" y1="212" x2="568" y2="212" stroke="#f87171" stroke-width="1"/>
+            <text x="572" y="208" fill="#f87171" font-size="10.5" font-weight="700">Ventricule</text><text x="572" y="220" fill="#f87171" font-size="10.5" font-weight="700">gauche</text>
+            <text x="400" y="254" fill="#94a3b8" font-size="10">sternum · antérieur</text>
+            <text x="618" y="254" text-anchor="end" fill="#94a3b8" font-size="10">rachis · postérieur</text>
+            <text x="505" y="278" text-anchor="middle" fill="#cbd5e1" font-size="10.5">en avant = VD · en arrière = OG (haut) et VG (bas)</text>
+          </svg>
+          <div style="background:#1e3a8a;border-radius:8px;padding:10px 12px;margin-top:10px;font-size:12.5px;line-height:1.6;color:#dbeafe;">🎯 Chaque bord du c&oelig;ur est dessin&eacute; parce qu&rsquo;il touche du poumon a&eacute;r&eacute; : quand un bord dispara&icirc;t, c&rsquo;est le lobe qui le touche qui est malade (signe de la silhouette, plus bas). De profil, le <strong>ventricule droit</strong> est la cavit&eacute; la plus ant&eacute;rieure, coll&eacute;e au sternum.</div>
+        </div><div style="margin-top:8px;"><span style="font-size:11px;color:#64748b;">📚 <em>MMD 6412 — Radiologie thoracique, Dr P. Bourgouin, CHUM/UdeM 2026</em></span></div>
       </div>
 
       <div class="block para" style="margin-top:14px;border-left-color:#0369a1;">
@@ -57361,32 +56945,23 @@ Revoir rapidement si nouvelle Sx ou changement de dose<br>
           <thead><tr><th style="width:20%;">Critère</th><th style="width:34%;">Comment vérifier</th><th>Si c'est mauvais</th></tr></thead>
           <tbody>
             <tr style="background:#e8f4fd;"><td><strong>Identité &amp; date</strong></td><td>Nom, date, <strong>latéralité</strong></td><td>🚨 Le premier réflexe — et la première cause d'erreur grave</td></tr>
-            <tr><td><strong>Incidence</strong></td><td><strong>PA</strong> (debout, standard) vs <strong>AP</strong> (couché, au lit)</td><td>⚠️ En <strong>AP</strong>, la <strong>silhouette cardiaque est agrandie</strong> — ne pas conclure à une cardiomégalie · les épanchements se répartissent différemment</td></tr>
-            <tr style="background:#f0fdf4;"><td><strong>Rotation</strong></td><td>Les <strong>extrémités médiales des clavicules</strong> doivent être <strong>équidistantes des épineuses</strong></td><td>Fausse déviation trachéale et médiastinale, asymétrie de transparence pulmonaire</td></tr>
-            <tr><td><strong>Inspiration</strong></td><td>On doit voir environ <strong>9 à 10 arcs costaux postérieurs</strong> au-dessus du diaphragme</td><td>Expiration → <strong>fausse cardiomégalie</strong>, opacités basales artéfactuelles, poumons faussement « chargés »</td></tr>
-            <tr style="background:#fff3cd;"><td><strong>Pénétration</strong></td><td>On doit <strong>deviner les vertèbres derrière le cœur</strong> et voir les vaisseaux jusqu'à la périphérie</td><td>Sous-pénétré → tout paraît blanc, faux infiltrats<br>Sur-pénétré → on manque les opacités subtiles</td></tr>
+            <tr><td><strong>Incidence</strong></td><td><strong>PA</strong> (debout, standard) vs <strong>AP</strong> (couché, au lit) — le nom désigne le <strong>trajet des rayons</strong> : en <strong>PA</strong>, tube <strong>derrière</strong> le patient et détecteur <strong>devant</strong>; en <strong>AP</strong>, l'inverse<br>✅ Cliché « idéal » = <strong>PA + profil</strong> : le PA limite la magnification des structures antérieures (cœur); le <strong>profil</strong> évalue mieux les <strong>lobes inférieurs et le médiastin</strong></td><td>⚠️ En <strong>AP</strong>, la <strong>silhouette cardiaque est agrandie</strong> (le cœur est loin du détecteur) — ne pas conclure à une cardiomégalie · les épanchements se répartissent différemment<br>L'AP au chevet est rapide d'accès en milieu hospitalier mais de <strong>qualité très variable</strong> : souvent mal inspiré, patient assis ou couché</td></tr>
+            <tr style="background:#f0fdf4;"><td><strong>Rotation</strong></td><td>Les <strong>extrémités médiales des clavicules</strong> doivent être <strong>équidistantes des épineuses</strong> — autrement dit, <strong>clavicules symétriques</strong></td><td>Fausse déviation trachéale et médiastinale, asymétrie de transparence pulmonaire</td></tr>
+            <tr><td><strong>Inspiration</strong></td><td>Cours : <strong>5 à 7 côtes antérieures</strong> au-dessus du diaphragme — ce qui correspond à environ <strong>9 à 10 arcs costaux postérieurs</strong> (deux façons de compter le même repère)</td><td>Expiration → <strong>fausse cardiomégalie</strong>, opacités basales artéfactuelles, poumons faussement « chargés »</td></tr>
+            <tr style="background:#fff3cd;"><td><strong>Pénétration</strong><br><span style="font-size:11px;">(exposition)</span></td><td>On doit <strong>deviner les vertèbres derrière le cœur</strong> et voir l'<strong>interstice rétrocardiaque</strong> ainsi que les vaisseaux jusqu'à la périphérie</td><td>Sous-pénétré → tout paraît blanc, faux infiltrats<br>Sur-pénétré → on manque les opacités subtiles</td></tr>
             <tr><td><strong>Champ complet</strong></td><td>Apex, culs-de-sac, parois latérales inclus</td><td>Un apex ou un cul-de-sac coupé peut masquer un pneumothorax ou un épanchement</td></tr>
           </tbody>
         </table>
         </div>
+
+        <div style="font-size:12px;font-weight:800;color:#0369a1;letter-spacing:.4px;margin:16px 0 6px;">📸 Les autres incidences — surtout d'intérêt historique</div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:10px;"><div style="background:#e8f4fd;border-radius:10px;padding:14px;"><strong style="color:#1d4ed8;">Lordotique</strong><div style="font-size:13px;line-height:1.7;margin-top:8px;">Meilleure visualisation des <strong>apex</strong>.</div></div><div style="background:#fce4ec;border-radius:10px;padding:14px;"><strong style="color:#c0392b;">Expiratoire</strong><div style="font-size:13px;line-height:1.7;margin-top:8px;">Meilleure détection du <strong>pneumothorax</strong>.</div></div><div style="background:#fff3cd;border-radius:10px;padding:14px;"><strong style="color:#d35400;">Décubitus latéral</strong><div style="font-size:13px;line-height:1.7;margin-top:8px;"><strong>Épanchement pleural</strong> ou <strong>pneumothorax</strong> chez le patient alité · suspicion de <strong>corps étranger</strong> chez le nouveau-né.</div></div><div style="background:#f1f5f9;border-radius:10px;padding:14px;"><strong style="color:#334155;">Obliques 15° ou 45°</strong><div style="font-size:13px;line-height:1.7;margin-top:8px;">Nodules ou <strong>plaques pleurales</strong>.</div></div><div style="background:#ede9fe;border-radius:10px;padding:14px;"><strong style="color:#6d28d9;">Double énergie · tomosynthèse</strong><div style="font-size:13px;line-height:1.7;margin-top:8px;">Soustraction des os (double énergie) · meilleure détection avec moins d'irradiation qu'une TDM (tomosynthèse) — pertinence <strong>discutable à l'ère de la TDM</strong>.</div></div></div><div class="key-fact blue" style="margin-top:12px;">💡 L'usage de ces incidences a été <strong>supplanté par l'accessibilité de la TDM</strong>. <span style="font-size:11px;color:#64748b;">📚 <em>MMD 6412 — Radiologie thoracique, Dr P. Bourgouin, CHUM/UdeM 2026</em></span></div>
       </div>
 
       <div class="block rx" style="margin-top:14px;">
         <div class="block-title" id="img-3"><span class="tag">🔍 Lecture systématique — toujours le même ordre</span></div>
 
         <div class="key-fact green" style="margin-top:10px;">🎯 <strong>Pourquoi un ordre fixe :</strong> l'œil est attiré par l'anomalie évidente, et s'y arrête — c'est le <strong>biais de satisfaction de recherche</strong>. Une séquence systématique, toujours la même, est la seule protection contre le fait de manquer la deuxième anomalie, souvent la plus importante.</div>
-
-        <div class="criteria-list" style="margin-top:12px;">
-          <div class="criteria-item"><div class="criteria-num blue">1</div><span><strong>Voies aériennes</strong> — trachée <strong>médiane</strong>? déviée <em>vers</em> une atélectasie, <em>repoussée</em> par un épanchement ou un pneumothorax sous tension · carène · bronches souches</span></div>
-          <div class="criteria-item"><div class="criteria-num blue">2</div><span><strong>Os &amp; parties molles</strong> — côtes (<strong>fractures</strong>, lésions lytiques), clavicules, rachis, omoplates · <strong>emphysème sous-cutané</strong> · seins et plis cutanés (sources classiques de fausses opacités)</span></div>
-          <div class="criteria-item"><div class="criteria-num blue">3</div><span><strong>Cœur &amp; médiastin</strong> — <strong>rapport cardiothoracique</strong> (&gt; 0,5 sur un cliché PA = cardiomégalie) · contours cardiaques · <strong>élargissement médiastinal</strong> · bouton aortique</span></div>
-          <div class="criteria-item"><div class="criteria-num blue">4</div><span><strong>Diaphragme</strong> — coupole <strong>droite plus haute</strong> que la gauche normalement · <strong>culs-de-sac costo-diaphragmatiques</strong> libres et pointus? · 🚨 <strong>air libre sous-diaphragmatique</strong> = perforation</span></div>
-          <div class="criteria-item"><div class="criteria-num blue">5</div><span><strong>Hiles</strong> — le <strong>hile gauche est normalement plus haut</strong> que le droit · densité, taille, contours · adénopathies?</span></div>
-          <div class="criteria-item"><div class="criteria-num blue">6</div><span><strong>Parenchyme</strong> — comparer les deux poumons <strong>zone par zone, de haut en bas et symétriquement</strong> · opacités, transparence, vascularisation</span></div>
-          <div class="criteria-item"><div class="criteria-num blue">7</div><span><strong>Plèvre</strong> — <strong>ligne pleurale</strong> visible avec absence de vascularisation au-delà = <strong>pneumothorax</strong> · émoussement des culs-de-sac = <strong>épanchement</strong> · épaississements, plaques</span></div>
-          <div class="criteria-item"><div class="criteria-num red">!</div><span><strong>Matériel &amp; zones aveugles</strong> — position des <strong>tubes, cathéters, sondes, électrodes</strong> 🎯 · puis <strong>revoir délibérément</strong> les <strong>apex</strong>, les <strong>régions rétrocardiaque et rétrodiaphragmatique</strong>, et les <strong>culs-de-sac</strong> — c'est là que se cachent les lésions manquées</span></div>
-        </div>
-
+<div style="font-size:12px;font-weight:800;color:#0a7a4e;letter-spacing:.4px;margin:16px 0 6px;">🧭 La routine du cours — cinq étapes, de l'extérieur au patient vers l'os</div><div class="criteria-list" style="margin-top:12px;"><div class="criteria-item"><div class="criteria-num red">0</div><span><strong>Avant de lire</strong> — <strong>identification du patient et date</strong> (nom, date, <strong>latéralité</strong>) · <strong>comparer aux clichés antérieurs</strong></span></div><div class="criteria-item"><div class="criteria-num blue">1</div><span><strong>Tubulures</strong> — position des <strong>tubes, cathéters, sondes, électrodes</strong> 🎯 · exemples du cours : trachéostomie, voie jugulaire interne droite, voie sous-clavière gauche, cathéter artériel pulmonaire (Swan-Ganz), tube de gavage, assistance circulatoire gauche (LVAD), défibrillateur implantable ➜ onglet <em>Tubulures &amp; appareils</em> plus bas</span></div><div class="criteria-item"><div class="criteria-num blue">2</div><span><strong>Poumons</strong> — <strong>parenchyme</strong> : comparer les deux poumons <strong>zone par zone, de haut en bas et symétriquement</strong> · opacités, transparence, vascularisation · <strong>plèvre</strong> : <strong>ligne pleurale</strong> visible avec absence de vascularisation au-delà = <strong>pneumothorax</strong> · émoussement des culs-de-sac = <strong>épanchement</strong> · épaississements, plaques<br><span style="font-size:12px;color:#475569;">Exemples du cours : pneumonie du LIG · œdème interstitiel · tuberculose miliaire · néoplasie pulmonaire · pneumonie d'aspiration</span></span></div><div class="criteria-item"><div class="criteria-num blue">3</div><span><strong>Médiastin</strong> — <strong>voies aériennes</strong> : trachée <strong>médiane</strong>? déviée <em>vers</em> une atélectasie, <em>repoussée</em> par un épanchement ou un pneumothorax sous tension · carène · bronches souches · <strong>cœur</strong> : <strong>rapport cardiothoracique</strong> (&gt; 0,5 sur un cliché PA = cardiomégalie) · contours cardiaques · <strong>élargissement médiastinal</strong> · bouton aortique · <strong>hiles</strong> : le <strong>hile gauche est normalement plus haut</strong> que le droit · densité, taille, contours · adénopathies?<br><span style="font-size:12px;color:#475569;">Exemples du cours : lymphome · métastases ganglionnaires</span></span></div><div class="criteria-item"><div class="criteria-num blue">4</div><span><strong>Tissus mous</strong> (parties molles) — <strong>emphysème sous-cutané</strong> · seins et plis cutanés (sources classiques de fausses opacités) · <strong>diaphragme et abdomen supérieur</strong> : coupole <strong>droite plus haute</strong> que la gauche normalement · <strong>culs-de-sac costo-diaphragmatiques</strong> libres et pointus? · 🚨 <strong>air libre sous-diaphragmatique</strong> = perforation<br><span style="font-size:12px;color:#475569;">Exemples du cours : pneumopéritoine · emphysème sous-cutané</span></span></div><div class="criteria-item"><div class="criteria-num blue">5</div><span><strong>Os</strong> — côtes (<strong>fractures</strong>, lésions lytiques), clavicules, rachis, omoplates<br><span style="font-size:12px;color:#475569;">Exemple du cours : métastases osseuses <strong>blastiques</strong> (plus blanches que l'os normal)</span></span></div><div class="criteria-item"><div class="criteria-num red">!</div><span><strong>Zones aveugles</strong> — <strong>revoir délibérément</strong> les <strong>apex</strong>, les <strong>régions rétrocardiaque et rétrodiaphragmatique</strong>, et les <strong>culs-de-sac</strong> — c'est là que se cachent les lésions manquées</span></div></div><div style="font-size:12px;font-weight:800;color:#0369a1;letter-spacing:.4px;margin:16px 0 6px;">🔀 Trois façons d'ordonner la lecture — le cours n'en impose aucune</div><div style="overflow-x:auto;margin-top:12px;"><table style="font-size:12px;"><thead><tr><th style="width:36%;">Mnémotechnique ABCDEFGHI</th><th style="width:30%;">De l'intérieur vers l'extérieur</th><th>Autre ordre proposé</th></tr></thead><tbody><tr><td><strong>A</strong>irway — voies aériennes</td><td>Cœur</td><td>Exogène (tubulures)</td></tr><tr style="background:#f8f9fa;"><td><strong>B</strong>ones and soft tissues — os et tissus mous</td><td>Médiastin / hiles</td><td>Médiastin et cœur</td></tr><tr><td><strong>C</strong>ardiac — cœur</td><td>Poumons</td><td>Abdomen</td></tr><tr style="background:#f8f9fa;"><td><strong>D</strong>iaphragm — diaphragme</td><td>Paroi thoracique</td><td>Diaphragme</td></tr><tr><td><strong>E</strong>ffusions — épanchements</td><td>Abdomen</td><td>Plèvres</td></tr><tr style="background:#f8f9fa;"><td><strong>F</strong>ields — champs pulmonaires</td><td></td><td>Hiles</td></tr><tr><td><strong>G</strong>reat vessels / Gastric bubble</td><td></td><td>Parenchyme pulmonaire</td></tr><tr style="background:#f8f9fa;"><td><strong>H</strong>ila and mediastinum — hiles, médiastin</td><td></td><td>Os et tissus mous</td></tr><tr><td><strong>I</strong>mpression</td><td></td><td></td></tr></tbody></table></div><div class="key-fact green" style="margin-top:12px;">✅ <strong>Le message du cours :</strong> la méthode importe peu — ce qui compte est d'en choisir <strong>une</strong> et de l'appliquer <strong>à chaque cliché, dans le même ordre</strong>. <span style="font-size:11px;color:#64748b;">📚 <em>MMD 6412 — Radiologie thoracique, Dr P. Bourgouin, CHUM/UdeM 2026</em></span></div>
         <div class="key-fact orange" style="margin-top:12px;">🔎 <strong>Le geste qui rattrape le plus d'erreurs :</strong> <strong>comparer avec un cliché antérieur</strong>. Une opacité stable depuis trois ans n'a pas la même signification qu'une opacité nouvelle. Le radiologue lui-même intègre systématiquement la comparaison aux examens antérieurs et la recommandation de suivi. <span style="font-size:11px;color:#64748b;">📚 <em>Goldman-Cecil, ch. 78 « Imaging in Pulmonary Disease »</em></span></div>
       </div>
 
@@ -57461,11 +57036,13 @@ Revoir rapidement si nouvelle Sx ou changement de dose<br>
       </div>
 
       <div class="block para" style="margin-top:14px;border-left-color:#b45309;">
-        <div class="block-title" id="img-5"><span class="tag">🗂️ Décrire les opacités — le bon vocabulaire</span></div>
+        <div class="block-title" id="img-5"><span class="tag">🗂️ Décrire les opacités — sémiologie et vocabulaire</span></div>
 
         <div class="key-fact red" style="margin-top:10px;">🎯 <strong>Deux corrections de vocabulaire qui comptent :</strong><br>① <strong>Le terme « infiltrat » doit être évité</strong> — on parle d'<strong>opacités pulmonaires</strong>, classées en <strong>grandes (&gt; 1 cm)</strong> ou <strong>petites (&lt; 1 cm)</strong>.<br>② La <strong>distinction radiologique « alvéolaire vs interstitiel » n'est plus recommandée</strong> : la corrélation entre l'aspect radiologique et l'histologie réelle est <strong>médiocre</strong>. Un patron nodulaire peut être produit par une atteinte interstitielle <em>ou</em> alvéolaire; le verre dépoli également. <span style="font-size:11px;color:#64748b;">📚 <em>Goldman-Cecil, ch. 78</em></span></div>
 
         <div class="key-fact blue" style="margin-top:10px;">✅ <strong>L'approche recommandée à la place :</strong> une <strong>description graphique</strong> qui combine <strong>l'opacité prédominante</strong>, <strong>l'expansion pulmonaire</strong>, et la <strong>distribution et l'abondance</strong> de l'atteinte. C'est cette combinaison qui produit un diagnostic différentiel utile.</div>
+
+        <div style="font-size:12px;font-weight:800;color:#b45309;letter-spacing:.4px;margin:16px 0 6px;">🔬 La sémiologie du cours — alvéoles ou interstice</div><div style="font-size:13px;line-height:1.7;margin-top:4px;">Le poumon est fait d'<strong>alvéoles</strong> et d'<strong>interstice</strong> (le tissu de soutien : septa interlobulaires, parois bronchovasculaires). L'unité qui les réunit est le <strong>lobule pulmonaire secondaire</strong>, délimité par les septa interlobulaires. Une maladie peut toucher l'un, l'autre, ou les deux — et les signes diffèrent.</div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px;margin-top:10px;"><div style="background:#fce4ec;border-radius:10px;padding:14px;"><strong style="color:#c0392b;">☁️ Opacités alvéolaires</strong><div style="font-size:13px;line-height:1.7;margin-top:8px;"><strong>Floconneuses et confluentes</strong> (mal limitées, qui se rejoignent)<br>• <strong>Bronchogramme aérien</strong> — bronches aérées visibles à travers la consolidation<br>• <strong>Signe de la silhouette</strong><br>🎯 L'air des alvéoles est <strong>remplacé</strong> par :<br>— du <strong>pus</strong> → pneumonie usuelle<br>— de l'<strong>eau</strong> → œdème alvéolaire<br>— du <strong>sang</strong> → hémorragie alvéolaire</div></div><div style="background:#e8f4fd;border-radius:10px;padding:14px;"><strong style="color:#1d4ed8;">🕸️ Opacités interstitielles</strong><div style="font-size:13px;line-height:1.7;margin-top:8px;">• <strong>Réticulaires</strong> — des lignes<br>• <strong>Nodulaires</strong> — des densités punctiformes<br>• <strong>Réticulo-nodulaires</strong> — la combinaison des deux<br>🎯 L'interstice est <strong>épaissi</strong> par :<br>— un <strong>engorgement veino-lymphatique</strong> → œdème interstitiel<br>— une <strong>fibrose</strong> → fibrose pulmonaire<br>— certaines <strong>infections « atypiques »</strong> (virales)<br>— un processus <strong>nodulaire</strong> : infections atypiques, <strong>métastases hématogènes</strong>, sarcoïdose, pneumoconioses</div></div></div><div class="key-fact orange" style="margin-top:12px;">⚖️ <strong>Deux sources, deux usages — ne pas les opposer :</strong> le <strong>cours (MMD 6412)</strong> enseigne la dichotomie <strong>alvéolaire / interstitiel</strong> comme outil de <strong>description</strong> et de premier tri du diagnostic différentiel — c'est ce qui sera évalué. <strong>Goldman-Cecil (ch. 78)</strong> rappelle que ce classement <strong>prédit mal l'histologie réelle</strong>. La conduite : <strong>décrire</strong> avec le vocabulaire du cours (floconneux/confluent vs réticulaire/nodulaire), <strong>sans conclure</strong> à la nature histologique de l'atteinte, et compléter par la <strong>distribution</strong> (tableau ci-dessous). <span style="font-size:11px;color:#64748b;">📚 <em>MMD 6412 — Radiologie thoracique, Dr P. Bourgouin, CHUM/UdeM 2026</em></span></div>
 
         <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#64748b;margin:16px 0 6px;">📊 Classification des grandes opacités selon la distribution</div>
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;">
@@ -57498,8 +57075,8 @@ Revoir rapidement si nouvelle Sx ou changement de dose<br>
 
       <div class="block clin" style="margin-top:14px;border-left-color:#c0392b;">
         <div class="block-title" id="img-6"><span class="tag">🫁 Reconnaître les tableaux fréquents</span></div>
-
-        <div style="overflow-x:auto;margin-top:12px;">
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;"><button data-panel="rxp0" onclick="showPanel('rxp','rxp0',7)" style="background:#c0392b;color:#fff;border:none;border-radius:8px;padding:8px 18px;cursor:pointer;font-size:12px;font-weight:600;transition:.15s;">⚖️ Vue d'ensemble</button><button data-panel="rxp1" onclick="showPanel('rxp','rxp1',7)" style="background:#e0e0e0;color:#333;border:none;border-radius:8px;padding:8px 18px;cursor:pointer;font-size:12px;font-weight:600;transition:.15s;">💧 Œdème pulmonaire</button><button data-panel="rxp2" onclick="showPanel('rxp','rxp2',7)" style="background:#e0e0e0;color:#333;border:none;border-radius:8px;padding:8px 18px;cursor:pointer;font-size:12px;font-weight:600;transition:.15s;">🦠 Pneumonie</button><button data-panel="rxp3" onclick="showPanel('rxp','rxp3',7)" style="background:#e0e0e0;color:#333;border:none;border-radius:8px;padding:8px 18px;cursor:pointer;font-size:12px;font-weight:600;transition:.15s;">📉 Atélectasie</button><button data-panel="rxp4" onclick="showPanel('rxp','rxp4',7)" style="background:#e0e0e0;color:#333;border:none;border-radius:8px;padding:8px 18px;cursor:pointer;font-size:12px;font-weight:600;transition:.15s;">🫧 Plèvre</button><button data-panel="rxp5" onclick="showPanel('rxp','rxp5',7)" style="background:#e0e0e0;color:#333;border:none;border-radius:8px;padding:8px 18px;cursor:pointer;font-size:12px;font-weight:600;transition:.15s;">🏛️ Médiastin</button><button data-panel="rxp6" onclick="showPanel('rxp','rxp6',7)" style="background:#e0e0e0;color:#333;border:none;border-radius:8px;padding:8px 18px;cursor:pointer;font-size:12px;font-weight:600;transition:.15s;">🔌 Tubulures &amp; appareils</button></div>
+        <div id="rxp0" style="display:block;margin-top:12px;"><div style="overflow-x:auto;margin-top:12px;">
         <table style="font-size:12px;">
           <thead><tr><th style="width:20%;">Tableau</th><th style="width:38%;">Aspect radiologique</th><th>Indices distinctifs</th></tr></thead>
           <tbody>
@@ -57514,9 +57091,95 @@ Revoir rapidement si nouvelle Sx ou changement de dose<br>
             <tr style="background:#ede9fe;"><td><strong>Élargissement médiastinal</strong></td><td>Médiastin élargi, contours anormaux</td><td>🚨 En contexte traumatique ou de douleur thoracique déchirante : <strong>dissection aortique</strong> — voir <em>Anévrisme</em><br>Autres : adénopathies, masse, hématome</td></tr>
           </tbody>
         </table>
-        </div>
-
-        <div style="background:#0f172a;border-radius:10px;padding:14px;margin-top:12px;">
+        </div></div>
+        <div id="rxp1" style="display:none;margin-top:12px;"><div style="background:#e8f4fd;border-left:5px solid #1d4ed8;border-radius:0;padding:14px;"><strong style="color:#1d4ed8;font-size:15px;">Œdème pulmonaire</strong><div style="font-size:12px;color:#475569;margin-top:2px;">Cardiogénique ou non cardiogénique</div><div style="font-size:13px;line-height:1.7;margin-top:8px;">🔗 <strong>↑ pression capillaire pulmonaire → liquide dans l'interstice → puis dans les alvéoles</strong>. Les signes radiologiques suivent (en théorie) cette montée de pression.</div></div><div style="font-size:12px;font-weight:800;color:#1d4ed8;letter-spacing:.4px;margin:16px 0 6px;">⚙️ DEUX MÉCANISMES</div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px;margin-top:10px;"><div style="background:#e8f4fd;border-radius:10px;padding:14px;"><strong style="color:#1d4ed8;">🫀 Cardiogénique</strong><div style="font-size:13px;line-height:1.7;margin-top:8px;"><strong>↑ pression hydrostatique capillaire</strong><br>Signes associés : <strong>cardiomégalie</strong>, <strong>épanchements pleuraux</strong></div></div><div style="background:#fff3cd;border-radius:10px;padding:14px;"><strong style="color:#d35400;">🧪 Non cardiogénique</strong><div style="font-size:13px;line-height:1.7;margin-top:8px;"><strong>↑ perméabilité capillaire</strong> ou <strong>↓ pression oncotique</strong><br>Signes semblables, mais <strong>cardiomégalie et épanchements moins fréquents</strong></div></div></div><div style="font-size:12px;font-weight:800;color:#1d4ed8;letter-spacing:.4px;margin:16px 0 6px;">📈 LES TROIS STADES — PRESSION CAPILLAIRE PULMONAIRE</div><div class="criteria-list" style="margin-top:12px;"><div class="criteria-item"><div class="criteria-num blue">1</div><span><strong>Hypertension veineuse — 12 à 18 mmHg</strong> · engorgement vasculaire · <strong>céphalisation</strong> (redistribution vers les sommets — visible sur un cliché <strong>debout</strong>)</span></div><div class="criteria-item"><div class="criteria-num blue">2</div><span><strong>Œdème interstitiel — 18 à 24 mmHg</strong> · liquide dans les septa interlobulaires = <strong>lignes de Kerley</strong> · vaisseaux <strong>indistincts</strong> · <strong>flou périhilaire</strong> · <strong>épaississement péribronchique</strong></span></div><div class="criteria-item"><div class="criteria-num blue">3</div><span><strong>Œdème alvéolaire — &gt; 24 mmHg</strong> · opacités alvéolaires <strong>périhilaires (« batwing », ailes de papillon)</strong> ou diffuses</span></div><div class="criteria-item"><div class="criteria-num red">!</div><span><strong>Règle de lecture</strong> : repérer le stade le plus avancé présent — un œdème alvéolaire s'accompagne habituellement des signes des stades 1 et 2</span></div></div><div style="font-size:12px;font-weight:800;color:#1d4ed8;letter-spacing:.4px;margin:16px 0 6px;">🧭 LES DISTRIBUTIONS ATYPIQUES</div><div style="overflow-x:auto;margin-top:12px;"><table style="font-size:12px;"><thead><tr><th style="width:38%;">Situation</th><th>Ce qu'on voit</th></tr></thead><tbody><tr><td>Position du patient</td><td><strong>Asymétrie</strong> — l'œdème prédomine du côté déclive</td></tr><tr style="background:#f8f9fa;"><td>Insuffisance mitrale aiguë / sévère</td><td>Œdème prédominant au <strong>lobe supérieur droit</strong></td></tr><tr><td>Emphysème ou fibrose</td><td>L'œdème <strong>épargne les zones atteintes</strong> — aspect inhabituel, en plages</td></tr></tbody></table></div><div class="key-fact blue" style="margin-top:12px;">💡 <strong>Lignes de Kerley :</strong> <strong>B</strong> = courts traits horizontaux sous-pleuraux aux bases (≈ 1 cm × 1 mm); <strong>A</strong> = lignes plus longues (2 à 4 cm) qui rayonnent du hile vers la périphérie, surtout vers les lobes supérieurs. Toutes deux traduisent des septa interlobulaires épaissis. <span style="font-size:11px;color:#64748b;">📚 <em>Goldman-Cecil, ch. 78</em></span> · <span style="font-size:11px;color:#64748b;">📚 <em>MMD 6412 — Radiologie thoracique, Dr P. Bourgouin, CHUM/UdeM 2026</em></span></div><div style="background:#0f172a;border-radius:10px;padding:14px;margin-top:12px;">
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#94a3b8;margin-bottom:8px;">Sch&eacute;ma &mdash; &oelig;d&egrave;me pulmonaire cardiog&eacute;nique</div>
+          <svg viewBox="0 0 620 250" style="width:100%;height:auto;" role="img" aria-label="Signes radiologiques de l oedeme pulmonaire cardiogenique">
+            <rect x="34" y="32" width="300" height="180" rx="8" fill="#0b0f17"/>
+            <!-- cardiomégalie -->
+            <path d="M 184,110 Q 250,128 254,166 Q 256,198 184,204 Q 108,198 110,166 Q 114,128 184,110 Z" fill="#e2e8f0"/>
+            <!-- opacités périhilaires en ailes de papillon -->
+            <ellipse cx="140" cy="98" rx="52" ry="34" fill="#cbd5e1" opacity="0.6"/>
+            <ellipse cx="230" cy="98" rx="52" ry="34" fill="#cbd5e1" opacity="0.6"/>
+            <!-- redistribution vers les sommets : vaisseaux épaissis en haut -->
+            <g stroke="#94a3b8" stroke-width="3" fill="none">
+              <path d="M 150,88 L 128,54"/><path d="M 220,88 L 242,54"/>
+            </g>
+            <!-- lignes de Kerley B : petits traits HORIZONTAUX touchant la plèvre, aux bases -->
+            <g stroke="#f8fafc" stroke-width="2.2">
+              <line x1="38" y1="150" x2="60" y2="150"/><line x1="38" y1="162" x2="60" y2="162"/>
+              <line x1="38" y1="174" x2="60" y2="174"/>
+              <line x1="308" y1="150" x2="330" y2="150"/><line x1="308" y1="162" x2="330" y2="162"/>
+              <line x1="308" y1="174" x2="330" y2="174"/>
+            </g>
+            <!-- épanchements bilatéraux -->
+            <path d="M 38,196 Q 66,188 92,196 L 92,208 L 38,208 Z" fill="#8a94a3"/>
+            <path d="M 276,196 Q 304,188 330,196 L 330,208 L 276,208 Z" fill="#8a94a3"/>
+            <text x="184" y="234" text-anchor="middle" fill="#cbd5e1" font-size="11.5">radiographie de face, sch&eacute;matis&eacute;e</text>
+            <!-- légende -->
+            <g font-size="12">
+              <rect x="352" y="36" width="248" height="30" rx="6" fill="#334155"/>
+              <text x="366" y="56" fill="#f8fafc" font-weight="700">&#9312; Cardiom&eacute;galie &mdash; RCT &gt; 0,5</text>
+              <rect x="352" y="72" width="248" height="30" rx="6" fill="#3b4657"/>
+              <text x="366" y="92" fill="#f8fafc" font-weight="700">&#9313; Redistribution vers les sommets</text>
+              <rect x="352" y="108" width="248" height="30" rx="6" fill="#334155"/>
+              <text x="366" y="128" fill="#f8fafc" font-weight="700">&#9314; Opacit&eacute;s p&eacute;rihilaires &laquo; en papillon &raquo;</text>
+              <rect x="352" y="144" width="248" height="30" rx="6" fill="#3b4657"/>
+              <text x="366" y="164" fill="#f8fafc" font-weight="700">&#9315; Lignes B de Kerley aux bases</text>
+              <rect x="352" y="180" width="248" height="30" rx="6" fill="#334155"/>
+              <text x="366" y="200" fill="#f8fafc" font-weight="700">&#9316; &Eacute;panchements souvent bilat&eacute;raux</text>
+            </g>
+          </svg>
+          <div style="background:#1e3a8a;border-radius:8px;padding:10px 12px;margin-top:10px;font-size:12.5px;line-height:1.6;color:#dbeafe;">
+            💡 <strong>Les lignes B de Kerley</strong> sont de courts traits <strong>horizontaux</strong>, perpendiculaires &agrave; la pl&egrave;vre et <strong>la touchant</strong>, aux bases &mdash; ce sont des septa interlobulaires &eacute;paissis par l&rsquo;&oelig;d&egrave;me.<br>
+            ⏱️ <strong>La radiographie retarde sur la clinique</strong>, &agrave; l&rsquo;aggravation comme &agrave; l&rsquo;am&eacute;lioration : un clich&eacute; encore charg&eacute; chez une personne qui va mieux n&rsquo;est pas un &eacute;chec du traitement.
+          </div>
+        </div></div>
+        <div id="rxp2" style="display:none;margin-top:12px;"><div style="background:#fce4ec;border-left:5px solid #c0392b;border-radius:0;padding:14px;"><strong style="color:#c0392b;font-size:15px;">Pneumonie</strong><div style="font-size:12px;color:#475569;margin-top:2px;">Apparence très variable</div><div style="font-size:13px;line-height:1.7;margin-top:8px;">🔗 L'aspect dépend du <strong>pathogène</strong>, du <strong>moment</strong> où l'image est obtenue et de la <strong>réponse de l'hôte</strong> — le patron oriente vers une famille de germes, il ne l'identifie pas.</div></div><div style="font-size:12px;font-weight:800;color:#c0392b;letter-spacing:.4px;margin:16px 0 6px;">🗂️ LES CINQ PATRONS DU COURS</div><div style="overflow-x:auto;margin-top:12px;"><table style="font-size:12px;"><thead><tr><th style="width:18%;">Patron</th><th style="width:42%;">Aspect radiologique</th><th>Germes / contexte</th></tr></thead><tbody><tr style="background:#fce4ec;"><td><strong>Lobaire</strong></td><td>Consolidation lobaire avec <strong>bronchogramme aérien</strong></td><td><em>S. pneumoniae</em> · <em>Klebsiella pneumoniae</em> · <em>Legionella</em></td></tr><tr style="background:#f8f9fa;"><td><strong>Bronchopneumonie</strong></td><td><strong>Multiples opacités nodulaires</strong></td><td><em>S. aureus</em> · Gram négatifs · anaérobes<br>⚠️ <strong>Plus de complications</strong> : cavitation, abcès, cicatrice résiduelle</td></tr><tr style="background:#e8f4fd;"><td><strong>Interstitielle</strong></td><td>Épaississement des <strong>parois bronchiques</strong> et des <strong>septa interlobulaires</strong> · <strong>verre dépoli</strong></td><td><em>Mycoplasma pneumoniae</em> · virus</td></tr><tr style="background:#fff3cd;"><td><strong>Aspiration</strong></td><td>Distribution <strong>déclive</strong> : classiquement les <strong>bases</strong> et les <strong>segments postérieurs des lobes supérieurs</strong></td><td>🔎 Rechercher des <strong>sécrétions trachéobronchiques</strong> et une <strong>hernie hiatale</strong></td></tr><tr style="background:#ede9fe;"><td><strong>Hématogène</strong></td><td><strong>Embolies septiques</strong> : nodules <strong>cavitaires périphériques</strong><br><strong>Tuberculose miliaire</strong> : micronodules diffus</td><td>Emboles septiques : UDIV (cas du cours)<br>Infections granulomateuses chez l'<strong>immunocompromis</strong></td></tr></tbody></table></div><div class="key-fact blue" style="margin-top:12px;">📷 <strong>Autres tableaux illustrés au cours :</strong> pneumonie lobaire à <em>Legionella</em> · <strong>tuberculose de réactivation</strong> · tuberculose miliaire · COVID-19. ➜ Voir <em>Pneumonie</em>, <em>Lésions cavitaires</em>, <em>Tuberculose</em> et <em>COVID-19</em>.</div><div style="font-size:12px;font-weight:800;color:#c0392b;letter-spacing:.4px;margin:16px 0 6px;">🦠 COVID-19 — LA CLASSIFICATION TDM DE LA RSNA</div><div style="overflow-x:auto;margin-top:12px;"><table style="font-size:12px;"><thead><tr><th style="width:14%;">Catégorie</th><th style="width:46%;">Trouvailles TDM</th><th>Ce que le rapport dit</th></tr></thead><tbody><tr style="background:#fce4ec;"><td><strong>Typique</strong></td><td><strong>Verre dépoli périphérique, bilatéral</strong>, ± consolidation ou lignes intralobulaires (« <em>crazy paving</em> ») · verre dépoli <strong>multifocal arrondi</strong> · signe du <strong>halo inversé</strong> ou autres signes de pneumonie organisée (plus tardifs)</td><td>Signes fréquemment rapportés dans la COVID-19 — mais influenza, pneumonie organisée, toxicité médicamenteuse et connectivites peuvent donner le même patron</td></tr><tr style="background:#fff3cd;"><td><strong>Indéterminé</strong></td><td><em>Absence</em> de signes typiques <em>et</em> verre dépoli multifocal, diffus, périhilaire ou unilatéral <strong>sans distribution spécifique</strong>, non arrondi ou non périphérique · quelques très petites plages de verre dépoli</td><td>Compatible, mais <strong>non spécifique</strong> — processus infectieux et non infectieux possibles</td></tr><tr style="background:#ede9fe;"><td><strong>Atypique</strong></td><td><em>Absence</em> de signes typiques ou indéterminés <em>et</em> : consolidation <strong>lobaire ou segmentaire sans verre dépoli</strong> · petits nodules discrets (centrolobulaires, « <strong>arbre en bourgeons</strong> ») · <strong>cavitation</strong> · épaississement septal lisse avec <strong>épanchement pleural</strong></td><td>Peu ou pas rapporté dans la COVID-19 → <strong>envisager un autre diagnostic</strong></td></tr><tr style="background:#f0fdf4;"><td><strong>Négatif</strong></td><td>Aucun signe de pneumonie</td><td>⚠️ La TDM peut être <strong>normale au début</strong> de la maladie</td></tr></tbody></table></div><div class="key-fact orange" style="margin-top:12px;">⚠️ <strong>Deux limites écrites dans le document lui-même :</strong> la <strong>TDM de dépistage</strong> pour diagnostiquer ou exclure la COVID-19 <strong>n'est pas recommandée</strong>, et la TDM <strong>ne remplace pas le RT-PCR</strong>. <span style="font-size:11px;color:#64748b;">📚 <em>RSNA Expert Consensus, Simpson et al., 2020 — cité dans MMD 6412</em></span></div></div>
+        <div id="rxp3" style="display:none;margin-top:12px;"><div style="background:#fff3cd;border-left:5px solid #d35400;border-radius:0;padding:14px;"><strong style="color:#d35400;font-size:15px;">Atélectasie</strong><div style="font-size:12px;color:#475569;margin-top:2px;">« Expansion incomplète » du poumon</div><div style="font-size:13px;line-height:1.7;margin-top:8px;">🔗 <strong>Perte d'air dans un territoire → perte de volume → les structures voisines sont attirées vers l'opacité</strong>. C'est ce déplacement qui la distingue d'une pneumonie.</div></div><div style="font-size:12px;font-weight:800;color:#d35400;letter-spacing:.4px;margin:16px 0 6px;">⚙️ QUATRE MÉCANISMES</div><div style="overflow-x:auto;margin-top:12px;"><table style="font-size:12px;"><thead><tr><th style="width:22%;">Type</th><th style="width:44%;">Mécanisme</th><th>Exemple</th></tr></thead><tbody><tr><td><strong>Passive / relaxation</strong></td><td>Le poumon se rétracte à cause d'une <strong>anomalie pleurale adjacente</strong> (liquide ou air)</td><td>Épanchement, pneumothorax</td></tr><tr style="background:#f8f9fa;"><td><strong>Résorption</strong> (obstructive)</td><td>L'air est résorbé <strong>en aval d'une obstruction bronchique</strong></td><td>Bouchon muqueux, corps étranger, <strong>tumeur</strong></td></tr><tr><td><strong>Cicatrisation</strong></td><td>Rétraction fibreuse du parenchyme</td><td>Souvent après une <strong>infection granulomateuse</strong></td></tr><tr style="background:#f8f9fa;"><td><strong>Adhésive</strong></td><td><strong>Déficience en surfactant</strong></td><td>—</td></tr></tbody></table></div><div style="margin-top:6px;"><span style="font-size:11px;color:#64748b;">📚 <em>Goldman-Cecil, ch. 84 — atélectasies passive/compressive et obstructive/résorptive</em></span></div><div style="font-size:12px;font-weight:800;color:#d35400;letter-spacing:.4px;margin:16px 0 6px;">🔍 LES SIGNES</div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:10px;"><div style="background:#fff3cd;border-radius:10px;padding:14px;"><strong style="color:#d35400;">🎯 Signes directs</strong><div style="font-size:13px;line-height:1.7;margin-top:8px;">• <strong>Déplacement des scissures</strong><br>• <strong>Tassement</strong> des bronches et des vaisseaux</div></div><div style="background:#f1f5f9;border-radius:10px;padding:14px;"><strong style="color:#334155;">↔️ Signes indirects</strong><div style="font-size:13px;line-height:1.7;margin-top:8px;">• <strong>Élévation diaphragmatique</strong><br>• <strong>Déviation médiastinale / hilaire</strong> vers l'atélectasie<br>• <strong>Tassement des côtes</strong><br>• <strong>Surexpansion compensatrice</strong> de l'autre lobe</div></div><div style="background:#f0fdf4;border-radius:10px;padding:14px;"><strong style="color:#15803d;">〰️ Atélectasies en bandes</strong><div style="font-size:13px;line-height:1.7;margin-top:8px;">Opacités <strong>linéaires ou en bandes aux bases</strong> (cours). Les bases et segments postérieurs sont les plus exposés à l'atélectasie <strong>déclive</strong>, surtout chez le patient immobilisé ou en postopératoire. <span style="font-size:11px;color:#64748b;">📚 <em>Goldman-Cecil, ch. 84</em></span></div></div></div><div class="key-fact red" style="margin-top:12px;">🚨 <strong>Le signe du « S doré » (<em>Golden S</em>) :</strong> une <strong>masse hilaire obstructive</strong> cause l'atélectasie du <strong>lobe supérieur droit</strong>. 🎯 Devant une atélectasie lobaire, chercher la <strong>masse centrale</strong> qui l'explique. <span style="font-size:11px;color:#64748b;">📚 <em>MMD 6412 — Radiologie thoracique, Dr P. Bourgouin, CHUM/UdeM 2026</em></span><br><span style="font-size:11px;color:#64748b;">🚩 Description classique du signe, non détaillée dans le cours : la petite scissure remonte (perte de volume) mais <strong>bombe vers le bas près du hile</strong> (la masse), dessinant un <strong>S inversé</strong>.</span></div><div style="background:#0f172a;border-radius:10px;padding:14px;margin-top:12px;">
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#94a3b8;margin-bottom:8px;">Sch&eacute;ma &mdash; opacit&eacute; avec ou sans perte de volume</div>
+          <svg viewBox="0 0 620 250" style="width:100%;height:auto;" role="img" aria-label="Pneumonie contre atelectasie : le deplacement des structures">
+            <!-- PNEUMONIE -->
+            <text x="150" y="22" text-anchor="middle" fill="#fbbf24" font-size="13" font-weight="700">PNEUMONIE</text>
+            <rect x="34" y="32" width="232" height="160" rx="8" fill="#0b0f17"/>
+            <!-- trachée centrée -->
+            <line x1="150" y1="34" x2="150" y2="70" stroke="#475569" stroke-width="7"/>
+            <line x1="150" y1="34" x2="150" y2="70" stroke="#0b0f17" stroke-width="3"/>
+            <!-- opacité SANS perte de volume -->
+            <path d="M 60,80 Q 120,68 132,120 Q 130,164 62,168 Z" fill="#e2e8f0"/>
+            <!-- bronchogramme aérique : bronches noires dans l'opacité -->
+            <g stroke="#0b0f17" stroke-width="3" fill="none" stroke-linecap="round">
+              <path d="M 118,110 L 92,118"/><path d="M 92,118 L 74,110"/><path d="M 92,118 L 78,132"/>
+              <path d="M 118,110 L 106,96"/>
+            </g>
+            <!-- coupole en place -->
+            <path d="M 40,176 Q 90,164 140,176" fill="none" stroke="#94a3b8" stroke-width="2.6"/>
+            <text x="150" y="212" text-anchor="middle" fill="#fbbf24" font-size="11.5" font-weight="700">Rien ne bouge &middot; bronchogramme a&eacute;rique</text>
+            <text x="150" y="230" text-anchor="middle" fill="#cbd5e1" font-size="11">les alv&eacute;oles sont remplies, les bronches perm&eacute;ables</text>
+            <line x1="310" y1="30" x2="310" y2="200" stroke="#475569" stroke-width="1.5" stroke-dasharray="5,5"/>
+            <!-- ATÉLECTASIE -->
+            <text x="470" y="22" text-anchor="middle" fill="#f87171" font-size="13" font-weight="700">AT&Eacute;LECTASIE</text>
+            <rect x="354" y="32" width="232" height="160" rx="8" fill="#0b0f17"/>
+            <!-- trachée ATTIRÉE vers la lésion -->
+            <line x1="470" y1="34" x2="452" y2="70" stroke="#475569" stroke-width="7"/>
+            <line x1="470" y1="34" x2="452" y2="70" stroke="#0b0f17" stroke-width="3"/>
+            <!-- opacité rétractée, plus petite et dense -->
+            <path d="M 380,92 Q 424,84 430,124 Q 428,152 382,156 Z" fill="#e2e8f0"/>
+            <!-- coupole ASCENSIONNÉE du côté atteint -->
+            <path d="M 360,164 Q 410,144 460,158" fill="none" stroke="#94a3b8" stroke-width="2.6"/>
+            <!-- flèches d'attraction -->
+            <g stroke="#f87171" stroke-width="2.2" fill="none">
+              <path d="M 470,52 L 456,52"/><path d="M 456,52 L 461,48"/><path d="M 456,52 L 461,56"/>
+              <path d="M 400,180 L 400,168"/><path d="M 400,168 L 396,173"/><path d="M 400,168 L 404,173"/>
+            </g>
+            <text x="470" y="212" text-anchor="middle" fill="#f87171" font-size="11.5" font-weight="700">Tout est ATTIR&Eacute; vers l&rsquo;opacit&eacute;</text>
+            <text x="470" y="230" text-anchor="middle" fill="#cbd5e1" font-size="11">trach&eacute;e d&eacute;vi&eacute;e &middot; coupole ascensionn&eacute;e</text>
+          </svg>
+          <div style="background:#7f1d1d;border-radius:8px;padding:10px 12px;margin-top:10px;font-size:12.5px;line-height:1.6;color:#fecaca;">
+            🚨 <strong>Chez l&rsquo;adulte, une at&eacute;lectasie lobaire inexpliqu&eacute;e impose de chercher une obstruction bronchique</strong> &mdash; donc une tumeur jusqu&rsquo;&agrave; preuve du contraire. C&rsquo;est ce qui distingue une simple pneumonie d&rsquo;un cancer r&eacute;v&eacute;l&eacute; par une surinfection.
+          </div>
+        </div></div>
+        <div id="rxp4" style="display:none;margin-top:12px;"><div style="background:#ede9fe;border-left:5px solid #6d28d9;border-radius:0;padding:14px;"><strong style="color:#6d28d9;font-size:15px;">Plèvre</strong><div style="font-size:12px;color:#475569;margin-top:2px;">Pneumothorax · épanchement · « poumon blanc »</div><div style="font-size:13px;line-height:1.7;margin-top:8px;">🔗 <strong>L'air monte, le liquide descend</strong> — la position du patient change l'aspect des deux.</div></div><div style="font-size:12px;font-weight:800;color:#6d28d9;letter-spacing:.4px;margin:16px 0 6px;">💨 PNEUMOTHORAX — LES DEUX PIÈGES DU COURS</div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px;margin-top:10px;"><div style="background:#fce4ec;border-radius:10px;padding:14px;"><strong style="color:#c0392b;">⚠️ Le pli cutané</strong><div style="font-size:13px;line-height:1.7;margin-top:8px;">Une ligne qui ressemble à la ligne pleurale peut être un <strong>pli de peau</strong>.<br>🎯 <strong>Rechercher l'interstice pulmonaire au-delà de la ligne</strong> : si des vaisseaux continuent de l'autre côté, ce n'est <strong>pas</strong> un pneumothorax.</div></div><div style="background:#e8f4fd;border-radius:10px;padding:14px;"><strong style="color:#1d4ed8;">🛏️ Le patient couché — <em>deep sulcus sign</em></strong><div style="font-size:13px;line-height:1.7;margin-top:8px;">Couché, l'air se collecte en <strong>antéro-basal</strong>, pas à l'apex : il dessine un <strong>cul-de-sac costo-diaphragmatique anormalement profond et noir</strong>.<br>🎯 Sur tout cliché AP au lit, regarder les culs-de-sac, pas seulement les sommets. <span style="font-size:11px;color:#64748b;">📚 <em>Goldman-Cecil, ch. 78</em></span></div></div></div><div style="background:#0f172a;border-radius:10px;padding:14px;margin-top:12px;">
           <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#94a3b8;margin-bottom:8px;">Sch&eacute;ma &mdash; l&rsquo;air monte, le liquide descend</div>
           <svg viewBox="0 0 620 260" style="width:100%;height:auto;" role="img" aria-label="Pneumothorax contre epanchement pleural">
             <!-- ══ NORMAL ══ -->
@@ -57561,95 +57224,40 @@ Revoir rapidement si nouvelle Sx ou changement de dose<br>
             🚨 <strong>Pneumothorax sous tension :</strong> le m&eacute;diastin est <strong>repouss&eacute; du c&ocirc;t&eacute; oppos&eacute;</strong> et la coupole s&rsquo;aplatit. C&rsquo;est un <strong>diagnostic clinique</strong> &mdash; on d&eacute;comprime <strong>sans attendre la radiographie</strong>.<br>
             💡 <strong>Chez la personne couch&eacute;e</strong>, l&rsquo;air ne monte pas au sommet mais se collecte en <strong>ant&eacute;ro-basal</strong> : chercher un cul-de-sac anormalement <strong>profond et noir</strong> plut&ocirc;t qu&rsquo;une ligne pleurale apicale.
           </div>
-        </div>
+        </div><div style="font-size:12px;font-weight:800;color:#6d28d9;letter-spacing:.4px;margin:16px 0 6px;">⬜ « POUMON BLANC » — REGARDER D'ABORD OÙ VA LE MÉDIASTIN</div><div class="criteria-list" style="margin-top:12px;"><div class="criteria-item"><div class="criteria-num blue">←</div><span><strong>Médiastin dévié VERS le côté blanc = perte de volume (atélectasie)</strong> · obstruction bronchique <strong>centrale</strong> (masse ou bouchon muqueux) · <strong>pneumonectomie</strong> ou agénésie</span></div><div class="criteria-item"><div class="criteria-num blue">→</div><span><strong>Médiastin dévié du CÔTÉ OPPOSÉ = processus expansif</strong> · épanchement pleural <strong>massif</strong> · <strong>hémothorax</strong> · néoplasie extensive · pathologie diaphragmatique</span></div><div class="criteria-item"><div class="criteria-num blue">=</div><span><strong>Pas de déviation</strong> · consolidation extensive (<strong>pneumonie</strong>) · masse pariétale ou pleurale</span></div><div class="criteria-item"><div class="criteria-num red">!</div><span><strong>Coexistence possible</strong> : une masse obstructive peut à la fois faire perdre du volume et s'accompagner d'épanchement — les deux effets s'annulent et le médiastin reste <strong>central</strong></span></div></div><div style="background:#0f172a;border-radius:10px;padding:14px;margin-top:12px;">
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#94a3b8;margin-bottom:8px;">Sch&eacute;ma &mdash; le poumon blanc et la position du m&eacute;diastin</div>
+          <svg viewBox="0 0 620 250" style="width:100%;height:auto;" role="img" aria-label="Poumon blanc : mediastin attire, repousse ou central">
+            <title>Poumon blanc : médiastin attiré, repoussé ou central</title>
+            <text x="106" y="22" text-anchor="middle" fill="#fbbf24" font-size="12.5" font-weight="700">ATTIRÉ</text>
+            <rect x="30" y="32" width="152" height="172" rx="8" fill="#0b0f17"/>
+            <path d="M 42,46 L 96,46 L 96,194 L 42,194 Z" fill="#1e293b"/>
+            <path d="M 116,52 L 172,52 L 172,194 L 116,194 Z" fill="#e2e8f0"/>
+            <path d="M 106,40 L 106,70 L 120,104" fill="none" stroke="#fbbf24" stroke-width="4"/>
+            <ellipse cx="124" cy="160" rx="22" ry="26" fill="#94a3b8"/>
+            <text x="106" y="222" text-anchor="middle" fill="#fbbf24" font-size="11" font-weight="700">trachée tirée vers le blanc</text>
+            <text x="106" y="240" text-anchor="middle" fill="#cbd5e1" font-size="11">= atélectasie</text>
 
-        <div style="background:#0f172a;border-radius:10px;padding:14px;margin-top:12px;">
-          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#94a3b8;margin-bottom:8px;">Sch&eacute;ma &mdash; opacit&eacute; avec ou sans perte de volume</div>
-          <svg viewBox="0 0 620 250" style="width:100%;height:auto;" role="img" aria-label="Pneumonie contre atelectasie : le deplacement des structures">
-            <!-- PNEUMONIE -->
-            <text x="150" y="22" text-anchor="middle" fill="#fbbf24" font-size="13" font-weight="700">PNEUMONIE</text>
-            <rect x="34" y="32" width="232" height="160" rx="8" fill="#0b0f17"/>
-            <!-- trachée centrée -->
-            <line x1="150" y1="34" x2="150" y2="70" stroke="#475569" stroke-width="7"/>
-            <line x1="150" y1="34" x2="150" y2="70" stroke="#0b0f17" stroke-width="3"/>
-            <!-- opacité SANS perte de volume -->
-            <path d="M 60,80 Q 120,68 132,120 Q 130,164 62,168 Z" fill="#e2e8f0"/>
-            <!-- bronchogramme aérique : bronches noires dans l'opacité -->
-            <g stroke="#0b0f17" stroke-width="3" fill="none" stroke-linecap="round">
-              <path d="M 118,110 L 92,118"/><path d="M 92,118 L 74,110"/><path d="M 92,118 L 78,132"/>
-              <path d="M 118,110 L 106,96"/>
-            </g>
-            <!-- coupole en place -->
-            <path d="M 40,176 Q 90,164 140,176" fill="none" stroke="#94a3b8" stroke-width="2.6"/>
-            <text x="150" y="212" text-anchor="middle" fill="#fbbf24" font-size="11.5" font-weight="700">Rien ne bouge &middot; bronchogramme a&eacute;rique</text>
-            <text x="150" y="230" text-anchor="middle" fill="#cbd5e1" font-size="11">les alv&eacute;oles sont remplies, les bronches perm&eacute;ables</text>
-            <line x1="310" y1="30" x2="310" y2="200" stroke="#475569" stroke-width="1.5" stroke-dasharray="5,5"/>
-            <!-- ATÉLECTASIE -->
-            <text x="470" y="22" text-anchor="middle" fill="#f87171" font-size="13" font-weight="700">AT&Eacute;LECTASIE</text>
-            <rect x="354" y="32" width="232" height="160" rx="8" fill="#0b0f17"/>
-            <!-- trachée ATTIRÉE vers la lésion -->
-            <line x1="470" y1="34" x2="452" y2="70" stroke="#475569" stroke-width="7"/>
-            <line x1="470" y1="34" x2="452" y2="70" stroke="#0b0f17" stroke-width="3"/>
-            <!-- opacité rétractée, plus petite et dense -->
-            <path d="M 380,92 Q 424,84 430,124 Q 428,152 382,156 Z" fill="#e2e8f0"/>
-            <!-- coupole ASCENSIONNÉE du côté atteint -->
-            <path d="M 360,164 Q 410,144 460,158" fill="none" stroke="#94a3b8" stroke-width="2.6"/>
-            <!-- flèches d'attraction -->
-            <g stroke="#f87171" stroke-width="2.2" fill="none">
-              <path d="M 470,52 L 456,52"/><path d="M 456,52 L 461,48"/><path d="M 456,52 L 461,56"/>
-              <path d="M 400,180 L 400,168"/><path d="M 400,168 L 396,173"/><path d="M 400,168 L 404,173"/>
-            </g>
-            <text x="470" y="212" text-anchor="middle" fill="#f87171" font-size="11.5" font-weight="700">Tout est ATTIR&Eacute; vers l&rsquo;opacit&eacute;</text>
-            <text x="470" y="230" text-anchor="middle" fill="#cbd5e1" font-size="11">trach&eacute;e d&eacute;vi&eacute;e &middot; coupole ascensionn&eacute;e</text>
-          </svg>
-          <div style="background:#7f1d1d;border-radius:8px;padding:10px 12px;margin-top:10px;font-size:12.5px;line-height:1.6;color:#fecaca;">
-            🚨 <strong>Chez l&rsquo;adulte, une at&eacute;lectasie lobaire inexpliqu&eacute;e impose de chercher une obstruction bronchique</strong> &mdash; donc une tumeur jusqu&rsquo;&agrave; preuve du contraire. C&rsquo;est ce qui distingue une simple pneumonie d&rsquo;un cancer r&eacute;v&eacute;l&eacute; par une surinfection.
-          </div>
-        </div>
+            <text x="310" y="22" text-anchor="middle" fill="#f87171" font-size="12.5" font-weight="700">REPOUSSÉ</text>
+            <rect x="234" y="32" width="152" height="172" rx="8" fill="#0b0f17"/>
+            <path d="M 244,46 L 286,46 L 286,194 L 244,194 Z" fill="#1e293b"/>
+            <path d="M 320,46 L 376,46 L 376,194 L 320,194 Z" fill="#e2e8f0"/>
+            <path d="M 310,40 L 310,70 L 294,104" fill="none" stroke="#f87171" stroke-width="4"/>
+            <ellipse cx="290" cy="160" rx="22" ry="26" fill="#94a3b8"/>
+            <text x="310" y="222" text-anchor="middle" fill="#f87171" font-size="11" font-weight="700">trachée repoussée</text>
+            <text x="310" y="240" text-anchor="middle" fill="#cbd5e1" font-size="11">= processus expansif</text>
 
-        <div style="background:#0f172a;border-radius:10px;padding:14px;margin-top:12px;">
-          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#94a3b8;margin-bottom:8px;">Sch&eacute;ma &mdash; &oelig;d&egrave;me pulmonaire cardiog&eacute;nique</div>
-          <svg viewBox="0 0 620 250" style="width:100%;height:auto;" role="img" aria-label="Signes radiologiques de l oedeme pulmonaire cardiogenique">
-            <rect x="34" y="32" width="300" height="180" rx="8" fill="#0b0f17"/>
-            <!-- cardiomégalie -->
-            <path d="M 184,110 Q 250,128 254,166 Q 256,198 184,204 Q 108,198 110,166 Q 114,128 184,110 Z" fill="#e2e8f0"/>
-            <!-- opacités périhilaires en ailes de papillon -->
-            <ellipse cx="140" cy="98" rx="52" ry="34" fill="#cbd5e1" opacity="0.6"/>
-            <ellipse cx="230" cy="98" rx="52" ry="34" fill="#cbd5e1" opacity="0.6"/>
-            <!-- redistribution vers les sommets : vaisseaux épaissis en haut -->
-            <g stroke="#94a3b8" stroke-width="3" fill="none">
-              <path d="M 150,88 L 128,54"/><path d="M 220,88 L 242,54"/>
-            </g>
-            <!-- lignes de Kerley B : petits traits HORIZONTAUX touchant la plèvre, aux bases -->
-            <g stroke="#f8fafc" stroke-width="2.2">
-              <line x1="38" y1="150" x2="60" y2="150"/><line x1="38" y1="162" x2="60" y2="162"/>
-              <line x1="38" y1="174" x2="60" y2="174"/>
-              <line x1="308" y1="150" x2="330" y2="150"/><line x1="308" y1="162" x2="330" y2="162"/>
-              <line x1="308" y1="174" x2="330" y2="174"/>
-            </g>
-            <!-- épanchements bilatéraux -->
-            <path d="M 38,196 Q 66,188 92,196 L 92,208 L 38,208 Z" fill="#8a94a3"/>
-            <path d="M 276,196 Q 304,188 330,196 L 330,208 L 276,208 Z" fill="#8a94a3"/>
-            <text x="184" y="234" text-anchor="middle" fill="#cbd5e1" font-size="11.5">radiographie de face, sch&eacute;matis&eacute;e</text>
-            <!-- légende -->
-            <g font-size="12">
-              <rect x="352" y="36" width="248" height="30" rx="6" fill="#334155"/>
-              <text x="366" y="56" fill="#f8fafc" font-weight="700">&#9312; Cardiom&eacute;galie &mdash; RCT &gt; 0,5</text>
-              <rect x="352" y="72" width="248" height="30" rx="6" fill="#3b4657"/>
-              <text x="366" y="92" fill="#f8fafc" font-weight="700">&#9313; Redistribution vers les sommets</text>
-              <rect x="352" y="108" width="248" height="30" rx="6" fill="#334155"/>
-              <text x="366" y="128" fill="#f8fafc" font-weight="700">&#9314; Opacit&eacute;s p&eacute;rihilaires &laquo; en papillon &raquo;</text>
-              <rect x="352" y="144" width="248" height="30" rx="6" fill="#3b4657"/>
-              <text x="366" y="164" fill="#f8fafc" font-weight="700">&#9315; Lignes B de Kerley aux bases</text>
-              <rect x="352" y="180" width="248" height="30" rx="6" fill="#334155"/>
-              <text x="366" y="200" fill="#f8fafc" font-weight="700">&#9316; &Eacute;panchements souvent bilat&eacute;raux</text>
-            </g>
+            <text x="514" y="22" text-anchor="middle" fill="#60a5fa" font-size="12.5" font-weight="700">CENTRAL</text>
+            <rect x="438" y="32" width="152" height="172" rx="8" fill="#0b0f17"/>
+            <path d="M 448,46 L 502,46 L 502,194 L 448,194 Z" fill="#1e293b"/>
+            <path d="M 526,46 L 580,46 L 580,194 L 526,194 Z" fill="#e2e8f0"/>
+            <line x1="514" y1="40" x2="514" y2="104" stroke="#60a5fa" stroke-width="4"/>
+            <ellipse cx="514" cy="160" rx="18" ry="26" fill="#94a3b8"/>
+            <text x="514" y="222" text-anchor="middle" fill="#60a5fa" font-size="11" font-weight="700">trachée médiane</text>
+            <text x="514" y="240" text-anchor="middle" fill="#cbd5e1" font-size="11">= consolidation ou masse</text>
           </svg>
-          <div style="background:#1e3a8a;border-radius:8px;padding:10px 12px;margin-top:10px;font-size:12.5px;line-height:1.6;color:#dbeafe;">
-            💡 <strong>Les lignes B de Kerley</strong> sont de courts traits <strong>horizontaux</strong>, perpendiculaires &agrave; la pl&egrave;vre et <strong>la touchant</strong>, aux bases &mdash; ce sont des septa interlobulaires &eacute;paissis par l&rsquo;&oelig;d&egrave;me.<br>
-            ⏱️ <strong>La radiographie retarde sur la clinique</strong>, &agrave; l&rsquo;aggravation comme &agrave; l&rsquo;am&eacute;lioration : un clich&eacute; encore charg&eacute; chez une personne qui va mieux n&rsquo;est pas un &eacute;chec du traitement.
-          </div>
-        </div>
+        </div></div>
+        <div id="rxp5" style="display:none;margin-top:12px;"><div style="background:#fff3cd;border-left:5px solid #b45309;border-radius:0;padding:14px;"><strong style="color:#b45309;font-size:15px;">Médiastin</strong><div style="font-size:12px;color:#475569;margin-top:2px;">Une anomalie ne se voit que par les contours</div><div style="font-size:13px;line-height:1.7;margin-top:8px;">🔗 Structures de <strong>densité semblable</strong> → indiscernables entre elles → une lésion n'apparaît que si elle <strong>déforme ou élargit les contours</strong> du médiastin → <strong>TDM ou IRM</strong> pour la caractériser.</div></div><div style="font-size:12px;font-weight:800;color:#b45309;letter-spacing:.4px;margin:16px 0 6px;">🗺️ OÙ EST LA LÉSION ?</div><div style="overflow-x:auto;margin-top:12px;"><table style="font-size:12px;"><thead><tr><th style="width:22%;">Compartiment</th><th style="width:34%;">Contenu</th><th>Ce qu'on y cherche</th></tr></thead><tbody><tr style="background:#fff3cd;"><td><strong>Antérieur</strong> (prévasculaire)</td><td>Thymus · ganglions · graisse</td><td><strong>Lymphome</strong> (exemple du cours) — masse médiastinale antérieure</td></tr><tr style="background:#f8f9fa;"><td><strong>Moyen</strong> (viscéral)</td><td>Cœur et vaisseaux · œsophage · trachée · ganglions</td><td><strong>Métastases ganglionnaires</strong> (exemple du cours)</td></tr><tr style="background:#f1f5f9;"><td><strong>Postérieur</strong> (paravertébral)</td><td>Colonne et tissus paravertébraux</td><td>Lésions paravertébrales</td></tr></tbody></table></div><div style="font-size:12px;font-weight:800;color:#b45309;letter-spacing:.4px;margin:16px 0 6px;">🔍 LES OUTILS DE LOCALISATION</div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:10px;"><div style="background:#e8f4fd;border-radius:10px;padding:14px;"><strong style="color:#1d4ed8;">Signe de superposition hilaire</strong><div style="font-size:13px;line-height:1.7;margin-top:8px;">Seule une masse <strong>hilaire</strong> efface l'artère pulmonaire; une masse médiastinale la laisse visible à travers elle.</div></div><div style="background:#f1f5f9;border-radius:10px;padding:14px;"><strong style="color:#334155;">Signe du bord incomplet</strong><div style="font-size:13px;line-height:1.7;margin-top:8px;">Un seul bord net, angles obtus avec la paroi → lésion <strong>extraparenchymateuse</strong> (médiastinale, pleurale, pariétale).</div></div><div style="background:#ede9fe;border-radius:10px;padding:14px;"><strong style="color:#6d28d9;">Le profil</strong><div style="font-size:13px;line-height:1.7;margin-top:8px;">Situe la lésion en avant, au milieu ou en arrière — le PA seul ne le peut pas.</div></div></div><div class="key-fact red" style="margin-top:12px;">🚨 <strong>Élargissement médiastinal</strong> avec douleur thoracique déchirante ou en contexte traumatique → <strong>dissection aortique</strong> jusqu'à preuve du contraire (angio-TDM). ➜ Voir <em>Anévrisme de l'aorte</em>. Les signes de localisation sont détaillés dans le bloc <em>Les signes radiologiques classiques</em>.</div></div>
+        <div id="rxp6" style="display:none;margin-top:12px;"><div style="background:#f1f5f9;border-left:5px solid #334155;border-radius:0;padding:14px;"><strong style="color:#334155;font-size:15px;">Tubulures &amp; appareils</strong><div style="font-size:12px;color:#475569;margin-top:2px;">Première étape de la routine du cours</div><div style="font-size:13px;line-height:1.7;margin-top:8px;">🔗 Tout matériel vu sur un cliché appelle deux questions : <strong>qu'est-ce que c'est ?</strong> et <strong>est-ce au bon endroit ?</strong></div></div><div style="font-size:12px;font-weight:800;color:#334155;letter-spacing:.4px;margin:16px 0 6px;">🔌 LE MATÉRIEL MONTRÉ AU COURS</div><div style="overflow-x:auto;margin-top:12px;"><table style="font-size:12px;"><thead><tr><th style="width:20%;">Catégorie</th><th style="width:30%;">Dispositif</th><th>Ce qu'on voit / à vérifier</th></tr></thead><tbody><tr><td><strong>Voies aériennes</strong></td><td>Trachéostomie</td><td>Canule dans la trachée cervicale</td></tr><tr style="background:#f8f9fa;"><td></td><td>Tube endotrachéal</td><td>🚨 <strong>Malposition du cours : intubation de la bronche souche droite</strong> (tube trop enfoncé) — à vérifier sur tout cliché post-intubation</td></tr><tr><td><strong>Accès vasculaires</strong></td><td>Voie jugulaire interne droite · voie sous-clavière gauche</td><td>Cathéters veineux centraux — suivre le trajet jusqu'à l'extrémité</td></tr><tr style="background:#f8f9fa;"><td></td><td>PICC line</td><td>🚨 <strong>Malposition du cours : trajet intra-artériel</strong></td></tr><tr><td></td><td>Cathéter artériel pulmonaire (Swan-Ganz)</td><td>Inséré ici par la jugulaire interne gauche; extrémité dans l'artère pulmonaire</td></tr><tr style="background:#f8f9fa;"><td><strong>Digestif</strong></td><td>Tube de gavage</td><td>Suit le trajet de l'œsophage</td></tr><tr><td><strong>Rythme</strong></td><td>Stimulateur bichambre</td><td>Boîtier + deux électrodes : <strong>OD</strong> et <strong>VD</strong></td></tr><tr style="background:#f8f9fa;"><td></td><td>Stimulateur sans électrode</td><td>Petite capsule intracardiaque, sans boîtier ni sonde</td></tr><tr><td></td><td>Défibrillateur implantable</td><td>Boîtier sous-cutané + électrode(s)</td></tr><tr style="background:#f8f9fa;"><td><strong>Assistance circulatoire</strong></td><td>Assistance ventriculaire gauche (LVAD)</td><td>Pompe implantée, reliée au ventricule gauche</td></tr><tr><td></td><td>Impella</td><td>Pompe sur cathéter, assistance percutanée</td></tr><tr style="background:#f8f9fa;"><td></td><td>Ballon intra-aortique</td><td>Dans l'aorte thoracique descendante</td></tr><tr><td><strong>Valves</strong></td><td>Prothèses valvulaires</td><td>Localisation ci-dessous</td></tr></tbody></table></div><div style="font-size:12px;font-weight:800;color:#334155;letter-spacing:.4px;margin:16px 0 6px;">💎 OÙ EST QUELLE VALVE PROTHÉTIQUE ? (DE FACE)</div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:10px;"><div style="background:#e8f4fd;border-radius:10px;padding:14px;"><strong style="color:#1d4ed8;">Pulmonaire</strong><div style="font-size:13px;line-height:1.7;margin-top:8px;">La plus <strong>haute</strong>, à gauche de la ligne médiane.</div></div><div style="background:#fce4ec;border-radius:10px;padding:14px;"><strong style="color:#c0392b;">Aortique</strong><div style="font-size:13px;line-height:1.7;margin-top:8px;">Juste <strong>sous</strong> la pulmonaire, plus <strong>médiane</strong>.</div></div><div style="background:#f0fdf4;border-radius:10px;padding:14px;"><strong style="color:#15803d;">Tricuspide</strong><div style="font-size:13px;line-height:1.7;margin-top:8px;"><strong>Basse</strong>, du côté <strong>droit</strong> du cœur.</div></div><div style="background:#ede9fe;border-radius:10px;padding:14px;"><strong style="color:#6d28d9;">Mitrale</strong><div style="font-size:13px;line-height:1.7;margin-top:8px;"><strong>Basse</strong>, du côté <strong>gauche</strong> du cœur.</div></div></div><div class="key-fact orange" style="margin-top:12px;">⚠️ <strong>Ce que le cours ne donne pas :</strong> les <strong>distances cibles</strong> de positionnement (ex. extrémité du tube endotrachéal par rapport à la carène, extrémité d'une voie centrale). Se référer au <strong>protocole local</strong> ou au <strong>rapport du radiologue</strong>. Ressource suggérée par le cours : <em>linestubes.com</em>. <span style="font-size:11px;color:#64748b;">📚 <em>MMD 6412 — Radiologie thoracique, Dr P. Bourgouin, CHUM/UdeM 2026</em></span></div></div>
       </div>
 
       <div class="block para" style="margin-top:14px;border-left-color:#0f766e;">
@@ -57686,6 +57294,13 @@ Revoir rapidement si nouvelle Sx ou changement de dose<br>
           <div class="flag-item">⚠️ <strong>Oublier les zones aveugles</strong> — apex, rétrocardiaque, rétrodiaphragmatique, culs-de-sac</div>
           <div class="flag-item">⚠️ <strong>Ne pas comparer avec les clichés antérieurs</strong> — la stabilité dans le temps est une information majeure</div>
           <div class="flag-item">⚠️ <strong>Conclure « radiographie normale, donc pas de pneumonie »</strong> — elle peut être normale au début et en déshydratation</div>
+        
+          <div class="flag-item">🚨 <strong>Tube endotrachéal dans la bronche souche droite</strong> — intubation sélective : à vérifier sur tout cliché post-intubation</div>
+          <div class="flag-item">🚨 <strong>Cathéter (PICC) en trajet intra-artériel</strong> — malposition à signaler</div>
+          <div class="flag-item">🚨 <strong>« Poumon blanc » avec médiastin attiré</strong> — obstruction bronchique centrale : chercher la masse (signe du S doré au lobe supérieur droit)</div>
+          <div class="flag-item">⚠️ <strong>Prendre un pli cutané pour un pneumothorax</strong> — chercher l'interstice pulmonaire au-delà de la ligne</div>
+          <div class="flag-item">⚠️ <strong>Chercher le pneumothorax seulement à l'apex chez le patient couché</strong> — l'air est antéro-basal (<em>deep sulcus sign</em>)</div>
+          <div class="flag-item">⚠️ <strong>Se tromper de côté</strong> — la droite du patient est à gauche de l'écran : vérifier le marqueur G / D</div>
         </div>
 
         <div class="key-fact green" style="margin-top:12px;">✅ <strong>La lecture en 4 temps :</strong> ① <strong>vérifier la qualité</strong> (identité, incidence, rotation, inspiration, pénétration) · ② <strong>dérouler la séquence systématique</strong> sans sauter d'étape · ③ <strong>localiser</strong> avec le signe de la silhouette et décrire en termes d'<strong>opacités</strong> · ④ <strong>comparer aux clichés antérieurs</strong> et confronter à la clinique.</div>
@@ -61469,7 +61084,6 @@ const SEARCH_INDEX = [
     { id:'questionnaire',       title:'Le Questionnaire',               specialty:'Méthode clinique',  keywords:['questionnaire','pqrst','pqrstu','provoqué','pallié','qualité','quantité','région','irradiation','symptômes associés','temps','ample','allergies','dernier repas','last meal','événements','revue des systèmes','tête aux pieds','antécédents','gtpal','cage','paquets-année','habitudes de vie','anamnèse','questionnaire ciblé','être concis','question ouverte','drapeau rouge','4 p','gphc','démarche clinique','pica','perceptions','impacts','craintes','attentes','dépistage sommaire','revue par spécialité','raison de consultation','motif secondaire','y a-t-il autre chose','occupation','script d ouverture','observance','tolérance','produits de santé naturels','voyage récent','contact infectieux','garderie','milieu de vie','rpa','avq','avd','autonomie fonctionnelle','niveau de stress','boissons énergisantes','atcd judiciaires','tentative de suicide','gpa','symptômes b','triade de ménard','phéochromocytome','sopk','cushing','insuffisance surrénalienne','4 p','amaurose fugace','scotome','xérostomie','sjögren','raideur matinale','anhédonie','idées de référence','attaque de panique','fonctions exécutives','petit guide du diagnostic clinique'] },
   { id:'examen-physique',     title:'L\'Examen Physique',              specialty:'Méthode clinique',  keywords:['examen physique','megacv','inspection','palpation','percussion','auscultation','signes vitaux','fram','pouls','brassard','tension artérielle','pseudohypertension','osler','trou auscultatoire','hypotension orthostatique','choc apexien','foyer aortique','foyer pulmonaire','tricuspidien','turgescence jugulaire','murmure vésiculaire','vibrations vocales','matité','tympanisme','crépitants','défense','ressaut','péristaltisme','échographie ciblée','ecc','réflexe ostéotendineux','dermatome','romberg','démarche','gphc','démarche clinique','aseptic','examen mental','apparence','affect','humeur','hallucination','délire','insight','aldo','ottawa','critères d ottawa','lachman','tiroir antérieur','mcmurray','tinel','phalen','finkelstein','schöber','lasègue','trendelenburg','faber','fadir','arc douloureux','note de piano','snellen','dpar','papillœdème','virchow','adénopathie sus-claviculaire','kussmaul','cheyne-stokes','tvc','reflux hépato-jugulaire','hippocratisme','ortolani','barlow','périmètre crânien','hauteur utérine','examens régionaux','génito-urinaire','organes génitaux','oge','spéculum','pap test','test pap','cytobrosse','toucher vaginal','toucher rectal','prostate','hbp','ipss','punch rénal','globe vésical','testicule','scrotum','épididyme','varicocèle','transillumination','prehn','crémastérien','torsion testiculaire','épididymite','phimosis','paraphimosis','hernie inguinale','chancre','sein','seins et aisselles','lobe de spence','peau d orange','signe du plateau','écoulement mamelonnaire','rétraction mamelonnaire','nodularité physiologique','vasculaire périphérique','pouls pédieux','tibial postérieur','itb','index tibio-brachial','claudication','ulcère artériel','ulcère veineux','dermatite de stase','blue toe','pied de homard','homans','chaperon','consentement','examen par spécialité','examen dirigé','choc apexien','pouls paradoxal','souffle tubaire','vibrations vocales','silence auscultatoire','stridor','astérixis','signe du flot','matité déclive','angiomes stellaires','chvostek','trousseau','monofilament','pied diabétique','hémianopsie bitemporale','espace de traube','glossite','dérive pronatrice','kernig','brudzinski','aseptic','toxidrome','up and go','lève-toi et marche','mmse','moca','réflexes primitifs','patron capsulaire','neer','hawkins','jobe','choc rotulien','thompson','règles d ottawa','schober','flèche occipitale','dactylite','synovite','heberden','bouchard','lichen scléreux','lichen plan','prolapsus','léopold','hauteur utérine','lochies','prééclampsie','clonus','ortolani','barlow','réflexe rouge','périmètre crânien','snellen','dpar','rougeur périkératique','glaucome aigu','névrite optique','otoscopie','weber','rinne','dix-hallpike','hints','abcde','vitropression','valsalva','colique néphrétique','prostatite'] },
 { id:'raisonnement',        title:'Le Raisonnement Clinique',       specialty:'Méthode clinique',  keywords:['raisonnement clinique','hypothèse','hypothèse diagnostique','générer des hypothèses','schéma de classification','liste apprise par coeur','pensée dispersée','présentation typique','prototype','mode de présentation','localisation anatomique','identifier la victime','transformation sémantique','donnée discriminante','drapeau rouge','diagnostic dangereux','biais cognitif','ancrage','fermeture prématurée','biais de confirmation','représentativité','disponibilité','heuristique','métacognition','script clinique','surcharge cognitive','démarche clinique'] },
-{ id:'calculateurs',        title:'Calculateurs & Outils',          specialty:'',               keywords:['calculateur','score','framingham','cha2ds2','has-bled','wells','grace','timi','nihss','curb','meld'] },
     { id:'ecg',                 title:'ECG — Lecture systématique',     specialty:'Cardiologie',     keywords:['ecg','électrocardiogramme','tracé','grille','calibration','25 mm/s','petit carreau','rythme sinusal','fréquence cardiaque','1500','300 150 100','intervalle pr','qrs','qt','qtc','bazett','torsade de pointes','axe qrs','déviation axiale','di','avf','progression onde r','transition','territoire','antéroseptal','antéro-apical','antérolatéral','inférieur','postérieur','iva','interventriculaire antérieure','lad','circonflexe','coronaire droite','sus-décalage','sous-décalage','stemi','image en miroir','onde q','onde t hyperaiguë','bav','wenckebach','mobitz','bloc auriculoventriculaire','bloc de branche','bbg','bbd','oreilles de lapin','hypertrophie','lilly'] },
 { id:'hta',                 title:'HTA (Primaire & Secondaire)',     specialty:'Cardiologie',    keywords:['hta','hypertension','tension','bithérapie','ieca','ara','diurétique','bcc','mapa','secondaire','hyperaldostéronisme','phéochromocytome','cushing','coarctation','rénovasculaire','mpad','sprint','réfractaire'] },
   { id:'dyslipidémie',        title:'Dyslipidémie',                   specialty:'Cardiologie',    keywords:['dyslipidémie','dlp','ldl','statine','ézétimibe','pcsk9','framingham','cholestérol'] },
@@ -61613,7 +61227,7 @@ const SEARCH_INDEX = [
   { id:'toc-tspt',            title:'TOC & TSPT',                         specialty:'Santé Mentale',      keywords:['toc','tspt','trouble obsessionnel','stress post-traumatique','compulsion','obsession','evitement','isrs','venlafaxine','prazosin','emdr'] },
   { id:'msk',                 title:'Musculosquelettique & MSK',          specialty:'Rhumatologie',       keywords:['msk','musculosquelettique','arthrite','tendinite','bursite','fracture','lombalgie','genou','épaule','hanche','ottawa','sport'] },
   { id:'arthrite-approche',  title:'Approche de la Douleur Articulaire', specialty:'Rhumatologie', keywords:['arthrite','arthralgie','douleur articulaire','inflammatoire','mécanique','raideur matinale','monoarthrite','oligoarthrite','polyarthrite','synovite','ponction articulaire','liquide synovial','cristaux','septique','facteur rhumatoïde','anti-ccp','aan','ana','hla-b27','vs','crp','ipd','dactylite','enthésite'] },
-  { id:'imagerie-thorax',    title:'Imagerie du Thorax',             specialty:'Imagerie',        keywords:['radiographie','rayon x','thorax','poumon','cliché','pa','ap','silhouette','bronchogramme aérique','opacité','atélectasie','pneumothorax','épanchement pleural','kerley','cardiomégalie','rapport cardiothoracique','médiastin','hile','coupole','cul-de-sac','air libre','pénétration','rotation','inspiration','tdm','angio-tdm','échographie pulmonaire','tep','nodule','masse','lecture systématique','spine sign','hilum overlay','mach'] },
+  { id:'imagerie-thorax',    title:'Imagerie du Thorax',             specialty:'Imagerie',        keywords:['radiographie','rayon x','thorax','poumon','cliché','pa','ap','silhouette','bronchogramme aérique','opacité','atélectasie','pneumothorax','épanchement pleural','kerley','cardiomégalie','rapport cardiothoracique','médiastin','hile','coupole','cul-de-sac','air libre','pénétration','rotation','inspiration','tdm','angio-tdm','échographie pulmonaire','tep','nodule','masse','lecture systématique','spine sign','hilum overlay','mach','mmd 6412','bourgouin','radiologie thoracique','rx pulmonaire','rxp','densités','repères anatomiques','lobe moyen','lobes','compartiments du médiastin','médiastin antérieur','contours cardiaques','oreillette droite','ventricule droit','tronc pulmonaire','crosse aortique','postéro-antérieur','antéro-postérieur','profil','magnification','exposition','lordotique','décubitus latéral','tomosynthèse','abcdefghi','routine','tubulures','alvéolaire','interstitiel','interstitielle','réticulaire','réticulo-nodulaire','lobule pulmonaire secondaire','oedème pulmonaire','œdème pulmonaire','céphalisation','cephalisation','batwing','ailes de papillon','flou périhilaire','pression capillaire','bronchopneumonie','pneumonie lobaire','pneumonie interstitielle','pneumonie d aspiration','aspiration','embolies septiques','tuberculose miliaire','rsna','covid tdm','crazy paving','halo inversé','atélectasie passive','atélectasie de résorption','atelectasie','golden s','s doré','signe du s de golden','deep sulcus','pli cutané','poumon blanc','hémithorax opaque','hémothorax','pneumonectomie','lymphome','métastases ganglionnaires','intubation sélective','bronche souche droite','picc','swan-ganz','swan ganz','cathéter artériel pulmonaire','tube de gavage','trachéostomie','stimulateur cardiaque','pacemaker','pacemaker sans électrode','défibrillateur','lvad','impella','ballon intra-aortique','valve prothétique','pneumopéritoine','emphysème sous-cutané','métastases blastiques'] },
   { id:'imagerie-abdo',      title:'Imagerie de l\u2019Abdomen',       specialty:'Imagerie',        keywords:['asp','radiographie abdomen','abdomen sans pr\u00e9paration','air libre','pneumop\u00e9ritoine','rigler','morrison','ligament falciforme','chilaiditi','occlusion','il\u00e9us','volvulus','grain de caf\u00e9','u invers\u00e9','niveaux hydro-a\u00e9riques','valvules conniventes','haustrations','pneumatose','a\u00e9robilie','gaz portal','\u00e9chographie abdominale','murphy \u00e9chographique','tdm abdominal','angio-tdm','isch\u00e9mie m\u00e9sent\u00e9rique','cholangio-irm','contraste iod\u00e9','n\u00e9phropathie de contraste','metformine','trouvaille fortuite','alara','choisir avec soin','c\u00e6cum','appendicolithe','goldman'] },
   { id:'neuro-imagerie',     title:'Neuro-imagerie',                 specialty:'Imagerie',        keywords:['tdm c\u00e9r\u00e9brale','scan c\u00e9r\u00e9bral','irm c\u00e9r\u00e9brale','diffusion','hyperdense','hypodense','isodense','avc','isch\u00e9mique','h\u00e9morragique','h\u00e9morragie intrac\u00e9r\u00e9brale','hsa','h\u00e9morragie sous-arachno\u00efdienne','coup de tonnerre','an\u00e9vrisme','xanthochromie','ponction lombaire','angiographie c\u00e9r\u00e9brale','clippage','coiling','h\u00e9matome sous-dural','sous-dural','\u00e9pidural','extradural','veines ponts','art\u00e8re m\u00e9ning\u00e9e moyenne','intervalle libre','ligne m\u00e9diane','engagement','hydroc\u00e9phalie','c\u00e9phal\u00e9e','red flags c\u00e9phal\u00e9e','traumatisme cr\u00e2nien','glasgow','r\u00e8gle canadienne','gadolinium','fibrose systémique n\u00e9phrog\u00e9nique','implant','pacemaker','claustrophobie','fosse post\u00e9rieure','aspects','thrombectomie','goldman'] },
   { id:'par',                title:'Polyarthrite Rhumatoïde',         specialty:'Rhumatologie', keywords:['polyarthrite rhumatoïde','par','pr','arthrite rhumatoïde','anti-ccp','acpa','facteur rhumatoïde','méthotrexate','mtx','dmard','biothérapie','anti-tnf','jak','hydroxychloroquine','sulfasalazine','léflunomide','pannus','érosion','felty','nodule rhumatoïde','c1-c2','pneumopathie interstitielle','traiter à la cible','acr','eular','déviation cubitale'] },
@@ -61624,49 +61238,6 @@ const SEARCH_INDEX = [
   { id:'ordonnances',        title:'Normes des Ordonnances',         specialty:'Pharmacologie',   keywords:['ordonnance','ordonnance individuelle','ordonnance collective','prescription','prescrire','norme','cmq','oiiq','ramq','numéro de prescripteur','ipspl','ipssa','ipssp','ipsnn','ipssm','date de rédaction','période de validité','24 mois','posologie','voie d administration','prn','usage connu','tel que prescrit','renouvellement','pmn','protocole médical national','inesss','benzodiazépine','substances ciblées','permis d exercice','signature','magistrale','déontologie'] },
   { id:'pharmacoguide',       title:'Guide Pharmacologique',              specialty:'Pharmacologie',      keywords:['pharmacologie','médicament','pharmacocinétique','pharmacodynamie','interactions','prescription','posologie'] },
   { id:'quiz',                title:'Quiz Clinique Interactif',           specialty:'Formation',          keywords:['quiz','qcm','questions','auto-évaluation','formation','révision'] },
-  // ── Calculateurs individuels (recherchables, mènent directement à l'outil) ──
-  { id:'has-bled',     title:'HAS-BLED Score',                          specialty:'Calculateur', calc:'has-bled',     keywords:['has-bled','saignement','anticoagulation','fibrillation auriculaire'] },
-  { id:'timi-nstemi',  title:'TIMI Score — UA/NSTEMI',                  specialty:'Calculateur', calc:'timi-nstemi',  keywords:['timi','nstemi','sca','syndrome coronarien aigu'] },
-  { id:'timi-stemi',   title:'TIMI Score — STEMI',                      specialty:'Calculateur', calc:'timi-stemi',   keywords:['timi','stemi','infarctus','mortalité'] },
-  { id:'grace-score',  title:'GRACE ACS Score',                         specialty:'Calculateur', calc:'grace-score',  keywords:['grace','sca','mortalité hospitalière'] },
-  { id:'h2fpef',       title:'H2FPEF Score',                            specialty:'Calculateur', calc:'h2fpef',       keywords:['h2fpef','hfpef','insuffisance cardiaque'] },
-  { id:'framingham',   title:'Framingham Risk',                         specialty:'Calculateur', calc:'framingham',   keywords:['framingham','risque cardiovasculaire','dyslipidémie'] },
-  { id:'ccs-angina',   title:'CCS Angina Grade',                        specialty:'Calculateur', calc:'ccs-angina',   keywords:['ccs','angine','classification fonctionnelle'] },
-  { id:'nyha-class',   title:'NYHA HF Classification',                  specialty:'Calculateur', calc:'nyha-class',   keywords:['nyha','insuffisance cardiaque','classification fonctionnelle'] },
-  { id:'chads65',      title:'CHADS-65 Score',                          specialty:'Calculateur', calc:'chads65',      keywords:['chads65','anticoagulation','fibrillation auriculaire'] },
-  { id:'lights',       title:"Light's Criteria",                        specialty:'Calculateur', calc:'lights',       keywords:['light','épanchement pleural','transsudat','exsudat'] },
-  { id:'pack-years',   title:'Pack-Years Calculator',                   specialty:'Calculateur', calc:'pack-years',   keywords:['pack-years','paquets-années','tabagisme','dépistage pulmonaire'] },
-  { id:'crb65',        title:'CRB-65',                                  specialty:'Calculateur', calc:'crb65',        keywords:['crb-65','pneumonie','curb'] },
-  { id:'stopbang',     title:'STOP-BANG',                               specialty:'Calculateur', calc:'stopbang',     keywords:['stop-bang','apnée du sommeil','aos'] },
-  { id:'cat',          title:'COPD Assessment Test (CAT)',              specialty:'Calculateur', calc:'cat',          keywords:['cat','mpoc','copd assessment test'] },
-  { id:'gold',         title:'Critères GOLD',                           specialty:'Calculateur', calc:'gold',         keywords:['gold','mpoc','stadification','spirométrie'] },
-  { id:'mmrc',         title:'Échelle mMRC',                            specialty:'Calculateur', calc:'mmrc',         keywords:['mmrc','dyspnée','mpoc'] },
-  { id:'perc',         title:'Règle PERC',                              specialty:'Calculateur', calc:'perc',         keywords:['perc','embolie pulmonaire'] },
-  { id:'nihss',        title:'NIH Stroke Scale (NIHSS)',                specialty:'Calculateur', calc:'nihss',        keywords:['nihss','avc','accident vasculaire cérébral'] },
-  { id:'moca',         title:'Montreal Cognitive Assessment (MoCA)',    specialty:'Calculateur', calc:'moca',         keywords:['moca','cognitif','démence','trouble cognitif'] },
-  { id:'aspects',      title:'ASPECTS',                                 specialty:'Calculateur', calc:'aspects',      keywords:['aspects','avc','ischémie','imagerie cérébrale'] },
-  { id:'cp-aki',       title:'CP-AKI',                                  specialty:'Calculateur', calc:'cp-aki',       keywords:['cp-aki','insuffisance rénale aiguë','chimiothérapie','cisplatine'] },
-  { id:'ca-correction',title:'Correction du calcium pour albumine',     specialty:'Calculateur', calc:'ca-correction',keywords:['calcium corrigé','albumine','hypocalcémie','hypercalcémie'] },
-  { id:'ckd-epi',      title:'CKD-EPI',                                 specialty:'Calculateur', calc:'ckd-epi',      keywords:['ckd-epi','dfg','débit de filtration glomérulaire','fonction rénale'] },
-  { id:'mdrd',         title:'MDRD',                                    specialty:'Calculateur', calc:'mdrd',         keywords:['mdrd','dfg','fonction rénale'] },
-  { id:'akin',         title:'Classification AKIN',                     specialty:'Calculateur', calc:'akin',         keywords:['akin','insuffisance rénale aiguë','ira','créatinine'] },
-  { id:'creatinine',   title:'Clairance créatinine (Cockcroft-Gault)',  specialty:'Calculateur', calc:'creatinine',   keywords:['cockcroft-gault','clairance créatinine','ajustement posologique'] },
-  { id:'fib4',         title:'Indice FIB-4',                            specialty:'Calculateur', calc:'fib4',         keywords:['fib-4','fibrose hépatique','cirrhose'] },
-  { id:'tokyo-chol',   title:'Critères de Tokyo — Cholangite',          specialty:'Calculateur', calc:'tokyo-chol',   keywords:['tokyo','cholangite','voies biliaires'] },
-  { id:'tokyo-cyst',   title:'Critères de Tokyo — Cholécystite',        specialty:'Calculateur', calc:'tokyo-cyst',   keywords:['tokyo','cholécystite','vésicule biliaire'] },
-  { id:'la-esoph',     title:'Classification de Los Angeles',           specialty:'Calculateur', calc:'la-esoph',     keywords:['los angeles','œsophagite','reflux','endoscopie'] },
-  { id:'glasgow',      title:'Glasgow-Blatchford',                      specialty:'Calculateur', calc:'glasgow',      keywords:['glasgow-blatchford','hémorragie digestive haute'] },
-  { id:'bisap',        title:'BISAP',                                   specialty:'Calculateur', calc:'bisap',        keywords:['bisap','pancréatite aiguë','sévérité','mortalité'] },
-  { id:'alvarado',     title:"Score d'Alvarado",                        specialty:'Calculateur', calc:'alvarado',     keywords:['alvarado','appendicite'] },
-  { id:'caroc',        title:'CAROC — Risque fracturaire',              specialty:'Calculateur', calc:'caroc',        keywords:['caroc','ostéoporose','fracture','densité osseuse'] },
-  { id:'canrisk',      title:'CANRISK',                                 specialty:'Calculateur', calc:'canrisk',      keywords:['canrisk','diabète','prédiabète','dépistage'] },
-  { id:'bmi',          title:'IMC & Surface corporelle (BSA)',          specialty:'Calculateur', calc:'bmi',          keywords:['imc','bmi','surface corporelle','bsa','poids'] },
-  { id:'cage',         title:'Questionnaire CAGE',                      specialty:'Calculateur', calc:'cage',         keywords:['cage','alcool','dépistage','consommation problématique'] },
-  { id:'phq9',         title:'PHQ-9',                                   specialty:'Calculateur', calc:'phq9',         keywords:['phq-9','dépression','sévérité'] },
-  { id:'gad7',         title:'GAD-7',                                   specialty:'Calculateur', calc:'gad7',         keywords:['gad-7','anxiété','sévérité'] },
-  { id:'ciwa',         title:'CIWA-Ar',                                 specialty:'Calculateur', calc:'ciwa',         keywords:['ciwa','sevrage alcoolique','benzodiazépine'] },
-  { id:'centor',       title:'Score de Centor',                         specialty:'Calculateur', calc:'centor',       keywords:['centor','pharyngite','strep','angine streptococcique'] },
-  { id:'regiscar',     title:'RegiSCAR — Syndrome DRESS',               specialty:'Calculateur', calc:'regiscar',     keywords:['regiscar','dress','réaction médicamenteuse','éosinophilie'] },
   { id:'antibiotherapie', title:"Sélecteur d'antibiothérapie empirique", specialty:'Outil clinique', tool:'abx-tool', keywords:['antibiotique','antibiothérapie','empirique','abx','infection','allergie pénicilline'] },
   { id:'mcas', title:'CADence (RF-CL) — Probabilité pré-test de MCAS', specialty:'Outil clinique', tool:'cadence-tool', keywords:['cadence','rf-cl','probabilité pré-test','mcas','angine','coronarienne','esc 2024','score calcique'] },
   // Pneumologie — nouvelles sections
@@ -61682,10 +61253,6 @@ const SEARCH_INDEX = [
   { id:'cancer-endo',   title:'Cancer de l\'Endomètre — Stadification & Traitement', specialty:'Gynécologie', keywords:['cancer endomètre','hyperplasie','FIGO','type 1','type 2','carcinome endométrioïde','carcinosarcome','progestatifs','hystérectomie','MMRd','TCGA','POLEmut','traitement par stade','stade I','stade II','stade III','stade IV','curiethérapie vaginale','carboplatine','paclitaxel','pembrolizumab','dostarlimab','lenvatinib','trastuzumab','chimioradiation','cytoréduction','p53abn','NSMP','MSI-H','hormonothérapie endomètre','récidive endomètre','ganglion sentinelle','brachythérapie'] },
   { id:'survivance',    title:'Survivance au Cancer & Rôle IPS',        specialty:'Gynécologie', keywords:['survivance','effets tardifs','plan soins survivance','CIPN','cardiotoxicité','IPS','santé sexuelle','atrophie vaginale','fatigue cancéreuse','inhibiteur aromatase','immunothérapie','irAE'] },
   { id:'depistage',    title:'Dépistage & Prévention',                  specialty:'Prévention',  keywords:['dépistage','prévention','mammographie','colonoscopie','pap test','hpv','rsosi','psa','ldct','poumon','choisir avec soins','choisir','ostéoporose','dexa','frax','vitamine d','bactériurie asymptomatique','choosing wisely','inesss','ihv','vih','vhc','chlamydia','gonorrhée'] },
-  { id:'ottawa-knee',  title:"Règle d'Ottawa — Genou",                  specialty:'Calculateur', calc:'ottawa-knee',  keywords:['ottawa','genou','fracture','imagerie'] },
-  { id:'ottawa-ankle', title:"Règle d'Ottawa — Cheville",               specialty:'Calculateur', calc:'ottawa-ankle', keywords:['ottawa','cheville','fracture','imagerie'] },
-  { id:'wells-dvt',    title:'Score de Wells — TVP',                    specialty:'Calculateur', calc:'wells-dvt',    keywords:['wells','tvp','thrombose veineuse profonde'] },
-  { id:'wells-pe',     title:'Score de Wells — Embolie pulmonaire',     specialty:'Calculateur', calc:'wells-pe',     keywords:['wells','embolie pulmonaire','ep'] },
 ];
 
 // ═══ NAVIGATION ═══
@@ -61717,12 +61284,6 @@ function showSection(id) {
   closeSearch();
 }
 
-function goToCalc(calcId) {
-  showSection('calculateurs');
-  if (typeof showCalc === 'function') showCalc(calcId);
-  closeSearch();
-}
-
 // Navigue vers une section donnée puis défile jusqu'à un outil interactif intégré (ex: abx-tool)
 function goToTool(sectionId, anchorId) {
   showSection(sectionId);
@@ -61751,103 +61312,343 @@ function toggleSidebar() {
 }
 
 // ═══ SEARCH ═══
+// Recherche v2 (2026-09-28) : index au niveau de l'ÉLÉMENT (ligne de tableau, carte, critère, paragraphe),
+// insensible aux accents et à l'ordre des mots, classement par pertinence,
+// et navigation qui ouvre l'onglet ou le panneau caché avant de défiler jusqu'au texte trouvé.
 const searchInput = document.getElementById('search');
 const searchResults = document.getElementById('searchResults');
 
-// Full-text content index — built lazily on first search
-let _contentIndex = null;
-function getContentIndex() {
-  if (_contentIndex) return _contentIndex;
-  _contentIndex = {};
-  SEARCH_INDEX.forEach(item => {
-    const el = document.getElementById('sec-' + item.id);
-    if (el) _contentIndex[item.id] = el.textContent.replace(/\s+/g, ' ').trim().toLowerCase();
-  });
-  return _contentIndex;
-}
+const SRCH_INLINE = new Set(['SPAN','B','STRONG','EM','I','MARK','A','SUP','SUB','SMALL','CODE','U','ABBR','TD','TH','BR','S','DEL','INS','Q','CITE','TIME','LABEL','FONT','WBR']);
+const SRCH_SKIP = new Set(['SCRIPT','STYLE','BUTTON','SELECT','OPTION','INPUT','TEXTAREA','SVG','NOSCRIPT','TEMPLATE']);
+const SRCH_STOP = new Set(['de','la','le','les','des','du','et','en','un','une','au','aux','pour','par','sur','dans','avec','ou','que','qui','est','sont']);
 
-// ═══ SEARCH SCROLL-TO ═══
-let _searchQuery = '';
-
-function showSectionAndScroll(id) {
-  showSection(id);
-  const q = _searchQuery;
-  closeSearch();
-  if (!q) return;
-  setTimeout(() => {
-    const sec = document.getElementById('sec-' + id);
-    if (!sec) return;
-    const ql = q.toLowerCase();
-    const walker = document.createTreeWalker(sec, NodeFilter.SHOW_TEXT, null);
-    let found = null;
-    while (true) {
-      const node = walker.nextNode();
-      if (!node) break;
-      if (node.textContent.toLowerCase().includes(ql)) {
-        let el = node.parentElement;
-        while (el && el !== sec && ['SPAN','B','STRONG','EM','MARK','A'].includes(el.tagName)) {
-          el = el.parentElement;
-        }
-        found = el || node.parentElement;
-        break;
-      }
-    }
-    if (!found) return;
-    found.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    const prev = { outline: found.style.outline, borderRadius: found.style.borderRadius };
-    found.style.outline = '2px solid #f59e0b';
-    found.style.borderRadius = '6px';
-    setTimeout(() => {
-      found.style.outline = prev.outline;
-      found.style.borderRadius = prev.borderRadius;
-    }, 2000);
-  }, 180);
-}
-
-searchInput.addEventListener('input', () => {
-  const q = searchInput.value.trim().toLowerCase();
-  _searchQuery = q;
-  if (q.length < 2) { closeSearch(); return; }
-
-  const contentIdx = getContentIndex();
-
-  const results = SEARCH_INDEX.filter(item => {
-    if (item.title.toLowerCase().includes(q)) return true;
-    if (item.keywords.some(k => k.includes(q))) return true;
-    if (contentIdx[item.id] && contentIdx[item.id].includes(q)) return true;
-    return false;
-  }).slice(0, 12);
-
-  if (!results.length) {
-    searchResults.innerHTML = '<div class="no-results">Aucun résultat pour « ' + esc(q) + ' »</div>';
-  } else {
-    searchResults.innerHTML = results.map(r => {
-      const hl = r.title.replace(new RegExp('(' + escRx(q) + ')', 'gi'), '<mark>$1</mark>');
-      const action = r.calc ? `goToCalc('${r.calc}')` : (r.tool ? `goToTool('${r.id}','${r.tool}')` : `showSectionAndScroll('${r.id}')`);
-      const titleMatch = r.title.toLowerCase().includes(q);
-      const kwMatch = r.keywords.some(k => k.includes(q));
-      let snippet = '';
-      if (!titleMatch && !kwMatch && contentIdx[r.id]) {
-        const ci = contentIdx[r.id];
-        const pos = ci.indexOf(q);
-        if (pos >= 0) {
-          const s = Math.max(0, pos - 45);
-          const e = Math.min(ci.length, pos + q.length + 45);
-          const raw = esc((s > 0 ? '…' : '') + ci.slice(s, e) + (e < ci.length ? '…' : ''));
-          snippet = '<span class="search-snippet">' + raw.replace(new RegExp('(' + escRx(q) + ')', 'gi'), '<mark>$1</mark>') + '</span>';
-        }
-      }
-      return `<div class="search-result-item" onclick="${action}">
-        <span class="title">${hl}</span>
-        ${r.specialty ? '<span class="meta">' + esc(r.specialty) + '</span>' : ''}
-        ${snippet}
-      </div>`;
-    }).join('');
+// Normalisation caractère par caractère : minuscules, sans accents, ligatures dépliées.
+// Retourne aussi la table de correspondance vers le texte d'origine (pour surligner au bon endroit).
+function srchNormMap(s) {
+  let out = '', map = [];
+  for (let i = 0; i < s.length; i++) {
+    const ch = s[i];
+    let n;
+    if (ch === 'œ' || ch === 'Œ') n = 'oe';
+    else if (ch === 'æ' || ch === 'Æ') n = 'ae';
+    else if (ch === '’' || ch === '‘' || ch === '`' || ch === 'ʼ') n = "'";
+    else if (ch === '–' || ch === '—' || ch === '‑') n = '-';
+    else if (/\s/.test(ch)) n = ' ';
+    else n = ch.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+    for (let k = 0; k < n.length; k++) { out += n[k]; map.push(i); }
   }
-  searchResults.classList.add('open');
-});
+  return { out, map };
+}
+function srchNorm(s) { return srchNormMap(s).out.replace(/\s+/g, ' ').trim(); }
+function srchTokens(q) {
+  const qn = srchNorm(q);
+  let toks = qn.split(/[\s,;:/()«»"]+/).map(t => t.replace(/^[-'.]+|[-'.]+$/g, '')).filter(t => t.length >= 2 && !SRCH_STOP.has(t));
+  if (!toks.length) toks = qn.split(' ').filter(Boolean);
+  return { qn, toks: [...new Set(toks)] };
+}
 
-searchInput.addEventListener('keydown', e => { if (e.key === 'Escape') closeSearch(); });
+// Index construit une seule fois, à la première recherche.
+let _srchUnits = null, _srchSections = null;
+function srchBuild() {
+  if (_srchUnits) return;
+  _srchUnits = []; _srchSections = {};
+  const meta = {};
+  SEARCH_INDEX.forEach(x => { meta[x.id] = x; });
+  document.querySelectorAll('.section').forEach(sec => {
+    const sid = sec.id.replace(/^sec-/, '');
+    if (sid === 'home') return;
+    const m = meta[sid] || {};
+    const h1 = sec.querySelector('h1');
+    const title = m.title || (h1 ? h1.textContent.trim() : sid);
+    _srchSections[sid] = { sid, title, specialty: m.specialty || '', tool: m.tool,
+      n: srchNorm(title + ' ' + (m.keywords || []).join(' ')), nTitle: srchNorm(title) };
+    const groups = new Map();
+    const walker = document.createTreeWalker(sec, NodeFilter.SHOW_TEXT, {
+      acceptNode(node) {
+        if (!node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+        for (let p = node.parentElement; p && p !== sec; p = p.parentElement) {
+          if (SRCH_SKIP.has(p.tagName) || (p.classList && p.classList.contains('section-nav'))) return NodeFilter.FILTER_REJECT;
+        }
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    let node;
+    while ((node = walker.nextNode())) {
+      let u = node.parentElement;
+      while (u !== sec && SRCH_INLINE.has(u.tagName)) u = u.parentElement;
+      let arr = groups.get(u);
+      if (!arr) { arr = []; groups.set(u, arr); }
+      arr.push(node.nodeValue);
+    }
+    groups.forEach((parts, el) => {
+      const raw = parts.join(' ').replace(/\s+/g, ' ').trim();
+      if (raw.length < 2) return;
+      _srchUnits.push({
+        sid, el, raw, n: srchNormMap(raw).out,
+        head: /^H[1-4]$/.test(el.tagName) || (el.classList && el.classList.contains('block-title')),
+        blk: el.closest('.block') || sec,
+      });
+    });
+  });
+}
+
+function srchBlockTitle(u) {
+  if (u.blk && u.blk.classList.contains('block')) {
+    const t = u.blk.querySelector('.block-title .tag') || u.blk.querySelector('.block-title');
+    if (t) return t.textContent.replace(/\s+/g, ' ').trim();
+  }
+  return '';
+}
+// Nom de l'onglet (pill) qui contient l'élément, s'il est dans un panneau.
+function srchPanelLabel(el) {
+  const sec = el.closest('.section');
+  for (let p = el.parentElement; p && p !== sec; p = p.parentElement) {
+    if (p.id && p.style && p.style.display === 'none') {
+      const ctl = srchFindControl(p, sec);
+      if (ctl) return ctl.textContent.replace(/\s+/g, ' ').trim();
+    }
+  }
+  return '';
+}
+
+function srchRun(q) {
+  srchBuild();
+  const { qn, toks } = srchTokens(q);
+  if (!toks.length) return [];
+  // fréquence de chaque mot : le plus rare est le plus informatif
+  const freq = {};
+  toks.forEach(t => { freq[t] = 0; });
+  _srchUnits.forEach(u => { toks.forEach(t => { if (u.n.includes(t)) freq[t]++; }); });
+  const rare = [...toks].sort((a, b) => freq[a] - freq[b]);
+  const bySec = {};
+  const get = sid => (bySec[sid] = bySec[sid] || { sid, best: 0, secHit: 0, hits: [] });
+
+  // 1) titre et mots-clés de la section
+  Object.values(_srchSections).forEach(s => {
+    if (toks.every(t => s.n.includes(t))) {
+      const r = get(s.sid);
+      r.secHit = 60 + (s.nTitle.includes(qn) ? 40 : 0) + (s.nTitle.startsWith(qn) ? 20 : 0);
+      r.best = Math.max(r.best, r.secHit);
+    }
+  });
+
+  // 2) chaque élément de contenu : tous les mots doivent y figurer
+  const hitBlocks = new Set();
+  _srchUnits.forEach(u => {
+    for (const t of toks) if (!u.n.includes(t)) return;
+    let s = 20 + 5 * toks.length;
+    if (toks.length > 1 && u.n.includes(qn)) s += 35;
+    if (u.head) s += 30;
+    for (const t of toks) if (new RegExp('(^|[^a-z0-9])' + escRx(t)).test(u.n)) s += 6;
+    s -= Math.min(15, u.n.length / 250);
+    get(u.sid).hits.push({ u, s });
+    hitBlocks.add(u.blk);
+  });
+
+  // 3) requête à plusieurs mots répartis dans un même encadré (ex. « néphrotique traitement »)
+  if (toks.length > 1) {
+    const blocks = new Map();
+    _srchUnits.forEach(u => {
+      if (hitBlocks.has(u.blk)) return;
+      let b = blocks.get(u.blk);
+      if (!b) { b = { units: [], found: new Set() }; blocks.set(u.blk, b); }
+      b.units.push(u);
+      toks.forEach(t => { if (u.n.includes(t)) b.found.add(t); });
+    });
+    blocks.forEach(b => {
+      if (b.found.size < toks.length) return;
+      const secMeta = _srchSections[b.units[0].sid];
+      // viser l'élément qui contient le plus de mots de la requête (titre d'encadré de préférence)
+      let best = null, bestScore = -1;
+      b.units.forEach(u => {
+        const k = toks.reduce((acc, t) => acc + (u.n.includes(t) ? 1 + 1 / (1 + freq[t]) : 0), 0) + (u.head ? 0.5 : 0);
+        if (k > bestScore) { bestScore = k; best = u; }
+      });
+      get(best.sid).hits.push({ u: best, s: 12 + (secMeta && toks.some(t => secMeta.n.includes(t)) ? 8 : 0), loose: true });
+    });
+  }
+
+  // agrégation : 3 éléments max par section, encadrés différents de préférence
+  const out = Object.values(bySec).map(r => {
+    r.hits.sort((a, b) => b.s - a.s);
+    const picked = [], seenBlk = new Set();
+    for (const h of r.hits) { if (picked.length >= 3) break; if (!seenBlk.has(h.u.blk)) { picked.push(h); seenBlk.add(h.u.blk); } }
+    for (const h of r.hits) { if (picked.length >= 3) break; if (!picked.includes(h)) picked.push(h); }
+    r.total = r.hits.length;
+    r.hits = picked;
+    r.best = Math.max(r.best, picked.length ? picked[0].s : 0) + Math.min(10, r.total);
+    return r;
+  });
+  out.sort((a, b) => b.best - a.best);
+  return out.slice(0, 15).map(r => Object.assign(r, { toks, qn, rare }));
+}
+
+// Extrait autour du premier mot trouvé, avec tous les mots surlignés.
+function srchSnippet(raw, toks, rare) {
+  const { out, map } = srchNormMap(raw);
+  let pos = -1;
+  for (const t of (rare || toks)) { const i = out.indexOf(t); if (i >= 0) { pos = i; break; } }
+  let s = 0, e = raw.length;
+  if (pos >= 0) { const rp = map[pos]; s = Math.max(0, rp - 50); e = Math.min(raw.length, rp + 110); }
+  else e = Math.min(raw.length, 160);
+  return srchHighlight(raw.slice(s, e), toks, s > 0, e < raw.length);
+}
+function srchHighlight(txt, toks, pre, post) {
+  const { out, map } = srchNormMap(txt);
+  const mark = new Array(txt.length).fill(false);
+  toks.forEach(t => { let i = out.indexOf(t); while (i >= 0) { for (let k = map[i]; k <= map[i + t.length - 1]; k++) mark[k] = true; i = out.indexOf(t, i + t.length); } });
+  let html = pre ? '…' : '', open = false;
+  for (let k = 0; k < txt.length; k++) {
+    if (mark[k] && !open) { html += '<mark>'; open = true; }
+    if (!mark[k] && open) { html += '</mark>'; open = false; }
+    html += esc(txt[k]);
+  }
+  if (open) html += '</mark>';
+  return html + (post ? '…' : '');
+}
+
+let _srchActions = [], _srchActive = -1;
+function srchRender(q) {
+  const res = srchRun(q);
+  _srchActions = []; _srchActive = -1;
+  if (!res.length) {
+    searchResults.innerHTML = '<div class="no-results">Aucun résultat pour « ' + esc(q) + ' »<br><span style="font-size:11px;">Essayez un seul mot, ou le début du mot (ex. « hémopt »).</span></div>';
+    searchResults.classList.add('open');
+    return;
+  }
+  let html = '';
+  res.forEach(r => {
+    const s = _srchSections[r.sid];
+    const ai = _srchActions.push({ type: 'sec', sid: r.sid, tool: s.tool }) - 1;
+    html += `<div class="search-result-item sr-row" data-i="${ai}" onclick="srchGo(${ai})">
+        <span class="title">${srchHighlight(s.title, r.toks)}</span>
+        ${s.specialty ? '<span class="meta">' + esc(s.specialty) + (r.total ? ' · ' + r.total + ' passage' + (r.total > 1 ? 's' : '') : '') + '</span>' : ''}
+      </div>`;
+    r.hits.forEach(h => {
+      const bi = _srchActions.push({ type: 'el', u: h.u, toks: r.toks }) - 1;
+      const path = [srchBlockTitle(h.u), srchPanelLabel(h.u.el)].filter(Boolean).join(' › ');
+      html += `<div class="search-result-item sr-row sr-hit" data-i="${bi}" onclick="srchGo(${bi})">
+          ${path ? '<span class="sr-path">' + esc(path) + '</span>' : ''}
+          <span class="search-snippet">${srchSnippet(h.u.raw, r.toks, r.rare)}</span>
+        </div>`;
+    });
+  });
+  searchResults.innerHTML = html;
+  searchResults.classList.add('open');
+}
+
+// ── Navigation vers un résultat ──
+function srchFindControl(panel, sec) {
+  const id = panel.id;
+  if (!id) return null;
+  let ctl = sec.querySelector('[data-panel="' + id + '"]');
+  if (ctl) return ctl;
+  ctl = [...sec.querySelectorAll('[onclick]')].find(b => { const oc = b.getAttribute('onclick'); return oc.includes("'" + id + "'") || oc.includes('"' + id + '"'); });
+  if (ctl) return ctl;
+  // Panneaux gérés par une fonction dédiée (ex. switchSN(1) pour snp1) : chercher un bouton voisin avec le même numéro
+  const m = id.match(/^(.*?)(\d+)$/);
+  if (!m) return null;
+  const sibs = [...panel.parentElement.children].filter(s => s.id && s.id.startsWith(m[1]) && /^\d+$/.test(s.id.slice(m[1].length)));
+  const rx = new RegExp('\\(\\s*[\'"]?' + m[2] + '[\'"]?\\s*[,)]');
+  let scope = panel.parentElement;
+  for (let k = 0; k < 3 && scope && scope !== sec.parentElement; k++, scope = scope.parentElement) {
+    ctl = [...scope.querySelectorAll('[onclick]')].find(b => {
+      const oc = b.getAttribute('onclick');
+      return rx.test(oc) && !/goToBlock|showSection/.test(oc) && !sibs.some(sp => sp.contains(b));
+    });
+    if (ctl) return ctl;
+  }
+  return null;
+}
+// Les panneaux du guide sont masqués par un style en ligne (display:none) ou l'attribut hidden
+function srchHidden(a) { return !!(a.style && a.style.display === 'none') || a.hidden === true; }
+function srchReveal(el) {
+  const sec = el.closest('.section');
+  const chain = [];
+  for (let p = el; p && p !== sec; p = p.parentElement) chain.unshift(p);
+  chain.forEach(a => {
+    if (a.classList && a.classList.contains('accordion-item')) a.classList.add('open');
+    if (a.tagName === 'DETAILS') a.open = true;
+    if (!srchHidden(a)) return;
+    const ctl = srchFindControl(a, sec);
+    if (ctl) { try { ctl.click(); } catch (e) {} }
+    if (srchHidden(a)) {
+      const m = a.id && a.id.match(/^(.*?)(\d+)$/);
+      if (m && a.parentElement) [...a.parentElement.children].forEach(s => {
+        if (s !== a && s.id && s.id.startsWith(m[1]) && /^\d+$/.test(s.id.slice(m[1].length))) s.style.display = 'none';
+      });
+      a.style.display = 'block';
+    }
+  });
+}
+function srchFlash(el, toks) {
+  el.classList.add('search-flash');
+  setTimeout(() => el.classList.remove('search-flash'), 2600);
+  const nodes = [], w = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+  let n; while ((n = w.nextNode())) nodes.push(n);
+  const marks = [];
+  nodes.forEach(node => {
+    const { out, map } = srchNormMap(node.nodeValue);
+    let ranges = [];
+    toks.forEach(t => { let i = out.indexOf(t); while (i >= 0) { ranges.push([map[i], map[i + t.length - 1] + 1]); i = out.indexOf(t, i + t.length); } });
+    if (!ranges.length) return;
+    ranges.sort((a, b) => a[0] - b[0]);
+    const merged = [];
+    ranges.forEach(r => { const last = merged[merged.length - 1]; if (last && r[0] <= last[1]) last[1] = Math.max(last[1], r[1]); else merged.push(r.slice()); });
+    for (let k = merged.length - 1; k >= 0; k--) {
+      try {
+        const rg = document.createRange(); rg.setStart(node, merged[k][0]); rg.setEnd(node, merged[k][1]);
+        const mk = document.createElement('mark'); mk.className = 'search-hit'; rg.surroundContents(mk); marks.push(mk);
+      } catch (e) {}
+    }
+  });
+  setTimeout(() => marks.forEach(mk => { const p = mk.parentNode; if (!p) return; p.replaceChild(document.createTextNode(mk.textContent), mk); p.normalize(); }), 4500);
+}
+function srchGo(i) {
+  const a = _srchActions[i];
+  if (!a) return;
+  closeSearch();
+  searchInput.blur();
+  if (a.type === 'sec') {
+    if (a.tool) { goToTool(a.sid, a.tool); return; }
+    showSection(a.sid);
+    return;
+  }
+  const el = a.u.el;
+  showSection(a.u.sid);
+  setTimeout(() => {
+    srchReveal(el);
+    setTimeout(() => { el.scrollIntoView({ behavior: 'smooth', block: 'center' }); srchFlash(el, a.toks); }, 80);
+  }, 120);
+}
+// Compatibilité : anciens appels
+function showSectionAndScroll(id) { showSection(id); closeSearch(); }
+
+let _srchTimer = null;
+searchInput.addEventListener('input', () => {
+  const q = searchInput.value.trim();
+  clearTimeout(_srchTimer);
+  if (q.length < 2) { closeSearch(); return; }
+  _srchTimer = setTimeout(() => srchRender(q), 120);
+});
+searchInput.addEventListener('focus', () => { if (searchInput.value.trim().length >= 2 && searchResults.innerHTML) searchResults.classList.add('open'); });
+searchInput.addEventListener('keydown', e => {
+  if (e.key === 'Escape') { closeSearch(); return; }
+  const rows = [...searchResults.querySelectorAll('.sr-row')];
+  if (!rows.length) return;
+  if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+    e.preventDefault();
+    _srchActive = e.key === 'ArrowDown' ? Math.min(rows.length - 1, _srchActive + 1) : Math.max(0, _srchActive - 1);
+    rows.forEach((r, k) => r.classList.toggle('active', k === _srchActive));
+    rows[_srchActive].scrollIntoView({ block: 'nearest' });
+  } else if (e.key === 'Enter') {
+    e.preventDefault();
+    clearTimeout(_srchTimer);
+    if (!searchResults.classList.contains('open')) srchRender(searchInput.value.trim());
+    const row = rows[_srchActive >= 0 ? _srchActive : (rows[1] && rows[1].classList.contains('sr-hit') ? 1 : 0)];
+    if (row) srchGo(+row.dataset.i);
+  }
+});
 document.addEventListener('click', e => { if (!e.target.closest('.search-wrap')) closeSearch(); });
 
 function closeSearch() { searchResults.classList.remove('open'); }
@@ -61867,7 +61668,6 @@ const SECTION_ORDER = [
   'home',
   // Méthode clinique
   'entrevue','questionnaire','examen-physique','raisonnement',
-  'calculateurs',
   // Cardiologie
   'ecg','arythmies','hta','athero','dyslipidémie','mcas','sca','fa','ic','chirurgie-cardiaque','stenose-aortique','pericardite','map',
   // Néphrologie
@@ -61937,7 +61737,6 @@ const SECTION_TITLES = {
   'questionnaire':'Le Questionnaire',
   'examen-physique':'L\'Examen Physique',
   'raisonnement':'Le Raisonnement Clinique',
-  'calculateurs':'Calculateurs',
   'ecg':'ECG — Lecture systématique',
   'hta':'HTA (Primaire & Secondaire)','dyslipidémie':'Dyslipidémie',
   'mcas':'MCAS & Angine','sca':'SCA','fa':'Fibrillation Auriculaire','arythmies':'Arythmies',
@@ -62750,7 +62549,7 @@ function showPanel(prefix,activeId,count){
     var el=document.getElementById(prefix+i);
     if(el) el.style.display=(prefix+i===activeId)?'block':'none';
   }
-  var colorMap={'tx':'#0a7a4e','atx':'#065f46','vp':'#1e7a6b','mii-tx':'#0a7a4e','mii-cr':'#0a7a4e','pk-tx':'#7c3aed','hta-tx':'#0a7a4e','ugdd':'#0369a1','frg':'#b45309','spx':'#7c3aed','rds':'#0369a1','gu':'#0f766e','lax':'#0a7a4e','somdx':'#0e7490','mpg':'#1e40af','cde':'#b91c1c','chp':'#0f766e','grl':'#374151','tnctyp':'#6d28d9','evcog':'#b45309','dlrx':'#c0392b','htorx':'#0f766e','miidx':'#0e7490','tvt':'#7c3aed','tsfr':'#4338ca','tsfa':'#0f766e','tsfc':'#c2410c','tsfp':'#b91c1c','tsfg':'#374151','nutc':'#6d28d9','ndnt':'#b45309','nalb':'#b91c1c','nsup':'#0a7a4e','nsri':'#b45309','mietio':'#6d28d9','ngac':'#15803d','n3min':'#1d4ed8','miisv':'#0891b2','dalg':'#0369a1','anetx':'#0a7a4e','aneb':'#6d28d9','mimei':'#7c3aed','miiact':'#c0392b','tncrx':'#15803d','scpd':'#c0392b','beers':'#b45309','pkpd':'#6d28d9','drx':'#0a7a4e','bcat':'#334155','sstp':'#c0392b','sstt':'#15803d','potx':'#be123c','pocas':'#0f766e','ap77':'#6d28d9','ap1012':'#c0392b','icfep':'#6d28d9','icphy':'#1d4ed8','ictx':'#0a7a4e','cavdx':'#c0392b','hemalg':'#0369a1','adpt':'#0369a1','tbf':'#c0392b','covc':'#b91c1c','covtx':'#0a7a4e'};var col=colorMap[prefix]||'#c0392b';
+  var colorMap={'tx':'#0a7a4e','atx':'#065f46','vp':'#1e7a6b','mii-tx':'#0a7a4e','mii-cr':'#0a7a4e','pk-tx':'#7c3aed','hta-tx':'#0a7a4e','ugdd':'#0369a1','frg':'#b45309','spx':'#7c3aed','rds':'#0369a1','gu':'#0f766e','lax':'#0a7a4e','somdx':'#0e7490','mpg':'#1e40af','cde':'#b91c1c','chp':'#0f766e','grl':'#374151','tnctyp':'#6d28d9','evcog':'#b45309','dlrx':'#c0392b','htorx':'#0f766e','miidx':'#0e7490','tvt':'#7c3aed','tsfr':'#4338ca','tsfa':'#0f766e','tsfc':'#c2410c','tsfp':'#b91c1c','tsfg':'#374151','nutc':'#6d28d9','ndnt':'#b45309','nalb':'#b91c1c','nsup':'#0a7a4e','nsri':'#b45309','mietio':'#6d28d9','ngac':'#15803d','n3min':'#1d4ed8','miisv':'#0891b2','dalg':'#0369a1','anetx':'#0a7a4e','aneb':'#6d28d9','mimei':'#7c3aed','miiact':'#c0392b','tncrx':'#15803d','scpd':'#c0392b','beers':'#b45309','pkpd':'#6d28d9','drx':'#0a7a4e','bcat':'#334155','sstp':'#c0392b','sstt':'#15803d','potx':'#be123c','pocas':'#0f766e','ap77':'#6d28d9','ap1012':'#c0392b','icfep':'#6d28d9','icphy':'#1d4ed8','ictx':'#0a7a4e','cavdx':'#c0392b','hemalg':'#0369a1','adpt':'#0369a1','tbf':'#c0392b','covc':'#b91c1c','covtx':'#0a7a4e','rxp':'#c0392b'};var col=colorMap[prefix]||'#c0392b';
   for(var k=0;k<count;k++){
     var b=document.querySelector('[data-panel="'+prefix+k+'"]');
     if(b){
