@@ -1022,7 +1022,7 @@ m
     #search::placeholder{color:#8a8985}
     #search:focus{border-color:var(--ink)}
     .search-wrap svg{color:#8a8985}
-    .search-results{background:#fff;border:1px solid var(--cream3);border-top:1px solid var(--cream3);border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.04);overflow:hidden}
+    .search-results{background:#fff;border:1px solid var(--cream3);border-top:1px solid var(--cream3);border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.04);overflow-x:hidden;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;touch-action:pan-y}
     .search-result-item{border-bottom:1px solid var(--cream3)}
     .search-result-item:hover,.search-result-item.active{background:var(--cream2)}
     .search-result-item .title{color:var(--ink)}
@@ -1199,6 +1199,7 @@ m
     .home-card-icon .ic{width:20px;height:20px}
     .search-wrap::after{content:"\2318K";position:absolute;right:10px;top:50%;transform:translateY(-50%);font:400 11px var(--mono);border:1px solid var(--cream3);border-radius:4px;background:var(--cream2);color:var(--ink3);padding:1px 6px;pointer-events:none}
     .search-wrap:focus-within::after{display:none}
+    @media (max-width:768px){.search-results{position:fixed;top:calc(var(--header-h,58px) + 4px);left:8px;right:8px;width:auto;max-height:calc(100dvh - var(--header-h,58px) - 16px)}}
     .logo::after{content:attr(data-sub);display:block;font:400 11px var(--mono);letter-spacing:.03em;color:var(--ink3);margin-top:3px}
     .logo{display:block}
     @media (min-width:769px){
