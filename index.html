@@ -24244,13 +24244,25 @@ function dkRenal(view) {
         <button class="m-nav" onclick="goToBlock('mpoc-6')">EAMPOC</button>
         <button class="m-nav" onclick="goToBlock('mpoc-7')">Réadaptation</button>
         <button class="m-nav" onclick="goToBlock('mpoc-8')">Profils & O₂</button>
-        <button class="m-nav" onclick="goToBlock('mpoc-9')">Comorbidités</button>
+        <button class="m-nav" onclick="goToBlock('mpoc-9')">Comorbidités &amp; suivi</button>
       </div>
       
       <!-- Stat-cards -->
       
       <div class="block def u-19b365">
-        <div class="block-title" id="mpoc-1"><span class="tag">Définition (GOLD 2025)</span></div>
+        <div class="block-title" id="mpoc-1"><span class="tag">Définition (GOLD 2025)</span>
+        <div class="u-adf69c" style="margin-top:14px;">Spirométrie : cas limites (GOLD 2025)</div>
+        <div class="key-fact blue u-101bb9"><p class="kf-p"><strong>Valeurs près du seuil :</strong> si le VEMS/CVF post-BD se situe entre 0,6 et 0,8, on répète la spirométrie à une visite ultérieure (variabilité biologique). S’il est &lt; 0,6, il remonte très rarement au-dessus de 0,7.</p></div>
+        <div class="key-fact yellow u-101bb9"><p class="kf-p"><strong>Ratio fixe ou LIN :</strong> GOLD garde le ratio fixe &lt; 0,7 pour sa simplicité, au prix d’un surdiagnostic chez la personne âgée et d’un sous-diagnostic chez le jeune adulte.</p></div>
+        <div class="key-fact blue u-101bb9"><p class="kf-p"><strong>Pré-MPOC et PRISm :</strong> emphysème ou anomalies physiologiques sans obstruction (VEMS/CVF ≥ 0,7 post-BD) : risque d’obstruction avec le temps. Obstruction présente avant le BD mais pas après (« flow responders ») : risque accru, répéter la spirométrie dans 3 à 6 mois.</p></div>
+        <div class="u-708a45" style="margin-top:6px;"><em>Source : APP 9 (MMD6411), objectif 6a — d’après GOLD 2025</em></div>
+        <div class="u-adf69c" style="margin-top:14px;">Asthme, MPOC ou les deux : départager</div>
+        <div class="u-300634"><table class="u-7d15ea"><thead><tr><th>Caractéristique</th><th>Asthme</th><th>MPOC</th><th>Asthme + MPOC</th></tr></thead><tbody><tr><td>Limitation du débit aérien</td><td>Variable, réversible</td><td>Persistante, peu réversible</td><td>Persistante, réversibilité partielle</td></tr><tr style="background:#f8f9fa;"><td>Âge de début</td><td>Enfance ou jeune adulte</td><td>Typiquement &gt; 40 ans</td><td>Variable</td></tr><tr><td>Tabagisme</td><td>Non requis</td><td>Principal facteur de risque</td><td>Souvent présent (≥ 10 paquets-années)</td></tr><tr style="background:#f8f9fa;"><td>Inflammation prédominante</td><td>Éosinophilique, Th2</td><td>Neutrophilique, CD8</td><td>Mixte</td></tr><tr><td>DLCO</td><td>Normale</td><td>Diminuée</td><td>Intermédiaire</td></tr><tr style="background:#f8f9fa;"><td>FeNO</td><td>Élevé</td><td>Normal ou bas</td><td>Intermédiaire</td></tr><tr><td>Réponse aux bronchodilatateurs</td><td>Significative (≥ 12 % et ≥ 200 mL)</td><td>Faible ou absente</td><td>Présente mais incomplète</td></tr></tbody></table></div>
+        <div class="key-fact blue u-101bb9"><p class="kf-p"><strong>Favorisent l’asthme :</strong> début dans l’enfance ou l’adolescence · symptômes variables · atopie personnelle ou familiale · réversibilité significative · FeNO élevé · DLCO normale.</p><p class="kf-p"><strong>Favorisent la MPOC :</strong> début après 40 ans · symptômes persistants et progressifs · tabac ≥ 10 paquets-années ou exposition professionnelle ou à la biomasse · réversibilité faible ou absente · DLCO diminuée · emphysème au TDM.</p></div>
+        <div class="key-fact red u-101bb9"><p class="kf-p"><strong>Pourquoi départager :</strong> dans l’asthme, un BALA ou un AMLA sans CSI est contre-indiqué (exacerbations sévères, décès). Dès qu’il y a des traits d’asthme : jamais de BALA ou d’AMLA seuls.</p></div>
+        <div class="key-fact green u-101bb9"><p class="kf-p"><strong>En pratique :</strong> asthme + MPOC : CSI-BALA ou CSI-BALA-AMLA d’emblée ; éviter les CSI à haute dose s’il y a des traits de MPOC (pneumonie) ; référer en spécialité si le diagnostic reste incertain ; suivi rapproché.</p></div>
+        <div class="u-708a45" style="margin-top:6px;"><em>Source : APP 9 (MMD6411), objectif 8 — d’après GOLD 2025 et GINA 2025</em></div>
+        </div>
         <div class="content-text">Condition pulmonaire hétérogène caractérisée par des <strong>symptômes respiratoires chroniques</strong> (dyspnée, toux, expectorations, exacerbations) secondaire à des anomalies des voies aériennes (bronchite, bronchiolite) et/ou alvéolaires (emphysème) causant une obstruction <strong>persistante et souvent progressive</strong>.</div>
         <div class="stat-row">
           <div class="stat-card red"><div class="stat-num">3e cause</div><div class="stat-label">de décès au Canada</div></div>
@@ -24267,7 +24279,13 @@ function dkRenal(view) {
         </div>
 
       <div class="block para u-19b365">
-        <div class="block-title" id="mpoc-2"><span class="tag">Étiologies & Facteurs de risque</span></div>
+        <div class="block-title" id="mpoc-2"><span class="tag">Étiologies & Facteurs de risque</span>
+        <div class="u-adf69c" style="margin-top:14px;">Compléments GOLD 2025</div>
+        <div class="key-fact blue u-101bb9"><p class="kf-p"><strong>Concept GETomics :</strong> la MPOC résulte d’interactions gènes–environnement au fil de la vie, qui endommagent le poumon ou perturbent son développement et son vieillissement.</p></div>
+        <div class="key-fact blue u-101bb9"><p class="kf-p"><strong>Tabac, nuances :</strong> début avant 15 ans : risque ↑, indépendamment des paquets-années · même &lt; 10 paquets-années augmente le risque · moins de la moitié des gros fumeurs développent une MPOC · pipe, cigare, narguilé, marijuana et vapotage sont aussi des facteurs de risque.</p></div>
+        <div class="key-fact blue u-101bb9"><p class="kf-p"><strong>Facteurs de l’hôte :</strong> âge ≥ 35 ans · développement pulmonaire anormal · vieillissement pulmonaire accéléré · antécédent d’asthme · prématurité, faible poids de naissance, infections respiratoires de l’enfance (dont la tuberculose).</p></div>
+        <div class="u-708a45" style="margin-top:6px;"><em>Source : APP 9 (MMD6411), objectif 6c — d’après GOLD 2025</em></div>
+        </div>
         <div style="background:#F7F6F3;border-radius:10px;border-left:2px solid #9F2F2D;padding:12px 16px;margin-bottom:10px;">
           <div style="font-weight:700;color:#9F2F2D;margin-bottom:8px;">Tabagisme — Facteur de risque #1 (80–90 % des cas)</div>
           <table class="u-7d15ea">
@@ -24318,7 +24336,19 @@ function dkRenal(view) {
       </div>
 
       <div class="block clin u-19b365">
-        <div class="block-title" id="mpoc-3"><span class="tag">Signes & Symptômes</span></div>
+        <div class="block-title" id="mpoc-3"><span class="tag">Signes & Symptômes</span>
+        <div class="u-adf69c" style="margin-top:14px;">Examen physique (GOLD 2025)</div>
+        <div class="key-fact blue u-101bb9"><p class="kf-p"><strong>Ce qui oriente :</strong> sibilances et ronchi : rares en MPOC stable, leur présence évoque une exacerbation · crépitants : orientent plutôt vers une fibrose ou une insuffisance cardiaque · temps expiratoire forcé &gt; 6 s à l’auscultation trachéale : évoque une obstruction (VEMS/CVF &lt; 0,65).</p></div>
+        <div class="key-fact yellow u-101bb9"><p class="kf-p"><strong>Piège :</strong> la dyspnée est souvent sous-déclarée : le patient réduit ses activités pour l’éviter. La toux peut précéder l’obstruction de plusieurs années.</p></div>
+        <div class="u-708a45" style="margin-top:6px;"><em>Source : APP 9 (MMD6411), objectif 6b — d’après GOLD 2025</em></div>
+        <div class="u-adf69c" style="margin-top:14px;">Échelle mMRC — dyspnée</div>
+        <div class="u-300634"><table class="u-7d15ea"><thead><tr><th>Grade</th><th>Description</th></tr></thead><tbody><tr><td>0</td><td>Dyspnée seulement lors d’un effort intense</td></tr><tr style="background:#f8f9fa;"><td>1</td><td>Essoufflé en marchant vite sur terrain plat ou en montant une légère pente</td></tr><tr><td>2</td><td>Marche plus lentement que les gens du même âge, ou doit s’arrêter pour reprendre son souffle à son propre rythme sur terrain plat</td></tr><tr style="background:#f8f9fa;"><td>3</td><td>S’arrête pour reprendre son souffle après environ 100 m ou quelques minutes sur terrain plat</td></tr><tr><td>4</td><td>Trop essoufflé pour sortir de la maison, ou essoufflé en s’habillant</td></tr></tbody></table></div>
+        <div class="u-adf69c" style="margin-top:14px;">CAT — 8 items cotés de 0 à 5 (total 0–40)</div>
+        <div class="u-300634"><table class="u-7d15ea"><thead><tr><th>Item</th><th>Score 0</th><th>Score 5</th></tr></thead><tbody><tr><td>Toux</td><td>Ne tousse jamais</td><td>Tousse tout le temps</td></tr><tr style="background:#f8f9fa;"><td>Expectorations</td><td>Pas de mucus</td><td>Poitrine remplie de mucus</td></tr><tr><td>Oppression thoracique</td><td>Aucune</td><td>Très oppressé</td></tr><tr style="background:#f8f9fa;"><td>Essoufflement</td><td>Pas essoufflé en montant une côte ou un escalier</td><td>Très essoufflé</td></tr><tr><td>Activités à domicile</td><td>Pas de limitation</td><td>Très limité</td></tr><tr style="background:#f8f9fa;"><td>Confiance à sortir</td><td>Confiant malgré la maladie</td><td>Pas du tout confiant</td></tr><tr><td>Sommeil</td><td>Dort profondément</td><td>Sommeil perturbé par la maladie</td></tr><tr style="background:#f8f9fa;"><td>Énergie</td><td>Beaucoup d’énergie</td><td>Aucune énergie</td></tr></tbody></table></div>
+        <div class="key-fact blue u-101bb9"><p class="kf-p"><strong>Interprétation du CAT :</strong> &lt; 10 : impact faible · 10–20 : modéré · 21–30 : élevé · &gt; 30 : très élevé. Seuil pour un traitement régulier : CAT ≥ 10 (mMRC ≥ 2 pour la dyspnée). Différence minimale cliniquement importante : environ 2 points.</p></div>
+        <div class="key-fact yellow u-101bb9"><p class="kf-p"><strong>Nuance :</strong> CAT ≥ 10 et mMRC ≥ 2 ne sont pas équivalents et peuvent classer différemment un même patient. GOLD préfère le CAT, multidimensionnel ; le mMRC ne mesure que la dyspnée.</p></div>
+        <div class="u-708a45" style="margin-top:6px;"><em>Source : APP 9 (MMD6411), objectif 9 — d’après GOLD 2025</em></div>
+        </div>
         <table>
           <thead><tr><th>Symptôme</th><th>Caractéristiques</th></tr></thead>
           <tbody>
@@ -24336,7 +24366,12 @@ function dkRenal(view) {
         </div>
 
       <div class="block def u-19b365">
-        <div class="block-title" id="mpoc-4"><span class="tag">Dépistage (CTS 2007 — hors lectures 2025)</span></div>
+        <div class="block-title" id="mpoc-4"><span class="tag">Dépistage (CTS 2007 — hors lectures 2025)</span>
+        <div class="u-adf69c" style="margin-top:14px;">Quand demander une spirométrie (GOLD 2025)</div>
+        <div class="u-300634"><table class="u-7d15ea"><thead><tr><th>Indicateur</th><th>Caractéristiques</th><th>Action</th></tr></thead><tbody><tr><td>Dyspnée chronique</td><td>Progressive, à l’effort, persistante</td><td>Spirométrie</td></tr><tr style="background:#f8f9fa;"><td>Toux chronique</td><td>≥ 3 mois, productive ou non</td><td>Spirométrie</td></tr><tr><td>Expectorations chroniques</td><td>Production régulière de mucus</td><td>Spirométrie</td></tr><tr style="background:#f8f9fa;"><td>Sibilances récurrentes</td><td>Épisodes répétés</td><td>Spirométrie</td></tr><tr><td>Infections respiratoires basses récurrentes</td><td>Pneumonies, bronchites à répétition</td><td>Spirométrie</td></tr><tr style="background:#f8f9fa;"><td>Exposition au tabac</td><td>Actif ou passif</td><td>Spirométrie si symptômes</td></tr><tr><td>Exposition professionnelle</td><td>Poussières, fumées, gaz</td><td>Spirométrie si symptômes</td></tr><tr style="background:#f8f9fa;"><td>Exposition à la biomasse</td><td>Combustion domestique</td><td>Spirométrie si symptômes</td></tr></tbody></table></div>
+        <div class="key-fact yellow u-101bb9"><p class="kf-p"><strong>Attention :</strong> ces indicateurs ne posent pas le diagnostic : la spirométrie reste obligatoire. Si l’exposition, les symptômes et le TDM suggèrent fortement une MPOC sans confirmation spirométrique : suivi rapproché et spirométrie répétée.</p></div>
+        <div class="u-708a45" style="margin-top:6px;"><em>Source : APP 9 (MMD6411), objectif 6e — d’après GOLD 2025</em></div>
+        </div>
         <div class="content-text"><strong>Candidats :</strong> ≥ 40 ans + fumeur actif ou ancien fumeur + ≥ 1 réponse positive au questionnaire :</div>
         <div class="criteria-list">
           <div class="criteria-item"><div class="criteria-num blue">?</div><span>Toussez-vous régulièrement ?</span></div>
@@ -24352,7 +24387,40 @@ function dkRenal(view) {
         </div>
 
       <div class="block rx u-19b365">
-        <div class="block-title" id="mpoc-5"><span class="tag">Prise en charge</span></div>
+        <div class="block-title" id="mpoc-5"><span class="tag">Prise en charge</span>
+        <div class="u-adf69c" style="margin-top:14px;">MPOC stable : critères et objectifs du suivi</div>
+        <div class="key-fact blue u-101bb9"><p class="kf-p"><strong>Critères de stabilité :</strong> symptômes au niveau habituel · pas d’augmentation ni de changement de couleur des expectorations · pas de changement récent de traitement · adhésion et technique d’inhalation vérifiées · spirométrie stable (déclin attendu : environ 30 mL dans la MPOC, contre 20 mL sans MPOC).</p></div>
+        <div class="key-fact green u-101bb9"><p class="kf-p"><strong>Objectifs du suivi :</strong> réduire les symptômes · améliorer la tolérance à l’effort et la qualité de vie (CAT) · prévenir les exacerbations · ralentir la progression · réduire la mortalité.</p></div>
+        <div class="u-708a45" style="margin-top:6px;"><em>Source : APP 9 (MMD6411), objectif 11 — d’après GOLD 2025</em></div>
+        <div class="u-adf69c" style="margin-top:14px;">Doses des inhalateurs</div>
+        <div class="u-300634"><table class="u-7d15ea"><thead><tr><th>Classe (groupe)</th><th>Molécules et doses</th></tr></thead><tbody><tr><td>BACA au besoin (tous)</td><td>Salbutamol 100 mcg/inh., 2–4 inh. QID · terbutaline 0,5 mg, 1–2 inh. QID (max 6 inh./24 h)</td></tr><tr style="background:#f8f9fa;"><td>AMLA (groupe A)</td><td>Tiotropium 18 mcg DIE (Handihaler) ou 5 mcg DIE (Respimat) · glycopyrronium 50 mcg DIE · aclidinium 400 mcg BID · uméclidinium 62,5 mcg DIE</td></tr><tr><td>BALA (groupe A)</td><td>Salmétérol 50 mcg BID · formotérol 12 mcg BID · indacatérol 75 mcg DIE</td></tr><tr style="background:#f8f9fa;"><td>AMLA + BALA (groupe B ; un seul inhalateur préférable)</td><td>Indacatérol/glycopyrronium 110/50 mcg 1 inh. DIE · uméclidinium/vilantérol 62,5/25 mcg 1 inh. DIE · tiotropium/olodatérol 2,5/2,5 mcg 2 inh. DIE · aclidinium/formotérol 400/12 mcg 1 inh. BID</td></tr><tr><td>Trithérapie (groupe E ; un seul inhalateur préférable)</td><td>Fluticasone furoate/uméclidinium/vilantérol (Trelegy) 100/62,5/25 mcg 1 inh. DIE · budésonide/glycopyrronium/formotérol (Breztri) 182/8,2/5,8 mcg 2 inh. BID · indacatérol/glycopyrronium/mométasone (Enerzair) 150/50/160 mcg 1 inh. DIE</td></tr></tbody></table></div>
+        <div class="key-fact blue u-101bb9"><p class="kf-p"><strong>CSI selon les éosinophiles :</strong> très peu de bénéfice si éosinophiles &lt; 0,1 × 10⁹/L, davantage si ≥ 0,3 × 10⁹/L. Doses légères à modérées seulement. Retrait possible si peu d’exacerbations et éosinophiles &lt; 0,1–0,3 × 10⁹/L, en surveillant la clinique et la fonction respiratoire.</p></div>
+        <div class="key-fact yellow u-101bb9"><p class="kf-p"><strong>Divergence — azithromycine :</strong> Lanthier propose 250 mg PO DIE pendant 1 an (exacerbations fréquentes malgré AMLA-BALA-CSI, de préférence chez le non-fumeur, après vérification du QTc, de l’audition et des interactions). Ce guide indique 250 mg 3 fois par semaine : vérifier le schéma retenu.</p></div>
+        <div class="key-fact blue u-101bb9"><p class="kf-p"><strong>Autres traitements :</strong> α1-antitrypsine si taux ≤ 11 µmol/L avec génotype confirmé, surtout si VEMS 25–80 % (peu efficace, coûteuse) · opioïdes pour la dyspnée de la MPOC avancée · théophylline orale : n’est plus recommandée (SCT) · corticostéroïdes oraux à long terme : non recommandés.</p></div>
+        <div class="key-fact blue u-101bb9"><p class="kf-p"><strong>Ventilation et chirurgie :</strong> VNI nocturne chronique si hypercapnie persistante &gt; 53 mmHg et hospitalisations pour insuffisance respiratoire aiguë (↓ hospitalisations, ↑ survie) ; CPAP si apnée du sommeil · bullectomie ou réduction de volume (dont valves endobronchiques) · greffe à envisager en général ≤ 65 ans, sans tabac depuis ≥ 6 mois.</p></div>
+        <div class="key-fact blue u-101bb9"><p class="kf-p"><strong>Dispositifs de PEP oscillante :</strong> Flutter, Acapella, Aerobika : si l’hypersécrétion de mucus limite le débit expiratoire et altère la qualité de vie.</p></div>
+        <div class="u-708a45" style="margin-top:6px;"><em>Source : APP 9 (MMD6411), objectif 12 — d’après Lanthier, Médecine interne</em></div>
+        <div class="u-adf69c" style="margin-top:14px;">Oxygène à domicile : précisions</div>
+        <div class="key-fact blue u-101bb9"><p class="kf-p"><strong>Situations particulières :</strong> PaO₂ &gt; 59 mmHg avec désaturation à l’effort : pas d’indication reconnue, sauf O₂ de déambulation si le test de marche de 6 min s’améliore de &gt; 30 m, ou en attente de greffe · O₂ nocturne : pas d’indication reconnue, sauf SpO₂ &lt; 90 % plus de 30 % du temps avec HTP, IC ou polyglobulie.</p></div>
+        <div class="key-fact red u-101bb9"><p class="kf-p"><strong>Contre-indication :</strong> oxygène contre-indiqué si le patient fume : attendre au moins 4 semaines sans tabac, vapotage ni cannabis inhalé. Enseigner l’interdiction de fumer près de l’oxygène.</p></div>
+        <div class="key-fact green u-101bb9"><p class="kf-p"><strong>En pratique :</strong> confirmer l’hypoxémie objectivement, en période stable · titrer prudemment s’il y a une hypercapnie chronique · après une prescription faite en phase aiguë, réévaluer par gaz artériel à 60–90 jours · surveiller polyglobulie, cœur pulmonaire et aggravation respiratoire.</p></div>
+        <div class="key-fact yellow u-101bb9"><p class="kf-p"><strong>Divergence — cible de saturation :</strong> Lanthier vise 90–92 % pour l’oxygène à domicile ; l’INESSS et GOLD, repris dans ce guide, visent 88–92 %.</p></div>
+        <div class="u-708a45" style="margin-top:6px;"><em>Source : APP 9 (MMD6411), objectif 15b — d’après INESSS, GOLD 2025 et Lanthier, Médecine interne</em></div>
+        <div class="u-adf69c" style="margin-top:14px;">Effets indésirables des traitements de fond</div>
+        <div class="u-300634"><table class="u-7d15ea"><thead><tr><th>Classe</th><th>Effets principaux</th><th>Conseil</th></tr></thead><tbody><tr><td>CSI</td><td>Candidose oropharyngée, dysphonie, ↑ risque de pneumonie (MPOC)</td><td>Se rincer la bouche après chaque utilisation</td></tr><tr style="background:#f8f9fa;"><td>Corticostéroïdes oraux</td><td>Hyperglycémie, HTA, insomnie, rétention hydrique, fragilité cutanée</td><td>—</td></tr><tr><td>BACA</td><td>Tremblements fins, tachycardie, hypokaliémie (forte dose), agitation</td><td>Effet dose-dépendant</td></tr><tr style="background:#f8f9fa;"><td>BALA</td><td>Tremblements, tachycardie, hypokaliémie, céphalée</td><td>Jamais sans CSI dans l’asthme</td></tr><tr><td>AMLA</td><td>Sécheresse buccale, rétention urinaire, constipation, glaucome (contact oculaire)</td><td>Prudence si HBP ou glaucome à angle fermé</td></tr><tr style="background:#f8f9fa;"><td>Roflumilast</td><td>Nausées, diarrhée, perte de poids, insomnie, céphalée</td><td>—</td></tr><tr><td>Azithromycine</td><td>Résistance, troubles auditifs, arythmies (↑ QT)</td><td>Évaluer le QTc avant ; préférable chez le non-fumeur</td></tr><tr style="background:#f8f9fa;"><td>Dupilumab</td><td>Conjonctivite, kératite</td><td>Risque de GEPA si sevrage rapide des CSO</td></tr></tbody></table></div>
+        <div class="u-708a45" style="margin-top:6px;"><em>Source : APP 9 (MMD6411), objectif 12</em></div>
+        <div class="u-adf69c" style="margin-top:14px;">Enseignement pour prévenir les exacerbations</div>
+        <div class="key-fact green u-101bb9"><p class="kf-p"><strong>À enseigner :</strong> technique d’inhalation · adhésion au traitement, même sans symptômes · reconnaître tôt une exacerbation (↑ toux, expectorations, dyspnée) · plan d’action écrit, incluant quand consulter · nature progressive de la maladie et importance du suivi.</p></div>
+        <div class="u-708a45" style="margin-top:6px;"><em>Source : APP 9 (MMD6411), objectif 13 — d’après GOLD</em></div>
+        <div class="u-adf69c" style="margin-top:14px;">Cessation tabagique : approches et entretien motivationnel</div>
+        <div class="key-fact blue u-101bb9"><p class="kf-p"><strong>Approche non pharmacologique :</strong> expliquer le lien tabac → inflammation → destruction alvéolaire · plan d’arrêt structuré et suivi régulier · repérer les déclencheurs (stress, café, habitudes sociales) · éviter les situations à risque, remplacer le geste, activité physique · ressources : ligne J’arrête, groupes de soutien, applications.</p></div>
+        <div class="u-300634"><table class="u-7d15ea"><thead><tr><th>Médicament</th><th>Action</th></tr></thead><tbody><tr><td>Thérapie de remplacement nicotinique (timbre, gomme, pastille, inhalateur)</td><td>Apporte une nicotine contrôlée : ↓ envie de fumer et symptômes de sevrage</td></tr><tr style="background:#f8f9fa;"><td>Bupropion</td><td>Antidépresseur (dopamine, noradrénaline) : ↓ envie de fumer</td></tr><tr><td>Varénicline (Champix)</td><td>Agoniste partiel nicotinique : ↓ plaisir de fumer et envie</td></tr></tbody></table></div>
+        <div class="key-fact yellow u-101bb9"><p class="kf-p"><strong>Divergence :</strong> l’APP 9 place la TRN en 1<sup>re</sup> ligne ; ce guide nomme la varénicline plus haut. Dans les deux cas, l’association pharmacologique + soutien comportemental donne la meilleure efficacité.</p></div>
+        <div class="u-300634"><table class="u-7d15ea"><thead><tr><th>Stade (Prochaska)</th><th>Le patient dit</th><th>Rôle du clinicien</th></tr></thead><tbody><tr><td>Précontemplation</td><td>« Je ne veux pas arrêter. »</td><td>Informer, semer un doute</td></tr><tr style="background:#f8f9fa;"><td>Contemplation</td><td>« Je devrais arrêter, mais… »</td><td>Explorer l’ambivalence, motiver</td></tr><tr><td>Préparation</td><td>« Je veux arrêter bientôt. »</td><td>Planifier, choisir le traitement</td></tr><tr style="background:#f8f9fa;"><td>Action</td><td>Arrêt en cours</td><td>Soutenir, gérer les symptômes</td></tr><tr><td>Maintien</td><td>Abstinence</td><td>Prévenir la rechute</td></tr></tbody></table></div>
+        <div class="key-fact blue u-101bb9"><p class="kf-p"><strong>Entretien motivationnel :</strong> empathie sans jugement · explorer l’ambivalence (« Qu’est-ce que le tabac vous apporte ? Et de négatif ? ») · renforcer l’autonomie : le patient décide · susciter le discours-changement (« je veux arrêter », « je suis capable »).</p></div>
+        <div class="key-fact yellow u-101bb9"><p class="kf-p"><strong>Rechute :</strong> elle est normale et fait partie du processus de changement.</p></div>
+        <div class="u-708a45" style="margin-top:6px;"><em>Source : APP 9 (MMD6411), objectif 18</em></div>
+        </div>
                 <div class="u-486708">
           <button onclick="showPanel('ap38','ap380',2)" data-panel="ap380" style="background:#9F2F2D;color:#FFFFFF;border:none;border-radius:8px;padding:8px 18px;cursor:pointer;font-weight:600;transition:.15s;">Traitements non pharmacologiques (obligatoires)</button>
           <button onclick="showPanel('ap38','ap381',2)" data-panel="ap381" style="background:#E0E0E0;color:#2F3437;border:none;border-radius:8px;padding:8px 18px;cursor:pointer;font-weight:600;transition:.15s;">Traitement pharmacologique (CTS 2023)</button>
@@ -24439,7 +24507,12 @@ function dkRenal(view) {
 
 
       <div class="block rx u-19b365">
-        <div class="block-title" id="mpoc-gold-abe"><span class="tag">b Algorithme GOLD ABE<span class="tag-sub"><span class="tag-dash"> — </span>Classification &amp; Traitement</span></span></div>
+        <div class="block-title" id="mpoc-gold-abe"><span class="tag">b Algorithme GOLD ABE<span class="tag-sub"><span class="tag-dash"> — </span>Classification &amp; Traitement</span></span>
+        <div class="u-adf69c" style="margin-top:14px;">Sévérité : ce qu’il faut distinguer</div>
+        <div class="key-fact blue u-101bb9"><p class="kf-p"><strong>Grade ou groupe :</strong> le grade GOLD 1–4 mesure la sévérité de l’obstruction ; le groupe ABE mesure la sévérité de la maladie et guide le traitement. Un VEMS bas ou un déclin rapide du VEMS est associé à une mortalité accrue. GOLD recommande les équations GLI-Global.</p></div>
+        <div class="key-fact blue u-101bb9"><p class="kf-p"><strong>MPOC ou asthme :</strong> la MPOC se classe au diagnostic puis au suivi (spirométrie, symptômes, exacerbations). L’asthme se classe rétrospectivement, après 2–3 mois, selon le traitement nécessaire pour le maîtriser ; la spirométrie ne sert pas à classer sa sévérité.</p></div>
+        <div class="u-708a45" style="margin-top:6px;"><em>Source : APP 9 (MMD6411), objectif 10 — d’après GOLD 2025 et GINA 2025</em></div>
+        </div>
 
         <!-- Pill tabs -->
         <div style="display:flex;gap:6px;flex-wrap:wrap;margin:10px 0 14px;">
@@ -24670,7 +24743,19 @@ function dkRenal(view) {
       </div>
 
       <div class="block def u-19b365">
-        <div class="block-title" id="mpoc-6"><span class="tag">EAMPOC — exacerbation Aig&uuml;e de la MPOC</span></div>
+        <div class="block-title" id="mpoc-6"><span class="tag">EAMPOC — exacerbation Aig&uuml;e de la MPOC</span>
+        <div class="u-adf69c" style="margin-top:14px;">Facteurs précipitants (GOLD 2025)</div>
+        <div class="u-300634"><table class="u-7d15ea"><thead><tr><th>Catégorie</th><th>Facteurs</th></tr></thead><tbody><tr><td>Infections virales</td><td>Rhinovirus, influenza, para-influenza, métapneumovirus, VRS, adénovirus</td></tr><tr style="background:#f8f9fa;"><td>Infections bactériennes</td><td><em>H. influenzae</em>, <em>S. pneumoniae</em>, <em>M. catarrhalis</em>, <em>C. pneumoniae</em></td></tr><tr><td>Pollution extérieure</td><td>NO₂, PM2,5, PM10</td></tr><tr style="background:#f8f9fa;"><td>Saison</td><td>Hiver, retour en classe à l’automne</td></tr><tr><td>Adhésion</td><td>Non-adhésion aux bronchodilatateurs</td></tr><tr style="background:#f8f9fa;"><td>Environnement (propre à la MPOC)</td><td>Chaleur ou froid excessifs, fumée de feux de forêt, tempêtes de poussière</td></tr><tr><td>Champignons</td><td><em>Aspergillus</em> dans les expectorations ; aspergillose invasive rare, plus fréquente si obstruction sévère, antibiotiques récents à large spectre, corticostéroïdes parentéraux ou hypoalbuminémie</td></tr></tbody></table></div>
+        <div class="key-fact blue u-101bb9"><p class="kf-p"><strong>Exacerbations fréquentes — facteurs de risque :</strong> antécédent d’exacerbations (meilleur prédicteur) · VEMS bas · RGO · bronchite chronique · ratio artère pulmonaire/aorte &gt; 1 au TDM · emphysème étendu ou paroi bronchique épaissie au TDM.</p></div>
+        <div class="key-fact red u-101bb9"><p class="kf-p"><strong>Ne pas manquer :</strong> pneumonie, embolie pulmonaire, insuffisance cardiaque aiguë et pneumothorax peuvent mimer ou aggraver une exacerbation. Souvent, la cause exacte reste inconnue.</p></div>
+        <div class="u-708a45" style="margin-top:6px;"><em>Source : APP 9 (MMD6411), objectif 7 — d’après GOLD 2025</em></div>
+        <div class="u-adf69c" style="margin-top:14px;">Sévérité selon l’INESSS</div>
+        <div class="u-300634"><table class="u-7d15ea"><thead><tr><th>Critère</th><th>Légère</th><th>Modérée</th><th>Sévère</th></tr></thead><tbody><tr><td>Dyspnée (sur 10)</td><td>&lt; 5</td><td>≥ 5</td><td>≥ 5</td></tr><tr style="background:#f8f9fa;"><td>FR</td><td>&lt; 24/min</td><td>≥ 24/min</td><td>≥ 24/min</td></tr><tr><td>FC</td><td>&lt; 95/min</td><td>≥ 95/min</td><td>≥ 95/min</td></tr><tr style="background:#f8f9fa;"><td>SpO₂</td><td>≥ 92 %</td><td>&lt; 92 %</td><td>&lt; 92 %</td></tr><tr><td>Variation de la SpO₂</td><td>≤ 3 %</td><td>&gt; 3 %</td><td>&gt; 3 %</td></tr><tr style="background:#f8f9fa;"><td>CRP</td><td>&lt; 10</td><td>≥ 10</td><td>≥ 10</td></tr><tr><td>Gaz artériel</td><td>—</td><td>—</td><td>PaCO₂ &gt; 45 mmHg et pH &lt; 7,35</td></tr></tbody></table></div>
+        <div class="key-fact blue u-101bb9"><p class="kf-p"><strong>Exacerbation simple ou complexe :</strong> complexe si VEMS &lt; 50 %, ≥ 4 exacerbations par an, comorbidités importantes, O₂ à domicile, antibiotique dans le dernier mois ou corticostéroïdes oraux chroniques : risque accru de <em>Pseudomonas</em> et de BGN. Choix de l’antibiotique : tableau de l’INESSS ci-dessus.</p></div>
+        <div class="u-adf69c" style="margin-top:14px;">Orientation du patient</div>
+        <div class="u-300634"><table class="u-7d15ea"><thead><tr><th>Orientation</th><th>Critères</th></tr></thead><tbody><tr><td>Domicile</td><td>Exacerbation légère à modérée, bonne réponse initiale, pas d’hypoxémie sévère, soutien adéquat à domicile</td></tr><tr style="background:#f8f9fa;"><td>Urgence</td><td>Dyspnée importante, SpO₂ &lt; 92 % ou détérioration rapide, signes vitaux instables, diagnostic alternatif suspecté (EP, IAM), incertitude diagnostique</td></tr><tr><td>Hospitalisation</td><td>Réponse inadéquate au traitement initial, MPOC sévère de base, comorbidités importantes, hypoxémie, nouvelle arythmie, âge avancé, soutien insuffisant</td></tr><tr style="background:#f8f9fa;"><td>Soins intensifs</td><td>Dyspnée sévère réfractaire, confusion ou coma, PaO₂ &lt; 40 mmHg, pH &lt; 7,25 malgré le traitement</td></tr><tr><td>Pneumologie</td><td>≥ 2 exacerbations par an, MPOC sévère ou difficile à maîtriser, besoin d’O₂ chronique, phénotype particulier (éosinophilique, asthme + MPOC), biothérapie ou traitement avancé envisagé</td></tr></tbody></table></div>
+        <div class="u-708a45" style="margin-top:6px;"><em>Source : APP 9 (MMD6411), objectif 14 — d’après INESSS et GOLD 2025</em></div>
+        </div>
 
         <!-- Définition + étiologie -->
         <div class="key-fact blue"><strong>D&eacute;finition GOLD 2024 :</strong> Aggravation aig&uuml;e des sympt&ocirc;mes respiratoires <strong>&ge; 48h</strong> au-del&agrave; des variations quotidiennes normales &rarr; n&eacute;cessite changement de traitement. Crit&egrave;res Anthonisen : &uarr; dyspn&eacute;e, &uarr; volume expectorations, expectorations purulentes (2/3 = mod&eacute;r&eacute;e).</div>
@@ -25028,7 +25113,18 @@ function dkRenal(view) {
       </div>
 
       <div class="block para" style="margin-top:14px;border-left-color:#1F6C9F;">
-        <div class="block-title" id="mpoc-8"><span class="tag">Profils Cliniques & hypercapnie Chronique</span></div>
+        <div class="block-title" id="mpoc-8"><span class="tag">Profils Cliniques & hypercapnie Chronique</span>
+        <div class="u-adf69c" style="margin-top:14px;">Les deux profils : compléments</div>
+        <div class="key-fact blue u-101bb9"><p class="kf-p"><strong>Signes distinctifs :</strong> pink puffer : IMC bas (cachexie), lèvres pincées, muscles accessoires ; associé au cancer pulmonaire, à l’ostéoporose et à la sarcopénie. Blue bloater : œdème des MI (cœur pulmonaire), exacerbations et infections fréquentes, désaturation nocturne marquée ; associé au syndrome métabolique et à la coronaropathie.</p></div>
+        <div class="key-fact yellow u-101bb9"><p class="kf-p"><strong>GOLD 2025 :</strong> les deux profils sont les extrêmes d’un spectre. GOLD préfère maintenant les définir au TDM (emphysème quantifié ; paroi bronchique épaissie), ce qui repère aussi les candidats à la réduction de volume (emphysème hétérogène des lobes supérieurs).</p></div>
+        <div class="u-708a45" style="margin-top:6px;"><em>Source : APP 9 (MMD6411), objectif 6d — d’après GOLD 2025</em></div>
+        <div class="u-adf69c" style="margin-top:14px;">Gazométrie dans la MPOC</div>
+        <div class="key-fact blue u-101bb9"><p class="kf-p"><strong>Lecture :</strong> pH (&lt; 7,35 acidose, &gt; 7,45 alcalose) → PaCO₂ (↑ = acidose respiratoire) → HCO₃⁻ (compensation). PaCO₂ ↑, HCO₃⁻ ↑ et pH presque normal : hypercapnie chronique compensée. PaCO₂ ↑ et pH bas : décompensation aiguë ou aiguë sur chronique.</p></div>
+        <div class="key-fact yellow u-101bb9"><p class="kf-p"><strong>Gaz veineux :</strong> acceptable pour le pH et le HCO₃⁻, mais la PCO₂ veineuse ne remplace pas la PaCO₂ pour décider en insuffisance respiratoire aiguë : le gaz artériel reste la référence.</p></div>
+        <div class="key-fact green u-101bb9"><p class="kf-p"><strong>Oxygène chez l’hypercapnique :</strong> pas d’O₂ à haut débit sans cible · viser SpO₂ 88–92 % · refaire un gaz artériel après avoir instauré ou augmenté l’O₂ si l’atteinte est modérée à sévère, ou si le patient est somnolent ou acidotique · le masque Venturi dose l’O₂ plus précisément que les lunettes nasales.</p></div>
+        <div class="key-fact blue u-101bb9"><p class="kf-p"><strong>VNI ou ventilation invasive :</strong> acidose hypercapnique aiguë : VNI rapidement, en 1<sup>re</sup> intention (avant l’O₂ à haut débit, selon l’ERS). Ventilation invasive si échec de la VNI, voies aériennes non protégées, altération importante de la conscience, instabilité sévère ou arrêt respiratoire.</p></div>
+        <div class="u-708a45" style="margin-top:6px;"><em>Source : APP 9 (MMD6411), objectif 15 — d’après GOLD 2025 et INESSS</em></div>
+        </div>
         <div style="font-weight:700;font-size:13px;margin-bottom:6px;color:#1F6C9F;">Profils cliniques classiques (heuristique — spectre continu en réalité)</div>
         <table class="u-7d15ea">
           <thead><tr><th>Caractéristique</th><th>Pink Puffer (emphysème)</th><th>Blue Bloater (bronchite chronique)</th></tr></thead>
@@ -25055,7 +25151,23 @@ function dkRenal(view) {
       </div>
 
       <div class="block clin u-19b365">
-        <div class="block-title" id="mpoc-9"><span class="tag">Comorbidités & impact Multi-systémique</span></div>
+        <div class="block-title" id="mpoc-9"><span class="tag">Comorbidités, suivi et fin de vie</span>
+        <div class="u-adf69c" style="margin-top:14px;">HTP du groupe 3 et cœur pulmonaire</div>
+        <div class="key-fact blue u-101bb9"><p class="kf-p"><strong>Mécanisme :</strong> hypoxémie chronique → vasoconstriction pulmonaire hypoxique ; remodelage vasculaire ; compression par l’hyperinflation ; perte du lit capillaire (emphysème) ; polyglobulie secondaire → ↑ résistance pulmonaire → surcharge, hypertrophie ± dilatation du VD : cœur pulmonaire.</p></div>
+        <div class="key-fact blue u-101bb9"><p class="kf-p"><strong>Reconnaître le cœur pulmonaire :</strong> insuffisance du cœur droit d’origine pulmonaire : œdème des MI, turgescence jugulaire, hépatomégalie, ascite (avancé), avec dyspnée sévère, hypoxémie et fatigue. À distinguer de l’IC gauche, d’origine cardiaque.</p></div>
+        <div class="key-fact green u-101bb9"><p class="kf-p"><strong>Traiter la cause :</strong> optimiser le traitement de la MPOC · O₂ si les critères sont remplis · cessation tabagique, vaccins, activité physique, réadaptation · dépister les troubles du sommeil · référer en pneumologie si cœur pulmonaire, HTP, insuffisance respiratoire ou évaluation pour O₂ ou ventilation à domicile.</p></div>
+        <div class="u-708a45" style="margin-top:6px;"><em>Source : APP 9 (MMD6411), objectif 16 — d’après GOLD 2025</em></div>
+        <div class="u-adf69c" style="margin-top:14px;">Autres comorbidités et suivi</div>
+        <div class="key-fact blue u-101bb9"><p class="kf-p"><strong>À ajouter au tableau :</strong> trouble cognitif : complique l’autogestion, l’adhésion et le choix de l’inhalateur · polyglobulie secondaire : chercher une hypoxémie mal corrigée · anémie · cancer pulmonaire · maladies cardiovasculaires, souvent sous-diagnostiquées.</p></div>
+        <div class="u-300634"><table class="u-7d15ea"><thead><tr><th>Volet</th><th>À vérifier</th></tr></thead><tbody><tr><td>Respiratoire</td><td>Symptômes, fréquence et gravité des exacerbations, tolérance à l’effort ; spirométrie si aggravation rapide, exacerbations fréquentes ou limitation accrue</td></tr><tr style="background:#f8f9fa;"><td>Adhésion et technique</td><td>Technique d’inhalation à chaque visite ; dispositif adapté à la dextérité, à la cognition et à la fragilité</td></tr><tr><td>Complications</td><td>Dépistage cardiovasculaire, état nutritionnel et masse musculaire, humeur, anxiété, cognition ; signes de cœur pulmonaire, hypoxémie, hypercapnie, polyglobulie</td></tr><tr style="background:#f8f9fa;"><td>Mesures globales</td><td>Cessation tabagique, vaccins, activité physique, réadaptation pulmonaire, plan d’action</td></tr><tr><td>Référer</td><td>Symptômes disproportionnés, détérioration rapide, exacerbations sévères ou récurrentes, cœur pulmonaire, besoin d’O₂ ou de VNI, hypoxémie ou hypercapnie, HTP, polyglobulie</td></tr></tbody></table></div>
+        <div class="u-708a45" style="margin-top:6px;"><em>Source : APP 9 (MMD6411), objectif 17 — d’après GOLD 2025</em></div>
+        <div class="u-adf69c" style="margin-top:14px;">Fin de vie, conduite automobile et ressources</div>
+        <div class="key-fact green u-101bb9"><p class="kf-p"><strong>Discussion sur la fin de vie :</strong> à amorcer tôt, sans attendre la phase terminale : MPOC modérée à sévère, exacerbations ou hospitalisations répétées, besoin d’O₂. Buts : anticiper (VNI, intubation, réanimation), respecter les valeurs, éviter les soins agressifs non désirés, soulager dyspnée, anxiété et fatigue.</p></div>
+        <div class="key-fact blue u-101bb9"><p class="kf-p"><strong>Rôle de l’IPS :</strong> amorcer la discussion avec une approche centrée sur le patient et sa famille, et documenter les objectifs de soins. Ex. : « Si votre maladie s’aggravait, qu’est-ce qui serait important pour vous ? »</p></div>
+        <div class="key-fact blue u-101bb9"><p class="kf-p"><strong>Conduite et vignette de stationnement :</strong> l’aptitude à conduire se juge sur le risque, pas sur le diagnostic (atteinte cognitive, trouble de conscience, vision, motricité, instabilité cardiovasculaire, médicaments sédatifs). Vignette : incapacité significative à se déplacer, p. ex. ne pas pouvoir marcher environ 100 m ou dyspnée importante à l’effort.</p></div>
+        <div class="key-fact blue u-101bb9"><p class="kf-p"><strong>Ressources au Québec :</strong> RQESR · Asthme et MPOC Québec · cliniques MPOC et pneumologie · réadaptation pulmonaire · CLSC (suivi à domicile, enseignement) · programme d’O₂ à domicile · cessation : centres d’abandon du tabac, ligne J’arrête, pharmacies · palliatif : CLSC, maisons de soins palliatifs.</p></div>
+        <div class="u-708a45" style="margin-top:6px;"><em>Source : APP 9 (MMD6411), objectif 19</em></div>
+        </div>
         <table class="u-7d15ea">
           <thead><tr><th>Système</th><th>Manifestations</th><th>Gestion</th></tr></thead>
           <tbody>
@@ -25251,7 +25363,8 @@ function dkRenal(view) {
     
     
     
-      <!--src-foot--><div class="src-foot"><p><strong>Citées dans le texte</strong> — GOLD · INESSS.</p></div><!--/src-foot-->
+    
+      <!--src-foot--><div class="src-foot"><p><strong>Citées dans le texte</strong> — GINA · GOLD · INESSS · Lanthier.</p></div><!--/src-foot-->
     </div>
 
     <!-- ══ 4. ACO — Chevauchement Asthme-MPOC ══ -->
